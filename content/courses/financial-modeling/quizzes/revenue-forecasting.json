@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-fm-revenue-forecasting-1",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "revenue-forecasting",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind sold 2.00 million units at an average selling price of USD 250 in FY2025. Volume is forecast to grow 6% and price 3% in FY2026. FY2026 revenue (USD million) is closest to:",
+    "options": ["545.0", "530.0", "545.9", "515.0"],
+    "answer": "C",
+    "explanation": "Units 2.00 x 1.06 = 2.12 million; price 250 x 1.03 = 257.50; revenue = 2.12 x 257.50 = 545.9.",
+    "rationale": {
+      "A": "Incorrect. 545.0 adds the growth rates (9%) instead of compounding them (9.18%).",
+      "B": "Incorrect. 530.0 grows volume but leaves price at USD 250.",
+      "C": "Correct. 2.12 million units x USD 257.50 = 545.9.",
+      "D": "Incorrect. 515.0 grows price but leaves volume at 2.00 million."
+    },
+    "verify": "return 2.0*1.06*250*1.03;",
+    "numericAnswer": 545.9,
+    "tolerance": 0.05,
+    "tags": ["driver-based"]
+  },
+  {
+    "id": "q-fm-revenue-forecasting-2",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "revenue-forecasting",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind's addressable market is USD 5,000 million and is expected to grow 5% next year. Northwind is expected to lift its market share from 10.0% to 10.5%. Top-down revenue for next year (USD million) is closest to:",
+    "options": ["551.25", "525.00", "500.00", "26.25"],
+    "answer": "A",
+    "explanation": "Market next year = 5,000 x 1.05 = 5,250; revenue = 5,250 x 10.5% = 551.25.",
+    "rationale": {
+      "A": "Correct. 5,250 x 0.105 = 551.25.",
+      "B": "Incorrect. 525.00 grows the market but keeps share at 10.0% (or applies the new share to the old market).",
+      "C": "Incorrect. 500.00 is current revenue, ignoring both market growth and share gain.",
+      "D": "Incorrect. 26.25 applies the new share only to the market's growth (250 x 10.5%), not to the whole market."
+    },
+    "verify": "return 5000*1.05*0.105;",
+    "numericAnswer": 551.25,
+    "tolerance": 0.01,
+    "tags": ["top-down"]
+  },
+  {
+    "id": "q-fm-revenue-forecasting-3",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "revenue-forecasting",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Northwind's revenue is forecast to rise from USD 500.0 million in FY2025 to USD 623.2 million in FY2028. The three-year revenue CAGR is closest to:",
+    "options": ["24.64%", "7.62%", "8.21%", "9.18%"],
+    "answer": "B",
+    "explanation": "CAGR = (623.2 / 500.0)^(1/3) - 1 = 7.62%.",
+    "rationale": {
+      "A": "Incorrect. 24.64% is the cumulative growth over three years.",
+      "B": "Correct. The cube root of 623.2/500.0, minus one, is 7.62%.",
+      "C": "Incorrect. 8.21% divides cumulative growth by three, ignoring compounding.",
+      "D": "Incorrect. 9.18% is only the first forecast year's growth rate."
+    },
+    "verify": "return (Math.pow(623.2/500.0,1/3)-1)*100;",
+    "numericAnswer": 7.62,
+    "tolerance": 0.005,
+    "tags": ["cagr"]
+  },
+  {
+    "id": "q-fm-revenue-forecasting-4",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "revenue-forecasting",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Northwind's bottom-up forecast implies it will capture 25% of its market within three years, up from 10% today, in an industry where no competitor has ever exceeded 12%. What is the best response?",
+    "options": ["Keep the forecast because bottom-up builds are always more accurate than top-down", "Raise the market growth assumption until the share looks reasonable", "Switch to a single company-wide growth rate equal to last year's growth", "Revisit the volume assumptions, since the top-down cross-check suggests they are implausible"],
+    "answer": "D",
+    "explanation": "A cross-check exists to catch exactly this: the implied share is far outside industry experience, so the bottom-up volume drivers need to be challenged and justified or reduced.",
+    "rationale": {
+      "A": "Incorrect. Bottom-up builds can drift away from what the market can absorb; they are not automatically more accurate.",
+      "B": "Incorrect. Changing the market assumption just to make the share look plausible is reverse-engineering, not analysis.",
+      "C": "Incorrect. Abandoning drivers loses transparency and does not address why the volume forecast is too high.",
+      "D": "Correct. The inconsistency points to unrealistic volume growth that must be revisited."
+    },
+    "tags": ["cross-check"]
+  }
+]

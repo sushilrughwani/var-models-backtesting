@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa2-multiple-regression-basics-1",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "multiple-regression-basics",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An analyst estimates: Return = 1.20 + 0.85 MKT − 0.40 SMB + 0.30 HML, where all variables are in percent. If next month MKT = 2.0, SMB = 1.5 and HML = −0.5, the predicted return is closest to:",
+    "options": ["3.35%", "2.15%", "2.45%"],
+    "answer": "B",
+    "explanation": "Substitute: 1.20 + 0.85(2.0) − 0.40(1.5) + 0.30(−0.5) = 1.20 + 1.70 − 0.60 − 0.15 = 2.15%.",
+    "rationale": {
+      "A": "Incorrect. 3.35% treats the SMB term as +0.60 instead of −0.60, ignoring the negative coefficient.",
+      "B": "Correct. Each coefficient is multiplied by its forecast value and added to the intercept, giving 2.15%.",
+      "C": "Incorrect. 2.45% treats the HML term as +0.15, ignoring that HML is negative."
+    },
+    "verify": "return 1.20 + 0.85*2.0 - 0.40*1.5 + 0.30*(-0.5);",
+    "numericAnswer": 2.15,
+    "tolerance": 0.005,
+    "tags": ["prediction"]
+  },
+  {
+    "id": "q-cfa2-multiple-regression-basics-2",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "multiple-regression-basics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In a regression of a fund's excess returns on three factors using 60 monthly observations, the market coefficient is 0.85 with a standard error of 0.12. The two-tailed 5% critical t-value for 56 degrees of freedom is 2.003. The t-statistic for testing whether the market coefficient differs from 1.0 is closest to:",
+    "options": ["−1.25", "7.08", "−8.33"],
+    "answer": "A",
+    "explanation": "t = (0.85 − 1.0)/0.12 = −1.25. Since |−1.25| < 2.003, the analyst cannot reject a market coefficient of 1.0.",
+    "rationale": {
+      "A": "Correct. The numerator subtracts the hypothesised value of 1.0: (0.85 − 1)/0.12 = −1.25.",
+      "B": "Incorrect. 7.08 tests the coefficient against zero, not against 1.0.",
+      "C": "Incorrect. −8.33 divides the hypothesised value by the standard error and subtracts, (0.85 − 1/0.12), mixing up the order of operations."
+    },
+    "verify": "return (0.85-1.0)/0.12;",
+    "numericAnswer": -1.25,
+    "tolerance": 0.005,
+    "tags": ["t-test", "hypothesis-testing"]
+  },
+  {
+    "id": "q-cfa2-multiple-regression-basics-3",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "multiple-regression-basics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A regression of a stock's return on the market return and the change in oil prices gives an oil coefficient of 0.12. The best interpretation is that a one-unit increase in the oil price change is associated with:",
+    "options": ["a 0.12 increase in the stock's return, regardless of what happens to the market return", "a 0.12 increase in the stock's return, holding the market return constant", "a 0.12 increase in the stock's return, after first subtracting the intercept"],
+    "answer": "B",
+    "explanation": "A slope in a multiple regression is a partial slope: it measures the effect of that variable with every other independent variable held constant.",
+    "rationale": {
+      "A": "Incorrect. The coefficient is conditional on the other regressors being held fixed; if the market return also moves, the total change in the predicted return differs.",
+      "B": "Correct. This is the partial-slope interpretation that holds the other independent variable constant.",
+      "C": "Incorrect. The intercept plays no role in interpreting a slope; it is the expected return when all regressors are zero."
+    },
+    "tags": ["interpretation"]
+  },
+  {
+    "id": "q-cfa2-multiple-regression-basics-4",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "multiple-regression-basics",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst plots the residuals of a multiple regression against the predicted values. The residuals are centred on zero, but their spread widens steadily as the predicted value increases. This pattern most likely indicates a violation of the assumption of:",
+    "options": ["linearity", "independence of the errors", "homoskedasticity"],
+    "answer": "C",
+    "explanation": "A fan or cone shape means the error variance changes with the level of the fitted values, which is heteroskedasticity.",
+    "rationale": {
+      "A": "Incorrect. Non-linearity shows up as a curved, systematic pattern in the residuals, not a widening spread around zero.",
+      "B": "Incorrect. Dependence among errors (serial correlation) shows up as runs of same-signed residuals when plotted in time order.",
+      "C": "Correct. A widening spread means the error variance is not constant, violating homoskedasticity."
+    },
+    "tags": ["assumptions", "residual-plots"]
+  }
+]

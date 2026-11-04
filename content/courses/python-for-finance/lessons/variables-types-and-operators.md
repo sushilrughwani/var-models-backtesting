@@ -33,6 +33,8 @@ print(type(shares), type(price), type(ticker), type(is_long))
 - **str**: text in quotes (tickers, sector names, ISINs).
 - **bool**: `True` or `False`, the result of comparisons such as `pnl > 0`.
 
+Booleans behave like the integers 1 and 0 in arithmetic, so `True + True` is `2`. This turns out to be very convenient later: adding up a list of "was this day a loss?" flags counts the losing days directly. Re-assigning a variable simply moves the label to a new value, which may even be of a different type, so keep names honest about what they hold.
+
 ### Arithmetic operators
 | Operator | Meaning | Example | Result |
 |---|---|---|---|

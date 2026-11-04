@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-black-scholes-merton-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "black-scholes-merton",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A non-dividend-paying stock trades at 50. A 1-year European call has a strike of 50, the continuously compounded risk-free rate is 5%, and N(d1) = 0.6368 and N(d2) = 0.5596. The BSM call price is closest to:",
+    "options": ["3.86", "5.22", "2.31", "2.79"],
+    "answer": "B",
+    "explanation": "c = S0 N(d1) − K e^(−rT) N(d2) = 50 × 0.6368 − 50 × e^(−0.05) × 0.5596 = 31.84 − 26.62 = 5.22.",
+    "rationale": {
+      "A": "Incorrect. 3.86 forgets to discount the strike: 50 × (0.6368 − 0.5596).",
+      "B": "Correct. Stock term minus the discounted, probability-weighted strike gives 5.22.",
+      "C": "Incorrect. 2.31 discounts the stock term instead of the strike term.",
+      "D": "Incorrect. 2.79 is the put price, K e^(−rT) N(−d2) − S0 N(−d1), not the call."
+    },
+    "verify": "return 50*0.6368-50*Math.exp(-0.05)*0.5596;",
+    "numericAnswer": 5.22,
+    "tolerance": 0.005,
+    "tags": ["bsm-formula"]
+  },
+  {
+    "id": "q-frm1-black-scholes-merton-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "black-scholes-merton",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A European call on a non-dividend-paying stock is worth 6.00. The stock trades at 80, the strike is 85, the option expires in 6 months and the continuously compounded risk-free rate is 3%. The value of the European put with the same strike and expiry is closest to:",
+    "options": ["11.00", "2.27", "6.00", "9.73"],
+    "answer": "D",
+    "explanation": "Put-call parity: p = c − S0 + K e^(−rT) = 6.00 − 80 + 85 × e^(−0.015) = 6.00 − 80 + 83.7345 = 9.73.",
+    "rationale": {
+      "A": "Incorrect. 11.00 uses the undiscounted strike of 85 in put-call parity.",
+      "B": "Incorrect. 2.27 reverses the signs of the stock and strike terms (c + S0 − K e^(−rT)).",
+      "C": "Incorrect. Calls and puts have equal value only when the stock price equals the present value of the strike.",
+      "D": "Correct. Put-call parity with the discounted strike gives 9.73."
+    },
+    "verify": "return 6+85*Math.exp(-0.03*0.5)-80;",
+    "numericAnswer": 9.73,
+    "tolerance": 0.005,
+    "tags": ["put-call-parity"]
+  },
+  {
+    "id": "q-frm1-black-scholes-merton-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "black-scholes-merton",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A stock trades at 40 and will pay a dividend of 0.80 in 3 months. A 6-month European call has a strike of 42. Volatility is 30% and the continuously compounded risk-free rate is 5%. Using BSM with the stock price reduced by the present value of the dividend, the call value is closest to:",
+    "options": ["2.96", "2.65", "2.58", "4.33"],
+    "answer": "C",
+    "explanation": "Adjusted S0 = 40 − 0.80 e^(−0.0125) = 39.2099. d1 = [ln(39.2099/42) + (0.05 + 0.045) × 0.5] / (0.30 × √0.5) = −0.1001; d2 = −0.3123. N(d1) = 0.4601, N(d2) = 0.3774. c = 39.2099 × 0.4601 − 42 e^(−0.025) × 0.3774 = 2.58.",
+    "rationale": {
+      "A": "Incorrect. 2.96 ignores the dividend and uses the full stock price of 40.",
+      "B": "Incorrect. 2.65 adds the present value of the dividend to the strike rather than subtracting it from the stock price.",
+      "C": "Correct. Using the dividend-adjusted stock price of 39.2099 in BSM gives 2.58.",
+      "D": "Incorrect. 4.33 is the value of the corresponding put, not the call."
+    },
+    "verify": "const N=x=>{const t=1/(1+0.3275911*Math.abs(x)/Math.SQRT2); const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x/2); return x>=0?0.5*(1+y):0.5*(1-y);}; const S=40-0.8*Math.exp(-0.05*0.25), K=42, r=0.05, s=0.30, T=0.5; const d1=(Math.log(S/K)+(r+s*s/2)*T)/(s*Math.sqrt(T)); const d2=d1-s*Math.sqrt(T); return S*N(d1)-K*Math.exp(-r*T)*N(d2);",
+    "numericAnswer": 2.58,
+    "tolerance": 0.005,
+    "tags": ["dividends", "bsm-formula"]
+  },
+  {
+    "id": "q-frm1-black-scholes-merton-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "black-scholes-merton",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Equity index options of the same maturity show implied volatilities of 28% for low strikes, 20% at the money and 17% for high strikes. What does this pattern most directly indicate?",
+    "options": [
+      "The market assigns more probability to large price falls than the lognormal distribution in BSM implies",
+      "Low-strike options are mispriced and should be sold until implied volatilities equalize",
+      "The risk-free rate used by traders is higher for low-strike options",
+      "The BSM model is correct and realized volatility will be 28% for low strikes"
+    ],
+    "answer": "A",
+    "explanation": "If BSM held exactly, implied volatility would be flat across strikes. A downward-sloping skew means low-strike options are priced richly, consistent with a fatter left tail (crash risk) than the lognormal assumption allows.",
+    "rationale": {
+      "A": "Correct. The skew reflects fat left tails and crash risk that the constant-volatility lognormal model ignores.",
+      "B": "Incorrect. The skew is a persistent feature of the market reflecting real tail risk, not a simple arbitrage.",
+      "C": "Incorrect. All options of the same maturity use the same risk-free rate; the difference is in volatility.",
+      "D": "Incorrect. A single asset cannot have different realized volatilities by strike; differing implied vols show that BSM's constant-volatility assumption fails."
+    },
+    "tags": ["implied-volatility", "volatility-smile"]
+  }
+]

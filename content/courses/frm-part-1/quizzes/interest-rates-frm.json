@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-interest-rates-frm-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "interest-rates-frm",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An interest rate is quoted as 8% per annum with quarterly compounding. The equivalent continuously compounded rate is closest to:",
+    "options": ["8.08%", "8.24%", "7.92%", "7.70%"],
+    "answer": "C",
+    "explanation": "R_c = 4 × ln(1 + 0.08/4) = 4 × ln(1.02) = 7.92%.",
+    "rationale": {
+      "A": "Incorrect. 8.08% converts in the wrong direction, treating 8% as a continuous rate and finding the quarterly equivalent.",
+      "B": "Incorrect. 8.24% is the effective annual rate (1.02^4 − 1), not the continuous rate.",
+      "C": "Correct. Continuous compounding needs a lower nominal rate than quarterly compounding to give the same growth.",
+      "D": "Incorrect. 7.70% is ln(1.08), which treats 8% as an annually compounded rate."
+    },
+    "verify": "return 4*Math.log(1+0.08/4)*100;",
+    "numericAnswer": 7.92,
+    "tolerance": 0.005,
+    "tags": ["compounding"]
+  },
+  {
+    "id": "q-frm1-interest-rates-frm-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "interest-rates-frm",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The two-year zero rate is 3.5% and the three-year zero rate is 4.0%, both continuously compounded. The forward rate for the third year (from year 2 to year 3), continuously compounded, is closest to:",
+    "options": ["5.00%", "3.75%", "4.50%", "0.50%"],
+    "answer": "A",
+    "explanation": "R_F = (0.040 × 3 − 0.035 × 2) / (3 − 2) = (0.12 − 0.07) / 1 = 5.00%.",
+    "rationale": {
+      "A": "Correct. The forward rate equals the extra return (0.05) earned over the one-year period.",
+      "B": "Incorrect. 3.75% is a simple average of the two zero rates, which ignores the time weighting.",
+      "C": "Incorrect. 4.50% adds the difference in zero rates to the three-year rate, which is not the forward-rate formula.",
+      "D": "Incorrect. 0.50% is just the difference between the two zero rates."
+    },
+    "verify": "return (0.04*3-0.035*2)/(3-2)*100;",
+    "numericAnswer": 5.0,
+    "tolerance": 0.005,
+    "tags": ["forward-rates"]
+  },
+  {
+    "id": "q-frm1-interest-rates-frm-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "interest-rates-frm",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A 1.5-year bond with face value 100 pays a 5% annual coupon semiannually. The continuously compounded zero rates for 0.5, 1.0 and 1.5 years are 3.0%, 3.5% and 4.0%. The bond's theoretical price is closest to:",
+    "options": ["101.52", "101.41", "102.88", "100.00"],
+    "answer": "B",
+    "explanation": "Price = 2.5e^(−0.030×0.5) + 2.5e^(−0.035×1.0) + 102.5e^(−0.040×1.5) = 2.4628 + 2.4140 + 96.5309 = 101.41.",
+    "rationale": {
+      "A": "Incorrect. 101.52 treats the zero rates as annually compounded rather than continuously compounded.",
+      "B": "Correct. Each cash flow is discounted at its own continuously compounded zero rate.",
+      "C": "Incorrect. 102.88 discounts every cash flow at the 0.5-year rate of 3.0%, ignoring the rising zero curve.",
+      "D": "Incorrect. The bond trades at par only if its coupon equals the par yield; a 5% coupon above all the zero rates implies a premium."
+    },
+    "verify": "return 2.5*Math.exp(-0.03*0.5)+2.5*Math.exp(-0.035*1)+102.5*Math.exp(-0.04*1.5);",
+    "numericAnswer": 101.41,
+    "tolerance": 0.005,
+    "tags": ["bond-pricing", "zero-rates"]
+  },
+  {
+    "id": "q-frm1-interest-rates-frm-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "interest-rates-frm",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A firm has entered an FRA to receive a fixed rate of 4% (semiannual compounding) on a notional of USD 20 million for the period from 2.0 to 2.5 years. Today's forward rate for that period, expressed with semiannual compounding, is 4.6%. Which statement is correct?",
+    "options": [
+      "The FRA has positive value to the firm because it locks in a rate below the forward rate",
+      "The FRA has zero value because FRAs are always worth zero after inception",
+      "The FRA's value should be found by discounting the expected payoff from 2.0 years",
+      "The FRA has negative value to the firm, equal to the present value of 20m × (4% − 4.6%) × 0.5 discounted from 2.5 years"
+    ],
+    "answer": "D",
+    "explanation": "Value to the fixed receiver = L(R_K − R_F)(T2 − T1)e^(−R2T2). With R_K = 4% below R_F = 4.6%, the payoff is negative: 20m × (−0.006) × 0.5 = −60,000 at 2.5 years, discounted to today.",
+    "rationale": {
+      "A": "Incorrect. Receiving a fixed rate below the forward rate is unfavourable for the fixed receiver, not favourable.",
+      "B": "Incorrect. An FRA is worth zero only when R_K equals the current forward rate, typically at inception.",
+      "C": "Incorrect. The payoff in this standard valuation is assumed to occur at the end of the period, 2.5 years, so it is discounted from T2.",
+      "D": "Correct. Assuming the forward rate is realised, the firm receives 4% but pays 4.6%, giving a negative value discounted from 2.5 years."
+    },
+    "tags": ["fra"]
+  }
+]

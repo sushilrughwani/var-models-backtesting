@@ -1,0 +1,90 @@
+[
+  {
+    "id": "q-xl-lookup-functions-1",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "lookup-functions",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "You write =XLOOKUP(\"MSFT\", A2:A500, C2:C500) and the ticker MSFT does not appear in A2:A500. What does the formula return?",
+    "options": [
+      "The value for the closest ticker alphabetically",
+      "#N/A",
+      "0",
+      "The value in C500"
+    ],
+    "answer": "B",
+    "explanation": "XLOOKUP defaults to exact matching. With no if_not_found argument, a missing key returns #N/A.",
+    "rationale": {
+      "A": "Incorrect. That describes approximate matching, which XLOOKUP only does when match_mode is set to -1 or 1.",
+      "B": "Correct. Exact match is the default, and a key that is not found returns #N/A unless if_not_found is supplied.",
+      "C": "Incorrect. XLOOKUP does not return zero for missing keys; you would have to specify 0 as if_not_found.",
+      "D": "Incorrect. XLOOKUP never falls back to the last row of the return range."
+    }
+  },
+  {
+    "id": "q-xl-lookup-functions-2",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "lookup-functions",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A fee table has lower AUM thresholds 0, 10,000, 50,000 and 100,000 in A2:A5 and flat annual rates 1.00%, 0.75%, 0.50% and 0.25% in B2:B5. For an account of 72,000, what is =72000*XLOOKUP(72000, A2:A5, B2:B5, , -1)?",
+    "options": ["540", "180", "720", "360"],
+    "answer": "D",
+    "explanation": "match_mode -1 returns the exact match or the next smaller threshold. The largest threshold not above 72,000 is 50,000, so the rate is 0.50% and the fee is 72,000 × 0.005 = 360.",
+    "rationale": {
+      "A": "Incorrect. 540 uses 0.75%, the rate two tiers down, as if the 50,000 threshold were skipped.",
+      "B": "Incorrect. 180 uses 0.25%, the next larger threshold's rate (what match_mode 1 would return).",
+      "C": "Incorrect. 720 uses the first rate, 1.00%, ignoring the threshold logic.",
+      "D": "Correct. Next smaller threshold 50,000 gives 0.50%: 72,000 × 0.005 = 360."
+    },
+    "verify": "const t=[0,10000,50000,100000], r=[0.01,0.0075,0.005,0.0025]; const v=72000; let i=-1; for(let k=0;k<t.length;k++){ if(t[k]<=v) i=k; } return v*r[i];",
+    "numericAnswer": 360,
+    "tolerance": 0.5
+  },
+  {
+    "id": "q-xl-lookup-functions-3",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "lookup-functions",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A report uses =VLOOKUP(H1, A2:F200, 4, FALSE) to pull EBITDA. Someone inserts a new column between columns B and C of the source table. What happens, and which alternative avoids the problem?",
+    "options": [
+      "The VLOOKUP now returns the field that moved into the table's 4th column; INDEX with MATCH referencing the EBITDA column directly would keep working",
+      "The VLOOKUP adjusts its column number automatically; no alternative is needed",
+      "The VLOOKUP returns #REF!; only VLOOKUP with approximate match avoids this",
+      "The VLOOKUP returns #N/A; XLOOKUP would also return #N/A"
+    ],
+    "answer": "A",
+    "explanation": "VLOOKUP's column index is a hard-coded count. After the insertion, the 4th column of the (expanded) table is a different field, so wrong values appear without an error. INDEX/MATCH and XLOOKUP reference the return column itself, which shifts correctly.",
+    "rationale": {
+      "A": "Correct. The hard-coded 4 now points to a different field; INDEX/MATCH (or XLOOKUP) refers to the return range directly and is unaffected.",
+      "B": "Incorrect. The table range expands, but the typed number 4 does not change.",
+      "C": "Incorrect. No #REF! error occurs, which is exactly why the problem is dangerous; approximate match does not fix column drift.",
+      "D": "Incorrect. The key column is unchanged, so matches are still found; the error is the wrong field, not a missing key."
+    }
+  },
+  {
+    "id": "q-xl-lookup-functions-4",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "lookup-functions",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A yield grid (in %) has ratings AA, A, BBB, BB in A2:A5 and maturities 3, 5, 10 in B1:D1. The rows are: AA 3.6, 3.9, 4.3; A 3.9, 4.2, 4.6; BBB 4.4, 4.8, 5.3; BB 5.6, 6.1, 6.7. What does =INDEX(B2:D5, MATCH(\"BBB\", A2:A5, 0), MATCH(5, B1:D1, 0)) return?",
+    "options": ["4.2", "5.3", "4.8", "6.1"],
+    "answer": "C",
+    "explanation": "MATCH(\"BBB\", A2:A5, 0) = 3 and MATCH(5, B1:D1, 0) = 2. INDEX(B2:D5, 3, 2) is the BBB row, 5-year column: 4.8.",
+    "rationale": {
+      "A": "Incorrect. 4.2 is the A row (position 2), an off-by-one row error.",
+      "B": "Incorrect. 5.3 is the BBB 10-year yield, column 3 instead of column 2.",
+      "C": "Correct. Row position 3 (BBB) and column position 2 (5 years) give 4.8.",
+      "D": "Incorrect. 6.1 is the BB 5-year yield, one row too far down."
+    },
+    "verify": "const g=[[3.6,3.9,4.3],[3.9,4.2,4.6],[4.4,4.8,5.3],[5.6,6.1,6.7]]; const rows=['AA','A','BBB','BB'], cols=[3,5,10]; return g[rows.indexOf('BBB')][cols.indexOf(5)];",
+    "numericAnswer": 4.8,
+    "tolerance": 0.01
+  }
+]

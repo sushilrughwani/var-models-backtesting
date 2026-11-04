@@ -62,7 +62,7 @@ Now suppose the pool prepays at 6% CPR (100% PSA after month 30).
 7. Prepayment: $0.005143 \times 299{,}701.35 = $ **USD 1,541.37**.
 8. Total principal returned: $298.65 + 1{,}541.37 = 1{,}840.02$; ending balance $= 298{,}159.98$.
 
-Prepayment more than quintuples the principal returned in the month. At 150% PSA in month 20, CPR would be $1.5 \times 0.2\% \times 20 = 6\%$, the same speed.
+The prepayment is more than five times the scheduled principal for the month. At 150% PSA in month 20, CPR would be $1.5 \times 0.2\% \times 20 = 6\%$, the same speed.
 
 ## Common exam traps
 - Dividing CPR by 12 instead of using $1 - (1 - \text{CPR})^{1/12}$.

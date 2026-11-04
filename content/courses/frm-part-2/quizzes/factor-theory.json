@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-factor-theory-1",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "factor-theory",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A portfolio has a market beta of 0.9, a size (SMB) loading of 0.6 and a value (HML) loading of 0.5. The risk-free rate is 2.5%, the expected market risk premium is 5.5%, the expected SMB premium is 2.5% and the expected HML premium is 3.5%. Using the Fama-French three-factor model, the portfolio's expected return is closest to:",
+    "options": ["7.45%", "7.20%", "10.70%", "8.20%"],
+    "answer": "C",
+    "explanation": "E(R) = 2.5% + 0.9 × 5.5% + 0.6 × 2.5% + 0.5 × 3.5% = 2.5% + 4.95% + 1.5% + 1.75% = 10.70%.",
+    "rationale": {
+      "A": "Incorrect. 7.45% is the CAPM expected return (2.5% + 0.9 × 5.5%); it ignores the size and value premiums.",
+      "B": "Incorrect. 7.20% subtracts the value contribution instead of adding it; the HML loading is positive.",
+      "C": "Correct. Risk-free rate plus market, size and value contributions gives 10.70%.",
+      "D": "Incorrect. 8.20% adds up the three factor contributions but forgets to add the 2.5% risk-free rate."
+    },
+    "verify": "return 2.5 + 0.9*5.5 + 0.6*2.5 + 0.5*3.5;",
+    "numericAnswer": 10.7,
+    "tolerance": 0.005,
+    "tags": ["fama-french", "multifactor-model"]
+  },
+  {
+    "id": "q-frm2-factor-theory-2",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "factor-theory",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A fund returned 15% last year. The risk-free rate was 2% and the market excess return was 8%. The fund's estimated loadings are beta = 1.1, SMB loading = 0.6 and HML loading = 0.7. The realised SMB and HML factor returns were 4% and 3%. The fund's three-factor alpha is closest to:",
+    "options": ["-0.3%", "4.2%", "1.7%", "15.3%"],
+    "answer": "A",
+    "explanation": "Factor-implied return = 2% + 1.1 × 8% + 0.6 × 4% + 0.7 × 3% = 2% + 8.8% + 2.4% + 2.1% = 15.3%. Alpha = 15% - 15.3% = -0.3%. The apparent CAPM outperformance came from a small-value tilt.",
+    "rationale": {
+      "A": "Correct. After controlling for size and value exposure the fund slightly underperformed: 15% - 15.3% = -0.3%.",
+      "B": "Incorrect. 4.2% is the CAPM alpha (15% - 10.8%); it treats size and value returns as manager skill.",
+      "C": "Incorrect. 1.7% forgets to include the 2% risk-free rate in the factor-implied return.",
+      "D": "Incorrect. 15.3% is the factor-implied return, not the alpha."
+    },
+    "verify": "return 15 - (2 + 1.1*8 + 0.6*4 + 0.7*3);",
+    "numericAnswer": -0.3,
+    "tolerance": 0.05,
+    "tags": ["alpha", "fama-french"]
+  },
+  {
+    "id": "q-frm2-factor-theory-3",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "factor-theory",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "According to factor theory, which of the following assets should be expected to earn the lowest (possibly negative) expected excess return?",
+    "options": [
+      "A portfolio of small, illiquid value stocks",
+      "A strategy that sells out-of-the-money index put options",
+      "A high-yield corporate bond fund",
+      "A position that is long index volatility, gaining when volatility spikes"
+    ],
+    "answer": "D",
+    "explanation": "Premiums compensate for losses in bad times. A long-volatility position pays off precisely in crashes, when marginal utility is high, so it acts like insurance and should earn a low or negative expected excess return.",
+    "rationale": {
+      "A": "Incorrect. Small value stocks tend to suffer in recessions and illiquid markets, so they should earn a positive premium.",
+      "B": "Incorrect. Selling puts loses heavily in crashes; investors must be paid a volatility premium to bear this.",
+      "C": "Incorrect. High-yield bonds suffer defaults and spread widening in recessions, so they carry a positive premium.",
+      "D": "Correct. Long volatility hedges bad times and behaves like insurance, so its expected excess return is low or negative."
+    },
+    "tags": ["bad-times", "volatility-factor"]
+  },
+  {
+    "id": "q-frm2-factor-theory-4",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "factor-theory",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An investment committee is debating whether to make a permanent allocation to a value factor strategy. Which statement best captures why the source of the value premium matters for this decision?",
+    "options": [
+      "If the premium is behavioural, it is guaranteed to persist because investor biases never change.",
+      "If the premium is compensation for risk, it should persist, but the fund must be able to bear losses in recessions; if it is a behavioural mispricing, it may shrink as arbitrage capital exploits it.",
+      "If the premium is compensation for risk, value stocks will always outperform growth stocks over any 5-year period.",
+      "The source is irrelevant, because factor-adjusted alpha is always zero for value strategies."
+    ],
+    "answer": "B",
+    "explanation": "A risk-based premium is an equilibrium reward for bearing bad-times losses and should persist, but only investors who can survive those losses should collect it. A mispricing can be competed away once widely known and cheaply traded, especially if limits to arbitrage weaken.",
+    "rationale": {
+      "A": "Incorrect. Behavioural premiums are the ones most at risk of being arbitraged away; nothing guarantees persistence.",
+      "B": "Correct. Risk premiums should persist but require tolerance for bad-times losses; mispricings may decay as they are exploited.",
+      "C": "Incorrect. A risk premium means value can underperform for long periods; that is exactly why it is risky.",
+      "D": "Incorrect. Alpha relative to a model that includes HML is not the issue; the question is whether the HML premium itself will persist."
+    },
+    "tags": ["value-premium", "behavioural-finance"]
+  }
+]

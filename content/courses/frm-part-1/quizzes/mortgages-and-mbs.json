@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-frm1-mortgages-and-mbs-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "mortgages-and-mbs",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A borrower takes a USD 250,000 fixed-rate mortgage at 5.4% per year for 15 years with monthly payments. The monthly payment is closest to:",
+    "options": ["USD 2,061.76", "USD 2,513.89", "USD 1,403.83", "USD 2,029.47"],
+    "answer": "D",
+    "explanation": "i = 0.054/12 = 0.0045, n = 180. P = 250,000 × 0.0045 / (1 − 1.0045^(−180)) = 2,029.47.",
+    "rationale": {
+      "A": "Incorrect. 2,061.76 computes an annual payment at 5.4% over 15 years and divides it by 12, ignoring monthly compounding.",
+      "B": "Incorrect. 2,513.89 adds straight-line principal (250,000/180) to the first month's interest; that is only the first payment of a non-level loan.",
+      "C": "Incorrect. 1,403.83 uses a 30-year term (360 months) instead of 15 years.",
+      "D": "Correct. The annuity formula with the monthly rate and 180 payments gives 2,029.47."
+    },
+    "verify": "const L=250000,i=0.054/12,n=180; return L*i/(1-Math.pow(1+i,-n));",
+    "numericAnswer": 2029.47,
+    "tolerance": 0.01,
+    "tags": ["mortgage-payment"]
+  },
+  {
+    "id": "q-frm1-mortgages-and-mbs-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "mortgages-and-mbs",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A mortgage pool is prepaying at a conditional prepayment rate (CPR) of 8%. The single monthly mortality rate (SMM) is closest to:",
+    "options": ["0.67%", "0.69%", "8.00%", "2.06%"],
+    "answer": "B",
+    "explanation": "SMM = 1 − (1 − CPR)^(1/12) = 1 − 0.92^(1/12) = 0.0069, or 0.69%.",
+    "rationale": {
+      "A": "Incorrect. 0.67% divides the CPR by 12, ignoring that prepayments compound on a declining balance.",
+      "B": "Correct. 1 − 0.92^(1/12) = 0.69%.",
+      "C": "Incorrect. 8.00% is the annual CPR, not the monthly rate.",
+      "D": "Incorrect. 2.06% is the quarterly equivalent, using a power of 1/4 instead of 1/12."
+    },
+    "verify": "return (1-Math.pow(1-0.08,1/12))*100;",
+    "numericAnswer": 0.69,
+    "tolerance": 0.005,
+    "tags": ["prepayment", "cpr-smm"]
+  },
+  {
+    "id": "q-frm1-mortgages-and-mbs-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "mortgages-and-mbs",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Under the PSA benchmark, 100% PSA assumes a CPR of 0.2% in month 1, rising by 0.2% per month to 6% in month 30 and constant thereafter. For a pool prepaying at 200% PSA, the CPR in month 12 is closest to:",
+    "options": ["4.8%", "2.4%", "12.0%", "0.4%"],
+    "answer": "A",
+    "explanation": "100% PSA in month 12: 0.2% × 12 = 2.4%. At 200% PSA: 2 × 2.4% = 4.8%.",
+    "rationale": {
+      "A": "Correct. The month-12 benchmark of 2.4% doubled is 4.8%.",
+      "B": "Incorrect. 2.4% is the 100% PSA rate; it ignores the 200% multiplier.",
+      "C": "Incorrect. 12.0% is the 200% PSA rate after month 30, when the ramp has ended.",
+      "D": "Incorrect. 0.4% is the month-1 rate at 200% PSA, ignoring the monthly ramp."
+    },
+    "verify": "return 2*0.2*Math.min(12,30);",
+    "numericAnswer": 4.8,
+    "tolerance": 0.05,
+    "tags": ["psa"]
+  },
+  {
+    "id": "q-frm1-mortgages-and-mbs-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "mortgages-and-mbs",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Mortgage rates rise sharply and prepayments slow. Which mortgage-backed instrument is most likely to increase in value?",
+    "options": ["A principal-only (PO) strip", "An agency pass-through security", "An interest-only (IO) strip", "A long-maturity sequential-pay CMO tranche"],
+    "answer": "C",
+    "explanation": "Slower prepayments mean the outstanding balance stays larger for longer, so the IO strip receives more interest payments. This effect can outweigh higher discount rates, so IO values often rise with rates.",
+    "rationale": {
+      "A": "Incorrect. PO holders receive principal later and discount it at higher rates, so PO values fall sharply.",
+      "B": "Incorrect. Pass-throughs lose value as rates rise and suffer extension risk.",
+      "C": "Correct. Slower prepayments extend the interest stream, so IO strips can gain when rates rise.",
+      "D": "Incorrect. Long tranches extend further and are discounted at higher rates, so they lose value."
+    },
+    "tags": ["io-po-strips", "prepayment-risk"]
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-py-returns-and-volatility-1",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "returns-and-volatility",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A stock's price moves from 50 to 55. What does np.log(55 / 50) return, expressed as a percentage?",
+    "options": ["10.00%", "9.53%", "4.14%", "9.09%"],
+    "answer": "B",
+    "explanation": "np.log is the natural logarithm, so the log return is ln(1.10) = 0.0953, or 9.53%.",
+    "rationale": {
+      "A": "Incorrect. 10.00% is the simple return, 55/50 − 1, not the log return.",
+      "B": "Correct. ln(55/50) = ln(1.1) = 0.09531, i.e. 9.53%.",
+      "C": "Incorrect. 4.14% is log10(1.1); np.log is the natural log, not base 10.",
+      "D": "Incorrect. 9.09% divides the 5-dollar gain by the ending price (5/55) instead of taking a log."
+    },
+    "verify": "return Math.log(55/50)*100;",
+    "numericAnswer": 9.53,
+    "tolerance": 0.005,
+    "tags": ["log-returns"]
+  },
+  {
+    "id": "q-py-returns-and-volatility-2",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "returns-and-volatility",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The standard deviation of a stock's daily returns is 1.5%. Assuming 252 trading days and independent returns, its annualised volatility is closest to:",
+    "options": ["378.00%", "5.20%", "23.81%", "28.66%"],
+    "answer": "C",
+    "explanation": "Volatility scales with the square root of time: 1.5% × √252 = 1.5% × 15.875 = 23.81%.",
+    "rationale": {
+      "A": "Incorrect. 378% multiplies by 252 instead of √252; only variance scales linearly with time.",
+      "B": "Incorrect. 5.20% uses √12, the factor for monthly data, on daily data.",
+      "C": "Correct. 1.5% × √252 ≈ 23.81%.",
+      "D": "Incorrect. 28.66% uses √365 calendar days, but the returns are trading-day returns."
+    },
+    "verify": "return 1.5*Math.sqrt(252);",
+    "numericAnswer": 23.81,
+    "tolerance": 0.005,
+    "tags": ["annualisation", "volatility"]
+  },
+  {
+    "id": "q-py-returns-and-volatility-3",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "returns-and-volatility",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A Series of daily simple returns r holds [0.10, -0.10]. What does (1 + r).prod() - 1 return, expressed as a percentage?",
+    "options": ["0.00%", "-0.50%", "-2.00%", "-1.00%"],
+    "answer": "D",
+    "explanation": "Simple returns compound: 1.10 × 0.90 − 1 = 0.99 − 1 = −0.01, a two-day return of −1.00%.",
+    "rationale": {
+      "A": "Incorrect. 0.00% is r.sum(); simple returns cannot be added across time.",
+      "B": "Incorrect. −0.50% halves the correct figure, as if averaging the compounded loss per day.",
+      "C": "Incorrect. −2.00% double-counts the cross term; the product 1.1 × 0.9 is 0.99, not 0.98.",
+      "D": "Correct. (1.10)(0.90) − 1 = −1.00%."
+    },
+    "verify": "return ((1+0.10)*(1-0.10)-1)*100;",
+    "numericAnswer": -1.0,
+    "tolerance": 0.005,
+    "tags": ["compounding", "simple-returns"]
+  },
+  {
+    "id": "q-py-returns-and-volatility-4",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "returns-and-volatility",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst computes volatility of the same return array with np.std(x) and with pd.Series(x).std() and gets slightly different numbers. What explains the difference?",
+    "options": ["np.std uses the population formula (ddof=0) while pandas uses the sample formula (ddof=1)", "pandas automatically annualises the result by √252", "np.std ignores negative returns", "pandas drops the largest observation as an outlier"],
+    "answer": "A",
+    "explanation": "NumPy divides the sum of squared deviations by n by default; pandas divides by n − 1. The pandas value is therefore slightly larger, especially for short samples.",
+    "rationale": {
+      "A": "Correct. The default degrees-of-freedom setting differs: ddof=0 in NumPy, ddof=1 in pandas.",
+      "B": "Incorrect. Neither library annualises automatically; you must multiply by √N yourself.",
+      "C": "Incorrect. Standard deviation uses squared deviations of all observations, positive or negative.",
+      "D": "Incorrect. pandas does not remove outliers when computing a standard deviation."
+    },
+    "tags": ["ddof", "volatility"]
+  }
+]

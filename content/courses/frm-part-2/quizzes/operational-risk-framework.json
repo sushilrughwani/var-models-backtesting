@@ -1,0 +1,96 @@
+[
+  {
+    "id": "q-frm2-operational-risk-framework-1",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-framework",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following losses falls outside the regulatory definition of operational risk?",
+    "options": [
+      "A fine paid after a regulator finds systematic mis-selling of investment products",
+      "A settlement paid to clients after a legal dispute over a contract",
+      "A loss of market share after the bank chooses to exit a profitable country",
+      "A loss caused by a data centre fire that destroys servers"
+    ],
+    "answer": "C",
+    "explanation": "Operational risk covers losses from failed processes, people, systems and external events, including legal risk. Strategic decisions such as exiting a market are strategic risk and are excluded, as is reputational risk.",
+    "rationale": {
+      "A": "Incorrect. Fines for mis-selling are operational losses in the clients, products and business practices event type.",
+      "B": "Incorrect. Legal risk is explicitly included in operational risk.",
+      "C": "Correct. A deliberate business decision is strategic risk, which the definition excludes.",
+      "D": "Incorrect. Damage to physical assets from an external event is a standard operational risk event type."
+    },
+    "tags": ["definition", "event-types"]
+  },
+  {
+    "id": "q-frm2-operational-risk-framework-2",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-framework",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank with gross income of USD 3,200 million sets an annual operational loss tolerance of 1.5% of gross income and an amber trigger at 80% of that limit. Year-to-date operational losses are USD 39 million. The utilisation of the loss limit is closest to:",
+    "options": ["1.22%", "65.00%", "81.25%", "101.56%"],
+    "answer": "C",
+    "explanation": "Limit = 0.015 × 3,200 = USD 48 million. Utilisation = 39 / 48 = 81.25%, which is above the 80% amber trigger, so the position must be escalated even though the limit has not been breached.",
+    "rationale": {
+      "A": "Incorrect. 1.22% is losses divided by gross income (39 / 3,200), not losses divided by the limit.",
+      "B": "Incorrect. 65.00% divides losses by 60, wrongly using a 1.875% tolerance (the 1.5% limit grossed up by 1/0.8) instead of the 1.5% limit.",
+      "C": "Correct. 39 / (0.015 × 3,200) = 39 / 48 = 81.25%, just above the amber trigger.",
+      "D": "Incorrect. 101.56% divides losses by the amber trigger amount (0.8 × 48 = 38.4) instead of the limit."
+    },
+    "verify": "const lim=0.015*3200; return 39/lim*100;",
+    "numericAnswer": 81.25,
+    "tolerance": 0.005,
+    "tags": ["risk-appetite"]
+  },
+  {
+    "id": "q-frm2-operational-risk-framework-3",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-framework",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In a three lines of defence model, which activity is most appropriately performed by the second line?",
+    "options": [
+      "Operating daily reconciliation controls over trade settlements",
+      "Challenging the ratings that business units assign in their risk and control self-assessments",
+      "Providing the board with independent assurance on the effectiveness of the whole risk framework",
+      "Approving the firm's overall operational risk appetite"
+    ],
+    "answer": "B",
+    "explanation": "The second line (independent risk management) designs the framework and tools and provides effective challenge to the first line's assessments. Control operation is first line, independent assurance is internal audit, and appetite approval is a board responsibility.",
+    "rationale": {
+      "A": "Incorrect. Running controls is a first-line responsibility of the business that owns the risk.",
+      "B": "Correct. Effective challenge of first-line self-assessments is the defining role of the second line.",
+      "C": "Incorrect. Independent assurance over both other lines is the role of internal audit, the third line.",
+      "D": "Incorrect. The board approves risk appetite; the second line may propose and monitor it."
+    },
+    "tags": ["three-lines-of-defence", "governance"]
+  },
+  {
+    "id": "q-frm2-operational-risk-framework-4",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-framework",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A bank's loss database shows thousands of small payment-processing errors and a handful of very large regulatory settlements over ten years. Which pairing of event types most likely describes these two groups?",
+    "options": [
+      "Business disruption and system failures; internal fraud",
+      "External fraud; damage to physical assets",
+      "Employment practices and workplace safety; execution, delivery and process management",
+      "Execution, delivery and process management; clients, products and business practices"
+    ],
+    "answer": "D",
+    "explanation": "High-frequency, low-severity processing errors are classified as execution, delivery and process management. Large regulatory settlements for conduct failures fall under clients, products and business practices, historically the biggest source of loss amounts.",
+    "rationale": {
+      "A": "Incorrect. Processing errors are not system outages, and settlements for conduct are not internal fraud.",
+      "B": "Incorrect. Neither group involves outsiders defrauding the bank or physical damage.",
+      "C": "Incorrect. The pairing is reversed and employment practices concern staff relations and safety, not processing errors.",
+      "D": "Correct. Frequent processing errors are execution and process events; conduct settlements are clients, products and business practices."
+    },
+    "tags": ["event-types", "loss-data"]
+  }
+]

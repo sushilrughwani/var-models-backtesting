@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-correlation-risk-1",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "correlation-risk",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investor buys a correlation swap on a three-stock basket with notional USD 2,000,000 per unit of correlation and a fixed correlation of 0.40. At maturity the realised pairwise correlations are 0.62, 0.48 and 0.55. The payoff to the buyer is closest to:",
+    "options": ["USD 440,000", "USD 300,000", "USD 2,500,000", "−USD 300,000"],
+    "answer": "B",
+    "explanation": "Realised correlation is the average of the three pairs: (0.62 + 0.48 + 0.55)/3 = 0.55. Payoff = 2,000,000 × (0.55 − 0.40) = USD 300,000.",
+    "rationale": {
+      "A": "Incorrect. 440,000 uses the highest pairwise correlation (0.62) rather than the average of all pairs.",
+      "B": "Correct. Average realised correlation 0.55 minus fixed 0.40, times 2,000,000, gives 300,000.",
+      "C": "Incorrect. 2,500,000 sums the pairwise correlations (1.65) instead of averaging them.",
+      "D": "Incorrect. This reverses the legs; the buyer receives realised and pays fixed, so a realised value above fixed is a gain."
+    },
+    "verify": "const avg=(0.62+0.48+0.55)/3; return 2000000*(avg-0.40);",
+    "numericAnswer": 300000,
+    "tolerance": 1,
+    "tags": ["correlation-swap"]
+  },
+  {
+    "id": "q-frm2-correlation-risk-2",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "correlation-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio holds USD 8 million of stock X (daily volatility 1.5%) and USD 6 million of stock Y (daily volatility 2.0%). Using delta-normal VaR with z = 2.326, by how much does the one-day 99% VaR increase if the correlation between X and Y rises from 0.2 to 0.8?",
+    "options": ["USD 125,829", "USD 68,729", "USD 432,411", "USD 97,182"],
+    "answer": "D",
+    "explanation": "Dollar volatilities are 120,000 for each stock. At ρ = 0.2, σP = √(120,000² + 120,000² + 2(0.2)(120,000)²) = 185,903 and VaR = 432,411. At ρ = 0.8, σP = 227,684 and VaR = 529,593. The increase is USD 97,182.",
+    "rationale": {
+      "A": "Incorrect. 125,829 is the increase from ρ = 0.2 all the way to ρ = 1 (sum of stand-alone VaRs), not to ρ = 0.8.",
+      "B": "Incorrect. 68,729 is the increase measured at 95% confidence (z = 1.645), not 99%.",
+      "C": "Incorrect. 432,411 is the VaR level at ρ = 0.2, not the change in VaR.",
+      "D": "Correct. 529,593 − 432,411 = 97,182."
+    },
+    "verify": "const a=8e6*0.015, b=6e6*0.02; const v=r=>2.326*Math.sqrt(a*a+b*b+2*r*a*b); return v(0.8)-v(0.2);",
+    "numericAnswer": 97182,
+    "tolerance": 1,
+    "tags": ["correlation-risk", "var"]
+  },
+  {
+    "id": "q-frm2-correlation-risk-3",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "correlation-risk",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A credit analyst models the joint default behaviour of two borrowers whose individual loss distributions are skewed and fat-tailed. She uses a Gaussian copula. Which statement best describes this approach?",
+    "options": [
+      "Each marginal distribution is mapped to percentiles and then to standard normal values, which are linked with a correlation; the model has no tail dependence.",
+      "The Gaussian copula forces both marginal loss distributions to be normal, so the skew and fat tails are lost.",
+      "The Gaussian copula produces stronger dependence in joint extreme losses than a Student-t copula with the same correlation.",
+      "A copula can only be used when the two variables have the same marginal distribution."
+    ],
+    "answer": "A",
+    "explanation": "A copula keeps each marginal distribution intact and only specifies dependence. The Gaussian copula links the transformed percentiles through a multivariate normal, which has zero tail dependence, so joint extremes are understated.",
+    "rationale": {
+      "A": "Correct. This is how the Gaussian copula works, and its key weakness is the absence of tail dependence.",
+      "B": "Incorrect. The marginals keep their own shape; only the dependence structure is Gaussian.",
+      "C": "Incorrect. It is the other way round: the Student-t copula has tail dependence and the Gaussian copula does not.",
+      "D": "Incorrect. The main attraction of copulas is that the marginals can be different."
+    },
+    "tags": ["copula"]
+  },
+  {
+    "id": "q-frm2-correlation-risk-4",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "correlation-risk",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A risk manager estimates the regression Δρ(t) = a[μ − ρ(t−1)] on monthly average equity correlations and obtains a = 0.75. Which conclusion is most consistent with this estimate and with the typical empirical behaviour of equity correlations?",
+    "options": [
+      "Correlation levels are highly persistent, with an autocorrelation of 0.75, and tend to fall in recessions.",
+      "Correlation shows strong mean reversion with an autocorrelation of about 0.25, and average correlation tends to be higher in downturns.",
+      "Correlation follows a random walk, so the best forecast of next month's correlation is the long-run mean.",
+      "Mean reversion of 0.75 means correlation will reach its long-run mean within one month in every case."
+    ],
+    "answer": "B",
+    "explanation": "In this model the autocorrelation of correlation levels is 1 − a = 0.25, which signals strong mean reversion. Empirically, average equity correlations rise in recessions and market sell-offs.",
+    "rationale": {
+      "A": "Incorrect. It confuses the mean-reversion rate with autocorrelation, and correlations tend to rise, not fall, in recessions.",
+      "B": "Correct. Autocorrelation = 1 − 0.75 = 0.25, and downturn correlation is typically elevated.",
+      "C": "Incorrect. A random walk implies a = 0; the best forecast would then be the last value, not the long-run mean.",
+      "D": "Incorrect. Only 75% of the gap is expected to close each month, and noise means any one path can diverge."
+    },
+    "tags": ["mean-reversion", "empirical-correlation"]
+  }
+]
