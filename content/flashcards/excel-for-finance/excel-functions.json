@@ -1,0 +1,55 @@
+[
+  {
+    "id": "fc-xl-fn-001",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "front": "Trap: what is the danger of wrapping formulas in `IFERROR`?",
+    "back": "It hides every error type, including genuine mistakes such as a broken reference or a missing lookup key, so a model can silently return the fallback value. Use it only where you expect a specific error.",
+    "tags": [
+      "logical",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-xl-fn-002",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "front": "Trap: what does `VLOOKUP` do if you omit its last argument?",
+    "back": "It defaults to approximate match (`TRUE`), which needs sorted data and can return a wrong row silently. Pass `FALSE` (or `0`) for exact match. `XLOOKUP` defaults to exact match.",
+    "tags": [
+      "lookup",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-xl-fn-003",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "front": "Write an INDEX/MATCH formula that returns a value from column C for the key in G2 found in column A.",
+    "back": "`=INDEX(C:C, MATCH(G2, A:A, 0))`. The `0` forces an exact match, and unlike `VLOOKUP` the return column can sit to the left of the lookup column.",
+    "tags": [
+      "lookup"
+    ]
+  },
+  {
+    "id": "fc-xl-fn-004",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "front": "What does `=EOMONTH(A1, 3)` return?",
+    "back": "The last day of the month three months after the date in A1 (as a date serial number). It is handy for building month-end period headers in models.",
+    "tags": [
+      "dates"
+    ]
+  },
+  {
+    "id": "fc-xl-fn-005",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "front": "Trap: how does the argument order of `SUMIFS` differ from `SUMIF`?",
+    "back": "`SUMIFS(sum_range, criteria_range1, criteria1, ...)` puts the sum range first. `SUMIF(range, criteria, [sum_range])` puts it last and makes it optional.",
+    "tags": [
+      "conditional-aggregation",
+      "trap"
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "fc-xl-fnd-001",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "front": "In what order does F4 cycle through reference types for a cell reference?",
+    "back": "`A1` → `$A$1` (fully absolute) → `A$1` (row locked) → `$A1` (column locked) → back to `A1`.",
+    "tags": [
+      "references"
+    ]
+  },
+  {
+    "id": "fc-xl-fnd-002",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "front": "You build a grid where each cell multiplies a row header in column A by a column header in row 1. What formula in B2 can be copied across the whole grid?",
+    "back": "`=$A2*B$1`. The column of the row header and the row of the column header are locked, so each copy picks up the correct pair.",
+    "tags": [
+      "references"
+    ]
+  },
+  {
+    "id": "fc-xl-fnd-003",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "front": "Why use named ranges such as `TaxRate` in a financial model?",
+    "back": "Formulas like `=EBT*TaxRate` read like the logic they implement, references stay absolute automatically, and Name Manager documents every key input in one place.",
+    "tags": [
+      "named-ranges"
+    ]
+  },
+  {
+    "id": "fc-xl-fnd-004",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "front": "What do Ctrl+Arrow and Ctrl+Shift+Arrow do?",
+    "back": "Ctrl+Arrow jumps to the edge of the current data region in that direction; adding Shift selects everything from the active cell to that edge.",
+    "tags": [
+      "shortcuts"
+    ]
+  },
+  {
+    "id": "fc-xl-fnd-005",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "front": "What colour convention do most financial models use for cell fonts?",
+    "back": "Blue for hard-coded inputs, black for formulas on the same sheet, and green for links to other sheets. Readers can see at a glance what they are allowed to change.",
+    "tags": [
+      "formatting"
+    ]
+  }
+]

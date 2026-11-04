@@ -1,0 +1,54 @@
+[
+  {
+    "id": "fc-xl-fin-001",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "front": "What does `=PMT(6%/12, 360, 300000)` return, and why is it negative?",
+    "back": "About −1,798.65, the monthly payment on a 300,000 loan over 30 years at 6% a year. Excel's cash-flow sign convention treats the loan received (positive PV) as an inflow, so payments are outflows.",
+    "tags": [
+      "tvm"
+    ]
+  },
+  {
+    "id": "fc-xl-fin-002",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "front": "Trap: how should you handle the time-0 cash flow with Excel's `NPV` function?",
+    "back": "`NPV` discounts its first value by one full period, so it assumes cash flows start at the end of period 1. Add the initial outlay separately: `=NPV(r, C1:C5) + C0`.",
+    "tags": [
+      "npv",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-xl-fin-003",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "front": "When should you use `XNPV` and `XIRR` instead of `NPV` and `IRR`?",
+    "back": "When cash flows occur on irregular dates. They take a dates range and discount by actual days over 365, rather than assuming equally spaced periods.",
+    "tags": [
+      "npv",
+      "irr"
+    ]
+  },
+  {
+    "id": "fc-xl-fin-004",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "front": "How do `IPMT` and `PPMT` relate to `PMT` in a loan schedule?",
+    "back": "For any period, `IPMT` (interest portion) plus `PPMT` (principal portion) equals `PMT`. Early payments are mostly interest; later ones are mostly principal.",
+    "tags": [
+      "amortization"
+    ]
+  },
+  {
+    "id": "fc-xl-fin-005",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "front": "Write an Excel formula for annualized volatility from daily returns in B2:B253.",
+    "back": "`=STDEV.S(B2:B253)*SQRT(252)`. Use `STDEV.S` for a sample (n − 1 denominator); `STDEV.P` treats the data as the whole population.",
+    "tags": [
+      "risk"
+    ]
+  }
+]

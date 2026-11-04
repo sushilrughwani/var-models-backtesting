@@ -1,0 +1,244 @@
+[
+  {
+    "id": "fc-frm1-fmp-001",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "What is the forward price of an asset with no income under continuous compounding?",
+    "back": "$F_0 = S_0 e^{rT}$. If the market forward were higher, you would buy spot, borrow, and sell forward (cash-and-carry arbitrage).",
+    "tags": [
+      "forwards"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-002",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "How does a continuous dividend or income yield q change the forward price?",
+    "back": "$F_0 = S_0 e^{(r-q)T}$. Income received by the spot holder lowers the forward price.",
+    "tags": [
+      "forwards"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-003",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "State covered interest rate parity for an FX forward.",
+    "back": "$F_0 = S_0 e^{(r_d - r_f)T}$, where S is domestic currency per unit of foreign currency. The currency with the higher interest rate trades at a forward discount.",
+    "tags": [
+      "forwards",
+      "fx"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-004",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "Give the commodity forward price with storage costs and convenience yield.",
+    "back": "$F_0 = S_0 e^{(r + u - y)T}$, where u is the storage cost rate and y the convenience yield. Storage raises the forward price; convenience yield lowers it.",
+    "tags": [
+      "commodities"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-005",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "Define contango and backwardation.",
+    "back": "Contango: futures prices are above the spot price (and rise with maturity). Backwardation: futures prices are below spot, often when convenience yield is high or supply is tight.",
+    "tags": [
+      "commodities"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-006",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "What is the minimum variance hedge ratio?",
+    "back": "$h^* = \\rho\\,\\dfrac{\\sigma_S}{\\sigma_F}$, where σ_S and σ_F are the volatilities of spot and futures price changes and ρ their correlation. It is the slope from regressing ΔS on ΔF.",
+    "tags": [
+      "hedging"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-007",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "How many futures contracts give the minimum variance hedge?",
+    "back": "$N^* = h^*\\,\\dfrac{Q_A}{Q_F}$, where Q_A is the size of the exposure and Q_F the size of one futures contract.",
+    "tags": [
+      "hedging"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-008",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "How many stock index futures change a portfolio's beta from β to β*?",
+    "back": "$N = (\\beta^* - \\beta)\\,\\dfrac{P}{F}$, where P is portfolio value and F is the futures price times the contract multiplier. A negative N means sell futures; β* = 0 is a full hedge.",
+    "tags": [
+      "hedging"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-009",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "What is basis, and what is basis risk?",
+    "back": "Basis = spot price − futures price of the contract used. Basis risk is the uncertainty about the basis when the hedge is closed out, which arises from maturity or asset mismatches.",
+    "tags": [
+      "hedging"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-010",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "Give three key differences between futures and forwards.",
+    "back": "Futures are standardized, exchange-traded and cleared through a CCP, and marked to market daily with margin. Forwards are customized OTC contracts, usually settled at maturity, with more counterparty credit risk.",
+    "tags": [
+      "futures"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-011",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "Trap: after a margin call, to what level must the account be topped up?",
+    "back": "Back to the initial margin, not just to the maintenance margin. The call is triggered when the balance falls below maintenance margin.",
+    "tags": [
+      "futures",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-012",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "What does a central counterparty (CCP) do, and what is its main drawback?",
+    "back": "Through novation it becomes buyer to every seller and seller to every buyer, enables multilateral netting, and collects initial and variation margin. The drawback is that it concentrates risk in one systemically important institution.",
+    "tags": [
+      "clearing"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-013",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "How do you convert a rate compounded m times a year into a continuously compounded rate?",
+    "back": "$R_c = m\\ln\\left(1 + \\dfrac{R_m}{m}\\right)$, and in reverse $R_m = m\\left(e^{R_c/m} - 1\\right)$.",
+    "tags": [
+      "interest-rates"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-014",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "Which day count conventions apply to US Treasuries, US corporate bonds and money market instruments?",
+    "back": "Treasury bonds: actual/actual. Corporate and municipal bonds: 30/360. Money market instruments such as T-bills: actual/360.",
+    "tags": [
+      "interest-rates"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-015",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "State put-call parity for European options on a non-dividend-paying stock.",
+    "back": "$c + Ke^{-rT} = p + S_0$. A call plus cash equal to the PV of the strike has the same payoff as a put plus the stock.",
+    "tags": [
+      "options"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-016",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "What is the lower bound for a European call on a non-dividend-paying stock?",
+    "back": "$c \\ge \\max(S_0 - Ke^{-rT},\\,0)$.",
+    "tags": [
+      "options"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-017",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "Why is it never optimal to exercise an American call early on a non-dividend-paying stock?",
+    "back": "Early exercise gives up the remaining time value and the interest on the strike. Its value is at least $S_0 - Ke^{-rT} > S_0 - K$, so selling the call beats exercising it.",
+    "tags": [
+      "options"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-018",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "What is a long straddle, and when does it pay off?",
+    "back": "Buy a call and a put with the same strike and expiry. It profits when the underlying moves far in either direction, by more than the total premium paid; it loses if the price stays near the strike.",
+    "tags": [
+      "option-strategies"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-019",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "Which single option position is a covered call equivalent to?",
+    "back": "Long stock plus a short call has the same payoff profile as a short put with the same strike (by put-call parity, up to a cash amount).",
+    "tags": [
+      "option-strategies"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-020",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "How are knock-in and knock-out barrier options related to a vanilla option?",
+    "back": "A knock-in plus a knock-out with the same barrier, strike and maturity equals the vanilla option. Barrier options are cheaper than the vanilla because the payoff may be cancelled or never activated.",
+    "tags": [
+      "exotic-options"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-021",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "Why is an Asian (average-price) option usually cheaper than a vanilla option?",
+    "back": "The average price is less volatile than the price at expiry, and lower volatility reduces option value.",
+    "tags": [
+      "exotic-options"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-022",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "How can a plain vanilla interest rate swap be valued as a pair of bonds?",
+    "back": "For the receive-fixed party, $V = B_{fix} - B_{fl}$. The floating-rate bond is worth par (plus the next known coupon) immediately after a reset.",
+    "tags": [
+      "swaps"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-023",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "Why do mortgage-backed securities have negative convexity?",
+    "back": "When rates fall, homeowners refinance and prepay, so the MBS price rises less than a comparable bond. When rates rise, prepayments slow and duration extends, so the price falls more.",
+    "tags": [
+      "mbs"
+    ]
+  },
+  {
+    "id": "fc-frm1-fmp-024",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "front": "What is an insurer's combined ratio?",
+    "back": "Loss ratio plus expense ratio. A combined ratio above 100% means an underwriting loss before investment income.",
+    "tags": [
+      "insurance"
+    ]
+  }
+]

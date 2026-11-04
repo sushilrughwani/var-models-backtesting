@@ -1,0 +1,224 @@
+[
+  {
+    "id": "fc-frm1-qa-001",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "State Bayes' rule.",
+    "back": "$P(A\\mid B) = \\dfrac{P(B\\mid A)\\,P(A)}{P(B)}$. It updates a prior probability of A into a posterior after observing B.",
+    "tags": [
+      "probability"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-002",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "What is the variance of the sum of two random variables?",
+    "back": "$\\operatorname{Var}(X+Y) = \\operatorname{Var}(X) + \\operatorname{Var}(Y) + 2\\operatorname{Cov}(X,Y)$. More generally $\\operatorname{Var}(aX+bY) = a^2\\sigma_X^2 + b^2\\sigma_Y^2 + 2ab\\,\\sigma_{XY}$.",
+    "tags": [
+      "random-variables"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-003",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "Trap: does zero correlation imply independence?",
+    "back": "No. Correlation measures only linear dependence. For example, if X is symmetric around zero and $Y = X^2$, the correlation is zero but Y is completely determined by X. Independence does imply zero correlation.",
+    "tags": [
+      "random-variables",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-004",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "What does negative skewness tell you about a return distribution?",
+    "back": "The left tail is longer: large losses are more likely than large gains of the same size. Typically the mean is below the median.",
+    "tags": [
+      "moments"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-005",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "What is excess kurtosis?",
+    "back": "Kurtosis minus 3, the kurtosis of the normal distribution. Positive excess kurtosis (leptokurtic) means fatter tails and more extreme outcomes than a normal distribution would predict.",
+    "tags": [
+      "moments"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-006",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "Why does the sample variance divide by n − 1 rather than n?",
+    "back": "Because the deviations are measured from the sample mean, which is itself estimated, one degree of freedom is lost. Dividing by n − 1 makes the estimator unbiased.",
+    "tags": [
+      "moments"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-007",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "What is the standard error of the sample mean?",
+    "back": "$\\sigma/\\sqrt{n}$ (estimated with s in place of σ). Quadrupling the sample size halves the standard error.",
+    "tags": [
+      "moments"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-008",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "Distinguish Type I and Type II errors.",
+    "back": "Type I: rejecting a null hypothesis that is true; its probability is the significance level α. Type II: failing to reject a false null; its probability is β, and the power of the test is 1 − β.",
+    "tags": [
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-009",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "Trap: what does a p-value of 0.03 mean?",
+    "back": "If the null hypothesis were true, a test statistic at least this extreme would occur with probability 3%; it is the smallest significance level at which you would reject the null. It is NOT the probability that the null is true.",
+    "tags": [
+      "hypothesis-testing",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-010",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "Give the mean and variance of a binomial random variable.",
+    "back": "For n independent trials with success probability p: mean np and variance np(1 − p).",
+    "tags": [
+      "distributions"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-011",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "What is the distinctive property of the Poisson distribution?",
+    "back": "Its mean and variance are both equal to λ, the average number of events per interval. It models counts of independent events, such as defaults or operational losses per year.",
+    "tags": [
+      "distributions"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-012",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "When is a variable lognormally distributed, and why is that useful for prices?",
+    "back": "X is lognormal if ln X is normally distributed. A lognormal variable cannot be negative and is right-skewed, which suits asset prices whose log returns are assumed normal.",
+    "tags": [
+      "distributions"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-013",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "How does Student's t distribution compare with the standard normal?",
+    "back": "It is symmetric with fatter tails, reflecting extra uncertainty when σ is estimated. As degrees of freedom increase it converges to the standard normal.",
+    "tags": [
+      "distributions"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-014",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "What is the OLS slope estimate in a simple regression?",
+    "back": "$\\hat\\beta = \\dfrac{\\operatorname{Cov}(X,Y)}{\\operatorname{Var}(X)}$ and $\\hat\\alpha = \\bar Y - \\hat\\beta\\bar X$, so the fitted line passes through the means.",
+    "tags": [
+      "regression"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-015",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "Define R² in a regression.",
+    "back": "$R^2 = \\dfrac{ESS}{TSS} = 1 - \\dfrac{RSS}{TSS}$: the share of variation in Y explained by the model. In a simple regression it equals the squared correlation between X and Y.",
+    "tags": [
+      "regression"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-016",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "Why use adjusted R², and how is it computed?",
+    "back": "R² never falls when you add regressors, even useless ones. Adjusted R² penalizes extra variables: $\\bar R^2 = 1 - (1 - R^2)\\dfrac{n-1}{n-k-1}$ with k slope coefficients.",
+    "tags": [
+      "regression"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-017",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "What are the symptoms and consequences of multicollinearity?",
+    "back": "A high R² and significant F-test but individually insignificant t-statistics. Coefficients stay unbiased, but their standard errors are inflated and estimates become unstable.",
+    "tags": [
+      "regression-diagnostics"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-018",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "What does heteroskedasticity do to OLS, and what is the usual fix?",
+    "back": "Coefficient estimates remain unbiased and consistent, but the usual standard errors are wrong, so t-tests are unreliable. Use heteroskedasticity-robust (White) standard errors.",
+    "tags": [
+      "regression-diagnostics"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-019",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "When does omitting a variable bias the OLS coefficients?",
+    "back": "When the omitted variable both affects Y and is correlated with an included regressor. The included coefficient then picks up part of the omitted variable's effect.",
+    "tags": [
+      "regression-diagnostics"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-020",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "What makes a time series covariance-stationary?",
+    "back": "A constant mean, a constant finite variance, and autocovariances that depend only on the lag between observations, not on time itself.",
+    "tags": [
+      "time-series"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-021",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "For the AR(1) model $Y_t = \\delta + \\phi Y_{t-1} + \\varepsilon_t$, when is it stationary and what is its long-run mean?",
+    "back": "It is stationary when $|\\phi| < 1$, and its long-run mean is $\\delta/(1-\\phi)$. The closer φ is to 1, the slower shocks die out.",
+    "tags": [
+      "time-series"
+    ]
+  },
+  {
+    "id": "fc-frm1-qa-022",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "front": "Why is a random walk (unit root) a problem for regression analysis?",
+    "back": "Its variance grows without bound, so it is non-stationary. Regressing one unit-root series on another can produce a spurious, apparently significant relationship; the usual remedy is to difference the series.",
+    "tags": [
+      "time-series"
+    ]
+  }
+]

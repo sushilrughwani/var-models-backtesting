@@ -1,0 +1,63 @@
+[
+  {
+    "id": "fc-fm-tsm-001",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "front": "Where does net income flow in a three-statement model?",
+    "back": "It starts the cash flow from operations (indirect method) and is added to retained earnings on the balance sheet, net of dividends.",
+    "tags": [
+      "linking"
+    ]
+  },
+  {
+    "id": "fc-fm-tsm-002",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "front": "Trap: what is the cash flow effect of an increase in net working capital?",
+    "back": "It reduces cash. Higher receivables or inventory tie up cash, so an increase in NWC is subtracted in cash flow from operations; an increase in payables adds cash.",
+    "tags": [
+      "working-capital",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-fm-tsm-003",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "front": "Write the PP&E roll-forward.",
+    "back": "Ending PP&E = beginning PP&E + capex − depreciation (minus any disposals). Capex is an investing outflow; depreciation is added back in operating cash flow.",
+    "tags": [
+      "capex"
+    ]
+  },
+  {
+    "id": "fc-fm-tsm-004",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "front": "Why does computing interest on average debt create a circular reference, and how is it handled?",
+    "back": "Interest depends on the ending debt balance, which depends on cash flow, which depends on interest. Handle it with iterative calculation plus a circularity switch (circuit breaker), or use beginning balances to avoid it.",
+    "tags": [
+      "debt-schedule"
+    ]
+  },
+  {
+    "id": "fc-fm-tsm-005",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "front": "What does a revolving credit facility do in a model?",
+    "back": "It draws automatically when cash would fall below the minimum cash balance and is repaid when there is excess cash, so cash never goes negative.",
+    "tags": [
+      "debt-schedule"
+    ]
+  },
+  {
+    "id": "fc-fm-tsm-006",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "front": "What is the key integrity check of a three-statement model?",
+    "back": "Total assets minus total liabilities and equity must equal zero in every period. Cash should come from the cash flow statement, never be forced as a balancing plug.",
+    "tags": [
+      "error-checks"
+    ]
+  }
+]

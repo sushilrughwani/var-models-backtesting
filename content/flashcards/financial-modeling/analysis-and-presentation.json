@@ -1,0 +1,42 @@
+[
+  {
+    "id": "fc-fm-ap-001",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "front": "How does sensitivity analysis differ from scenario analysis?",
+    "back": "Sensitivity analysis flexes one or two inputs at a time to see the effect on an output. Scenario analysis changes a coherent set of assumptions together (base, upside, downside cases).",
+    "tags": [
+      "sensitivity"
+    ]
+  },
+  {
+    "id": "fc-fm-ap-002",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "front": "What are the three main drivers of returns in an LBO?",
+    "back": "EBITDA growth, multiple expansion (exiting at a higher multiple than entry), and debt paydown (deleveraging) from the company's cash flows.",
+    "tags": [
+      "lbo"
+    ]
+  },
+  {
+    "id": "fc-fm-ap-003",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "front": "With no interim cash flows, how do MOIC and IRR relate? What IRR does 2.0x over 5 years give?",
+    "back": "$IRR = MOIC^{1/n} - 1$. For 2.0x over 5 years: $2^{0.2} - 1 \\approx 14.9\\%$.",
+    "tags": [
+      "lbo"
+    ]
+  },
+  {
+    "id": "fc-fm-ap-004",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "front": "What does a football field chart show?",
+    "back": "Horizontal bars giving the valuation range implied by each method (DCF, trading comps, precedents, 52-week range), so the reader can see where the methods overlap and support a recommended range.",
+    "tags": [
+      "presentation"
+    ]
+  }
+]

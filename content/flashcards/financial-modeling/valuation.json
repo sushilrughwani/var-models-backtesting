@@ -1,0 +1,64 @@
+[
+  {
+    "id": "fc-fm-val-001",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "front": "Give the formula for unlevered free cash flow.",
+    "back": "UFCF = EBIT × (1 − tax rate) + D&A − capex − increase in net working capital. It is the cash available to all capital providers.",
+    "tags": [
+      "fcf"
+    ]
+  },
+  {
+    "id": "fc-fm-val-002",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "front": "Write the WACC formula.",
+    "back": "$\\text{WACC} = \\dfrac{E}{V}r_E + \\dfrac{D}{V}r_D(1-t)$, using market-value weights with V = E + D. Debt cost is after tax because interest is deductible.",
+    "tags": [
+      "wacc"
+    ]
+  },
+  {
+    "id": "fc-fm-val-003",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "front": "Give the Gordon growth terminal value and its key trap.",
+    "back": "$TV_N = \\dfrac{FCF_N(1+g)}{\\text{WACC} - g}$. The growth rate must be below WACC and sustainable forever (roughly long-run nominal GDP growth); small changes in g move the value a lot.",
+    "tags": [
+      "terminal-value",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-fm-val-004",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "front": "How do you move from enterprise value to equity value per share?",
+    "back": "Equity value = EV − debt + cash − preferred stock − non-controlling interests (+ non-operating assets). Divide by diluted shares, e.g. using the treasury stock method for options.",
+    "tags": [
+      "equity-bridge"
+    ]
+  },
+  {
+    "id": "fc-fm-val-005",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "front": "Trap: why is EV/net income an inconsistent multiple?",
+    "back": "The numerator and denominator must belong to the same capital providers. EV pairs with pre-interest metrics (revenue, EBITDA, EBIT); equity value (price) pairs with post-interest metrics like net income (P/E).",
+    "tags": [
+      "multiples",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-fm-val-006",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "front": "Why do precedent transaction multiples usually exceed trading comparables?",
+    "back": "Acquisition prices include a control premium and expected synergies, while trading multiples reflect minority stakes in the open market.",
+    "tags": [
+      "precedent-transactions"
+    ]
+  }
+]

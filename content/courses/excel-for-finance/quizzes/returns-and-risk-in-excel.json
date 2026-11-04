@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-xl-returns-and-risk-in-excel-1",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "returns-and-risk-in-excel",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The standard deviation of a stock's daily returns is 1.2%. Assuming 252 trading days a year and independent returns, its annualised volatility is closest to:",
+    "options": ["302.40%", "19.05%", "4.16%", "1.20%"],
+    "answer": "B",
+    "explanation": "Volatility scales with the square root of time: 1.2% × √252 = 1.2% × 15.875 = 19.05%. In Excel: `=1.2%*SQRT(252)`.",
+    "rationale": {
+      "A": "Incorrect. 302.40% multiplies by 252 instead of its square root; that is how variance scales, not standard deviation.",
+      "B": "Correct. 1.2% × √252 = 19.05%.",
+      "C": "Incorrect. 4.16% uses √12, the monthly factor, on daily data.",
+      "D": "Incorrect. 1.20% is still the daily figure; it has not been annualised."
+    },
+    "verify": "return 1.2*Math.sqrt(252);",
+    "numericAnswer": 19.05,
+    "tolerance": 0.005,
+    "tags": ["annualised-volatility"]
+  },
+  {
+    "id": "q-xl-returns-and-risk-in-excel-2",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "returns-and-risk-in-excel",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Prices are 100 (B2), 110 (B3) and 99 (B4). Column C holds `=LN(B3/B2)` and `=LN(B4/B3)`. What does `=SUM(C3:C4)` return, as a percentage?",
+    "options": ["0.00%", "-1.00%", "-1.01%", "-10.54%"],
+    "answer": "C",
+    "explanation": "Log returns are 9.53% and −10.54%. They add over time: the sum is ln(99/100) = −1.01%. Converting back, e^(−0.0101) − 1 = −1.00%, the actual simple return over both days.",
+    "rationale": {
+      "A": "Incorrect. 0.00% is the sum of the simple returns (+10% and −10%), which ignores compounding.",
+      "B": "Incorrect. −1.00% is the simple total return; the sum of log returns is the log of that, −1.01%.",
+      "C": "Correct. 9.53% − 10.54% = −1.01% = ln(0.99).",
+      "D": "Incorrect. −10.54% is only the second day's log return."
+    },
+    "verify": "return (Math.log(110/100)+Math.log(99/110))*100;",
+    "numericAnswer": -1.01,
+    "tolerance": 0.005,
+    "tags": ["log-returns"]
+  },
+  {
+    "id": "q-xl-returns-and-risk-in-excel-3",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "returns-and-risk-in-excel",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst estimates volatility from the last 24 monthly returns of a fund. Which approach is most appropriate?",
+    "options": ["`=STDEV.P(range)*12`, because the 24 returns are all the data available", "`=STDEV.S(range)*12`, because annual variance is twelve times monthly", "`=VAR.S(range)*SQRT(12)`, because variance is the basic risk measure", "`=STDEV.S(range)*SQRT(12)`, because the returns are a sample and volatility scales with the square root of time"],
+    "answer": "D",
+    "explanation": "Historical returns are a sample from an unknown distribution, so the n − 1 divisor in STDEV.S is appropriate. Monthly volatility is converted to annual by multiplying by √12.",
+    "rationale": {
+      "A": "Incorrect. Having limited data does not make it the population, and multiplying by 12 overstates annual volatility.",
+      "B": "Incorrect. Variance scales by 12, so standard deviation scales by √12, not 12.",
+      "C": "Incorrect. Variance would need to be multiplied by 12, and the result would be a variance, not a volatility.",
+      "D": "Correct. Sample standard deviation annualised by √12 is the standard method."
+    },
+    "tags": ["stdev", "annualised-volatility"]
+  },
+  {
+    "id": "q-xl-returns-and-risk-in-excel-4",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "returns-and-risk-in-excel",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A fund's monthly returns over four months are 2%, -1%, 3% and 0%. Using `=STDEV.S(range)*SQRT(12)`, its annualised volatility is closest to:",
+    "options": ["6.32%", "5.48%", "21.91%", "1.83%"],
+    "answer": "A",
+    "explanation": "Mean = 1%. Squared deviations: 1, 4, 4, 1, summing to 10. Sample variance = 10/3 = 3.333, so the monthly standard deviation is 1.826%. Annualised: 1.826% × √12 = 6.32%.",
+    "rationale": {
+      "A": "Correct. Sample standard deviation 1.826% × √12 = 6.32%.",
+      "B": "Incorrect. 5.48% uses the population standard deviation (divide by 4), i.e. STDEV.P.",
+      "C": "Incorrect. 21.91% multiplies the monthly figure by 12 instead of √12.",
+      "D": "Incorrect. 1.83% is the monthly standard deviation before annualising."
+    },
+    "verify": "const r=[2,-1,3,0]; const m=r.reduce((a,b)=>a+b)/4; const v=r.reduce((a,b)=>a+(b-m)**2,0)/3; return Math.sqrt(v)*Math.sqrt(12);",
+    "numericAnswer": 6.32,
+    "tolerance": 0.005,
+    "tags": ["stdev", "annualised-volatility"]
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "fc-py-np-001",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "front": "What does vectorization mean in NumPy?",
+    "back": "Operations apply element-wise to whole arrays in fast compiled code, e.g. `prices * 1.1` or `np.log(prices)`, instead of Python loops. Broadcasting extends this to arrays of compatible shapes.",
+    "tags": [
+      "numpy"
+    ]
+  },
+  {
+    "id": "fc-py-np-002",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "front": "Trap: how do `.loc` and `.iloc` slicing differ?",
+    "back": "`.loc` selects by label and includes the end label (`df.loc['2024-01':'2024-03']`). `.iloc` selects by integer position and excludes the end (`df.iloc[0:3]` gives rows 0, 1, 2).",
+    "tags": [
+      "pandas",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-py-np-003",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "front": "What does `df['Close'].pct_change()` return, and why is the first value NaN?",
+    "back": "Simple returns, computed as each price divided by the previous one minus 1. The first row has no previous price, so it is NaN; drop it with `.dropna()`.",
+    "tags": [
+      "pandas",
+      "returns"
+    ]
+  },
+  {
+    "id": "fc-py-np-004",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "front": "How do you convert daily prices to month-end prices in pandas?",
+    "back": "`prices.resample('ME').last()` takes the last observation in each calendar month (older pandas versions use the alias `'M'`). The index must be a DatetimeIndex.",
+    "tags": [
+      "time-series"
+    ]
+  },
+  {
+    "id": "fc-py-np-005",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "front": "How should missing prices be filled, and how is that done in pandas?",
+    "back": "Forward fill with `df.ffill()`, carrying the last known price forward (as if there were no trade). Never back-fill prices with future values, which leaks information from the future.",
+    "tags": [
+      "data-cleaning"
+    ]
+  }
+]

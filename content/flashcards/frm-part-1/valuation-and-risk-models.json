@@ -1,0 +1,246 @@
+[
+  {
+    "id": "fc-frm1-vrm-001",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "Define value at risk (VaR).",
+    "back": "The loss over a given horizon that will not be exceeded with a specified confidence level. For example, a 1-day 99% VaR of USD 5 million means a loss larger than that is expected on about 1 day in 100.",
+    "tags": [
+      "var"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-002",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "What is parametric (normal) VaR?",
+    "back": "$\\text{VaR} = -\\mu + z_{\\alpha}\\sigma$ in value terms, with z = 1.645 at 95% and 2.326 at 99% (one-tailed). With zero mean it is simply zσ.",
+    "tags": [
+      "var"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-003",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "How is a 1-day VaR scaled to a T-day horizon, and what does it assume?",
+    "back": "$\\text{VaR}_T = \\text{VaR}_1\\sqrt{T}$. It assumes independent, identically distributed returns with zero mean. For example, a 10-day VaR is about 3.16 times the 1-day VaR.",
+    "tags": [
+      "var"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-004",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "What is expected shortfall (ES)?",
+    "back": "The expected loss given that the loss exceeds VaR: the average of the tail beyond the VaR level. ES is always at least as large as VaR at the same confidence level.",
+    "tags": [
+      "expected-shortfall"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-005",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "Trap: why can VaR understate the benefits of diversification?",
+    "back": "VaR is not subadditive in general: the VaR of a combined portfolio can exceed the sum of individual VaRs (e.g. with skewed, lumpy credit losses). Expected shortfall is subadditive.",
+    "tags": [
+      "var",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-006",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "List the four properties of a coherent risk measure.",
+    "back": "Monotonicity, subadditivity, positive homogeneity and translation invariance. Expected shortfall satisfies all four; VaR can fail subadditivity.",
+    "tags": [
+      "risk-measures"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-007",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "Give one strength and one weakness of historical simulation VaR.",
+    "back": "Strength: no distributional assumption, so it captures fat tails and nonlinear payoffs present in the data. Weakness: results depend entirely on the chosen window and cannot reflect events not in it.",
+    "tags": [
+      "var"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-008",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "Write the EWMA volatility update.",
+    "back": "$\\sigma_n^2 = \\lambda\\sigma_{n-1}^2 + (1-\\lambda)u_{n-1}^2$, where u is the latest return. RiskMetrics uses λ = 0.94 for daily data; weights on past returns decline geometrically.",
+    "tags": [
+      "volatility"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-009",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "Write the GARCH(1,1) model and its long-run variance.",
+    "back": "$\\sigma_n^2 = \\omega + \\alpha u_{n-1}^2 + \\beta\\sigma_{n-1}^2$. Long-run variance is $\\omega/(1-\\alpha-\\beta)$, which requires α + β < 1; volatility mean-reverts toward it.",
+    "tags": [
+      "volatility"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-010",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "What is the formula for expected credit loss?",
+    "back": "EL = PD × LGD × EAD, where PD is probability of default, LGD loss given default and EAD exposure at default.",
+    "tags": [
+      "credit-risk"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-011",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "How are loss given default and recovery rate related?",
+    "back": "LGD = 1 − recovery rate. A 40% recovery means 60% of the exposure is lost on default.",
+    "tags": [
+      "credit-risk"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-012",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "What is unexpected credit loss, and how is it covered?",
+    "back": "The variability of credit losses around the expected loss, often measured as a standard deviation or as credit VaR minus EL. It is covered by economic capital, while EL is covered by provisions and pricing.",
+    "tags": [
+      "credit-risk"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-013",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "What is the cutoff between investment-grade and speculative-grade ratings?",
+    "back": "BBB− (S&P and Fitch) or Baa3 (Moody's) and above is investment grade. Anything below is speculative grade (high yield).",
+    "tags": [
+      "credit-ratings"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-014",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "How does Basel define operational risk?",
+    "back": "The risk of loss from inadequate or failed internal processes, people and systems, or from external events. It includes legal risk but excludes strategic and reputational risk.",
+    "tags": [
+      "operational-risk"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-015",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "How does stress testing complement VaR?",
+    "back": "VaR describes losses under normal conditions at a given probability. Stress testing evaluates losses under specific severe but plausible scenarios, often beyond historical experience, without attaching a probability.",
+    "tags": [
+      "stress-testing"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-016",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "How is modified duration related to Macaulay duration?",
+    "back": "$D_{mod} = \\dfrac{D_{mac}}{1 + y/m}$, where y is the yield and m the compounding periods per year.",
+    "tags": [
+      "duration"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-017",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "What is the duration-convexity approximation for a bond's price change?",
+    "back": "$\\dfrac{\\Delta P}{P} \\approx -D_{mod}\\,\\Delta y + \\tfrac{1}{2}C(\\Delta y)^2$.",
+    "tags": [
+      "duration",
+      "convexity"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-018",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "Define DV01.",
+    "back": "The price change for a 1 basis point change in yield: $DV01 = D_{mod} \\times P \\times 0.0001$. Example: modified duration 7 on a price of 100 gives a DV01 of 0.07.",
+    "tags": [
+      "duration"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-019",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "Trap: for a bond with positive convexity, how does the duration-only estimate err?",
+    "back": "It understates the price rise when yields fall and overstates the price fall when yields rise. The convexity term is always added, regardless of the direction of the yield change.",
+    "tags": [
+      "convexity",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-020",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "How is a one-year forward rate one year ahead extracted from spot rates?",
+    "back": "From $(1+s_2)^2 = (1+s_1)(1+f_{1,1})$, so $f_{1,1} = \\dfrac{(1+s_2)^2}{1+s_1} - 1$ (annual compounding).",
+    "tags": [
+      "term-structure"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-021",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "Give the risk-neutral up probability in a CRR binomial tree.",
+    "back": "$p = \\dfrac{e^{r\\Delta t} - d}{u - d}$ with $u = e^{\\sigma\\sqrt{\\Delta t}}$ and $d = 1/u$. The option value is the expected payoff under p, discounted at r.",
+    "tags": [
+      "binomial-trees"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-022",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "State the Black-Scholes-Merton price of a European call.",
+    "back": "$c = S_0N(d_1) - Ke^{-rT}N(d_2)$, with $d_1 = \\dfrac{\\ln(S_0/K) + (r + \\sigma^2/2)T}{\\sigma\\sqrt{T}}$ and $d_2 = d_1 - \\sigma\\sqrt{T}$.",
+    "tags": [
+      "black-scholes"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-023",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "What are the deltas of European calls and puts on a non-dividend-paying stock?",
+    "back": "Call delta = $N(d_1)$, between 0 and 1. Put delta = $N(d_1) - 1$, between −1 and 0.",
+    "tags": [
+      "greeks"
+    ]
+  },
+  {
+    "id": "fc-frm1-vrm-024",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "front": "Trap: can a trader change the gamma of a position by trading the underlying stock?",
+    "back": "No. The underlying has a delta of 1 and zero gamma, so it can only adjust delta. Gamma must be changed with options, and the delta is then re-neutralized with the underlying.",
+    "tags": [
+      "greeks",
+      "trap"
+    ]
+  }
+]

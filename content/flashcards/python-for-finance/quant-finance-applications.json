@@ -1,0 +1,84 @@
+[
+  {
+    "id": "fc-py-qf-001",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "front": "When should you use log returns rather than simple returns?",
+    "back": "Log returns, `np.log(p / p.shift(1))`, add up over time, which suits multi-period and statistical work. Simple returns aggregate across assets: a portfolio return is the weighted sum of simple returns.",
+    "tags": [
+      "returns"
+    ]
+  },
+  {
+    "id": "fc-py-qf-002",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "front": "Trap: why can `np.std(r)` and `r.std()` give different results on the same data?",
+    "back": "NumPy defaults to `ddof=0` (population), while a pandas Series defaults to `ddof=1` (sample). Annualize daily volatility with `r.std() * np.sqrt(252)`.",
+    "tags": [
+      "volatility",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-py-qf-003",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "front": "How do you compute portfolio variance with NumPy?",
+    "back": "`w @ cov @ w`, where `w` is the weight vector and `cov` the covariance matrix, i.e. $w^\\top \\Sigma w$. Take `np.sqrt` for volatility.",
+    "tags": [
+      "portfolio"
+    ]
+  },
+  {
+    "id": "fc-py-qf-004",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "front": "Trap: what is easy to forget when estimating CAPM beta with `statsmodels` OLS?",
+    "back": "The intercept. `sm.OLS(y, x)` fits a line through the origin unless you use `sm.add_constant(x)`; the constant's coefficient is alpha and the slope is beta.",
+    "tags": [
+      "capm",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-py-qf-005",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "front": "How do you compute a one-day 95% historical VaR from a returns Series `r`?",
+    "back": "`-r.quantile(0.05)` (or `-np.percentile(r, 5)`): the 5th-percentile return, with the sign flipped so VaR is reported as a positive loss.",
+    "tags": [
+      "var"
+    ]
+  },
+  {
+    "id": "fc-py-qf-006",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "front": "What formula simulates a terminal price under geometric Brownian motion?",
+    "back": "$S_T = S_0\\exp\\left[\\left(\\mu - \\tfrac{1}{2}\\sigma^2\\right)T + \\sigma\\sqrt{T}\\,Z\\right]$, with Z standard normal, e.g. from `np.random.default_rng(42).standard_normal(n)`. For option pricing, replace μ with the risk-free rate.",
+    "tags": [
+      "monte-carlo"
+    ]
+  },
+  {
+    "id": "fc-py-qf-007",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "front": "How does Monte Carlo error shrink as you add paths?",
+    "back": "The standard error of the estimate falls like $1/\\sqrt{N}$, so four times as many paths halve the error.",
+    "tags": [
+      "monte-carlo"
+    ]
+  },
+  {
+    "id": "fc-py-qf-008",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "front": "Which function gives N(d) for the Black-Scholes formula in Python?",
+    "back": "`scipy.stats.norm.cdf(d1)`, the standard normal cumulative distribution function. Then `call = S*norm.cdf(d1) - K*np.exp(-r*T)*norm.cdf(d2)`.",
+    "tags": [
+      "options"
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "fc-py-bas-001",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "front": "Trap: why is `def add(x, acc=[])` dangerous?",
+    "back": "The default list is created once, when the function is defined, and shared across calls, so items accumulate between calls. Use `acc=None` and create a new list inside the function.",
+    "tags": [
+      "functions",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-py-bas-002",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "front": "Why is `0.1 + 0.2 == 0.3` False in Python?",
+    "back": "Floats are stored in binary and cannot represent 0.1 exactly, so the sum is 0.30000000000000004. Compare with `math.isclose(a, b)` or use `decimal.Decimal` for exact decimal arithmetic.",
+    "tags": [
+      "types"
+    ]
+  },
+  {
+    "id": "fc-py-bas-003",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "front": "What is the key difference between a list and a tuple?",
+    "back": "Lists are mutable (you can change, add or remove items); tuples are immutable. Because tuples are hashable when their contents are, they can be dictionary keys.",
+    "tags": [
+      "data-structures"
+    ]
+  },
+  {
+    "id": "fc-py-bas-004",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "front": "What does `range(1, 11)` produce, and what is `x[-1]`?",
+    "back": "The integers 1 to 10: the stop value is excluded. `x[-1]` is the last element of a sequence, since Python indexing starts at 0 and negative indices count from the end.",
+    "tags": [
+      "control-flow"
+    ]
+  }
+]

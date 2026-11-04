@@ -1,0 +1,43 @@
+[
+  {
+    "id": "fc-fm-fnd-001",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "front": "What is the standard flow of a well-structured financial model?",
+    "back": "Inputs (assumptions) feed calculations, which feed outputs. Each lives in a clearly separated area, and logic flows in one direction so changes are made in one place only.",
+    "tags": [
+      "structure"
+    ]
+  },
+  {
+    "id": "fc-fm-fnd-002",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "front": "Trap: what is wrong with a formula like `=B5*1.05`?",
+    "back": "The 5% growth rate is hard-coded inside the formula, so it is invisible, hard to change and easy to miss when assumptions are updated. Put it in a labelled input cell and reference it.",
+    "tags": [
+      "best-practice",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-fm-fnd-003",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "front": "How do you compute days sales outstanding (DSO)?",
+    "back": "DSO = accounts receivable ÷ revenue × 365. It shows how many days of sales are tied up in receivables and is often used to forecast receivables.",
+    "tags": [
+      "ratios"
+    ]
+  },
+  {
+    "id": "fc-fm-fnd-004",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "front": "What is EBITDA, and why is it popular in modeling?",
+    "back": "Earnings before interest, taxes, depreciation and amortization. It approximates operating cash generation before capital structure and non-cash charges, making companies easier to compare.",
+    "tags": [
+      "ratios"
+    ]
+  }
+]

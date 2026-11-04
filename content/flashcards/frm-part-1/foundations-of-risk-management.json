@@ -1,0 +1,203 @@
+[
+  {
+    "id": "fc-frm1-fnd-001",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "How do expected loss and unexpected loss differ in how a firm handles them?",
+    "back": "Expected loss is the average loss a business anticipates, so it is treated as a cost of doing business and covered through pricing and provisions. Unexpected loss is the deviation above that average, and it is absorbed by economic capital.",
+    "tags": [
+      "risk-basics"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-002",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "Name the four basic responses a firm can take to an identified risk.",
+    "back": "Avoid it (do not undertake the activity), retain it (accept and budget for it), mitigate it (reduce probability or impact with controls), or transfer it (insurance, derivatives, securitization).",
+    "tags": [
+      "risk-basics"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-003",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "What is a firm's risk appetite, and who is ultimately responsible for setting it?",
+    "back": "Risk appetite is the amount and type of risk the firm is willing to accept in pursuit of its strategic goals. The board of directors approves it; management translates it into limits.",
+    "tags": [
+      "governance"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-004",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "Describe the three lines of defense model.",
+    "back": "First line: business units that own and manage the risks they take. Second line: independent risk management and compliance that set policy and monitor. Third line: internal audit, which gives independent assurance to the board.",
+    "tags": [
+      "governance"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-005",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "State the CAPM expected return equation.",
+    "back": "$E(R_i) = R_f + \\beta_i\\,[E(R_m) - R_f]$. Only systematic risk (beta) is rewarded; diversifiable risk earns no premium.",
+    "tags": [
+      "capm"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-006",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "How is an asset's beta computed from return data?",
+    "back": "$\\beta_i = \\dfrac{\\operatorname{Cov}(R_i, R_m)}{\\sigma_m^2} = \\rho_{i,m}\\dfrac{\\sigma_i}{\\sigma_m}$. It measures sensitivity of the asset's return to market moves.",
+    "tags": [
+      "capm"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-007",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "What is the difference between the capital market line (CML) and the security market line (SML)?",
+    "back": "The CML plots expected return against total risk σ and only efficient portfolios (risk-free asset plus market portfolio) lie on it. The SML plots expected return against beta and, in equilibrium, every asset and portfolio lies on it.",
+    "tags": [
+      "capm"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-008",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "Give the Sharpe ratio and interpret it.",
+    "back": "$S_p = \\dfrac{R_p - R_f}{\\sigma_p}$: excess return per unit of total risk. Example: return 10%, risk-free 2%, volatility 16% gives a Sharpe ratio of 0.5.",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-009",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "Give the Treynor ratio.",
+    "back": "$T_p = \\dfrac{R_p - R_f}{\\beta_p}$: excess return per unit of systematic risk.",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-010",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "Trap: when is the Treynor ratio a better choice than the Sharpe ratio?",
+    "back": "When the portfolio is one part of a larger, well-diversified holding, so only its beta matters. For an investor's entire (possibly undiversified) portfolio, the Sharpe ratio is appropriate because total risk matters.",
+    "tags": [
+      "performance",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-011",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "Define Jensen's alpha.",
+    "back": "$\\alpha_p = R_p - [R_f + \\beta_p(R_m - R_f)]$: the realized return above what CAPM predicts for the portfolio's beta. Positive alpha suggests skill (or luck).",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-012",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "What is the information ratio?",
+    "back": "$IR = \\dfrac{R_p - R_B}{TE}$, where TE (tracking error) is the standard deviation of $R_p - R_B$. It measures active return earned per unit of active risk relative to a benchmark.",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-013",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "How does the Sortino ratio differ from the Sharpe ratio?",
+    "back": "It replaces excess return over the risk-free rate with return above a minimum acceptable return (MAR), and divides by downside deviation (volatility of returns below the MAR) instead of total σ, so upside volatility is not penalized.",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-014",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "What is the core idea of arbitrage pricing theory (APT)?",
+    "back": "Expected returns are linear in several systematic factor sensitivities, $E(R_i) = R_f + \\sum_k \\beta_{ik}\\lambda_k$, enforced by the absence of arbitrage. APT does not specify which factors to use.",
+    "tags": [
+      "factor-models"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-015",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "What three factors are in the Fama-French three-factor model?",
+    "back": "The market excess return, SMB (small minus big, a size factor) and HML (high minus low book-to-market, a value factor).",
+    "tags": [
+      "factor-models"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-016",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "What problem do the Basel Committee's risk data aggregation principles (BCBS 239) address?",
+    "back": "Many banks could not quickly and accurately aggregate exposures across the group during the 2007-2009 crisis. The principles require risk data and reports to be accurate, complete, timely and adaptable, under strong governance and IT infrastructure.",
+    "tags": [
+      "risk-data"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-017",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "How does enterprise risk management (ERM) differ from a silo approach?",
+    "back": "ERM views all risks (market, credit, operational, strategic and so on) together at the firm level, capturing correlations and natural hedges and linking risk to strategy and capital, rather than managing each risk type separately.",
+    "tags": [
+      "erm"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-018",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "In a credit default swap, what does each party pay?",
+    "back": "The protection buyer pays a periodic premium (the CDS spread) on the notional. The protection seller pays the loss (notional times one minus recovery) if a credit event occurs on the reference entity.",
+    "tags": [
+      "credit-risk-transfer"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-019",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "Why did the originate-to-distribute model contribute to the 2007-2009 crisis?",
+    "back": "Lenders that sold loans into securitizations kept little of the credit risk, so their incentive to screen borrowers weakened (moral hazard). Poorly underwritten mortgages ended up in complex, opaque structures held throughout the system.",
+    "tags": [
+      "financial-crisis"
+    ]
+  },
+  {
+    "id": "fc-frm1-fnd-020",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "front": "What key control failure does the Barings Bank collapse illustrate?",
+    "back": "Lack of segregation of duties: a single trader controlled both trading and back-office settlement, which let him hide mounting losses in a concealed account until they destroyed the bank.",
+    "tags": [
+      "financial-disasters"
+    ]
+  }
+]

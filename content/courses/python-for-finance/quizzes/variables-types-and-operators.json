@@ -1,0 +1,107 @@
+[
+  {
+    "id": "q-py-variables-types-and-operators-1",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "variables-types-and-operators",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "What does `print(17 // 5 + 17 % 5)` output?",
+    "options": [
+      "5",
+      "5.4",
+      "3.4",
+      "2"
+    ],
+    "answer": "A",
+    "explanation": "17 // 5 is floor division and gives 3; 17 % 5 is the remainder and gives 2; 3 + 2 = 5.",
+    "rationale": {
+      "A": "Correct. Floor division gives 3 and the remainder is 2, so the sum is 5.",
+      "B": "Incorrect. This treats // as true division (17 / 5 = 3.4) before adding the remainder 2.",
+      "C": "Incorrect. This is just 17 / 5 and ignores the % term.",
+      "D": "Incorrect. This is only the remainder 17 % 5 and ignores the floor-division term."
+    },
+    "verify": "return Math.floor(17/5) + 17%5;",
+    "numericAnswer": 5,
+    "tolerance": 0.001,
+    "tags": ["operators"]
+  },
+  {
+    "id": "q-py-variables-types-and-operators-2",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "variables-types-and-operators",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An analyst stores a yield as `ret = 0.0425` and writes `print(f\"{ret * 100:.2%}\")`. What is printed?",
+    "options": [
+      "4.25%",
+      "0.04%",
+      "425.00%",
+      "42.50%"
+    ],
+    "answer": "C",
+    "explanation": "The % format specifier already multiplies by 100. Multiplying by 100 first gives 4.25, which is then shown as 425.00%.",
+    "rationale": {
+      "A": "Incorrect. This is what `f\"{ret:.2%}\"` would print; the extra * 100 scales the value twice.",
+      "B": "Incorrect. This would be the display of 0.0425 with an f format and two decimals, not the % format.",
+      "C": "Correct. 0.0425 × 100 = 4.25, and the % specifier multiplies by 100 again: 425.00%.",
+      "D": "Incorrect. This corresponds to a single extra factor of 10, which neither step produces."
+    },
+    "verify": "return 0.0425*100*100;",
+    "numericAnswer": 425,
+    "tolerance": 0.005,
+    "tags": ["f-strings", "formatting"]
+  },
+  {
+    "id": "q-py-variables-types-and-operators-3",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "variables-types-and-operators",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A reconciliation script checks whether two computed cash balances `a` and `b` (both floats) are equal. Which test is the most reliable?",
+    "options": [
+      "a == b",
+      "a is b",
+      "str(a) == str(b)",
+      "math.isclose(a, b, abs_tol=1e-9)"
+    ],
+    "answer": "D",
+    "explanation": "Floats carry tiny binary rounding errors (0.1 + 0.2 is 0.30000000000000004), so equality should be tested within a tolerance.",
+    "rationale": {
+      "A": "Incorrect. Exact equality fails when tiny representation errors differ, e.g. 0.1 + 0.2 == 0.3 is False.",
+      "B": "Incorrect. `is` tests whether two names point to the same object in memory, not whether values are equal.",
+      "C": "Incorrect. The string forms carry the same tiny differences ('0.30000000000000004' vs '0.3'), so this fails too.",
+      "D": "Correct. isclose compares within a tolerance, which absorbs floating-point noise."
+    },
+    "tags": ["floating-point", "comparison"]
+  },
+  {
+    "id": "q-py-variables-types-and-operators-4",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "variables-types-and-operators",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A position has `pnl = -250`. What does `print(pnl // 100)` output?",
+    "options": [
+      "-2",
+      "-3",
+      "-2.5",
+      "2"
+    ],
+    "answer": "B",
+    "explanation": "Floor division rounds towards minus infinity. -250 / 100 = -2.5, and the floor of -2.5 is -3.",
+    "rationale": {
+      "A": "Incorrect. This rounds towards zero (truncation); Python's // rounds down, towards minus infinity.",
+      "B": "Correct. floor(-2.5) = -3.",
+      "C": "Incorrect. This is the result of true division `/`, not floor division `//`.",
+      "D": "Incorrect. The sign is lost here; a negative numerator with a positive divisor gives a negative result."
+    },
+    "verify": "return Math.floor(-250/100);",
+    "numericAnswer": -3,
+    "tolerance": 0.001,
+    "tags": ["operators", "floor-division"]
+  }
+]

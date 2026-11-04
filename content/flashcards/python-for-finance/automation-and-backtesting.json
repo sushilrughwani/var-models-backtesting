@@ -1,0 +1,33 @@
+[
+  {
+    "id": "fc-py-bt-001",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "front": "Trap: how do you avoid look-ahead bias when backtesting a signal in pandas?",
+    "back": "Shift the position so today's signal trades on the next bar: `strat = signal.shift(1) * returns`. Using `signal * returns` earns returns the signal could not have known in advance.",
+    "tags": [
+      "backtesting",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-py-bt-002",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "front": "Name three biases that make backtests look better than live results.",
+    "back": "Survivorship bias (testing only firms that still exist), ignoring transaction costs and slippage, and overfitting parameters to the historical sample (data snooping).",
+    "tags": [
+      "backtesting"
+    ]
+  },
+  {
+    "id": "fc-py-bt-003",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "front": "How can you write several DataFrames to one Excel report from Python?",
+    "back": "Use `with pd.ExcelWriter('report.xlsx') as w:` and call `df.to_excel(w, sheet_name='Summary')` for each sheet (requires an engine such as openpyxl). Schedule the script with cron or Task Scheduler.",
+    "tags": [
+      "automation"
+    ]
+  }
+]

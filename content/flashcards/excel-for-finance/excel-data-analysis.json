@@ -1,0 +1,53 @@
+[
+  {
+    "id": "fc-xl-da-001",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "front": "What are the main benefits of converting data to an Excel Table (Ctrl+T)?",
+    "back": "Formulas and charts that refer to it expand automatically as rows are added, and structured references such as `=SUM(Sales[Amount])` are easier to read than cell ranges.",
+    "tags": [
+      "tables"
+    ]
+  },
+  {
+    "id": "fc-xl-da-002",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "front": "Trap: you change the source data of a PivotTable. Why do the totals not change?",
+    "back": "PivotTables do not recalculate automatically. You must Refresh (Data > Refresh All), and if new rows fall outside the source range, update the range or base it on a Table.",
+    "tags": [
+      "pivot-tables",
+      "trap"
+    ]
+  },
+  {
+    "id": "fc-xl-da-003",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "front": "What does a two-variable Data Table do?",
+    "back": "It recalculates one output formula for every combination of two inputs, using a row input cell and a column input cell. The input cells must be on the same sheet as the table.",
+    "tags": [
+      "what-if"
+    ]
+  },
+  {
+    "id": "fc-xl-da-004",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "front": "How does Goal Seek differ from Solver?",
+    "back": "Goal Seek changes a single input cell until one formula hits a target value. Solver can change many cells and optimize an objective subject to constraints.",
+    "tags": [
+      "what-if"
+    ]
+  },
+  {
+    "id": "fc-xl-da-005",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "front": "Which built-in tools help audit a formula's logic?",
+    "back": "Trace Precedents and Trace Dependents draw arrows between linked cells, Evaluate Formula steps through a calculation, and Ctrl+` toggles showing formulas instead of values.",
+    "tags": [
+      "auditing"
+    ]
+  }
+]
