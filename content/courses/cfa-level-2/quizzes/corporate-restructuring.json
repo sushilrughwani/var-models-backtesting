@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa2-corporate-restructuring-1",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "corporate-restructuring",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Before any rumours, a target's shares traded at USD 32. Takeover speculation pushed the price to USD 36 the day before a formal cash offer of USD 41.60 per share was announced. The takeover premium is closest to:",
+    "options": ["15.56%", "30.00%", "23.08%"],
+    "answer": "B",
+    "explanation": "Premium is measured against the unaffected price: (41.60 − 32) / 32 = 30.00%.",
+    "rationale": {
+      "A": "Incorrect. 15.56% uses the rumour-inflated price of 36, which already embeds part of the premium.",
+      "B": "Correct. (41.60 − 32) / 32 = 30.00%.",
+      "C": "Incorrect. 23.08% divides the premium of 9.60 by the offer price instead of the unaffected price."
+    },
+    "verify": "return (41.6-32)/32*100;",
+    "numericAnswer": 30.0,
+    "tolerance": 0.005,
+    "tags": ["takeover-premium"]
+  },
+  {
+    "id": "q-cfa2-corporate-restructuring-2",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "corporate-restructuring",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An acquirer has net income of USD 150 million, 50 million shares and a share price of USD 60. It offers USD 15 per share, paid entirely in its own stock at the current price, for all 25 million shares of a target earning USD 20 million. Ignoring synergies, the combined company's EPS is closest to:",
+    "options": ["USD 3.40", "USD 2.27", "USD 3.02"],
+    "answer": "C",
+    "explanation": "Shares issued = (15 × 25m) / 60 = 6.25m. Combined EPS = (150 + 20) / (50 + 6.25) = 3.02, up from 3.00 because the acquirer's P/E of 20 exceeds the 18.75 P/E it pays.",
+    "rationale": {
+      "A": "Incorrect. 3.40 = 170 / 50 ignores the new shares issued to target shareholders.",
+      "B": "Incorrect. 2.27 = 170 / 75 assumes one acquirer share is issued per target share instead of using the exchange ratio.",
+      "C": "Correct. 170 / 56.25 = 3.02."
+    },
+    "verify": "const issued=15*25/60; return (150+20)/(50+issued);",
+    "numericAnswer": 3.02,
+    "tolerance": 0.005,
+    "tags": ["eps-accretion", "mergers"]
+  },
+  {
+    "id": "q-cfa2-corporate-restructuring-3",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "corporate-restructuring",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A target has a standalone market value of USD 400 million. An acquirer pays USD 460 million in cash for it and expects synergies with a present value of USD 100 million. The gain to the acquirer's shareholders (in USD millions) is closest to:",
+    "options": ["40", "60", "100"],
+    "answer": "A",
+    "explanation": "Premium = 460 − 400 = 60. Acquirer gain = synergies − premium = 100 − 60 = 40.",
+    "rationale": {
+      "A": "Correct. Synergies of 100 less the 60 premium paid = 40.",
+      "B": "Incorrect. 60 is the premium, which is the target shareholders' gain.",
+      "C": "Incorrect. 100 is total synergies; it ignores the premium paid away to the target."
+    },
+    "verify": "return 100-(460-400);",
+    "numericAnswer": 40,
+    "tolerance": 0.5,
+    "tags": ["merger-gains"]
+  },
+  {
+    "id": "q-cfa2-corporate-restructuring-4",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "corporate-restructuring",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A parent company wants to separate a fast-growing software unit, raise cash for itself and keep majority control of the unit. The structure that best meets all three goals is:",
+    "options": ["a spin-off", "an equity carve-out", "a split-off"],
+    "answer": "B",
+    "explanation": "In an equity carve-out the parent sells a minority stake in the subsidiary through an IPO, raising cash while retaining control.",
+    "rationale": {
+      "A": "Incorrect. A spin-off distributes subsidiary shares pro rata to existing shareholders and raises no cash.",
+      "B": "Correct. Selling a minority stake to the public raises cash and keeps control.",
+      "C": "Incorrect. A split-off exchanges subsidiary shares for parent shares; it raises no cash and typically gives up the unit."
+    },
+    "tags": ["divestitures"]
+  }
+]

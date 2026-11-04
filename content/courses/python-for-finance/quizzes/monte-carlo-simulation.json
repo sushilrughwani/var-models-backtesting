@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-py-monte-carlo-simulation-1",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "monte-carlo-simulation",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A stock follows GBM with S0 = 50, expected return μ = 10% and volatility σ = 30%. The theoretical median price after T = 2 years, which a large simulation's np.median(ST) should approach, is closest to:",
+    "options": ["61.07", "51.01", "55.81", "52.83"],
+    "answer": "C",
+    "explanation": "Median = S0 × exp((μ − σ²/2)T) = 50 × exp((0.10 − 0.045) × 2) = 50 × e^0.11 = 55.81.",
+    "rationale": {
+      "A": "Incorrect. 61.07 is the mean, 50 × e^(0.10 × 2); the median removes the volatility drag.",
+      "B": "Incorrect. 51.01 subtracts the full σ² (0.09) instead of σ²/2.",
+      "C": "Correct. 50 × e^0.11 = 55.81.",
+      "D": "Incorrect. 52.83 uses the correct drift but forgets to multiply by T = 2."
+    },
+    "verify": "return 50*Math.exp((0.10-0.5*0.3*0.3)*2);",
+    "numericAnswer": 55.81,
+    "tolerance": 0.005,
+    "tags": ["gbm", "lognormal"]
+  },
+  {
+    "id": "q-py-monte-carlo-simulation-2",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "monte-carlo-simulation",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A simulation with 10,000 paths gives a standard error of 0.20 for the mean terminal price. Roughly how many paths are needed to cut the standard error to 0.05?",
+    "options": ["160,000", "40,000", "20,000", "2,500"],
+    "answer": "A",
+    "explanation": "SE = s / √N. Cutting SE by a factor of 4 requires N to rise by 4² = 16: 10,000 × 16 = 160,000.",
+    "rationale": {
+      "A": "Correct. The error falls with √N, so a 4× smaller error needs 16× more paths.",
+      "B": "Incorrect. 40,000 assumes the error falls in proportion to N rather than √N.",
+      "C": "Incorrect. 20,000 merely doubles the paths, which only cuts the error by a factor of about 1.41.",
+      "D": "Incorrect. 2,500 reduces the number of paths, which would increase the error."
+    },
+    "verify": "return 10000*Math.pow(0.20/0.05,2);",
+    "numericAnswer": 160000,
+    "tolerance": 1,
+    "tags": ["standard-error"]
+  },
+  {
+    "id": "q-py-monte-carlo-simulation-3",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "monte-carlo-simulation",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "In an exact GBM step, S = 100, μ = 5%, σ = 25%, Δt = 0.25 years and the standard normal draw is Z = 1.2. The next simulated price S × exp((μ − σ²/2)Δt + σ√Δt Z) is closest to:",
+    "options": ["108.29", "117.64", "137.54", "116.73"],
+    "answer": "D",
+    "explanation": "Drift = (0.05 − 0.03125) × 0.25 = 0.0046875. Shock = 0.25 × 0.5 × 1.2 = 0.15. S = 100 × e^0.1546875 = 116.73.",
+    "rationale": {
+      "A": "Incorrect. 108.29 scales the shock by Δt (0.25) instead of √Δt (0.5).",
+      "B": "Incorrect. 117.64 omits the −σ²/2 volatility-drag term from the drift.",
+      "C": "Incorrect. 137.54 ignores Δt altogether, applying a full year's drift and shock.",
+      "D": "Correct. 100 × exp(0.0046875 + 0.15) = 116.73."
+    },
+    "verify": "const dt=0.25; return 100*Math.exp((0.05-0.5*0.25*0.25)*dt+0.25*Math.sqrt(dt)*1.2);",
+    "numericAnswer": 116.73,
+    "tolerance": 0.005,
+    "tags": ["gbm", "discretisation"]
+  },
+  {
+    "id": "q-py-monte-carlo-simulation-4",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "monte-carlo-simulation",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "ST is a NumPy array of 10,000 simulated terminal prices. What does (ST < 90).mean() return?",
+    "options": ["The average price of paths that end below 90", "The estimated probability that the price ends below 90", "The number of paths that end below 90", "The 90th percentile of the simulated prices"],
+    "answer": "B",
+    "explanation": "ST < 90 creates a Boolean array; True counts as 1 and False as 0, so its mean is the fraction of paths below 90, an estimate of the probability.",
+    "rationale": {
+      "A": "Incorrect. That would be ST[ST < 90].mean(), which filters prices before averaging.",
+      "B": "Correct. The mean of a Boolean array is the share of True values.",
+      "C": "Incorrect. The count would be (ST < 90).sum().",
+      "D": "Incorrect. The 90th percentile is np.percentile(ST, 90)."
+    },
+    "tags": ["numpy", "probability"]
+  }
+]

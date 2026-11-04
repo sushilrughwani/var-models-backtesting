@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-digital-assets-risk-1",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "digital-assets-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A trader deposits 5 ETH into a DeFi lending protocol when ETH trades at USD 2,400 and borrows USD 7,200 of stablecoins. The protocol's liquidation threshold is 82.5%. The ETH price at which the position becomes eligible for liquidation is closest to:",
+    "options": ["USD 1,440.00", "USD 1,980.00", "USD 1,745.45", "USD 1,920.00"],
+    "answer": "C",
+    "explanation": "Liquidation occurs when the health factor falls to 1: P = debt / (units × LT) = 7,200 / (5 × 0.825) = USD 1,745.45, a fall of about 27% from USD 2,400.",
+    "rationale": {
+      "A": "Incorrect. 1,440 divides the debt by the number of ETH and ignores the liquidation threshold.",
+      "B": "Incorrect. 1,980 is simply 82.5% of the current price, which ignores the size of the debt.",
+      "C": "Correct. 7,200 / (5 × 0.825) = 1,745.45.",
+      "D": "Incorrect. 1,920 uses a 75% threshold instead of the stated 82.5%."
+    },
+    "verify": "return 7200/(5*0.825);",
+    "numericAnswer": 1745.45,
+    "tolerance": 0.01,
+    "tags": ["defi-lending", "liquidation"]
+  },
+  {
+    "id": "q-frm2-digital-assets-risk-2",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "digital-assets-risk",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which type of stablecoin is most vulnerable to a self-reinforcing collapse in which redemptions cause the issuance of more companion tokens, driving their price and market confidence lower?",
+    "options": [
+      "Algorithmic stablecoins",
+      "Fiat-backed stablecoins fully reserved in short-dated government bills",
+      "Crypto-collateralised stablecoins with 150% overcollateralisation",
+      "Tokenised bank deposits"
+    ],
+    "answer": "A",
+    "explanation": "Algorithmic stablecoins rely on minting and burning a companion token rather than on external reserves. Redemptions dilute the companion token, which erodes confidence further: a death spiral.",
+    "rationale": {
+      "A": "Correct. The mint-and-burn mechanism with little collateral is what makes the death spiral possible.",
+      "B": "Incorrect. High-quality reserves can meet redemptions, although operational and run risk remain.",
+      "C": "Incorrect. These are exposed to collateral price falls and liquidations, but overcollateralisation provides a buffer and there is no mint-and-burn dilution loop.",
+      "D": "Incorrect. Tokenised deposits are claims on a regulated bank and carry the underlying deposit's risk."
+    },
+    "tags": ["stablecoins", "run-risk"]
+  },
+  {
+    "id": "q-frm2-digital-assets-risk-3",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "digital-assets-risk",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A constant-product automated market maker pool holds 200 ETH and 500,000 USDC. Ignoring fees, how many USDC must a trader pay to buy 20 ETH from the pool?",
+    "options": ["50,000.00", "55,555.56", "45,454.55", "61,728.40"],
+    "answer": "B",
+    "explanation": "k = 200 × 500,000 = 100,000,000. After the trade the pool holds 180 ETH, so it must hold 100,000,000 / 180 = 555,555.56 USDC. The trader pays 555,555.56 − 500,000 = 55,555.56 USDC (average price 2,777.78 versus 2,500 before).",
+    "rationale": {
+      "A": "Incorrect. 50,000 assumes the trade executes at the pre-trade price of 2,500, ignoring slippage.",
+      "B": "Correct. Keeping x × y constant requires 55,555.56 USDC.",
+      "C": "Incorrect. 45,454.55 is what a trader would receive for selling 20 ETH into the pool (500,000 − 100,000,000/220).",
+      "D": "Incorrect. 61,728.40 applies the post-trade marginal price of 3,086.42 to all 20 ETH."
+    },
+    "verify": "const k=200*500000; return k/180-500000;",
+    "numericAnswer": 55555.56,
+    "tolerance": 0.01,
+    "tags": ["amm", "slippage"]
+  },
+  {
+    "id": "q-frm2-digital-assets-risk-4",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "digital-assets-risk",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A bank is considering a direct holding of an unbacked crypto asset that does not qualify for hedging recognition. Under the Basel prudential framework for cryptoasset exposures, how is this exposure most likely treated?",
+    "options": [
+      "As a Group 1a tokenised traditional asset with the same risk weight as a corporate bond",
+      "As a Group 1b stablecoin with the risk weight of its reserve assets",
+      "As an ordinary equity holding with a 100% risk weight",
+      "As a Group 2 exposure with a 1,250% risk weight, subject to a cap on total Group 2 exposure relative to Tier 1 capital"
+    ],
+    "answer": "D",
+    "explanation": "Unbacked crypto assets fall into Group 2. Those that do not meet the hedging recognition criteria receive a 1,250% risk weight, so capital roughly equals the exposure, and aggregate Group 2 exposure is limited relative to Tier 1 capital.",
+    "rationale": {
+      "A": "Incorrect. Group 1a covers tokenised versions of traditional assets, not unbacked crypto.",
+      "B": "Incorrect. Group 1b is for stablecoins that pass strict stabilisation and redemption tests.",
+      "C": "Incorrect. Crypto assets are not treated as ordinary equity; the framework is far more punitive.",
+      "D": "Correct. This is the treatment for the riskiest Group 2 exposures."
+    },
+    "tags": ["basel-crypto", "prudential-treatment"]
+  }
+]

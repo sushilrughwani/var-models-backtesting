@@ -31,13 +31,13 @@ $$
 where $F$ is the forward rate, $S$ the spot rate, $i_P$ the price-currency interest rate and $i_B$ the base-currency rate. The currency with the **higher** interest rate trades at a forward **discount**. Forward points are $(F - S)$ scaled by 10,000 for most pairs.
 
 ### Uncovered interest parity and the carry trade
-Uncovered interest parity (UIP) says the **expected** spot rate equals today's forward rate, so the high-yield currency is expected to depreciate by exactly the interest differential. There is no arbitrage enforcing it, and in practice UIP fails over short horizons: high-yield currencies often hold steady or even appreciate. The **carry trade** exploits this by borrowing a low-yield (funding) currency and investing in a high-yield (investment) currency:
+Uncovered interest parity (UIP) says the **expected** spot rate equals today's forward rate, so the high-yield currency is expected to depreciate by exactly the interest differential. Nothing enforces it, and it fails over short horizons: high-yield currencies often hold steady or appreciate. The **carry trade** exploits this by borrowing a low-yield (funding) currency and investing in a high-yield (investment) currency:
 
 $$
 R_{carry} = (1 + i_H)(1 + \%\Delta S_{H}) - (1 + i_L)
 $$
 
-where $i_H$ is the investment rate, $i_L$ the funding rate and $\%\Delta S_H$ the change in the value of the investment currency against the funding currency. Returns are typically small and steady but negatively skewed: in a risk-off panic, investors unwind together and the high-yield currency can collapse, wiping out years of carry. This is often described as "picking up coins in front of a steamroller."
+where $i_H$ is the investment rate, $i_L$ the funding rate and $\%\Delta S_H$ the change in the value of the investment currency against the funding currency. Returns are typically small and steady but negatively skewed: in a risk-off panic, investors unwind together and the high-yield currency can collapse, wiping out years of carry.
 
 ### PPP, Fisher and real interest rate parity
 - **Relative PPP**: the expected change in the spot rate equals the inflation differential. It holds poorly in the short run but is a useful long-run anchor.
@@ -48,8 +48,8 @@ where $i_H$ is the investment rate, $i_L$ the funding rate and $\%\Delta S_H$ th
 - **Balance of payments**: persistent current account deficits put long-run pressure on a currency, but capital flows dominate in the short run. Surges of capital inflows into emerging markets can cause appreciation followed by sharp reversals.
 - **Mundell-Fleming (short run, open economy)**: with high capital mobility, expansionary fiscal policy plus restrictive monetary policy pushes rates up and causes strong appreciation. Expansionary monetary policy plus restrictive fiscal policy causes depreciation. With low capital mobility, trade flows matter more, so fiscal expansion tends to weaken the currency.
 - **Portfolio balance (long run)**: sustained fiscal deficits must be financed by investors who eventually demand higher returns, so the currency can weaken in the long run even if it rose initially.
-- **Monetary approach**: faster money supply growth leads to higher inflation and depreciation. Dornbusch overshooting says the currency first depreciates beyond its long-run PPP level because goods prices are sticky.
-- **Intervention and capital controls**: central banks of small economies with large reserves can lean against flows, but intervention rarely changes the trend for major currencies.
+- **Monetary approach**: faster money supply growth leads to higher inflation and depreciation. Dornbusch overshooting: with sticky goods prices, the currency first falls past its long-run PPP level.
+- **Intervention**: small economies with large reserves can lean against flows; for major currencies it rarely changes the trend.
 
 ## Worked example
 Spot USD/EUR is 1.1000. The 180-day USD rate is 4.5% and the EUR rate is 2.5% (360-day basis). Find the 180-day forward rate and forward points.
