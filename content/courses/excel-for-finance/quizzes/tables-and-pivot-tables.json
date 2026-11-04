@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-xl-tables-and-pivot-tables-1",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "tables-and-pivot-tables",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In a calculated column of a table named `Trades`, the formula `=[@Notional]*[@FeeBps]/10` is entered. What does `[@Notional]` refer to?",
+    "options": ["The Notional value in the same row as the formula", "The entire Notional column of the table", "The header cell of the Notional column", "The total row of the Notional column"],
+    "answer": "A",
+    "explanation": "The @ symbol means 'this row'. `[@Notional]` returns the current row's Notional value, which is why one formula works for every row of a calculated column.",
+    "rationale": {
+      "A": "Correct. The @ prefix restricts the reference to the current row.",
+      "B": "Incorrect. The whole column is written `Trades[Notional]`, without the @.",
+      "C": "Incorrect. Headers are referenced with `Trades[[#Headers],[Notional]]`.",
+      "D": "Incorrect. The total row is referenced with `Trades[[#Totals],[Notional]]`."
+    },
+    "tags": ["structured-references"]
+  },
+  {
+    "id": "q-xl-tables-and-pivot-tables-2",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "tables-and-pivot-tables",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A pivot table of fees (USD thousands) shows: Credit 34.6, FX 8.1, Rates 23.5. The notional (USD m) by desk is Credit 25, FX 24, Rates 29, and the desks have 3, 2 and 3 trades respectively. If Fee is shown as '% of Grand Total', what does the Credit row display?",
+    "options": ["32.05%", "37.50%", "52.27%", "33.33%"],
+    "answer": "C",
+    "explanation": "Grand total fees = 34.6 + 8.1 + 23.5 = 66.2. Credit share = 34.6 / 66.2 = 52.27%.",
+    "rationale": {
+      "A": "Incorrect. 32.05% is Credit's share of notional (25 / 78), not of fees.",
+      "B": "Incorrect. 37.50% is Credit's share of the trade count (3 / 8).",
+      "C": "Correct. 34.6 / 66.2 = 52.27%.",
+      "D": "Incorrect. 33.33% assumes each of the three desks has an equal share."
+    },
+    "verify": "return 34.6/(34.6+8.1+23.5)*100;",
+    "numericAnswer": 52.27,
+    "tolerance": 0.005,
+    "tags": ["pivot-tables", "show-values-as"]
+  },
+  {
+    "id": "q-xl-tables-and-pivot-tables-3",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "tables-and-pivot-tables",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst corrects several fee amounts in the source table, but the pivot table built from it still shows the old totals. What should the analyst do?",
+    "options": ["Press F9 to recalculate the workbook", "Rebuild the pivot from scratch, because pivots cannot be updated", "Convert the source table back to a normal range", "Refresh the pivot table, for example with Alt+F5 or Refresh All"],
+    "answer": "D",
+    "explanation": "Pivot tables store a cache of the source data and do not recalculate with ordinary formulas. Refresh (Alt+F5) or Refresh All (Ctrl+Alt+F5) reloads the cache.",
+    "rationale": {
+      "A": "Incorrect. F9 recalculates formulas but does not refresh a pivot cache.",
+      "B": "Incorrect. Pivots can be refreshed at any time; rebuilding is unnecessary.",
+      "C": "Incorrect. Converting the table to a range would make things worse, since new rows would no longer be picked up automatically.",
+      "D": "Correct. Refreshing reloads the pivot's cache from the corrected source data."
+    },
+    "tags": ["pivot-tables", "refresh"]
+  },
+  {
+    "id": "q-xl-tables-and-pivot-tables-4",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "tables-and-pivot-tables",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Eight trades have notionals (USD m) of 12, 8, 15, 10, 6, 9, 7 and 11 with fees of 8, 15, 3, 9, 12, 4, 7 and 14 basis points respectively. A pivot's 'Average of FeeBps' shows 9.00. What is the notional-weighted average fee in basis points?",
+    "options": ["9.00", "8.49", "0.85", "66.20"],
+    "answer": "B",
+    "explanation": "Weighted average = Σ(notional × bps) / Σ notional = 662 / 78 = 8.49 bps. The pivot's 9.00 is a simple average that gives the small 15 bps trade as much weight as the 15 million trade at 3 bps.",
+    "rationale": {
+      "A": "Incorrect. 9.00 is the unweighted average of the eight fee rates.",
+      "B": "Correct. 662 / 78 = 8.49 bps.",
+      "C": "Incorrect. 0.85 confuses units by dividing total fees in thousands (66.2) by total notional (78); multiply by 10 to express it in basis points.",
+      "D": "Incorrect. 66.20 is the total fee in USD thousands, not a rate."
+    },
+    "verify": "const n=[12,8,15,10,6,9,7,11], b=[8,15,3,9,12,4,7,14]; let s=0,t=0; for(let i=0;i<8;i++){s+=n[i]*b[i];t+=n[i];} return s/t;",
+    "numericAnswer": 8.49,
+    "tolerance": 0.005,
+    "tags": ["weighted-average", "pivot-tables"]
+  }
+]

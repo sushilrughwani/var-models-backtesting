@@ -103,17 +103,17 @@ Notice the round trip: pricing at 5% and then solving for YTM recovers exactly 5
 
 ## Worked example
 **Part 1: project NPV and IRR.** A project costs 1,000 today and returns 300, 400 and 500 at the end of years 1-3. Discount rate 8%.
-1. PV of year 1: 300 / 1.08 = 277.78.
-2. PV of year 2: 400 / 1.08² = 342.94.
-3. PV of year 3: 500 / 1.08³ = 396.92.
-4. NPV = −1,000 + 277.78 + 342.94 + 396.92 = **17.63**. Positive, so accept.
+1. PV of year 1: 300 / 1.08 = 277.7778.
+2. PV of year 2: 400 / 1.08² = 342.9355.
+3. PV of year 3: 500 / 1.08³ = 396.9161.
+4. NPV = −1,000 + 277.7778 + 342.9355 + 396.9161 = **17.63**. Positive, so accept.
 5. `brentq` finds the IRR at **8.8963%**, above the 8% hurdle, which agrees with the positive NPV.
 
 **Part 2: bond price and duration.** 5-year annual-pay bond, face 100, 6% coupon, YTM 5%.
 1. Coupons of 6 discounted: 5.7143, 5.4422, 5.1830, 4.9362.
 2. Final payment 106 / 1.05⁵ = 83.0538.
 3. Price = sum = **104.3295**. The bond trades above par because its coupon (6%) beats the yield (5%).
-4. Macaulay duration is 4.4778 years; modified duration = 4.4778 / 1.05 = 4.2645.
+4. Macaulay duration is 4.47775 years; modified duration = 4.47775 / 1.05 = 4.2645.
 5. Duration estimate for a +1% yield move: −4.2645 × 0.01 × 104.3295 = −4.4492. Full repricing at 6% gives exactly 100, a change of −4.3295. The estimate is too pessimistic because of convexity: the true price-yield curve bends upward.
 
 ## Common exam traps
