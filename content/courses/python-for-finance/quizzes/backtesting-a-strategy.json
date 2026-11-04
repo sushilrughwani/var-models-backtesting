@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-py-backtesting-a-strategy-1",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "lesson": "backtesting-a-strategy",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A strategy's wealth path is 100, 130, 91, 120, 140, 119. What does (wealth / wealth.cummax() - 1).min() return, expressed as a percentage?",
+    "options": ["-9.00%", "-30.00%", "-15.00%", "-42.86%"],
+    "answer": "B",
+    "explanation": "The running peak is 130 when wealth falls to 91: 91/130 − 1 = −30%. The later fall from 140 to 119 is only −15%.",
+    "rationale": {
+      "A": "Incorrect. −9.00% measures the fall from the starting value (91/100 − 1) instead of from the running peak.",
+      "B": "Correct. The deepest peak-to-trough fall is 130 → 91, or −30.00%.",
+      "C": "Incorrect. −15.00% is the most recent drawdown (140 → 119), not the worst one.",
+      "D": "Incorrect. 42.86% is the gain needed to recover from 91 back to 130 (130/91 − 1), not the drawdown."
+    },
+    "verify": "const w=[100,130,91,120,140,119]; let pk=-Infinity, m=0; for(const x of w){pk=Math.max(pk,x); m=Math.min(m,x/pk-1);} return m*100;",
+    "numericAnswer": -30.0,
+    "tolerance": 0.005,
+    "tags": ["max-drawdown"]
+  },
+  {
+    "id": "q-py-backtesting-a-strategy-2",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "lesson": "backtesting-a-strategy",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A backtest turns 100 into 250 over exactly 8 years. The compound annual growth rate (CAGR) is closest to:",
+    "options": ["18.75%", "11.45%", "12.14%", "31.25%"],
+    "answer": "C",
+    "explanation": "CAGR = (250/100)^(1/8) − 1 = 2.5^0.125 − 1 = 12.14%.",
+    "rationale": {
+      "A": "Incorrect. 18.75% divides the 150% total return by 8 years, ignoring compounding.",
+      "B": "Incorrect. 11.45% is the continuously compounded rate, ln(2.5)/8, not the annual compound rate.",
+      "C": "Correct. 2.5^(1/8) − 1 = 12.14%.",
+      "D": "Incorrect. 31.25% divides the ending multiple 2.5 by 8."
+    },
+    "verify": "return (Math.pow(250/100,1/8)-1)*100;",
+    "numericAnswer": 12.14,
+    "tolerance": 0.005,
+    "tags": ["cagr"]
+  },
+  {
+    "id": "q-py-backtesting-a-strategy-3",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "lesson": "backtesting-a-strategy",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Before costs, a strategy's daily returns have a mean of 0.05% and a standard deviation of 0.8%. It makes 20 round trips a year and pays 10 bp per side (so 0.40% a year in costs, spread evenly over 252 days). Assuming costs do not change volatility and the risk-free rate is zero, its annualised Sharpe ratio after costs is closest to:",
+    "options": ["0.96", "0.99", "0.98", "15.25"],
+    "answer": "A",
+    "explanation": "Daily cost = 0.004/252 = 0.0000159. Net mean = 0.0005 − 0.0000159 = 0.000484. Sharpe = 0.000484 / 0.008 × √252 = 0.96.",
+    "rationale": {
+      "A": "Correct. Costs reduce the mean return; annualising with √252 gives 0.96.",
+      "B": "Incorrect. 0.99 ignores transaction costs entirely.",
+      "C": "Incorrect. 0.98 charges only one side of each round trip (0.20% a year).",
+      "D": "Incorrect. 15.25 annualises the daily ratio by 252 instead of √252."
+    },
+    "verify": "const m=0.0005-0.004/252; return m/0.008*Math.sqrt(252);",
+    "numericAnswer": 0.96,
+    "tolerance": 0.005,
+    "tags": ["sharpe-ratio", "transaction-costs"]
+  },
+  {
+    "id": "q-py-backtesting-a-strategy-4",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "lesson": "backtesting-a-strategy",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In a pandas backtest, why is the position set to df[\"signal\"].shift(1) rather than df[\"signal\"]?",
+    "options": ["To reduce transaction costs by trading less often", "To align daily returns with month-end dates", "To remove the 200-day warm-up period", "Because a signal computed from today's close can only be traded from the next period, so using it on today's return is look-ahead bias"],
+    "answer": "D",
+    "explanation": "The signal uses today's closing price, which is only known at the close. Applying it to today's return assumes you traded before you knew it.",
+    "rationale": {
+      "A": "Incorrect. Shifting does not change the number of trades; it only delays them by one day.",
+      "B": "Incorrect. shift(1) moves values by one row; it has nothing to do with month-end alignment.",
+      "C": "Incorrect. The warm-up is removed separately (for example with df.iloc[slow:]).",
+      "D": "Correct. Lagging the signal prevents the strategy from using information it could not have had."
+    },
+    "tags": ["look-ahead-bias"]
+  }
+]

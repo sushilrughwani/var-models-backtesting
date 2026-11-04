@@ -109,7 +109,9 @@ ax.set_xticks(range(len(corr)), corr.columns)
 ax.set_yticks(range(len(corr)), corr.columns)
 for i in range(len(corr)):
     for j in range(len(corr)):
-        ax.text(j, i, f"{corr.iloc[i, j]:.2f}", ha="center", va="center")
+        v = corr.iloc[i, j]
+        ax.text(j, i, f"{v:.2f}", ha="center", va="center",
+                color="white" if abs(v) > 0.5 else "black")   # readable on dark cells
 fig.colorbar(im, ax=ax)
 fig.savefig("corr.png", bbox_inches="tight")
 ```
@@ -153,7 +155,7 @@ print(drawdown.round(4).tolist())
 fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=(7, 5))
 ax1.plot(wealth); ax1.set_title("Growth of 1")
 ax2.fill_between(drawdown.index, drawdown, 0, color="tab:red")
-ax2.set_title("Drawdown")
+ax2.set_title("Drawdown"); ax2.set_xlabel("Day")
 fig.tight_layout()
 fig.savefig("wealth.png")
 ```

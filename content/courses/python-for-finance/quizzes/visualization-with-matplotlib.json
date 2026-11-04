@@ -1,0 +1,104 @@
+[
+  {
+    "id": "q-py-visualization-with-matplotlib-1",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "visualization-with-matplotlib",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "You are plotting a correlation matrix as a heatmap with `ax.imshow`. Which colour setting is most appropriate?",
+    "options": [
+      "cmap=\"jet\" with the default colour limits",
+      "A diverging map such as cmap=\"RdBu_r\" with vmin=-1 and vmax=1",
+      "A single-hue sequential map such as cmap=\"Blues\" with the default colour limits",
+      "Random colours for each cell so that every value is distinct"
+    ],
+    "answer": "B",
+    "explanation": "Correlations are signed with a meaningful zero, so a diverging map (two hues, neutral midpoint) fixed at -1 to +1 makes colours comparable across charts.",
+    "rationale": {
+      "A": "Incorrect. Rainbow maps like jet create false visual boundaries, and default limits stretch to the data range.",
+      "B": "Correct. Diverging colours show sign, and fixed limits keep the colour meaning stable.",
+      "C": "Incorrect. A sequential map suits magnitudes from low to high, not signed values centred on zero.",
+      "D": "Incorrect. Random colours carry no ordering, so the reader cannot judge strength or sign."
+    },
+    "tags": ["matplotlib", "heatmap", "correlation"]
+  },
+  {
+    "id": "q-py-visualization-with-matplotlib-2",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "visualization-with-matplotlib",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Daily returns range from a minimum of -0.04 to a maximum of 0.06. If you call `ax.hist(r, bins=20)`, what is the width of each bin?",
+    "options": [
+      "0.003",
+      "0.0025",
+      "0.005",
+      "0.001"
+    ],
+    "answer": "C",
+    "explanation": "matplotlib splits the range from the minimum to the maximum into equal bins: (0.06 − (−0.04)) / 20 = 0.10 / 20 = 0.005.",
+    "rationale": {
+      "A": "Incorrect. This uses only the maximum (0.06 / 20), ignoring the negative side of the range.",
+      "B": "Incorrect. This divides the range by 40, twice the number of bins.",
+      "C": "Correct. The range is 0.10 and there are 20 bins, so each is 0.005 wide.",
+      "D": "Incorrect. This subtracts the absolute values (0.06 − 0.04 = 0.02) before dividing by 20, rather than taking max − min."
+    },
+    "verify": "return (0.06-(-0.04))/20;",
+    "numericAnswer": 0.005,
+    "tolerance": 0.00001,
+    "tags": ["matplotlib", "histogram"]
+  },
+  {
+    "id": "q-py-visualization-with-matplotlib-3",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "visualization-with-matplotlib",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A strategy has daily returns +5%, -10%, +4%, -3% and +8%. Using `wealth = (1 + r).cumprod()` and `dd = wealth / wealth.cummax() - 1`, what is the maximum drawdown, `dd.min()`?",
+    "options": [
+      "-13.00%",
+      "-5.50%",
+      "-9.21%",
+      "-10.00%"
+    ],
+    "answer": "D",
+    "explanation": "Wealth goes 1.05, 0.945, 0.9828, 0.9533, 1.0296. The peak of 1.05 is followed by a trough of 0.945, giving 0.945 / 1.05 − 1 = -10.00%.",
+    "rationale": {
+      "A": "Incorrect. This adds the two negative returns (-10% and -3%), ignoring compounding and the recovery between them.",
+      "B": "Incorrect. This measures the trough against the starting value of 1 (0.945 − 1), not against the running peak of 1.05.",
+      "C": "Incorrect. This is the drawdown on day 4 (0.9533 / 1.05 − 1), not the deepest one.",
+      "D": "Correct. The deepest point is 0.945 against a peak of 1.05: -10.00%."
+    },
+    "verify": "const r=[0.05,-0.10,0.04,-0.03,0.08]; let w=1,pk=1,mn=0; for(const x of r){w*=1+x; pk=Math.max(pk,w); mn=Math.min(mn,w/pk-1);} return mn*100;",
+    "numericAnswer": -10.0,
+    "tolerance": 0.005,
+    "tags": ["matplotlib", "drawdown"]
+  },
+  {
+    "id": "q-py-visualization-with-matplotlib-4",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "visualization-with-matplotlib",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "You need to show a stock's price (around USD 100) and its daily trading volume (around 5 million shares) over the same dates. What is the best matplotlib layout?",
+    "options": [
+      "Two stacked panels from `plt.subplots(2, 1, sharex=True)`, price on top and volume below",
+      "One panel with `ax.twinx()` so price and volume each get their own y-axis",
+      "One panel with both series on the same y-axis",
+      "A single histogram combining price and volume values"
+    ],
+    "answer": "A",
+    "explanation": "Measures on very different scales belong in separate panels sharing the time axis. A twin y-axis lets the chosen scales manufacture an apparent relationship.",
+    "rationale": {
+      "A": "Correct. Stacked panels with a shared x-axis keep the dates aligned and each measure on its own honest scale.",
+      "B": "Incorrect. Dual y-axes invite misreading, because shifting either scale changes where the lines appear to cross or track each other.",
+      "C": "Incorrect. On one axis the price line would be flattened against zero by the much larger volume numbers.",
+      "D": "Incorrect. A histogram discards the time dimension and mixes two unrelated quantities."
+    },
+    "tags": ["matplotlib", "subplots", "chart-design"]
+  }
+]
