@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-fm-terminal-value-1",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "terminal-value",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind Components Ltd's final forecast-year (2030) FCFF is USD 145.75 million. WACC is 9.0% and the perpetual growth rate is 2.5%. The terminal value at the end of 2030 using the perpetuity growth method is closest to:",
+    "options": ["USD 2,242 million", "USD 1,660 million", "USD 1,299 million", "USD 2,298 million"],
+    "answer": "D",
+    "explanation": "TV = 145.75 × 1.025 / (0.09 − 0.025) = 149.39 / 0.065 = 2,298.37.",
+    "rationale": {
+      "A": "Incorrect. 2,242 forgets to grow the final cash flow by (1 + g) before dividing.",
+      "B": "Incorrect. 1,660 divides by WACC alone, ignoring growth in the denominator.",
+      "C": "Incorrect. 1,299 adds g to WACC in the denominator instead of subtracting it.",
+      "D": "Correct. Grow FCFF one year and divide by WACC minus g."
+    },
+    "verify": "return 145.75*1.025/(0.09-0.025);",
+    "numericAnswer": 2298,
+    "tolerance": 0.5,
+    "tags": ["terminal-value", "perpetuity-growth"]
+  },
+  {
+    "id": "q-fm-terminal-value-2",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "terminal-value",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind's 2030 EBITDA (year 5 of the forecast) is USD 275 million and 2026 EBITDA is 219. Using a 9.0x EV/EBITDA exit multiple and a 9.0% WACC with year-end discounting, the present value today of the terminal value is closest to:",
+    "options": ["USD 1,609 million", "USD 2,475 million", "USD 1,753 million", "USD 1,281 million"],
+    "answer": "A",
+    "explanation": "TV = 9.0 × 275 = 2,475. PV = 2,475 / 1.09^5 = 2,475 / 1.5386 = 1,608.58.",
+    "rationale": {
+      "A": "Correct. The exit TV sits at the end of year 5 and is discounted five years.",
+      "B": "Incorrect. 2,475 is the undiscounted terminal value.",
+      "C": "Incorrect. 1,753 discounts only four years.",
+      "D": "Incorrect. 1,281 applies the multiple to 2026 EBITDA instead of final-year EBITDA."
+    },
+    "verify": "return 9*275/Math.pow(1.09,5);",
+    "numericAnswer": 1609,
+    "tolerance": 0.5,
+    "tags": ["terminal-value", "exit-multiple"]
+  },
+  {
+    "id": "q-fm-terminal-value-3",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "terminal-value",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An exit-multiple terminal value for Northwind is USD 2,475 million at the end of 2030. Final-year FCFF is 145.75 and WACC is 9.0%. The perpetual growth rate implied by this terminal value is closest to:",
+    "options": ["3.11%", "2.94%", "5.89%", "2.50%"],
+    "answer": "B",
+    "explanation": "Solve TV = FCFF(1 + g)/(WACC − g) for g: g = (TV × WACC − FCFF)/(TV + FCFF) = (222.75 − 145.75)/(2,620.75) = 2.94%.",
+    "rationale": {
+      "A": "Incorrect. 3.11% = WACC − FCFF/TV, which ignores the (1 + g) growth of the first terminal cash flow.",
+      "B": "Correct. Rearranging the Gordon growth formula gives 2.94%.",
+      "C": "Incorrect. 5.89% is the FCFF yield on the TV (145.75 / 2,475), not a growth rate.",
+      "D": "Incorrect. 2.50% is the growth assumption in the perpetuity case, not the rate implied by the exit multiple."
+    },
+    "verify": "const tv=2475,f=145.75,w=0.09; return (tv*w-f)/(tv+f)*100;",
+    "numericAnswer": 2.94,
+    "tolerance": 0.005,
+    "tags": ["terminal-value", "implied-growth"]
+  },
+  {
+    "id": "q-fm-terminal-value-4",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "terminal-value",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst's final forecast year includes expansion capex of three times D&A for a new plant that will open the following year. What is the best fix before calculating a perpetuity-growth terminal value?",
+    "options": [
+      "Raise the terminal growth rate to compensate for the low final-year cash flow",
+      "Normalise the terminal-year cash flow (capex near maintenance levels, consistent with g) or extend the forecast until the business reaches steady state",
+      "Switch to discounting the terminal value six years instead of five",
+      "Nothing; terminal value is insensitive to the final-year cash flow"
+    ],
+    "answer": "B",
+    "explanation": "The perpetuity formula assumes the final-year cash flow repeats and grows forever, so it must reflect steady state.",
+    "rationale": {
+      "A": "Incorrect. Fudging g to offset a distorted base year hides the problem and breaks the cross-checks.",
+      "B": "Correct. A steady-state base year is a precondition for the perpetuity method.",
+      "C": "Incorrect. The TV is still a value at the end of the forecast; changing the discount period is simply wrong.",
+      "D": "Incorrect. TV is directly proportional to the final-year cash flow."
+    },
+    "tags": ["terminal-value", "steady-state"]
+  }
+]

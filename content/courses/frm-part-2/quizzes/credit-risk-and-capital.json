@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm2-credit-risk-and-capital-1",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-risk-and-capital",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A loan has exposure at default of USD 20 million, a one-year PD of 2% and an LGD of 45% that is treated as known. The loan's unexpected loss (USD millions) is closest to:",
+    "options": ["0.18", "1.26", "2.80", "0.13"],
+    "answer": "B",
+    "explanation": "UL = EAD × LGD × √(PD(1 − PD)) = 20 × 0.45 × √(0.02 × 0.98) = 9 × 0.14 = 1.26.",
+    "rationale": {
+      "A": "Incorrect. 0.18 is the expected loss (20 × 0.02 × 0.45), not the unexpected loss.",
+      "B": "Correct. UL = 9 × √0.0196 = 9 × 0.14 = USD 1.26 million.",
+      "C": "Incorrect. 2.80 uses √PD = 0.1414 times EAD alone (20 × 0.14), forgetting to multiply by LGD.",
+      "D": "Incorrect. 0.13 multiplies by PD(1 − PD) = 0.0196 without taking the square root and also omits a factor (9 × 0.0196 ≈ 0.18 is not even this), a scaling error."
+    },
+    "verify": "const EAD=20, PD=0.02, LGD=0.45; return EAD*LGD*Math.sqrt(PD*(1-PD));",
+    "numericAnswer": 1.26,
+    "tolerance": 0.005,
+    "tags": ["unexpected-loss"]
+  },
+  {
+    "id": "q-frm2-credit-risk-and-capital-2",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-risk-and-capital",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Two loans have stand-alone unexpected losses of USD 0.5 million and USD 0.8 million. The correlation between their losses is 0.3. The portfolio unexpected loss (USD millions) is closest to:",
+    "options": ["1.300", "0.943", "0.890", "1.063"],
+    "answer": "D",
+    "explanation": "UL_P = √(0.5² + 0.8² + 2 × 0.3 × 0.5 × 0.8) = √(0.25 + 0.64 + 0.24) = √1.13 = 1.063.",
+    "rationale": {
+      "A": "Incorrect. 1.300 simply adds the stand-alone ULs, which assumes perfect correlation.",
+      "B": "Incorrect. 0.943 is √0.89, which assumes zero correlation and ignores the cross term.",
+      "C": "Incorrect. 0.890 is the zero-correlation variance (0.25 + 0.64), left without the square root.",
+      "D": "Correct. Including the correlation cross term gives √1.13 = USD 1.063 million."
+    },
+    "verify": "const a=0.5,b=0.8,r=0.3; return Math.sqrt(a*a+b*b+2*r*a*b);",
+    "numericAnswer": 1.063,
+    "tolerance": 0.0005,
+    "tags": ["portfolio-unexpected-loss", "correlation"]
+  },
+  {
+    "id": "q-frm2-credit-risk-and-capital-3",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-risk-and-capital",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which statement best describes how a bank should treat expected credit loss and unexpected credit loss?",
+    "options": [
+      "Expected loss is recovered through loan pricing and provisions, while economic capital is held against unexpected loss.",
+      "Economic capital is held against expected loss, while unexpected loss is covered by loan pricing.",
+      "Both expected and unexpected losses should be covered entirely by economic capital.",
+      "Unexpected loss is irrelevant once a loan portfolio is diversified across many borrowers."
+    ],
+    "answer": "A",
+    "explanation": "Expected loss is an anticipated cost charged in the spread and provisioned; capital is a buffer for losses above that average, measured by unexpected loss.",
+    "rationale": {
+      "A": "Correct. EL is a cost of business; capital absorbs the volatility of losses around EL.",
+      "B": "Incorrect. This reverses the roles: pricing covers EL, capital covers UL.",
+      "C": "Incorrect. Holding capital against EL double-counts a cost that is already priced and provisioned.",
+      "D": "Incorrect. Diversification reduces UL but does not eliminate it, because defaults are correlated through common factors."
+    },
+    "tags": ["expected-loss", "economic-capital"]
+  },
+  {
+    "id": "q-frm2-credit-risk-and-capital-4",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-risk-and-capital",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A loan generates annual revenue of USD 1.20 million, operating costs of USD 0.35 million and an expected loss of USD 0.25 million. Its risk contribution to portfolio unexpected loss is USD 0.8 million and the bank uses a capital multiplier of 6.25. The loan's RAROC is closest to:",
+    "options": ["17.0%", "75.0%", "12.0%", "14.4%"],
+    "answer": "C",
+    "explanation": "Allocated EC = 6.25 × 0.8 = 5.0. RAROC = (1.20 − 0.35 − 0.25) / 5.0 = 0.60 / 5.0 = 12.0%.",
+    "rationale": {
+      "A": "Incorrect. 17.0% omits the expected loss from the numerator: 0.85 / 5.0.",
+      "B": "Incorrect. 75.0% divides by the risk contribution (0.8) instead of the economic capital (6.25 × 0.8).",
+      "C": "Correct. Economic profit of 0.60 over allocated capital of 5.0 gives 12.0%.",
+      "D": "Incorrect. 14.4% subtracts only the expected loss and ignores operating costs, then mis-scales: (1.20 − 0.25 − 0.23) / 5.0 is not a valid RAROC construction."
+    },
+    "verify": "const rev=1.2, cost=0.35, el=0.25, ec=6.25*0.8; return 100*(rev-cost-el)/ec;",
+    "numericAnswer": 12.0,
+    "tolerance": 0.05,
+    "tags": ["raroc", "capital-allocation"]
+  }
+]
