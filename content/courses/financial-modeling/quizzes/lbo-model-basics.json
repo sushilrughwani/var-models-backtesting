@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-fm-lbo-model-basics-1",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "lbo-model-basics",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A sponsor buys Northwind Components Ltd at an enterprise value of USD 1,900 million and pays transaction fees of 40 million. New debt totals 1,000 million. The required sponsor equity is closest to:",
+    "options": ["USD 900 million", "USD 860 million", "USD 1,940 million", "USD 940 million"],
+    "answer": "D",
+    "explanation": "Total uses = 1,900 + 40 = 1,940. Sponsor equity = 1,940 − 1,000 = 940.",
+    "rationale": {
+      "A": "Incorrect. 900 forgets that fees must also be funded.",
+      "B": "Incorrect. 860 subtracts fees from uses instead of adding them.",
+      "C": "Incorrect. 1,940 is total uses, not the equity plug.",
+      "D": "Correct. Equity is total uses minus new debt."
+    },
+    "verify": "return 1900+40-1000;",
+    "numericAnswer": 940,
+    "tolerance": 0.5,
+    "tags": ["lbo", "sources-and-uses"]
+  },
+  {
+    "id": "q-fm-lbo-model-basics-2",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "lbo-model-basics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In year 1 of the Northwind LBO, EBITDA is USD 219 million, EBIT is 175, interest on opening debt is 76, capex is 56 and net working capital rises by 10.5. The tax rate is 25%. Cash flow available to repay debt (after interest and taxes) is closest to:",
+    "options": ["USD 51.75 million", "USD 32.75 million", "USD 127.75 million", "USD 108.75 million"],
+    "answer": "A",
+    "explanation": "Taxes = (175 − 76) × 0.25 = 24.75. CFADS = 219 − 76 − 24.75 − 56 − 10.5 = 51.75.",
+    "rationale": {
+      "A": "Correct. Interest is paid and reduces taxable income before the remainder repays debt.",
+      "B": "Incorrect. 32.75 taxes EBIT without the interest deduction, ignoring the tax shield.",
+      "C": "Incorrect. 127.75 uses post-interest taxes but forgets to deduct the interest payment itself.",
+      "D": "Incorrect. 108.75 is unlevered FCFF, before any interest is paid."
+    },
+    "verify": "const tax=(175-76)*0.25; return 219-76-tax-56-10.5;",
+    "numericAnswer": 51.75,
+    "tolerance": 0.005,
+    "tags": ["lbo", "cash-sweep"]
+  },
+  {
+    "id": "q-fm-lbo-model-basics-3",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "lbo-model-basics",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The sponsor invests USD 940 million of equity in Northwind at the end of 2025 and receives no dividends. At the end of 2030 it exits at 9.5x 2030 EBITDA of 275, when net debt is 605.72 (USD millions). Debt at entry was 1,000. The sponsor's IRR is closest to:",
+    "options": ["22.70%", "16.38%", "11.40%", "20.88%"],
+    "answer": "B",
+    "explanation": "Exit equity = 9.5 × 275 − 605.72 = 2,006.78. MOIC = 2,006.78 / 940 = 2.135. IRR = 2.135^(1/5) − 1 = 16.38%.",
+    "rationale": {
+      "A": "Incorrect. 22.70% divides the total gain by five years, ignoring compounding.",
+      "B": "Correct. Five-year compounding of a 2.13x MOIC gives 16.38%.",
+      "C": "Incorrect. 11.40% deducts the original 1,000 of debt at exit, ignoring five years of paydown.",
+      "D": "Incorrect. 20.88% compounds over four years instead of five."
+    },
+    "verify": "const m=(9.5*275-605.72)/940; return (Math.pow(m,1/5)-1)*100;",
+    "numericAnswer": 16.38,
+    "tolerance": 0.005,
+    "tags": ["lbo", "irr", "moic"]
+  },
+  {
+    "id": "q-fm-lbo-model-basics-4",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "lbo-model-basics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In the Northwind LBO, the sponsor buys and sells at the same 9.5x EBITDA multiple yet earns a 2.13x MOIC. Which statement best explains the sources of return?",
+    "options": [
+      "Returns come entirely from multiple expansion",
+      "Returns come only from the transaction fees paid at entry",
+      "Returns come from EBITDA growth and debt paydown funded by the company's cash flow; fees reduce the gain",
+      "Returns cannot be positive without multiple expansion"
+    ],
+    "answer": "C",
+    "explanation": "With equal multiples the multiple-change term is zero. The gain of 1,066.78 = 712.50 from EBITDA growth + 394.28 of net debt reduction − 40 of fees.",
+    "rationale": {
+      "A": "Incorrect. Entry and exit multiples are equal, so multiple expansion contributes nothing.",
+      "B": "Incorrect. Fees are a cost to the sponsor, not a source of return.",
+      "C": "Correct. Operational growth and deleveraging drive the gain.",
+      "D": "Incorrect. EBITDA growth and debt paydown create value at a constant multiple."
+    },
+    "tags": ["lbo", "returns-attribution"]
+  }
+]
