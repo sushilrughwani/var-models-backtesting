@@ -12,7 +12,7 @@ title: "Factor Theory and Factor Investing"
 ## Explanation
 
 ### Assets are bundles of factors
-Think of a factor the way a nutritionist thinks of nutrients. Investors do not really want "a stock"; they want exposure to the underlying drivers of return. A bank share is a bundle of market risk, interest-rate risk, value exposure and some idiosyncratic noise. Idiosyncratic noise can be diversified away for free, so it should earn no premium. Factor exposures cannot be diversified away, so they must be paid for.
+Investors do not really want "a stock"; they want exposure to the underlying drivers of return. A bank share is a bundle of market risk, interest-rate risk, value exposure and some idiosyncratic noise. Idiosyncratic noise can be diversified away for free, so it should earn no premium. Factor exposures cannot be diversified away, so they must be paid for.
 
 ### Why factors earn premiums: bad times
 The central idea of factor theory is that a factor earns a premium only if it tends to lose money when investors can least afford losses: recessions, market crashes, spikes in volatility or unemployment. Formally, asset pricing uses a stochastic discount factor $m$ that is high in bad times. The expected excess return on any asset satisfies
@@ -32,7 +32,7 @@ where $R_i$ is the asset return, $R_f$ the risk-free rate and $m$ the discount f
 - **Value (HML)**: cheap stocks (high book-to-market) minus expensive ones.
 - **Momentum (UMD)**: recent winners minus recent losers; prone to sudden crashes after market rebounds.
 - **Low volatility / low beta**: low-risk stocks have historically delivered risk-adjusted returns that are too high relative to the CAPM.
-- **Quality and credit/term factors** in bonds.
+- **Quality**, plus term and credit factors in bonds.
 
 The Fama-French three-factor model is the workhorse:
 
@@ -43,10 +43,10 @@ $$
 where $\beta_i$, $s_i$ and $h_i$ are the asset's loadings (regression slopes) on the market excess return, the size factor and the value factor. Adding momentum gives a four-factor model. A manager's **alpha** is the realised return minus the return explained by the factor loadings, so the same fund can show a large CAPM alpha and zero factor-adjusted alpha.
 
 ### Rational versus behavioural stories
-Risk-based explanations say value stocks are distressed firms with inflexible capital that do badly in recessions, so the value premium is compensation. Behavioural explanations say investors overextrapolate past growth, overpaying for glamour stocks, and that limits to arbitrage stop smart money from correcting this. Momentum is usually explained behaviourally (under-reaction, then over-reaction). The distinction matters: a risk premium should persist, while a mispricing may be arbitraged away once widely known and cheaply traded.
+Risk-based explanations say value stocks are distressed firms with inflexible capital that do badly in recessions, so the value premium is compensation. Behavioural explanations say investors overextrapolate past growth and overpay for glamour stocks, while limits to arbitrage prevent correction. Momentum is usually explained behaviourally. The distinction matters: a risk premium should persist, while a mispricing may be arbitraged away once widely known and cheaply traded.
 
 ### Implementation
-A long-only investor can only tilt toward factors; a long-short portfolio captures the pure factor but needs shorting, leverage and higher costs. Factor premiums are volatile and can underperform for a decade, so the investor must be able to bear the bad times that justify the premium. Factor timing is hard, crowding can compress premiums, and turnover-heavy factors such as momentum are costly to run at scale.
+A long-only investor can only tilt toward factors; a long-short portfolio captures the pure factor but needs shorting, leverage and higher costs. Factor premiums are volatile and can underperform for a decade, so the investor must be able to bear the bad times that justify the premium. Timing factors is hard, crowding compresses premiums, and high-turnover factors such as momentum are costly at scale.
 
 ## Worked example
 A fund has estimated loadings $\beta = 1.1$, $s = 0.4$ and $h = -0.3$ (a growth tilt). The risk-free rate is 3%, the expected market risk premium 6%, the expected SMB premium 2% and the expected HML premium 3%.
@@ -63,7 +63,7 @@ $$
 E(R) = 3\% + 6.6\% + 0.8\% - 0.9\% = 9.5\%
 $$
 
-The fund's required (factor-implied) return is **9.5%**. If it actually earned 12%, its three-factor alpha would be $12\% - 9.5\% = 2.5\%$. Under the CAPM alone the benchmark would be $3\% + 6.6\% = 9.6\%$, giving an alpha of 2.4%: here the size and value loadings almost cancel, but for a small-value fund the CAPM alpha would be heavily overstated.
+The fund's required (factor-implied) return is **9.5%**. If it actually earned 12%, its three-factor alpha would be $12\% - 9.5\% = 2.5\%$. Under the CAPM alone the benchmark would be $3\% + 6.6\% = 9.6\%$ (alpha 2.4%); here size and value nearly cancel, but for a small-value fund CAPM alpha would be badly overstated.
 
 ## Common exam traps
 - Saying a factor earns a premium because it is volatile; it earns a premium because it does badly in bad times.
@@ -77,5 +77,5 @@ The fund's required (factor-implied) return is **9.5%**. If it actually earned 1
 - A factor premium is compensation for losing money in bad times, captured by covariance with the discount factor.
 - Macro factors (growth, inflation, volatility) underpin tradable style factors (value, size, momentum, low volatility).
 - Multifactor expected return = risk-free rate plus the sum of loadings times factor premiums.
-- Alpha should be measured after controlling for factor exposures.
-- Implementation requires tolerance for long periods of factor underperformance, plus attention to costs, shorting and crowding.
+- Measure alpha after controlling for factor exposures.
+- Implementation needs tolerance for long factor drawdowns and attention to costs, shorting and crowding.

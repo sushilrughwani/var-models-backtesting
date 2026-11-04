@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa2-model-misspecification-1",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "model-misspecification",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A regression with 3 independent variables uses 80 observations. Regressing the squared residuals on the three independent variables gives an R-squared of 0.09. The 5% critical chi-square value with 3 degrees of freedom is 7.815. The Breusch-Pagan statistic is closest to:",
+    "options": ["2.40", "6.84", "7.20"],
+    "answer": "C",
+    "explanation": "BP = n × R² = 80 × 0.09 = 7.20. Because 7.20 < 7.815, the analyst fails to reject the null of no conditional heteroskedasticity.",
+    "rationale": {
+      "A": "Incorrect. 2.40 divides n × R² by the number of independent variables, which is not part of the test.",
+      "B": "Incorrect. 6.84 multiplies by n − k − 1 = 76 instead of the number of observations, n = 80.",
+      "C": "Correct. The statistic is the sample size times the R-squared of the auxiliary regression: 80 × 0.09 = 7.20."
+    },
+    "verify": "return 80*0.09;",
+    "numericAnswer": 7.2,
+    "tolerance": 0.005,
+    "tags": ["heteroskedasticity", "breusch-pagan"]
+  },
+  {
+    "id": "q-cfa2-model-misspecification-2",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "model-misspecification",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Regressing independent variable X1 on the other independent variables in a model produces an R-squared of 0.80. The variance inflation factor for X1 is closest to:",
+    "options": ["5.00", "1.25", "0.20"],
+    "answer": "A",
+    "explanation": "VIF = 1/(1 − R²) = 1/(1 − 0.80) = 5.00, the level at which multicollinearity warrants investigation.",
+    "rationale": {
+      "A": "Correct. 1/(1 − 0.80) = 1/0.20 = 5.00.",
+      "B": "Incorrect. 1.25 is 1/R², not 1/(1 − R²).",
+      "C": "Incorrect. 0.20 is 1 − R² (the tolerance), the reciprocal of the VIF."
+    },
+    "verify": "return 1/(1-0.80);",
+    "numericAnswer": 5.0,
+    "tolerance": 0.005,
+    "tags": ["multicollinearity", "vif"]
+  },
+  {
+    "id": "q-cfa2-model-misspecification-3",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "model-misspecification",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A time-series regression with no lagged dependent variable among its regressors exhibits positive serial correlation. Relative to correct values, the reported coefficient standard errors are most likely:",
+    "options": ["too large, leading to too many Type II errors", "too small, leading to too many Type I errors", "correct, but the coefficients are inconsistent"],
+    "answer": "B",
+    "explanation": "Positive serial correlation without a lagged dependent variable leaves coefficients consistent but understates standard errors, inflating t-statistics so that true nulls are rejected too often.",
+    "rationale": {
+      "A": "Incorrect. Inflated standard errors and Type II errors are the hallmark of multicollinearity.",
+      "B": "Correct. Understated standard errors inflate t-statistics, producing excess Type I errors.",
+      "C": "Incorrect. Coefficients become inconsistent only when a lagged dependent variable is a regressor; standard errors are still distorted here."
+    },
+    "tags": ["serial-correlation"]
+  },
+  {
+    "id": "q-cfa2-model-misspecification-4",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "model-misspecification",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A regression has an R-squared of 0.78 and an F-statistic with a p-value below 0.001, yet none of its four slope coefficients has an absolute t-statistic above 1.6. The residuals show no pattern and the Breusch-Pagan test is insignificant. The most appropriate response is to:",
+    "options": ["recompute the t-statistics using White-corrected standard errors", "use Newey-West standard errors to correct for serial correlation", "examine variance inflation factors and consider dropping or combining correlated variables"],
+    "answer": "C",
+    "explanation": "A strong overall fit with no individually significant coefficients is the classic sign of multicollinearity. VIFs confirm it; the remedy is to remove or combine correlated regressors or gather more data.",
+    "rationale": {
+      "A": "Incorrect. White standard errors address heteroskedasticity, which the insignificant Breusch-Pagan test does not indicate; they would also typically make t-statistics smaller, not larger.",
+      "B": "Incorrect. Nothing in the output suggests serial correlation, and correcting for it would not explain the mismatch between F and t results.",
+      "C": "Correct. High R² and a significant F alongside insignificant t-statistics point to multicollinearity."
+    },
+    "tags": ["multicollinearity", "diagnostics"]
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-py-portfolio-optimization-1",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "portfolio-optimization",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "w = np.array([0.6, 0.4]); the assets have volatilities of 10% and 20% and a correlation of 0.3. What does np.sqrt(w @ cov @ w) return, expressed as a percentage?",
+    "options": ["14.00%", "11.35%", "10.00%", "10.70%"],
+    "answer": "B",
+    "explanation": "Covariance = 0.3 × 0.10 × 0.20 = 0.006. Variance = 0.36 × 0.01 + 0.16 × 0.04 + 2 × 0.6 × 0.4 × 0.006 = 0.01288. Volatility = √0.01288 = 11.35%.",
+    "rationale": {
+      "A": "Incorrect. 14.00% is the weighted average of volatilities, which is only correct when the correlation is 1.",
+      "B": "Correct. The quadratic form gives a variance of 0.01288 and a volatility of 11.35%.",
+      "C": "Incorrect. 10.00% ignores the covariance term, as if the correlation were zero.",
+      "D": "Incorrect. 10.70% includes the covariance term only once instead of twice (the off-diagonal appears in two cells of the matrix)."
+    },
+    "verify": "const c=0.3*0.1*0.2; return Math.sqrt(0.36*0.01+0.16*0.04+2*0.6*0.4*c)*100;",
+    "numericAnswer": 11.35,
+    "tolerance": 0.005,
+    "tags": ["portfolio-volatility"]
+  },
+  {
+    "id": "q-py-portfolio-optimization-2",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "portfolio-optimization",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Asset 1 has volatility 15%, asset 2 has volatility 25%, and their correlation is 0.2. The weight in asset 1 of the two-asset minimum-variance portfolio is closest to:",
+    "options": ["62.50%", "73.53%", "21.43%", "78.57%"],
+    "answer": "D",
+    "explanation": "Covariance = 0.2 × 0.15 × 0.25 = 0.0075. w1 = (0.0625 − 0.0075) / (0.0225 + 0.0625 − 0.015) = 0.055 / 0.07 = 78.57%.",
+    "rationale": {
+      "A": "Incorrect. 62.50% is inverse-volatility weighting, which ignores correlation and uses volatility rather than variance.",
+      "B": "Incorrect. 73.53% is inverse-variance weighting, which is the minimum-variance answer only when the correlation is zero.",
+      "C": "Incorrect. 21.43% is the weight in asset 2, not asset 1.",
+      "D": "Correct. The closed-form formula gives 0.055 / 0.07 = 78.57%."
+    },
+    "verify": "const c=0.2*0.15*0.25; return (0.25*0.25-c)/(0.15*0.15+0.25*0.25-2*c)*100;",
+    "numericAnswer": 78.57,
+    "tolerance": 0.005,
+    "tags": ["minimum-variance"]
+  },
+  {
+    "id": "q-py-portfolio-optimization-3",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "portfolio-optimization",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "To find the maximum-Sharpe portfolio with scipy.optimize.minimize, the objective function should return:",
+    "options": ["the negative of the portfolio Sharpe ratio", "the portfolio Sharpe ratio", "the portfolio variance", "the sum of the weights minus 1"],
+    "answer": "A",
+    "explanation": "minimize only minimises. Minimising −SR is the same as maximising SR.",
+    "rationale": {
+      "A": "Correct. Minimising the negative Sharpe ratio maximises the Sharpe ratio.",
+      "B": "Incorrect. Minimising the Sharpe ratio would find the worst risk-adjusted portfolio.",
+      "C": "Incorrect. Minimising variance gives the minimum-variance portfolio, not the tangency portfolio.",
+      "D": "Incorrect. That expression belongs in the budget equality constraint, not the objective."
+    },
+    "tags": ["max-sharpe", "scipy"]
+  },
+  {
+    "id": "q-py-portfolio-optimization-4",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "portfolio-optimization",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst builds the efficient frontier in a loop with the constraint {\"type\": \"eq\", \"fun\": lambda w: w @ mu - tgt} and stores the constraints from every iteration, solving them all only after the loop ends. Every frontier point comes out identical. Why?",
+    "options": ["minimize ignores equality constraints when bounds are supplied", "w @ mu must be replaced with np.dot(mu, w)", "The lambda looks up tgt when it is called, so every stored constraint uses the final target; binding it with lambda w, t=tgt: w @ mu - t fixes this", "The covariance matrix must be inverted before each call"],
+    "answer": "C",
+    "explanation": "Python closures bind variables late: the lambda reads tgt at call time, not at creation time. A default argument freezes the value for each iteration.",
+    "rationale": {
+      "A": "Incorrect. SLSQP handles bounds and equality constraints together.",
+      "B": "Incorrect. w @ mu and np.dot(mu, w) give the same number for 1-D arrays.",
+      "C": "Correct. Late binding makes every constraint use the last tgt; the default-argument trick captures each value.",
+      "D": "Incorrect. The optimiser works with the covariance matrix directly; no inversion is required."
+    },
+    "tags": ["efficient-frontier", "python-closures"]
+  }
+]

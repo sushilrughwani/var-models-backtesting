@@ -53,7 +53,7 @@ duration: 18
 ## Whiteboard examples
 1. **Waterfall bases.** Revenue 500; after COGS 200; after Opex 80; after D&A 60; after interest 50 (EBT); tax 25% × 50 = 12.5, leaving 37.5. Each cost bar's invisible base equals the running total after it; its visible height equals the cost.
 2. **Misleading axis.** Desk A fees 102, desk B 105. On an axis from 100, bars are 2 and 5 units tall, so B looks 2.5 times A. From zero they are 102 and 105, a 2.9% difference.
-3. **Beta.** Market returns 2.0, −1.0, 3.0, 1.5, −2.0, 2.5 (%); stock 3.0, −2.0, 4.0, 2.0, −3.5, 3.0 (%). Means 1.25% and 0.75%. Covariance 0.00062, market variance 0.00041, beta = 0.00062 / 0.00041 = 1.51. R² = 0.99.
+3. **Beta.** Market returns 2.0, −1.0, 3.0, 1.5, −2.0, 2.5 (%); stock 3.0, −2.0, 4.0, 2.0, −3.5, 3.0 (%). Means 1.00% and 1.08%. Covariance 0.00062, market variance 0.00041, beta = 0.00062 / 0.00041 = 1.51. R² = 0.99.
 
 ## Questions to ask students
 - Which chart shows a company's quarterly revenue over five years? (Line chart.)

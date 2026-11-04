@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q-xl-statistical-functions-1",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "statistical-functions",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "You have 36 months of historical returns and want to estimate the fund's volatility. Which function is normally appropriate, and why?",
+    "options": [
+      "STDEV.P, because the 36 months are all the data you have",
+      "VAR.S, because volatility is measured as variance",
+      "AVERAGE, because volatility is the mean absolute return",
+      "STDEV.S, because historical returns are a sample used to estimate unknown future variability"
+    ],
+    "answer": "D",
+    "explanation": "Historical returns are a sample drawn from a process that continues into the future, so the sample standard deviation (dividing by n − 1) is the standard choice.",
+    "rationale": {
+      "A": "Incorrect. Having only 36 months does not make them the whole population; STDEV.P would understate volatility.",
+      "B": "Incorrect. VAR.S gives variance (squared units); volatility is quoted as a standard deviation.",
+      "C": "Incorrect. AVERAGE measures the centre of returns, not their dispersion.",
+      "D": "Correct. STDEV.S divides by n − 1 and is the usual estimate of volatility from a return sample."
+    }
+  },
+  {
+    "id": "q-xl-statistical-functions-2",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "statistical-functions",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Monthly returns (%) of 1.5, −2.0, 0.5, 3.0 and −1.0 are in B2:B6. What does =STDEV.S(B2:B6) return (in %)?",
+    "options": ["1.98", "1.77", "3.93", "0.40"],
+    "answer": "A",
+    "explanation": "Mean = 2.0 / 5 = 0.4. Squared deviations: 1.21, 5.76, 0.01, 6.76, 1.96, summing to 15.70. Sample variance = 15.70 / 4 = 3.925, so STDEV.S = √3.925 = 1.98.",
+    "rationale": {
+      "A": "Correct. Dividing the sum of squared deviations by n − 1 = 4 and taking the square root gives 1.98.",
+      "B": "Incorrect. 1.77 divides by n = 5, which is STDEV.P.",
+      "C": "Incorrect. 3.93 is the sample variance (VAR.S); the square root was not taken.",
+      "D": "Incorrect. 0.40 is the mean return, not a measure of dispersion."
+    },
+    "verify": "const x=[1.5,-2.0,0.5,3.0,-1.0]; const m=x.reduce((a,b)=>a+b,0)/x.length; const ss=x.reduce((a,b)=>a+(b-m)**2,0); return Math.sqrt(ss/(x.length-1));",
+    "numericAnswer": 1.98,
+    "tolerance": 0.005
+  },
+  {
+    "id": "q-xl-statistical-functions-3",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "statistical-functions",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Fund returns (%) of 1.5, −2.0, 0.5, 3.0, −1.0 are in B2:B6 and the market's returns for the same months, 0.8, −1.5, −0.3, 2.2, 0.4, are in C2:C6. What does =AVERAGEIFS(B2:B6, C2:C6, \"<0\") return (in %)?",
+    "options": ["-1.50", "-0.75", "-0.30", "0.40"],
+    "answer": "B",
+    "explanation": "The market is negative in months 2 and 3. The fund returned −2.0 and 0.5 in those months, so the average is (−2.0 + 0.5) / 2 = −0.75.",
+    "rationale": {
+      "A": "Incorrect. −1.50 averages the fund's own negative months (−2.0 and −1.0) instead of conditioning on the market.",
+      "B": "Correct. Averaging the fund's returns in the two down-market months gives −0.75.",
+      "C": "Incorrect. −0.30 divides the qualifying sum (−1.5) by all 5 months instead of the 2 that meet the condition.",
+      "D": "Incorrect. 0.40 is the fund's unconditional average; the criteria were ignored."
+    },
+    "verify": "const f=[1.5,-2.0,0.5,3.0,-1.0], m=[0.8,-1.5,-0.3,2.2,0.4]; let s=0,n=0; for(let i=0;i<f.length;i++){ if(m[i]<0){ s+=f[i]; n++; } } return s/n;",
+    "numericAnswer": -0.75,
+    "tolerance": 0.005
+  },
+  {
+    "id": "q-xl-statistical-functions-4",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "statistical-functions",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Using the same five fund returns (%), 1.5, −2.0, 0.5, 3.0 and −1.0, in B2:B6, what does =PERCENTILE.INC(B2:B6, 0.25) return (in %)?",
+    "options": ["-1.50", "-2.00", "-1.00", "0.50"],
+    "answer": "C",
+    "explanation": "Sorted: −2.0, −1.0, 0.5, 1.5, 3.0. PERCENTILE.INC uses rank = k(n − 1) + 1 = 0.25 × 4 + 1 = 2, which is exactly the 2nd sorted value, −1.00.",
+    "rationale": {
+      "A": "Incorrect. −1.50 is PERCENTILE.EXC: rank = 0.25 × 6 = 1.5, halfway between −2.0 and −1.0.",
+      "B": "Incorrect. −2.00 is the minimum (the 0th percentile).",
+      "C": "Correct. Rank 2 in the sorted list gives −1.00 with no interpolation needed.",
+      "D": "Incorrect. 0.50 is the median (50th percentile)."
+    },
+    "verify": "const x=[1.5,-2.0,0.5,3.0,-1.0].sort((a,b)=>a-b); const k=0.25; const r=k*(x.length-1); const lo=Math.floor(r); return x[lo]+(r-lo)*((x[lo+1]??x[lo])-x[lo]);",
+    "numericAnswer": -1,
+    "tolerance": 0.005
+  }
+]

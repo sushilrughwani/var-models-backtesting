@@ -1,0 +1,96 @@
+[
+  {
+    "id": "q-frm2-volatility-smiles-1",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "volatility-smiles",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A European call on a non-dividend-paying stock with strike 80 and six months to expiry has an implied volatility of 24%. What is the implied volatility of the European put with the same strike and expiry?",
+    "options": [
+      "Higher than 24%, because puts protect against crashes",
+      "Lower than 24%, because puts are out of the money when calls are in the money",
+      "Exactly 24%",
+      "It cannot be determined without the put's market price"
+    ],
+    "answer": "C",
+    "explanation": "Put-call parity holds for market prices and for Black-Scholes prices at any volatility. The pricing error of the call therefore equals that of the put, so they share the same implied volatility.",
+    "rationale": {
+      "A": "Incorrect. Crash fear raises the implied volatility of low strikes for both calls and puts; it does not create a gap between a call and put with the same strike.",
+      "B": "Incorrect. Moneyness of calls versus puts does not change the implied volatility at a given strike.",
+      "C": "Correct. Put-call parity forces a single implied volatility per strike and maturity for European options.",
+      "D": "Incorrect. Parity pins down the put price, and hence its implied volatility, from the call price."
+    },
+    "tags": ["put-call-parity", "implied-volatility"]
+  },
+  {
+    "id": "q-frm2-volatility-smiles-2",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "volatility-smiles",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which description best matches the typical implied volatility pattern for equity index options and the distribution it implies?",
+    "options": [
+      "Implied volatility rises with strike; the implied distribution has a fatter right tail than the lognormal.",
+      "Implied volatility falls as strike rises; the implied distribution has a fatter left tail and thinner right tail than the lognormal.",
+      "Implied volatility is lowest at the money and symmetric in both wings; tails are fatter on both sides.",
+      "Implied volatility is highest at the money; the implied distribution is bimodal."
+    ],
+    "answer": "B",
+    "explanation": "Equity options show a skew: low strikes trade at higher implied volatility. This corresponds to a heavy left tail, consistent with leverage effects and crash fear.",
+    "rationale": {
+      "A": "Incorrect. This is the reverse of the equity skew.",
+      "B": "Correct. The downward skew reflects a fat left tail and relatively thin right tail.",
+      "C": "Incorrect. A symmetric smile is the typical currency option pattern.",
+      "D": "Incorrect. A frown and bimodal distribution arise when a single large jump is expected, not as the normal equity pattern."
+    },
+    "tags": ["equity-skew"]
+  },
+  {
+    "id": "q-frm2-volatility-smiles-3",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "volatility-smiles",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A non-dividend-paying stock trades at 50. A six-month European call with strike 50 is priced at 4.20, and the continuously compounded risk-free rate is 4% per year. To be consistent with the call's implied volatility, the price of the six-month European put with strike 50 is closest to:",
+    "options": ["4.20", "5.19", "2.24", "3.21"],
+    "answer": "D",
+    "explanation": "p = c − S₀ + Ke^(−rT) = 4.20 − 50 + 50e^(−0.02) = 4.20 − 50 + 49.0099 = 3.21. A put at this price has the same implied volatility as the call.",
+    "rationale": {
+      "A": "Incorrect. 4.20 ignores discounting of the strike; parity gives c − p = S₀ − Ke^(−rT), which is positive here.",
+      "B": "Incorrect. 5.19 adds S₀ and subtracts the discounted strike, reversing the parity signs.",
+      "C": "Incorrect. 2.24 discounts the strike for a full year (e^(−0.04)) instead of six months.",
+      "D": "Correct. 4.20 − 50 + 49.01 = 3.21."
+    },
+    "verify": "return 4.20-50+50*Math.exp(-0.04*0.5);",
+    "numericAnswer": 3.21,
+    "tolerance": 0.005,
+    "tags": ["put-call-parity"]
+  },
+  {
+    "id": "q-frm2-volatility-smiles-4",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "volatility-smiles",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A stock is the subject of a takeover bid. Within a month the bid will either succeed, sending the price sharply higher, or fail, sending it sharply lower. What shape of one-month implied volatility curve is most likely?",
+    "options": [
+      "A frown, with at-the-money implied volatility above that of both wings",
+      "A steep downward skew, as in a typical equity index",
+      "A symmetric smile, as in currency options",
+      "A flat line, because the two outcomes offset each other"
+    ],
+    "answer": "A",
+    "explanation": "The expected jump makes the price distribution bimodal, with little probability near today's price. At-the-money options are then relatively expensive and the wings relatively cheap, producing a frown.",
+    "rationale": {
+      "A": "Correct. A bimodal distribution produces a frown.",
+      "B": "Incorrect. The downward skew reflects a fat left tail only, not two distinct outcomes.",
+      "C": "Incorrect. A smile reflects fat tails and a tall central peak, the opposite of a bimodal shape.",
+      "D": "Incorrect. A lognormal distribution produces a flat line; a binary event is far from lognormal."
+    },
+    "tags": ["frown", "jumps"]
+  }
+]

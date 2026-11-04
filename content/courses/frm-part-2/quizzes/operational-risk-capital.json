@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-operational-risk-capital-1",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-capital",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Under the Basel standardised approach for operational risk, a bank has a business indicator of EUR 40 billion. Its business indicator component (BIC) is closest to:",
+    "options": ["EUR 7.20 billion", "EUR 6.00 billion", "EUR 6.27 billion", "EUR 5.85 billion"],
+    "answer": "C",
+    "explanation": "Apply marginal coefficients: 12% × 1 + 15% × (30 − 1) + 18% × (40 − 30) = 0.12 + 4.35 + 1.80 = EUR 6.27 billion.",
+    "rationale": {
+      "A": "Incorrect. 7.20 applies the top 18% coefficient to the entire BI instead of marginally.",
+      "B": "Incorrect. 6.00 applies 15% to the whole BI.",
+      "C": "Correct. Marginal coefficients across the three buckets give 6.27.",
+      "D": "Incorrect. 5.85 applies 15% to all BI above EUR 1 billion (0.15 × 39), omitting both the 12% first slice and the higher 18% rate above EUR 30 billion."
+    },
+    "verify": "const bi=40; return 0.12*Math.min(bi,1)+0.15*Math.max(0,Math.min(bi,30)-1)+0.18*Math.max(0,bi-30);",
+    "numericAnswer": 6.27,
+    "tolerance": 0.005,
+    "tags": ["bic", "standardised-approach"]
+  },
+  {
+    "id": "q-frm2-operational-risk-capital-2",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-capital",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A bank has a business indicator of EUR 8 billion and average annual operational losses over the past ten years of EUR 80 million. Using ILM = ln(e − 1 + (LC/BIC)^0.8), its operational risk capital is closest to:",
+    "options": ["EUR 1.20 billion", "EUR 1.18 billion", "EUR 1.17 billion", "EUR 0.97 billion"],
+    "answer": "B",
+    "explanation": "BIC = 0.12 × 1 + 0.15 × 7 = 1.17. LC = 15 × 0.08 = 1.20. LC/BIC = 1.0256; raised to 0.8 = 1.0205. ILM = ln(1.7183 + 1.0205) = ln(2.7388) = 1.0075. ORC = 1.17 × 1.0075 = EUR 1.18 billion.",
+    "rationale": {
+      "A": "Incorrect. 1.20 is the loss component itself, used as capital without the ILM formula.",
+      "B": "Correct. BIC 1.17 times ILM 1.0075 gives 1.18.",
+      "C": "Incorrect. 1.17 is the BIC alone, implicitly assuming ILM = 1, which applies only to bucket 1 banks or at national discretion.",
+      "D": "Incorrect. 0.97 is roughly 12% applied to the whole BI (0.96) then scaled by the ILM, ignoring the 15% bucket."
+    },
+    "verify": "const bi=8, bic=0.12*1+0.15*(bi-1), lc=15*0.08; const ilm=Math.log(Math.E-1+Math.pow(lc/bic,0.8)); return bic*ilm;",
+    "numericAnswer": 1.18,
+    "tolerance": 0.005,
+    "tags": ["ilm", "loss-component"]
+  },
+  {
+    "id": "q-frm2-operational-risk-capital-3",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-capital",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about the internal loss multiplier (ILM) in the standardised approach is correct?",
+    "options": [
+      "ILM equals 1 when the loss component equals the business indicator component",
+      "ILM rises one-for-one with the ratio of the loss component to the BIC",
+      "ILM is always at least 1, so a clean loss history cannot reduce capital",
+      "ILM is applied only to banks with a business indicator below EUR 1 billion"
+    ],
+    "answer": "A",
+    "explanation": "When LC = BIC the term inside the logarithm is e − 1 + 1 = e, so ILM = ln(e) = 1. The log and the 0.8 exponent dampen the response, ILM can fall below 1 for a clean history, and bucket 1 banks use ILM = 1.",
+    "rationale": {
+      "A": "Correct. LC/BIC = 1 gives ln(e) = 1.",
+      "B": "Incorrect. The 0.8 power and logarithm make the response less than proportional.",
+      "C": "Incorrect. If LC is below BIC, ILM falls below 1 and capital is lower than the BIC.",
+      "D": "Incorrect. It is the reverse: bucket 1 banks are set to ILM = 1, so the loss-based multiplier matters for larger banks."
+    },
+    "tags": ["ilm"]
+  },
+  {
+    "id": "q-frm2-operational-risk-capital-4",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-capital",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In calculating the services component of the business indicator, a bank with fee income of EUR 3.0 billion and fee expense of EUR 2.4 billion should include which fee amount?",
+    "options": [
+      "EUR 0.6 billion, the net fee income",
+      "EUR 5.4 billion, the sum of income and expense",
+      "EUR 2.4 billion, the smaller of the two",
+      "EUR 3.0 billion, the larger of the two"
+    ],
+    "answer": "D",
+    "explanation": "The services component takes max(fee income, fee expense), here EUR 3.0 billion, so that gross activity is captured even when it nets to a small amount.",
+    "rationale": {
+      "A": "Incorrect. Netting would understate the scale of fee-generating activity; the formula does not net.",
+      "B": "Incorrect. The formula takes the maximum, not the sum.",
+      "C": "Incorrect. The formula takes the larger, not the smaller, amount.",
+      "D": "Correct. max(3.0, 2.4) = 3.0."
+    },
+    "tags": ["business-indicator"]
+  }
+]

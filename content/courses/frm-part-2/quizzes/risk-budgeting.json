@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-risk-budgeting-1",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "risk-budgeting",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A pension fund has a total active-risk budget of 4% and three managers with uncorrelated alphas. Their information ratios are 0.6, 0.4 and 0.2. To maximise expected total alpha, the active risk (tracking error) allocated to the first manager is closest to:",
+    "options": ["3.21%", "2.31%", "2.00%", "2.40%"],
+    "answer": "A",
+    "explanation": "IR_P = √(0.6² + 0.4² + 0.2²) = √0.56 = 0.7483. Allocation to manager 1 = (0.6/0.7483) × 4% = 3.21%.",
+    "rationale": {
+      "A": "Correct. Active risk is allocated in proportion to IR relative to the combined IR: 0.6/0.7483 × 4% = 3.21%.",
+      "B": "Incorrect. 2.31% splits the budget equally (4%/√3), ignoring differences in skill.",
+      "C": "Incorrect. 2.00% scales by IR divided by the simple sum of IRs (0.6/1.2), which treats uncorrelated risks as if they added linearly.",
+      "D": "Incorrect. 2.40% multiplies the IR by the budget (0.6 × 4%), which is an expected alpha-like number, not an active-risk allocation."
+    },
+    "verify": "const ir=[0.6,0.4,0.2]; const p=Math.sqrt(ir.reduce((s,x)=>s+x*x,0)); return ir[0]/p*4;",
+    "numericAnswer": 3.21,
+    "tolerance": 0.005,
+    "tags": ["information-ratio", "active-risk-budget"]
+  },
+  {
+    "id": "q-frm2-risk-budgeting-2",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "risk-budgeting",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A pension plan has assets of USD 100 million with 10% annual volatility and liabilities of USD 90 million with 6% annual volatility. The correlation between asset and liability returns is 0.8. Using z = 1.645, the plan's annual 95% surplus at risk (USD millions) is closest to:",
+    "options": ["18.70", "24.15", "10.76", "16.45"],
+    "answer": "C",
+    "explanation": "σA = 10, σL = 5.4. σS² = 10² + 5.4² - 2 × 0.8 × 10 × 5.4 = 100 + 29.16 - 86.4 = 42.76, so σS = 6.539. SaR = 1.645 × 6.539 = 10.76.",
+    "rationale": {
+      "A": "Incorrect. 18.70 ignores the correlation (treats ρ as zero), overstating surplus risk.",
+      "B": "Incorrect. 24.15 adds the covariance term instead of subtracting it; liabilities that move with assets offset risk.",
+      "C": "Correct. Surplus volatility is 6.539 million, and 1.645 × 6.539 = 10.76.",
+      "D": "Incorrect. 16.45 is the VaR of the assets alone and ignores liabilities."
+    },
+    "verify": "const a=100*0.10, l=90*0.06, r=0.8; return 1.645*Math.sqrt(a*a+l*l-2*r*a*l);",
+    "numericAnswer": 10.76,
+    "tolerance": 0.01,
+    "tags": ["surplus-at-risk", "pension"]
+  },
+  {
+    "id": "q-frm2-risk-budgeting-3",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "risk-budgeting",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An active equity manager was given a tracking-error budget of 5%. Over the past two years its realised tracking error has been 0.9%, while it charged full active fees. What concern should the fund's risk monitoring unit raise first?",
+    "options": [
+      "The manager is taking unauthorised leveraged bets",
+      "The manager has an exceptionally high information ratio",
+      "The risk model must be overstating risk, so the budget should be raised",
+      "The manager may be closet indexing, delivering near-benchmark exposure for active fees"
+    ],
+    "answer": "D",
+    "explanation": "Realised active risk far below budget suggests the manager is hugging the benchmark. The sponsor is paying active fees for what is largely passive exposure, and the unused risk budget is not producing alpha.",
+    "rationale": {
+      "A": "Incorrect. Unauthorised bets would push realised tracking error above, not far below, the budget.",
+      "B": "Incorrect. Low tracking error says nothing about IR; with so little active risk, alpha is likely tiny.",
+      "C": "Incorrect. The realised figure is low; raising the budget would not address why the manager is not using it.",
+      "D": "Correct. Very low realised tracking error versus budget is the classic closet-indexing red flag."
+    },
+    "tags": ["risk-monitoring", "tracking-error"]
+  },
+  {
+    "id": "q-frm2-risk-budgeting-4",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "risk-budgeting",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about allocating an active-risk budget across managers with uncorrelated alphas is most accurate?",
+    "options": [
+      "Each manager should receive the same tracking-error allocation so that no single manager dominates.",
+      "Active risk should be allocated in proportion to each manager's information ratio, and the combined information ratio equals the square root of the sum of squared individual ratios.",
+      "The combined information ratio equals the simple sum of the individual information ratios.",
+      "The capital weight in each manager should equal its information ratio divided by the sum of information ratios."
+    ],
+    "answer": "B",
+    "explanation": "Maximising total alpha subject to a total tracking-error constraint with uncorrelated alphas gives ω_i proportional to IR_i, and IR_P = √(ΣIR_i²). Capital weights then follow from dividing allocated active risk by each manager's own tracking error.",
+    "rationale": {
+      "A": "Incorrect. Equal allocation wastes budget on lower-skill managers and gives less total alpha.",
+      "B": "Correct. Allocation proportional to IR is optimal, and uncorrelated IRs combine in squares.",
+      "C": "Incorrect. Uncorrelated active returns diversify, so IRs combine as the square root of the sum of squares, not linearly.",
+      "D": "Incorrect. This confuses capital weights with active-risk allocations; capital weight = allocated tracking error / manager's own tracking error."
+    },
+    "tags": ["information-ratio", "active-risk-budget"]
+  }
+]

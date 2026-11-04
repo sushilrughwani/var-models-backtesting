@@ -121,6 +121,25 @@ print(round(tvm.fv(863.84, 0.05, 3), 2))
 
 The `if __name__ == "__main__":` block runs only when the file is executed directly (`python3 tvm.py`), not when it is imported, so it is a safe place for quick self-tests. In a notebook, restart the kernel after editing a module, because Python imports each module only once per session.
 
+### A classic bug: mutable defaults
+Default values are created once, when the function is defined, not on every call. With a list as the default, every call appends to the same shared list:
+
+```python
+def add_trade(trade, blotter=[]):
+    blotter.append(trade)
+    return blotter
+
+print(add_trade("BUY 100 ACME"))
+print(add_trade("SELL 50 BETA"))
+```
+
+```text
+['BUY 100 ACME']
+['BUY 100 ACME', 'SELL 50 BETA']
+```
+
+The second call 'remembers' the first trade. The fix is `blotter=None` as the default, then `if blotter is None: blotter = []` inside the function.
+
 ## Worked example
 Write a loan-payment function and use it for a USD 250,000, 30-year mortgage at 6% annual interest paid monthly. Also compute the total interest paid.
 
@@ -163,23 +182,7 @@ The `if rate == 0` branch protects against division by zero for an interest-free
 
 ## Common exam traps
 - **Forgetting `return`.** A function that computes `x * 1.1` but never returns it gives back `None`, and `print()` shows `None`.
-- **Mutable default arguments.** `def add(trade, blotter=[])` creates the list once, so every call shares it:
-
-```python
-def add_trade(trade, blotter=[]):
-    blotter.append(trade)
-    return blotter
-
-print(add_trade("BUY 100 ACME"))
-print(add_trade("SELL 50 BETA"))
-```
-
-```text
-['BUY 100 ACME']
-['BUY 100 ACME', 'SELL 50 BETA']
-```
-
-  Use `blotter=None` and create the list inside the function instead.
+- **Mutable default arguments.** `def add(trade, blotter=[])` creates the list once, so every call shares and grows the same list (see the demonstration above). Use `blotter=None` and create the list inside the function.
 - **Mixing annual and periodic inputs.** Passing 0.06 and 360 to a monthly function overstates the payment enormously; convert rate and periods consistently.
 - **Positional mix-ups.** `future_value(0.05, 1000, 10)` silently swaps `pv` and `rate`. Keyword arguments prevent this.
 - **Stale imports.** Editing `tvm.py` does not change an already-imported module until the kernel restarts.

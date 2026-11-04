@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-fm-trading-comparables-1",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "trading-comparables",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A peer's fiscal year ends on 31 March. EBITDA is USD 200 million for the fiscal year ending March 2026 and USD 220 million for the fiscal year ending March 2027. Calendarised EBITDA for calendar year 2026 is closest to:",
+    "options": ["USD 205 million", "USD 210 million", "USD 215 million", "USD 220 million"],
+    "answer": "C",
+    "explanation": "Three months of CY2026 fall in the FY ending March 2026 and nine in the FY ending March 2027: 0.25 × 200 + 0.75 × 220 = 215.",
+    "rationale": {
+      "A": "Incorrect. 205 reverses the weights, putting 75% on the earlier fiscal year.",
+      "B": "Incorrect. 210 is a simple average, which is only right for a June year end.",
+      "C": "Correct. Weight each fiscal year by the months it shares with calendar 2026.",
+      "D": "Incorrect. 220 uses the later fiscal year alone and ignores January to March 2026."
+    },
+    "verify": "return (3/12)*200+(9/12)*220;",
+    "numericAnswer": 215,
+    "tolerance": 0.5,
+    "tags": ["calendarisation"]
+  },
+  {
+    "id": "q-fm-trading-comparables-2",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "trading-comparables",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Ashby Precision trades at USD 18.00 per share with 70 million diluted shares. It has debt of USD 320 million, cash of 80 million and non-controlling interest of 12 million. Its enterprise value is closest to:",
+    "options": ["USD 1,260 million", "USD 1,512 million", "USD 1,672 million", "USD 1,500 million"],
+    "answer": "B",
+    "explanation": "Market cap = 18 × 70 = 1,260. EV = 1,260 + 320 − 80 + 12 = 1,512.",
+    "rationale": {
+      "A": "Incorrect. 1,260 is diluted market capitalisation, the equity value only.",
+      "B": "Correct. Add debt and NCI, subtract cash.",
+      "C": "Incorrect. 1,672 adds cash instead of subtracting it.",
+      "D": "Incorrect. 1,500 leaves out the non-controlling interest, which is needed because consolidated EBITDA includes 100% of subsidiaries."
+    },
+    "verify": "return 18*70+320-80+12;",
+    "numericAnswer": 1512,
+    "tolerance": 0.5,
+    "tags": ["enterprise-value"]
+  },
+  {
+    "id": "q-fm-trading-comparables-3",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "trading-comparables",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Peer EV/CY2026E EBITDA multiples are 8.4x, 9.1x, 7.6x, 10.2x and 8.8x. Northwind's CY2026E EBITDA is USD 219 million; it has debt of 420, cash of 95, NCI of 18 and an associate worth 30 (USD millions). Using the median multiple and 52.02 million diluted shares, the implied value per share is closest to:",
+    "options": ["USD 32.28", "USD 37.05", "USD 31.03", "USD 30.80"],
+    "answer": "C",
+    "explanation": "Median = 8.8x. EV = 8.8 × 219 = 1,927.2. Equity = 1,927.2 − 420 + 95 − 18 + 30 = 1,614.2. Per share = 1,614.2 / 52.02 = 31.03.",
+    "rationale": {
+      "A": "Incorrect. 32.28 divides equity value by 50.0 million basic shares instead of diluted shares.",
+      "B": "Incorrect. 37.05 divides enterprise value by shares, skipping the bridge to equity.",
+      "C": "Correct. Median multiple, full bridge, diluted shares.",
+      "D": "Incorrect. 30.80 deducts only net debt and ignores the NCI and associate adjustments."
+    },
+    "verify": "const m=[8.4,9.1,7.6,10.2,8.8].sort((a,b)=>a-b)[2]; return (m*219-420+95-18+30)/52.02;",
+    "numericAnswer": 31.03,
+    "tolerance": 0.005,
+    "tags": ["comps", "equity-bridge"]
+  },
+  {
+    "id": "q-fm-trading-comparables-4",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "trading-comparables",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst builds a comps table showing each peer's market capitalisation divided by EBITDA and applies the median to Northwind's EBITDA to get equity value. What is the main flaw?",
+    "options": [
+      "Market capitalisation should be replaced by book equity",
+      "EBITDA should be replaced by revenue for all industrial companies",
+      "The median should be replaced by the mean",
+      "The numerator is an equity measure while EBITDA belongs to all capital providers, so the multiple is distorted by each peer's leverage"
+    ],
+    "answer": "D",
+    "explanation": "Multiples must match: EV pairs with EBITDA, price pairs with EPS. Market cap / EBITDA makes highly levered peers look cheap.",
+    "rationale": {
+      "A": "Incorrect. Book equity is not a market price and does not fix the mismatch.",
+      "B": "Incorrect. EV/EBITDA is appropriate for profitable industrials; revenue multiples are for loss-making firms.",
+      "C": "Incorrect. The statistic chosen does not cure an inconsistent multiple.",
+      "D": "Correct. Numerator and denominator must belong to the same capital providers."
+    },
+    "tags": ["multiples", "consistency"]
+  }
+]

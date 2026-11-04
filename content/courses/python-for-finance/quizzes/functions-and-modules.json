@@ -1,0 +1,107 @@
+[
+  {
+    "id": "q-py-functions-and-modules-1",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "functions-and-modules",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A function is defined as `def gross_up(x):` with the single indented line `x * 1.1`. What does `print(gross_up(100))` display?",
+    "options": [
+      "None",
+      "110.00000000000001",
+      "100",
+      "An error, because the function has no return statement"
+    ],
+    "answer": "A",
+    "explanation": "The body computes x * 1.1 but never returns it. A function without a return statement returns None, which print displays.",
+    "rationale": {
+      "A": "Correct. Without return, the computed value is discarded and the function returns None.",
+      "B": "Incorrect. This would be shown only if the line were `return x * 1.1`.",
+      "C": "Incorrect. The function does not return its input; it returns nothing (None).",
+      "D": "Incorrect. A missing return is legal Python; it simply means the function returns None."
+    },
+    "tags": ["functions", "return"]
+  },
+  {
+    "id": "q-py-functions-and-modules-2",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "functions-and-modules",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Given `def future_value(pv, rate, n, m=1): return pv * (1 + rate / m) ** (n * m)`, what does `round(future_value(2000, 0.08, 3, m=4), 2)` return?",
+    "options": [
+      "2519.42",
+      "2536.48",
+      "2122.42",
+      "2480.0"
+    ],
+    "answer": "B",
+    "explanation": "Quarterly compounding: periodic rate 0.08/4 = 0.02 over 3 × 4 = 12 periods, so 2000 × 1.02¹² = 2536.48.",
+    "rationale": {
+      "A": "Incorrect. This is annual compounding (the default m = 1): 2000 × 1.08³.",
+      "B": "Correct. 1.02¹² = 1.268242 and 2000 × 1.268242 = 2536.48.",
+      "C": "Incorrect. This divides the rate by 4 but compounds for only 3 periods instead of n × m = 12.",
+      "D": "Incorrect. This is simple interest, 2000 × (1 + 0.08 × 3)."
+    },
+    "verify": "return 2000*Math.pow(1+0.08/4, 3*4);",
+    "numericAnswer": 2536.48,
+    "tolerance": 0.005,
+    "tags": ["functions", "default-arguments", "future-value"]
+  },
+  {
+    "id": "q-py-functions-and-modules-3",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "functions-and-modules",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Consider `def log_trade(t, book=[]): book.append(t); return len(book)` (body on indented lines). After calling `log_trade(\"A\")` and `log_trade(\"B\")`, what does `print(log_trade(\"C\"))` show?",
+    "options": [
+      "1",
+      "2",
+      "6",
+      "3"
+    ],
+    "answer": "D",
+    "explanation": "The default list is created once when the function is defined and shared by all calls that omit `book`. After three calls it holds A, B and C, so the length is 3.",
+    "rationale": {
+      "A": "Incorrect. 1 would be correct only if a fresh list were created on each call (e.g. using book=None).",
+      "B": "Incorrect. This ignores the third append made in the call being printed.",
+      "C": "Incorrect. 6 is 1 + 2 + 3, a sum of the returned lengths; the code returns only the current length.",
+      "D": "Correct. The shared default list grows with every call: lengths 1, 2, then 3."
+    },
+    "verify": "const book=[]; const f=(t)=>{book.push(t); return book.length;}; f('A'); f('B'); return f('C');",
+    "numericAnswer": 3,
+    "tolerance": 0.001,
+    "tags": ["functions", "mutable-default"]
+  },
+  {
+    "id": "q-py-functions-and-modules-4",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "functions-and-modules",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Using `annuity_payment(pv, rate, n)` = pv × rate / (1 − (1 + rate)^−n), what is the monthly payment on a USD 20,000 car loan at 5% annual interest over 4 years with monthly payments, called correctly?",
+    "options": [
+      "416.67",
+      "1106.37",
+      "460.59",
+      "470.02"
+    ],
+    "answer": "C",
+    "explanation": "Convert to monthly inputs: rate = 0.05/12 and n = 48. annuity_payment(20000, 0.05/12, 48) = 460.59.",
+    "rationale": {
+      "A": "Incorrect. 20,000 / 48 ignores interest entirely.",
+      "B": "Incorrect. This passes the annual rate 0.05 with 48 periods, i.e. 5% per month.",
+      "C": "Correct. Periodic rate 0.0041667 over 48 months gives USD 460.59 per month.",
+      "D": "Incorrect. This computes an annual payment over 4 years and divides by 12, which ignores intra-year amortisation."
+    },
+    "verify": "const pv=20000, r=0.05/12, n=48; return pv*r/(1-Math.pow(1+r,-n));",
+    "numericAnswer": 460.59,
+    "tolerance": 0.005,
+    "tags": ["functions", "annuity", "tvm"]
+  }
+]

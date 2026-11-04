@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q-cfa2-economics-of-regulation-1",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "economics-of-regulation",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A regulator evaluates a rule with upfront implementation costs of USD 25 million. For 8 years the rule is expected to generate annual benefits of USD 9 million and annual compliance costs of USD 3 million. Using an 8% discount rate, the net present value of the rule (in USD millions) is closest to:",
+    "options": ["23.00", "9.48", "26.72"],
+    "answer": "B",
+    "explanation": "Annuity factor (8%, 8 years) = (1 − 1.08⁻⁸) / 0.08 = 5.7466. NPV = −25 + 6 × 5.7466 = 9.48.",
+    "rationale": {
+      "A": "Incorrect. 23.00 = −25 + 6 × 8 ignores discounting.",
+      "B": "Correct. Discount the net annual benefit of 6 million: −25 + 6 × 5.7466 = 9.48.",
+      "C": "Incorrect. 26.72 discounts gross benefits of 9 million and ignores the ongoing compliance costs."
+    },
+    "verify": "const r=0.08,n=8; const a=(1-Math.pow(1+r,-n))/r; return -25+(9-3)*a;",
+    "numericAnswer": 9.48,
+    "tolerance": 0.01,
+    "tags": ["cost-benefit-analysis"]
+  },
+  {
+    "id": "q-cfa2-economics-of-regulation-2",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "economics-of-regulation",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Lenders cannot easily observe the true riskiness of borrowers, so a regulator requires standardised credit disclosures. The market failure being addressed is best described as:",
+    "options": ["a negative externality", "an informational friction", "regulatory competition"],
+    "answer": "B",
+    "explanation": "Asymmetric information between borrowers and lenders is an informational friction; disclosure rules are a standard remedy.",
+    "rationale": {
+      "A": "Incorrect. An externality imposes costs on third parties outside the transaction; here the problem is unequal information between the two parties.",
+      "B": "Correct. Hidden borrower risk is asymmetric information, an informational friction.",
+      "C": "Incorrect. Regulatory competition describes jurisdictions competing with lighter rules, not a market failure."
+    },
+    "tags": ["market-failure"]
+  },
+  {
+    "id": "q-cfa2-economics-of-regulation-3",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "economics-of-regulation",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A global bank shifts its derivatives trading from its home-country subsidiary into an affiliate in a jurisdiction with lower capital requirements, without changing the economics of the trades. This is best described as:",
+    "options": ["regulatory arbitrage", "regulatory capture", "self-regulation"],
+    "answer": "A",
+    "explanation": "Exploiting differences between jurisdictions' rules to reduce regulatory burden without changing the underlying activity is regulatory arbitrage.",
+    "rationale": {
+      "A": "Correct. The bank exploits cross-jurisdiction rule differences.",
+      "B": "Incorrect. Capture means the regulator comes to serve the industry's interests; nothing suggests the regulator has been influenced.",
+      "C": "Incorrect. Self-regulation involves an industry body setting rules for members, which is not what is happening."
+    },
+    "tags": ["regulatory-arbitrage"]
+  },
+  {
+    "id": "q-cfa2-economics-of-regulation-4",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "economics-of-regulation",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst is reviewing a stock exchange that writes and enforces listing and trading rules for its member firms. Compared with a government agency, the exchange's oversight role is most likely to suffer from:",
+    "options": ["a lack of industry expertise", "a lack of any ability to enforce rules", "a conflict of interest with the members that fund it"],
+    "answer": "C",
+    "explanation": "Self-regulatory organisations have deep industry knowledge and can enforce rules on members, but they are funded by and serve the firms they regulate, creating a conflict of interest.",
+    "rationale": {
+      "A": "Incorrect. Industry expertise is a key advantage of SROs, not a weakness.",
+      "B": "Incorrect. SROs can enforce rules on their members; it is outside standard setters that lack enforcement power.",
+      "C": "Correct. Regulating the firms that fund it creates a conflict of interest."
+    },
+    "tags": ["self-regulatory-organisations"]
+  }
+]

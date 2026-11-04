@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-fm-capex-and-depreciation-schedule-1",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "capex-and-depreciation-schedule",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind's existing assets depreciate at USD 20.0 million per year. Capex is USD 44.0 million in FY2026 and USD 47.0 million in FY2027, each with a 10-year straight-line life and the half-year convention. Total FY2027 depreciation (USD million) is closest to:",
+    "options": ["29.10", "26.75", "22.35", "22.20"],
+    "answer": "B",
+    "explanation": "Existing 20.00 + FY2026 vintage full year 4.40 + FY2027 vintage half year 2.35 = 26.75.",
+    "rationale": {
+      "A": "Incorrect. 29.10 takes a full year of depreciation on the FY2027 capex, ignoring the half-year convention.",
+      "B": "Correct. 20.00 + 4.40 + 2.35 = 26.75.",
+      "C": "Incorrect. 22.35 forgets to keep depreciating the FY2026 vintage in FY2027.",
+      "D": "Incorrect. 22.20 is FY2026 depreciation, not FY2027."
+    },
+    "verify": "return 20 + 44/10 + 47/10/2;",
+    "numericAnswer": 26.75,
+    "tolerance": 0.005,
+    "tags": ["depreciation-waterfall"]
+  },
+  {
+    "id": "q-fm-capex-and-depreciation-schedule-2",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "capex-and-depreciation-schedule",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind opens FY2026 with net PP&E of USD 200.0 million, spends USD 44.0 million on capex and records depreciation of USD 22.2 million. Closing net PP&E (USD million) is closest to:",
+    "options": ["244.0", "177.8", "220.0", "221.8"],
+    "answer": "D",
+    "explanation": "Closing PP&E = 200.0 + 44.0 - 22.2 = 221.8.",
+    "rationale": {
+      "A": "Incorrect. 244.0 adds capex but forgets to deduct depreciation.",
+      "B": "Incorrect. 177.8 deducts depreciation but forgets to add capex.",
+      "C": "Incorrect. 220.0 uses a full-year charge of 24.0 on the whole asset base rather than the 22.2 given.",
+      "D": "Correct. 200.0 + 44.0 - 22.2 = 221.8."
+    },
+    "verify": "return 200 + 44 - 22.2;",
+    "numericAnswer": 221.8,
+    "tolerance": 0.05,
+    "tags": ["ppe-roll-forward"]
+  },
+  {
+    "id": "q-fm-capex-and-depreciation-schedule-3",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "capex-and-depreciation-schedule",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "What is the rationale for applying the half-year convention to new capex in a forecast?",
+    "options": ["Capex is assumed to be spread evenly through the year, so new assets are in service for about half of it on average", "Tax authorities require exactly half of all capex to be expensed immediately", "It halves total lifetime depreciation to reflect inflation", "It ensures capex equals depreciation in every year"],
+    "answer": "A",
+    "explanation": "Without knowing exact in-service dates, assuming mid-year spending is a reasonable average, so the first year carries half a full year's charge.",
+    "rationale": {
+      "A": "Correct. It approximates mid-year in-service timing for capex spread through the year.",
+      "B": "Incorrect. It is a modelling convention, not a rule requiring half of capex to be expensed.",
+      "C": "Incorrect. Total lifetime depreciation still equals the capex; only the timing shifts.",
+      "D": "Incorrect. The convention has nothing to do with matching capex and depreciation."
+    },
+    "tags": ["half-year-convention"]
+  },
+  {
+    "id": "q-fm-capex-and-depreciation-schedule-4",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "capex-and-depreciation-schedule",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Over a five-year forecast, an analyst's model shows capex well below depreciation every year while revenue grows 8% a year. What is the most reasonable conclusion?",
+    "options": ["The model is conservative because low capex reduces free cash flow", "The forecast is internally inconsistent: a growing business usually needs capex above depreciation, so capex or growth assumptions should be revisited", "Depreciation should be cut to match capex each year", "It is fine because depreciation is a non-cash expense"],
+    "answer": "B",
+    "explanation": "Capex persistently below depreciation implies a shrinking asset base, which is hard to reconcile with strong volume growth. Either capex is too low (overstating free cash flow) or growth is too high.",
+    "rationale": {
+      "A": "Incorrect. Low capex raises free cash flow, making the model aggressive, not conservative.",
+      "B": "Correct. Growth normally requires net investment, so the assumptions conflict.",
+      "C": "Incorrect. Depreciation follows the existing asset base; forcing it to match capex is not valid.",
+      "D": "Incorrect. The non-cash nature of depreciation does not resolve the inconsistency in investment needs."
+    },
+    "tags": ["capex-forecast", "sanity-check"]
+  }
+]

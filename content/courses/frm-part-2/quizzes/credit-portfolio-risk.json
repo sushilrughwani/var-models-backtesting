@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm2-credit-portfolio-risk-1",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-portfolio-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Obligor A has a one-year PD of 10% and obligor B has a one-year PD of 15%. The probability that both default within the year is 3%. The default correlation between A and B is closest to:",
+    "options": ["0.015", "0.122", "0.280", "0.140"],
+    "answer": "D",
+    "explanation": "Cov = 0.03 − 0.10 × 0.15 = 0.015. ρ = 0.015 / √(0.10 × 0.90 × 0.15 × 0.85) = 0.015 / 0.1071 = 0.140.",
+    "rationale": {
+      "A": "Incorrect. 0.015 is the covariance, not yet divided by the product of standard deviations.",
+      "B": "Incorrect. 0.122 divides the covariance by √(pA × pB), omitting the (1 − p) terms of the Bernoulli variances.",
+      "C": "Incorrect. 0.280 divides the joint PD (0.03) rather than the covariance by the standard-deviation product.",
+      "D": "Correct. Covariance of 0.015 divided by 0.1071 gives 0.140."
+    },
+    "verify": "const a=0.10,b=0.15,j=0.03; return (j-a*b)/Math.sqrt(a*(1-a)*b*(1-b));",
+    "numericAnswer": 0.14,
+    "tolerance": 0.0005,
+    "tags": ["default-correlation"]
+  },
+  {
+    "id": "q-frm2-credit-portfolio-risk-2",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-portfolio-risk",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A large, granular loan portfolio has total exposure of USD 50 million, PD of 2%, LGD of 45% and asset correlation of 0.20. Using the Vasicek one-factor model with N⁻¹(0.02) = −2.0537 and N⁻¹(0.999) = 3.0902, the 99.9% credit VaR (worst-case loss minus expected loss, USD millions) is closest to:",
+    "options": ["5.09", "4.64", "0.77", "5.19"],
+    "answer": "B",
+    "explanation": "Argument = (−2.0537 + √0.20 × 3.0902) / √0.80 = −0.7510, so WCDR = N(−0.7510) = 22.63%. Credit VaR = 50 × 0.45 × (0.2263 − 0.02) = 4.64.",
+    "rationale": {
+      "A": "Incorrect. 5.09 is the worst-case loss (50 × 0.45 × 22.63%) without subtracting expected loss of 0.45.",
+      "B": "Correct. WCDR of 22.63% less the 2% PD, times EAD × LGD of 22.5, gives USD 4.64 million.",
+      "C": "Incorrect. 0.77 uses ρ instead of √ρ in the numerator, which drastically understates the WCDR.",
+      "D": "Incorrect. 5.19 forgets to divide the argument by √(1 − ρ), overstating the WCDR."
+    },
+    "verify": "const N=x=>{const t=1/(1+0.3275911*Math.abs(x)/Math.SQRT2);const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x/2);return 0.5*(1+(x>=0?y:-y));}; const a=-2.0537,b=3.0902,r=0.2,PD=0.02; const W=N((a+Math.sqrt(r)*b)/Math.sqrt(1-r)); return 50*0.45*(W-PD);",
+    "numericAnswer": 4.64,
+    "tolerance": 0.01,
+    "tags": ["vasicek", "credit-var"]
+  },
+  {
+    "id": "q-frm2-credit-portfolio-risk-3",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-portfolio-risk",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Holding PD, LGD and exposure constant, what is the effect of increasing the asset correlation in a Vasicek portfolio model?",
+    "options": [
+      "Expected loss rises and the 99.9% worst-case default rate falls.",
+      "Both expected loss and the 99.9% worst-case default rate are unchanged.",
+      "Expected loss is unchanged, while the 99.9% worst-case default rate and credit VaR rise.",
+      "Expected loss falls because more borrowers survive together in good states."
+    ],
+    "answer": "C",
+    "explanation": "Expected loss depends only on PD, LGD and EAD. Higher correlation makes defaults cluster, fattening the tail and raising the WCDR and credit VaR.",
+    "rationale": {
+      "A": "Incorrect. EL does not depend on correlation, and the tail default rate rises rather than falls.",
+      "B": "Incorrect. The tail quantile is highly sensitive to correlation even though EL is not.",
+      "C": "Correct. Correlation reshapes the loss distribution: same mean, fatter right tail.",
+      "D": "Incorrect. The mean default rate stays at PD; clustering in good and bad states offsets in the average."
+    },
+    "tags": ["correlation", "loss-distribution"]
+  },
+  {
+    "id": "q-frm2-credit-portfolio-risk-4",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-portfolio-risk",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A granular portfolio has exposure of USD 200 million, PD of 1.5% and LGD of 50%. A one-factor model gives a 99.9% worst-case default rate of 12%. The 99.9% credit VaR (USD millions) is closest to:",
+    "options": ["10.5", "12.0", "24.0", "1.5"],
+    "answer": "A",
+    "explanation": "Credit VaR = EAD × LGD × (WCDR − PD) = 200 × 0.50 × (0.12 − 0.015) = 10.5.",
+    "rationale": {
+      "A": "Correct. Worst-case loss of 12.0 less expected loss of 1.5 gives USD 10.5 million.",
+      "B": "Incorrect. 12.0 is the worst-case loss before subtracting expected loss.",
+      "C": "Incorrect. 24.0 applies the WCDR to the full exposure without LGD.",
+      "D": "Incorrect. 1.5 is the expected loss, not the unexpected (VaR) amount."
+    },
+    "verify": "return 200*0.5*(0.12-0.015);",
+    "numericAnswer": 10.5,
+    "tolerance": 0.05,
+    "tags": ["credit-var"]
+  }
+]
