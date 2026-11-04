@@ -46,7 +46,7 @@ A product sells at price 25 (`B1`), volume 5,000 units (`B2`), variable cost 15 
 
 **Step 3 - two-variable data table.** Prices 23, 25 and 27 down `D3:D5`, units 4,000, 5,000 and 6,000 across `E2:G2`, `=B6` in `D2`. Row input cell `B2`, column input cell `B1`:
 
-| Price \ Units | 4,000 | 5,000 | 6,000 |
+| Price / Units | 4,000 | 5,000 | 6,000 |
 |---|---|---|---|
 | 23 | −8,000 | 0 | 8,000 |
 | 25 | 0 | 10,000 | 20,000 |

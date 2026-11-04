@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-xl-what-if-analysis-1",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "what-if-analysis",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A model computes profit as units × (price − variable cost) − fixed costs, with price 30, variable cost 18 and fixed costs 54,000. Goal Seek sets profit to 0 by changing units. What value does it return?",
+    "options": ["1,800", "3,000", "4,500", "1,125"],
+    "answer": "C",
+    "explanation": "Break-even units = fixed costs / unit margin = 54,000 / (30 − 18) = 4,500.",
+    "rationale": {
+      "A": "Incorrect. 1,800 divides fixed costs by the price, ignoring variable cost.",
+      "B": "Incorrect. 3,000 divides fixed costs by the variable cost instead of the margin.",
+      "C": "Correct. 54,000 / 12 = 4,500 units.",
+      "D": "Incorrect. 1,125 divides by price plus variable cost; the margin is price minus variable cost."
+    },
+    "verify": "return 54000/(30-18);",
+    "numericAnswer": 4500,
+    "tolerance": 0.5,
+    "tags": ["goal-seek", "break-even"]
+  },
+  {
+    "id": "q-xl-what-if-analysis-2",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "what-if-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A two-variable data table has prices down the left column and unit volumes across the top row, with `=B6` (profit) in the corner. The model's price input is in B1 and units input in B2. What should be entered in the Data Table dialog?",
+    "options": ["Row input cell B2, column input cell B1", "Row input cell B1, column input cell B2", "Row input cell B6, column input cell B6", "Only a column input cell, B1, because two-variable tables use one input"],
+    "answer": "A",
+    "explanation": "The row input cell is the model input replaced by the values in the top row (units, B2); the column input cell is replaced by the values down the left column (price, B1).",
+    "rationale": {
+      "A": "Correct. Top-row values feed B2 (units) and left-column values feed B1 (price).",
+      "B": "Incorrect. This swaps the inputs, so volumes would be substituted into price and vice versa, filling the grid with wrong numbers.",
+      "C": "Incorrect. B6 is the output; input cells must be the model inputs that the table varies.",
+      "D": "Incorrect. A two-variable table needs both a row and a column input cell."
+    },
+    "tags": ["data-tables"]
+  },
+  {
+    "id": "q-xl-what-if-analysis-3",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "what-if-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Scenario assumptions are: Base (price 25, units 5,000, variable cost 15), Bull (27, 6,000, 14) and Bear (23, 4,000, 16). Fixed costs are 40,000 in all cases. Each live input uses `=CHOOSE($B$8, Base, Bull, Bear)` and B8 is set to 3. What profit does the model show?",
+    "options": ["10,000", "38,000", "-8,000", "-12,000"],
+    "answer": "D",
+    "explanation": "Selector 3 picks the Bear column: 4,000 × (23 − 16) − 40,000 = 28,000 − 40,000 = −12,000.",
+    "rationale": {
+      "A": "Incorrect. 10,000 is the Base case (selector 1).",
+      "B": "Incorrect. 38,000 is the Bull case (selector 2).",
+      "C": "Incorrect. −8,000 uses the Bear price and volume but keeps the Base variable cost of 15; a scenario switch must drive every input.",
+      "D": "Correct. Bear profit is 4,000 × 7 − 40,000 = −12,000."
+    },
+    "verify": "return 4000*(23-16)-40000;",
+    "numericAnswer": -12000,
+    "tolerance": 0.5,
+    "tags": ["scenarios", "choose"]
+  },
+  {
+    "id": "q-xl-what-if-analysis-4",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "what-if-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "In a model with units 5,000, variable cost 15, fixed costs 40,000 and current price 25, an analyst uses Goal Seek to set profit to 15,000 by changing the price. What price does Goal Seek return?",
+    "options": ["28.00", "26.00", "11.00", "18.00"],
+    "answer": "B",
+    "explanation": "Profit = 5,000 × (P − 15) − 40,000 = 15,000, so P − 15 = 55,000 / 5,000 = 11 and P = 26.00.",
+    "rationale": {
+      "A": "Incorrect. 28.00 adds 15,000 / 5,000 to the current price, but the current price already earns 10,000 of profit.",
+      "B": "Correct. 15 + (40,000 + 15,000) / 5,000 = 26.00.",
+      "C": "Incorrect. 11.00 is the required unit margin; the variable cost of 15 must be added.",
+      "D": "Incorrect. 18.00 ignores fixed costs: 15 + 15,000 / 5,000."
+    },
+    "verify": "return 15+(40000+15000)/5000;",
+    "numericAnswer": 26,
+    "tolerance": 0.005,
+    "tags": ["goal-seek"]
+  }
+]
