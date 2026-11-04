@@ -1,0 +1,107 @@
+[
+  {
+    "id": "q-py-control-flow-1",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "control-flow",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An analyst writes:\n\n`if score > 60: grade = \"B\"`\n`elif score > 80: grade = \"A\"`\n`else: grade = \"C\"`\n\n(each on its own line with the assignment indented). What is `grade` when `score = 85`?",
+    "options": [
+      "\"A\"",
+      "\"C\"",
+      "\"B\"",
+      "An error, because both conditions are true"
+    ],
+    "answer": "C",
+    "explanation": "Python runs only the first branch whose condition is true. 85 > 60 is true, so grade is \"B\" and the elif is never checked. The narrower condition (> 80) should come first.",
+    "rationale": {
+      "A": "Incorrect. The elif is never evaluated because the first condition already matched.",
+      "B": "Incorrect. else runs only if every condition above it is false.",
+      "C": "Correct. The first true branch wins, and 85 > 60 is checked first.",
+      "D": "Incorrect. Several conditions being true is not an error; Python simply takes the first true one."
+    },
+    "tags": ["if-elif-else"]
+  },
+  {
+    "id": "q-py-control-flow-2",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "control-flow",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "What does this code print?\n\n`b = 5000; y = 0`\n`while b < 8000:`\n`    b *= 1.05`\n`    y += 1`\n`print(y)`",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "answer": "B",
+    "explanation": "The loop multiplies by 1.05 until the balance reaches 8000. 5000 × 1.05⁹ = 7756.64 (still below 8000) and 5000 × 1.05¹⁰ = 8144.47, so the loop runs 10 times.",
+    "rationale": {
+      "A": "Incorrect. After 9 years the balance is 7756.64, still below 8000, so the loop runs again. The exact solution ln(1.6)/ln(1.05) = 9.63 must be rounded up.",
+      "B": "Correct. The tenth iteration takes the balance to 8144.47 and the condition then fails.",
+      "C": "Incorrect. This counts one iteration too many; the condition is checked before each pass and fails after the tenth.",
+      "D": "Incorrect. This is the simple-interest answer (3000 / 250 per year); the code compounds."
+    },
+    "verify": "let b=5000,y=0; while(b<8000){b*=1.05;y+=1;} return y;",
+    "numericAnswer": 10,
+    "tolerance": 0.001,
+    "tags": ["while-loop", "compounding"]
+  },
+  {
+    "id": "q-py-control-flow-3",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "control-flow",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "What does this code print?\n\n`for cf in [100, 200, 300]:`\n`    total = 0`\n`    total += cf`\n`print(total)`",
+    "options": [
+      "300",
+      "600",
+      "0",
+      "100"
+    ],
+    "answer": "A",
+    "explanation": "total is reset to 0 at the start of every iteration, so after the last pass it holds only the final cash flow, 300. The accumulator should be initialised before the loop.",
+    "rationale": {
+      "A": "Correct. The reset inside the loop discards earlier sums, leaving 0 + 300.",
+      "B": "Incorrect. 600 would be printed only if total = 0 were placed before the for line.",
+      "C": "Incorrect. total is updated after being reset, so it is not 0 at the end.",
+      "D": "Incorrect. This is the value after the first iteration; the loop continues to the last item."
+    },
+    "verify": "let total; for (const cf of [100,200,300]) { total = 0; total += cf; } return total;",
+    "numericAnswer": 300,
+    "tolerance": 0.001,
+    "tags": ["for-loop", "accumulator"]
+  },
+  {
+    "id": "q-py-control-flow-4",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "control-flow",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A loop computes `sum(cf / 1.10 ** t for t, cf in enumerate([-500, 200, 200, 200]))`. The result, rounded to 2 decimals, is:",
+    "options": [
+      "100.00",
+      "497.37",
+      "-2.39",
+      "-2.63"
+    ],
+    "answer": "D",
+    "explanation": "enumerate starts at t = 0, so the outlay is not discounted: -500 + 200/1.1 + 200/1.21 + 200/1.331 = -500 + 181.82 + 165.29 + 150.26 = -2.63.",
+    "rationale": {
+      "A": "Incorrect. This is the undiscounted sum of the cash flows.",
+      "B": "Incorrect. This is only the PV of the three inflows; the -500 outlay was left out.",
+      "C": "Incorrect. This discounts every cash flow one period too many (t starting at 1), including the time-0 outlay.",
+      "D": "Correct. The PV of inflows is 497.37, slightly less than the 500 cost, giving NPV -2.63."
+    },
+    "verify": "const c=[-500,200,200,200]; let s=0; c.forEach((cf,t)=>{s+=cf/Math.pow(1.1,t);}); return s;",
+    "numericAnswer": -2.63,
+    "tolerance": 0.005,
+    "tags": ["npv", "enumerate"]
+  }
+]

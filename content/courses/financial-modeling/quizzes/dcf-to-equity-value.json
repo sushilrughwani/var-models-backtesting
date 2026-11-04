@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-fm-dcf-to-equity-value-1",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "dcf-to-equity-value",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind Components Ltd has an enterprise value of USD 1,989.11 million. It has debt (including leases) of 420, cash of 95, non-controlling interest of 18 and an investment in an associate worth 30 (USD millions). Equity value is closest to:",
+    "options": ["USD 1,712.11 million", "USD 1,676.11 million", "USD 1,486.11 million", "USD 1,646.11 million"],
+    "answer": "B",
+    "explanation": "Equity value = 1,989.11 − 420 + 95 − 18 + 30 = 1,676.11.",
+    "rationale": {
+      "A": "Incorrect. 1,712.11 adds non-controlling interest instead of deducting it.",
+      "B": "Correct. Deduct debt and NCI, add cash and the associate.",
+      "C": "Incorrect. 1,486.11 subtracts cash instead of adding it.",
+      "D": "Incorrect. 1,646.11 omits the associate, a non-operating asset whose income is not in FCFF."
+    },
+    "verify": "return 1989.11-420+95-18+30;",
+    "numericAnswer": 1676.11,
+    "tolerance": 0.005,
+    "tags": ["equity-bridge"]
+  },
+  {
+    "id": "q-fm-dcf-to-equity-value-2",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "dcf-to-equity-value",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind has 50.0 million basic shares, 0.6 million RSUs and 4.0 million options with an exercise price of USD 20.00. Using the treasury stock method at the current share price of USD 27.50, fully diluted shares are closest to:",
+    "options": ["54.60 million", "51.09 million", "50.00 million", "51.69 million"],
+    "answer": "D",
+    "explanation": "Option shares = 4.0 × (1 − 20/27.50) = 1.09. Diluted shares = 50.0 + 0.6 + 1.09 = 51.69 million.",
+    "rationale": {
+      "A": "Incorrect. 54.60 counts every option as a full share and ignores the buyback from exercise proceeds.",
+      "B": "Incorrect. 51.09 leaves out the 0.6 million RSUs.",
+      "C": "Incorrect. 50.00 is basic shares only.",
+      "D": "Correct. RSUs in full plus net new shares from in-the-money options."
+    },
+    "verify": "return 50+0.6+4*(1-20/27.5);",
+    "numericAnswer": 51.69,
+    "tolerance": 0.005,
+    "tags": ["treasury-stock-method", "dilution"]
+  },
+  {
+    "id": "q-fm-dcf-to-equity-value-3",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "dcf-to-equity-value",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Northwind's DCF equity value is USD 1,676.11 million. It has 50.0 million basic shares, 0.6 million RSUs and 4.0 million options struck at USD 20.00. Using the treasury stock method at the DCF-implied price (solving the circularity), the implied value per share is closest to:",
+    "options": ["USD 32.16", "USD 33.52", "USD 30.70", "USD 33.12"],
+    "answer": "A",
+    "explanation": "P = (V + nK)/(S + R + n) = (1,676.11 + 80)/(54.6) = 32.16. Check: options in the money; diluted shares 52.11; 1,676.11/52.11 = 32.16.",
+    "rationale": {
+      "A": "Correct. Adding option proceeds to equity and counting all options as shares solves the circularity.",
+      "B": "Incorrect. 33.52 divides by basic shares only.",
+      "C": "Incorrect. 30.70 counts all options as shares but ignores the 80 million of exercise proceeds.",
+      "D": "Incorrect. 33.12 includes RSUs but ignores the options entirely."
+    },
+    "verify": "return (1676.11+4*20)/(50+0.6+4);",
+    "numericAnswer": 32.16,
+    "tolerance": 0.005,
+    "tags": ["treasury-stock-method", "circularity"]
+  },
+  {
+    "id": "q-fm-dcf-to-equity-value-4",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "dcf-to-equity-value",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Northwind fully consolidates an 80%-owned subsidiary and holds a 30% equity-method stake in an associate. In the bridge from enterprise value to equity value, how should these be treated?",
+    "options": [
+      "Add both, because they are both investments owned by Northwind",
+      "Deduct the non-controlling interest in the subsidiary and add the value of the associate",
+      "Deduct both, because they reduce the cash available to shareholders",
+      "Ignore both, because EV already includes all subsidiaries and associates"
+    ],
+    "answer": "B",
+    "explanation": "EV includes 100% of the consolidated subsidiary's cash flows, so the 20% owned by outsiders is deducted. The associate's income sits below EBIT, so it is not in FCFF and its value is added.",
+    "rationale": {
+      "A": "Incorrect. The subsidiary is already fully inside EV; adding it again double counts.",
+      "B": "Correct. The treatment follows what is inside or outside FCFF.",
+      "C": "Incorrect. The associate is an asset excluded from FCFF and must be added.",
+      "D": "Incorrect. EV excludes associates and includes the minority share of subsidiaries; both need adjusting."
+    },
+    "tags": ["equity-bridge", "nci", "associates"]
+  }
+]

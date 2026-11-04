@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-fm-operating-costs-and-margins-1",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "operating-costs-and-margins",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind has FY2025 revenue of USD 500 million, variable costs of USD 250 million and fixed costs of USD 150 million. Its degree of operating leverage (contribution divided by EBITDA) is closest to:",
+    "options": ["5.00", "1.67", "0.40", "2.50"],
+    "answer": "D",
+    "explanation": "Contribution = 500 - 250 = 250; EBITDA = 250 - 150 = 100; DOL = 250 / 100 = 2.50.",
+    "rationale": {
+      "A": "Incorrect. 5.00 divides revenue by EBITDA instead of contribution by EBITDA.",
+      "B": "Incorrect. 1.67 divides contribution by fixed costs.",
+      "C": "Incorrect. 0.40 is the inverse of DOL (EBITDA / contribution).",
+      "D": "Correct. 250 / 100 = 2.50."
+    },
+    "verify": "const c=500-250; const e=c-150; return c/e;",
+    "numericAnswer": 2.5,
+    "tolerance": 0.005,
+    "tags": ["operating-leverage"]
+  },
+  {
+    "id": "q-fm-operating-costs-and-margins-2",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "operating-costs-and-margins",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind's FY2026E revenue is USD 545.9 million. Variable costs are 50% of revenue, and fixed costs of USD 150 million in FY2025 grow with 3% inflation. FY2026E EBITDA (USD million) is closest to:",
+    "options": ["122.95", "118.45", "109.18", "272.95"],
+    "answer": "B",
+    "explanation": "Contribution = 545.9 x 0.5 = 272.95; fixed costs = 150 x 1.03 = 154.50; EBITDA = 272.95 - 154.50 = 118.45.",
+    "rationale": {
+      "A": "Incorrect. 122.95 leaves fixed costs flat at 150, ignoring inflation.",
+      "B": "Correct. 272.95 - 154.50 = 118.45.",
+      "C": "Incorrect. 109.18 simply applies the FY2025 margin of 20% to FY2026 revenue, ignoring operating leverage.",
+      "D": "Incorrect. 272.95 is the contribution before deducting fixed costs."
+    },
+    "verify": "return 545.9*0.5 - 150*1.03;",
+    "numericAnswer": 118.45,
+    "tolerance": 0.01,
+    "tags": ["cost-forecast"]
+  },
+  {
+    "id": "q-fm-operating-costs-and-margins-3",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "operating-costs-and-margins",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Starting from revenue of USD 500 million, a 50% variable cost ratio and fixed costs of USD 150 million, revenue falls 10% while fixed costs stay unchanged. The percentage change in EBITDA is closest to:",
+    "options": ["-25.0%", "-10.0%", "-15.0%", "-50.0%"],
+    "answer": "A",
+    "explanation": "New EBITDA = 450 x 0.5 - 150 = 75; change = 75 / 100 - 1 = -25.0%, consistent with a DOL of 2.5.",
+    "rationale": {
+      "A": "Correct. EBITDA falls from 100 to 75, which is -25.0%.",
+      "B": "Incorrect. -10.0% assumes a constant margin, ignoring operating leverage.",
+      "C": "Incorrect. -15.0% multiplies the 10% revenue fall by fixed costs / EBITDA (1.5) instead of by the DOL of 2.5.",
+      "D": "Incorrect. -50.0% multiplies by revenue / EBITDA (5) instead of the DOL of 2.5."
+    },
+    "verify": "const e0=500*0.5-150; const e1=450*0.5-150; return (e1/e0-1)*100;",
+    "numericAnswer": -25.0,
+    "tolerance": 0.05,
+    "tags": ["operating-leverage", "downside"]
+  },
+  {
+    "id": "q-fm-operating-costs-and-margins-4",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "operating-costs-and-margins",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst models a recession case for a company with high fixed costs by cutting revenue 15% and keeping the EBITDA margin at its historical level. What is the main problem with this approach?",
+    "options": ["It understates the fall in revenue because margins usually rise in recessions", "It has no effect on EBITDA because margins are held constant", "It overstates recession EBITDA because fixed costs do not shrink with revenue, so the margin should fall", "It is correct as long as the tax rate is also held constant"],
+    "answer": "C",
+    "explanation": "With high fixed costs, EBITDA falls proportionally more than revenue. Holding the margin constant implicitly treats all costs as variable and flatters the downside.",
+    "rationale": {
+      "A": "Incorrect. Margins of high fixed-cost businesses typically fall, not rise, when revenue drops.",
+      "B": "Incorrect. A constant margin on lower revenue still reduces EBITDA, just by too little.",
+      "C": "Correct. Ignoring operating leverage overstates EBITDA in the downturn.",
+      "D": "Incorrect. The tax rate is irrelevant to the cost structure problem at the EBITDA level."
+    },
+    "tags": ["operating-leverage"]
+  }
+]

@@ -4,7 +4,7 @@ duration: 28
 ---
 
 ## Lecture outline
-- 00:00 - Hook: is 10% annual or 9.76% continuous the better deal? (They are the same.)
+- 00:00 - Hook: is 10% annual or 9.53% continuous the better deal? (They are the same.)
 - 02:00 - Reference rates: Treasury, repo, SOFR and the end of LIBOR
 - 06:00 - Compounding frequencies and conversion to continuous compounding
 - 10:00 - Zero rates and pricing a coupon bond as a bundle of zeros
@@ -80,7 +80,7 @@ duration: 28
 - Why did LIBOR lose favour? (Based on submissions rather than transactions, vulnerable to manipulation, thin underlying market.)
 
 ## Analogies
-- Compounding frequency is like currency: 10% annual and 9.76% continuous are the same amount in different units.
+- Compounding frequency is like currency: 10% annual and 9.53% continuous are the same amount in different units.
 - A coupon bond is a fruit basket: price each fruit (cash flow) at its own market price (zero rate) and add them up.
 - A forward rate is the toll for the next stretch of road implied by the total fares to two destinations.
 
