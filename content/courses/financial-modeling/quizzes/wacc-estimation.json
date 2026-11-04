@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-fm-wacc-estimation-1",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "wacc-estimation",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind Components Ltd has a target capital structure of 25% debt and 75% equity. Its cost of equity is 10.5%, its pre-tax cost of debt is 6.0% and its tax rate is 25%. WACC is closest to:",
+    "options": ["9.375%", "9.000%", "7.500%", "6.000%"],
+    "answer": "B",
+    "explanation": "WACC = 0.75 × 10.5% + 0.25 × 6.0% × (1 − 0.25) = 7.875% + 1.125% = 9.000%.",
+    "rationale": {
+      "A": "Incorrect. 9.375% uses the pre-tax cost of debt and ignores the interest tax shield.",
+      "B": "Correct. The after-tax cost of debt is 4.5%, weighted at 25%.",
+      "C": "Incorrect. 7.500% weights equity and after-tax debt 50/50 instead of using target weights.",
+      "D": "Incorrect. 6.000% swaps the weights, giving equity 25% and debt 75%."
+    },
+    "verify": "return (0.75*0.105+0.25*0.06*(1-0.25))*100;",
+    "numericAnswer": 9,
+    "tolerance": 0.0005,
+    "tags": ["wacc"]
+  },
+  {
+    "id": "q-fm-wacc-estimation-2",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "wacc-estimation",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A peer company has a levered beta of 1.209, a debt-to-equity ratio of 0.40 and a tax rate of 25%. Assuming debt carries no market risk, its unlevered beta is closest to:",
+    "options": ["0.864", "1.209", "1.572", "0.930"],
+    "answer": "D",
+    "explanation": "Unlevered beta = 1.209 / (1 + 0.75 × 0.40) = 1.209 / 1.30 = 0.930.",
+    "rationale": {
+      "A": "Incorrect. 0.864 ignores taxes, dividing by 1 + 0.40.",
+      "B": "Incorrect. 1.209 is the levered beta; it still contains the peer's financial risk.",
+      "C": "Incorrect. 1.572 multiplies by the leverage factor, which is the relevering step, not unlevering.",
+      "D": "Correct. Dividing by 1 + (1 − t) × D/E removes the peer's leverage."
+    },
+    "verify": "return 1.209/(1+(1-0.25)*0.40);",
+    "numericAnswer": 0.93,
+    "tolerance": 0.0005,
+    "tags": ["beta", "unlevering"]
+  },
+  {
+    "id": "q-fm-wacc-estimation-3",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "wacc-estimation",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The median unlevered beta of Northwind's peers is 0.90. Northwind targets debt of 25% of total capital, its tax rate is 25%, the risk-free rate is 4.2% and the equity risk premium is 5.6%. Northwind's CAPM cost of equity is closest to:",
+    "options": ["10.50%", "10.19%", "9.24%", "6.30%"],
+    "answer": "A",
+    "explanation": "Target D/E = 25/75 = 0.3333. Levered beta = 0.90 × (1 + 0.75 × 0.3333) = 1.125. Cost of equity = 4.2% + 1.125 × 5.6% = 10.50%.",
+    "rationale": {
+      "A": "Correct. Relever at D/E of 0.3333, then apply CAPM.",
+      "B": "Incorrect. 10.19% relevers with D/(D+E) = 0.25 instead of D/E = 0.3333.",
+      "C": "Incorrect. 9.24% uses the unlevered beta of 0.90 directly, ignoring Northwind's own leverage.",
+      "D": "Incorrect. 6.30% is only the beta times the ERP; the risk-free rate is missing."
+    },
+    "verify": "const bl=0.9*(1+(1-0.25)*(0.25/0.75)); return (0.042+bl*0.056)*100;",
+    "numericAnswer": 10.5,
+    "tolerance": 0.005,
+    "tags": ["beta", "capm", "relevering"]
+  },
+  {
+    "id": "q-fm-wacc-estimation-4",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "wacc-estimation",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Northwind issued notes years ago with a 4.0% coupon. Today they trade at a yield to maturity of 6.0%, consistent with BBB-rated peers. Which pre-tax cost of debt belongs in WACC?",
+    "options": [
+      "4.0%, because that is the interest the company actually pays",
+      "The average of 4.0% and 6.0%, to balance history and market conditions",
+      "6.0%, because WACC should reflect what lenders require on new long-term capital today",
+      "Zero, because interest is tax deductible"
+    ],
+    "answer": "C",
+    "explanation": "WACC is a forward-looking opportunity cost. The current yield on comparable debt measures what lenders require now.",
+    "rationale": {
+      "A": "Incorrect. The coupon reflects conditions at issue, not today's required return.",
+      "B": "Incorrect. There is no basis for averaging a historical coupon with a market yield.",
+      "C": "Correct. Use the current market yield, then apply (1 − t).",
+      "D": "Incorrect. Tax deductibility reduces the cost of debt by the factor (1 − t); it does not eliminate it."
+    },
+    "tags": ["cost-of-debt"]
+  }
+]

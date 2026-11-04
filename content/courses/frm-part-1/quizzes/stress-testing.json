@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-stress-testing-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "stress-testing",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank has CET1 capital of USD 30 billion and risk-weighted assets of USD 250 billion. A stress scenario projects credit losses of USD 9 billion, trading losses of USD 3 billion and pre-provision net revenue of USD 4 billion, with RWA rising by 8%. The post-stress CET1 ratio is closest to:",
+    "options": ["8.80%", "6.67%", "5.19%", "8.15%"],
+    "answer": "D",
+    "explanation": "Post-stress CET1 = 30 − 9 − 3 + 4 = 22bn. Stressed RWA = 250 × 1.08 = 270bn. Ratio = 22 / 270 = 8.15%.",
+    "rationale": {
+      "A": "Incorrect. 8.80% divides by the starting RWA of 250bn, ignoring the rise in RWA under stress.",
+      "B": "Incorrect. 6.67% ignores the 4bn of pre-provision net revenue that offsets losses.",
+      "C": "Incorrect. 5.19% subtracts PPNR as if it were a loss instead of adding it.",
+      "D": "Correct. 22 / 270 = 8.15%."
+    },
+    "verify": "return (30-9-3+4)/(250*1.08)*100;",
+    "numericAnswer": 8.15,
+    "tolerance": 0.005,
+    "tags": ["capital-ratio", "scenario-analysis"]
+  },
+  {
+    "id": "q-frm1-stress-testing-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "stress-testing",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Using the same bank (CET1 USD 30 billion, RWA USD 250 billion rising 8% under stress, trading losses USD 3 billion, PPNR USD 4 billion), a reverse stress test asks what credit loss would reduce the post-stress CET1 ratio to exactly 7%. The credit loss is closest to:",
+    "options": ["USD 12.1 billion", "USD 13.5 billion", "USD 10.1 billion", "USD 11.1 billion"],
+    "answer": "A",
+    "explanation": "Required CET1 = 0.07 × 270 = 18.9bn. Solve 30 − 3 + 4 − L = 18.9, so L = 31 − 18.9 = 12.1bn.",
+    "rationale": {
+      "A": "Correct. The bank can absorb 12.1bn of credit losses before the ratio hits 7%.",
+      "B": "Incorrect. 13.5 uses the unstressed RWA of 250bn (required CET1 17.5bn).",
+      "C": "Incorrect. 10.1 reverses the signs of the trading loss and PPNR.",
+      "D": "Incorrect. 11.1 ignores both the trading loss and PPNR."
+    },
+    "verify": "return 30-3+4-0.07*250*1.08;",
+    "numericAnswer": 12.1,
+    "tolerance": 0.05,
+    "tags": ["reverse-stress-test"]
+  },
+  {
+    "id": "q-frm1-stress-testing-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "stress-testing",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which description best fits a reverse stress test?",
+    "options": ["Replaying the 2008 crisis on today's portfolio", "Shocking interest rates by 200 basis points while holding all other factors constant", "Starting from an outcome such as breaching minimum capital and working backwards to identify scenarios that could cause it", "Calculating VaR using data from a 12-month period of significant stress"],
+    "answer": "C",
+    "explanation": "A reverse stress test begins with a failure outcome and searches for the scenarios that would produce it, exposing vulnerabilities that forward-looking scenarios may miss.",
+    "rationale": {
+      "A": "Incorrect. Replaying a past crisis is a historical scenario.",
+      "B": "Incorrect. Moving one factor in isolation is sensitivity analysis.",
+      "C": "Correct. Reverse stress testing works backwards from failure.",
+      "D": "Incorrect. That is stressed VaR."
+    },
+    "tags": ["reverse-stress-test", "scenario-types"]
+  },
+  {
+    "id": "q-frm1-stress-testing-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "stress-testing",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In a well-governed stress-testing programme, which responsibility most appropriately belongs to the board of directors?",
+    "options": ["Running the stress-testing models and producing the loss projections", "Approving the programme and key scenarios, challenging results and ensuring they inform strategy and capital decisions", "Independently validating the models used in the stress tests", "Collecting position data from each business line"],
+    "answer": "B",
+    "explanation": "The board oversees stress testing: it approves the framework and scenarios, challenges assumptions and results and makes sure outcomes feed into risk appetite, strategy and capital planning. Management runs the programme; independent functions validate it.",
+    "rationale": {
+      "A": "Incorrect. Running the models is senior management's and the risk function's job.",
+      "B": "Correct. Oversight, approval and challenge are board responsibilities.",
+      "C": "Incorrect. Validation should be performed by an independent function such as model validation or internal audit.",
+      "D": "Incorrect. Data collection is an operational task for management and the business lines."
+    },
+    "tags": ["governance"]
+  }
+]

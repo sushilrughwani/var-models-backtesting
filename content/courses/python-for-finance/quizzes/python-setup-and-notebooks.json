@@ -1,0 +1,104 @@
+[
+  {
+    "id": "q-py-python-setup-and-notebooks-1",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "python-setup-and-notebooks",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A Jupyter cell contains two lines: `fv = 1000 * 1.05 ** 2` followed by `fv`. What happens when you run the cell?",
+    "options": [
+      "Nothing is shown, because there is no print() call",
+      "The value of fv (about 1102.5) is displayed below the cell",
+      "An error is raised because fv on its own is not a valid statement",
+      "The text \"fv\" is displayed below the cell"
+    ],
+    "answer": "B",
+    "explanation": "When the last line of a notebook cell is an expression, Jupyter displays its value automatically. 1000 × 1.05² = 1102.5.",
+    "rationale": {
+      "A": "Incorrect. print() is only needed for values that are not the last expression in the cell; the last expression is displayed automatically.",
+      "B": "Correct. The notebook shows the value of the cell's final expression, here 1102.5 (with possible floating-point digits).",
+      "C": "Incorrect. A bare variable name is a valid expression; it simply evaluates to its value.",
+      "D": "Incorrect. Python evaluates the name and displays the value it refers to, not the name as text."
+    },
+    "tags": ["jupyter", "notebooks"]
+  },
+  {
+    "id": "q-py-python-setup-and-notebooks-2",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "python-setup-and-notebooks",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "What does `print(round(5000 * (1 + 0.04) ** 3, 2))` output?",
+    "options": [
+      "625000",
+      "5600.0",
+      "5408.0",
+      "5624.32"
+    ],
+    "answer": "D",
+    "explanation": "The expression is the future value of 5000 at 4% compounded for 3 years: 5000 × 1.04³ = 5000 × 1.124864 = 5624.32.",
+    "rationale": {
+      "A": "Incorrect. This is what you get if the rate is entered as 4 instead of 0.04: 5000 × 5³.",
+      "B": "Incorrect. This is simple interest (5000 × (1 + 0.04 × 3)); ** compounds the growth.",
+      "C": "Incorrect. This compounds for only 2 years (5000 × 1.04²).",
+      "D": "Correct. 1.04³ = 1.124864 and 5000 × 1.124864 = 5624.32."
+    },
+    "verify": "return Math.round(5000*Math.pow(1.04,3)*100)/100;",
+    "numericAnswer": 5624.32,
+    "tolerance": 0.005,
+    "tags": ["future-value", "operators"]
+  },
+  {
+    "id": "q-py-python-setup-and-notebooks-3",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "python-setup-and-notebooks",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which line correctly computes the future value of `pv` invested at an annual rate `r` (as a decimal) for `n` years with annual compounding?",
+    "options": [
+      "fv = pv * (1 + r) ** n",
+      "fv = pv * (1 + r) ^ n",
+      "fv = pv * 1 + r ** n",
+      "fv = pv * (1 + r * n)"
+    ],
+    "answer": "A",
+    "explanation": "In Python, ** is the exponent operator, and the parentheses make sure 1 + r is computed before raising to the power n.",
+    "rationale": {
+      "A": "Correct. (1 + r) ** n is the compound growth factor, multiplied by pv.",
+      "B": "Incorrect. ^ is bitwise XOR in Python, not exponentiation; with floats it raises a TypeError.",
+      "C": "Incorrect. Without parentheses, precedence gives pv + r**n, which is not compound growth.",
+      "D": "Incorrect. This is simple interest, which ignores interest earned on interest."
+    },
+    "tags": ["operators", "future-value"]
+  },
+  {
+    "id": "q-py-python-setup-and-notebooks-4",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "python-setup-and-notebooks",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "In a fresh notebook, cell 1 contains `x = 100` and cell 2 contains `x = x * 1.1`. You run cell 1 once, then press Shift+Enter on cell 2 three separate times (re-running it each time). A third cell then runs `print(round(x, 2))`. What is printed?",
+    "options": [
+      "110.0",
+      "121.0",
+      "133.1",
+      "130.0"
+    ],
+    "answer": "C",
+    "explanation": "The kernel keeps state between runs. Each run of cell 2 multiplies the current x by 1.1: 100 → 110 → 121 → 133.1.",
+    "rationale": {
+      "A": "Incorrect. This assumes cell 2 always starts from the original 100, but the kernel remembers the updated x.",
+      "B": "Incorrect. This is the value after only two runs of cell 2.",
+      "C": "Correct. 100 × 1.1³ = 133.1, because each run compounds the previous result held in the kernel.",
+      "D": "Incorrect. This adds 10 three times (simple growth); each run actually multiplies the latest value by 1.1."
+    },
+    "verify": "let x=100; for(let i=0;i<3;i++){x=x*1.1;} return Math.round(x*100)/100;",
+    "numericAnswer": 133.1,
+    "tolerance": 0.005,
+    "tags": ["jupyter", "kernel-state"]
+  }
+]

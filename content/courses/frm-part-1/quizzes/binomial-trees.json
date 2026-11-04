@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-binomial-trees-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "binomial-trees",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A binomial tree uses quarterly steps (Δt = 0.25) for a non-dividend-paying stock with volatility 25%. The risk-free rate is 4% per year (continuously compounded), u = e^(σ√Δt) and d = 1/u. The risk-neutral probability of an up move is closest to:",
+    "options": ["0.5089", "0.4688", "0.6284", "0.4911"],
+    "answer": "A",
+    "explanation": "u = e^(0.25 × 0.5) = 1.133148, d = 0.882497. p = (e^(0.04 × 0.25) − 0.882497) / (1.133148 − 0.882497) = 0.5089.",
+    "rationale": {
+      "A": "Correct. With the rate scaled to the quarter, p = (e^0.01 − d)/(u − d) = 0.5089.",
+      "B": "Incorrect. 0.4688 sets the growth factor to 1, ignoring the risk-free rate.",
+      "C": "Incorrect. 0.6284 uses the full annual growth of 1.04 instead of scaling the rate by Δt.",
+      "D": "Incorrect. 0.4911 is 1 − p, the risk-neutral probability of a down move."
+    },
+    "verify": "const u=Math.exp(0.25*Math.sqrt(0.25)); const d=1/u; return (Math.exp(0.04*0.25)-d)/(u-d);",
+    "numericAnswer": 0.5089,
+    "tolerance": 0.00005,
+    "tags": ["risk-neutral-probability"]
+  },
+  {
+    "id": "q-frm1-binomial-trees-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "binomial-trees",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A stock trades at 60 and in one year will be either 69 (u = 1.15) or 54 (d = 0.90). The continuously compounded risk-free rate is 3%. Using a one-step binomial tree, the value of a 1-year European call with a strike of 62 is closest to:",
+    "options": ["3.65", "3.40", "3.54", "3.25"],
+    "answer": "C",
+    "explanation": "Payoffs: 7 up, 0 down. p = (e^0.03 − 0.90)/(1.15 − 0.90) = 0.5218. Call = e^(−0.03) × 0.5218 × 7 = 3.54.",
+    "rationale": {
+      "A": "Incorrect. 3.65 is the risk-neutral expected payoff without discounting at the risk-free rate.",
+      "B": "Incorrect. 3.40 assumes a 50% up probability instead of the risk-neutral probability of 0.5218.",
+      "C": "Correct. The discounted risk-neutral expected payoff is e^(−0.03) × 0.5218 × 7 = 3.54.",
+      "D": "Incorrect. 3.25 attaches the down-move probability (1 − p) to the up-state payoff."
+    },
+    "verify": "const p=(Math.exp(0.03)-0.9)/(1.15-0.9); return Math.exp(-0.03)*p*7;",
+    "numericAnswer": 3.54,
+    "tolerance": 0.005,
+    "tags": ["one-step-tree"]
+  },
+  {
+    "id": "q-frm1-binomial-trees-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "binomial-trees",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A two-step binomial tree has S0 = 100, u = 1.1, d = 0.9 and steps of 6 months. The risk-free rate is 4% per year (continuously compounded). The value of a 1-year American put with a strike of 100 is closest to:",
+    "options": ["3.37", "4.14", "4.22", "10.00"],
+    "answer": "B",
+    "explanation": "p = (e^0.02 − 0.9)/0.2 = 0.6010. Final payoffs: 0 (121), 1 (99), 19 (81). Up node (110): e^(−0.02) × 0.3990 × 1 = 0.3911. Down node (90): continuation e^(−0.02) × (0.6010 × 1 + 0.3990 × 19) = 8.0199 versus exercise 10, so exercise. Today: e^(−0.02) × (0.6010 × 0.3911 + 0.3990 × 10) = 4.14.",
+    "rationale": {
+      "A": "Incorrect. 3.37 is the European put value, which keeps the continuation value of 8.02 at the down node instead of exercising for 10.",
+      "B": "Correct. Exercising early at the down node and rolling back gives 4.14.",
+      "C": "Incorrect. 4.22 forgets to discount the first step back to today.",
+      "D": "Incorrect. 10.00 is the exercise value at the down node, not today's option value."
+    },
+    "verify": "const p=(Math.exp(0.02)-0.9)/0.2; const df=Math.exp(-0.02); const pu=df*(p*0+(1-p)*1); const pdc=df*(p*1+(1-p)*19); const pd=Math.max(pdc,10); return Math.max(df*(p*pu+(1-p)*pd),0);",
+    "numericAnswer": 4.14,
+    "tolerance": 0.005,
+    "tags": ["american-options", "two-step-tree"]
+  },
+  {
+    "id": "q-frm1-binomial-trees-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "binomial-trees",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In a multi-step binomial tree for a non-dividend-paying stock, an analyst values American calls and American puts. Which statement is correct?",
+    "options": [
+      "Both American calls and puts should be exercised as soon as they are in the money",
+      "American puts are never exercised early because waiting preserves time value",
+      "The risk-neutral probability must be replaced by the real-world probability at nodes where exercise is considered",
+      "Early exercise is never optimal for the call, but can be optimal for a deep in-the-money put"
+    ],
+    "answer": "D",
+    "explanation": "Without dividends, an American call is always worth more alive than exercised. A deep in-the-money put can be worth exercising early because receiving the strike sooner earns interest.",
+    "rationale": {
+      "A": "Incorrect. Exercising as soon as an option is in the money throws away time value; the comparison must be made node by node.",
+      "B": "Incorrect. Puts can be exercised early when the interest earned on the strike exceeds the remaining time value.",
+      "C": "Incorrect. The risk-neutral probability is used at every node, including where the exercise decision is made.",
+      "D": "Correct. On a non-dividend stock the American call equals the European call, while the American put can carry an early exercise premium."
+    },
+    "tags": ["american-options", "early-exercise"]
+  }
+]

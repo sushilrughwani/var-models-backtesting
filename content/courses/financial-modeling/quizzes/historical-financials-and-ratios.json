@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-fm-historical-financials-and-ratios-1",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "historical-financials-and-ratios",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "In FY2024 Northwind had revenue of USD 452.0 million, COGS of USD 266.7 million and accounts receivable of USD 64.0 million. Using a 365-day year, days sales outstanding (DSO) is closest to:",
+    "options": ["51.7 days", "87.6 days", "50.0 days", "0.14 days"],
+    "answer": "A",
+    "explanation": "DSO = AR / revenue x 365 = 64.0 / 452.0 x 365 = 51.7 days.",
+    "rationale": {
+      "A": "Correct. 64.0 / 452.0 x 365 = 51.7 days.",
+      "B": "Incorrect. 87.6 divides receivables by COGS; receivables are measured against revenue.",
+      "C": "Incorrect. 50.0 is Northwind's FY2025 DSO, not FY2024.",
+      "D": "Incorrect. 0.14 is the ratio AR / revenue without multiplying by 365."
+    },
+    "verify": "return 64.0/452.0*365;",
+    "numericAnswer": 51.7,
+    "tolerance": 0.05,
+    "tags": ["working-capital-days"]
+  },
+  {
+    "id": "q-fm-historical-financials-and-ratios-2",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "historical-financials-and-ratios",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind reported FY2025 EBITDA of USD 94.0 million on revenue of USD 500.0 million, after deducting a one-off restructuring charge of USD 6.0 million. The underlying EBITDA margin to use as a forecasting base is closest to:",
+    "options": ["18.8%", "17.6%", "20.0%", "21.3%"],
+    "answer": "C",
+    "explanation": "Add back the one-off charge: underlying EBITDA = 94.0 + 6.0 = 100.0; margin = 100.0 / 500.0 = 20.0%.",
+    "rationale": {
+      "A": "Incorrect. 18.8% is the reported margin, which still includes the non-recurring charge.",
+      "B": "Incorrect. 17.6% deducts the charge a second time: (94.0 - 6.0) / 500.0.",
+      "C": "Correct. Adding back the one-off gives 100.0 / 500.0 = 20.0%.",
+      "D": "Incorrect. 21.3% wrongly reduces revenue by the charge as well: 100.0 / 470.0 does not follow from any valid adjustment."
+    },
+    "verify": "return (94.0+6.0)/500.0*100;",
+    "numericAnswer": 20.0,
+    "tolerance": 0.05,
+    "tags": ["normalisation", "margins"]
+  },
+  {
+    "id": "q-fm-historical-financials-and-ratios-3",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "historical-financials-and-ratios",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Northwind's revenue was USD 412.0 million in FY2023 and USD 500.0 million in FY2025. The compound annual growth rate over the two years is closest to:",
+    "options": ["21.36%", "10.68%", "6.67%", "10.16%"],
+    "answer": "D",
+    "explanation": "CAGR = (500.0 / 412.0)^(1/2) - 1 = 10.16%.",
+    "rationale": {
+      "A": "Incorrect. 21.36% is the cumulative two-year growth, not an annual rate.",
+      "B": "Incorrect. 10.68% divides cumulative growth by two, ignoring compounding.",
+      "C": "Incorrect. 6.67% uses three periods (counting years instead of intervals) in the root.",
+      "D": "Correct. The square root of 500/412, minus one, is 10.16%."
+    },
+    "verify": "return (Math.pow(500/412,0.5)-1)*100;",
+    "numericAnswer": 10.16,
+    "tolerance": 0.005,
+    "tags": ["growth", "cagr"]
+  },
+  {
+    "id": "q-fm-historical-financials-and-ratios-4",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "historical-financials-and-ratios",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Why should a modeller measure days inventory outstanding and days payables outstanding against COGS rather than revenue?",
+    "options": ["Both balances are carried at cost, so a cost-based denominator keeps the ratio consistent", "COGS is always larger than revenue, giving more conservative days", "Revenue includes taxes that must be excluded from all ratios", "Accounting standards forbid dividing balance sheet items by revenue"],
+    "answer": "A",
+    "explanation": "Inventory and the purchases that create payables are recorded at cost. Dividing by revenue, which includes the profit margin, mixes cost and selling-price bases and understates the days.",
+    "rationale": {
+      "A": "Correct. Matching cost-based balances with a cost-based flow gives meaningful days.",
+      "B": "Incorrect. COGS is normally smaller than revenue, and conservatism is not the reason.",
+      "C": "Incorrect. Reported revenue generally excludes sales taxes; that is not the reason for the choice.",
+      "D": "Incorrect. No accounting rule governs how analysts compute ratios; DSO uses revenue legitimately."
+    },
+    "tags": ["working-capital-days"]
+  }
+]

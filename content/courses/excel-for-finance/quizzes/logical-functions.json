@@ -1,0 +1,85 @@
+[
+  {
+    "id": "q-xl-logical-functions-1",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "logical-functions",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A borrower's net debt / EBITDA is in B2 (value 3.2) and its interest coverage is in C2 (value 3.9). What does =IF(AND(B2<=3.5, C2>=4), \"Pass\", \"Breach\") return?",
+    "options": ["Pass", "TRUE", "#VALUE!", "Breach"],
+    "answer": "D",
+    "explanation": "B2<=3.5 is TRUE but C2>=4 is FALSE. AND requires every test to be TRUE, so it returns FALSE and IF returns \"Breach\".",
+    "rationale": {
+      "A": "Incorrect. Only the leverage test passes; AND needs both tests to pass.",
+      "B": "Incorrect. AND would return TRUE/FALSE on its own, but here it is inside IF, which returns the text results.",
+      "C": "Incorrect. All inputs are numbers, so no #VALUE! error arises.",
+      "D": "Correct. Coverage of 3.9 fails the 4.0 test, so AND is FALSE and IF returns \"Breach\"."
+    }
+  },
+  {
+    "id": "q-xl-logical-functions-2",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "logical-functions",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Sales of 180,000 are in B2. What does =IFS(B2>=250000, 5%, B2>=150000, 4%, B2>=50000, 3%, TRUE, 0)*B2 return?",
+    "options": ["9,000", "5,400", "7,200", "0"],
+    "answer": "C",
+    "explanation": "The first test (≥ 250,000) is FALSE; the second (≥ 150,000) is TRUE, so IFS returns 4%. Commission = 4% × 180,000 = 7,200.",
+    "rationale": {
+      "A": "Incorrect. 9,000 applies the 5% tier, but sales are below 250,000.",
+      "B": "Incorrect. 5,400 applies the 3% tier; IFS stops at the first TRUE test, which is the 4% tier.",
+      "C": "Correct. 180,000 first meets the ≥ 150,000 condition: 0.04 × 180,000 = 7,200.",
+      "D": "Incorrect. The catch-all 0 applies only if no earlier condition is TRUE."
+    },
+    "verify": "const s=180000; const r = s>=250000?0.05 : s>=150000?0.04 : s>=50000?0.03 : 0; return r*s;",
+    "numericAnswer": 7200,
+    "tolerance": 0.5
+  },
+  {
+    "id": "q-xl-logical-functions-3",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "logical-functions",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A colleague writes the commission formula with the tiers in ascending order: =IFS(B2>=50000, 3%, B2>=150000, 4%, B2>=250000, 5%, TRUE, 0)*B2. With sales of 180,000 in B2, what does it return?",
+    "options": ["5,400", "7,200", "9,000", "#N/A"],
+    "answer": "A",
+    "explanation": "IFS returns the result of the first TRUE test. 180,000 ≥ 50,000 is already TRUE, so the rate is 3%: 0.03 × 180,000 = 5,400. The later tiers are never checked.",
+    "rationale": {
+      "A": "Correct. The first test is TRUE, so IFS returns 3% and the commission is 5,400, understated by 1,800.",
+      "B": "Incorrect. 7,200 is the intended answer, but IFS does not look for the best match, only the first TRUE one.",
+      "C": "Incorrect. 9,000 would require the 5% tier, which is neither reached nor met.",
+      "D": "Incorrect. #N/A arises only when no condition is TRUE and there is no catch-all; here the first condition is TRUE."
+    },
+    "verify": "const s=180000; const r = s>=50000?0.03 : s>=150000?0.04 : s>=250000?0.05 : 0; return r*s;",
+    "numericAnswer": 5400,
+    "tolerance": 0.5
+  },
+  {
+    "id": "q-xl-logical-functions-4",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "logical-functions",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst wraps every formula in a model as =IFERROR(original_formula, 0). What is the main risk of this approach?",
+    "options": [
+      "IFERROR slows calculation so much that the model becomes unusable",
+      "Genuine mistakes such as broken references or misspelled function names silently become zeros",
+      "IFERROR converts all text results into zeros",
+      "IFERROR only catches #DIV/0!, so other errors still appear"
+    ],
+    "answer": "B",
+    "explanation": "IFERROR catches every error type. Expected errors are handled, but so are #REF!, #NAME? and #VALUE! caused by real mistakes, which then flow into totals as zeros without anyone noticing.",
+    "rationale": {
+      "A": "Incorrect. IFERROR has a negligible calculation cost; the problem is hidden errors, not speed.",
+      "B": "Correct. Blanket error trapping turns visible problems into silent zeros that corrupt totals.",
+      "C": "Incorrect. IFERROR returns the original result, text included, whenever there is no error.",
+      "D": "Incorrect. IFERROR catches all error types; IFNA is the one limited to #N/A."
+    }
+  }
+]

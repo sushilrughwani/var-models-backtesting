@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-fx-risk-and-corporate-bonds-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "fx-risk-and-corporate-bonds",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A US importer must pay JPY 500 million and will receive JPY 200 million, both in three months. It does not hedge. The exchange rate moves from 150 JPY per USD to 140 JPY per USD by the payment date. The importer's loss from the currency move, in USD, is closest to:",
+    "options": ["USD 238,095", "USD 142,857", "USD 95,238", "USD 0"],
+    "answer": "B",
+    "explanation": "Net exposure is short JPY 300 million. Cost at 150: 300m/150 = USD 2,000,000. Cost at 140: 300m/140 = USD 2,142,857. Loss = USD 142,857.",
+    "rationale": {
+      "A": "Incorrect. 238,095 applies the move to the gross JPY 500 million payable and ignores the offsetting receivable.",
+      "B": "Correct. The net short position of JPY 300 million costs 142,857 dollars more after the yen strengthens.",
+      "C": "Incorrect. 95,238 applies the move to the JPY 200 million receivable only.",
+      "D": "Incorrect. The receivable only partly offsets the payable, so a net exposure remains."
+    },
+    "verify": "return (300e6/140-300e6/150);",
+    "numericAnswer": 142857,
+    "tolerance": 1,
+    "tags": ["fx-exposure", "netting"]
+  },
+  {
+    "id": "q-frm1-fx-risk-and-corporate-bonds-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "fx-risk-and-corporate-bonds",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A corporate bond has an annual default probability of 2% and an expected recovery rate of 35%. Ignoring risk and liquidity premiums, the credit spread that compensates for expected default losses is closest to:",
+    "options": ["2.00%", "0.70%", "1.30%", "3.08%"],
+    "answer": "C",
+    "explanation": "s ≈ λ(1 − R) = 0.02 × (1 − 0.35) = 0.013 = 1.30%.",
+    "rationale": {
+      "A": "Incorrect. 2.00% ignores recovery and assumes the entire face value is lost on default.",
+      "B": "Incorrect. 0.70% multiplies by the recovery rate instead of the loss given default.",
+      "C": "Correct. Default probability times loss given default: 2% × 65% = 1.30%.",
+      "D": "Incorrect. 3.08% divides by the loss given default, which is the formula for backing out λ from a spread."
+    },
+    "verify": "return 0.02*(1-0.35)*100;",
+    "numericAnswer": 1.3,
+    "tolerance": 0.005,
+    "tags": ["credit-spread", "recovery-rate"]
+  },
+  {
+    "id": "q-frm1-fx-risk-and-corporate-bonds-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "fx-risk-and-corporate-bonds",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A Swiss multinational reports in CHF. At year end, the euro has weakened, and the CHF value of its German subsidiary's net assets falls on the consolidated balance sheet, although no cash flows have occurred. This is an example of:",
+    "options": ["Translation exposure", "Transaction exposure", "Economic exposure", "Settlement risk"],
+    "answer": "A",
+    "explanation": "Translation exposure arises when the accounts of foreign subsidiaries are converted into the reporting currency. Reported values change without any cash flow.",
+    "rationale": {
+      "A": "Correct. The loss is an accounting effect from converting the subsidiary's balance sheet.",
+      "B": "Incorrect. Transaction exposure concerns specific contracted foreign currency cash flows.",
+      "C": "Incorrect. Economic exposure concerns long-run competitiveness and future cash flows, not reported balance sheet values.",
+      "D": "Incorrect. Settlement risk is the risk that a counterparty fails to deliver during an exchange of payments."
+    },
+    "tags": ["fx-exposure"]
+  },
+  {
+    "id": "q-frm1-fx-risk-and-corporate-bonds-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "fx-risk-and-corporate-bonds",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Two bonds from the same issuer are identical except for one feature. Which feature would most likely cause investors to demand a higher yield?",
+    "options": ["A put provision allowing investors to sell the bond back at par", "An option for holders to convert the bond into the issuer's shares", "A sinking fund requiring the issuer to retire part of the issue each year", "A call provision allowing the issuer to redeem the bond at a fixed price"],
+    "answer": "D",
+    "explanation": "A call provision is an option held by the issuer, typically exercised when rates fall, which hurts investors. They demand a higher yield as compensation. Put and conversion options belong to investors, and a sinking fund reduces credit risk.",
+    "rationale": {
+      "A": "Incorrect. A put benefits investors, so they accept a lower yield.",
+      "B": "Incorrect. Conversion rights benefit investors, which lowers the required coupon and yield.",
+      "C": "Incorrect. A sinking fund reduces the risk of a large repayment at maturity, which tends to lower the yield.",
+      "D": "Correct. The issuer owns the call option, so investors require extra yield."
+    },
+    "tags": ["embedded-options", "corporate-bonds"]
+  }
+]
