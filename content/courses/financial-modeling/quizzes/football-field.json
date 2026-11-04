@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-fm-football-field-1",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "football-field",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "In a football field built as a stacked bar chart, the DCF exit-multiple range for Northwind Components Ltd runs from USD 30.99 to USD 37.54 per share. The first (invisible) series holds the low value. What value goes in the second, visible series for this bar?",
+    "options": ["37.54", "6.55", "30.99", "34.27"],
+    "answer": "B",
+    "explanation": "The visible series is the bar length, high minus low: 37.54 − 30.99 = 6.55. Stacked on the invisible 30.99, it ends at 37.54.",
+    "rationale": {
+      "A": "Incorrect. Stacking 37.54 on top of 30.99 would make the bar end at 68.53.",
+      "B": "Correct. The helper column holds high minus low.",
+      "C": "Incorrect. 30.99 is the invisible base series, not the visible length.",
+      "D": "Incorrect. 34.27 is the exit-multiple base-case value per share, not a bar length."
+    },
+    "verify": "return 37.54-30.99;",
+    "numericAnswer": 6.55,
+    "tolerance": 0.005,
+    "tags": ["football-field", "excel-chart"]
+  },
+  {
+    "id": "q-fm-football-field-2",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "football-field",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind's per-share ranges are: trading comps 29.42-32.23, DCF perpetuity growth 29.51-35.26 and DCF exit multiple 30.99-37.54 (USD). What is the midpoint of the range where all three overlap?",
+    "options": ["USD 33.48", "USD 30.83", "USD 32.39", "USD 31.61"],
+    "answer": "D",
+    "explanation": "Overlap runs from the highest low (30.99) to the lowest high (32.23). Midpoint = (30.99 + 32.23) / 2 = 31.61.",
+    "rationale": {
+      "A": "Incorrect. 33.48 is the midpoint of the lowest low (29.42) and highest high (37.54), the union rather than the overlap.",
+      "B": "Incorrect. 30.83 is the midpoint of the comps range only.",
+      "C": "Incorrect. 32.39 is the midpoint of the DCF perpetuity growth range only.",
+      "D": "Correct. The overlap is 30.99 to 32.23."
+    },
+    "verify": "const lo=Math.max(29.42,29.51,30.99), hi=Math.min(32.23,35.26,37.54); return (lo+hi)/2;",
+    "numericAnswer": 31.61,
+    "tolerance": 0.005,
+    "tags": ["football-field", "overlap"]
+  },
+  {
+    "id": "q-fm-football-field-3",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "football-field",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An analyst sets Northwind's fair value as 60% of the base-case DCF value (USD 32.16) plus 40% of the trading comps median value (USD 31.03). The current share price is USD 27.50. The upside to fair value is closest to:",
+    "options": ["15.30%", "13.27%", "14.48%", "23.02%"],
+    "answer": "A",
+    "explanation": "Fair value = 0.6 × 32.16 + 0.4 × 31.03 = 31.708. Upside = 31.708 / 27.50 − 1 = 15.30%.",
+    "rationale": {
+      "A": "Correct. Weighted value over the current price, minus one.",
+      "B": "Incorrect. 13.27% divides the gain by the fair value instead of the current price.",
+      "C": "Incorrect. 14.48% swaps the weights (40% DCF, 60% comps).",
+      "D": "Incorrect. 23.02% uses the precedent median of 33.83, which embeds a control premium."
+    },
+    "verify": "const v=0.6*32.16+0.4*31.03; return (v/27.5-1)*100;",
+    "numericAnswer": 15.3,
+    "tolerance": 0.005,
+    "tags": ["football-field", "target-price"]
+  },
+  {
+    "id": "q-fm-football-field-4",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "football-field",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "On Northwind's football field, the precedent transactions bar sits noticeably above the trading comps bar. How should an analyst setting a 12-month share price target treat this?",
+    "options": [
+      "Average all bars equally, because every method is equally valid",
+      "Discard the comps bar, because precedents reflect real transactions",
+      "Recognise that precedents embed a control premium, show them as a takeover reference, and weight the target on methods that value a minority stake",
+      "Lower the precedent multiples until the bars overlap"
+    ],
+    "answer": "C",
+    "explanation": "Precedents answer what a buyer of the whole company might pay. A share price target for minority investors should rest on DCF and trading comps, with precedents shown for context.",
+    "rationale": {
+      "A": "Incorrect. Methods answer different questions; blind averaging mixes control and minority values.",
+      "B": "Incorrect. Comps are the relevant market reference for a minority stake.",
+      "C": "Correct. The gap is expected and informative, not an error.",
+      "D": "Incorrect. Altering inputs to force agreement undermines the analysis."
+    },
+    "tags": ["football-field", "control-premium"]
+  }
+]

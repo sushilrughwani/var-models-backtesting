@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-fm-linking-the-three-statements-1",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "linking-the-three-statements",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind's retained earnings were USD 137.40 million at the end of FY2025. FY2026E net income is USD 66.63 million and dividends are USD 19.99 million. FY2026E closing retained earnings (USD million) are closest to:",
+    "options": ["204.03", "117.41", "184.04", "224.02"],
+    "answer": "C",
+    "explanation": "137.40 + 66.63 - 19.99 = 184.04.",
+    "rationale": {
+      "A": "Incorrect. 204.03 adds net income but ignores dividends.",
+      "B": "Incorrect. 117.41 deducts dividends but forgets net income.",
+      "C": "Correct. Opening plus net income minus dividends = 184.04.",
+      "D": "Incorrect. 224.02 adds dividends instead of deducting them."
+    },
+    "verify": "return 137.40 + 66.63 - 19.99;",
+    "numericAnswer": 184.04,
+    "tolerance": 0.005,
+    "tags": ["retained-earnings"]
+  },
+  {
+    "id": "q-fm-linking-the-three-statements-2",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "linking-the-three-statements",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind's FY2026E net income is USD 66.63 million, D&A is USD 22.20 million and net working capital increases by USD 3.39 million. Cash flow from operations (USD million) is closest to:",
+    "options": ["92.22", "85.44", "41.04", "88.83"],
+    "answer": "B",
+    "explanation": "CFO = 66.63 + 22.20 - 3.39 = 85.44.",
+    "rationale": {
+      "A": "Incorrect. 92.22 adds the increase in NWC instead of deducting it.",
+      "B": "Correct. Net income plus D&A minus the increase in NWC = 85.44.",
+      "C": "Incorrect. 41.04 deducts D&A instead of adding it back.",
+      "D": "Incorrect. 88.83 ignores the working capital investment."
+    },
+    "verify": "return 66.63 + 22.20 - 3.39;",
+    "numericAnswer": 85.44,
+    "tolerance": 0.005,
+    "tags": ["cash-flow-from-operations"]
+  },
+  {
+    "id": "q-fm-linking-the-three-statements-3",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "linking-the-three-statements",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In a properly linked forecast, the cash balance on the balance sheet should be:",
+    "options": ["Linked to the closing cash on the cash flow statement", "Calculated as total liabilities and equity minus all other assets", "Held at the minimum cash level as a hard-coded input", "Grown at the same rate as revenue"],
+    "answer": "A",
+    "explanation": "Cash is the output of the cash flow statement. Deriving it as a balancing figure would hide errors, and hard-coding or growing it would break the link to actual cash flows.",
+    "rationale": {
+      "A": "Correct. Balance sheet cash must equal the cash flow statement's closing cash.",
+      "B": "Incorrect. That is a plug: the balance sheet would always balance even if the model were wrong.",
+      "C": "Incorrect. Minimum cash guides the revolver; actual cash still comes from the cash flow statement.",
+      "D": "Incorrect. Cash is not a revenue-driven operating item; growing it ignores actual cash generation."
+    },
+    "tags": ["linking", "no-plugs"]
+  },
+  {
+    "id": "q-fm-linking-the-three-statements-4",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "linking-the-three-statements",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Northwind spends USD 44.0 million on capex in FY2026E. Which set of entries correctly reflects this in the linked model (ignoring depreciation)?",
+    "options": ["Income statement expense of 44.0; cash down 44.0", "Operating cash outflow of 44.0; retained earnings down 44.0", "Financing cash outflow of 44.0; debt up 44.0", "Investing cash outflow of 44.0; net PP&E up 44.0"],
+    "answer": "D",
+    "explanation": "Capex is capitalised: it is an investing outflow in the cash flow statement and increases PP&E on the balance sheet. It reaches the income statement only gradually through depreciation.",
+    "rationale": {
+      "A": "Incorrect. Capex is not expensed when incurred; that would double count it with depreciation.",
+      "B": "Incorrect. Capex is investing, not operating, and does not hit retained earnings directly.",
+      "C": "Incorrect. Capex is not a financing flow and does not by itself change debt.",
+      "D": "Correct. Investing outflow and an equal increase in PP&E keep both sides balanced (cash down, PP&E up)."
+    },
+    "tags": ["capex", "linking"]
+  }
+]

@@ -58,7 +58,7 @@ Northwind Components Ltd, USD per share, current price 27.50. Ranges from the pr
 
 **Step 1 - Overlap.** The three methods that value a minority stake (comps and both DCFs) overlap from max(29.42, 29.51, 30.99) = 30.99 to min(32.23, 35.26, 37.54) = 32.23. Midpoint (30.99 + 32.23) / 2 = 31.61.
 
-**Step 2 - Context.** Precedents (31.63 to 35.66) sit above the comps bar, as a control premium should. The whole 52-week range lies below or at the bottom of the valuation bars except for its top.
+**Step 2 - Context.** Precedents (31.63 to 35.66) sit above the comps bar, as a control premium should. Most of the 52-week range lies below the valuation bars; only its top (30.10) reaches into them, and the current price of 27.50 is below every valuation bar.
 
 **Step 3 - Weighting.** For a share price target, weight the base-case DCF at 60% (32.16) and the comps median at 40% (31.03): 0.6 × 32.16 + 0.4 × 31.03 = 19.296 + 12.412 = 31.708, rounded to 31.71.
 
