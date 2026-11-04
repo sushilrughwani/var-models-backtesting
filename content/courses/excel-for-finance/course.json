@@ -1,0 +1,154 @@
+{
+  "slug": "excel-for-finance",
+  "title": "Excel for Finance",
+  "shortTitle": "Excel for Finance",
+  "category": "skills",
+  "level": "Beginner to Intermediate",
+  "status": "full",
+  "shortDescription": "Work faster and more reliably in Excel: functions, financial formulas, data tools and clean model design.",
+  "description": "A hands-on course that takes you from basic spreadsheet use to confident, finance-grade Excel. You will learn the functions analysts use every day, build time value of money and loan schedules, analyse data with lookups, pivots and charts, and structure workbooks that are easy to audit.",
+  "whoFor": [
+    "Students and graduates preparing for finance internships or jobs",
+    "CFA®/FRM® candidates who want to check calculations in Excel",
+    "Working professionals who want to stop fighting their spreadsheets"
+  ],
+  "outcomes": [
+    "Navigate and format workbooks quickly using keyboard shortcuts",
+    "Use lookup, logical, text, date and statistical functions fluently",
+    "Build loan schedules, NPV/IRR analyses and return calculations",
+    "Summarise data with tables, pivot tables and charts",
+    "Design clean, auditable workbooks and stress test them with data tables"
+  ],
+  "faq": [
+    {
+      "q": "Which Excel version do I need?",
+      "a": "Microsoft 365 or Excel 2021 is ideal. Most lessons also work in Excel 2016/2019; dynamic-array lessons note when a newer version is required."
+    },
+    {
+      "q": "Do I need any finance background?",
+      "a": "No. Finance concepts are explained as they appear."
+    }
+  ],
+  "accent": "#15803d",
+  "modules": [
+    {
+      "slug": "excel-foundations",
+      "title": "Excel Foundations",
+      "description": "Navigation, references and the habits that make spreadsheets reliable.",
+      "lessons": [
+        {
+          "slug": "excel-interface-and-shortcuts",
+          "title": "The Excel Interface and Essential Shortcuts",
+          "summary": "Moving around fast and the 25 shortcuts every analyst uses.",
+          "duration": 16,
+          "freePreview": true
+        },
+        {
+          "slug": "cell-references-and-named-ranges",
+          "title": "Cell References and Named Ranges",
+          "summary": "Relative, absolute and mixed references; naming inputs.",
+          "duration": 18
+        },
+        {
+          "slug": "formatting-for-finance",
+          "title": "Formatting Conventions for Financial Work",
+          "summary": "Number formats, colour conventions for inputs and formulas, and custom formats.",
+          "duration": 16
+        }
+      ]
+    },
+    {
+      "slug": "excel-functions",
+      "title": "Core Functions",
+      "description": "The function families that power analysis.",
+      "lessons": [
+        {
+          "slug": "logical-functions",
+          "title": "Logical Functions: IF, IFS, AND, OR and IFERROR",
+          "summary": "Decision logic and error handling in formulas.",
+          "duration": 18
+        },
+        {
+          "slug": "lookup-functions",
+          "title": "Lookup Functions: XLOOKUP, INDEX and MATCH",
+          "summary": "Retrieving data reliably from tables.",
+          "duration": 22
+        },
+        {
+          "slug": "text-and-date-functions",
+          "title": "Text and Date Functions",
+          "summary": "Cleaning text, building labels and working with dates and EOMONTH.",
+          "duration": 18
+        },
+        {
+          "slug": "statistical-functions",
+          "title": "Statistical Functions for Finance",
+          "summary": "AVERAGE, STDEV.S, CORREL, PERCENTILE and conditional aggregates.",
+          "duration": 20
+        }
+      ]
+    },
+    {
+      "slug": "excel-financial-functions",
+      "title": "Financial Functions",
+      "description": "Time value of money and investment analysis in Excel.",
+      "lessons": [
+        {
+          "slug": "tvm-functions",
+          "title": "Time Value of Money Functions: PV, FV, PMT, NPER and RATE",
+          "summary": "Solving TVM problems and the sign convention.",
+          "duration": 22
+        },
+        {
+          "slug": "npv-irr-xnpv-xirr",
+          "title": "NPV, IRR, XNPV and XIRR",
+          "summary": "Project evaluation with regular and irregular cash flows.",
+          "duration": 22
+        },
+        {
+          "slug": "loan-amortization-schedule",
+          "title": "Building a Loan Amortization Schedule",
+          "summary": "Interest and principal split, IPMT/PPMT and extra payments.",
+          "duration": 22
+        },
+        {
+          "slug": "returns-and-risk-in-excel",
+          "title": "Returns, Volatility and Correlation in Excel",
+          "summary": "Computing return series, annualised volatility and a correlation matrix.",
+          "duration": 20
+        }
+      ]
+    },
+    {
+      "slug": "excel-data-analysis",
+      "title": "Data Analysis and Presentation",
+      "description": "Turning raw data into insight.",
+      "lessons": [
+        {
+          "slug": "tables-and-pivot-tables",
+          "title": "Excel Tables and Pivot Tables",
+          "summary": "Structured references and summarising data with pivots.",
+          "duration": 22
+        },
+        {
+          "slug": "charts-for-finance",
+          "title": "Charts for Financial Analysis",
+          "summary": "Choosing and formatting charts that communicate clearly.",
+          "duration": 18
+        },
+        {
+          "slug": "what-if-analysis",
+          "title": "What-If Analysis: Goal Seek, Data Tables and Scenarios",
+          "summary": "Sensitivity analysis and scenario switching.",
+          "duration": 20
+        },
+        {
+          "slug": "model-auditing-and-best-practice",
+          "title": "Auditing Formulas and Spreadsheet Best Practice",
+          "summary": "Trace precedents, error checks and a structure that prevents mistakes.",
+          "duration": 18
+        }
+      ]
+    }
+  ]
+}

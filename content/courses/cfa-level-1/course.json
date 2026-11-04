@@ -1,0 +1,680 @@
+{
+  "slug": "cfa-level-1",
+  "title": "CFA® Level I Complete Course",
+  "shortTitle": "CFA® Level I",
+  "category": "cfa",
+  "level": "Level I",
+  "status": "full",
+  "shortDescription": "Every Level I topic explained from first principles, with notes, quizzes, a large question bank and mock exams.",
+  "description": "A complete, structured path through the CFA® Level I body of knowledge. Each lesson pairs a focused video lecture with concise notes, worked examples and an end-of-lesson quiz. The question bank, flashcards, formula library and timed mock exams turn understanding into exam-day speed and accuracy.",
+  "whoFor": [
+    "Candidates registered (or planning to register) for the CFA® Level I exam",
+    "Finance and commerce graduates who want a rigorous foundation in investments",
+    "Working professionals moving into research, portfolio management or risk roles",
+    "Anyone who found the official reading dense and wants clear intuition first"
+  ],
+  "outcomes": [
+    "Solve time value of money, statistics and hypothesis-testing problems quickly and accurately",
+    "Read and analyse financial statements and spot low-quality reporting",
+    "Value equities, bonds and basic derivatives with confidence",
+    "Apply the Code and Standards to realistic ethical dilemmas",
+    "Build a disciplined study plan and test yourself under exam conditions"
+  ],
+  "faq": [
+    {
+      "q": "Does this course replace the official curriculum?",
+      "a": "No. It is an independent prep course that explains the topics in plain language and gives you extensive original practice. Use it alongside the official curriculum provided with your exam registration."
+    },
+    {
+      "q": "How long will it take to finish?",
+      "a": "Most candidates plan roughly 300 hours of study for Level I. The study planner turns your exam date and weekly hours into a week-by-week schedule."
+    },
+    {
+      "q": "Are the practice questions official exam questions?",
+      "a": "No. Every question is written originally for this course in an exam-like style."
+    },
+    {
+      "q": "Can I study on my phone?",
+      "a": "Yes. The platform is fully responsive and works on phones, tablets and laptops."
+    },
+    {
+      "q": "What is the difference between Self-Study and Premium?",
+      "a": "Self-Study gives you all lectures, notes and practice tools. Premium adds instructor Q&A on every lesson, live doubt-clearing sessions and a completion certificate."
+    }
+  ],
+  "accent": "#1d4ed8",
+  "modules": [
+    {
+      "slug": "ethical-professional-standards",
+      "title": "Ethical and Professional Standards",
+      "description": "How the Code and Standards protect clients and markets, and how to apply them to case scenarios.",
+      "lessons": [
+        {
+          "slug": "ethics-and-trust",
+          "title": "Ethics and Trust in the Investment Profession",
+          "summary": "Why ethical conduct is the foundation of client trust and market integrity.",
+          "duration": 18,
+          "freePreview": true
+        },
+        {
+          "slug": "code-and-standards-framework",
+          "title": "The Code of Ethics and Standards Framework",
+          "summary": "The structure of the Code and the seven areas of the Standards, and how violations are handled.",
+          "duration": 20
+        },
+        {
+          "slug": "professionalism",
+          "title": "Standard I: Professionalism",
+          "summary": "Knowledge of the law, independence and objectivity, misrepresentation, misconduct and competence.",
+          "duration": 28
+        },
+        {
+          "slug": "integrity-of-capital-markets",
+          "title": "Standard II: Integrity of Capital Markets",
+          "summary": "Material nonpublic information, the mosaic theory and market manipulation.",
+          "duration": 22
+        },
+        {
+          "slug": "duties-to-clients",
+          "title": "Standard III: Duties to Clients",
+          "summary": "Loyalty, fair dealing, suitability, performance presentation and confidentiality.",
+          "duration": 30
+        },
+        {
+          "slug": "duties-to-employers",
+          "title": "Standard IV: Duties to Employers",
+          "summary": "Loyalty to employers, additional compensation and supervisory responsibilities.",
+          "duration": 20
+        },
+        {
+          "slug": "investment-analysis-and-conflicts",
+          "title": "Standards V-VII: Analysis, Conflicts and Member Responsibilities",
+          "summary": "Diligence, communication, record retention, conflict disclosure, priority of transactions and use of the designation.",
+          "duration": 30
+        },
+        {
+          "slug": "gips-introduction",
+          "title": "Introduction to the Global Investment Performance Standards",
+          "summary": "Why performance standards exist, who complies and what composites are.",
+          "duration": 18
+        }
+      ]
+    },
+    {
+      "slug": "quantitative-methods",
+      "title": "Quantitative Methods",
+      "description": "The maths of finance: time value of money, statistics, probability, simulation, inference and regression.",
+      "lessons": [
+        {
+          "slug": "rates-and-returns",
+          "title": "Interest Rates, Returns and Their Measurement",
+          "summary": "Holding period, average, money-weighted and time-weighted returns; annualising returns.",
+          "duration": 26,
+          "freePreview": true
+        },
+        {
+          "slug": "time-value-of-money",
+          "title": "Time Value of Money in Finance",
+          "summary": "Discounting and compounding cash flows, annuities, perpetuities and implied returns.",
+          "duration": 30
+        },
+        {
+          "slug": "statistical-measures",
+          "title": "Statistical Measures of Asset Returns",
+          "summary": "Central tendency, dispersion, skewness, kurtosis and correlation of return distributions.",
+          "duration": 26
+        },
+        {
+          "slug": "probability-trees-and-conditional-expectations",
+          "title": "Probability Trees and Conditional Expectations",
+          "summary": "Expected value, variance, conditional expectations, total probability and Bayes' rule.",
+          "duration": 24
+        },
+        {
+          "slug": "portfolio-mathematics",
+          "title": "Portfolio Mathematics",
+          "summary": "Expected return, variance and covariance of a portfolio; correlation and diversification.",
+          "duration": 24
+        },
+        {
+          "slug": "simulation-methods",
+          "title": "Simulation Methods",
+          "summary": "Lognormal distribution, continuously compounded returns, Monte Carlo and bootstrap simulation.",
+          "duration": 22
+        },
+        {
+          "slug": "estimation-and-inference",
+          "title": "Estimation and Inference",
+          "summary": "Sampling methods, the central limit theorem, standard error and confidence intervals.",
+          "duration": 24
+        },
+        {
+          "slug": "hypothesis-testing",
+          "title": "Hypothesis Testing",
+          "summary": "The testing framework, test statistics, p-values, Type I and II errors and tests of means and variances.",
+          "duration": 30
+        },
+        {
+          "slug": "parametric-and-nonparametric-tests",
+          "title": "Parametric and Non-Parametric Tests of Independence",
+          "summary": "Testing correlation and independence with t-tests, rank correlation and chi-square tests.",
+          "duration": 20
+        },
+        {
+          "slug": "simple-linear-regression",
+          "title": "Simple Linear Regression",
+          "summary": "Estimating, interpreting and testing a one-variable regression model; ANOVA and prediction.",
+          "duration": 32
+        },
+        {
+          "slug": "big-data-techniques",
+          "title": "Introduction to Big Data Techniques",
+          "summary": "Fintech, big data, machine learning and their uses in investment management.",
+          "duration": 18
+        }
+      ]
+    },
+    {
+      "slug": "economics",
+      "title": "Economics",
+      "description": "Market structures, the business cycle, policy, trade, capital flows and currency markets.",
+      "lessons": [
+        {
+          "slug": "firms-and-market-structures",
+          "title": "The Firm and Market Structures",
+          "summary": "Perfect competition, monopolistic competition, oligopoly and monopoly; breakeven and shutdown.",
+          "duration": 30,
+          "freePreview": true
+        },
+        {
+          "slug": "business-cycles",
+          "title": "Understanding Business Cycles",
+          "summary": "Phases of the cycle, credit cycles and economic indicators.",
+          "duration": 22
+        },
+        {
+          "slug": "fiscal-policy",
+          "title": "Fiscal Policy",
+          "summary": "Fiscal tools, multipliers, deficits and the limits of fiscal policy.",
+          "duration": 22
+        },
+        {
+          "slug": "monetary-policy",
+          "title": "Monetary Policy",
+          "summary": "Central bank roles, policy tools, transmission and the interaction of fiscal and monetary policy.",
+          "duration": 26
+        },
+        {
+          "slug": "geopolitics",
+          "title": "Introduction to Geopolitics",
+          "summary": "Actors, cooperation versus competition, and how geopolitical risk reaches portfolios.",
+          "duration": 18
+        },
+        {
+          "slug": "international-trade",
+          "title": "International Trade",
+          "summary": "Comparative advantage, trade restrictions and trading blocs.",
+          "duration": 20
+        },
+        {
+          "slug": "capital-flows-and-fx-market",
+          "title": "Capital Flows and the FX Market",
+          "summary": "How the foreign exchange market works and the role of capital flows.",
+          "duration": 20
+        },
+        {
+          "slug": "exchange-rate-calculations",
+          "title": "Exchange Rate Calculations",
+          "summary": "Quotes, cross rates, forward points and the forward premium or discount.",
+          "duration": 26
+        }
+      ]
+    },
+    {
+      "slug": "corporate-issuers",
+      "title": "Corporate Issuers",
+      "description": "How companies are organised and governed, how they invest and finance themselves, and what they are worth to capital providers.",
+      "lessons": [
+        {
+          "slug": "organizational-forms",
+          "title": "Organizational Forms, Corporate Issuer Features and Ownership",
+          "summary": "Sole proprietorships, partnerships and corporations; public versus private ownership.",
+          "duration": 18,
+          "freePreview": true
+        },
+        {
+          "slug": "stakeholders-and-governance",
+          "title": "Investors and Other Stakeholders",
+          "summary": "Stakeholder groups, their conflicts and corporate governance mechanisms.",
+          "duration": 20
+        },
+        {
+          "slug": "governance-risks-and-esg",
+          "title": "Corporate Governance: Conflicts, Mechanisms, Risks and Benefits",
+          "summary": "Principal-agent problems, board structure and ESG considerations.",
+          "duration": 22
+        },
+        {
+          "slug": "working-capital-and-liquidity",
+          "title": "Working Capital and Liquidity",
+          "summary": "Cash conversion cycle, sources of liquidity and short-term financing choices.",
+          "duration": 24
+        },
+        {
+          "slug": "capital-investments-and-allocation",
+          "title": "Capital Investments and Capital Allocation",
+          "summary": "NPV, IRR, project types and common capital allocation pitfalls.",
+          "duration": 28
+        },
+        {
+          "slug": "capital-structure",
+          "title": "Capital Structure",
+          "summary": "Modigliani-Miller propositions, the trade-off theory and factors that drive leverage decisions.",
+          "duration": 26
+        },
+        {
+          "slug": "cost-of-capital",
+          "title": "Cost of Capital Foundations",
+          "summary": "WACC and estimating the costs of debt, preferred stock and equity.",
+          "duration": 28
+        },
+        {
+          "slug": "business-models",
+          "title": "Business Models",
+          "summary": "How firms create, deliver and capture value; pricing and revenue models.",
+          "duration": 18
+        }
+      ]
+    },
+    {
+      "slug": "financial-statement-analysis",
+      "title": "Financial Statement Analysis",
+      "description": "Reading, adjusting and analysing the income statement, balance sheet and cash flow statement.",
+      "lessons": [
+        {
+          "slug": "fsa-framework",
+          "title": "Introduction to Financial Statement Analysis",
+          "summary": "The roles of financial statements, notes, audit reports and the analysis framework.",
+          "duration": 22,
+          "freePreview": true
+        },
+        {
+          "slug": "income-statement",
+          "title": "Analyzing Income Statements",
+          "summary": "Revenue recognition, expense recognition, non-recurring items and earnings per share.",
+          "duration": 32
+        },
+        {
+          "slug": "balance-sheet",
+          "title": "Analyzing Balance Sheets",
+          "summary": "Classification and measurement of assets and liabilities; common-size balance sheets.",
+          "duration": 28
+        },
+        {
+          "slug": "cash-flow-statement-i",
+          "title": "Analyzing Statements of Cash Flows I",
+          "summary": "Operating, investing and financing activities; direct and indirect methods.",
+          "duration": 30
+        },
+        {
+          "slug": "cash-flow-statement-ii",
+          "title": "Analyzing Statements of Cash Flows II",
+          "summary": "Free cash flow to the firm and to equity; cash flow ratios.",
+          "duration": 26
+        },
+        {
+          "slug": "inventories",
+          "title": "Analysis of Inventories",
+          "summary": "FIFO, LIFO and weighted average cost; inventory ratios and write-downs.",
+          "duration": 28
+        },
+        {
+          "slug": "long-lived-assets",
+          "title": "Analysis of Long-Term Assets",
+          "summary": "Capitalisation versus expensing, depreciation methods, impairment and revaluation.",
+          "duration": 28
+        },
+        {
+          "slug": "income-taxes",
+          "title": "Topics in Long-Term Liabilities and Equity: Income Taxes",
+          "summary": "Deferred tax assets and liabilities, temporary and permanent differences.",
+          "duration": 26
+        },
+        {
+          "slug": "long-term-liabilities-and-leases",
+          "title": "Topics in Long-Term Liabilities and Equity",
+          "summary": "Bonds payable, leases from the lessee perspective, and pension basics.",
+          "duration": 28
+        },
+        {
+          "slug": "financial-reporting-quality",
+          "title": "Financial Reporting Quality",
+          "summary": "The quality spectrum, earnings manipulation and warning signs.",
+          "duration": 24
+        },
+        {
+          "slug": "financial-analysis-techniques",
+          "title": "Financial Analysis Techniques",
+          "summary": "Activity, liquidity, solvency and profitability ratios; DuPont analysis.",
+          "duration": 32
+        },
+        {
+          "slug": "financial-statement-modeling",
+          "title": "Introduction to Financial Statement Modeling",
+          "summary": "Building forecasts of revenue, costs, working capital and capital spending.",
+          "duration": 24
+        },
+        {
+          "slug": "ifrs-vs-us-gaap",
+          "title": "IFRS and US GAAP: Key Differences for Analysts",
+          "summary": "A practical comparison of reporting differences that affect ratios and comparisons.",
+          "duration": 20
+        }
+      ]
+    },
+    {
+      "slug": "equity-investments",
+      "title": "Equity Investments",
+      "description": "Market structure, indexes, efficiency, industry analysis and equity valuation.",
+      "lessons": [
+        {
+          "slug": "market-organization",
+          "title": "Market Organization and Structure",
+          "summary": "Financial system functions, positions, leverage, orders and execution.",
+          "duration": 30,
+          "freePreview": true
+        },
+        {
+          "slug": "security-market-indexes",
+          "title": "Security Market Indexes",
+          "summary": "Index construction, weighting methods, rebalancing and uses of indexes.",
+          "duration": 26
+        },
+        {
+          "slug": "market-efficiency",
+          "title": "Market Efficiency",
+          "summary": "Forms of efficiency, anomalies and behavioural finance.",
+          "duration": 22
+        },
+        {
+          "slug": "equity-securities-overview",
+          "title": "Overview of Equity Securities",
+          "summary": "Types of equity, voting rights, private equity and the cost of equity.",
+          "duration": 20
+        },
+        {
+          "slug": "company-analysis-past-and-present",
+          "title": "Company Analysis: Past and Present",
+          "summary": "Understanding a company's business model, revenue drivers and operating performance.",
+          "duration": 22
+        },
+        {
+          "slug": "industry-and-competitive-analysis",
+          "title": "Industry and Competitive Analysis",
+          "summary": "Industry classification, competitive forces and the industry life cycle.",
+          "duration": 24
+        },
+        {
+          "slug": "company-analysis-forecasting",
+          "title": "Company Analysis: Forecasting",
+          "summary": "Forecasting revenue, costs and capital needs; choosing a forecast horizon.",
+          "duration": 22
+        },
+        {
+          "slug": "discounted-cash-flow-valuation",
+          "title": "Equity Valuation: Concepts and Dividend Discount Models",
+          "summary": "Intrinsic value, the dividend discount model, Gordon growth and multistage models.",
+          "duration": 30
+        },
+        {
+          "slug": "multiples-and-asset-based-valuation",
+          "title": "Equity Valuation: Multiples and Asset-Based Approaches",
+          "summary": "P/E, P/B, P/S, EV/EBITDA and asset-based valuation.",
+          "duration": 26
+        }
+      ]
+    },
+    {
+      "slug": "fixed-income",
+      "title": "Fixed Income",
+      "description": "Bond features, markets, pricing, yields, the term structure, interest rate risk, credit risk and securitisation.",
+      "lessons": [
+        {
+          "slug": "fixed-income-features",
+          "title": "Fixed-Income Instrument Features",
+          "summary": "Issuer, maturity, par, coupon, seniority, covenants and contingency provisions.",
+          "duration": 22,
+          "freePreview": true
+        },
+        {
+          "slug": "fixed-income-cash-flows-and-types",
+          "title": "Fixed-Income Cash Flows and Types",
+          "summary": "Amortising bonds, floating-rate notes, zero coupons and embedded options.",
+          "duration": 22
+        },
+        {
+          "slug": "fixed-income-issuance-and-trading",
+          "title": "Fixed-Income Issuance and Trading",
+          "summary": "Primary and secondary markets, sovereign, corporate and short-term funding markets.",
+          "duration": 22
+        },
+        {
+          "slug": "bond-pricing-and-yields",
+          "title": "Fixed-Income Bond Valuation: Prices and Yields",
+          "summary": "Pricing with a single yield or spot rates; full price, flat price and accrued interest.",
+          "duration": 32
+        },
+        {
+          "slug": "yield-and-spread-measures",
+          "title": "Yield and Yield Spread Measures",
+          "summary": "Periodicity, current yield, yield to call, money market yields and spread measures.",
+          "duration": 28
+        },
+        {
+          "slug": "term-structure",
+          "title": "The Term Structure of Interest Rates",
+          "summary": "Spot, par and forward curves and theories of the term structure.",
+          "duration": 28
+        },
+        {
+          "slug": "interest-rate-risk-and-duration",
+          "title": "Interest Rate Risk and Return",
+          "summary": "Macaulay, modified and effective duration; sources of return and investment horizon.",
+          "duration": 32
+        },
+        {
+          "slug": "convexity-and-yield-curve-risk",
+          "title": "Yield-Based Convexity and Portfolio Properties",
+          "summary": "Convexity, the duration-convexity price approximation and portfolio duration.",
+          "duration": 26
+        },
+        {
+          "slug": "credit-risk",
+          "title": "Credit Risk",
+          "summary": "Probability of default, loss given default, ratings and the drivers of credit spreads.",
+          "duration": 26
+        },
+        {
+          "slug": "government-and-corporate-credit",
+          "title": "Credit Analysis for Government and Corporate Issuers",
+          "summary": "Sovereign and corporate credit analysis, the four Cs and leverage ratios.",
+          "duration": 24
+        },
+        {
+          "slug": "securitization",
+          "title": "Fixed-Income Securitization",
+          "summary": "The securitisation process, special purpose entities and benefits to the economy.",
+          "duration": 22
+        },
+        {
+          "slug": "asset-backed-and-mortgage-securities",
+          "title": "Asset-Backed and Mortgage-Backed Securities",
+          "summary": "Prepayment risk, pass-throughs, CMOs and non-mortgage ABS.",
+          "duration": 28
+        }
+      ]
+    },
+    {
+      "slug": "derivatives",
+      "title": "Derivatives",
+      "description": "Forward commitments, contingent claims, arbitrage-free pricing, swaps and options.",
+      "lessons": [
+        {
+          "slug": "derivative-markets-and-instruments",
+          "title": "Derivative Instrument and Market Features",
+          "summary": "What derivatives are, exchange versus OTC markets and their benefits and risks.",
+          "duration": 22,
+          "freePreview": true
+        },
+        {
+          "slug": "forward-commitments-and-contingent-claims",
+          "title": "Forward Commitment and Contingent Claim Features",
+          "summary": "Forwards, futures, swaps, options and credit derivatives compared.",
+          "duration": 24
+        },
+        {
+          "slug": "arbitrage-replication-cost-of-carry",
+          "title": "Arbitrage, Replication and the Cost of Carry",
+          "summary": "No-arbitrage pricing, replication and how carry costs and benefits enter prices.",
+          "duration": 26
+        },
+        {
+          "slug": "pricing-forwards",
+          "title": "Pricing and Valuation of Forward Contracts",
+          "summary": "Price versus value of a forward at initiation and during its life.",
+          "duration": 28
+        },
+        {
+          "slug": "futures-vs-forwards",
+          "title": "Pricing and Valuation of Futures Contracts",
+          "summary": "Marking to market, margin and when futures and forward prices differ.",
+          "duration": 22
+        },
+        {
+          "slug": "interest-rate-swaps",
+          "title": "Pricing and Valuation of Interest Rate Swaps",
+          "summary": "A swap as a portfolio of forwards; the par swap rate and swap value.",
+          "duration": 26
+        },
+        {
+          "slug": "option-pricing-basics",
+          "title": "Pricing and Valuation of Options",
+          "summary": "Intrinsic value, time value, moneyness and the factors that affect option prices.",
+          "duration": 26
+        },
+        {
+          "slug": "put-call-parity",
+          "title": "Option Replication Using Put-Call Parity",
+          "summary": "Put-call parity and put-call-forward parity as replication tools.",
+          "duration": 24
+        },
+        {
+          "slug": "binomial-valuation",
+          "title": "Valuing a Derivative Using a One-Period Binomial Model",
+          "summary": "Risk-neutral probabilities and hedge ratios in a one-period binomial tree.",
+          "duration": 28
+        }
+      ]
+    },
+    {
+      "slug": "alternative-investments",
+      "title": "Alternative Investments",
+      "description": "Features, structures, returns and risks of private capital, real assets, hedge funds and digital assets.",
+      "lessons": [
+        {
+          "slug": "alternative-investment-features",
+          "title": "Alternative Investment Features, Methods and Structures",
+          "summary": "Direct, co-investment and fund investing; partnership structures and terms.",
+          "duration": 22,
+          "freePreview": true
+        },
+        {
+          "slug": "alternative-performance-and-fees",
+          "title": "Alternative Investment Performance and Returns",
+          "summary": "Fee structures, hurdle rates, high-water marks and return calculation issues.",
+          "duration": 26
+        },
+        {
+          "slug": "private-capital",
+          "title": "Investments in Private Capital: Equity and Debt",
+          "summary": "Private equity strategies, exits and private debt.",
+          "duration": 22
+        },
+        {
+          "slug": "real-estate-and-infrastructure",
+          "title": "Real Estate and Infrastructure",
+          "summary": "Forms of real estate investment, valuation approaches and infrastructure assets.",
+          "duration": 22
+        },
+        {
+          "slug": "natural-resources",
+          "title": "Natural Resources",
+          "summary": "Commodities, farmland and timberland; sources of commodity returns.",
+          "duration": 20
+        },
+        {
+          "slug": "hedge-funds-and-digital-assets",
+          "title": "Hedge Funds and Digital Assets",
+          "summary": "Hedge fund strategies, risks and the basics of digital assets.",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "slug": "portfolio-management",
+      "title": "Portfolio Management",
+      "description": "Portfolio theory, CAPM, the investment planning process, behavioural biases, risk management and technical analysis.",
+      "lessons": [
+        {
+          "slug": "portfolio-management-overview",
+          "title": "Portfolio Management: An Overview",
+          "summary": "The portfolio approach, investor types and the asset management industry.",
+          "duration": 20,
+          "freePreview": true
+        },
+        {
+          "slug": "portfolio-risk-and-return-i",
+          "title": "Portfolio Risk and Return: Part I",
+          "summary": "Risk aversion, utility, the minimum-variance frontier and optimal portfolios.",
+          "duration": 30
+        },
+        {
+          "slug": "portfolio-risk-and-return-ii",
+          "title": "Portfolio Risk and Return: Part II",
+          "summary": "The capital market line, systematic risk, beta, CAPM and the security market line.",
+          "duration": 30
+        },
+        {
+          "slug": "portfolio-planning-and-construction",
+          "title": "Basics of Portfolio Planning and Construction",
+          "summary": "The investment policy statement, objectives, constraints and asset allocation.",
+          "duration": 24
+        },
+        {
+          "slug": "behavioral-biases",
+          "title": "The Behavioral Biases of Individuals",
+          "summary": "Cognitive errors and emotional biases and how they affect decisions.",
+          "duration": 22
+        },
+        {
+          "slug": "risk-management-introduction",
+          "title": "Introduction to Risk Management",
+          "summary": "Risk governance, risk tolerance, risk identification and measurement.",
+          "duration": 22
+        },
+        {
+          "slug": "technical-analysis",
+          "title": "Technical Analysis",
+          "summary": "Charts, trends, patterns, indicators and the assumptions behind technical analysis.",
+          "duration": 22
+        },
+        {
+          "slug": "fintech-in-investment-management",
+          "title": "Fintech in Investment Management",
+          "summary": "Robo-advice, algorithmic trading, distributed ledgers and big data applications.",
+          "duration": 18
+        }
+      ]
+    }
+  ]
+}

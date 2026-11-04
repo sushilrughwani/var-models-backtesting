@@ -1,0 +1,364 @@
+{
+  "slug": "cfa-level-2",
+  "title": "CFA® Level II Complete Course",
+  "shortTitle": "CFA® Level II",
+  "category": "cfa",
+  "level": "Level II",
+  "status": "skeleton",
+  "shortDescription": "Asset valuation in depth: item-set practice for equity, fixed income, derivatives, FSA and quantitative methods.",
+  "description": "Level II is about applying valuation tools to realistic vignettes. This course works through every topic area with an emphasis on item-set reasoning, multi-step calculations and the accounting adjustments analysts make in practice.",
+  "whoFor": [
+    "Candidates who have passed CFA® Level I",
+    "Analysts who want deeper valuation and modelling skills"
+  ],
+  "outcomes": [
+    "Value equities with DDM, FCFE/FCFF and residual income models",
+    "Analyse intercorporate investments, pensions and multinational operations",
+    "Value bonds with embedded options and credit risk using binomial trees",
+    "Price and value forwards, futures, swaps and options",
+    "Solve vignette-style item sets under time pressure"
+  ],
+  "faq": [
+    {
+      "q": "Is the full course available now?",
+      "a": "The course structure is published. Lessons are released progressively; enrolled students get every lesson as soon as it is live."
+    }
+  ],
+  "accent": "#4338ca",
+  "modules": [
+    {
+      "slug": "quantitative-methods",
+      "title": "Quantitative Methods",
+      "description": "Multiple regression, time series, machine learning and big data projects.",
+      "lessons": [
+        {
+          "slug": "multiple-regression-basics",
+          "title": "Basics of Multiple Regression and Underlying Assumptions",
+          "summary": "Specifying and interpreting multiple regression models and their assumptions.",
+          "duration": 26
+        },
+        {
+          "slug": "evaluating-regression-fit",
+          "title": "Evaluating Regression Model Fit and Interpreting Model Results",
+          "summary": "Adjusted R-squared, AIC/BIC, joint F-tests and prediction.",
+          "duration": 24
+        },
+        {
+          "slug": "model-misspecification",
+          "title": "Model Misspecification",
+          "summary": "Heteroskedasticity, serial correlation, multicollinearity and their remedies.",
+          "duration": 26
+        },
+        {
+          "slug": "extensions-of-multiple-regression",
+          "title": "Extensions of Multiple Regression",
+          "summary": "Influential observations, dummy variables and logistic regression.",
+          "duration": 24
+        },
+        {
+          "slug": "time-series-analysis",
+          "title": "Time-Series Analysis",
+          "summary": "Trend models, autoregressive models, unit roots, seasonality and cointegration.",
+          "duration": 32
+        },
+        {
+          "slug": "machine-learning",
+          "title": "Machine Learning",
+          "summary": "Supervised, unsupervised and deep learning algorithms and their uses.",
+          "duration": 28
+        },
+        {
+          "slug": "big-data-projects",
+          "title": "Big Data Projects",
+          "summary": "Data preparation, text analytics, feature engineering and model evaluation.",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "slug": "economics",
+      "title": "Economics",
+      "description": "Currency exchange rates, economic growth and economics of regulation.",
+      "lessons": [
+        {
+          "slug": "currency-exchange-rates",
+          "title": "Currency Exchange Rates: Understanding Equilibrium Value",
+          "summary": "Parity conditions, carry trades and determinants of exchange rates.",
+          "duration": 32
+        },
+        {
+          "slug": "economic-growth",
+          "title": "Economic Growth",
+          "summary": "Growth accounting, convergence and the drivers of long-run growth.",
+          "duration": 26
+        },
+        {
+          "slug": "economics-of-regulation",
+          "title": "Economics of Regulation",
+          "summary": "Rationale for regulation, regulatory tools and their effects on firms.",
+          "duration": 18
+        }
+      ]
+    },
+    {
+      "slug": "financial-statement-analysis",
+      "title": "Financial Statement Analysis",
+      "description": "Intercorporate investments, employee compensation, multinational operations, banks and quality of reporting.",
+      "lessons": [
+        {
+          "slug": "intercorporate-investments",
+          "title": "Intercorporate Investments",
+          "summary": "Financial assets, equity method, business combinations and joint ventures.",
+          "duration": 32
+        },
+        {
+          "slug": "employee-compensation",
+          "title": "Employee Compensation: Post-Employment and Share-Based",
+          "summary": "Defined benefit plans and share-based compensation accounting.",
+          "duration": 28
+        },
+        {
+          "slug": "multinational-operations",
+          "title": "Multinational Operations",
+          "summary": "Current rate and temporal methods and their effect on ratios.",
+          "duration": 30
+        },
+        {
+          "slug": "analysis-of-financial-institutions",
+          "title": "Analysis of Financial Institutions",
+          "summary": "CAMELS framework for banks and analysis of insurers.",
+          "duration": 26
+        },
+        {
+          "slug": "evaluating-quality-of-financial-reports",
+          "title": "Evaluating Quality of Financial Reports",
+          "summary": "Earnings quality, cash flow quality and balance sheet quality.",
+          "duration": 26
+        },
+        {
+          "slug": "integration-of-fsa-techniques",
+          "title": "Integration of Financial Statement Analysis Techniques",
+          "summary": "A full case study combining all FSA tools.",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "slug": "corporate-issuers",
+      "title": "Corporate Issuers",
+      "description": "Payout policy, capital structure, ESG, M&A and capital budgeting.",
+      "lessons": [
+        {
+          "slug": "dividends-and-share-repurchases",
+          "title": "Analysis of Dividends and Share Repurchases",
+          "summary": "Payout policy theories, repurchase mechanics and their effects.",
+          "duration": 26
+        },
+        {
+          "slug": "environmental-social-governance",
+          "title": "Environmental, Social and Governance Considerations in Investment Analysis",
+          "summary": "Integrating ESG factors into valuation and credit analysis.",
+          "duration": 22
+        },
+        {
+          "slug": "cost-of-capital-advanced",
+          "title": "Cost of Capital: Advanced Topics",
+          "summary": "Country risk premiums, size premiums and estimating beta for private firms.",
+          "duration": 26
+        },
+        {
+          "slug": "corporate-restructuring",
+          "title": "Corporate Restructuring",
+          "summary": "Mergers, acquisitions, divestitures and valuation of restructuring.",
+          "duration": 28
+        }
+      ]
+    },
+    {
+      "slug": "equity-valuation",
+      "title": "Equity Valuation",
+      "description": "Equity valuation models from DDM to residual income and private company valuation.",
+      "lessons": [
+        {
+          "slug": "equity-valuation-applications",
+          "title": "Equity Valuation: Applications and Processes",
+          "summary": "The valuation process and choosing an appropriate model.",
+          "duration": 20
+        },
+        {
+          "slug": "discounted-dividend-valuation",
+          "title": "Discounted Dividend Valuation",
+          "summary": "Gordon growth, H-model and multistage DDMs; PVGO.",
+          "duration": 32
+        },
+        {
+          "slug": "free-cash-flow-valuation",
+          "title": "Free Cash Flow Valuation",
+          "summary": "FCFF and FCFE computation, forecasting and valuation.",
+          "duration": 34
+        },
+        {
+          "slug": "market-based-valuation",
+          "title": "Market-Based Valuation: Price and Enterprise Value Multiples",
+          "summary": "Justified multiples, momentum indicators and EV multiples.",
+          "duration": 30
+        },
+        {
+          "slug": "residual-income-valuation",
+          "title": "Residual Income Valuation",
+          "summary": "Residual income models and accounting adjustments.",
+          "duration": 30
+        },
+        {
+          "slug": "private-company-valuation",
+          "title": "Private Company Valuation",
+          "summary": "Discounts for lack of control and marketability; private valuation approaches.",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "slug": "fixed-income",
+      "title": "Fixed Income",
+      "description": "Term structure models, arbitrage-free valuation, embedded options and credit analysis models.",
+      "lessons": [
+        {
+          "slug": "term-structure-and-interest-rate-dynamics",
+          "title": "The Term Structure and Interest Rate Dynamics",
+          "summary": "Spot and forward rates, swap curve, yield curve factors and theories.",
+          "duration": 32
+        },
+        {
+          "slug": "arbitrage-free-valuation",
+          "title": "The Arbitrage-Free Valuation Framework",
+          "summary": "Binomial interest rate trees and pathwise valuation.",
+          "duration": 30
+        },
+        {
+          "slug": "bonds-with-embedded-options",
+          "title": "Valuation and Analysis of Bonds With Embedded Options",
+          "summary": "Callable, putable and convertible bonds; OAS and effective duration.",
+          "duration": 34
+        },
+        {
+          "slug": "credit-analysis-models",
+          "title": "Credit Analysis Models",
+          "summary": "Structural and reduced-form models; credit valuation adjustment.",
+          "duration": 30
+        },
+        {
+          "slug": "credit-default-swaps",
+          "title": "Credit Default Swaps",
+          "summary": "CDS mechanics, pricing and applications.",
+          "duration": 26
+        }
+      ]
+    },
+    {
+      "slug": "derivatives",
+      "title": "Derivatives",
+      "description": "Pricing and valuation of forwards, futures, swaps and options; option strategies.",
+      "lessons": [
+        {
+          "slug": "pricing-forward-commitments",
+          "title": "Pricing and Valuation of Forward Commitments",
+          "summary": "Equity, fixed income, currency forwards and swaps valuation.",
+          "duration": 34
+        },
+        {
+          "slug": "valuation-of-contingent-claims",
+          "title": "Valuation of Contingent Claims",
+          "summary": "Binomial models, Black-Scholes-Merton, Black model and the Greeks.",
+          "duration": 34
+        }
+      ]
+    },
+    {
+      "slug": "alternative-investments",
+      "title": "Alternative Investments",
+      "description": "Real estate, private equity and commodity valuation.",
+      "lessons": [
+        {
+          "slug": "real-estate-investments",
+          "title": "Overview of Types of Real Estate Investment",
+          "summary": "Real estate characteristics, valuation and REIT analysis.",
+          "duration": 30
+        },
+        {
+          "slug": "private-equity-investments",
+          "title": "Private Equity Investments",
+          "summary": "Valuation of PE deals, fund structures and performance measurement.",
+          "duration": 26
+        },
+        {
+          "slug": "commodities-and-derivatives",
+          "title": "Introduction to Commodities and Commodity Derivatives",
+          "summary": "Term structure of commodity futures and sources of return.",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "slug": "portfolio-management",
+      "title": "Portfolio Management",
+      "description": "Exchange-traded funds, multifactor models, risk measurement and active management.",
+      "lessons": [
+        {
+          "slug": "exchange-traded-funds",
+          "title": "Exchange-Traded Funds: Mechanics and Applications",
+          "summary": "Creation/redemption, tracking error and ETF uses.",
+          "duration": 22
+        },
+        {
+          "slug": "using-multifactor-models",
+          "title": "Using Multifactor Models",
+          "summary": "Arbitrage pricing theory and fundamental factor models in practice.",
+          "duration": 26
+        },
+        {
+          "slug": "measuring-and-managing-market-risk",
+          "title": "Measuring and Managing Market Risk",
+          "summary": "VaR methods, sensitivity measures and risk budgeting.",
+          "duration": 28
+        },
+        {
+          "slug": "backtesting-and-simulation",
+          "title": "Backtesting and Simulation",
+          "summary": "Backtesting process, pitfalls and scenario analysis.",
+          "duration": 24
+        },
+        {
+          "slug": "economics-and-investment-markets",
+          "title": "Economics and Investment Markets",
+          "summary": "Discount rates, the business cycle and asset class pricing.",
+          "duration": 24
+        },
+        {
+          "slug": "active-portfolio-management",
+          "title": "Analysis of Active Portfolio Management",
+          "summary": "Information ratio, the fundamental law and active risk.",
+          "duration": 28
+        }
+      ]
+    },
+    {
+      "slug": "ethical-professional-standards",
+      "title": "Ethical and Professional Standards",
+      "description": "The Code and Standards applied to complex case studies.",
+      "lessons": [
+        {
+          "slug": "code-and-standards-review",
+          "title": "Code of Ethics and Standards of Professional Conduct Review",
+          "summary": "Revisiting the Code and Standards with a Level II lens.",
+          "duration": 24
+        },
+        {
+          "slug": "ethics-application-cases",
+          "title": "Application of the Code and Standards: Case Studies",
+          "summary": "Working through multi-issue ethics vignettes.",
+          "duration": 30
+        }
+      ]
+    }
+  ]
+}

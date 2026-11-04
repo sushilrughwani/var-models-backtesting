@@ -1,0 +1,183 @@
+{
+  "slug": "financial-modeling",
+  "title": "Financial Modeling and Valuation",
+  "shortTitle": "Financial Modeling",
+  "category": "skills",
+  "level": "Intermediate",
+  "status": "full",
+  "shortDescription": "Build a fully linked three-statement model and value a company with DCF and comparables.",
+  "description": "Learn to build the models analysts use in equity research, investment banking and corporate finance. Starting from historical financials, you will forecast all three statements, link them with debt and cash schedules, and value the business using discounted cash flow, comparable companies and precedent transactions, then stress test the result.",
+  "whoFor": [
+    "Aspiring equity research and investment banking analysts",
+    "Corporate finance professionals who build budgets and forecasts",
+    "CFA® candidates who want to apply valuation theory in practice"
+  ],
+  "outcomes": [
+    "Build an integrated three-statement model that balances",
+    "Forecast revenue, costs, working capital, capex and debt",
+    "Value a company with DCF, trading comparables and precedent transactions",
+    "Run sensitivity and scenario analysis and present a valuation range"
+  ],
+  "faq": [
+    {
+      "q": "Do I need to take Excel for Finance first?",
+      "a": "It helps but is not required if you are comfortable with lookups, absolute references and basic financial functions."
+    },
+    {
+      "q": "Which company is modelled?",
+      "a": "A fictional company with realistic, original data so you can focus on technique."
+    }
+  ],
+  "accent": "#7c3aed",
+  "modules": [
+    {
+      "slug": "modeling-foundations",
+      "title": "Modeling Foundations",
+      "description": "How good models are structured and how to read the source data.",
+      "lessons": [
+        {
+          "slug": "what-is-a-financial-model",
+          "title": "What Is a Financial Model?",
+          "summary": "Types of models, their uses and the anatomy of a three-statement model.",
+          "duration": 16,
+          "freePreview": true
+        },
+        {
+          "slug": "model-structure-and-standards",
+          "title": "Model Structure and Design Standards",
+          "summary": "Inputs, calculations and outputs; formatting and flow conventions.",
+          "duration": 18
+        },
+        {
+          "slug": "historical-financials-and-ratios",
+          "title": "Setting Up Historical Financials and Ratios",
+          "summary": "Cleaning historical data and calculating drivers.",
+          "duration": 22
+        }
+      ]
+    },
+    {
+      "slug": "three-statement-model",
+      "title": "Building the Three-Statement Model",
+      "description": "Forecasting each statement and linking them together.",
+      "lessons": [
+        {
+          "slug": "revenue-forecasting",
+          "title": "Revenue Forecasting Methods",
+          "summary": "Top-down, bottom-up and driver-based revenue forecasts.",
+          "duration": 22
+        },
+        {
+          "slug": "operating-costs-and-margins",
+          "title": "Forecasting Operating Costs and Margins",
+          "summary": "Fixed versus variable costs, operating leverage and margin assumptions.",
+          "duration": 20
+        },
+        {
+          "slug": "working-capital-schedule",
+          "title": "The Working Capital Schedule",
+          "summary": "Days-based forecasts of receivables, inventory and payables.",
+          "duration": 20
+        },
+        {
+          "slug": "capex-and-depreciation-schedule",
+          "title": "Capex and Depreciation Schedule",
+          "summary": "Forecasting capital expenditure and depreciation waterfalls.",
+          "duration": 20
+        },
+        {
+          "slug": "debt-schedule-and-interest",
+          "title": "The Debt Schedule and Interest",
+          "summary": "Revolvers, term loans, mandatory repayment and circularity.",
+          "duration": 24
+        },
+        {
+          "slug": "linking-the-three-statements",
+          "title": "Linking the Three Statements",
+          "summary": "Connecting income statement, balance sheet and cash flow so the model balances.",
+          "duration": 26
+        },
+        {
+          "slug": "balancing-and-error-checks",
+          "title": "Balancing the Model and Error Checks",
+          "summary": "Finding why a balance sheet does not balance and building checks.",
+          "duration": 18
+        }
+      ]
+    },
+    {
+      "slug": "valuation",
+      "title": "Valuation",
+      "description": "Intrinsic and relative valuation methods.",
+      "lessons": [
+        {
+          "slug": "free-cash-flow-build",
+          "title": "Building Unlevered Free Cash Flow",
+          "summary": "From EBIT to FCFF, step by step.",
+          "duration": 20
+        },
+        {
+          "slug": "wacc-estimation",
+          "title": "Estimating WACC in Practice",
+          "summary": "Beta, the equity risk premium, cost of debt and target weights.",
+          "duration": 22
+        },
+        {
+          "slug": "terminal-value",
+          "title": "Terminal Value: Perpetuity Growth and Exit Multiple",
+          "summary": "The two methods, cross-checks and common errors.",
+          "duration": 20
+        },
+        {
+          "slug": "dcf-to-equity-value",
+          "title": "From Enterprise Value to Equity Value per Share",
+          "summary": "Net debt, non-operating assets, dilution and the bridge to price.",
+          "duration": 20
+        },
+        {
+          "slug": "trading-comparables",
+          "title": "Trading Comparables Analysis",
+          "summary": "Selecting peers, calendarising and choosing multiples.",
+          "duration": 22
+        },
+        {
+          "slug": "precedent-transactions",
+          "title": "Precedent Transactions",
+          "summary": "Control premiums and deal multiples.",
+          "duration": 18
+        },
+        {
+          "slug": "football-field",
+          "title": "The Football Field and Valuation Summary",
+          "summary": "Combining methods into a valuation range.",
+          "duration": 16
+        }
+      ]
+    },
+    {
+      "slug": "analysis-and-presentation",
+      "title": "Analysis and Presentation",
+      "description": "Stress testing and communicating results.",
+      "lessons": [
+        {
+          "slug": "sensitivity-and-scenario-analysis",
+          "title": "Sensitivity and Scenario Analysis",
+          "summary": "Two-way data tables and scenario switches for valuation.",
+          "duration": 20
+        },
+        {
+          "slug": "lbo-model-basics",
+          "title": "LBO Model Basics",
+          "summary": "Sources and uses, debt paydown and sponsor returns (IRR and MOIC).",
+          "duration": 26
+        },
+        {
+          "slug": "presenting-a-model",
+          "title": "Presenting a Model and Investment Recommendation",
+          "summary": "Dashboards, charts and writing the investment conclusion.",
+          "duration": 16
+        }
+      ]
+    }
+  ]
+}

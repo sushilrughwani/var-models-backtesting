@@ -1,0 +1,184 @@
+{
+  "slug": "python-for-finance",
+  "title": "Python for Finance",
+  "shortTitle": "Python for Finance",
+  "category": "skills",
+  "level": "Beginner to Intermediate",
+  "status": "full",
+  "shortDescription": "Use Python, pandas and NumPy to analyse markets, build risk models and automate finance work.",
+  "description": "A practical introduction to Python for finance professionals and students. You will learn the language from scratch, then use NumPy and pandas to analyse returns, build portfolios, compute VaR, run Monte Carlo simulations, price options and backtest simple strategies, with every lesson built around runnable code.",
+  "whoFor": [
+    "Finance students and professionals with no programming background",
+    "CFA®/FRM® candidates who want to implement the models they study",
+    "Excel users who want to automate repetitive analysis"
+  ],
+  "outcomes": [
+    "Write clean Python scripts and Jupyter notebooks",
+    "Clean, reshape and analyse financial time series with pandas",
+    "Implement return, risk, portfolio and VaR calculations",
+    "Price options with Black-Scholes, binomial trees and Monte Carlo",
+    "Backtest a simple strategy and avoid common backtesting biases"
+  ],
+  "faq": [
+    {
+      "q": "Do I need to install anything?",
+      "a": "You can use a free local Python installation (Anaconda or python.org) or a free online notebook service. Lesson 1 walks through setup."
+    },
+    {
+      "q": "Do I need prior coding experience?",
+      "a": "No. The first module teaches Python basics from zero."
+    }
+  ],
+  "accent": "#b45309",
+  "modules": [
+    {
+      "slug": "python-basics",
+      "title": "Python Basics",
+      "description": "The language essentials for finance work.",
+      "lessons": [
+        {
+          "slug": "python-setup-and-notebooks",
+          "title": "Setting Up Python and Jupyter Notebooks",
+          "summary": "Installing Python, using notebooks and running your first code.",
+          "duration": 16,
+          "freePreview": true
+        },
+        {
+          "slug": "variables-types-and-operators",
+          "title": "Variables, Data Types and Operators",
+          "summary": "Numbers, strings, booleans and arithmetic with a finance flavour.",
+          "duration": 18
+        },
+        {
+          "slug": "control-flow",
+          "title": "Control Flow: Conditions and Loops",
+          "summary": "if/else, for and while loops with cash flow examples.",
+          "duration": 18
+        },
+        {
+          "slug": "functions-and-modules",
+          "title": "Functions and Modules",
+          "summary": "Writing reusable functions such as a TVM calculator.",
+          "duration": 20
+        },
+        {
+          "slug": "data-structures",
+          "title": "Lists, Dictionaries and Tuples",
+          "summary": "Storing portfolios, cash flows and lookup tables.",
+          "duration": 18
+        }
+      ]
+    },
+    {
+      "slug": "numpy-and-pandas",
+      "title": "NumPy and pandas",
+      "description": "Vectorised maths and tabular data analysis.",
+      "lessons": [
+        {
+          "slug": "numpy-arrays",
+          "title": "NumPy Arrays and Vectorised Calculations",
+          "summary": "Fast array maths for cash flows and returns.",
+          "duration": 20
+        },
+        {
+          "slug": "pandas-series-and-dataframes",
+          "title": "pandas Series and DataFrames",
+          "summary": "Loading, selecting and filtering financial data.",
+          "duration": 22
+        },
+        {
+          "slug": "time-series-in-pandas",
+          "title": "Working With Time Series in pandas",
+          "summary": "Date indexes, resampling, rolling windows and shifting.",
+          "duration": 22
+        },
+        {
+          "slug": "data-cleaning",
+          "title": "Cleaning Financial Data",
+          "summary": "Missing values, outliers, corporate actions and alignment.",
+          "duration": 20
+        },
+        {
+          "slug": "visualization-with-matplotlib",
+          "title": "Visualising Financial Data With matplotlib",
+          "summary": "Price charts, return histograms and correlation heatmaps.",
+          "duration": 18
+        }
+      ]
+    },
+    {
+      "slug": "quant-finance-applications",
+      "title": "Finance Applications",
+      "description": "Implementing the core models of investment and risk.",
+      "lessons": [
+        {
+          "slug": "returns-and-volatility",
+          "title": "Computing Returns and Volatility",
+          "summary": "Simple and log returns, annualisation and rolling volatility.",
+          "duration": 20
+        },
+        {
+          "slug": "tvm-and-bond-pricing",
+          "title": "Time Value of Money and Bond Pricing in Python",
+          "summary": "NPV, IRR, bond price, yield and duration functions.",
+          "duration": 22
+        },
+        {
+          "slug": "portfolio-optimization",
+          "title": "Portfolio Optimisation",
+          "summary": "Efficient frontier, minimum variance and maximum Sharpe portfolios.",
+          "duration": 26
+        },
+        {
+          "slug": "capm-regression",
+          "title": "CAPM and Regression With statsmodels",
+          "summary": "Estimating beta and alpha and interpreting the output.",
+          "duration": 22
+        },
+        {
+          "slug": "value-at-risk-in-python",
+          "title": "Value at Risk in Python",
+          "summary": "Parametric, historical and Monte Carlo VaR and expected shortfall.",
+          "duration": 24
+        },
+        {
+          "slug": "monte-carlo-simulation",
+          "title": "Monte Carlo Simulation",
+          "summary": "Simulating geometric Brownian motion and portfolio outcomes.",
+          "duration": 22
+        },
+        {
+          "slug": "option-pricing-in-python",
+          "title": "Option Pricing: Black-Scholes and Binomial Trees",
+          "summary": "Implementing option pricing models and Greeks.",
+          "duration": 24
+        },
+        {
+          "slug": "volatility-models",
+          "title": "Volatility Models: EWMA and GARCH",
+          "summary": "Estimating and forecasting time-varying volatility.",
+          "duration": 22
+        }
+      ]
+    },
+    {
+      "slug": "automation-and-backtesting",
+      "title": "Backtesting and Automation",
+      "description": "Testing strategies and automating reports.",
+      "lessons": [
+        {
+          "slug": "backtesting-a-strategy",
+          "title": "Backtesting a Simple Trading Strategy",
+          "summary": "A moving-average strategy with performance metrics and bias checks.",
+          "duration": 24
+        },
+        {
+          "slug": "automating-reports",
+          "title": "Automating Excel Reports With Python",
+          "summary": "Reading and writing Excel files and building repeatable reports.",
+          "duration": 18
+        }
+      ]
+    }
+  ]
+}

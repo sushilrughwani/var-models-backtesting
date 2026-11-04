@@ -1,0 +1,254 @@
+{
+  "slug": "cfa-level-3",
+  "title": "CFA® Level III Complete Course",
+  "shortTitle": "CFA® Level III",
+  "category": "cfa",
+  "level": "Level III",
+  "status": "skeleton",
+  "shortDescription": "Portfolio management and wealth planning: asset allocation, derivatives strategies, and constructed-response practice.",
+  "description": "Level III shifts from valuation to portfolio management. This course focuses on asset allocation, portfolio construction across asset classes, private wealth and institutional investors, and writing concise constructed-response answers.",
+  "whoFor": [
+    "Candidates who have passed CFA® Level II",
+    "Portfolio managers and wealth advisers"
+  ],
+  "outcomes": [
+    "Design strategic asset allocations for individuals and institutions",
+    "Manage equity, fixed income and alternative portfolios",
+    "Use derivatives and currency management to implement views and hedge risk",
+    "Evaluate performance and comply with GIPS",
+    "Write high-scoring constructed-response answers"
+  ],
+  "faq": [
+    {
+      "q": "Is the full course available now?",
+      "a": "The course structure is published. Lessons are released progressively."
+    }
+  ],
+  "accent": "#9333ea",
+  "modules": [
+    {
+      "slug": "asset-allocation",
+      "title": "Asset Allocation",
+      "description": "Capital market expectations and strategic asset allocation.",
+      "lessons": [
+        {
+          "slug": "capital-market-expectations-framework",
+          "title": "Capital Market Expectations: Framework and Macro Considerations",
+          "summary": "Forming expectations from economic analysis.",
+          "duration": 28
+        },
+        {
+          "slug": "capital-market-expectations-forecasting",
+          "title": "Capital Market Expectations: Forecasting Asset Class Returns",
+          "summary": "Forecasting returns for equities, bonds, real estate and currencies.",
+          "duration": 28
+        },
+        {
+          "slug": "overview-of-asset-allocation",
+          "title": "Overview of Asset Allocation",
+          "summary": "Governance, economic balance sheet and approaches to allocation.",
+          "duration": 24
+        },
+        {
+          "slug": "principles-of-asset-allocation",
+          "title": "Principles of Asset Allocation",
+          "summary": "Mean-variance optimisation, liability-relative and goals-based allocation.",
+          "duration": 30
+        },
+        {
+          "slug": "asset-allocation-with-constraints",
+          "title": "Asset Allocation With Real-World Constraints",
+          "summary": "Size, liquidity, taxes and rebalancing.",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "slug": "derivatives-and-currency-management",
+      "title": "Derivatives and Currency Management",
+      "description": "Using options, swaps, forwards and futures to implement and hedge.",
+      "lessons": [
+        {
+          "slug": "options-strategies",
+          "title": "Options Strategies",
+          "summary": "Covered calls, protective puts, spreads, collars and volatility strategies.",
+          "duration": 30
+        },
+        {
+          "slug": "swaps-forwards-futures-strategies",
+          "title": "Swaps, Forwards and Futures Strategies",
+          "summary": "Managing interest rate, currency and equity exposures with derivatives.",
+          "duration": 30
+        },
+        {
+          "slug": "currency-management",
+          "title": "Currency Management: An Introduction",
+          "summary": "Strategic and tactical currency hedging decisions.",
+          "duration": 28
+        }
+      ]
+    },
+    {
+      "slug": "portfolio-construction",
+      "title": "Portfolio Construction",
+      "description": "Equity and fixed income portfolio management.",
+      "lessons": [
+        {
+          "slug": "overview-of-equity-portfolio-management",
+          "title": "Overview of Equity Portfolio Management",
+          "summary": "Roles of equities, segmentation and income sources.",
+          "duration": 22
+        },
+        {
+          "slug": "passive-equity-investing",
+          "title": "Passive Equity Investing",
+          "summary": "Index selection, construction methods and tracking error.",
+          "duration": 24
+        },
+        {
+          "slug": "active-equity-investing-strategies",
+          "title": "Active Equity Investing: Strategies",
+          "summary": "Fundamental and quantitative active approaches.",
+          "duration": 26
+        },
+        {
+          "slug": "active-equity-portfolio-construction",
+          "title": "Active Equity Investing: Portfolio Construction",
+          "summary": "Building blocks, risk budgeting and implementation costs.",
+          "duration": 24
+        },
+        {
+          "slug": "overview-of-fixed-income-portfolio-management",
+          "title": "Overview of Fixed-Income Portfolio Management",
+          "summary": "Roles of bonds, mandates and liquidity.",
+          "duration": 22
+        },
+        {
+          "slug": "liability-driven-and-index-strategies",
+          "title": "Liability-Driven and Index-Based Strategies",
+          "summary": "Immunisation, cash flow matching and indexing.",
+          "duration": 30
+        },
+        {
+          "slug": "yield-curve-strategies",
+          "title": "Yield Curve Strategies",
+          "summary": "Static and dynamic yield curve positioning.",
+          "duration": 28
+        },
+        {
+          "slug": "fixed-income-active-management-credit",
+          "title": "Fixed-Income Active Management: Credit Strategies",
+          "summary": "Credit spread measures and credit portfolio strategies.",
+          "duration": 26
+        }
+      ]
+    },
+    {
+      "slug": "alternative-investments-pm",
+      "title": "Portfolio Management With Alternatives",
+      "description": "Alternatives in a multi-asset portfolio.",
+      "lessons": [
+        {
+          "slug": "hedge-fund-strategies",
+          "title": "Hedge Fund Strategies",
+          "summary": "Strategy classifications and their risk profiles.",
+          "duration": 26
+        },
+        {
+          "slug": "asset-allocation-to-alternatives",
+          "title": "Asset Allocation to Alternative Investments",
+          "summary": "Roles of alternatives and approaches to sizing them.",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "slug": "private-wealth-management",
+      "title": "Private Wealth Management",
+      "description": "Serving individual investors across their lifetime.",
+      "lessons": [
+        {
+          "slug": "overview-of-private-wealth-management",
+          "title": "Overview of Private Wealth Management",
+          "summary": "Client relationships and the private client IPS.",
+          "duration": 22
+        },
+        {
+          "slug": "topics-in-private-wealth-management",
+          "title": "Topics in Private Wealth Management",
+          "summary": "Taxes, tax-efficient strategies and wealth transfer.",
+          "duration": 28
+        },
+        {
+          "slug": "risk-management-for-individuals",
+          "title": "Risk Management for Individuals",
+          "summary": "Human capital, insurance and annuities.",
+          "duration": 26
+        }
+      ]
+    },
+    {
+      "slug": "institutional-portfolio-management",
+      "title": "Portfolio Management for Institutional Investors",
+      "description": "Pensions, endowments, foundations, banks and insurers.",
+      "lessons": [
+        {
+          "slug": "institutional-investors",
+          "title": "Portfolio Management for Institutional Investors",
+          "summary": "Objectives, constraints and asset allocation by investor type.",
+          "duration": 32
+        }
+      ]
+    },
+    {
+      "slug": "trading-performance-manager-selection",
+      "title": "Trading, Performance Evaluation and Manager Selection",
+      "description": "Execution, attribution and selecting managers.",
+      "lessons": [
+        {
+          "slug": "trade-strategy-and-execution",
+          "title": "Trade Strategy and Execution",
+          "summary": "Trading costs, algorithms and best execution.",
+          "duration": 24
+        },
+        {
+          "slug": "portfolio-performance-evaluation",
+          "title": "Portfolio Performance Evaluation",
+          "summary": "Attribution, appraisal measures and benchmarks.",
+          "duration": 28
+        },
+        {
+          "slug": "investment-manager-selection",
+          "title": "Investment Manager Selection",
+          "summary": "Due diligence and fee structures.",
+          "duration": 22
+        }
+      ]
+    },
+    {
+      "slug": "ethical-professional-standards",
+      "title": "Ethical and Professional Standards",
+      "description": "Ethics and GIPS for portfolio managers.",
+      "lessons": [
+        {
+          "slug": "code-and-standards-level-3",
+          "title": "Code of Ethics and Standards of Professional Conduct",
+          "summary": "Applying the Standards in portfolio management cases.",
+          "duration": 26
+        },
+        {
+          "slug": "asset-manager-code",
+          "title": "Asset Manager Code of Professional Conduct",
+          "summary": "Principles for firms that manage client assets.",
+          "duration": 20
+        },
+        {
+          "slug": "gips-level-3",
+          "title": "Global Investment Performance Standards",
+          "summary": "Composites, calculation and presentation requirements.",
+          "duration": 26
+        }
+      ]
+    }
+  ]
+}

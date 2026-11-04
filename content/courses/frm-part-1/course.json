@@ -1,0 +1,436 @@
+{
+  "slug": "frm-part-1",
+  "title": "FRM® Part I Complete Course",
+  "shortTitle": "FRM® Part I",
+  "category": "frm",
+  "level": "Part I",
+  "status": "full",
+  "shortDescription": "The quantitative and market foundations of financial risk management, taught with intuition and heavy practice.",
+  "description": "A full preparation course for FRM® Part I covering the foundations of risk management, quantitative analysis, financial markets and products, and valuation and risk models. Every lesson includes notes with formulas, a worked example and a quiz, supported by a 4-option question bank, flashcards, calculators and timed mock exams.",
+  "whoFor": [
+    "Candidates registered for the FRM® Part I exam",
+    "Analysts in banks, asset managers, insurers or consultancies moving into risk roles",
+    "Engineering and science graduates who want to apply quantitative skills in finance",
+    "CFA® candidates who want deeper risk-management knowledge"
+  ],
+  "outcomes": [
+    "Compute and interpret VaR, expected shortfall and other risk measures",
+    "Price forwards, futures, swaps, bonds and options under no-arbitrage",
+    "Apply probability, statistics, regression and time-series tools to financial data",
+    "Understand how banks, insurers and funds measure and manage risk",
+    "Analyse famous risk-management failures and the lessons they teach"
+  ],
+  "faq": [
+    {
+      "q": "How much maths do I need?",
+      "a": "Comfort with algebra and basic statistics helps. The Quantitative Analysis module builds the required probability, statistics and regression skills from the ground up."
+    },
+    {
+      "q": "Are calculators covered?",
+      "a": "Yes. Lessons show the steps you would perform on an exam-approved financial calculator, and the platform includes 30 interactive calculators to check your work."
+    },
+    {
+      "q": "Are the questions official GARP questions?",
+      "a": "No. All questions are originally written for this course in an exam-like 4-option format."
+    },
+    {
+      "q": "How long should I study?",
+      "a": "Many candidates plan 200-300 hours for Part I. Use the study planner to generate a week-by-week schedule."
+    }
+  ],
+  "accent": "#0f766e",
+  "modules": [
+    {
+      "slug": "foundations-of-risk-management",
+      "title": "Foundations of Risk Management",
+      "description": "What risk is, how firms govern and manage it, core portfolio theory, and the lessons of past failures.",
+      "lessons": [
+        {
+          "slug": "risk-management-building-blocks",
+          "title": "The Building Blocks of Risk Management",
+          "summary": "Risk versus uncertainty, expected and unexpected loss, risk types and the risk management process.",
+          "duration": 24,
+          "freePreview": true
+        },
+        {
+          "slug": "how-firms-manage-risk",
+          "title": "How Do Firms Manage Financial Risk?",
+          "summary": "Retain, avoid, mitigate or transfer: hedging rationale and the risk appetite statement.",
+          "duration": 22
+        },
+        {
+          "slug": "governance-of-risk-management",
+          "title": "The Governance of Risk Management",
+          "summary": "Board responsibilities, risk committees, the three lines of defence and risk culture.",
+          "duration": 22
+        },
+        {
+          "slug": "credit-risk-transfer-mechanisms",
+          "title": "Credit Risk Transfer Mechanisms",
+          "summary": "Credit derivatives, CDOs, securitisation and their role in the 2007-2009 crisis.",
+          "duration": 22
+        },
+        {
+          "slug": "modern-portfolio-theory-and-capm",
+          "title": "Modern Portfolio Theory and the CAPM",
+          "summary": "Efficient frontier, capital market line, beta and the CAPM.",
+          "duration": 30
+        },
+        {
+          "slug": "risk-adjusted-performance",
+          "title": "Risk-Adjusted Performance Measures",
+          "summary": "Sharpe, Treynor, Jensen's alpha, information ratio and Sortino ratio.",
+          "duration": 24
+        },
+        {
+          "slug": "arbitrage-pricing-and-factor-models",
+          "title": "The Arbitrage Pricing Theory and Multifactor Models",
+          "summary": "Factor models, factor sensitivities and hedging factor exposures.",
+          "duration": 26
+        },
+        {
+          "slug": "risk-data-aggregation",
+          "title": "Principles for Effective Data Aggregation and Risk Reporting",
+          "summary": "Why risk data aggregation matters and the principles for reliable risk reporting.",
+          "duration": 18
+        },
+        {
+          "slug": "enterprise-risk-management",
+          "title": "Enterprise Risk Management and Future Trends",
+          "summary": "Integrated ERM, risk culture, scenario analysis and emerging risks.",
+          "duration": 22
+        },
+        {
+          "slug": "learning-from-financial-disasters",
+          "title": "Learning From Financial Disasters",
+          "summary": "Classic failures in liquidity, model, rogue-trading and operational risk and their lessons.",
+          "duration": 26
+        },
+        {
+          "slug": "anatomy-of-the-financial-crisis",
+          "title": "Anatomy of the Great Financial Crisis",
+          "summary": "Causes of the 2007-2009 crisis: housing, leverage, funding runs and contagion.",
+          "duration": 24
+        },
+        {
+          "slug": "garp-code-of-conduct",
+          "title": "The GARP Code of Conduct",
+          "summary": "Principles of professional integrity, conflicts of interest and confidentiality.",
+          "duration": 16
+        }
+      ]
+    },
+    {
+      "slug": "quantitative-analysis",
+      "title": "Quantitative Analysis",
+      "description": "Probability, statistics, regression, time series, simulation and machine learning for risk managers.",
+      "lessons": [
+        {
+          "slug": "fundamentals-of-probability",
+          "title": "Fundamentals of Probability",
+          "summary": "Events, independence, conditional probability and Bayes' rule.",
+          "duration": 24,
+          "freePreview": true
+        },
+        {
+          "slug": "random-variables",
+          "title": "Random Variables",
+          "summary": "Discrete and continuous random variables, moments and quantiles.",
+          "duration": 24
+        },
+        {
+          "slug": "common-univariate-distributions",
+          "title": "Common Univariate Random Variables",
+          "summary": "Bernoulli, binomial, Poisson, normal, lognormal, Student's t, chi-square and F distributions.",
+          "duration": 28
+        },
+        {
+          "slug": "multivariate-random-variables",
+          "title": "Multivariate Random Variables",
+          "summary": "Joint, marginal and conditional distributions; covariance, correlation and portfolios.",
+          "duration": 26
+        },
+        {
+          "slug": "sample-moments",
+          "title": "Sample Moments",
+          "summary": "Estimating mean, variance, skewness, kurtosis; bias, consistency and the CLT.",
+          "duration": 24
+        },
+        {
+          "slug": "hypothesis-testing-frm",
+          "title": "Hypothesis Testing",
+          "summary": "Null and alternative hypotheses, test statistics, p-values, confidence intervals and power.",
+          "duration": 26
+        },
+        {
+          "slug": "linear-regression",
+          "title": "Linear Regression",
+          "summary": "OLS estimation, interpretation, inference and goodness of fit.",
+          "duration": 28
+        },
+        {
+          "slug": "regression-with-multiple-explanatory-variables",
+          "title": "Regression With Multiple Explanatory Variables",
+          "summary": "Multiple regression, adjusted R-squared, F-tests and multicollinearity.",
+          "duration": 26
+        },
+        {
+          "slug": "regression-diagnostics",
+          "title": "Regression Diagnostics",
+          "summary": "Heteroskedasticity, omitted variables, outliers and model specification.",
+          "duration": 24
+        },
+        {
+          "slug": "stationary-time-series",
+          "title": "Stationary Time Series",
+          "summary": "Autocorrelation, white noise, AR, MA and ARMA models and forecasting.",
+          "duration": 28
+        },
+        {
+          "slug": "non-stationary-time-series",
+          "title": "Non-Stationary Time Series",
+          "summary": "Trends, seasonality, unit roots and spurious regression.",
+          "duration": 24
+        },
+        {
+          "slug": "measuring-returns-volatility-correlation",
+          "title": "Measuring Returns, Volatility and Correlation",
+          "summary": "Simple versus log returns, volatility estimation, non-normality and rank correlation.",
+          "duration": 24
+        },
+        {
+          "slug": "simulation-and-bootstrapping",
+          "title": "Simulation and Bootstrapping",
+          "summary": "Monte Carlo simulation, variance reduction and the bootstrap.",
+          "duration": 22
+        },
+        {
+          "slug": "machine-learning-methods",
+          "title": "Machine Learning Methods",
+          "summary": "Supervised and unsupervised learning, overfitting, regularisation and model evaluation.",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "slug": "financial-markets-and-products",
+      "title": "Financial Markets and Products",
+      "description": "Banks, insurers, funds, derivatives markets, clearing, futures, options, swaps and fixed income products.",
+      "lessons": [
+        {
+          "slug": "banks",
+          "title": "Banks",
+          "summary": "Bank business models, risks, capital and the originate-to-distribute model.",
+          "duration": 24,
+          "freePreview": true
+        },
+        {
+          "slug": "insurance-companies-and-pension-plans",
+          "title": "Insurance Companies and Pension Plans",
+          "summary": "Life and property-casualty insurance, mortality tables, combined ratio and pension plans.",
+          "duration": 24
+        },
+        {
+          "slug": "fund-management",
+          "title": "Fund Management",
+          "summary": "Mutual funds, ETFs, hedge funds, fees and NAV.",
+          "duration": 22
+        },
+        {
+          "slug": "introduction-to-derivatives",
+          "title": "Introduction to Derivatives",
+          "summary": "Forwards, futures and options payoffs; hedgers, speculators and arbitrageurs.",
+          "duration": 24
+        },
+        {
+          "slug": "exchanges-and-otc-markets",
+          "title": "Exchanges and OTC Markets",
+          "summary": "Market structure, counterparty risk, margin and collateral.",
+          "duration": 20
+        },
+        {
+          "slug": "central-clearing",
+          "title": "Central Clearing",
+          "summary": "How CCPs work, default waterfalls and the risks CCPs create.",
+          "duration": 22
+        },
+        {
+          "slug": "futures-markets",
+          "title": "Futures Markets",
+          "summary": "Contract specifications, daily settlement, margin calls and delivery.",
+          "duration": 24
+        },
+        {
+          "slug": "hedging-with-futures",
+          "title": "Using Futures for Hedging",
+          "summary": "Basis risk, minimum-variance hedge ratio and hedging with stock index futures.",
+          "duration": 28
+        },
+        {
+          "slug": "interest-rates-frm",
+          "title": "Interest Rates",
+          "summary": "Compounding frequencies, zero rates, bond pricing, forward rates and FRAs.",
+          "duration": 28
+        },
+        {
+          "slug": "pricing-financial-forwards-and-futures",
+          "title": "Determination of Forward and Futures Prices",
+          "summary": "Cost of carry for assets with income, yields, storage costs and currencies.",
+          "duration": 28
+        },
+        {
+          "slug": "commodity-forwards-and-futures",
+          "title": "Commodity Forwards and Futures",
+          "summary": "Storage, convenience yield, contango and backwardation.",
+          "duration": 22
+        },
+        {
+          "slug": "options-markets",
+          "title": "Options Markets",
+          "summary": "Option types, exchange-traded options, warrants and employee stock options.",
+          "duration": 20
+        },
+        {
+          "slug": "properties-of-options",
+          "title": "Properties of Options",
+          "summary": "Bounds on option prices, put-call parity and early exercise.",
+          "duration": 26
+        },
+        {
+          "slug": "trading-strategies",
+          "title": "Trading Strategies",
+          "summary": "Covered calls, protective puts, spreads, straddles and strangles.",
+          "duration": 24
+        },
+        {
+          "slug": "exotic-options",
+          "title": "Exotic Options",
+          "summary": "Barrier, Asian, lookback, binary and compound options.",
+          "duration": 22
+        },
+        {
+          "slug": "swaps",
+          "title": "Properties of Interest Rate Swaps and Currency Swaps",
+          "summary": "Swap mechanics, comparative advantage, valuation and the role of OIS discounting.",
+          "duration": 28
+        },
+        {
+          "slug": "fx-risk-and-corporate-bonds",
+          "title": "Foreign Exchange Risk and Corporate Bonds",
+          "summary": "Managing FX exposure; bond indentures, ratings, recovery and yield spreads.",
+          "duration": 24
+        },
+        {
+          "slug": "mortgages-and-mbs",
+          "title": "Mortgages and Mortgage-Backed Securities",
+          "summary": "Mortgage cash flows, prepayment, pass-throughs, CMOs and the dollar roll.",
+          "duration": 26
+        }
+      ]
+    },
+    {
+      "slug": "valuation-and-risk-models",
+      "title": "Valuation and Risk Models",
+      "description": "VaR and expected shortfall, credit ratings, operational risk, stress testing, bond and option valuation.",
+      "lessons": [
+        {
+          "slug": "measures-of-financial-risk",
+          "title": "Measures of Financial Risk",
+          "summary": "Mean-variance limits, VaR, expected shortfall and coherent risk measures.",
+          "duration": 28,
+          "freePreview": true
+        },
+        {
+          "slug": "calculating-and-applying-var",
+          "title": "Calculating and Applying VaR",
+          "summary": "Historical simulation, delta-normal and Monte Carlo VaR for linear and non-linear positions.",
+          "duration": 30
+        },
+        {
+          "slug": "measuring-and-monitoring-volatility",
+          "title": "Measuring and Monitoring Volatility",
+          "summary": "EWMA, GARCH(1,1), volatility term structure and correlation estimation.",
+          "duration": 26
+        },
+        {
+          "slug": "external-and-internal-credit-ratings",
+          "title": "External and Internal Credit Ratings",
+          "summary": "Rating scales, transition matrices, through-the-cycle versus point-in-time ratings.",
+          "duration": 24
+        },
+        {
+          "slug": "country-risk",
+          "title": "Country Risk: Determinants, Measures and Implications",
+          "summary": "Sources of country risk, sovereign default and sovereign ratings.",
+          "duration": 20
+        },
+        {
+          "slug": "credit-risk-expected-unexpected-loss",
+          "title": "Measuring Credit Risk",
+          "summary": "Expected loss, unexpected loss, Vasicek model and the Basel capital formula intuition.",
+          "duration": 28
+        },
+        {
+          "slug": "operational-risk",
+          "title": "Operational Risk",
+          "summary": "Loss categories, measurement approaches and the standardised approach.",
+          "duration": 22
+        },
+        {
+          "slug": "stress-testing",
+          "title": "Stress Testing",
+          "summary": "Scenario design, reverse stress tests and governance of stress testing.",
+          "duration": 22
+        },
+        {
+          "slug": "pricing-conventions-and-arbitrage",
+          "title": "Pricing Conventions, Discounting and Arbitrage",
+          "summary": "Discount factors, the law of one price and replicating bond cash flows.",
+          "duration": 24
+        },
+        {
+          "slug": "spot-forward-and-par-rates",
+          "title": "Interest Rates: Spot, Forward and Par",
+          "summary": "Bootstrapping, deriving forward rates and par rates.",
+          "duration": 28
+        },
+        {
+          "slug": "bond-yields-and-returns",
+          "title": "Returns, Spreads and Yields",
+          "summary": "Realized return, spreads, yield to maturity and carry roll-down.",
+          "duration": 24
+        },
+        {
+          "slug": "duration-and-convexity",
+          "title": "One-Factor Risk Metrics and Hedges",
+          "summary": "DV01, effective duration, convexity and hedging with duration.",
+          "duration": 30
+        },
+        {
+          "slug": "multi-factor-risk-metrics",
+          "title": "Multi-Factor Risk Metrics and Hedges",
+          "summary": "Key rate durations, partial 01s and bucket hedging.",
+          "duration": 22
+        },
+        {
+          "slug": "binomial-trees",
+          "title": "Binomial Trees",
+          "summary": "Pricing European and American options in one- and multi-step trees.",
+          "duration": 28
+        },
+        {
+          "slug": "black-scholes-merton",
+          "title": "The Black-Scholes-Merton Model",
+          "summary": "Assumptions, pricing formula, dividends and implied volatility.",
+          "duration": 30
+        },
+        {
+          "slug": "option-sensitivity-measures",
+          "title": "Option Sensitivity Measures: The Greeks",
+          "summary": "Delta, gamma, vega, theta, rho and delta-gamma hedging.",
+          "duration": 28
+        }
+      ]
+    }
+  ]
+}

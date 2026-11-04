@@ -1,0 +1,270 @@
+{
+  "slug": "frm-part-2",
+  "title": "FRM® Part II Complete Course",
+  "shortTitle": "FRM® Part II",
+  "category": "frm",
+  "level": "Part II",
+  "status": "skeleton",
+  "shortDescription": "Applied risk management: market, credit, operational and liquidity risk, investment risk and current issues.",
+  "description": "Part II applies the Part I toolkit to how financial institutions actually measure and manage risk. The course covers market risk measurement, credit risk, operational risk and resilience, liquidity and treasury risk, risk management of investments, and current issues.",
+  "whoFor": [
+    "Candidates who have passed FRM® Part I",
+    "Risk professionals in banks, insurers and asset managers"
+  ],
+  "outcomes": [
+    "Estimate and backtest VaR and expected shortfall",
+    "Model credit risk, counterparty exposure and CVA",
+    "Measure operational risk and design resilience frameworks",
+    "Manage liquidity, funding and treasury risk",
+    "Apply risk budgeting and performance attribution to portfolios"
+  ],
+  "faq": [
+    {
+      "q": "Is the full course available now?",
+      "a": "The course structure is published. Lessons are released progressively."
+    }
+  ],
+  "accent": "#be123c",
+  "modules": [
+    {
+      "slug": "market-risk-measurement",
+      "title": "Market Risk Measurement and Management",
+      "description": "VaR estimation, backtesting, correlation and term structure models.",
+      "lessons": [
+        {
+          "slug": "estimating-market-risk-measures",
+          "title": "Estimating Market Risk Measures",
+          "summary": "Historical simulation, parametric approaches and expected shortfall.",
+          "duration": 28
+        },
+        {
+          "slug": "non-parametric-approaches",
+          "title": "Non-Parametric Approaches",
+          "summary": "Bootstrapping, weighted historical simulation and filtered HS.",
+          "duration": 24
+        },
+        {
+          "slug": "backtesting-var",
+          "title": "Backtesting VaR",
+          "summary": "Unconditional coverage, independence tests and the Basel traffic light.",
+          "duration": 26
+        },
+        {
+          "slug": "var-mapping",
+          "title": "VaR Mapping",
+          "summary": "Mapping positions to risk factors for fixed income and derivatives.",
+          "duration": 24
+        },
+        {
+          "slug": "extreme-value-theory",
+          "title": "Parametric Approaches: Extreme Value",
+          "summary": "GEV and peaks-over-threshold models.",
+          "duration": 24
+        },
+        {
+          "slug": "correlation-risk",
+          "title": "Correlation Basics and Empirical Properties",
+          "summary": "Correlation swaps, correlation risk and copulas.",
+          "duration": 26
+        },
+        {
+          "slug": "term-structure-models",
+          "title": "Term Structure Models of Interest Rates",
+          "summary": "Short-rate models with drift and volatility.",
+          "duration": 28
+        },
+        {
+          "slug": "volatility-smiles",
+          "title": "Volatility Smiles",
+          "summary": "Implied volatility patterns and their causes.",
+          "duration": 22
+        },
+        {
+          "slug": "frtb",
+          "title": "Fundamental Review of the Trading Book",
+          "summary": "Expected shortfall, liquidity horizons and the standardised approach.",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "slug": "credit-risk-measurement",
+      "title": "Credit Risk Measurement and Management",
+      "description": "Default probability models, portfolio credit risk, counterparty risk and securitisation.",
+      "lessons": [
+        {
+          "slug": "credit-risk-and-capital",
+          "title": "Credit Risk Management and Capital",
+          "summary": "Credit decisions, capital allocation and economic capital.",
+          "duration": 24
+        },
+        {
+          "slug": "default-risk-models",
+          "title": "Default Risk: Quantitative Methodologies",
+          "summary": "Structural models and credit scoring.",
+          "duration": 26
+        },
+        {
+          "slug": "credit-portfolio-risk",
+          "title": "Portfolio Credit Risk",
+          "summary": "Default correlation, Vasicek and credit VaR.",
+          "duration": 28
+        },
+        {
+          "slug": "counterparty-risk",
+          "title": "Counterparty Risk and Exposure",
+          "summary": "Exposure profiles, netting, collateral and margin.",
+          "duration": 28
+        },
+        {
+          "slug": "cva-and-xva",
+          "title": "Credit Value Adjustment and XVA",
+          "summary": "CVA, DVA, FVA and wrong-way risk.",
+          "duration": 28
+        },
+        {
+          "slug": "credit-derivatives-and-structured-products",
+          "title": "Credit Derivatives and Securitisation",
+          "summary": "CDS, tranches and the securitisation process.",
+          "duration": 26
+        }
+      ]
+    },
+    {
+      "slug": "operational-risk-and-resilience",
+      "title": "Operational Risk and Resilience",
+      "description": "Op risk frameworks, measurement, cyber and third-party risk.",
+      "lessons": [
+        {
+          "slug": "operational-risk-framework",
+          "title": "Operational Risk Governance and Framework",
+          "summary": "Principles, risk appetite and the three lines of defence.",
+          "duration": 22
+        },
+        {
+          "slug": "operational-risk-identification",
+          "title": "Risk Identification and Assessment",
+          "summary": "RCSA, KRIs and scenario analysis.",
+          "duration": 22
+        },
+        {
+          "slug": "operational-risk-capital",
+          "title": "Operational Risk Capital and the Standardised Approach",
+          "summary": "Business indicator, loss component and capital.",
+          "duration": 24
+        },
+        {
+          "slug": "cyber-and-third-party-risk",
+          "title": "Cyber Resilience and Third-Party Risk",
+          "summary": "Cyber threats, outsourcing and resilience planning.",
+          "duration": 22
+        },
+        {
+          "slug": "model-risk-management",
+          "title": "Model Risk Management",
+          "summary": "Model validation, governance and inventory.",
+          "duration": 22
+        }
+      ]
+    },
+    {
+      "slug": "liquidity-and-treasury-risk",
+      "title": "Liquidity and Treasury Risk Measurement and Management",
+      "description": "Funding liquidity, market liquidity and balance sheet management.",
+      "lessons": [
+        {
+          "slug": "liquidity-risk-fundamentals",
+          "title": "Liquidity Risk Fundamentals",
+          "summary": "Funding versus market liquidity and their interaction.",
+          "duration": 22
+        },
+        {
+          "slug": "liquidity-ratios",
+          "title": "Liquidity Coverage and Net Stable Funding Ratios",
+          "summary": "Basel liquidity standards and how they bind.",
+          "duration": 24
+        },
+        {
+          "slug": "funds-transfer-pricing",
+          "title": "Funds Transfer Pricing",
+          "summary": "Charging business lines for liquidity and interest rate risk.",
+          "duration": 22
+        },
+        {
+          "slug": "interest-rate-risk-in-banking-book",
+          "title": "Interest Rate Risk in the Banking Book",
+          "summary": "Repricing gaps, EVE and NII sensitivity.",
+          "duration": 24
+        },
+        {
+          "slug": "contingency-funding",
+          "title": "Liquidity Stress Testing and Contingency Funding",
+          "summary": "Stress scenarios and contingency funding plans.",
+          "duration": 22
+        }
+      ]
+    },
+    {
+      "slug": "risk-management-of-investments",
+      "title": "Risk Management and Investment Management",
+      "description": "Factor investing, portfolio risk budgeting and hedge fund risk.",
+      "lessons": [
+        {
+          "slug": "factor-theory",
+          "title": "Factor Theory and Factor Investing",
+          "summary": "Factor risk premiums and implementation.",
+          "duration": 24
+        },
+        {
+          "slug": "portfolio-risk-analytics",
+          "title": "Portfolio Risk: Analytical Methods",
+          "summary": "Marginal VaR, incremental VaR and component VaR.",
+          "duration": 26
+        },
+        {
+          "slug": "risk-budgeting",
+          "title": "Risk Budgeting and Monitoring",
+          "summary": "Allocating risk across managers and assets.",
+          "duration": 22
+        },
+        {
+          "slug": "performance-attribution",
+          "title": "Portfolio Performance Evaluation and Attribution",
+          "summary": "Alpha, style analysis and attribution.",
+          "duration": 24
+        },
+        {
+          "slug": "hedge-fund-risk",
+          "title": "Hedge Funds and Due Diligence",
+          "summary": "Hedge fund risks and operational due diligence.",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "slug": "current-issues",
+      "title": "Current Issues in Financial Markets",
+      "description": "Recent developments shaping risk management.",
+      "lessons": [
+        {
+          "slug": "climate-risk",
+          "title": "Climate-Related Financial Risk",
+          "summary": "Physical and transition risk and scenario analysis.",
+          "duration": 22
+        },
+        {
+          "slug": "ai-and-ml-in-risk",
+          "title": "Artificial Intelligence and Machine Learning in Risk Management",
+          "summary": "Uses, risks and governance of AI models.",
+          "duration": 20
+        },
+        {
+          "slug": "digital-assets-risk",
+          "title": "Digital Assets and Decentralised Finance Risks",
+          "summary": "Stablecoins, DeFi and associated risks.",
+          "duration": 20
+        }
+      ]
+    }
+  ]
+}
