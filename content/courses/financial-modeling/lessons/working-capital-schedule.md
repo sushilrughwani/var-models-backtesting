@@ -63,7 +63,7 @@ Northwind (USD m). FY2025A balances: AR 68.5, inventory 63.6, payables 39.7, so 
 
 **Breaking it down.** Receivables rose 3.29 (cash use), inventory rose 4.98 (cash use) and payables rose 4.88 (cash source): −3.29 − 4.98 + 4.88 = −3.39.
 
-**What if DSO had stayed at 50?** Receivables would be 50 / 365 × 545.9 = 74.78, so NWC would be 2.99 higher and the cash outflow 6.38. Two days of faster collection released about 3.0 of cash. This is why management teams focus on credit control.
+**What if DSO had stayed at 50?** Receivables would be 50 / 365 × 545.9 = 74.78, so NWC would be 2.99 higher and the cash outflow 6.39. Two days of faster collection released about 3.0 of cash. This is why management teams focus on credit control.
 
 ## Common exam traps
 - Getting the cash flow sign backwards: an increase in receivables or inventory reduces cash.

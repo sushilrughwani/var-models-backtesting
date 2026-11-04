@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm2-non-parametric-approaches-1",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "non-parametric-approaches",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A risk manager applies age-weighted historical simulation with a 100-day window and a decay factor λ = 0.96. The weight assigned to the observation that is 3 days old (the newest observation is 1 day old) is closest to:",
+    "options": ["3.60%", "3.69%", "3.75%", "1.00%"],
+    "answer": "C",
+    "explanation": "w(i) = λ^(i−1)(1 − λ)/(1 − λ^n) = 0.96² × 0.04/(1 − 0.96^100) = 0.036864/0.98313 = 0.0375, or 3.75%.",
+    "rationale": {
+      "A": "Incorrect. 3.60% uses λ³ instead of λ²; the exponent is i − 1, so the newest observation has exponent zero.",
+      "B": "Incorrect. 3.69% omits the normalising denominator 1 − λ^n, so the weights would not sum to one over 100 days.",
+      "C": "Correct. 0.96² × 0.04 divided by 1 − 0.96^100 gives 3.75%.",
+      "D": "Incorrect. 1.00% is the equal weight 1/100 used by plain historical simulation."
+    },
+    "verify": "const l=0.96,n=100,i=3; return 100*Math.pow(l,i-1)*(1-l)/(1-Math.pow(l,n));",
+    "numericAnswer": 3.75,
+    "tolerance": 0.005,
+    "tags": ["age-weighted-hs"]
+  },
+  {
+    "id": "q-frm2-non-parametric-approaches-2",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "non-parametric-approaches",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Under volatility-weighted historical simulation, a past day showed a loss of 1.6% when the EWMA volatility estimate was 0.8%. Today's volatility estimate is 1.4%. The rescaled loss used as today's scenario is closest to:",
+    "options": ["2.80%", "0.91%", "1.60%", "2.20%"],
+    "answer": "A",
+    "explanation": "Rescaled return = historical return × σ_today/σ_then = 1.6% × 1.4/0.8 = 2.80%.",
+    "rationale": {
+      "A": "Correct. 1.6% × (1.4/0.8) = 2.80%.",
+      "B": "Incorrect. 0.91% inverts the ratio, scaling by past over current volatility.",
+      "C": "Incorrect. 1.60% is the unadjusted loss used by plain historical simulation.",
+      "D": "Incorrect. 2.20% adds the change in volatility (0.6%) instead of scaling proportionally."
+    },
+    "verify": "return 1.6*1.4/0.8;",
+    "numericAnswer": 2.8,
+    "tolerance": 0.005,
+    "tags": ["volatility-weighted-hs"]
+  },
+  {
+    "id": "q-frm2-non-parametric-approaches-3",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "non-parametric-approaches",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which sequence best describes filtered historical simulation for a 10-day VaR?",
+    "options": ["Resample raw daily returns with replacement and multiply the 1-day VaR by √10", "Assign exponentially declining weights to past returns and read the 10-day VaR from cumulative weights", "Fit a normal distribution to past returns, simulate 10-day paths and read the quantile", "Fit a GARCH model, standardise past returns by their fitted volatility, bootstrap the residuals and rescale them by forecast volatility along each simulated 10-day path"],
+    "answer": "D",
+    "explanation": "Filtered HS filters returns through a volatility model to obtain approximately i.i.d. residuals, resamples them non-parametrically, and rescales by current and forecast volatility, so clustering and fat tails both survive into multi-day scenarios.",
+    "rationale": {
+      "A": "Incorrect. This is plain bootstrapped HS with square-root scaling; it ignores current volatility and clustering.",
+      "B": "Incorrect. This describes age-weighted historical simulation.",
+      "C": "Incorrect. Simulating from a fitted normal is parametric Monte Carlo, which discards the empirical residual distribution.",
+      "D": "Correct. GARCH filtering, residual bootstrapping and rescaling by forecast volatility define filtered HS."
+    },
+    "tags": ["filtered-hs"]
+  },
+  {
+    "id": "q-frm2-non-parametric-approaches-4",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "non-parametric-approaches",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about bootstrapping historical returns to estimate VaR is most accurate?",
+    "options": ["It draws samples without replacement so each observation is used exactly once per resample", "The spread of VaR estimates across resamples can be used to build a confidence interval for VaR", "It removes the need for observations to be independent", "It can generate losses larger than the largest loss in the original sample"],
+    "answer": "B",
+    "explanation": "Each resample is drawn with replacement; computing VaR in each gives a distribution of estimates whose percentiles form a confidence interval. Plain resampling assumes i.i.d. data and can only reuse observed values.",
+    "rationale": {
+      "A": "Incorrect. Sampling without replacement would reproduce the original sample every time; the bootstrap samples with replacement.",
+      "B": "Correct. The distribution of resampled VaRs measures estimation uncertainty.",
+      "C": "Incorrect. Plain bootstrapping assumes independence; clustering requires block bootstraps or filtered residuals.",
+      "D": "Incorrect. Each resample reuses observed returns, so no single-day loss can exceed the sample maximum."
+    },
+    "tags": ["bootstrap"]
+  }
+]

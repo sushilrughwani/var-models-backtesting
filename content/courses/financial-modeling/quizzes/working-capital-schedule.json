@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-fm-working-capital-schedule-1",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "working-capital-schedule",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind's FY2026E revenue is USD 545.9 million and COGS is USD 312.91 million. With a DSO assumption of 48 days and a 365-day year, forecast accounts receivable (USD million) is closest to:",
+    "options": ["72.79", "41.15", "71.79", "68.50"],
+    "answer": "C",
+    "explanation": "AR = 48 / 365 x 545.9 = 71.79.",
+    "rationale": {
+      "A": "Incorrect. 72.79 uses a 360-day year, inconsistent with the 365-day convention stated.",
+      "B": "Incorrect. 41.15 applies DSO to COGS; receivables are driven by revenue.",
+      "C": "Correct. 48 / 365 x 545.9 = 71.79.",
+      "D": "Incorrect. 68.50 is the FY2025 receivables balance carried forward unchanged."
+    },
+    "verify": "return 48/365*545.9;",
+    "numericAnswer": 71.79,
+    "tolerance": 0.01,
+    "tags": ["receivables", "days"]
+  },
+  {
+    "id": "q-fm-working-capital-schedule-2",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "working-capital-schedule",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind's net working capital was USD 92.40 million at the end of FY2025 and is forecast at USD 95.79 million at the end of FY2026. The working capital line in the FY2026 cash flow statement (USD million) is closest to:",
+    "options": ["+3.39", "-3.39", "-95.79", "+188.19"],
+    "answer": "B",
+    "explanation": "NWC rises by 95.79 - 92.40 = 3.39. An increase in working capital uses cash, so the cash flow line is -3.39.",
+    "rationale": {
+      "A": "Incorrect. +3.39 has the right size but the wrong sign; rising NWC absorbs cash.",
+      "B": "Correct. Cash impact = -(95.79 - 92.40) = -3.39.",
+      "C": "Incorrect. -95.79 uses the NWC level instead of the year-on-year change.",
+      "D": "Incorrect. +188.19 adds the two balances, which has no meaning in the cash flow statement."
+    },
+    "verify": "return -(95.79-92.40);",
+    "numericAnswer": -3.39,
+    "tolerance": 0.005,
+    "tags": ["change-in-nwc", "sign-rule"]
+  },
+  {
+    "id": "q-fm-working-capital-schedule-3",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "working-capital-schedule",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind's FY2026E COGS is USD 312.91 million and revenue is USD 545.9 million. With days inventory outstanding of 80 and a 365-day year, forecast inventory (USD million) is closest to:",
+    "options": ["68.58", "119.65", "69.54", "63.60"],
+    "answer": "A",
+    "explanation": "Inventory = 80 / 365 x 312.91 = 68.58.",
+    "rationale": {
+      "A": "Correct. 80 / 365 x 312.91 = 68.58.",
+      "B": "Incorrect. 119.65 applies DIO to revenue rather than COGS.",
+      "C": "Incorrect. 69.54 uses a 360-day year.",
+      "D": "Incorrect. 63.60 is the FY2025 inventory balance, not a forecast."
+    },
+    "verify": "return 80/365*312.91;",
+    "numericAnswer": 68.58,
+    "tolerance": 0.01,
+    "tags": ["inventory", "days"]
+  },
+  {
+    "id": "q-fm-working-capital-schedule-4",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "working-capital-schedule",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Holding revenue and COGS constant, which change in assumptions would release the most cash from working capital?",
+    "options": ["DSO up 5 days, DPO up 5 days", "DIO up 5 days, DPO down 5 days", "DSO down 5 days, DIO up 5 days", "DSO down 5 days, DPO up 5 days"],
+    "answer": "D",
+    "explanation": "Lower DSO reduces receivables (cash in) and higher DPO raises payables (cash in). Both changes release cash, so together they release the most.",
+    "rationale": {
+      "A": "Incorrect. Higher DSO absorbs cash, partly or fully offsetting the benefit of higher DPO.",
+      "B": "Incorrect. Both changes absorb cash: more inventory and less supplier credit.",
+      "C": "Incorrect. The receivables release is offset by the extra inventory.",
+      "D": "Correct. Both changes reduce net working capital, releasing cash."
+    },
+    "tags": ["days", "cash-release"]
+  }
+]

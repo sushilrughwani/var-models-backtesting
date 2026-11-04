@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-xl-charts-for-finance-1",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "charts-for-finance",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A CFO wants one chart that shows how revenue of 500 becomes net income of 37.5 after each category of cost and tax. Which chart type fits best?",
+    "options": ["Pie chart of each cost as a share of revenue", "Line chart of the cost categories", "Waterfall chart", "Scatter chart of revenue against net income"],
+    "answer": "C",
+    "explanation": "A bridge from one total to another, step by step, is exactly what a waterfall chart shows: a starting bar, floating bars for each increase or decrease, and an ending total.",
+    "rationale": {
+      "A": "Incorrect. A pie shows composition of one total but cannot show the path from revenue to net income.",
+      "B": "Incorrect. Lines imply a trend over an ordered axis such as time; cost categories are not a time series.",
+      "C": "Correct. A waterfall shows each step from the starting total to the ending total.",
+      "D": "Incorrect. Scatter charts show the relationship between two variables across many observations."
+    },
+    "tags": ["chart-choice", "waterfall"]
+  },
+  {
+    "id": "q-xl-charts-for-finance-2",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "charts-for-finance",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An analyst builds a waterfall from a stacked column chart with an invisible base series. Revenue is 500, cost of goods sold is 300 and operating expenses are 120. What height should the invisible base series have for the operating-expenses bar?",
+    "options": ["80", "200", "120", "380"],
+    "answer": "A",
+    "explanation": "After COGS the running total is 200; after Opex it is 80. A falling bar floats from the new total up to the old one, so its invisible base is 80 and its visible part is 120, spanning 80 to 200.",
+    "rationale": {
+      "A": "Correct. The base equals the running total after the step: 500 − 300 − 120 = 80.",
+      "B": "Incorrect. 200 is the running total before Opex; a base of 200 would make the bar float from 200 to 320.",
+      "C": "Incorrect. 120 is the visible height of the bar, not its base.",
+      "D": "Incorrect. 380 subtracts only Opex from revenue and ignores COGS."
+    },
+    "verify": "return 500-300-120;",
+    "numericAnswer": 80,
+    "tolerance": 0.5,
+    "tags": ["waterfall"]
+  },
+  {
+    "id": "q-xl-charts-for-finance-3",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "charts-for-finance",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A column chart compares fee income of 102 for Desk A and 105 for Desk B, with the vertical axis starting at 100. A reviewer objects. Why?",
+    "options": ["Column charts should always use a logarithmic axis", "The chart should be a pie chart because there are only two desks", "Fee income should be plotted on a secondary axis", "Bar length encodes value, so a truncated axis makes Desk B look 2.5 times Desk A when the gap is under 3%"],
+    "answer": "D",
+    "explanation": "Readers compare bar lengths. Starting at 100, the bars are 2 and 5 units tall, so B appears 2.5 times as large; the true difference is 3 / 102 = 2.9%. Column and bar axes should start at zero.",
+    "rationale": {
+      "A": "Incorrect. Log axes suit data spanning orders of magnitude; they do not fix a truncated baseline.",
+      "B": "Incorrect. A pie would not improve the comparison and is generally weaker for comparing values.",
+      "C": "Incorrect. A secondary axis is for series with different units; both desks are in the same units.",
+      "D": "Correct. Truncating a column axis distorts the visual comparison."
+    },
+    "tags": ["chart-formatting"]
+  },
+  {
+    "id": "q-xl-charts-for-finance-4",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "charts-for-finance",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Monthly market returns are 2.0%, -1.0%, 3.0%, 1.5%, -2.0% and 2.5%; the stock's returns in the same months are 3.0%, -2.0%, 4.0%, 2.0%, -3.5% and 3.0%. On a scatter with stock returns on the vertical axis, what slope does a linear trendline display?",
+    "options": ["0.66", "1.51", "1.00", "0.99"],
+    "answer": "B",
+    "explanation": "The slope equals covariance(stock, market) / variance(market) = 0.00062 / 0.00041 = 1.51, the same as `=SLOPE(stock_range, market_range)`. This is the stock's beta.",
+    "rationale": {
+      "A": "Incorrect. 0.66 is the slope with the axes swapped (market regressed on stock), as `SLOPE(market, stock)` would give.",
+      "B": "Correct. 0.00062 / 0.00041 = 1.51.",
+      "C": "Incorrect. 1.00 is the correlation (0.9965) rounded; correlation is not the slope unless both series have equal volatility.",
+      "D": "Incorrect. 0.99 is the R-squared of the trendline, not its slope."
+    },
+    "verify": "const m=[0.02,-0.01,0.03,0.015,-0.02,0.025], s=[0.03,-0.02,0.04,0.02,-0.035,0.03]; const mm=m.reduce((a,b)=>a+b)/6, ms=s.reduce((a,b)=>a+b)/6; let c=0,v=0; for(let i=0;i<6;i++){c+=(m[i]-mm)*(s[i]-ms); v+=(m[i]-mm)**2;} return c/v;",
+    "numericAnswer": 1.51,
+    "tolerance": 0.005,
+    "tags": ["scatter", "trendline", "beta"]
+  }
+]
