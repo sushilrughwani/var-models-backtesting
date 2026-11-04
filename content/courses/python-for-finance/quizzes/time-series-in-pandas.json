@@ -1,0 +1,104 @@
+[
+  {
+    "id": "q-py-time-series-in-pandas-1",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "time-series-in-pandas",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A Series holds 250 daily closing prices with no missing values. How many NaN values does `prices.rolling(20).mean()` contain?",
+    "options": [
+      "20",
+      "19",
+      "0",
+      "1"
+    ],
+    "answer": "B",
+    "explanation": "A 20-day window is full for the first time on the 20th observation, so the first 19 results are NaN.",
+    "rationale": {
+      "A": "Incorrect. 20 leading NaNs occur for a 20-day rolling statistic of returns, because the first return is itself NaN; on prices it is 19.",
+      "B": "Correct. The window needs 20 observations, so positions 1 to 19 are NaN.",
+      "C": "Incorrect. By default rolling requires a full window (min_periods equals the window), so early values are NaN.",
+      "D": "Incorrect. One NaN is what pct_change produces, not a 20-day rolling mean."
+    },
+    "verify": "return 20-1;",
+    "numericAnswer": 19,
+    "tolerance": 0.001,
+    "tags": ["pandas", "rolling"]
+  },
+  {
+    "id": "q-py-time-series-in-pandas-2",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "time-series-in-pandas",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "You have daily closing prices in a Series with a DatetimeIndex and want month-end prices to compute monthly returns. Which expression is appropriate?",
+    "options": [
+      "prices.resample(\"ME\").last()",
+      "prices.resample(\"ME\").mean()",
+      "prices.resample(\"ME\")",
+      "prices.rolling(21).mean()"
+    ],
+    "answer": "A",
+    "explanation": "Monthly returns should be computed from the closing price at each month end, which is the last observation in each monthly bucket.",
+    "rationale": {
+      "A": "Correct. .last() picks the final available close in each month, labelled at the month end.",
+      "B": "Incorrect. Average monthly prices smooth the series; returns computed from them understate volatility.",
+      "C": "Incorrect. resample without an aggregation returns a grouping object, not a Series of prices.",
+      "D": "Incorrect. This is a 21-day moving average at daily frequency, not month-end prices."
+    },
+    "tags": ["pandas", "resample"]
+  },
+  {
+    "id": "q-py-time-series-in-pandas-3",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "time-series-in-pandas",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Daily closes for two weeks (Monday to Friday) are 48, 49, 50, 49.5, 50 and then 51, 52, 51.5, 53, 52.5. What does `prices.resample(\"W-FRI\").last().pct_change()` show for the second week?",
+    "options": [
+      "5.48%",
+      "2.94%",
+      "9.38%",
+      "5.00%"
+    ],
+    "answer": "D",
+    "explanation": "The week-ending closes are 50.0 and 52.5, so the weekly return is 52.5 / 50.0 − 1 = 5.00%.",
+    "rationale": {
+      "A": "Incorrect. This uses weekly average prices (49.3 and 52.0) from .mean() instead of .last().",
+      "B": "Incorrect. This is the return within week 2 only (52.5 / 51 − 1), ignoring the prior week's close.",
+      "C": "Incorrect. This compares week 2's close with week 1's first price (52.5 / 48 − 1).",
+      "D": "Correct. 52.5 / 50 − 1 = 0.05."
+    },
+    "verify": "return (52.5/50-1)*100;",
+    "numericAnswer": 5.0,
+    "tolerance": 0.005,
+    "tags": ["pandas", "resample", "returns"]
+  },
+  {
+    "id": "q-py-time-series-in-pandas-4",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "time-series-in-pandas",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "`signal` is 1 when today's close is above its 50-day moving average and 0 otherwise. `ret` is the daily close-to-close return. Which line computes strategy returns without look-ahead bias?",
+    "options": [
+      "strat = signal * ret",
+      "strat = signal.shift(-1) * ret",
+      "strat = signal.shift(1) * ret",
+      "strat = signal * ret.shift(1)"
+    ],
+    "answer": "C",
+    "explanation": "The signal is known only at today's close, so it can determine the position held over the next day. Lagging it by one row aligns yesterday's signal with today's return.",
+    "rationale": {
+      "A": "Incorrect. This earns today's return using a signal computed from today's close, information not available when the position was taken.",
+      "B": "Incorrect. shift(-1) pulls tomorrow's signal back to today, an even worse use of future information.",
+      "C": "Correct. Yesterday's signal multiplies today's return, which is tradable in practice.",
+      "D": "Incorrect. Today's signal (which already uses today's close) is paired with yesterday's return, so the position is assigned a return that occurred before the signal existed; the timing is backwards."
+    },
+    "tags": ["pandas", "shift", "look-ahead-bias"]
+  }
+]
