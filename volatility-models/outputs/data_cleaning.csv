@@ -1,0 +1,4 @@
+asset,rows_raw,dropped_missing,dropped_non_positive,dropped_high_eq_low,dropped_total,rows_clean,ticker,source,first_date,last_date
+NIFTY50,2915,0,0,0,0,2915,^NSEI,cache,2015-01-02,2026-11-04
+SP500,2977,0,0,0,0,2977,^GSPC,cache,2015-01-02,2026-11-03
+RELIANCE,2924,0,0,2,2,2922,RELIANCE.NS,cache,2015-01-01,2026-11-04

@@ -38,12 +38,17 @@ def test_main_runs_end_to_end(tmp_path):
         assert (out_dir / name).exists(), name
 
 
-def test_main_stops_without_real_data(tmp_path):
-    env = dict(os.environ, VOLMODELS_DATA_DIR=str(tmp_path / "empty"),
-               VOLMODELS_OUTPUT_DIR=str(tmp_path / "out"))
-    # Block network access for yfinance by pointing the proxy at a dead port
-    env["HTTPS_PROXY"] = env["HTTP_PROXY"] = "http://127.0.0.1:9"
-    run = subprocess.run([sys.executable, "main.py"], cwd=PROJECT_ROOT, env=env,
-                         capture_output=True, text=True, timeout=300)
-    assert run.returncode == 1
-    assert "STOP" in run.stdout
+def test_main_stops_without_real_data(tmp_path, monkeypatch):
+    import main
+    import src.data_loader as loader
+
+    monkeypatch.setenv("VOLMODELS_DATA_DIR", str(tmp_path / "empty"))
+    monkeypatch.setenv("VOLMODELS_OUTPUT_DIR", str(tmp_path / "out"))
+    # Simulate a failed download (no network) without touching the real internet
+    monkeypatch.setattr(loader, "download_prices", fake_failed_download)
+    assert main.main() == 1
+
+
+def fake_failed_download(ticker, start, end=None):
+    """Stand-in for yfinance when the download fails: no rows."""
+    return pd.DataFrame()

@@ -1,0 +1,1023 @@
+{
+ "data": {
+  "NIFTY50": {
+   "rows_raw": 2915,
+   "dropped_missing": 0,
+   "dropped_non_positive": 0,
+   "dropped_high_eq_low": 0,
+   "dropped_total": 0,
+   "rows_clean": 2915,
+   "ticker": "^NSEI",
+   "source": "cache",
+   "first_date": "2015-01-02",
+   "last_date": "2026-11-04"
+  },
+  "SP500": {
+   "rows_raw": 2977,
+   "dropped_missing": 0,
+   "dropped_non_positive": 0,
+   "dropped_high_eq_low": 0,
+   "dropped_total": 0,
+   "rows_clean": 2977,
+   "ticker": "^GSPC",
+   "source": "cache",
+   "first_date": "2015-01-02",
+   "last_date": "2026-11-03"
+  },
+  "RELIANCE": {
+   "rows_raw": 2924,
+   "dropped_missing": 0,
+   "dropped_non_positive": 0,
+   "dropped_high_eq_low": 2,
+   "dropped_total": 2,
+   "rows_clean": 2922,
+   "ticker": "RELIANCE.NS",
+   "source": "cache",
+   "first_date": "2015-01-01",
+   "last_date": "2026-11-04"
+  }
+ },
+ "stylized_facts": {
+  "NIFTY50": {
+   "n_obs": 2914.0,
+   "mean_daily": 0.00035989048822059923,
+   "std_daily": 0.010234725377716006,
+   "vol_annual": 0.16247122851886897,
+   "skewness": -1.2866127170955513,
+   "excess_kurtosis": 19.583720511218935,
+   "min": -0.13903756461051203,
+   "max": 0.08400295216282225,
+   "jb_stat": 47199.749266693805,
+   "jb_pvalue": 0.0,
+   "obs_4sigma_days": 16.0,
+   "exp_4sigma_days_normal": 0.18457999740342257,
+   "lb20_returns_p": 1.359504637961787e-11,
+   "lb20_sq_returns_p": 0.0,
+   "lb20_returns_Q": 94.19062165637665,
+   "lb20_sq_returns_Q": 2008.7267340165743,
+   "corr_r_next_r2": 0.048338144191708024,
+   "corr_r_next_absr": -0.05024072413261828
+  },
+  "SP500": {
+   "n_obs": 2976.0,
+   "mean_daily": 0.0004375734502101059,
+   "std_daily": 0.011115922334367605,
+   "vol_annual": 0.17645979653907154,
+   "skewness": -0.6436334313932718,
+   "excess_kurtosis": 15.93214328379322,
+   "min": -0.12765219747281742,
+   "max": 0.09089487983303646,
+   "jb_stat": 31567.00850282685,
+   "jb_pvalue": 0.0,
+   "obs_4sigma_days": 22.0,
+   "exp_4sigma_days_normal": 0.18850723139072942,
+   "lb20_returns_p": 2.4239140334950413e-49,
+   "lb20_sq_returns_p": 0.0,
+   "lb20_returns_Q": 287.85464021082834,
+   "lb20_sq_returns_Q": 3705.8774254272435,
+   "corr_r_next_r2": -0.07829595738214917,
+   "corr_r_next_absr": -0.11945066747604079
+  },
+  "RELIANCE": {
+   "n_obs": 2921.0,
+   "mean_daily": 0.0006628330624148231,
+   "std_daily": 0.016998601986809077,
+   "vol_annual": 0.2698444409571916,
+   "skewness": 0.166717513439609,
+   "excess_kurtosis": 8.503188921374988,
+   "min": -0.141032475561254,
+   "max": 0.1373071108806291,
+   "jb_stat": 8779.214919225273,
+   "jb_pvalue": 0.0,
+   "obs_4sigma_days": 18.0,
+   "exp_4sigma_days_normal": 0.18502339478908625,
+   "lb20_returns_p": 0.005160658931251626,
+   "lb20_sq_returns_p": 3.689629620258245e-299,
+   "lb20_returns_Q": 39.8880946566866,
+   "lb20_sq_returns_Q": 1467.5231416636252,
+   "corr_r_next_r2": 0.025363270806863784,
+   "corr_r_next_absr": -0.009837272946356996
+  }
+ },
+ "historical": {
+  "NIFTY50": {
+   "avg_abs_daily_change": {
+    "20-day": 0.00540771263112226,
+    "60-day": 0.0019811464682421617,
+    "252-day": 0.0004929706652625967
+   },
+   "largest_shock_date": "2020-03-23",
+   "largest_shock_return": -0.13903756461051203
+  },
+  "SP500": {
+   "avg_abs_daily_change": {
+    "20-day": 0.005821384034572658,
+    "60-day": 0.0021761038383995095,
+    "252-day": 0.0005893956357900209
+   },
+   "largest_shock_date": "2020-03-16",
+   "largest_shock_return": -0.12765219747281742
+  },
+  "RELIANCE": {
+   "avg_abs_daily_change": {
+    "20-day": 0.009714791687582847,
+    "60-day": 0.003234807064423744,
+    "252-day": 0.0007858133606583692
+   },
+   "largest_shock_date": "2020-03-23",
+   "largest_shock_return": -0.141032475561254
+  }
+ },
+ "ewma": {
+  "half_life_days": {
+   "0.9": 6.578813478960585,
+   "0.94": 11.202305583621158,
+   "0.97": 22.75657306277341
+  },
+  "NIFTY50": {
+   "latest_vol_annual_0.94": 0.14969112633776965,
+   "ewma_equals_garch_special_case": true
+  },
+  "SP500": {
+   "latest_vol_annual_0.94": 0.11797651239976047,
+   "ewma_equals_garch_special_case": true
+  },
+  "RELIANCE": {
+   "latest_vol_annual_0.94": 0.46921782235741194,
+   "ewma_equals_garch_special_case": true
+  }
+ },
+ "garch_manual_vs_arch": {
+  "NIFTY50": {
+   "max_abs_param_diff": 2.136819800435674e-06,
+   "loglik_diff": 2.7480837161419913e-08,
+   "converged": true
+  },
+  "SP500": {
+   "max_abs_param_diff": 3.5202348951657303e-06,
+   "loglik_diff": 5.0274138629902154e-08,
+   "converged": true
+  },
+  "RELIANCE": {
+   "max_abs_param_diff": 1.193435797547382e-06,
+   "loglik_diff": 1.7407728591933846e-09,
+   "converged": true
+  }
+ },
+ "garch": {
+  "NIFTY50": {
+   "normal_persistence": 0.9760333170673755,
+   "normal_long_run_var_scaled": 0.9922242540317507,
+   "normal_long_run_daily_vol": 0.009961045397104417,
+   "normal_long_run_annual_vol": 0.1581266935137775,
+   "normal_half_life_days": 28.573306562603126,
+   "t_persistence": 0.9693241271976473,
+   "t_long_run_var_scaled": 0.8431942740890256,
+   "t_long_run_daily_vol": 0.00918256104847131,
+   "t_long_run_annual_vol": 0.1457686375975417,
+   "t_half_life_days": 22.247468964111988,
+   "t_nu": 7.002307759688583,
+   "gjr_gamma": 0.1525785166391435,
+   "gjr_gamma_t": 4.244894944750444,
+   "gjr_gamma_p": 2.186958578380898e-05,
+   "gjr_alpha": 0.023276647545614548,
+   "gjr_beta": 0.8646580168084845,
+   "gjr_persistence": 0.9642239226736709,
+   "gjr_long_run_annual_vol": 0.15432100051390493,
+   "next_day_vol_annual": 0.15805738320567195
+  },
+  "SP500": {
+   "normal_persistence": 0.9639479050635087,
+   "normal_long_run_var_scaled": 1.0935930594849295,
+   "normal_long_run_daily_vol": 0.010457499985584172,
+   "normal_long_run_annual_vol": 0.16600766578390358,
+   "normal_half_life_days": 18.877571914187477,
+   "t_persistence": 0.990463759711015,
+   "t_long_run_var_scaled": 2.2807948919401086,
+   "t_long_run_daily_vol": 0.015102300791402973,
+   "t_long_run_annual_vol": 0.23974159271367734,
+   "t_half_life_days": 72.33845546340831,
+   "t_nu": 5.760730985628653,
+   "gjr_gamma": 0.22356225313070915,
+   "gjr_gamma_t": 4.977545167322216,
+   "gjr_gamma_p": 6.439575811139536e-07,
+   "gjr_alpha": 0.03279372435592739,
+   "gjr_beta": 0.8223785599684486,
+   "gjr_persistence": 0.9669534108897305,
+   "gjr_long_run_annual_vol": 0.17499989099325602,
+   "next_day_vol_annual": 0.13736781231200865
+  },
+  "RELIANCE": {
+   "normal_persistence": 0.948386558626661,
+   "normal_long_run_var_scaled": 2.8074283162002516,
+   "normal_long_run_daily_vol": 0.016755382168724922,
+   "normal_long_run_annual_vol": 0.2659834460417534,
+   "normal_half_life_days": 13.07995214993915,
+   "t_persistence": 0.9723011435039054,
+   "t_long_run_var_scaled": 2.670100503659274,
+   "t_long_run_daily_vol": 0.01634044217167722,
+   "t_long_run_annual_vol": 0.25939647779454084,
+   "t_half_life_days": 24.676200875640802,
+   "t_nu": 5.231503791925315,
+   "gjr_gamma": 0.07607738224320093,
+   "gjr_gamma_t": 2.4210402864650997,
+   "gjr_gamma_p": 0.015476162037997942,
+   "gjr_alpha": 0.032609398508955244,
+   "gjr_beta": 0.8832642580596051,
+   "gjr_persistence": 0.9539123476901608,
+   "gjr_long_run_annual_vol": 0.2718283417360634,
+   "next_day_vol_annual": 0.4799763830678213
+  }
+ },
+ "garch_ic": {
+  "NIFTY50|GARCH-normal": {
+   "loglik": -3734.891181131851,
+   "n_params": 3.0,
+   "aic": 7475.782362263702,
+   "bic": 7493.714208223968
+  },
+  "NIFTY50|GARCH-t": {
+   "loglik": -3668.3091460642763,
+   "n_params": 4.0,
+   "aic": 7344.618292128553,
+   "bic": 7368.527420075573
+  },
+  "NIFTY50|GJR-GARCH": {
+   "loglik": -3693.9221984610595,
+   "n_params": 4.0,
+   "aic": 7395.844396922119,
+   "bic": 7419.753524869139
+  },
+  "SP500|GARCH-normal": {
+   "loglik": -3846.569558482854,
+   "n_params": 3.0,
+   "aic": 7699.139116965708,
+   "bic": 7717.134123153567
+  },
+  "SP500|GARCH-t": {
+   "loglik": -3754.7976952539084,
+   "n_params": 4.0,
+   "aic": 7517.595390507817,
+   "bic": 7541.588732091629
+  },
+  "SP500|GJR-GARCH": {
+   "loglik": -3791.146918696126,
+   "n_params": 4.0,
+   "aic": 7590.293837392252,
+   "bic": 7614.287178976064
+  },
+  "RELIANCE|GARCH-normal": {
+   "loglik": -5484.636461284925,
+   "n_params": 3.0,
+   "aic": 10975.27292256985,
+   "bic": 10993.211966477013
+  },
+  "RELIANCE|GARCH-t": {
+   "loglik": -5347.26849634094,
+   "n_params": 4.0,
+   "aic": 10702.53699268188,
+   "bic": 10726.455717891431
+  },
+  "RELIANCE|GJR-GARCH": {
+   "loglik": -5471.825558231968,
+   "n_params": 4.0,
+   "aic": 10951.651116463936,
+   "bic": 10975.569841673487
+  }
+ },
+ "parkinson": {
+  "NIFTY50": {
+   "mean_ratio_park_to_cc": 0.8433239862367868,
+   "mean_park_vol": 0.11408167902780958,
+   "mean_cc_vol": 0.1404687041485059,
+   "overnight_variance_share": 0.39897507767324014
+  },
+  "SP500": {
+   "mean_ratio_park_to_cc": 0.8060784402612557,
+   "mean_park_vol": 0.1146727968394591,
+   "mean_cc_vol": 0.14777492941274847,
+   "overnight_variance_share": 0.21210204775554564
+  },
+  "RELIANCE": {
+   "mean_ratio_park_to_cc": 0.9217125224345345,
+   "mean_park_vol": 0.2192440102768671,
+   "mean_cc_vol": 0.24554290837341866,
+   "overnight_variance_share": 0.22571015072008274
+  }
+ },
+ "evaluation": {
+  "ranking": [
+   {
+    "model": "GJR-GARCH",
+    "asset": "NIFTY50",
+    "MSE": 29.1107008371,
+    "QLIKE": 0.7804917169,
+    "rank_QLIKE": 1,
+    "rank_MSE": 1
+   },
+   {
+    "model": "GARCH",
+    "asset": "NIFTY50",
+    "MSE": 30.0492037363,
+    "QLIKE": 0.800885898,
+    "rank_QLIKE": 2,
+    "rank_MSE": 3
+   },
+   {
+    "model": "GARCH-t",
+    "asset": "NIFTY50",
+    "MSE": 30.075515992,
+    "QLIKE": 0.8062627309,
+    "rank_QLIKE": 3,
+    "rank_MSE": 4
+   },
+   {
+    "model": "EWMA",
+    "asset": "NIFTY50",
+    "MSE": 30.3223079419,
+    "QLIKE": 0.8243503274,
+    "rank_QLIKE": 4,
+    "rank_MSE": 5
+   },
+   {
+    "model": "HIST20",
+    "asset": "NIFTY50",
+    "MSE": 32.3843985179,
+    "QLIKE": 0.8577045148,
+    "rank_QLIKE": 5,
+    "rank_MSE": 6
+   },
+   {
+    "model": "HIST60",
+    "asset": "NIFTY50",
+    "MSE": 33.8757306194,
+    "QLIKE": 0.9427970255,
+    "rank_QLIKE": 6,
+    "rank_MSE": 7
+   },
+   {
+    "model": "PARK20",
+    "asset": "NIFTY50",
+    "MSE": 29.7905334612,
+    "QLIKE": 1.0060581379,
+    "rank_QLIKE": 7,
+    "rank_MSE": 2
+   },
+   {
+    "model": "HIST252",
+    "asset": "NIFTY50",
+    "MSE": 34.144088037,
+    "QLIKE": 1.0824565103,
+    "rank_QLIKE": 8,
+    "rank_MSE": 8
+   },
+   {
+    "model": "GJR-GARCH",
+    "asset": "SP500",
+    "MSE": 28.7296295344,
+    "QLIKE": 0.9154728321,
+    "rank_QLIKE": 1,
+    "rank_MSE": 3
+   },
+   {
+    "model": "GARCH",
+    "asset": "SP500",
+    "MSE": 27.8756711423,
+    "QLIKE": 0.9361415215,
+    "rank_QLIKE": 2,
+    "rank_MSE": 1
+   },
+   {
+    "model": "GARCH-t",
+    "asset": "SP500",
+    "MSE": 28.6398758837,
+    "QLIKE": 0.9409033628,
+    "rank_QLIKE": 3,
+    "rank_MSE": 2
+   },
+   {
+    "model": "EWMA",
+    "asset": "SP500",
+    "MSE": 32.8032088757,
+    "QLIKE": 0.9873510699,
+    "rank_QLIKE": 4,
+    "rank_MSE": 4
+   },
+   {
+    "model": "HIST20",
+    "asset": "SP500",
+    "MSE": 35.4580129421,
+    "QLIKE": 1.0483730898,
+    "rank_QLIKE": 5,
+    "rank_MSE": 5
+   },
+   {
+    "model": "HIST60",
+    "asset": "SP500",
+    "MSE": 39.0222107342,
+    "QLIKE": 1.1081889921,
+    "rank_QLIKE": 6,
+    "rank_MSE": 7
+   },
+   {
+    "model": "PARK20",
+    "asset": "SP500",
+    "MSE": 35.7465806767,
+    "QLIKE": 1.2290617826,
+    "rank_QLIKE": 7,
+    "rank_MSE": 6
+   },
+   {
+    "model": "HIST252",
+    "asset": "SP500",
+    "MSE": 39.834548858,
+    "QLIKE": 1.3810411578,
+    "rank_QLIKE": 8,
+    "rank_MSE": 8
+   },
+   {
+    "model": "GJR-GARCH",
+    "asset": "RELIANCE",
+    "MSE": 99.3211265788,
+    "QLIKE": 1.9197894354,
+    "rank_QLIKE": 1,
+    "rank_MSE": 1
+   },
+   {
+    "model": "GARCH-t",
+    "asset": "RELIANCE",
+    "MSE": 101.9241432608,
+    "QLIKE": 1.9266015929,
+    "rank_QLIKE": 2,
+    "rank_MSE": 3
+   },
+   {
+    "model": "GARCH",
+    "asset": "RELIANCE",
+    "MSE": 101.5467267029,
+    "QLIKE": 1.9290922921,
+    "rank_QLIKE": 3,
+    "rank_MSE": 2
+   },
+   {
+    "model": "EWMA",
+    "asset": "RELIANCE",
+    "MSE": 102.8299993205,
+    "QLIKE": 1.9424829457,
+    "rank_QLIKE": 4,
+    "rank_MSE": 4
+   },
+   {
+    "model": "HIST20",
+    "asset": "RELIANCE",
+    "MSE": 107.4914714915,
+    "QLIKE": 1.9869867579,
+    "rank_QLIKE": 5,
+    "rank_MSE": 6
+   },
+   {
+    "model": "HIST60",
+    "asset": "RELIANCE",
+    "MSE": 113.443418198,
+    "QLIKE": 1.9969358406,
+    "rank_QLIKE": 6,
+    "rank_MSE": 7
+   },
+   {
+    "model": "PARK20",
+    "asset": "RELIANCE",
+    "MSE": 103.1339901217,
+    "QLIKE": 2.0003113461,
+    "rank_QLIKE": 7,
+    "rank_MSE": 5
+   },
+   {
+    "model": "HIST252",
+    "asset": "RELIANCE",
+    "MSE": 113.8824947558,
+    "QLIKE": 2.034364812,
+    "rank_QLIKE": 8,
+    "rank_MSE": 8
+   }
+  ],
+  "mz": [
+   {
+    "model": "HIST20",
+    "asset": "NIFTY50",
+    "a": 0.4821850399,
+    "b": 0.6074744396,
+    "se_a": 0.1721663092,
+    "se_b": 0.2290790522,
+    "r2": 0.0879012166,
+    "p_joint_a0_b1": 0.0116858253
+   },
+   {
+    "model": "HIST60",
+    "asset": "NIFTY50",
+    "a": 0.5728965087,
+    "b": 0.5308703696,
+    "se_a": 0.1458515054,
+    "se_b": 0.1991450373,
+    "r2": 0.0342615029,
+    "p_joint_a0_b1": 0.0004553548
+   },
+   {
+    "model": "HIST252",
+    "asset": "NIFTY50",
+    "a": 0.6154827304,
+    "b": 0.4946736637,
+    "se_a": 0.1540708952,
+    "se_b": 0.1624257212,
+    "r2": 0.0082060642,
+    "p_joint_a0_b1": 9.10093e-05
+   },
+   {
+    "model": "EWMA",
+    "asset": "NIFTY50",
+    "a": 0.1989333118,
+    "b": 0.8381969227,
+    "se_a": 0.1999111824,
+    "se_b": 0.2632905583,
+    "r2": 0.1159334817,
+    "p_joint_a0_b1": 0.438437875
+   },
+   {
+    "model": "PARK20",
+    "asset": "NIFTY50",
+    "a": 0.1643266464,
+    "b": 1.4426599058,
+    "se_a": 0.2999935103,
+    "se_b": 0.5706898515,
+    "r2": 0.1480594798,
+    "p_joint_a0_b1": 1.09199e-05
+   },
+   {
+    "model": "GARCH",
+    "asset": "NIFTY50",
+    "a": 0.1960901526,
+    "b": 0.871845344,
+    "se_a": 0.1991848231,
+    "se_b": 0.2574613592,
+    "r2": 0.1223210156,
+    "p_joint_a0_b1": 0.3760201718
+   },
+   {
+    "model": "GARCH-t",
+    "asset": "NIFTY50",
+    "a": 0.0866660034,
+    "b": 1.0270001636,
+    "se_a": 0.2260546552,
+    "se_b": 0.3040042774,
+    "r2": 0.1193223573,
+    "p_joint_a0_b1": 0.4176007371
+   },
+   {
+    "model": "GJR-GARCH",
+    "asset": "NIFTY50",
+    "a": 0.2918103884,
+    "b": 0.7532282259,
+    "se_a": 0.1600323396,
+    "se_b": 0.1813813541,
+    "r2": 0.164802945,
+    "p_joint_a0_b1": 0.1722559202
+   },
+   {
+    "model": "HIST20",
+    "asset": "SP500",
+    "a": 0.5130379649,
+    "b": 0.6490529796,
+    "se_a": 0.1963400049,
+    "se_b": 0.2217334153,
+    "r2": 0.1398475045,
+    "p_joint_a0_b1": 0.0177670975
+   },
+   {
+    "model": "HIST60",
+    "asset": "SP500",
+    "a": 0.6944205006,
+    "b": 0.5266311752,
+    "se_a": 0.1825463248,
+    "se_b": 0.199512085,
+    "r2": 0.0437475616,
+    "p_joint_a0_b1": 0.0007340376
+   },
+   {
+    "model": "HIST252",
+    "asset": "SP500",
+    "a": 0.9800630626,
+    "b": 0.340472602,
+    "se_a": 0.2366391706,
+    "se_b": 0.1345498583,
+    "r2": 0.0044481485,
+    "p_joint_a0_b1": 3.911e-07
+   },
+   {
+    "model": "EWMA",
+    "asset": "SP500",
+    "a": 0.161712791,
+    "b": 0.8847154001,
+    "se_a": 0.2627926089,
+    "se_b": 0.278193094,
+    "r2": 0.1692915142,
+    "p_joint_a0_b1": 0.7261084897
+   },
+   {
+    "model": "PARK20",
+    "asset": "SP500",
+    "a": 0.046772814,
+    "b": 1.8465954393,
+    "se_a": 0.2688112343,
+    "se_b": 0.5579654541,
+    "r2": 0.1323892184,
+    "p_joint_a0_b1": 5.7279e-06
+   },
+   {
+    "model": "GARCH",
+    "asset": "SP500",
+    "a": 0.0769466196,
+    "b": 0.9948561984,
+    "se_a": 0.2782850295,
+    "se_b": 0.2622572803,
+    "r2": 0.2917609747,
+    "p_joint_a0_b1": 0.6184773644
+   },
+   {
+    "model": "GARCH-t",
+    "asset": "SP500",
+    "a": 0.1552982434,
+    "b": 0.8461430225,
+    "se_a": 0.2614015925,
+    "se_b": 0.2308340489,
+    "r2": 0.2817288347,
+    "p_joint_a0_b1": 0.7912294576
+   },
+   {
+    "model": "GJR-GARCH",
+    "asset": "SP500",
+    "a": 0.3237773313,
+    "b": 0.7691312108,
+    "se_a": 0.2331357342,
+    "se_b": 0.2036785246,
+    "r2": 0.2966835636,
+    "p_joint_a0_b1": 0.3397265679
+   },
+   {
+    "model": "HIST20",
+    "asset": "RELIANCE",
+    "a": 1.1369829484,
+    "b": 0.6373938896,
+    "se_a": 0.4808681093,
+    "se_b": 0.2179939237,
+    "r2": 0.0919452535,
+    "p_joint_a0_b1": 0.0281811428
+   },
+   {
+    "model": "HIST60",
+    "asset": "RELIANCE",
+    "a": 1.4190114263,
+    "b": 0.544255885,
+    "se_a": 0.4371892389,
+    "se_b": 0.2077538165,
+    "r2": 0.0343407979,
+    "p_joint_a0_b1": 0.0025565188
+   },
+   {
+    "model": "HIST252",
+    "asset": "RELIANCE",
+    "a": 1.2572738354,
+    "b": 0.5813004317,
+    "se_a": 0.3658887204,
+    "se_b": 0.1665810448,
+    "r2": 0.013357309,
+    "p_joint_a0_b1": 0.0027743075
+   },
+   {
+    "model": "EWMA",
+    "asset": "RELIANCE",
+    "a": 0.5449437799,
+    "b": 0.832476864,
+    "se_a": 0.638287792,
+    "se_b": 0.2746933253,
+    "r2": 0.1071963265,
+    "p_joint_a0_b1": 0.5108441174
+   },
+   {
+    "model": "PARK20",
+    "asset": "RELIANCE",
+    "a": 0.3291992082,
+    "b": 1.2337261257,
+    "se_a": 0.7518020308,
+    "se_b": 0.4272538279,
+    "r2": 0.1104040481,
+    "p_joint_a0_b1": 0.0003220312
+   },
+   {
+    "model": "GARCH",
+    "asset": "RELIANCE",
+    "a": -1.2206329188,
+    "b": 1.4719817457,
+    "se_a": 1.081715864,
+    "se_b": 0.4166497987,
+    "r2": 0.1273306353,
+    "p_joint_a0_b1": 0.5255874974
+   },
+   {
+    "model": "GARCH-t",
+    "asset": "RELIANCE",
+    "a": -1.3774222496,
+    "b": 1.5550534275,
+    "se_a": 1.2086908765,
+    "se_b": 0.4806086249,
+    "r2": 0.1273405391,
+    "p_joint_a0_b1": 0.513287136
+   },
+   {
+    "model": "GJR-GARCH",
+    "asset": "RELIANCE",
+    "a": -1.8950714056,
+    "b": 1.7160244976,
+    "se_a": 0.9152223288,
+    "se_b": 0.3508962943,
+    "r2": 0.1619031157,
+    "p_joint_a0_b1": 0.1174751722
+   }
+  ],
+  "covid": [
+   {
+    "model": "HIST20",
+    "asset": "NIFTY50",
+    "pre_shock_vol": 0.1486899628,
+    "peak_vol": 0.9048506108,
+    "peak_date": "2020-04-13T00:00:00.000",
+    "days_to_peak": 32,
+    "days_peak_to_half_decay": 11
+   },
+   {
+    "model": "HIST60",
+    "asset": "NIFTY50",
+    "pre_shock_vol": 0.1195701134,
+    "peak_vol": 0.5863452315,
+    "peak_date": "2020-06-02T00:00:00.000",
+    "days_to_peak": 65,
+    "days_peak_to_half_decay": 21
+   },
+   {
+    "model": "HIST252",
+    "asset": "NIFTY50",
+    "pre_shock_vol": 0.1411991349,
+    "peak_vol": 0.3165209417,
+    "peak_date": "2020-08-07T00:00:00.000",
+    "days_to_peak": 113,
+    "days_peak_to_half_decay": null
+   },
+   {
+    "model": "EWMA",
+    "asset": "NIFTY50",
+    "pre_shock_vol": 0.1308669406,
+    "peak_vol": 0.7739323733,
+    "peak_date": "2020-03-26T00:00:00.000",
+    "days_to_peak": 23,
+    "days_peak_to_half_decay": 34
+   },
+   {
+    "model": "PARK20",
+    "asset": "NIFTY50",
+    "pre_shock_vol": 0.0974080569,
+    "peak_vol": 0.6629663641,
+    "peak_date": "2020-04-09T00:00:00.000",
+    "days_to_peak": 31,
+    "days_peak_to_half_decay": 11
+   },
+   {
+    "model": "GARCH",
+    "asset": "NIFTY50",
+    "pre_shock_vol": 0.1317777944,
+    "peak_vol": 0.9257495729,
+    "peak_date": "2020-03-26T00:00:00.000",
+    "days_to_peak": 23,
+    "days_peak_to_half_decay": 16
+   },
+   {
+    "model": "GARCH-t",
+    "asset": "NIFTY50",
+    "pre_shock_vol": 0.1307430062,
+    "peak_vol": 0.8278267899,
+    "peak_date": "2020-03-26T00:00:00.000",
+    "days_to_peak": 23,
+    "days_peak_to_half_decay": 17
+   },
+   {
+    "model": "GJR-GARCH",
+    "asset": "NIFTY50",
+    "pre_shock_vol": 0.1310285871,
+    "peak_vol": 1.1576159674,
+    "peak_date": "2020-03-24T00:00:00.000",
+    "days_to_peak": 21,
+    "days_peak_to_half_decay": 11
+   },
+   {
+    "model": "HIST20",
+    "asset": "SP500",
+    "pre_shock_vol": 0.1321061373,
+    "peak_vol": 0.9789698328,
+    "peak_date": "2020-03-30T00:00:00.000",
+    "days_to_peak": 27,
+    "days_peak_to_half_decay": 17
+   },
+   {
+    "model": "HIST60",
+    "asset": "SP500",
+    "pre_shock_vol": 0.0968375015,
+    "peak_vol": 0.6400845793,
+    "peak_date": "2020-05-19T00:00:00.000",
+    "days_to_peak": 62,
+    "days_peak_to_half_decay": 22
+   },
+   {
+    "model": "HIST252",
+    "asset": "SP500",
+    "pre_shock_vol": 0.1180463201,
+    "peak_vol": 0.3400651779,
+    "peak_date": "2020-07-30T00:00:00.000",
+    "days_to_peak": 112,
+    "days_peak_to_half_decay": null
+   },
+   {
+    "model": "EWMA",
+    "asset": "SP500",
+    "pre_shock_vol": 0.1107227009,
+    "peak_vol": 0.8482670957,
+    "peak_date": "2020-03-25T00:00:00.000",
+    "days_to_peak": 24,
+    "days_peak_to_half_decay": 30
+   },
+   {
+    "model": "PARK20",
+    "asset": "SP500",
+    "pre_shock_vol": 0.087606184,
+    "peak_vol": 0.5396519056,
+    "peak_date": "2020-03-30T00:00:00.000",
+    "days_to_peak": 27,
+    "days_peak_to_half_decay": 17
+   },
+   {
+    "model": "GARCH",
+    "asset": "SP500",
+    "pre_shock_vol": 0.0974865516,
+    "peak_vol": 1.284518791,
+    "peak_date": "2020-03-17T00:00:00.000",
+    "days_to_peak": 18,
+    "days_peak_to_half_decay": 10
+   },
+   {
+    "model": "GARCH-t",
+    "asset": "SP500",
+    "pre_shock_vol": 0.1037730789,
+    "peak_vol": 1.3188004472,
+    "peak_date": "2020-03-17T00:00:00.000",
+    "days_to_peak": 18,
+    "days_peak_to_half_decay": 13
+   },
+   {
+    "model": "GJR-GARCH",
+    "asset": "SP500",
+    "pre_shock_vol": 0.093699335,
+    "peak_vol": 1.555091889,
+    "peak_date": "2020-03-17T00:00:00.000",
+    "days_to_peak": 18,
+    "days_peak_to_half_decay": 7
+   },
+   {
+    "model": "HIST20",
+    "asset": "RELIANCE",
+    "pre_shock_vol": 0.2287363808,
+    "peak_vol": 1.2287876018,
+    "peak_date": "2020-04-08T00:00:00.000",
+    "days_to_peak": 30,
+    "days_peak_to_half_decay": 13
+   },
+   {
+    "model": "HIST60",
+    "asset": "RELIANCE",
+    "pre_shock_vol": 0.2211434452,
+    "peak_vol": 0.7906024477,
+    "peak_date": "2020-05-21T00:00:00.000",
+    "days_to_peak": 58,
+    "days_peak_to_half_decay": 25
+   },
+   {
+    "model": "HIST252",
+    "asset": "RELIANCE",
+    "pre_shock_vol": 0.2622806981,
+    "peak_vol": 0.4669632655,
+    "peak_date": "2020-08-05T00:00:00.000",
+    "days_to_peak": 111,
+    "days_peak_to_half_decay": null
+   },
+   {
+    "model": "EWMA",
+    "asset": "RELIANCE",
+    "pre_shock_vol": 0.2229490793,
+    "peak_vol": 1.0611609017,
+    "peak_date": "2020-03-26T00:00:00.000",
+    "days_to_peak": 23,
+    "days_peak_to_half_decay": 33
+   },
+   {
+    "model": "PARK20",
+    "asset": "RELIANCE",
+    "pre_shock_vol": 0.1992826585,
+    "peak_vol": 0.8905963645,
+    "peak_date": "2020-04-09T00:00:00.000",
+    "days_to_peak": 31,
+    "days_peak_to_half_decay": 16
+   },
+   {
+    "model": "GARCH",
+    "asset": "RELIANCE",
+    "pre_shock_vol": 0.2303036573,
+    "peak_vol": 1.1153632365,
+    "peak_date": "2020-03-26T00:00:00.000",
+    "days_to_peak": 23,
+    "days_peak_to_half_decay": 5
+   },
+   {
+    "model": "GARCH-t",
+    "asset": "RELIANCE",
+    "pre_shock_vol": 0.2373408963,
+    "peak_vol": 0.9597518396,
+    "peak_date": "2020-03-26T00:00:00.000",
+    "days_to_peak": 23,
+    "days_peak_to_half_decay": 12
+   },
+   {
+    "model": "GJR-GARCH",
+    "asset": "RELIANCE",
+    "pre_shock_vol": 0.232811231,
+    "peak_vol": 1.1179651025,
+    "peak_date": "2020-03-24T00:00:00.000",
+    "days_to_peak": 21,
+    "days_peak_to_half_decay": 5
+   }
+  ],
+  "rank_summary": [
+   {
+    "model": "EWMA",
+    "NIFTY50": 4,
+    "RELIANCE": 4,
+    "SP500": 4,
+    "mean_rank": 4.0
+   },
+   {
+    "model": "GARCH",
+    "NIFTY50": 2,
+    "RELIANCE": 3,
+    "SP500": 2,
+    "mean_rank": 2.3333333333
+   },
+   {
+    "model": "GARCH-t",
+    "NIFTY50": 3,
+    "RELIANCE": 2,
+    "SP500": 3,
+    "mean_rank": 2.6666666667
+   },
+   {
+    "model": "GJR-GARCH",
+    "NIFTY50": 1,
+    "RELIANCE": 1,
+    "SP500": 1,
+    "mean_rank": 1.0
+   },
+   {
+    "model": "HIST20",
+    "NIFTY50": 5,
+    "RELIANCE": 5,
+    "SP500": 5,
+    "mean_rank": 5.0
+   },
+   {
+    "model": "HIST252",
+    "NIFTY50": 8,
+    "RELIANCE": 8,
+    "SP500": 8,
+    "mean_rank": 8.0
+   },
+   {
+    "model": "HIST60",
+    "NIFTY50": 6,
+    "RELIANCE": 6,
+    "SP500": 6,
+    "mean_rank": 6.0
+   },
+   {
+    "model": "PARK20",
+    "NIFTY50": 7,
+    "RELIANCE": 7,
+    "SP500": 7,
+    "mean_rank": 7.0
+   }
+  ],
+  "n_rows_vol_forecasts": 46488
+ }
+}
