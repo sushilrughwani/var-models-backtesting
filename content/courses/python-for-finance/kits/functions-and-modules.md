@@ -64,7 +64,7 @@ duration: 20
 - Annual vs periodic inputs; swapped positional arguments
 
 ## Whiteboard examples
-1. **Mortgage payment.** USD 250,000, 6% annual, 30 years monthly. i = 0.005, N = 360. (1.005)^−360 = 0.166042; denominator 1 − 0.166042 = 0.833958; numerator 250,000 × 0.005 = 1,250. PMT = 1,250 / 0.833958 = **1,498.88**. Total paid 1,498.88 × 360 ≈ 539,595; interest ≈ **289,595.47**.
+1. **Mortgage payment.** USD 250,000, 6% annual, 30 years monthly. i = 0.005, N = 360. (1.005)^−360 = 0.166042; denominator 1 − 0.166042 = 0.833958; numerator 250,000 × 0.005 = 1,250. PMT = 1,250 / 0.833958 = **1,498.88**. Total paid (unrounded payment × 360) = 539,595.47; interest = **289,595.47**.
 2. **Compounding frequency.** USD 1,000 at 5% for 10 years. Annual: 1.05¹⁰ = 1.628895 → **1,628.89**. Quarterly: 1.0125⁴⁰ = 1.643619 → **1,643.62**. Monthly: (1 + 0.05/12)¹²⁰ = 1.647009 → **1,647.01**.
 3. **NPV and PI.** -1,000 then 400 for 3 years at 10%. PV of inflows = 400/1.1 + 400/1.21 + 400/1.331 = 363.64 + 330.58 + 300.53 = 994.74. NPV = **-5.26**; PI = 994.74 / 1,000 = **0.995**.
 

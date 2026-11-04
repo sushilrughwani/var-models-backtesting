@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm2-backtesting-var-1",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "backtesting-var",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A 95% one-day VaR model is backtested over 500 trading days and produces 36 exceptions. The z-statistic for the unconditional coverage test is closest to:",
+    "options": ["2.20", "0.46", "1.90", "2.26"],
+    "answer": "D",
+    "explanation": "Expected exceptions = 0.05 × 500 = 25. Standard deviation = √(0.05 × 0.95 × 500) = √23.75 = 4.873. z = (36 − 25)/4.873 = 2.26, above 1.96, so the model is rejected at 95% confidence.",
+    "rationale": {
+      "A": "Incorrect. 2.20 divides by √(pT) = 5, omitting the (1 − p) factor in the binomial variance.",
+      "B": "Incorrect. 0.46 divides by the variance 23.75 instead of the standard deviation.",
+      "C": "Incorrect. 1.90 builds the standard deviation from the observed rate 36/500 instead of the model's p = 5%.",
+      "D": "Correct. (36 − 25)/√23.75 = 2.26."
+    },
+    "verify": "const T=500,p=0.05,N=36; return (N-p*T)/Math.sqrt(p*(1-p)*T);",
+    "numericAnswer": 2.26,
+    "tolerance": 0.005,
+    "tags": ["unconditional-coverage", "z-test"]
+  },
+  {
+    "id": "q-frm2-backtesting-var-2",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "backtesting-var",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank's 99% VaR model produced 6 exceptions over the last 250 days, which places it in the Basel yellow zone with a multiplier of 3.50. Its 10-day 99% VaR averaged USD 18 million over the last 60 days and was USD 22 million yesterday. Market risk capital is closest to:",
+    "options": ["USD 54.0 million", "USD 63.0 million", "USD 77.0 million", "USD 61.2 million"],
+    "answer": "B",
+    "explanation": "Capital = max(yesterday's VaR, k × 60-day average VaR) = max(22, 3.50 × 18) = max(22, 63) = USD 63.0 million.",
+    "rationale": {
+      "A": "Incorrect. 54.0 uses the green-zone multiplier of 3.00, ignoring the yellow-zone plus factor.",
+      "B": "Correct. 3.50 × 18 = 63, which exceeds yesterday's VaR of 22.",
+      "C": "Incorrect. 77.0 applies the multiplier to yesterday's VaR instead of the 60-day average.",
+      "D": "Incorrect. 61.2 uses 3.40, the multiplier for 5 exceptions, not 6."
+    },
+    "verify": "return Math.max(22, 3.5*18);",
+    "numericAnswer": 63,
+    "tolerance": 0.05,
+    "tags": ["basel-traffic-light", "capital"]
+  },
+  {
+    "id": "q-frm2-backtesting-var-3",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "backtesting-var",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A 99% VaR model records exactly 3 exceptions in 250 days, but all 3 occur on consecutive days during a market sell-off. Which conclusion is most appropriate?",
+    "options": ["The model passes all tests because the exception count is close to the expected 2.5", "The model fails the Kupiec test because the exceptions are consecutive", "The model may pass unconditional coverage but is likely to fail the Christoffersen independence test, suggesting it adapts too slowly to changing volatility", "The conditional coverage statistic should be compared with a critical value of 3.84"],
+    "answer": "C",
+    "explanation": "Three exceptions versus 2.5 expected is consistent with correct coverage, so the Kupiec test passes. But exceptions that follow one another indicate dependence, which the independence test detects. The joint conditional coverage test has two degrees of freedom (critical value 5.99).",
+    "rationale": {
+      "A": "Incorrect. Coverage looks fine, but clustering is a separate failure that the count alone cannot detect.",
+      "B": "Incorrect. The Kupiec test uses only the number of exceptions, not their timing.",
+      "C": "Correct. Clustered exceptions point to a failure of independence, typically from slow volatility updating.",
+      "D": "Incorrect. LR_cc is chi-squared with two degrees of freedom, so its 95% critical value is 5.99."
+    },
+    "tags": ["independence", "christoffersen"]
+  },
+  {
+    "id": "q-frm2-backtesting-var-4",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "backtesting-var",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which change would most increase the power of a backtest to detect a VaR model that understates risk?",
+    "options": ["Backtesting a 95% VaR instead of a 99% VaR over the same period", "Shortening the backtesting window from 250 to 100 days", "Raising the VaR confidence level from 99% to 99.9%", "Widening the acceptance region for the number of exceptions"],
+    "answer": "A",
+    "explanation": "At 95% many more exceptions are expected, so deviations from the expected rate are easier to detect statistically. Shorter windows, higher confidence levels and wider acceptance regions all reduce power and raise the chance of a Type II error.",
+    "rationale": {
+      "A": "Correct. A lower confidence level generates more exceptions, giving the test more information and more power.",
+      "B": "Incorrect. A shorter window gives fewer observations and less power.",
+      "C": "Incorrect. At 99.9% exceptions are so rare that a bad model is almost impossible to detect.",
+      "D": "Incorrect. A wider acceptance region accepts more bad models, increasing Type II errors."
+    },
+    "tags": ["type-ii-error", "power"]
+  }
+]
