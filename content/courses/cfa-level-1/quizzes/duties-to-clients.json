@@ -1,0 +1,86 @@
+[
+  {
+    "id": "q-cfa1-duties-to-clients-1",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "duties-to-clients",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Marta Lindqvist, CFA, manages the pension plan of the fictional Corrigan Steel. Corrigan's CFO asks her to buy Corrigan bonds for the plan to support the company's financing. In carrying out her duty of loyalty, Marta's primary obligation is to:",
+    "options": [
+      "Corrigan's management, because the company hired her",
+      "The plan's participants and beneficiaries",
+      "Her own employer's revenue targets"
+    ],
+    "answer": "B",
+    "explanation": "For a pension plan, the duty of loyalty runs to the beneficiaries. Investment decisions must serve them, not the sponsoring company's financing needs.",
+    "rationale": {
+      "A": "Incorrect. The sponsor hires the manager, but the client whose interests come first is the beneficiaries.",
+      "B": "Correct. The plan's participants and beneficiaries are the clients to whom loyalty is owed.",
+      "C": "Incorrect. Client interests come ahead of the employer's interests."
+    }
+  },
+  {
+    "id": "q-cfa1-duties-to-clients-2",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "duties-to-clients",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "The fictional firm Tidewell Research offers a premium subscription that delivers rating changes by text message, while standard subscribers receive the same changes by email a few minutes later. Both tiers are disclosed and open to any client willing to pay. This practice is:",
+    "options": [
+      "A violation of fair dealing, because all clients must receive identical service",
+      "Acceptable only if premium clients are charged nothing extra",
+      "Consistent with fair dealing, because different service levels are disclosed and available to all"
+    ],
+    "answer": "C",
+    "explanation": "Fair dealing requires fairness, not equal treatment. Disclosed service tiers open to everyone are permitted as long as other clients are not disadvantaged.",
+    "rationale": {
+      "A": "Incorrect. Fair dealing does not require identical service for every client.",
+      "B": "Incorrect. Charging for a premium level is allowed; the key is disclosure and availability.",
+      "C": "Correct. Disclosed, generally available service levels are consistent with fair dealing."
+    }
+  },
+  {
+    "id": "q-cfa1-duties-to-clients-3",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "duties-to-clients",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A cautious client of Benedikt Rausch, CFA, asks him to invest 3% of her portfolio in a single speculative small-cap stock. Her investment policy statement emphasises capital preservation. What should Benedikt do?",
+    "options": [
+      "Explain that the trade is inconsistent with her objectives and, because it is small relative to the portfolio, he may execute it after the discussion",
+      "Refuse the trade outright, because any unsuitable investment is prohibited",
+      "Execute the trade immediately without comment, because the client requested it"
+    ],
+    "answer": "A",
+    "explanation": "For an unsolicited unsuitable trade, the adviser should discuss the mismatch with the client before acting. A small trade with little effect on the overall portfolio may then be executed and the discussion documented.",
+    "rationale": {
+      "A": "Correct. Discuss the unsuitability first; a minor trade can then proceed.",
+      "B": "Incorrect. The requirement is to explain and discuss, not to refuse all client-directed trades.",
+      "C": "Incorrect. Executing without discussing the mismatch ignores the suitability obligation."
+    }
+  },
+  {
+    "id": "q-cfa1-duties-to-clients-4",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "duties-to-clients",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Yusuf Kaya, CFA, learns that a long-standing client appears to be using his account to launder proceeds of a fraud. No law in Yusuf's jurisdiction requires him to report it, and the client has not consented to disclosure. Under the standard on preserving confidentiality, Yusuf:",
+    "options": [
+      "Must keep the information confidential because neither the law nor the client permits disclosure",
+      "May disclose the information, because confidentiality does not protect a client's illegal activities",
+      "May disclose the information only to other clients who might be affected"
+    ],
+    "answer": "B",
+    "explanation": "Confidentiality has three exceptions: information about illegal activities by the client, disclosure required by law, and client permission. Suspected money laundering falls within the first.",
+    "rationale": {
+      "A": "Incorrect. This ignores the exception for illegal activities, which applies even when the law does not mandate reporting.",
+      "B": "Correct. Information concerning a client's illegal activities is not protected by the confidentiality requirement.",
+      "C": "Incorrect. Disclosing to other clients serves no legitimate purpose and is not what the exception contemplates; disclosure would go to appropriate authorities."
+    }
+  }
+]

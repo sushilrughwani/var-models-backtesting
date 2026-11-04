@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-credit-risk-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "credit-risk",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A corporate bond has an annual probability of default of 3% and an expected recovery rate of 30%. The expected loss per year, as a percentage of exposure, is closest to:",
+    "options": ["0.90%", "2.10%", "3.00%"],
+    "answer": "B",
+    "explanation": "Expected loss % = PD × (1 − RR) = 0.03 × 0.70 = 2.10%.",
+    "rationale": {
+      "A": "Incorrect. This multiplies PD by the recovery rate instead of the loss rate (1 − RR).",
+      "B": "Correct. 3% × 70% = 2.10%.",
+      "C": "Incorrect. This is the PD alone and assumes nothing is recovered in default."
+    },
+    "verify": "return 0.03*(1-0.30)*100;",
+    "numericAnswer": 2.1,
+    "tolerance": 0.005,
+    "tags": ["expected-loss", "loss-given-default"]
+  },
+  {
+    "id": "q-cfa1-credit-risk-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "credit-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A corporate bond has a spread duration of 6.5 and spread convexity of 55. If its credit spread widens by 80 bp with no change in the benchmark yield, the estimated percentage price change is closest to:",
+    "options": ["−5.20%", "−5.38%", "−5.02%"],
+    "answer": "C",
+    "explanation": "%ΔP ≈ −6.5 × 0.008 + ½ × 55 × 0.008² = −5.20% + 0.176% = −5.02%.",
+    "rationale": {
+      "A": "Incorrect. This uses spread duration only and ignores the positive convexity adjustment.",
+      "B": "Incorrect. This subtracts the convexity term instead of adding it.",
+      "C": "Correct. The convexity term (+0.18%) partly offsets the −5.20% duration effect."
+    },
+    "verify": "const s=0.008; return (-6.5*s+0.5*55*s*s)*100;",
+    "numericAnswer": -5.02,
+    "tolerance": 0.005,
+    "tags": ["spread-duration", "spread-risk"]
+  },
+  {
+    "id": "q-cfa1-credit-risk-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "credit-risk",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Harlow Holdings is a holding company whose cash flows come entirely from operating subsidiaries that have their own debt. Harlow's issuer rating is BBB. Its own senior unsecured bonds are most likely rated:",
+    "options": ["below BBB, because they are structurally subordinated to subsidiary creditors", "above BBB, because senior unsecured bonds are always notched up", "BBB, because issue ratings must equal the issuer rating"],
+    "answer": "A",
+    "explanation": "Creditors of the subsidiaries have first claim on the subsidiaries' cash flows and assets. The holding company's bondholders are paid only from what flows up to the parent, so their recovery prospects are weaker and the issue is notched down.",
+    "rationale": {
+      "A": "Correct. Structural subordination lowers expected recovery, so agencies notch these issues below the issuer rating.",
+      "B": "Incorrect. Notching up applies to secured debt with strong collateral, not to structurally subordinated debt.",
+      "C": "Incorrect. Agencies routinely notch issue ratings away from the issuer rating to reflect seniority and structure."
+    },
+    "tags": ["notching", "credit-ratings"]
+  },
+  {
+    "id": "q-cfa1-credit-risk-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "credit-risk",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following would most likely cause credit spreads on high-yield bonds to narrow?",
+    "options": ["A sharp increase in new high-yield issuance", "An improving economic outlook early in a credit expansion", "Dealers cutting the bond inventories they hold"],
+    "answer": "B",
+    "explanation": "Better economic prospects raise expected profits and reduce expected defaults, so investors accept smaller spreads. Heavy supply and lower dealer liquidity both tend to widen spreads.",
+    "rationale": {
+      "A": "Incorrect. A surge in supply must be absorbed by investors, which tends to widen spreads.",
+      "B": "Correct. Lower expected default losses and stronger risk appetite compress spreads, especially for lower-rated bonds.",
+      "C": "Incorrect. Lower dealer inventories reduce market liquidity, which raises the liquidity premium in spreads."
+    },
+    "tags": ["credit-spreads", "credit-cycle"]
+  }
+]

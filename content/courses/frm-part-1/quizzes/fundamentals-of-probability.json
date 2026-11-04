@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-fundamentals-of-probability-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "fundamentals-of-probability",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The probability that bond A defaults this year is 0.05, the probability that bond B defaults is 0.08, and the probability that both default is 0.02. The probability that at least one of the two bonds defaults is closest to:",
+    "options": ["0.130", "0.004", "0.110", "0.890"],
+    "answer": "C",
+    "explanation": "Addition rule: P(A or B) = 0.05 + 0.08 − 0.02 = 0.11.",
+    "rationale": {
+      "A": "Incorrect. 0.13 adds the two probabilities without subtracting the 0.02 overlap, double-counting joint defaults.",
+      "B": "Incorrect. 0.004 is 0.05 × 0.08, the joint probability that would apply only under independence, not the union.",
+      "C": "Correct. P(A or B) = P(A) + P(B) − P(A and B) = 0.05 + 0.08 − 0.02 = 0.11.",
+      "D": "Incorrect. 0.89 is the probability that neither bond defaults, the complement of the answer."
+    },
+    "verify": "return 0.05 + 0.08 - 0.02;",
+    "numericAnswer": 0.11,
+    "tolerance": 0.0005,
+    "tags": ["addition-rule"]
+  },
+  {
+    "id": "q-frm1-fundamentals-of-probability-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "fundamentals-of-probability",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A surveillance system screens trades for rogue activity. Two percent of traders are engaged in rogue trading. The system raises an alert for 95% of rogue traders and for 10% of legitimate traders. Given that a trader triggers an alert, the probability that the trader is engaged in rogue trading is closest to:",
+    "options": ["0.162", "0.950", "0.019", "0.117"],
+    "answer": "A",
+    "explanation": "P(alert) = 0.02 × 0.95 + 0.98 × 0.10 = 0.019 + 0.098 = 0.117. P(rogue | alert) = 0.019 / 0.117 = 0.162.",
+    "rationale": {
+      "A": "Correct. Bayes' rule: 0.019 / 0.117 = 0.162.",
+      "B": "Incorrect. 0.95 is P(alert | rogue), the reverse conditional probability.",
+      "C": "Incorrect. 0.019 is the joint probability P(alert and rogue); it must still be divided by P(alert).",
+      "D": "Incorrect. 0.117 is the total probability of an alert, the denominator of Bayes' rule, not the posterior."
+    },
+    "verify": "const p=0.02, h=0.95, f=0.10; const pa=p*h+(1-p)*f; return p*h/pa;",
+    "numericAnswer": 0.162,
+    "tolerance": 0.0005,
+    "tags": ["bayes-rule"]
+  },
+  {
+    "id": "q-frm1-fundamentals-of-probability-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "fundamentals-of-probability",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Events E and F each have a strictly positive probability and are mutually exclusive. Which statement is correct?",
+    "options": [
+      "E and F are independent because P(E and F) equals zero.",
+      "E and F are dependent because P(E and F) = 0 differs from P(E) × P(F).",
+      "E and F are independent only if P(E) + P(F) = 1.",
+      "Independence cannot be assessed without knowing P(E | F)."
+    ],
+    "answer": "B",
+    "explanation": "Independence requires P(E and F) = P(E)P(F). For mutually exclusive events the joint probability is zero, while the product of two positive probabilities is positive, so the events are dependent.",
+    "rationale": {
+      "A": "Incorrect. A zero joint probability is the definition of mutual exclusivity; independence would need the joint to equal the positive product P(E)P(F).",
+      "B": "Correct. Zero does not equal a positive product, so knowing E occurred tells you F did not: the events are dependent.",
+      "C": "Incorrect. P(E) + P(F) = 1 would make them complements, which are still dependent; summing to one is not an independence condition.",
+      "D": "Incorrect. P(E | F) is already known: it is P(E and F)/P(F) = 0, which differs from P(E), confirming dependence."
+    },
+    "tags": ["independence", "mutually-exclusive"]
+  },
+  {
+    "id": "q-frm1-fundamentals-of-probability-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "fundamentals-of-probability",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Two loans default independently with probabilities 0.03 and 0.05 over the next year. The probability that exactly one of the two loans defaults is closest to:",
+    "options": ["0.0785", "0.0800", "0.0015", "0.0770"],
+    "answer": "D",
+    "explanation": "P(exactly one) = 0.03 × 0.95 + 0.97 × 0.05 = 0.0285 + 0.0485 = 0.0770.",
+    "rationale": {
+      "A": "Incorrect. 0.0785 is P(at least one) = 0.03 + 0.05 − 0.0015, which still includes the case where both default.",
+      "B": "Incorrect. 0.08 simply adds the two default probabilities, ignoring that each term includes the joint default.",
+      "C": "Incorrect. 0.0015 is the probability that both loans default.",
+      "D": "Correct. Sum the two disjoint paths: first defaults and second survives, plus first survives and second defaults, giving 0.0770."
+    },
+    "verify": "const a=0.03, b=0.05; return a*(1-b) + (1-a)*b;",
+    "numericAnswer": 0.077,
+    "tolerance": 0.00005,
+    "tags": ["independence", "joint-probability"]
+  }
+]

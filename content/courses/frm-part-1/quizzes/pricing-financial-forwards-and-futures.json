@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-frm1-pricing-financial-forwards-and-futures-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "pricing-financial-forwards-and-futures",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A stock index stands at 4,000. The risk-free rate is 4% per year and the index dividend yield is 1.5% per year, both continuously compounded. The theoretical 6-month futures price is closest to:",
+    "options": ["3,950.31", "4,080.81", "4,050.31", "4,111.53"],
+    "answer": "C",
+    "explanation": "F = S e^((r − q)T) = 4,000 × e^((0.04 − 0.015) × 0.5) = 4,000 × e^0.0125 = 4,050.31.",
+    "rationale": {
+      "A": "Incorrect. 3,950.31 uses e^(−(r − q)T), discounting instead of compounding the net carry.",
+      "B": "Incorrect. 4,080.81 ignores the dividend yield and grows the index at the full 4% rate.",
+      "C": "Correct. The index is carried forward at the net rate r − q = 2.5% for half a year.",
+      "D": "Incorrect. 4,111.53 adds the dividend yield to the risk-free rate instead of subtracting it."
+    },
+    "verify": "return 4000*Math.exp((0.04-0.015)*0.5);",
+    "numericAnswer": 4050.31,
+    "tolerance": 0.01,
+    "tags": ["cost-of-carry", "index-futures"]
+  },
+  {
+    "id": "q-frm1-pricing-financial-forwards-and-futures-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "pricing-financial-forwards-and-futures",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The spot exchange rate is 1.2500 USD per GBP. The USD risk-free rate is 3% and the GBP risk-free rate is 5%, both continuously compounded. The 1-year forward exchange rate (USD per GBP) is closest to:",
+    "options": ["1.2753", "1.2500", "1.1890", "1.2252"],
+    "answer": "D",
+    "explanation": "F = S e^((r_USD − r_GBP)T) = 1.25 × e^(0.03 − 0.05) = 1.25 × e^(−0.02) = 1.2252. The higher-yielding pound trades at a forward discount.",
+    "rationale": {
+      "A": "Incorrect. 1.2753 swaps the two rates, using r_GBP − r_USD.",
+      "B": "Incorrect. 1.2500 assumes the forward equals spot, ignoring the interest rate differential.",
+      "C": "Incorrect. 1.1890 discounts at the GBP rate only, forgetting that the USD rate grows the price.",
+      "D": "Correct. With USD per GBP, the domestic (USD) rate comes first: 1.25 × e^(−0.02) = 1.2252."
+    },
+    "verify": "return 1.25*Math.exp((0.03-0.05)*1);",
+    "numericAnswer": 1.2252,
+    "tolerance": 0.0001,
+    "tags": ["interest-rate-parity", "currency-forwards"]
+  },
+  {
+    "id": "q-frm1-pricing-financial-forwards-and-futures-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "pricing-financial-forwards-and-futures",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A non-dividend-paying stock trades at USD 50 and the 1-year risk-free rate implies a theoretical forward price of USD 52.56. A dealer quotes a 1-year forward price of USD 51.00. Which strategy captures a riskless profit?",
+    "options": ["Short-sell the stock, invest the proceeds at the risk-free rate and take a long forward position", "Borrow USD 50, buy the stock and take a short forward position", "Buy the stock with borrowed money and take a long forward position", "Short-sell the stock, invest the proceeds and take a short forward position"],
+    "answer": "A",
+    "explanation": "The quoted forward is below fair value, so buy the cheap forward and sell the asset synthetically priced higher: reverse cash-and-carry. At year end the invested proceeds grow to 52.56, the long forward costs 51.00 to buy back the share, and 1.56 is locked in.",
+    "rationale": {
+      "A": "Correct. Reverse cash-and-carry: buy the underpriced forward and short the stock, earning 52.56 − 51.00 = 1.56 at delivery.",
+      "B": "Incorrect. Cash-and-carry is used when the forward is too expensive; here it would lose 52.56 − 51.00 = 1.56.",
+      "C": "Incorrect. Being long both the stock and the forward doubles the exposure; it is not a hedge.",
+      "D": "Incorrect. Short stock plus short forward is a doubled short position, not an arbitrage."
+    },
+    "tags": ["arbitrage", "reverse-cash-and-carry"]
+  },
+  {
+    "id": "q-frm1-pricing-financial-forwards-and-futures-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "pricing-financial-forwards-and-futures",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An investor holds a long forward contract with a delivery price of USD 102 and 6 months to maturity. The current forward price for the same delivery date is USD 105. The risk-free rate is 4% per year with continuous compounding. The value of the investor's contract is closest to:",
+    "options": ["USD 3.06", "USD 2.94", "USD 3.00", "USD 0.92"],
+    "answer": "B",
+    "explanation": "f = (F0 − K)e^(−rT) = (105 − 102) × e^(−0.04 × 0.5) = 3 × 0.9802 = 2.94.",
+    "rationale": {
+      "A": "Incorrect. 3.06 compounds the gain forward instead of discounting it to today.",
+      "B": "Correct. The 3-dollar gain is received at maturity, so its present value is 3 × e^(−0.02) = 2.94.",
+      "C": "Incorrect. 3.00 is the undiscounted difference; the gain is not received until delivery.",
+      "D": "Incorrect. 0.92 discounts only the new forward price (105e^(−0.02) − 102), mixing present and future values."
+    },
+    "verify": "return (105-102)*Math.exp(-0.04*0.5);",
+    "numericAnswer": 2.94,
+    "tolerance": 0.005,
+    "tags": ["forward-valuation"]
+  }
+]

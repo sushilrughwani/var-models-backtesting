@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-industry-and-competitive-analysis-1",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "industry-and-competitive-analysis",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An industry has five firms with market shares of 30%, 30%, 20%, 10% and 10%. The Herfindahl-Hirschman Index for the industry is closest to:",
+    "options": ["2,400", "6,400", "2,300"],
+    "answer": "A",
+    "explanation": "HHI = 30² + 30² + 20² + 10² + 10² = 900 + 900 + 400 + 100 + 100 = 2,400.",
+    "rationale": {
+      "A": "Correct. Summing the squared percentage shares of all firms gives 2,400.",
+      "B": "Incorrect. This squares the three-firm concentration ratio (80²) instead of squaring each firm's share.",
+      "C": "Incorrect. This sums the squared shares of only the four largest firms; the HHI includes every firm in the industry."
+    },
+    "verify": "return [30,30,20,10,10].reduce((a,s)=>a+s*s,0);",
+    "numericAnswer": 2400,
+    "tolerance": 0.5,
+    "tags": ["hhi", "concentration"]
+  },
+  {
+    "id": "q-cfa1-industry-and-competitive-analysis-2",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "industry-and-competitive-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In an industry with market shares of 30%, 30%, 20%, 10% and 10%, the firm with a 20% share merges with one of the 10% firms. The increase in the Herfindahl-Hirschman Index is closest to:",
+    "options": ["500", "400", "200"],
+    "answer": "B",
+    "explanation": "The merged firm has 30%, so its squared share is 900 versus 400 + 100 = 500 before. The increase is 900 − 500 = 400, which equals 2 × 20 × 10.",
+    "rationale": {
+      "A": "Incorrect. This is the sum of the two firms' squared shares before the merger, not the change.",
+      "B": "Correct. A merger of firms with shares a and b raises the HHI by 2ab = 2 × 20 × 10 = 400.",
+      "C": "Incorrect. This omits the factor of 2 in 2ab."
+    },
+    "verify": "return (20+10)**2-(20**2+10**2);",
+    "numericAnswer": 400,
+    "tolerance": 0.5,
+    "tags": ["hhi", "mergers"]
+  },
+  {
+    "id": "q-cfa1-industry-and-competitive-analysis-3",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "industry-and-competitive-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An industry's demand growth has slowed sharply, capacity built during the boom now exceeds demand, prices are falling and several weaker firms are being acquired or failing. The industry is most likely in which life-cycle stage?",
+    "options": ["Growth", "Mature", "Shakeout"],
+    "answer": "C",
+    "explanation": "Slowing growth combined with overcapacity, price competition and failures of weaker firms is the defining pattern of the shakeout stage.",
+    "rationale": {
+      "A": "Incorrect. In the growth stage demand rises rapidly and price competition is limited.",
+      "B": "Incorrect. A mature industry is already consolidated with little growth and relatively stable pricing; the shakeout precedes it.",
+      "C": "Correct. Overcapacity, intensifying price competition and exits of weaker firms characterise the shakeout."
+    },
+    "tags": ["industry-life-cycle"]
+  },
+  {
+    "id": "q-cfa1-industry-and-competitive-analysis-4",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "industry-and-competitive-analysis",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which industry characteristic is most likely to increase the long-run profitability of existing firms?",
+    "options": ["High switching costs for customers", "High fixed costs combined with an undifferentiated product", "High exit barriers"],
+    "answer": "A",
+    "explanation": "High switching costs reduce buyers' bargaining power and make it harder for new entrants to win customers, supporting industry profits.",
+    "rationale": {
+      "A": "Correct. Customers locked in by switching costs have less bargaining power, and entrants struggle to attract them.",
+      "B": "Incorrect. High fixed costs with a commodity product push firms to cut prices to fill capacity, intensifying rivalry.",
+      "C": "Incorrect. High exit barriers keep excess capacity in the industry and intensify rivalry during downturns."
+    },
+    "tags": ["five-forces"]
+  }
+]

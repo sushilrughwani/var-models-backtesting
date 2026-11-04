@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q-cfa1-fsa-framework-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "fsa-framework",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which financial statement presents a company's assets, liabilities and equity at a specific point in time?",
+    "options": ["Income statement", "Balance sheet", "Statement of cash flows"],
+    "answer": "B",
+    "explanation": "The balance sheet (statement of financial position) is a snapshot at one date. The income statement and cash flow statement cover a period.",
+    "rationale": {
+      "A": "Incorrect. The income statement measures performance over a period, not position at a date.",
+      "B": "Correct. The balance sheet reports assets, liabilities and equity as of a single date.",
+      "C": "Incorrect. The cash flow statement reports cash inflows and outflows over a period."
+    },
+    "tags": ["financial-statements"]
+  },
+  {
+    "id": "q-cfa1-fsa-framework-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "fsa-framework",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An auditor concludes that a company's financial statements are fairly presented, except for the measurement of one subsidiary's goodwill, which departs from the reporting framework. The auditor will most likely issue:",
+    "options": ["an adverse opinion.", "an unqualified opinion.", "a qualified opinion."],
+    "answer": "C",
+    "explanation": "A specific, contained exception to otherwise fair presentation leads to a qualified ('except for') opinion.",
+    "rationale": {
+      "A": "Incorrect. An adverse opinion is issued when the statements as a whole are materially misstated, not for one contained exception.",
+      "B": "Incorrect. An unqualified opinion requires fair presentation with no material exceptions.",
+      "C": "Correct. 'Fairly presented except for' a specific issue is the definition of a qualified opinion."
+    },
+    "tags": ["audit-report"]
+  },
+  {
+    "id": "q-cfa1-fsa-framework-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "fsa-framework",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A company begins the year with total equity of USD 400 million. During the year it earns net income of USD 60 million, pays dividends of USD 15 million and issues new shares for USD 25 million. It has no other comprehensive income. Ending equity (USD millions) is closest to:",
+    "options": ["470", "445", "485"],
+    "answer": "A",
+    "explanation": "Ending equity = 400 + 60 - 15 + 25 = 470.",
+    "rationale": {
+      "A": "Correct. Add net income and the share issuance, subtract dividends: 400 + 60 - 15 + 25 = 470.",
+      "B": "Incorrect. 445 omits the USD 25 million share issuance.",
+      "C": "Incorrect. 485 forgets to subtract the USD 15 million of dividends."
+    },
+    "verify": "return 400 + 60 - 15 + 25;",
+    "numericAnswer": 470,
+    "tolerance": 0.5,
+    "tags": ["equity-roll-forward"]
+  },
+  {
+    "id": "q-cfa1-fsa-framework-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "fsa-framework",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A portfolio manager asks an analyst to evaluate a potential equity investment. The first step in the financial statement analysis framework is to:",
+    "options": ["articulate the purpose and context of the analysis.", "collect the company's financial statements and notes.", "compute common-size statements and ratios."],
+    "answer": "A",
+    "explanation": "The framework starts by defining the purpose and context, which determines what data to collect and how to process it.",
+    "rationale": {
+      "A": "Correct. Defining the purpose, audience and time frame comes first and shapes every later step.",
+      "B": "Incorrect. Data collection is the second step; without a defined purpose you do not know what to collect.",
+      "C": "Incorrect. Computing ratios is part of processing data, the third step."
+    },
+    "tags": ["analysis-framework"]
+  }
+]

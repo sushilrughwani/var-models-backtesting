@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q-cfa1-income-taxes-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "income-taxes",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company buys equipment for USD 600,000. For financial reporting it uses straight-line depreciation over 4 years with no salvage value. For tax purposes it deducts USD 300,000 in Year 1. The tax rate is 20%. The deferred tax balance at the end of Year 1 is closest to:",
+    "options": ["150,000 liability", "60,000 liability", "30,000 liability"],
+    "answer": "C",
+    "explanation": "Carrying amount = 600,000 − 150,000 = 450,000. Tax base = 600,000 − 300,000 = 300,000. Difference 150,000 × 20% = 30,000. Carrying amount above tax base for an asset gives a deferred tax liability.",
+    "rationale": {
+      "A": "Incorrect. 150,000 is the temporary difference itself; it must be multiplied by the 20% tax rate.",
+      "B": "Incorrect. 60,000 is the tax saving on the full Year 1 tax deduction (300,000 × 20%), not the tax on the difference between carrying amount and tax base.",
+      "C": "Correct. (450,000 − 300,000) × 20% = 30,000 deferred tax liability."
+    },
+    "verify": "const cost=600000; const book=cost-cost/4; const taxBase=cost-300000; return (book-taxBase)*0.20;",
+    "numericAnswer": 30000,
+    "tolerance": 0.5,
+    "tags": ["deferred-tax-liability", "depreciation"]
+  },
+  {
+    "id": "q-cfa1-income-taxes-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "income-taxes",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "For the year, a company's taxes payable are USD 400 million. During the year its deferred tax liability increased by USD 50 million and its deferred tax asset increased by USD 20 million. Income tax expense (USD millions) is closest to:",
+    "options": ["430", "470", "370"],
+    "answer": "A",
+    "explanation": "Income tax expense = taxes payable + ΔDTL − ΔDTA = 400 + 50 − 20 = 430.",
+    "rationale": {
+      "A": "Correct. An increase in the DTL adds to expense; an increase in the DTA reduces it: 400 + 50 − 20 = 430.",
+      "B": "Incorrect. This adds the DTA increase (400 + 50 + 20). A rising DTA means tax was prepaid, which lowers expense.",
+      "C": "Incorrect. This subtracts the DTL increase and adds the DTA increase (400 − 50 + 20), reversing both signs."
+    },
+    "verify": "return 400+50-20;",
+    "numericAnswer": 430,
+    "tolerance": 0.5,
+    "tags": ["income-tax-expense"]
+  },
+  {
+    "id": "q-cfa1-income-taxes-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "income-taxes",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A company's statutory tax rate is 25%, but its effective tax rate is 22%. Which item most likely explains the difference?",
+    "options": [
+      "Accelerated depreciation used for tax purposes",
+      "Interest income on tax-exempt municipal bonds",
+      "A warranty provision deductible only when claims are paid"
+    ],
+    "answer": "B",
+    "explanation": "Only permanent differences move the effective rate away from the statutory rate. Tax-exempt income is included in pre-tax accounting profit but never taxed, so the effective rate falls below 25%.",
+    "rationale": {
+      "A": "Incorrect. Accelerated tax depreciation is a temporary difference; it is offset by a deferred tax liability, so total tax expense still reflects the statutory rate.",
+      "B": "Correct. Tax-exempt interest is a permanent difference that lowers tax expense relative to pre-tax income, pulling the effective rate below statutory.",
+      "C": "Incorrect. A warranty provision is a temporary difference that creates a deferred tax asset; it does not change the effective rate."
+    },
+    "tags": ["permanent-differences", "effective-tax-rate"]
+  },
+  {
+    "id": "q-cfa1-income-taxes-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "income-taxes",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A US GAAP reporter with large deferred tax assets from loss carryforwards increases its valuation allowance after revising its profit forecasts downward. The most likely immediate effect is:",
+    "options": [
+      "Higher income tax expense and lower net income",
+      "No effect on net income because only the balance sheet changes",
+      "Lower taxes payable in the current year"
+    ],
+    "answer": "A",
+    "explanation": "A larger valuation allowance reduces the net DTA. The offsetting entry is an increase in deferred tax expense, so reported net income falls. Cash taxes payable are unaffected.",
+    "rationale": {
+      "A": "Correct. Raising the allowance writes down the DTA through income tax expense, reducing net income.",
+      "B": "Incorrect. The change in the allowance is recognised through the income statement, not directly in equity.",
+      "C": "Incorrect. Taxes payable depend on current taxable income under the tax code; the valuation allowance is a financial reporting estimate."
+    },
+    "tags": ["valuation-allowance", "deferred-tax-asset"]
+  }
+]

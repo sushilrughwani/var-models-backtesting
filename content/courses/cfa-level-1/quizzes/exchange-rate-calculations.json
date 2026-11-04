@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-exchange-rate-calculations-1",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "exchange-rate-calculations",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The MXN/USD exchange rate (Mexican pesos per US dollar) moves from 17.00 to 18.50. The percentage change in the value of the peso against the dollar is closest to:",
+    "options": ["+8.82%", "−8.82%", "−8.11%"],
+    "answer": "C",
+    "explanation": "The peso is the price currency, so invert the quote: (1/18.50)/(1/17.00) − 1 = 17.00/18.50 − 1 = −8.11%.",
+    "rationale": {
+      "A": "Incorrect. +8.82% is the appreciation of the US dollar, the base currency (18.50/17.00 − 1).",
+      "B": "Incorrect. −8.82% simply flips the sign of the dollar's change; percentage changes of the two currencies are not symmetric.",
+      "C": "Correct. Measured from the inverted quote, the peso depreciated by 8.11%."
+    },
+    "verify": "return (17.00/18.50-1)*100;",
+    "numericAnswer": -8.11,
+    "tolerance": 0.005,
+    "tags": ["fx-quotes", "percentage-change"]
+  },
+  {
+    "id": "q-cfa1-exchange-rate-calculations-2",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "exchange-rate-calculations",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The USD/EUR rate is 1.0850 (US dollars per euro) and the USD/GBP rate is 1.2700 (US dollars per pound). The EUR/GBP cross rate (euros per pound) is closest to:",
+    "options": ["1.1705", "0.8543", "1.3780"],
+    "answer": "A",
+    "explanation": "EUR/GBP = (USD/GBP) / (USD/EUR) = 1.2700 / 1.0850 = 1.1705. Dividing makes the dollar cancel.",
+    "rationale": {
+      "A": "Correct. One pound buys 1.27 dollars, and each euro costs 1.085 dollars, so one pound buys 1.1705 euros.",
+      "B": "Incorrect. 0.8543 is the GBP/EUR rate (pounds per euro), the inverse of the requested quote.",
+      "C": "Incorrect. 1.3780 multiplies the two quotes. Because the dollar is the price currency in both, one quote must be inverted first."
+    },
+    "verify": "return 1.27/1.085;",
+    "numericAnswer": 1.1705,
+    "tolerance": 0.00005,
+    "tags": ["cross-rates"]
+  },
+  {
+    "id": "q-cfa1-exchange-rate-calculations-3",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "exchange-rate-calculations",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The JPY/USD spot rate is 150.00 (yen per dollar). The 90-day yen interest rate is 0.50% and the 90-day dollar interest rate is 4.50%, both annualised on an actual/360 basis. The 90-day forward JPY/USD rate is closest to:",
+    "options": ["151.50", "148.52", "144.26"],
+    "answer": "B",
+    "explanation": "F = 150.00 × (1 + 0.005 × 90/360) / (1 + 0.045 × 90/360) = 150.00 × 1.00125 / 1.01125 = 148.52. The higher-yielding dollar trades at a forward discount.",
+    "rationale": {
+      "A": "Incorrect. 151.50 places the interest rates upside down: the price currency's (yen) rate belongs in the numerator.",
+      "B": "Correct. Covered interest parity gives 148.52, about 148 yen points below spot.",
+      "C": "Incorrect. 144.26 uses the full annual rates without scaling by 90/360."
+    },
+    "verify": "const S=150, iP=0.005, iB=0.045, t=90/360; return S*(1+iP*t)/(1+iB*t);",
+    "numericAnswer": 148.52,
+    "tolerance": 0.005,
+    "tags": ["forward-rates", "covered-interest-parity"]
+  },
+  {
+    "id": "q-cfa1-exchange-rate-calculations-4",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "exchange-rate-calculations",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Australian interest rates are higher than Swiss interest rates for all maturities. Under covered interest parity, the Australian dollar will most likely trade:",
+    "options": ["at a forward premium to the Swiss franc", "at a forward discount to the Swiss franc", "at a forward rate equal to the spot rate"],
+    "answer": "B",
+    "explanation": "The higher-yielding currency must trade at a forward discount so that hedged returns are equal in both currencies.",
+    "rationale": {
+      "A": "Incorrect. The lower-yielding currency (the franc) trades at a forward premium, not the higher-yielding one.",
+      "B": "Correct. The forward discount on the Australian dollar offsets its interest rate advantage and prevents arbitrage.",
+      "C": "Incorrect. The forward equals spot only when the two interest rates are equal."
+    },
+    "tags": ["forward-premium-discount"]
+  }
+]

@@ -1,0 +1,865 @@
+[
+  {
+    "id": "cfa1-fsa-0001",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An auditor of Halvorsen Marine concludes that the financial statements contain misstatements that are both material and pervasive. The auditor's report will most likely contain:",
+    "options": [
+      "A qualified opinion",
+      "An adverse opinion",
+      "A disclaimer of opinion"
+    ],
+    "answer": "B",
+    "explanation": "When misstatements are material and pervasive, the statements are not fairly presented as a whole, so the auditor issues an adverse opinion.",
+    "rationale": {
+      "A": "Incorrect. A qualified opinion applies when a misstatement is material but not pervasive (an 'except for' exception).",
+      "B": "Correct. Material and pervasive misstatement leads to an adverse opinion.",
+      "C": "Incorrect. A disclaimer is issued when the auditor cannot obtain sufficient evidence to form an opinion, not when misstatement is identified."
+    },
+    "tags": [
+      "audit-report"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0002",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In the financial statement analysis framework, adjusting reported statements for comparability and computing ratios and common-size statements is part of which step?",
+    "options": [
+      "Processing the data",
+      "Analyzing and interpreting the processed data",
+      "Collecting input data"
+    ],
+    "answer": "A",
+    "explanation": "The framework runs: articulate purpose, collect data, process data (adjustments, ratios, common-size statements), analyze/interpret, communicate conclusions, follow up.",
+    "rationale": {
+      "A": "Correct. Adjustments, ratios and common-size statements are data processing.",
+      "B": "Incorrect. Interpretation uses the processed output to reach conclusions; it does not produce the ratios.",
+      "C": "Incorrect. Collecting data means gathering statements, notes and industry information before any adjustment."
+    },
+    "tags": [
+      "analysis-framework"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0003",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Ostrava Tools reported net income of USD 5,400,000 and declared preferred dividends of USD 400,000. It had 2,000,000 common shares outstanding on January 1, issued 600,000 shares on April 1 and repurchased 200,000 shares on July 1. Basic EPS is closest to:",
+    "options": [
+      "USD 2.08",
+      "USD 2.13",
+      "USD 2.30"
+    ],
+    "answer": "B",
+    "explanation": "Weighted average shares = 2,000,000 + 600,000 x 9/12 - 200,000 x 6/12 = 2,350,000. Basic EPS = (5,400,000 - 400,000) / 2,350,000 = USD 2.13.",
+    "rationale": {
+      "A": "Incorrect. Uses year-end shares of 2,400,000 instead of the weighted average.",
+      "B": "Correct. Earnings available to common of USD 5,000,000 divided by 2,350,000 weighted shares.",
+      "C": "Incorrect. Fails to deduct preferred dividends from net income."
+    },
+    "verify": "const sh=2000000+600000*9/12-200000*6/12; return (5400000-400000)/sh;",
+    "numericAnswer": 2.13,
+    "tolerance": 0.005,
+    "tags": [
+      "eps"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0004",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Pellucid Labs has net income of USD 10,000,000 and 4,000,000 common shares outstanding all year. It also has USD 20,000,000 of 5% convertible bonds outstanding all year, convertible into 1,000,000 common shares. The tax rate is 25%. Diluted EPS is closest to:",
+    "options": [
+      "USD 2.00",
+      "USD 2.20",
+      "USD 2.15"
+    ],
+    "answer": "C",
+    "explanation": "If-converted method: add back after-tax interest 20,000,000 x 5% x (1 - 0.25) = 750,000. Diluted EPS = 10,750,000 / 5,000,000 = USD 2.15 (below basic EPS of 2.50, so dilutive).",
+    "rationale": {
+      "A": "Incorrect. Adds the conversion shares but omits the after-tax interest add-back.",
+      "B": "Incorrect. Adds back pre-tax interest of USD 1,000,000 instead of after-tax interest.",
+      "C": "Correct. After-tax interest added to the numerator and conversion shares to the denominator."
+    },
+    "verify": "const ni=10000000, int=20000000*0.05*(1-0.25); return (ni+int)/(4000000+1000000);",
+    "numericAnswer": 2.15,
+    "tolerance": 0.005,
+    "tags": [
+      "eps",
+      "dilution"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0005",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Under the five-step revenue recognition model, the step that immediately follows identifying the separate performance obligations in a contract is to:",
+    "options": [
+      "Determine the transaction price",
+      "Allocate the transaction price to the performance obligations",
+      "Recognize revenue as each obligation is satisfied"
+    ],
+    "answer": "A",
+    "explanation": "The order is: identify the contract, identify performance obligations, determine the transaction price, allocate it, recognize revenue when (or as) obligations are satisfied.",
+    "rationale": {
+      "A": "Correct. Step 3 is determining the transaction price.",
+      "B": "Incorrect. Allocation is step 4; the price must be determined before it can be allocated.",
+      "C": "Incorrect. Recognition is the final step 5."
+    },
+    "tags": [
+      "revenue-recognition"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0006",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Under IFRS, which of the following financial assets is most likely measured at amortized cost?",
+    "options": [
+      "An equity investment held for trading",
+      "A bond held in a business model whose objective is to collect contractual cash flows that are solely principal and interest",
+      "A derivative entered into for speculative purposes"
+    ],
+    "answer": "B",
+    "explanation": "Amortized cost applies to debt instruments held to collect contractual cash flows that are solely payments of principal and interest.",
+    "rationale": {
+      "A": "Incorrect. Equity held for trading is measured at fair value through profit or loss.",
+      "B": "Correct. A hold-to-collect debt asset meeting the cash flow test is carried at amortized cost.",
+      "C": "Incorrect. Derivatives are measured at fair value through profit or loss."
+    },
+    "tags": [
+      "financial-assets"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0007",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Brightwater Holdings acquires 100% of Kestrel Foods for USD 500 million. Kestrel's identifiable assets have a book value of USD 560 million and a fair value of USD 620 million; its liabilities have a book and fair value of USD 260 million. Goodwill recognized on the acquisition is closest to:",
+    "options": [
+      "USD 140 million",
+      "USD 200 million",
+      "USD 240 million"
+    ],
+    "answer": "A",
+    "explanation": "Goodwill = price - fair value of identifiable net assets = 500 - (620 - 260) = USD 140 million.",
+    "rationale": {
+      "A": "Correct. Purchase price minus fair value of net identifiable assets of USD 360 million.",
+      "B": "Incorrect. Uses book value of net assets (560 - 260 = 300) instead of fair value.",
+      "C": "Incorrect. Subtracts only the liabilities from the price (500 - 260) and ignores the identifiable assets entirely."
+    },
+    "verify": "return 500-(620-260);",
+    "numericAnswer": 140,
+    "tolerance": 0.5,
+    "tags": [
+      "goodwill"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0008",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In a vertical common-size balance sheet, each line item is expressed as a percentage of:",
+    "options": [
+      "Total revenue",
+      "Total shareholders' equity",
+      "Total assets"
+    ],
+    "answer": "C",
+    "explanation": "Vertical common-size balance sheets divide each item by total assets; common-size income statements use revenue.",
+    "rationale": {
+      "A": "Incorrect. Revenue is the base for a common-size income statement.",
+      "B": "Incorrect. Equity is not the standard base; it would distort comparisons across capital structures.",
+      "C": "Correct. Total assets is the base for a vertical common-size balance sheet."
+    },
+    "tags": [
+      "common-size"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0009",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Marlow Textiles reports net income of USD 250 million, depreciation of USD 60 million and a gain on sale of equipment of USD 15 million. During the year accounts receivable increased by USD 30 million, inventory decreased by USD 20 million, accounts payable increased by USD 10 million and wages payable decreased by USD 5 million. Cash flow from operations using the indirect method is closest to:",
+    "options": [
+      "USD 320 million",
+      "USD 300 million",
+      "USD 290 million"
+    ],
+    "answer": "C",
+    "explanation": "CFO = 250 + 60 - 15 - 30 + 20 + 10 - 5 = USD 290 million. The gain is subtracted because the sale proceeds belong in investing activities.",
+    "rationale": {
+      "A": "Incorrect. Adds the gain on sale instead of subtracting it.",
+      "B": "Incorrect. Reverses the signs of all working capital changes.",
+      "C": "Correct. Non-cash items and the gain are adjusted, and working capital changes are applied with the correct signs."
+    },
+    "verify": "return 250+60-15-30+20+10-5;",
+    "numericAnswer": 290,
+    "tolerance": 0.5,
+    "tags": [
+      "cfo",
+      "indirect-method"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0010",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Under US GAAP, interest paid on a company's bonds is classified in the statement of cash flows as:",
+    "options": [
+      "An investing cash flow",
+      "A financing cash flow",
+      "An operating cash flow"
+    ],
+    "answer": "C",
+    "explanation": "US GAAP requires interest paid to be shown in operating activities; IFRS allows operating or financing.",
+    "rationale": {
+      "A": "Incorrect. Investing activities relate to acquiring and disposing of long-term assets and investments.",
+      "B": "Incorrect. Financing is an option under IFRS, but US GAAP requires operating classification for interest paid.",
+      "C": "Correct. US GAAP classifies interest paid as operating."
+    },
+    "tags": [
+      "cash-flow-classification"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0011",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "For Dunmore Rail, gross PP&E was USD 1,000 million at the start of the year and USD 1,100 million at the end; equipment purchases were USD 250 million. Accumulated depreciation was USD 400 million at the start and USD 430 million at the end, and depreciation expense was USD 80 million. The company reported a gain of USD 12 million on equipment sold. Cash proceeds from the sale are closest to:",
+    "options": [
+      "USD 88 million",
+      "USD 112 million",
+      "USD 162 million"
+    ],
+    "answer": "B",
+    "explanation": "Cost of equipment sold = 1,000 + 250 - 1,100 = 150. Accumulated depreciation on it = 400 + 80 - 430 = 50. Book value = 100; proceeds = 100 + 12 = USD 112 million.",
+    "rationale": {
+      "A": "Incorrect. Subtracts the gain from book value instead of adding it.",
+      "B": "Correct. Book value of 100 plus the gain of 12.",
+      "C": "Incorrect. Ignores accumulated depreciation and treats the full original cost of 150 as book value."
+    },
+    "verify": "const cost=1000+250-1100, ad=400+80-430; return cost-ad+12;",
+    "numericAnswer": 112,
+    "tolerance": 0.5,
+    "tags": [
+      "investing-activities"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0012",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Corvina Logistics reports cash flow from operations of USD 480 million under US GAAP, interest expense (all paid in cash) of USD 60 million, a tax rate of 30% and capital expenditures of USD 200 million. Free cash flow to the firm is closest to:",
+    "options": [
+      "USD 280 million",
+      "USD 322 million",
+      "USD 340 million"
+    ],
+    "answer": "B",
+    "explanation": "FCFF = CFO + interest x (1 - t) - capex = 480 + 60 x 0.7 - 200 = USD 322 million.",
+    "rationale": {
+      "A": "Incorrect. Omits the after-tax interest add-back, which gives FCFE-like cash flow before net borrowing.",
+      "B": "Correct. After-tax interest is added back because US GAAP deducts interest in CFO.",
+      "C": "Incorrect. Adds back the full pre-tax interest rather than the after-tax amount."
+    },
+    "verify": "return 480+60*(1-0.3)-200;",
+    "numericAnswer": 322,
+    "tolerance": 0.5,
+    "tags": [
+      "fcff"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0013",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Tamsin Brewing reports net income of USD 300 million, depreciation and amortization of USD 110 million, an increase in working capital of USD 45 million, capital expenditures of USD 220 million and net borrowing of USD 50 million. Free cash flow to equity is closest to:",
+    "options": [
+      "USD 195 million",
+      "USD 285 million",
+      "USD 145 million"
+    ],
+    "answer": "A",
+    "explanation": "FCFE = NI + D&A - WCInv - FCInv + net borrowing = 300 + 110 - 45 - 220 + 50 = USD 195 million.",
+    "rationale": {
+      "A": "Correct. All components applied with correct signs.",
+      "B": "Incorrect. Adds the working capital increase instead of subtracting it.",
+      "C": "Incorrect. Omits net borrowing, which is a source of cash to equity holders."
+    },
+    "verify": "return 300+110-45-220+50;",
+    "numericAnswer": 195,
+    "tolerance": 0.5,
+    "tags": [
+      "fcfe"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0014",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An analyst wants to measure a company's ability to repay its debt out of operating cash flows. The most appropriate ratio is:",
+    "options": [
+      "Cash flow from operations divided by revenue",
+      "Cash flow from operations divided by average total assets",
+      "Cash flow from operations divided by total debt"
+    ],
+    "answer": "C",
+    "explanation": "The debt coverage ratio, CFO / total debt, measures capacity to repay debt from operating cash.",
+    "rationale": {
+      "A": "Incorrect. This is cash-to-income, a performance measure of cash generated per unit of revenue.",
+      "B": "Incorrect. This is cash return on assets, a performance measure.",
+      "C": "Correct. Debt coverage relates operating cash to total debt outstanding."
+    },
+    "tags": [
+      "cash-flow-ratios"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0015",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Quillon Retail began the year with 100 units of inventory costing USD 10 each, then purchased 200 units at USD 12 and later 150 units at USD 14. It sold 300 units during the year. Using LIFO (periodic), cost of goods sold is closest to:",
+    "options": [
+      "USD 3,400",
+      "USD 3,667",
+      "USD 3,900"
+    ],
+    "answer": "C",
+    "explanation": "LIFO expenses the latest costs first: 150 x 14 + 150 x 12 = 2,100 + 1,800 = USD 3,900.",
+    "rationale": {
+      "A": "Incorrect. This is FIFO COGS (100 x 10 + 200 x 12).",
+      "B": "Incorrect. This is weighted average COGS (5,500 / 450 x 300).",
+      "C": "Correct. The most recent 300 units' costs flow to COGS under LIFO."
+    },
+    "verify": "return 150*14+150*12;",
+    "numericAnswer": 3900,
+    "tolerance": 0.5,
+    "tags": [
+      "lifo",
+      "cogs"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0016",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Vernier Hardware uses LIFO under US GAAP. It reports LIFO cost of goods sold of USD 3,000 million. Its LIFO reserve was USD 150 million at the start of the year and USD 190 million at the end. FIFO cost of goods sold is closest to:",
+    "options": [
+      "USD 2,960 million",
+      "USD 2,810 million",
+      "USD 3,040 million"
+    ],
+    "answer": "A",
+    "explanation": "FIFO COGS = LIFO COGS - increase in LIFO reserve = 3,000 - (190 - 150) = USD 2,960 million.",
+    "rationale": {
+      "A": "Correct. Subtracts the change in the LIFO reserve.",
+      "B": "Incorrect. Subtracts the ending LIFO reserve instead of the change; the ending reserve adjusts inventory, not COGS.",
+      "C": "Incorrect. Adds the change in reserve; in a period of rising reserves FIFO COGS is lower than LIFO COGS."
+    },
+    "verify": "return 3000-(190-150);",
+    "numericAnswer": 2960,
+    "tolerance": 0.5,
+    "tags": [
+      "lifo-reserve"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0017",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Under IFRS, inventory that was written down to net realisable value in a prior period subsequently recovers in value. The company should:",
+    "options": [
+      "Not reverse the write-down",
+      "Reverse the write-down, but only up to the amount of the original write-down",
+      "Write the inventory up to the new net realisable value even if this exceeds original cost"
+    ],
+    "answer": "B",
+    "explanation": "IFRS permits reversal of inventory write-downs, limited to the original write-down amount (so the carrying amount never exceeds cost). US GAAP prohibits reversal for most inventory.",
+    "rationale": {
+      "A": "Incorrect. Prohibiting reversal is the US GAAP treatment, not IFRS.",
+      "B": "Correct. Reversal is allowed but capped at the amount previously written down.",
+      "C": "Incorrect. Inventory is carried at the lower of cost and NRV, so it cannot be written above cost."
+    },
+    "tags": [
+      "inventory-write-down"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0018",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Ferro Plastics buys a machine for USD 100,000 with an estimated salvage value of USD 10,000 and a 5-year useful life. Using the double-declining balance method, depreciation expense in year 2 is closest to:",
+    "options": [
+      "USD 18,000",
+      "USD 21,600",
+      "USD 24,000"
+    ],
+    "answer": "C",
+    "explanation": "DDB rate = 2/5 = 40% applied to beginning book value (salvage ignored until the floor). Year 1: 40,000; year 2: 40% x 60,000 = USD 24,000.",
+    "rationale": {
+      "A": "Incorrect. This is straight-line depreciation (90,000 / 5).",
+      "B": "Incorrect. Applies the 40% rate to the depreciable base of 90,000 rather than to cost.",
+      "C": "Correct. 40% of the year-2 opening book value of 60,000."
+    },
+    "verify": "const r=2/5; const bv1=100000*(1-r); return bv1*r;",
+    "numericAnswer": 24000,
+    "tolerance": 0.5,
+    "tags": [
+      "depreciation"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0019",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with expensing it, capitalizing an expenditure in the year it is incurred will most likely result in:",
+    "options": [
+      "Higher cash flow from operations",
+      "Lower net income",
+      "Higher total asset turnover"
+    ],
+    "answer": "A",
+    "explanation": "A capitalized cost is shown as an investing outflow, so CFO is higher; net income is higher in year one; total assets are higher, so asset turnover is lower.",
+    "rationale": {
+      "A": "Correct. The outflow moves from operating to investing activities.",
+      "B": "Incorrect. Net income is higher in the first year because only depreciation, not the full cost, is expensed.",
+      "C": "Incorrect. Capitalizing raises total assets, which lowers asset turnover."
+    },
+    "tags": [
+      "capitalization"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0020",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Under IFRS, Caldera Mining tests a plant for impairment. Its carrying amount is USD 50 million, fair value less costs to sell is USD 38 million, value in use is USD 42 million and undiscounted expected future cash flows are USD 52 million. The impairment loss is closest to:",
+    "options": [
+      "USD 0",
+      "USD 8 million",
+      "USD 12 million"
+    ],
+    "answer": "B",
+    "explanation": "IFRS: recoverable amount = higher of fair value less costs to sell (38) and value in use (42) = 42. Impairment = 50 - 42 = USD 8 million.",
+    "rationale": {
+      "A": "Incorrect. Applies the US GAAP recoverability test using undiscounted cash flows (52 > 50), which does not apply under IFRS.",
+      "B": "Correct. Carrying amount minus the recoverable amount of 42.",
+      "C": "Incorrect. Uses fair value less costs to sell rather than the higher of the two measures."
+    },
+    "verify": "const rec=Math.max(38,42); return Math.max(0,50-rec);",
+    "numericAnswer": 8,
+    "tolerance": 0.5,
+    "tags": [
+      "impairment"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0021",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Garnet Freight buys equipment for USD 600,000. For financial reporting it uses straight-line depreciation over 3 years with no salvage value; for tax purposes it deducts USD 300,000 in year 1. The tax rate is 25%. At the end of year 1 the company reports:",
+    "options": [
+      "Deferred tax liability of USD 25,000",
+      "Deferred tax asset of USD 25,000",
+      "Deferred tax liability of USD 100,000"
+    ],
+    "answer": "A",
+    "explanation": "Carrying amount = 600,000 - 200,000 = 400,000; tax base = 600,000 - 300,000 = 300,000. Taxable temporary difference of 100,000 x 25% = DTL of USD 25,000.",
+    "rationale": {
+      "A": "Correct. Carrying amount exceeds tax base for an asset, creating a deferred tax liability.",
+      "B": "Incorrect. Gets the direction wrong; an asset with carrying amount above tax base produces a liability.",
+      "C": "Incorrect. Reports the temporary difference itself without applying the tax rate."
+    },
+    "verify": "const ca=600000-600000/3, tb=600000-300000; return (ca-tb)*0.25;",
+    "numericAnswer": 25000,
+    "tolerance": 0.5,
+    "tags": [
+      "deferred-tax"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0022",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "For the year, Hollis Pharma's income taxes payable are USD 1,200 million. Its deferred tax liability increased by USD 150 million and its deferred tax asset increased by USD 60 million. Income tax expense is closest to:",
+    "options": [
+      "USD 1,110 million",
+      "USD 1,290 million",
+      "USD 1,410 million"
+    ],
+    "answer": "B",
+    "explanation": "Income tax expense = taxes payable + increase in DTL - increase in DTA = 1,200 + 150 - 60 = USD 1,290 million.",
+    "rationale": {
+      "A": "Incorrect. Reverses the signs of both deferred tax changes.",
+      "B": "Correct. DTL increase adds to expense; DTA increase reduces it.",
+      "C": "Incorrect. Adds the DTA increase instead of subtracting it."
+    },
+    "verify": "return 1200+150-60;",
+    "numericAnswer": 1290,
+    "tolerance": 0.5,
+    "tags": [
+      "tax-expense"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0023",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Tax-exempt interest income received by a company most likely:",
+    "options": [
+      "Creates a deferred tax liability",
+      "Creates a deferred tax asset",
+      "Causes the effective tax rate to differ from the statutory rate without creating any deferred tax"
+    ],
+    "answer": "C",
+    "explanation": "Tax-exempt income is a permanent difference: it never reverses, so no deferred tax arises, but it lowers the effective tax rate relative to the statutory rate.",
+    "rationale": {
+      "A": "Incorrect. Deferred tax liabilities arise only from temporary differences that will reverse.",
+      "B": "Incorrect. Deferred tax assets also require a temporary difference.",
+      "C": "Correct. Permanent differences affect the effective rate but not deferred taxes."
+    },
+    "tags": [
+      "permanent-difference"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0024",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Ashby Utilities issues 5-year bonds with a face value of USD 10,000,000 and a 4% annual coupon for USD 9,567,052, a price that gives a market yield of 5%. Using the effective interest method, interest expense for year 1 is closest to:",
+    "options": [
+      "USD 400,000",
+      "USD 478,353",
+      "USD 500,000"
+    ],
+    "answer": "B",
+    "explanation": "Interest expense = carrying amount x market rate at issue = 9,567,052 x 5% = USD 478,353. The excess over the 400,000 coupon amortizes the discount.",
+    "rationale": {
+      "A": "Incorrect. This is the cash coupon, which equals interest expense only for bonds issued at par.",
+      "B": "Correct. Market yield at issuance applied to the opening carrying amount.",
+      "C": "Incorrect. Applies the market rate to face value instead of to the carrying amount."
+    },
+    "verify": "return 9567052*0.05;",
+    "numericAnswer": 478353,
+    "tolerance": 0.5,
+    "tags": [
+      "bonds-payable"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0025",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Ilsted Clinics, a lessee, signs a 4-year finance lease with annual payments of USD 50,000 made at the end of each year. The discount rate is 6%. The lease liability at the end of year 1, after the first payment, is closest to:",
+    "options": [
+      "USD 133,651",
+      "USD 150,000",
+      "USD 123,255"
+    ],
+    "answer": "A",
+    "explanation": "Initial liability = 50,000 x (1 - 1.06^-4) / 0.06 = 173,255. Year-1 interest = 10,395. Ending liability = 173,255 + 10,395 - 50,000 = USD 133,651.",
+    "rationale": {
+      "A": "Correct. Opening liability plus interest accrued minus the payment.",
+      "B": "Incorrect. Uses undiscounted remaining payments (3 x 50,000) instead of present value.",
+      "C": "Incorrect. Subtracts the full payment from the opening liability without accruing interest, treating the whole payment as principal."
+    },
+    "verify": "const r=0.06, L0=50000*(1-Math.pow(1+r,-4))/r; return L0*(1+r)-50000;",
+    "numericAnswer": 133651,
+    "tolerance": 0.5,
+    "tags": [
+      "leases"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0026",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Under US GAAP, a lessee's operating lease is reported on its income statement as:",
+    "options": [
+      "A single lease expense, generally recognized on a straight-line basis",
+      "Separate amortization of the right-of-use asset and interest expense on the lease liability",
+      "No expense; lease payments are recorded in other comprehensive income"
+    ],
+    "answer": "A",
+    "explanation": "US GAAP operating leases put a right-of-use asset and lease liability on the balance sheet but show a single straight-line lease cost on the income statement.",
+    "rationale": {
+      "A": "Correct. A single straight-line lease expense is reported.",
+      "B": "Incorrect. Separate depreciation and interest is the finance lease (and IFRS lessee) treatment.",
+      "C": "Incorrect. Lease payments are expensed through profit or loss, not OCI."
+    },
+    "tags": [
+      "leases"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0027",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following is most likely a warning sign of aggressive revenue recognition?",
+    "options": [
+      "Cash flow from operations consistently exceeding net income",
+      "Accounts receivable growing much faster than revenue",
+      "Depreciation lives that are unchanged from prior years"
+    ],
+    "answer": "B",
+    "explanation": "Receivables outpacing revenue (rising DSO) suggests revenue booked before cash is collectible, such as channel stuffing or premature recognition.",
+    "rationale": {
+      "A": "Incorrect. CFO above net income generally indicates conservative, high-quality earnings.",
+      "B": "Correct. Receivables growing faster than sales is a classic revenue warning sign.",
+      "C": "Incorrect. Stable estimates are consistent with neutral reporting; changing lives would be a concern."
+    },
+    "tags": [
+      "warning-signs"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0028",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Sorrel Industries' financial reports comply with GAAP and are decision-useful, but most of this year's earnings come from a one-time gain on a land sale and are unlikely to recur. On the financial reporting quality spectrum, this is best described as:",
+    "options": [
+      "GAAP-compliant, decision-useful reporting with low earnings quality (unsustainable earnings)",
+      "Within-GAAP reporting that reflects biased accounting choices",
+      "Non-compliant reporting"
+    ],
+    "answer": "A",
+    "explanation": "Reporting quality (compliance, decision-usefulness) and earnings quality (sustainability) are distinct. Accurate reporting of non-recurring earnings is high reporting quality but low earnings quality.",
+    "rationale": {
+      "A": "Correct. Reports are faithful, but the earnings are not sustainable.",
+      "B": "Incorrect. Nothing in the scenario suggests biased choices; the gain is accurately reported.",
+      "C": "Incorrect. The reports comply with GAAP."
+    },
+    "tags": [
+      "quality-spectrum"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0029",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "For Orrin Electronics: tax burden (net income / EBT) is 0.75, interest burden (EBT / EBIT) is 0.80, EBIT margin is 12%, total asset turnover is 1.4 and financial leverage (average assets / average equity) is 2.0. Return on equity using the five-way DuPont decomposition is closest to:",
+    "options": [
+      "10.08%",
+      "20.16%",
+      "25.20%"
+    ],
+    "answer": "B",
+    "explanation": "ROE = 0.75 x 0.80 x 0.12 x 1.4 x 2.0 = 0.2016 = 20.16%.",
+    "rationale": {
+      "A": "Incorrect. Omits the financial leverage multiplier, giving ROA rather than ROE.",
+      "B": "Correct. Product of all five components.",
+      "C": "Incorrect. Omits the interest burden term."
+    },
+    "verify": "return 0.75*0.80*0.12*1.4*2.0*100;",
+    "numericAnswer": 20.16,
+    "tolerance": 0.005,
+    "tags": [
+      "dupont"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0030",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Pemberton Foods has annual revenue of USD 7,300 million, cost of goods sold of USD 5,110 million, average receivables of USD 900 million, average inventory of USD 840 million and average payables of USD 532 million. Using a 365-day year and COGS as a proxy for purchases, the cash conversion cycle is closest to:",
+    "options": [
+      "67 days",
+      "105 days",
+      "143 days"
+    ],
+    "answer": "A",
+    "explanation": "DSO = 900 / (7,300/365) = 45; DOH = 840 / (5,110/365) = 60; DPO = 532 / (5,110/365) = 38. CCC = 45 + 60 - 38 = 67 days.",
+    "rationale": {
+      "A": "Correct. DSO plus DOH minus DPO.",
+      "B": "Incorrect. Ignores the payables period (DSO + DOH only).",
+      "C": "Incorrect. Adds the payables period instead of subtracting it."
+    },
+    "verify": "const dso=900/(7300/365), doh=840/(5110/365), dpo=532/(5110/365); return dso+doh-dpo;",
+    "numericAnswer": 67,
+    "tolerance": 0.5,
+    "tags": [
+      "activity-ratios"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0031",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A company with a current ratio of 1.8 uses cash to pay down part of its accounts payable. Its current ratio will most likely:",
+    "options": [
+      "Increase",
+      "Decrease",
+      "Remain unchanged"
+    ],
+    "answer": "A",
+    "explanation": "Equal reductions in current assets and current liabilities raise a ratio that is above 1. For example, 180/100 becomes 160/80 = 2.0 after paying 20.",
+    "rationale": {
+      "A": "Correct. When the ratio exceeds 1, equal reductions in numerator and denominator increase it.",
+      "B": "Incorrect. The ratio decreases only if it starts below 1.",
+      "C": "Incorrect. The ratio is unchanged only if it equals exactly 1 (or the transaction is zero)."
+    },
+    "tags": [
+      "liquidity-ratios"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0032",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An analyst forecasts that Lindqvist Apparel's revenue of USD 2,000 million will grow by 8% next year and that its gross margin will remain at 38%. Forecast cost of goods sold is closest to:",
+    "options": [
+      "USD 820.8 million",
+      "USD 1,240.0 million",
+      "USD 1,339.2 million"
+    ],
+    "answer": "C",
+    "explanation": "Forecast revenue = 2,000 x 1.08 = 2,160. COGS = 2,160 x (1 - 0.38) = USD 1,339.2 million.",
+    "rationale": {
+      "A": "Incorrect. Multiplies forecast revenue by the gross margin, which gives gross profit, not COGS.",
+      "B": "Incorrect. Applies the COGS ratio to current revenue without growing revenue.",
+      "C": "Correct. Forecast revenue times (1 - gross margin)."
+    },
+    "verify": "return 2000*1.08*(1-0.38);",
+    "numericAnswer": 1339.2,
+    "tolerance": 0.05,
+    "tags": [
+      "forecasting"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0033",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An analyst forecasts a company's revenue growth as nominal GDP growth plus a premium reflecting expected market share gains. This approach is best described as:",
+    "options": [
+      "Bottom-up",
+      "Hybrid of historical and judgmental",
+      "Top-down"
+    ],
+    "answer": "C",
+    "explanation": "Top-down forecasting starts from macroeconomic or industry-level expectations (such as GDP growth) and works down to the company.",
+    "rationale": {
+      "A": "Incorrect. Bottom-up builds from company-level drivers such as units, prices or store counts.",
+      "B": "Incorrect. This is not a standard category for this approach; the starting point is macroeconomic, making it top-down.",
+      "C": "Correct. Growth relative to GDP is a top-down approach."
+    },
+    "tags": [
+      "forecasting"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0034",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following is permitted under US GAAP but prohibited under IFRS?",
+    "options": [
+      "The revaluation model for property, plant and equipment",
+      "Reversal of inventory write-downs",
+      "The LIFO inventory cost method"
+    ],
+    "answer": "C",
+    "explanation": "LIFO is allowed under US GAAP and prohibited under IFRS. Revaluation of PP&E and reversal of inventory write-downs are allowed under IFRS but not US GAAP.",
+    "rationale": {
+      "A": "Incorrect. Revaluation is permitted under IFRS and prohibited under US GAAP.",
+      "B": "Incorrect. Reversal is permitted under IFRS and generally prohibited under US GAAP.",
+      "C": "Correct. LIFO is a US GAAP-only method."
+    },
+    "tags": [
+      "ifrs-us-gaap"
+    ]
+  },
+  {
+    "id": "cfa1-fsa-0035",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Under IFRS, dividends paid to shareholders may be classified in the statement of cash flows as:",
+    "options": [
+      "Financing activities only",
+      "Operating or financing activities",
+      "Investing or financing activities"
+    ],
+    "answer": "B",
+    "explanation": "IFRS allows dividends paid to be classified as operating or financing; US GAAP requires financing.",
+    "rationale": {
+      "A": "Incorrect. Financing-only is the US GAAP requirement.",
+      "B": "Correct. IFRS gives a choice between operating and financing.",
+      "C": "Incorrect. Dividends paid are never investing cash flows."
+    },
+    "tags": [
+      "ifrs-us-gaap",
+      "cash-flow-classification"
+    ]
+  }
+]

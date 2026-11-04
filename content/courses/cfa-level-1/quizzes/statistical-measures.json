@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-statistical-measures-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "statistical-measures",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A sample of four annual returns is 10%, -5%, 15% and 0%. The sample standard deviation is closest to:",
+    "options": ["7.91%", "83.33%", "9.13%"],
+    "answer": "C",
+    "explanation": "Mean = 5%. Squared deviations: 25, 100, 100, 25, summing to 250. Sample variance = 250/3 = 83.33; standard deviation = √83.33 = 9.13%.",
+    "rationale": {
+      "A": "Incorrect. 7.91% divides by n = 4 (population formula) instead of n - 1 = 3.",
+      "B": "Incorrect. 83.33 is the sample variance (in %²); the square root has not been taken.",
+      "C": "Correct. s = √(250/3) = 9.13%."
+    },
+    "verify": "const x=[10,-5,15,0]; const m=x.reduce((a,b)=>a+b)/4; const ss=x.reduce((a,b)=>a+(b-m)**2,0); return Math.sqrt(ss/3);",
+    "numericAnswer": 9.13,
+    "tolerance": 0.005,
+    "tags": ["standard-deviation"]
+  },
+  {
+    "id": "q-cfa1-statistical-measures-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "statistical-measures",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Fund A has a mean return of 8% and a standard deviation of 12%. Fund B has a mean return of 5% and a standard deviation of 6%. Based on the coefficient of variation, which statement is most accurate?",
+    "options": ["Fund B has less risk per unit of return", "Fund A has less risk per unit of return", "Both funds have the same risk per unit of return"],
+    "answer": "A",
+    "explanation": "CV(A) = 12/8 = 1.50 and CV(B) = 6/5 = 1.20. The lower CV means Fund B carries less risk per unit of mean return.",
+    "rationale": {
+      "A": "Correct. Fund B's CV of 1.20 is below Fund A's 1.50.",
+      "B": "Incorrect. This inverts the comparison; a higher mean does not offset Fund A's proportionally higher volatility.",
+      "C": "Incorrect. The CVs differ (1.50 versus 1.20)."
+    },
+    "tags": ["coefficient-of-variation"]
+  },
+  {
+    "id": "q-cfa1-statistical-measures-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "statistical-measures",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A hedge fund's monthly returns show frequent small gains and occasional very large losses. Compared with a normal distribution, its return distribution most likely has:",
+    "options": ["positive skewness and a mean above the median", "negative skewness and positive excess kurtosis", "zero skewness and negative excess kurtosis"],
+    "answer": "B",
+    "explanation": "Rare large losses create a long left tail (negative skew, mean below median) and extreme observations create fat tails (positive excess kurtosis).",
+    "rationale": {
+      "A": "Incorrect. Positive skew requires a long right tail of large gains, the opposite of this pattern.",
+      "B": "Correct. A long left tail means negative skew, and occasional extreme outcomes mean fat tails.",
+      "C": "Incorrect. The distribution is clearly asymmetric, and extreme losses imply fatter, not thinner, tails than normal."
+    },
+    "tags": ["skewness", "kurtosis"]
+  },
+  {
+    "id": "q-cfa1-statistical-measures-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "statistical-measures",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A portfolio's annual returns over five years are 6%, -3%, 2%, -5% and 8%. Using a target return of 1%, the target downside deviation is closest to:",
+    "options": ["3.61%", "3.22%", "5.59%"],
+    "answer": "A",
+    "explanation": "Below-target returns: -3% and -5%. Shortfalls from 1%: -4 and -6; squared: 16 and 36, sum 52. Divide by n - 1 = 4: 13. √13 = 3.61%.",
+    "rationale": {
+      "A": "Correct. √(52/4) = 3.61%.",
+      "B": "Incorrect. 3.22% divides the sum of squared shortfalls by n = 5 instead of n - 1 = 4.",
+      "C": "Incorrect. 5.59% is the ordinary sample standard deviation, which counts deviations on both sides of the mean."
+    },
+    "verify": "const x=[6,-3,2,-5,8]; const s=x.reduce((a,b)=>a+(b<1?(b-1)**2:0),0); return Math.sqrt(s/4);",
+    "numericAnswer": 3.61,
+    "tolerance": 0.005,
+    "tags": ["downside-deviation"]
+  }
+]

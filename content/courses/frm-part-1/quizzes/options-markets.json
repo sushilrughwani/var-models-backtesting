@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-frm1-options-markets-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "options-markets",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investor holds a listed call contract on 100 shares with a strike price of USD 48. The company carries out a 5-for-4 stock split. The adjusted strike price is closest to:",
+    "options": ["USD 38.40", "USD 60.00", "USD 48.00", "USD 24.00"],
+    "answer": "A",
+    "explanation": "For an m-for-n split the strike becomes K × n/m = 48 × 4/5 = 38.40, and the contract now covers 125 shares, leaving the total exercise cost unchanged at 4,800.",
+    "rationale": {
+      "A": "Correct. 48 × 4/5 = 38.40; with 125 shares, the exercise cost stays at 4,800.",
+      "B": "Incorrect. 60.00 multiplies by 5/4, inverting the split ratio.",
+      "C": "Incorrect. Splits do trigger adjustments; only cash dividends leave terms unchanged.",
+      "D": "Incorrect. 24.00 treats the split as 2-for-1."
+    },
+    "verify": "return 48*4/5;",
+    "numericAnswer": 38.4,
+    "tolerance": 0.005,
+    "tags": ["contract-adjustments"]
+  },
+  {
+    "id": "q-frm1-options-markets-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "options-markets",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A trader writes 4 naked call contracts (100 shares each) with a strike of USD 48 when the share price is USD 50. The premium is USD 4.50 per share. Margin is the greater of (premium + 20% of share price − out-of-the-money amount) and (premium + 10% of share price). The required margin is closest to:",
+    "options": ["USD 3,800", "USD 5,000", "USD 5,800", "USD 4,000"],
+    "answer": "C",
+    "explanation": "The call is in the money, so the out-of-the-money amount is zero. Test 1: 4.50 + 10.00 − 0 = 14.50. Test 2: 4.50 + 5.00 = 9.50. Margin = 14.50 × 400 = 5,800.",
+    "rationale": {
+      "A": "Incorrect. 3,800 uses the smaller second test instead of the greater of the two.",
+      "B": "Incorrect. 5,000 subtracts the 2-dollar in-the-money amount; only an out-of-the-money amount is deducted.",
+      "C": "Correct. Test 1 gives 14.50 per share, the larger figure, times 400 shares.",
+      "D": "Incorrect. 4,000 is 20% of the share price only and leaves out the premium."
+    },
+    "verify": "const S=50,K=48,p=4.5,n=400; const otm=Math.max(K-S,0); return n*Math.max(p+0.2*S-otm,p+0.1*S);",
+    "numericAnswer": 5800,
+    "tolerance": 0.5,
+    "tags": ["margin", "naked-options"]
+  },
+  {
+    "id": "q-frm1-options-markets-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "options-markets",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company with 6 million shares outstanding issues 1.5 million warrants, each allowing the purchase of one new share. A regular call option with identical terms is worth USD 4.50. Ignoring other effects, the value of one warrant is closest to:",
+    "options": ["USD 4.50", "USD 5.63", "USD 0.90", "USD 3.60"],
+    "answer": "D",
+    "explanation": "W = N/(N + M) × c = 6/(6 + 1.5) × 4.50 = 0.8 × 4.50 = 3.60.",
+    "rationale": {
+      "A": "Incorrect. 4.50 ignores the dilution caused by issuing new shares on exercise.",
+      "B": "Incorrect. 5.63 multiplies by (N + M)/N, inverting the dilution factor.",
+      "C": "Incorrect. 0.90 uses M/(N + M) instead of N/(N + M).",
+      "D": "Correct. Dilution scales the call value by N/(N + M) = 0.8."
+    },
+    "verify": "return 6/(6+1.5)*4.5;",
+    "numericAnswer": 3.6,
+    "tolerance": 0.005,
+    "tags": ["warrants", "dilution"]
+  },
+  {
+    "id": "q-frm1-options-markets-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "options-markets",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which feature most clearly distinguishes employee stock options from exchange-traded call options on the same stock?",
+    "options": ["Employee stock options can only be exercised at expiration", "Exercise of employee stock options creates new shares, and the options cannot be sold to other investors", "Employee stock options are guaranteed by a clearing house", "Employee stock options are adjusted for cash dividends while exchange-traded options are not"],
+    "answer": "B",
+    "explanation": "ESOs are issued by the company: exercise leads to new shares (dilution), they typically vest over time and they are non-transferable, which often leads to early exercise.",
+    "rationale": {
+      "A": "Incorrect. Once vested, ESOs can usually be exercised at any time, like American options.",
+      "B": "Correct. Dilution on exercise and non-transferability are defining ESO features.",
+      "C": "Incorrect. ESOs are obligations of the issuing company, not cleared exchange contracts.",
+      "D": "Incorrect. Neither type is normally adjusted for ordinary cash dividends."
+    },
+    "tags": ["employee-stock-options"]
+  }
+]

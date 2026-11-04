@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-hedge-funds-and-digital-assets-1",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "hedge-funds-and-digital-assets",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An investor puts USD 100 into a fund of funds, which invests it all in one hedge fund that earns 20% gross. The hedge fund charges a 2% management fee on year-end assets and a 20% incentive fee net of its management fee. The fund of funds then charges a 1% management fee on its year-end assets and a 10% incentive fee net of its management fee. No hurdles apply. The investor's net return is closest to:",
+    "options": ["11.65%", "14.08%", "16.92%"],
+    "answer": "A",
+    "explanation": "Hedge fund: 120 − 2.40 = 117.60; incentive 0.20 × 17.60 = 3.52; NAV 114.08. Fund of funds: 114.08 − 1.1408 = 112.94; incentive 0.10 × 12.94 = 1.29; NAV 111.65. Net return = 11.65%.",
+    "rationale": {
+      "A": "Correct. Applying both fee layers in sequence leaves 111.65, an 11.65% net return.",
+      "B": "Incorrect. 14.08% is the return after the hedge fund's fees only; it ignores the fund-of-funds layer.",
+      "C": "Incorrect. 16.92% applies only the fund-of-funds fees to the 20% gross return, ignoring the underlying fund's fees."
+    },
+    "verify": "let v=120; v-=0.02*v; v-=0.2*(v-100); let w=v-0.01*v; w-=0.1*(w-100); return w-100;",
+    "numericAnswer": 11.65,
+    "tolerance": 0.005,
+    "tags": ["fund-of-funds", "fees"]
+  },
+  {
+    "id": "q-cfa1-hedge-funds-and-digital-assets-2",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "hedge-funds-and-digital-assets",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An acquirer offers USD 40.00 in cash per share for a target trading at USD 37.60. The deal is expected to close in six months. If the deal closes as planned, a merger arbitrageur who buys the target today earns a holding-period return (not annualised) closest to:",
+    "options": ["6.00%", "6.38%", "13.17%"],
+    "answer": "B",
+    "explanation": "Spread = 40.00 − 37.60 = 2.40. Holding-period return = 2.40 / 37.60 = 6.38%. A cash deal needs no short position in the acquirer.",
+    "rationale": {
+      "A": "Incorrect. 6.00% divides the spread by the offer price (40) instead of the purchase price (37.60).",
+      "B": "Correct. The investor pays 37.60 and receives 40.00, a 6.38% return over the six months.",
+      "C": "Incorrect. 13.17% is the annualised (compounded) return, but the question asks for the holding-period return."
+    },
+    "verify": "return (40-37.6)/37.6*100;",
+    "numericAnswer": 6.38,
+    "tolerance": 0.005,
+    "tags": ["merger-arbitrage"]
+  },
+  {
+    "id": "q-cfa1-hedge-funds-and-digital-assets-3",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "hedge-funds-and-digital-assets",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A hedge fund buys convertible bonds and shorts the issuers' common stock to exploit mispricing of the embedded option. This strategy is best classified as:",
+    "options": ["event-driven", "opportunistic", "relative value"],
+    "answer": "C",
+    "explanation": "Convertible bond arbitrage exploits pricing differences between related securities of the same issuer, which is the defining feature of relative value strategies.",
+    "rationale": {
+      "A": "Incorrect. Event-driven strategies depend on corporate events such as mergers or bankruptcies.",
+      "B": "Incorrect. Opportunistic strategies such as global macro bet on broad economic trends.",
+      "C": "Correct. Convertible arbitrage is a classic relative value strategy."
+    },
+    "tags": ["hedge-fund-strategies"]
+  },
+  {
+    "id": "q-cfa1-hedge-funds-and-digital-assets-4",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "hedge-funds-and-digital-assets",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with proof of work, a proof-of-stake consensus mechanism most likely:",
+    "options": ["selects validators based on holdings they lock up as collateral and uses far less energy", "requires miners to solve computational puzzles, consuming more energy", "restricts participation to approved institutions, making the network permissioned"],
+    "answer": "A",
+    "explanation": "Proof of stake chooses validators according to the amount of the asset they stake, avoiding the energy-intensive computing race of proof of work.",
+    "rationale": {
+      "A": "Correct. Validators stake holdings as collateral, and energy use is much lower than proof of work.",
+      "B": "Incorrect. This describes proof of work.",
+      "C": "Incorrect. Whether a network is permissioned is a separate design choice from the consensus mechanism."
+    },
+    "tags": ["digital-assets", "blockchain"]
+  }
+]

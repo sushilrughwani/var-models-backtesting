@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-cfa1-fixed-income-cash-flows-and-types-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-cash-flows-and-types",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A USD 1,000,000 fully amortising bond has a 4-year maturity, a 5% annual interest rate and level annual payments. The principal repaid in the first payment is closest to:",
+    "options": ["USD 250,000", "USD 282,012", "USD 232,012"],
+    "answer": "C",
+    "explanation": "Payment = 0.05 × 1,000,000 / (1 − 1.05^−4) = 282,011.83. Year 1 interest = 0.05 × 1,000,000 = 50,000. Principal = 282,011.83 − 50,000 = 232,011.83.",
+    "rationale": {
+      "A": "Incorrect. USD 250,000 assumes equal principal repayments (1,000,000 / 4), which is not a level-payment structure.",
+      "B": "Incorrect. USD 282,012 is the whole level payment; the interest portion of USD 50,000 must be subtracted.",
+      "C": "Correct. Level payment of 282,011.83 less first-year interest of 50,000 gives principal of about 232,012."
+    },
+    "verify": "const r=0.05,P=1000000,N=4; const A=r*P/(1-Math.pow(1+r,-N)); return A-r*P;",
+    "numericAnswer": 232012,
+    "tolerance": 0.5,
+    "tags": ["amortising"]
+  },
+  {
+    "id": "q-cfa1-fixed-income-cash-flows-and-types-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-cash-flows-and-types",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A USD 5,000,000 floating-rate note pays semiannually at the market reference rate plus 120 bp. If the reference rate is 2.75% at the start of the period, the coupon paid at the end of the period is closest to:",
+    "options": ["USD 98,750", "USD 197,500", "USD 71,750"],
+    "answer": "A",
+    "explanation": "Coupon = (2.75% + 1.20%) × 5,000,000 / 2 = 0.0395 × 5,000,000 / 2 = USD 98,750.",
+    "rationale": {
+      "A": "Correct. Annual rate 3.95% applied to par and halved for semiannual payment gives USD 98,750.",
+      "B": "Incorrect. USD 197,500 is the annual coupon; it was not divided by two.",
+      "C": "Incorrect. USD 71,750 treats the margin as 12 bp (0.12%) instead of 120 bp (1.20%): 2.87% × 5,000,000 / 2."
+    },
+    "verify": "return (0.0275+0.012)*5000000/2;",
+    "numericAnswer": 98750,
+    "tolerance": 0.5,
+    "tags": ["floating-rate-note"]
+  },
+  {
+    "id": "q-cfa1-fixed-income-cash-flows-and-types-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-cash-flows-and-types",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A bond with a sinking fund allows the issuer to retire bonds either by open-market purchase or by calling them at par. Market interest rates have fallen and the bonds now trade at 106. The issuer will most likely:",
+    "options": [
+      "Buy the bonds in the open market at 106",
+      "Call the bonds at par, which disadvantages the holders whose bonds are selected",
+      "Postpone the sinking fund payment until prices fall below par"
+    ],
+    "answer": "B",
+    "explanation": "With bonds trading above par, calling at the sinking fund price of 100 is cheaper than buying at 106. Holders whose bonds are drawn lose the premium.",
+    "rationale": {
+      "A": "Incorrect. Paying 106 in the market costs more than calling at 100.",
+      "B": "Correct. The issuer chooses the cheaper option, calling at par, and the selected holders give up the market premium.",
+      "C": "Incorrect. Sinking fund retirements follow a mandatory schedule; the issuer cannot simply postpone them."
+    },
+    "tags": ["sinking-fund"]
+  },
+  {
+    "id": "q-cfa1-fixed-income-cash-flows-and-types-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-cash-flows-and-types",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A convertible bond with USD 1,000 par has a conversion ratio of 25. The issuer's shares trade at USD 44. The conversion value of the bond is closest to:",
+    "options": ["USD 40", "USD 1,000", "USD 1,100"],
+    "answer": "C",
+    "explanation": "Conversion value = share price × conversion ratio = 44 × 25 = USD 1,100.",
+    "rationale": {
+      "A": "Incorrect. USD 40 is the conversion price (par / conversion ratio), not the conversion value.",
+      "B": "Incorrect. USD 1,000 is the par value, which ignores the current share price.",
+      "C": "Correct. 25 shares worth USD 44 each give a conversion value of USD 1,100."
+    },
+    "verify": "return 44*25;",
+    "numericAnswer": 1100,
+    "tolerance": 0.5,
+    "tags": ["convertible"]
+  }
+]

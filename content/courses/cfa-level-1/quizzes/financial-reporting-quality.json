@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q-cfa1-financial-reporting-quality-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-reporting-quality",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A company follows accounting standards fully but consistently chooses the most optimistic estimates for useful lives and bad-debt reserves to lift current earnings. On the quality spectrum, its reporting is best described as:",
+    "options": [
+      "Fraudulent, because it involves fictitious transactions",
+      "Non-compliant with GAAP",
+      "GAAP-compliant but biased (aggressive)"
+    ],
+    "answer": "C",
+    "explanation": "Optimistic estimates within the rules are a biased, aggressive form of GAAP-compliant reporting. They reduce usefulness without breaking the rules.",
+    "rationale": {
+      "A": "Incorrect. No transactions are invented; the company makes real choices within permitted ranges.",
+      "B": "Incorrect. The choices are permitted by the standards, so the reporting remains compliant.",
+      "C": "Correct. Aggressive estimates inflate current results while staying within GAAP, which places the reports in the biased category."
+    },
+    "tags": ["quality-spectrum"]
+  },
+  {
+    "id": "q-cfa1-financial-reporting-quality-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-reporting-quality",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A company reports net income of USD 500 million, cash flow from operations of USD 300 million and cash flow from investing of −USD 150 million. Average net operating assets are USD 2,500 million. The cash-flow-based accruals ratio is closest to:",
+    "options": ["2%", "14%", "8%"],
+    "answer": "B",
+    "explanation": "Accruals ratio = (NI − CFO − CFI) / average NOA = (500 − 300 − (−150)) / 2,500 = 350 / 2,500 = 14%.",
+    "rationale": {
+      "A": "Incorrect. This adds CFI with the wrong sign: (500 − 300 − 150) / 2,500 = 2%. Subtracting a negative CFI increases accruals.",
+      "B": "Correct. (500 − 300 + 150) / 2,500 = 14%.",
+      "C": "Incorrect. This ignores investing cash flow: (500 − 300) / 2,500 = 8%."
+    },
+    "verify": "const ni=500, cfo=300, cfi=-150, noa=2500; return (ni-cfo-cfi)/noa*100;",
+    "numericAnswer": 14,
+    "tolerance": 0.05,
+    "tags": ["accruals-ratio", "warning-signs"]
+  },
+  {
+    "id": "q-cfa1-financial-reporting-quality-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-reporting-quality",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company reports annual revenue of USD 1,200 million and year-end accounts receivable of USD 180 million. Using a 365-day year, days sales outstanding is closest to:",
+    "options": ["54.75", "54.00", "6.67"],
+    "answer": "A",
+    "explanation": "DSO = 180 / 1,200 × 365 = 54.75 days.",
+    "rationale": {
+      "A": "Correct. 0.15 × 365 = 54.75 days.",
+      "B": "Incorrect. This uses a 360-day year (0.15 × 360) instead of the 365 days stated.",
+      "C": "Incorrect. 6.67 is receivables turnover (1,200 / 180), not days sales outstanding."
+    },
+    "verify": "return 180/1200*365;",
+    "numericAnswer": 54.75,
+    "tolerance": 0.01,
+    "tags": ["dso", "warning-signs"]
+  },
+  {
+    "id": "q-cfa1-financial-reporting-quality-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-reporting-quality",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following is most likely a warning sign of low-quality earnings?",
+    "options": [
+      "Cash flow from operations consistently exceeds net income",
+      "Accounts receivable grow much faster than revenue for several years",
+      "The company records a large, clearly disclosed impairment in a poor year"
+    ],
+    "answer": "B",
+    "explanation": "Receivables outpacing revenue suggests premature or fictitious revenue recognition or deteriorating collections, both classic red flags.",
+    "rationale": {
+      "A": "Incorrect. CFO above net income indicates earnings are well backed by cash, which is a sign of higher quality.",
+      "B": "Correct. Persistent receivables growth beyond sales growth raises DSO and often signals aggressive revenue recognition.",
+      "C": "Incorrect. A transparent impairment reflects faithful reporting of bad news; it may hurt earnings quality but not reporting quality."
+    },
+    "tags": ["warning-signs", "revenue-recognition"]
+  }
+]

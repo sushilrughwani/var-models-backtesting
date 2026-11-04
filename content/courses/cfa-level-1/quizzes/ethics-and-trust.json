@@ -1,0 +1,86 @@
+[
+  {
+    "id": "q-cfa1-ethics-and-trust-1",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "ethics-and-trust",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Tomás Reyes, a wealth adviser at the fictional firm Baywater Partners, places a retired client in a structured note that pays Baywater a large placement fee. The product is legal and the fee is disclosed in small print, but a far cheaper fund would meet the client's needs equally well. Tomás's conduct is best described as:",
+    "options": [
+      "Legal and therefore ethical, because the fee was disclosed",
+      "Legal but unethical, because it puts the firm's revenue ahead of the client's interests",
+      "Illegal but ethical, because disclosure protects the adviser"
+    ],
+    "answer": "B",
+    "explanation": "Legality is a minimum standard. Choosing a costlier product that serves the firm rather than the client is unethical even when permitted by law and technically disclosed.",
+    "rationale": {
+      "A": "Incorrect. Compliance with the law does not make conduct ethical; ethics often demands more than the legal minimum.",
+      "B": "Correct. The action is permitted but fails the client, which is the classic legal-but-unethical case.",
+      "C": "Incorrect. Nothing in the scenario is illegal, and disclosure in small print does not make the choice serve the client."
+    }
+  },
+  {
+    "id": "q-cfa1-ethics-and-trust-2",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "ethics-and-trust",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following best explains why widespread unethical behaviour by investment professionals harms the broader economy?",
+    "options": [
+      "Investors who distrust intermediaries demand higher returns or withdraw, raising the cost of capital for companies",
+      "Regulators respond by lowering interest rates, which reduces savings",
+      "Unethical professionals pay more tax, which crowds out private investment"
+    ],
+    "answer": "A",
+    "explanation": "Information asymmetry means clients rely on trust. When trust erodes, participation falls and required returns rise, so capital becomes more expensive and is allocated less efficiently.",
+    "rationale": {
+      "A": "Correct. Loss of trust reduces participation and raises required returns, increasing the cost of capital.",
+      "B": "Incorrect. Monetary policy is not the transmission channel discussed; the harm comes from reduced trust and participation.",
+      "C": "Incorrect. There is no link between unethical conduct and higher tax payments in this reasoning."
+    }
+  },
+  {
+    "id": "q-cfa1-ethics-and-trust-3",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "ethics-and-trust",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Hana Osei, a portfolio manager at the fictional Northlight Advisors, tells a colleague: \"I have always been an honest person, so I don't need to run this unusual trade past compliance.\" Hana's reasoning most clearly reflects which challenge to ethical behaviour?",
+    "options": [
+      "Short-term focus",
+      "Situational influence from peers",
+      "Overconfidence"
+    ],
+    "answer": "C",
+    "explanation": "Believing that one's own good character guarantees ethical decisions is overconfidence. It leads people to skip the checks and guidance that would expose problems.",
+    "rationale": {
+      "A": "Incorrect. Short-term focus is about overweighting immediate rewards; Hana is relying on her self-image, not chasing a quick gain.",
+      "B": "Incorrect. No peer pressure is described; Hana's reasoning comes from her own belief about herself.",
+      "C": "Correct. Assuming you are ethical, and therefore your choices must be, is the hallmark of overconfidence bias."
+    }
+  },
+  {
+    "id": "q-cfa1-ethics-and-trust-4",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "ethics-and-trust",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst at the fictional Corvid Research is asked by a senior partner to delay publishing a negative report until the partner's family has sold its shares. Using a structured ethical decision-making framework, what should the analyst do FIRST?",
+    "options": [
+      "Identify the relevant facts, the affected stakeholders, her duties to each and the conflict of interest involved",
+      "Decide immediately to publish, because acting quickly is the main purpose of the framework",
+      "Reflect on the outcome to see whether clients were harmed"
+    ],
+    "answer": "A",
+    "explanation": "The framework starts with identification: what are the facts, who is affected, what duties are owed and what conflicts exist. Only then does one consider alternatives, decide and act, and finally reflect.",
+    "rationale": {
+      "A": "Correct. Identification of facts, stakeholders, duties and conflicts is the first step of the framework.",
+      "B": "Incorrect. Deciding and acting comes after identifying the issues and considering alternatives and influences.",
+      "C": "Incorrect. Reflection is the final step, performed after the decision has been made and carried out."
+    }
+  }
+]

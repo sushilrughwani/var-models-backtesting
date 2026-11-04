@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-cash-flow-statement-i-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "cash-flow-statement-i",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company reports net income of USD 150, depreciation of USD 40 and a gain on sale of equipment of USD 12. During the year accounts receivable increased by USD 25, inventory increased by USD 10 and accounts payable increased by USD 18 (all in thousands). Cash flow from operations (USD thousands) is closest to:",
+    "options": ["161", "185", "125"],
+    "answer": "A",
+    "explanation": "CFO = 150 + 40 - 12 - 25 - 10 + 18 = 161.",
+    "rationale": {
+      "A": "Correct. Add depreciation, subtract the gain, subtract increases in receivables and inventory, add the increase in payables.",
+      "B": "Incorrect. 185 adds the gain instead of subtracting it; the sale proceeds belong in investing activities.",
+      "C": "Incorrect. 125 subtracts the increase in accounts payable instead of adding it."
+    },
+    "verify": "return 150 + 40 - 12 - 25 - 10 + 18;",
+    "numericAnswer": 161,
+    "tolerance": 0.5,
+    "tags": ["indirect-method", "cfo"]
+  },
+  {
+    "id": "q-cfa1-cash-flow-statement-i-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "cash-flow-statement-i",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A company reports revenue of USD 800 million. Accounts receivable were USD 90 million at the start of the year and USD 70 million at the end. Cash collected from customers (USD millions) is closest to:",
+    "options": ["780", "820", "800"],
+    "answer": "B",
+    "explanation": "Receivables fell by 20, so the company collected more cash than it recognised as revenue: 800 + 20 = 820.",
+    "rationale": {
+      "A": "Incorrect. 780 treats the decrease in receivables as an increase.",
+      "B": "Correct. Cash collected = revenue - change in receivables = 800 - (70 - 90) = 820.",
+      "C": "Incorrect. 800 ignores the change in receivables and assumes revenue equals cash."
+    },
+    "verify": "return 800 - (70 - 90);",
+    "numericAnswer": 820,
+    "tolerance": 0.5,
+    "tags": ["direct-method"]
+  },
+  {
+    "id": "q-cfa1-cash-flow-statement-i-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "cash-flow-statement-i",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Under IFRS, interest paid by a company may be classified in the statement of cash flows as:",
+    "options": ["operating activities only.", "either operating or financing activities.", "either investing or financing activities."],
+    "answer": "B",
+    "explanation": "IFRS permits interest paid to be shown in operating or financing activities, applied consistently. US GAAP requires operating.",
+    "rationale": {
+      "A": "Incorrect. Operating-only is the US GAAP requirement; IFRS allows a choice.",
+      "B": "Correct. IFRS allows interest paid in operating or financing activities.",
+      "C": "Incorrect. Interest paid is never an investing cash flow; investing is an option only for interest and dividends received."
+    },
+    "tags": ["classification", "ifrs-vs-us-gaap"]
+  },
+  {
+    "id": "q-cfa1-cash-flow-statement-i-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "cash-flow-statement-i",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A company acquires a warehouse by issuing a five-year note payable directly to the seller. No cash changes hands. In the statement of cash flows, this transaction is most likely:",
+    "options": ["an investing outflow and a financing inflow of equal amounts.", "an investing outflow only.", "excluded from the three sections and disclosed as a non-cash investing and financing activity."],
+    "answer": "C",
+    "explanation": "Transactions that involve no cash are excluded from operating, investing and financing totals and disclosed separately.",
+    "rationale": {
+      "A": "Incorrect. Grossing up the transaction would show cash flows that never happened.",
+      "B": "Incorrect. No cash left the company, so there is no investing outflow.",
+      "C": "Correct. Non-cash investing and financing transactions are disclosed in a note or supplementary schedule."
+    },
+    "tags": ["non-cash-transactions"]
+  }
+]

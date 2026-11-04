@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-cfa1-arbitrage-replication-cost-of-carry-1",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "arbitrage-replication-cost-of-carry",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Gold trades at USD 1,800 per ounce. The present value of storage and insurance costs over the next year is USD 30, and the annual risk-free rate is 5%. The no-arbitrage one-year forward price is closest to:",
+    "options": ["USD 1,890.00", "USD 1,858.50", "USD 1,921.50"],
+    "answer": "C",
+    "explanation": "F0 = (S0 + PV(C))(1 + r)^T = (1,800 + 30) × 1.05 = 1,921.50.",
+    "rationale": {
+      "A": "Incorrect. 1,890.00 = 1,800 × 1.05 ignores storage costs.",
+      "B": "Incorrect. 1,858.50 subtracts storage costs as if they were income; costs raise the forward price.",
+      "C": "Correct. (1,800 + 30) × 1.05 = 1,921.50."
+    },
+    "verify": "return (1800+30)*1.05;",
+    "numericAnswer": 1921.5,
+    "tolerance": 0.01,
+    "tags": ["cost-of-carry"]
+  },
+  {
+    "id": "q-cfa1-arbitrage-replication-cost-of-carry-2",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "arbitrage-replication-cost-of-carry",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An equity index is at 100 and has a continuously compounded dividend yield of 1.5%. The continuously compounded risk-free rate is 4%. The no-arbitrage six-month forward price is closest to:",
+    "options": ["101.26", "102.02", "100.75"],
+    "answer": "A",
+    "explanation": "F0 = S0 × e^((r − q)T) = 100 × e^((0.04 − 0.015) × 0.5) = 100 × e^0.0125 = 101.26.",
+    "rationale": {
+      "A": "Correct. 100 × e^0.0125 = 101.26.",
+      "B": "Incorrect. 102.02 = 100 × e^(0.04 × 0.5) ignores the dividend yield.",
+      "C": "Incorrect. 100.75 = 100 × e^(0.015 × 0.5) uses the dividend yield in place of the net carry rate."
+    },
+    "verify": "return 100*Math.exp((0.04-0.015)*0.5);",
+    "numericAnswer": 101.26,
+    "tolerance": 0.01,
+    "tags": ["continuous-compounding"]
+  },
+  {
+    "id": "q-cfa1-arbitrage-replication-cost-of-carry-3",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "arbitrage-replication-cost-of-carry",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A forward contract on a non-dividend-paying share is quoted below its no-arbitrage price. An arbitrageur should most likely:",
+    "options": [
+      "borrow, buy the share and go short the forward",
+      "short-sell the share, lend the proceeds and go long the forward",
+      "go long the forward and hold it unhedged until expiration"
+    ],
+    "answer": "B",
+    "explanation": "An underpriced forward should be bought, and the asset sold short with the proceeds lent at the risk-free rate (reverse cash-and-carry). At expiration the forward delivers the share to close the short position.",
+    "rationale": {
+      "A": "Incorrect. This cash-and-carry trade profits when the forward is overpriced, not underpriced.",
+      "B": "Correct. Reverse cash-and-carry locks in the gap between the no-arbitrage price and the cheap market forward.",
+      "C": "Incorrect. An unhedged long forward is a speculative position, not a riskless arbitrage."
+    },
+    "tags": ["arbitrage"]
+  },
+  {
+    "id": "q-cfa1-arbitrage-replication-cost-of-carry-4",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "arbitrage-replication-cost-of-carry",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A non-dividend-paying share trades at USD 60 and the annual risk-free rate is 3%. A dealer offers a one-year forward at USD 63. The riskless profit per share at expiration from the appropriate arbitrage is closest to:",
+    "options": ["USD 3.00", "USD 1.20", "USD 1.17"],
+    "answer": "B",
+    "explanation": "F0 = 60 × 1.03 = 61.80. The market forward of 63 is overpriced, so a cash-and-carry earns 63 − 61.80 = 1.20 at expiration.",
+    "rationale": {
+      "A": "Incorrect. 3.00 = 63 − 60 ignores the cost of financing the share purchase.",
+      "B": "Correct. 63 − 60 × 1.03 = 1.20.",
+      "C": "Incorrect. 1.17 is the present value of the profit today; the question asks for the profit at expiration."
+    },
+    "verify": "return 63-60*1.03;",
+    "numericAnswer": 1.2,
+    "tolerance": 0.01,
+    "tags": ["arbitrage"]
+  }
+]

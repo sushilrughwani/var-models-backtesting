@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q-cfa1-governance-risks-and-esg-1",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "governance-risks-and-esg",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A company has 2,400,000 voting shares and is electing 7 directors using cumulative voting. The minimum number of shares a shareholder must own to guarantee the election of 3 directors is closest to:",
+    "options": ["1,028,572", "900,001", "1,200,001"],
+    "answer": "B",
+    "explanation": "Shares needed = n × S / (D + 1) + 1 = 3 × 2,400,000 / 8 + 1 = 900,000 + 1 = 900,001.",
+    "rationale": {
+      "A": "Incorrect. 1,028,572 comes from dividing by the number of seats (7) instead of seats plus one (8).",
+      "B": "Correct. 3 × 2,400,000 / (7 + 1) = 900,000; one more share guarantees 3 seats.",
+      "C": "Incorrect. 1,200,001 is a simple majority, which would win every seat under straight voting; far fewer shares suffice for 3 seats under cumulative voting."
+    },
+    "verify": "const S=2400000, D=7, n=3; return Math.floor(n*S/(D+1))+1;",
+    "numericAnswer": 900001,
+    "tolerance": 0.5,
+    "tags": ["governance", "cumulative-voting"]
+  },
+  {
+    "id": "q-cfa1-governance-risks-and-esg-2",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "governance-risks-and-esg",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which board feature is most likely to entrench existing management and weaken shareholders' ability to effect change?",
+    "options": ["A staggered board with three-year director terms", "An audit committee made up entirely of independent directors", "Separation of the CEO and board chair roles"],
+    "answer": "A",
+    "explanation": "With a staggered board, only about one-third of seats are elected each year, so shareholders need multiple annual meetings to replace a majority, which protects incumbents.",
+    "rationale": {
+      "A": "Correct. Staggered terms slow board turnover and act as a takeover and activism defence.",
+      "B": "Incorrect. An independent audit committee strengthens oversight of financial reporting.",
+      "C": "Incorrect. Separating the CEO and chair improves the board's ability to monitor the CEO."
+    },
+    "tags": ["governance", "board-structure"]
+  },
+  {
+    "id": "q-cfa1-governance-risks-and-esg-3",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "governance-risks-and-esg",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An analyst lowers her valuation of a coal producer because tighter climate regulation may prevent part of its reserves from ever being mined. This adjustment is best described as considering:",
+    "options": ["a governance factor through negative screening", "a social factor related to labour practices", "an environmental factor, specifically stranded asset risk"],
+    "answer": "C",
+    "explanation": "Reserves that may never be produced because of climate policy are stranded assets, an environmental risk. Building it into the valuation is ESG integration, not screening.",
+    "rationale": {
+      "A": "Incorrect. The issue is environmental, and the analyst is adjusting a valuation rather than excluding the stock.",
+      "B": "Incorrect. Labour practices are social factors; the concern here is climate regulation.",
+      "C": "Correct. Climate-driven impairment of reserves is the classic stranded asset example."
+    },
+    "tags": ["esg", "stranded-assets"]
+  },
+  {
+    "id": "q-cfa1-governance-risks-and-esg-4",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "governance-risks-and-esg",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with an otherwise similar firm with weak governance, a firm with strong governance is most likely to have:",
+    "options": ["higher reported earnings in every period", "a lower cost of capital", "no exposure to agency conflicts"],
+    "answer": "B",
+    "explanation": "Strong governance reduces agency and reporting risk, so investors require less compensation, which lowers the cost of debt and equity.",
+    "rationale": {
+      "A": "Incorrect. Governance quality does not guarantee higher earnings every period; it improves reliability, not the level of every result.",
+      "B": "Correct. Lower agency and information risk translates into a lower required return.",
+      "C": "Incorrect. Governance mitigates agency conflicts but cannot eliminate them."
+    },
+    "tags": ["governance", "benefits"]
+  }
+]

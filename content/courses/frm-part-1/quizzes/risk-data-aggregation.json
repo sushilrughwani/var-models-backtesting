@@ -1,0 +1,91 @@
+[
+  {
+    "id": "q-frm1-risk-data-aggregation-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-data-aggregation",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank measures its exposure to one counterparty from three sources: USD 180 million in the lending system, USD 95 million in the derivatives system and EUR 50 million in a subsidiary's books (EUR/USD = 1.08). Reconciliation shows a USD 25 million loan recorded in both the lending system and the subsidiary. The correct consolidated exposure (USD millions) is closest to:",
+    "options": ["329", "304", "300", "275"],
+    "answer": "B",
+    "explanation": "Convert: 50 × 1.08 = 54. Sum: 180 + 95 + 54 = 329. Remove the double count: 329 - 25 = USD 304 million.",
+    "rationale": {
+      "A": "Incorrect. 329 converts the subsidiary correctly but leaves the double-counted loan in the total.",
+      "B": "Correct. Convert the euro exposure, add all sources and subtract the double-booked loan: 304.",
+      "C": "Incorrect. 300 adds the subsidiary's EUR 50 million as if it were dollars before removing the double count.",
+      "D": "Incorrect. 275 omits the subsidiary entirely, the kind of completeness failure the principles aim to prevent."
+    },
+    "verify": "return 180 + 95 + 50*1.08 - 25;",
+    "numericAnswer": 304,
+    "tolerance": 0.5,
+    "tags": ["aggregation", "completeness"]
+  },
+  {
+    "id": "q-frm1-risk-data-aggregation-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-data-aggregation",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Under the principles for risk data aggregation and risk reporting, who bears ultimate responsibility for the bank's risk data framework?",
+    "options": [
+      "The chief information officer, because data is an IT asset",
+      "The external auditor",
+      "The board and senior management",
+      "The banking supervisor"
+    ],
+    "answer": "C",
+    "explanation": "The governance principle places ownership of risk data aggregation and reporting with the board and senior management, supported by independent validation.",
+    "rationale": {
+      "A": "Incorrect. IT builds the infrastructure, but the principles stress that data quality is not merely an IT matter.",
+      "B": "Incorrect. Auditors may review controls but do not own the framework.",
+      "C": "Correct. The board and senior management are accountable for the risk data framework.",
+      "D": "Incorrect. Supervisors review compliance and impose remedies; they do not own a bank's framework."
+    },
+    "tags": ["governance"]
+  },
+  {
+    "id": "q-frm1-risk-data-aggregation-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-data-aggregation",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "During a sudden market shock, a supervisor asks Harbourline Bank for its exposure to the commercial real estate sector by region within 24 hours. The bank's systems can only produce exposures by legal entity, and the request takes two weeks. Which aggregation capability is most clearly deficient?",
+    "options": ["Adaptability", "Distribution", "Comprehensiveness", "Accuracy and integrity"],
+    "answer": "A",
+    "explanation": "Adaptability is the ability to generate aggregated data for ad hoc requests, including new cuts such as sector and region, especially during stress.",
+    "rationale": {
+      "A": "Correct. The bank cannot flexibly re-cut its data for an unplanned request, which is an adaptability failure (with timeliness also suffering).",
+      "B": "Incorrect. Distribution concerns getting reports to the right recipients, not the ability to produce them.",
+      "C": "Incorrect. Comprehensiveness is a reporting practice about covering all material risks in reports.",
+      "D": "Incorrect. Nothing suggests the underlying numbers are wrong; the problem is flexibility and speed."
+    },
+    "tags": ["adaptability", "stress"]
+  },
+  {
+    "id": "q-frm1-risk-data-aggregation-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-data-aggregation",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which statement about the principles for risk data aggregation and risk reporting is most accurate?",
+    "options": [
+      "Manual processes in risk data aggregation are prohibited.",
+      "All risk reports should be produced daily regardless of risk type or recipient.",
+      "Accuracy appears only as a reporting principle, not as an aggregation capability.",
+      "In stress, a bank may need to balance accuracy against timeliness, provided it understands and documents its tolerances."
+    ],
+    "answer": "D",
+    "explanation": "The principles accept trade-offs: rapid approximate data can be appropriate in a crisis if the bank knows the accuracy tolerance. Manual steps are allowed but controlled, frequency fits the risk and audience, and accuracy appears in both aggregation and reporting.",
+    "rationale": {
+      "A": "Incorrect. Manual workarounds are permitted if documented, controlled and kept to a minimum.",
+      "B": "Incorrect. Frequency should match the nature of the risk and the needs of the recipient, rising in stress.",
+      "C": "Incorrect. Accuracy and integrity is an aggregation capability and accuracy is also a reporting practice.",
+      "D": "Correct. The principles recognize the accuracy-timeliness trade-off, with known tolerances."
+    },
+    "tags": ["trade-offs", "reporting"]
+  }
+]

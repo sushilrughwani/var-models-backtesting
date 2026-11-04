@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q-cfa1-portfolio-planning-and-construction-1",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-planning-and-construction",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A client has a portfolio of USD 2,000,000 and plans to withdraw USD 70,000 at the end of each year for spending. Expected inflation is 3.0% and annual management costs are 0.4%. Using a multiplicative approach, the client's required annual return is closest to:",
+    "options": ["6.90%", "7.03%", "6.60%"],
+    "answer": "B",
+    "explanation": "Spending rate = 70,000 / 2,000,000 = 3.5%. Required return = (1.035)(1.03)(1.004) − 1 = 7.03%.",
+    "rationale": {
+      "A": "Incorrect. 6.90% adds the three rates (3.5 + 3.0 + 0.4) instead of compounding them.",
+      "B": "Correct. Compounding spending, inflation and costs gives 7.03%.",
+      "C": "Incorrect. 6.60% compounds spending and inflation but omits the 0.4% management costs."
+    },
+    "verify": "const s=70000/2000000,inf=0.03,c=0.004; return 100*((1+s)*(1+inf)*(1+c)-1);",
+    "numericAnswer": 7.03,
+    "tolerance": 0.005,
+    "tags": ["required-return", "ips"]
+  },
+  {
+    "id": "q-cfa1-portfolio-planning-and-construction-2",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-planning-and-construction",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Marcus, 58, is an enthusiastic trader who says he is comfortable with large swings in value. However, he plans to retire in two years and his portfolio must fund almost all of his living expenses. His overall risk tolerance is best described as:",
+    "options": ["below average, because his ability to take risk is low", "above average, because his willingness to take risk is high", "average, as the midpoint of ability and willingness"],
+    "answer": "A",
+    "explanation": "Marcus has high willingness but low ability: a short horizon to retirement and heavy dependence on the portfolio. When the two conflict, the adviser follows the lower, which here is ability.",
+    "rationale": {
+      "A": "Correct. Ability is low, and when ability and willingness conflict the lower of the two governs.",
+      "B": "Incorrect. Willingness cannot override a low ability to bear losses.",
+      "C": "Incorrect. Advisers do not average the two dimensions; the lower one generally determines overall risk tolerance."
+    },
+    "tags": ["risk-tolerance"]
+  },
+  {
+    "id": "q-cfa1-portfolio-planning-and-construction-3",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-planning-and-construction",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A family foundation's IPS states that it will not invest in companies that derive revenue from gambling. In the IPS, this item is most appropriately classified as:",
+    "options": ["a legal and regulatory constraint", "a unique circumstance", "a return objective"],
+    "answer": "B",
+    "explanation": "A voluntary ethical exclusion chosen by the client is a unique circumstance (implemented through negative screening). It is not imposed by law and is not a return objective.",
+    "rationale": {
+      "A": "Incorrect. No law requires the exclusion; it reflects the foundation's own values.",
+      "B": "Correct. Client-specific ethical or ESG restrictions fall under unique circumstances.",
+      "C": "Incorrect. Return objectives describe the return the client needs or wants, not restrictions on holdings."
+    },
+    "tags": ["constraints", "esg"]
+  },
+  {
+    "id": "q-cfa1-portfolio-planning-and-construction-4",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-planning-and-construction",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A manager's strategic asset allocation is 60% equities, with a permitted range of 55% to 65%. Expecting a short-term equity rally, the manager raises equities to 64% for three months. This decision is best described as:",
+    "options": ["a change to the strategic asset allocation", "security selection", "tactical asset allocation"],
+    "answer": "C",
+    "explanation": "A deliberate, temporary deviation from the policy weights, kept within the IPS ranges and based on short-term views, is tactical asset allocation. The strategic mix of 60% is unchanged.",
+    "rationale": {
+      "A": "Incorrect. The long-term policy weight remains 60%; only the current weight deviates temporarily.",
+      "B": "Incorrect. Security selection concerns choosing individual holdings within an asset class, not the asset-class weights.",
+      "C": "Correct. A short-term deviation within the allowed range is tactical asset allocation."
+    },
+    "tags": ["asset-allocation"]
+  }
+]

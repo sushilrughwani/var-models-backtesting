@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-portfolio-mathematics-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "portfolio-mathematics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio is invested 50% in Asset X (standard deviation 15%) and 50% in Asset Y (standard deviation 25%). The correlation between X and Y is 0.20. The portfolio's standard deviation is closest to:",
+    "options": ["20.00%", "14.58%", "15.81%"],
+    "answer": "C",
+    "explanation": "Variance = 0.25(225) + 0.25(625) + 2(0.5)(0.5)(0.20)(15)(25) = 56.25 + 156.25 + 37.5 = 250. Standard deviation = √250 = 15.81%.",
+    "rationale": {
+      "A": "Incorrect. 20.00% is the weighted average of the standard deviations, which is correct only if the correlation is +1.",
+      "B": "Incorrect. 14.58% omits the covariance term, which is correct only if the correlation is 0.",
+      "C": "Correct. √250 = 15.81%."
+    },
+    "verify": "const v=0.25*225+0.25*625+2*0.5*0.5*0.2*15*25; return Math.sqrt(v);",
+    "numericAnswer": 15.81,
+    "tolerance": 0.005,
+    "tags": ["portfolio-variance"]
+  },
+  {
+    "id": "q-cfa1-portfolio-mathematics-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "portfolio-mathematics",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "In State 1 (probability 0.4), Asset X returns 15% and Asset Y returns 8%. In State 2 (probability 0.6), X returns 5% and Y returns 2%. The covariance between the returns of X and Y (in %²) is closest to:",
+    "options": ["14.4", "31.2", "15.6"],
+    "answer": "A",
+    "explanation": "E(X) = 0.4(15) + 0.6(5) = 9; E(Y) = 0.4(8) + 0.6(2) = 4.4. Deviation products: (6)(3.6) = 21.6 and (-4)(-2.4) = 9.6. Covariance = 0.4(21.6) + 0.6(9.6) = 8.64 + 5.76 = 14.4.",
+    "rationale": {
+      "A": "Correct. Probability-weighted sum of deviation products = 14.4.",
+      "B": "Incorrect. 31.2 adds the deviation products without weighting them by state probabilities.",
+      "C": "Incorrect. 15.6 takes a simple average of the deviation products, treating the states as equally likely."
+    },
+    "verify": "const p=[0.4,0.6], x=[15,5], y=[8,2]; const ex=p[0]*x[0]+p[1]*x[1], ey=p[0]*y[0]+p[1]*y[1]; return p[0]*(x[0]-ex)*(y[0]-ey)+p[1]*(x[1]-ex)*(y[1]-ey);",
+    "numericAnswer": 14.4,
+    "tolerance": 0.05,
+    "tags": ["covariance"]
+  },
+  {
+    "id": "q-cfa1-portfolio-mathematics-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "portfolio-mathematics",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An investor holds two risky assets in fixed proportions. If the correlation between them falls from +0.8 to +0.2, the portfolio's:",
+    "options": ["expected return falls and standard deviation falls", "expected return is unchanged and standard deviation falls", "expected return is unchanged and standard deviation is unchanged"],
+    "answer": "B",
+    "explanation": "Expected return depends only on weights and asset expected returns. Lower correlation shrinks the covariance term, so portfolio standard deviation falls.",
+    "rationale": {
+      "A": "Incorrect. Correlation does not enter the expected return formula.",
+      "B": "Correct. Return is unchanged; risk falls because the covariance term is smaller.",
+      "C": "Incorrect. The covariance term depends directly on correlation, so risk changes."
+    },
+    "tags": ["diversification", "correlation"]
+  },
+  {
+    "id": "q-cfa1-portfolio-mathematics-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "portfolio-mathematics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A client needs a return of at least 3%. Portfolio 1 has an expected return of 9% and standard deviation of 12%; Portfolio 2 has 7% and 6%; Portfolio 3 has 11% and 18%. Using Roy's safety-first criterion, the client should choose:",
+    "options": ["Portfolio 3, because it has the highest expected return", "Portfolio 1, because it balances return and risk", "Portfolio 2, because it has the highest safety-first ratio"],
+    "answer": "C",
+    "explanation": "SFRatios: Portfolio 1 = (9 - 3)/12 = 0.50; Portfolio 2 = (7 - 3)/6 = 0.67; Portfolio 3 = (11 - 3)/18 = 0.44. The highest ratio minimises the probability of falling below 3% (under normality).",
+    "rationale": {
+      "A": "Incorrect. Portfolio 3 has the highest expected return but the lowest SFRatio (0.44) because of its high risk.",
+      "B": "Incorrect. Portfolio 1's SFRatio of 0.50 is below Portfolio 2's 0.67.",
+      "C": "Correct. Portfolio 2's SFRatio of 0.67 is the highest, so it has the lowest shortfall probability."
+    },
+    "tags": ["safety-first"]
+  }
+]

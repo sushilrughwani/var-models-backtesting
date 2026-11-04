@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-international-trade-1",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "international-trade",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In one hour of labour, Country X can produce 8 phones or 2 tons of wheat, while Country Y can produce 3 phones or 1.5 tons of wheat. The lowest opportunity cost of producing one ton of wheat, and the country that has it, are closest to:",
+    "options": ["2.00 phones; Country Y", "4.00 phones; Country X", "0.25 phones; Country X"],
+    "answer": "A",
+    "explanation": "X gives up 8/2 = 4 phones per ton of wheat; Y gives up 3/1.5 = 2 phones. Y has the lower opportunity cost and therefore the comparative advantage in wheat.",
+    "rationale": {
+      "A": "Correct. Country Y sacrifices only 2 phones per ton of wheat, less than Country X's 4.",
+      "B": "Incorrect. 4 phones is Country X's opportunity cost, which is the higher of the two. X has the absolute advantage in wheat but not the comparative advantage.",
+      "C": "Incorrect. 0.25 inverts the ratio for Country X (tons of wheat per phone); that is X's opportunity cost of a phone, not of wheat."
+    },
+    "verify": "const xc=8/2, yc=3/1.5; return Math.min(xc,yc);",
+    "numericAnswer": 2,
+    "tolerance": 0.005,
+    "tags": ["comparative-advantage"]
+  },
+  {
+    "id": "q-cfa1-international-trade-2",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "international-trade",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A small country has domestic demand Qd = 200 − 10P and domestic supply Qs = −40 + 10P for a good with a world price of 10. The government imposes a tariff of 1 per unit. The deadweight loss from the tariff is closest to:",
+    "options": ["20", "10", "30"],
+    "answer": "B",
+    "explanation": "At P = 10: Qd = 100, Qs = 60. At P = 11: Qd = 90, Qs = 70, imports 20. Consumer loss = 1 × (100 + 90)/2 = 95; producer gain = 1 × (60 + 70)/2 = 65; revenue = 1 × 20 = 20. Deadweight loss = 95 − 65 − 20 = 10.",
+    "rationale": {
+      "A": "Incorrect. 20 is the tariff revenue collected on the remaining imports, which is a transfer to the government, not a loss.",
+      "B": "Correct. The two triangles are 0.5 × 1 × 10 (production) and 0.5 × 1 × 10 (consumption), totalling 10.",
+      "C": "Incorrect. 30 is the consumer loss minus the producer gain only; it forgets to subtract the tariff revenue."
+    },
+    "verify": "const pw=10,t=1; const qd=p=>200-10*p, qs=p=>-40+10*p; const cs=t*(qd(pw)+qd(pw+t))/2, ps=t*(qs(pw)+qs(pw+t))/2, rev=t*(qd(pw+t)-qs(pw+t)); return cs-ps-rev;",
+    "numericAnswer": 10,
+    "tolerance": 0.05,
+    "tags": ["tariffs", "deadweight-loss"]
+  },
+  {
+    "id": "q-cfa1-international-trade-3",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "international-trade",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Several countries remove all tariffs on trade among themselves and adopt a common tariff on imports from non-members, but they do not allow free movement of labour or capital. This arrangement is best described as a:",
+    "options": ["free trade area", "common market", "customs union"],
+    "answer": "C",
+    "explanation": "A customs union combines free internal trade with a common external tariff. Free factor movement would make it a common market.",
+    "rationale": {
+      "A": "Incorrect. In a free trade area each member keeps its own external tariffs; here the external tariff is common.",
+      "B": "Incorrect. A common market also allows free movement of labour and capital, which is absent here.",
+      "C": "Correct. Free trade among members plus a common external tariff defines a customs union."
+    },
+    "tags": ["trading-blocs"]
+  },
+  {
+    "id": "q-cfa1-international-trade-4",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "international-trade",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An importing country persuades a foreign supplier to limit its shipments through a voluntary export restraint rather than imposing an equivalent import quota with licences sold by the government. Compared with the quota, the VER most likely:",
+    "options": ["produces a lower domestic price for consumers", "transfers the quota rent to foreign exporters, increasing the importing country's welfare loss", "eliminates the deadweight loss because the restraint is voluntary"],
+    "answer": "B",
+    "explanation": "Both restrict quantity and raise the domestic price similarly, but under a VER foreign exporters capture the gap between domestic and world prices, so the importing country loses that rent as well.",
+    "rationale": {
+      "A": "Incorrect. With the same quantity limit, the domestic price rise is essentially the same.",
+      "B": "Correct. The rent that the government would have captured by selling licences goes to foreign exporters instead.",
+      "C": "Incorrect. Restricting imports still distorts production and consumption, so deadweight losses remain."
+    },
+    "tags": ["trade-restrictions"]
+  }
+]

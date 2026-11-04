@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm1-how-firms-manage-risk-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "how-firms-manage-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A firm's pre-tax earnings next year will be either USD 30 million or USD 90 million with equal probability. Tax is 25% on earnings up to USD 60 million and 45% on earnings above USD 60 million. A costless hedge would lock in earnings of USD 60 million. The expected tax saving from hedging is closest to (USD millions):",
+    "options": ["0.0", "6.0", "3.0", "18.0"],
+    "answer": "C",
+    "explanation": "Tax at 30m = 0.25 × 30 = 7.5m. Tax at 90m = 0.25 × 60 + 0.45 × 30 = 28.5m. Expected tax unhedged = (7.5 + 28.5)/2 = 18.0m. Tax when hedged at 60m = 15.0m. Saving = 3.0m.",
+    "rationale": {
+      "A": "Incorrect. Zero saving would hold only if the tax schedule were linear; here it is convex.",
+      "B": "Incorrect. 6.0 applies the 20-point rate difference to the 30m excess without weighting by the 50% probability of the high-earnings state.",
+      "C": "Correct. Expected unhedged tax of 18.0m minus hedged tax of 15.0m gives a 3.0m saving.",
+      "D": "Incorrect. 18.0 is the expected tax without hedging, not the saving."
+    },
+    "verify": "const T=x=>0.25*Math.min(x,60)+0.45*Math.max(x-60,0); return (T(30)+T(90))/2 - T(60);",
+    "numericAnswer": 3.0,
+    "tolerance": 0.05,
+    "tags": ["hedging-rationale", "tax-convexity"]
+  },
+  {
+    "id": "q-frm1-how-firms-manage-risk-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "how-firms-manage-risk",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A US importer must pay GBP 2 million in three months and buys GBP forward at 1.27 USD per GBP. At maturity the spot rate is 1.35 USD per GBP. Compared with not hedging, the forward reduced the importer's USD cost by approximately:",
+    "options": ["USD 160,000", "USD 2,540,000", "USD 2,700,000", "USD 125,984"],
+    "answer": "A",
+    "explanation": "Unhedged cost = 2,000,000 × 1.35 = 2,700,000. Hedged cost = 2,000,000 × 1.27 = 2,540,000. Saving = 160,000.",
+    "rationale": {
+      "A": "Correct. The forward saved 2,000,000 × (1.35 − 1.27) = USD 160,000.",
+      "B": "Incorrect. 2,540,000 is the hedged USD cost, not the reduction in cost.",
+      "C": "Incorrect. 2,700,000 is the unhedged USD cost.",
+      "D": "Incorrect. This divides the 160,000 saving by the forward rate, converting a USD amount as if it were GBP."
+    },
+    "verify": "return 2e6*(1.35-1.27);",
+    "numericAnswer": 160000,
+    "tolerance": 1,
+    "tags": ["forward-hedge", "fx-risk"]
+  },
+  {
+    "id": "q-frm1-how-firms-manage-risk-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "how-firms-manage-risk",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In a world with no taxes, no costs of financial distress, no transaction costs and symmetric information, which statement about corporate hedging is most accurate?",
+    "options": [
+      "Hedging always increases firm value because it lowers volatility",
+      "Hedging increases firm value only for firms with high leverage",
+      "Hedging destroys value because derivatives are zero-sum",
+      "Hedging does not increase firm value because shareholders can manage the risk in their own portfolios"
+    ],
+    "answer": "D",
+    "explanation": "Without frictions, investors can replicate or undo any hedge themselves, so corporate hedging cannot create value. The case for hedging rests on real-world frictions such as convex taxes and distress costs.",
+    "rationale": {
+      "A": "Incorrect. Lower volatility alone does not raise value when investors can diversify costlessly.",
+      "B": "Incorrect. Leverage matters only through distress costs, which are assumed away here.",
+      "C": "Incorrect. In a frictionless world costless hedging neither creates nor destroys value.",
+      "D": "Correct. With no frictions, homemade hedging by shareholders makes corporate hedging irrelevant to value."
+    },
+    "tags": ["hedging-rationale"]
+  },
+  {
+    "id": "q-frm1-how-firms-manage-risk-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "how-firms-manage-risk",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following best describes the relationship between risk capacity, risk appetite and risk limits?",
+    "options": [
+      "Risk limits set the maximum risk the firm can survive, and risk appetite is set above them",
+      "Risk capacity is the most risk the firm can bear, risk appetite is the amount it chooses to take below that, and limits translate appetite into operational controls",
+      "Risk appetite and risk capacity are the same thing, set by the trading desks",
+      "Risk capacity is chosen by individual business lines, and the board sets limits only after losses occur"
+    ],
+    "answer": "B",
+    "explanation": "Capacity is the ceiling the firm could absorb before failing. The board sets appetite below capacity in the risk appetite statement, and limits cascade that appetite into day-to-day controls.",
+    "rationale": {
+      "A": "Incorrect. Limits are derived from appetite and sit below it; they do not define survival capacity.",
+      "B": "Correct. Capacity ≥ appetite, and limits operationalise appetite.",
+      "C": "Incorrect. They differ, and appetite is a board-level decision, not a desk-level one.",
+      "D": "Incorrect. Appetite and limits are set in advance by the board and management, not reactively by business lines."
+    },
+    "tags": ["risk-appetite"]
+  }
+]

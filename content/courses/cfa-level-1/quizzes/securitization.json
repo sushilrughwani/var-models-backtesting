@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-securitization-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "securitization",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An SPE holds a USD 450 million loan pool and issues a senior tranche of USD 360 million, a mezzanine tranche of USD 60 million and a subordinated tranche of USD 30 million. The credit enhancement provided by subordination to the senior tranche, as a percentage of the pool, is closest to:",
+    "options": ["80.0%", "6.7%", "20.0%"],
+    "answer": "C",
+    "explanation": "The senior tranche is protected by all tranches junior to it: (60 + 30) / 450 = 20.0%.",
+    "rationale": {
+      "A": "Incorrect. This is the senior tranche's own share of the pool, not the protection beneath it.",
+      "B": "Incorrect. This counts only the subordinated tranche and omits the mezzanine tranche, which also sits below the senior tranche.",
+      "C": "Correct. 90 / 450 = 20.0%."
+    },
+    "verify": "return (60+30)/450*100;",
+    "numericAnswer": 20.0,
+    "tolerance": 0.05,
+    "tags": ["subordination", "credit-enhancement"]
+  },
+  {
+    "id": "q-cfa1-securitization-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "securitization",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Using the same structure (pool USD 450 million; senior 360, mezzanine 60, subordinated 30), the pool suffers cumulative losses of USD 75 million. The loss to the mezzanine tranche, as a percentage of its par, is closest to:",
+    "options": ["75.0%", "100.0%", "16.7%"],
+    "answer": "A",
+    "explanation": "The subordinated tranche absorbs the first 30 million (a 100% loss). The remaining 45 million hits the mezzanine tranche: 45 / 60 = 75.0%. The senior tranche is untouched.",
+    "rationale": {
+      "A": "Correct. 75 − 30 = 45 million of loss, divided by the 60 million mezzanine par.",
+      "B": "Incorrect. The mezzanine tranche would be wiped out only if pool losses reached 90 million.",
+      "C": "Incorrect. This is the pool-wide loss rate (75/450); losses are not shared pro rata among tranches."
+    },
+    "verify": "const L=75; const sub=30, mez=60; return Math.min(mez, Math.max(0, L-sub))/mez*100;",
+    "numericAnswer": 75.0,
+    "tolerance": 0.05,
+    "tags": ["waterfall", "tranching"]
+  },
+  {
+    "id": "q-cfa1-securitization-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "securitization",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Orvell Finance, rated BBB, securitises a pool of equipment loans through a special purpose entity, and the senior ABS tranche is rated AAA. The main reason the senior tranche can be rated above Orvell is that:",
+    "options": ["Orvell guarantees the ABS with its own balance sheet", "the true sale to a bankruptcy-remote SPE separates the loans from Orvell's credit risk, and subordination absorbs early losses", "rating agencies always rate securitised bonds AAA"],
+    "answer": "B",
+    "explanation": "After a true sale, Orvell's creditors cannot claim the pool, so senior investors depend only on loan performance, which is further protected by junior tranches.",
+    "rationale": {
+      "A": "Incorrect. A guarantee from a BBB issuer could not lift the rating to AAA; ABS investors generally have no recourse to the originator.",
+      "B": "Correct. Bankruptcy remoteness plus credit enhancement allow a rating above the originator's.",
+      "C": "Incorrect. Junior tranches and weak pools receive low ratings; AAA is never automatic."
+    },
+    "tags": ["special-purpose-entity", "bankruptcy-remoteness"]
+  },
+  {
+    "id": "q-cfa1-securitization-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "securitization",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which feature most clearly distinguishes a covered bond from an asset-backed security?",
+    "options": ["Covered bonds are backed by a pool of loans", "Covered bonds can be tranched into senior and subordinated classes", "Covered bond investors have recourse to both the cover pool and the issuing bank"],
+    "answer": "C",
+    "explanation": "In a covered bond, the loans stay on the bank's balance sheet and investors have dual recourse. ABS investors rely only on the SPE's assets.",
+    "rationale": {
+      "A": "Incorrect. Both covered bonds and ABS are backed by loan pools, so this does not distinguish them.",
+      "B": "Incorrect. Tranching is characteristic of ABS; covered bonds are typically a single class.",
+      "C": "Correct. Dual recourse is the defining difference."
+    },
+    "tags": ["covered-bonds"]
+  }
+]

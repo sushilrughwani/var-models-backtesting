@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-cfa1-yield-and-spread-measures-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "yield-and-spread-measures",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A 180-day bill with a face value of 100 is quoted at a discount rate of 5.00% using a 360-day year. Its bond-equivalent yield (add-on rate, 365-day year) is closest to:",
+    "options": ["5.13%", "5.00%", "5.20%"],
+    "answer": "C",
+    "explanation": "Price = 100 × (1 − 180/360 × 0.05) = 97.50. BEY = (365/180) × (2.50/97.50) = 5.20%.",
+    "rationale": {
+      "A": "Incorrect. 5.13% is the add-on rate on a 360-day year; the bond-equivalent yield uses 365 days.",
+      "B": "Incorrect. 5.00% is the quoted discount rate, which divides by face value and understates the return.",
+      "C": "Correct. Dividing the 2.50 gain by the 97.50 price and annualising over 365 days gives 5.20%."
+    },
+    "verify": "const pv=100*(1-180/360*0.05); return 365/180*(100-pv)/pv*100;",
+    "numericAnswer": 5.2,
+    "tolerance": 0.005,
+    "tags": ["money-market"]
+  },
+  {
+    "id": "q-cfa1-yield-and-spread-measures-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "yield-and-spread-measures",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A 6-year, 7% annual-coupon bond (par 100) trades at 105. It is callable in 3 years at 101 and has no other call dates. The bond's yield to worst is closest to:",
+    "options": ["5.46%", "5.98%", "6.67%"],
+    "answer": "A",
+    "explanation": "YTM: solve 105 = Σ 7/(1+y)^t + 100/(1+y)^6, y = 5.98%. YTC: solve 105 = 7/(1+y) + 7/(1+y)^2 + 108/(1+y)^3, y = 5.46%. Yield to worst = lower of the two = 5.46%.",
+    "rationale": {
+      "A": "Correct. The yield to call of 5.46% is below the YTM, so it is the yield to worst.",
+      "B": "Incorrect. 5.98% is the yield to maturity, which is not the lowest available yield.",
+      "C": "Incorrect. 6.67% is the current yield (7/105), which ignores the loss of premium at call or maturity."
+    },
+    "verify": "const f=y=>7/(1+y)+7/Math.pow(1+y,2)+108/Math.pow(1+y,3)-105; let a=0,b=0.2; for(let i=0;i<200;i++){const m=(a+b)/2; if(f(m)>0)a=m; else b=m;} return (a+b)/2*100;",
+    "numericAnswer": 5.46,
+    "tolerance": 0.005,
+    "tags": ["yield-to-call"]
+  },
+  {
+    "id": "q-cfa1-yield-and-spread-measures-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "yield-and-spread-measures",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bond's yield is 4.80% stated on a semiannual bond basis. The equivalent annual yield compounded monthly is closest to:",
+    "options": ["4.86%", "4.75%", "4.80%"],
+    "answer": "B",
+    "explanation": "(1 + 0.048/2)^2 = (1 + r/12)^12, so r = 12 × (1.024^(1/6) − 1) = 4.75%.",
+    "rationale": {
+      "A": "Incorrect. 4.86% is the effective annual yield (1.024^2 − 1), not the monthly-compounded rate.",
+      "B": "Correct. More frequent compounding requires a lower stated rate for the same effective return: 4.75%.",
+      "C": "Incorrect. 4.80% ignores the change in compounding frequency."
+    },
+    "verify": "return 12*(Math.pow(1.024,1/6)-1)*100;",
+    "numericAnswer": 4.75,
+    "tolerance": 0.005,
+    "tags": ["periodicity"]
+  },
+  {
+    "id": "q-cfa1-yield-and-spread-measures-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "yield-and-spread-measures",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "For a callable corporate bond, the relationship between its option-adjusted spread (OAS) and its Z-spread is most likely:",
+    "options": [
+      "The OAS is smaller than the Z-spread",
+      "The OAS equals the Z-spread",
+      "The OAS is larger than the Z-spread"
+    ],
+    "answer": "A",
+    "explanation": "OAS = Z-spread − option value. A call option benefits the issuer and costs the investor, so part of the Z-spread is compensation for the call; removing it leaves a smaller OAS.",
+    "rationale": {
+      "A": "Correct. Subtracting the value of the issuer's call option from the Z-spread gives a smaller OAS.",
+      "B": "Incorrect. The two are equal only for an option-free bond.",
+      "C": "Incorrect. OAS exceeds the Z-spread for a putable bond, where the option belongs to the investor."
+    },
+    "tags": ["spreads", "oas"]
+  }
+]

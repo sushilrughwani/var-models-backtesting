@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q-cfa1-interest-rate-swaps-1",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "interest-rate-swaps",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The one- and two-year discount factors are 0.97 and 0.93. The par fixed rate on a two-year annual-pay interest rate swap is closest to:",
+    "options": ["3.50%", "3.68%", "7.53%"],
+    "answer": "B",
+    "explanation": "Par swap rate = (1 − DF2) / (DF1 + DF2) = (1 − 0.93) / (0.97 + 0.93) = 0.07 / 1.90 = 3.68%.",
+    "rationale": {
+      "A": "Incorrect. 3.50% divides 0.07 by the number of periods (2) instead of the sum of discount factors.",
+      "B": "Correct. 0.07 / 1.90 = 3.68%.",
+      "C": "Incorrect. 7.53% divides 0.07 by only the final discount factor."
+    },
+    "verify": "return (1-0.93)/(0.97+0.93)*100;",
+    "numericAnswer": 3.68,
+    "tolerance": 0.005,
+    "tags": ["par-swap-rate"]
+  },
+  {
+    "id": "q-cfa1-interest-rate-swaps-2",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "interest-rate-swaps",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A plain-vanilla interest rate swap is best described as equivalent to:",
+    "options": [
+      "a series of forward rate agreements that all share one fixed rate",
+      "a single option on the floating interest rate",
+      "an exchange of notional principal at the start and the end of the contract"
+    ],
+    "answer": "A",
+    "explanation": "Each settlement date is a forward commitment to exchange fixed for floating, so the swap is a portfolio of FRAs with a single fixed rate. The notional is not exchanged.",
+    "rationale": {
+      "A": "Correct. A swap bundles forward commitments, one per settlement date, at a common fixed rate.",
+      "B": "Incorrect. A swap is a forward commitment with symmetric payoffs, not a contingent claim.",
+      "C": "Incorrect. In an interest rate swap the notional only sizes the payments; it is never exchanged."
+    },
+    "tags": ["swap-as-forwards"]
+  },
+  {
+    "id": "q-cfa1-interest-rate-swaps-3",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "interest-rate-swaps",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A firm pays a fixed rate of 3.00% annually and receives floating on a notional of USD 50 million. Two annual payments remain, and the current discount factors are 0.980 and 0.955. The value of the swap to the firm, in USD, is closest to:",
+    "options": ["−652,500", "652,500", "−674,419"],
+    "answer": "A",
+    "explanation": "New par rate = (1 − 0.955) / (0.980 + 0.955) = 0.045 / 1.935 = 2.3256%. Value to fixed payer = (0.023256 − 0.03) × 1.935 × 50,000,000 = −652,500. Rates have fallen, so paying 3% is now above market.",
+    "rationale": {
+      "A": "Correct. The payer is locked into an above-market fixed rate, giving a value of −652,500.",
+      "B": "Incorrect. +652,500 is the value to the fixed-rate receiver, not the payer.",
+      "C": "Incorrect. −674,419 multiplies the rate difference by 2 periods instead of the sum of discount factors, so it ignores discounting."
+    },
+    "verify": "const D=[0.98,0.955]; const S=D[0]+D[1]; const s=(1-D[1])/S; return (s-0.03)*S*50000000;",
+    "numericAnswer": -652500,
+    "tolerance": 1,
+    "tags": ["swap-valuation"]
+  },
+  {
+    "id": "q-cfa1-interest-rate-swaps-4",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "interest-rate-swaps",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Shortly after a company enters a receive-fixed interest rate swap at the par rate, market interest rates rise. The value of the swap to the company most likely:",
+    "options": [
+      "increases, because it receives a fixed rate",
+      "remains zero, because swaps are always valued at par",
+      "decreases, because it now receives a below-market fixed rate"
+    ],
+    "answer": "C",
+    "explanation": "After rates rise, the new par swap rate exceeds the contract's fixed rate. The fixed receiver collects less than the market rate, so the swap has negative value to it (and positive value to the fixed payer).",
+    "rationale": {
+      "A": "Incorrect. Receiving a fixed rate is a disadvantage when market rates rise.",
+      "B": "Incorrect. A swap's value is zero only at initiation (or if rates return to the original level); it changes as rates move.",
+      "C": "Correct. Higher rates make the locked-in fixed receipt below market, reducing the receiver's value."
+    },
+    "tags": ["swap-valuation"]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-market-efficiency-1",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "market-efficiency",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An analyst consistently earns abnormal risk-adjusted returns, after costs, by buying stocks shortly after they announce dividend increases. This evidence is most inconsistent with which form of market efficiency?",
+    "options": ["Weak form", "Strong form only", "Semi-strong form"],
+    "answer": "C",
+    "explanation": "Dividend announcements are public information. Profiting from them after the announcement contradicts the semi-strong form.",
+    "rationale": {
+      "A": "Incorrect. The weak form concerns only past prices and volume, not company announcements.",
+      "B": "Incorrect. Contradicting the semi-strong form also contradicts the strong form, but the evidence specifically targets public information, so semi-strong is the best answer.",
+      "C": "Correct. A public announcement should be reflected in price immediately; consistent profits from it violate semi-strong efficiency."
+    },
+    "tags": ["forms-of-efficiency"]
+  },
+  {
+    "id": "q-cfa1-market-efficiency-2",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "market-efficiency",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In a month, a stock with a beta of 1.3 returned 7.2% while the market returned 4.0%. The risk-free rate for the month was 0.3%. Using the CAPM as the model of expected return, the stock's abnormal return is closest to:",
+    "options": ["2.09%", "3.20%", "2.00%"],
+    "answer": "A",
+    "explanation": "Expected return = 0.3 + 1.3 × (4.0 − 0.3) = 5.11%. Abnormal return = 7.2 − 5.11 = 2.09%.",
+    "rationale": {
+      "A": "Correct. The abnormal return is the actual return minus the CAPM expected return of 5.11%.",
+      "B": "Incorrect. This is a market-adjusted return (7.2 − 4.0), which ignores the stock's beta.",
+      "C": "Incorrect. This uses 1.3 × 4.0 as the expected return, ignoring the risk-free rate in the CAPM."
+    },
+    "verify": "const e=0.3+1.3*(4.0-0.3); return 7.2-e;",
+    "numericAnswer": 2.09,
+    "tolerance": 0.005,
+    "tags": ["abnormal-return", "event-study"]
+  },
+  {
+    "id": "q-cfa1-market-efficiency-3",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "market-efficiency",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which explanation is least likely to account for an apparent market anomaly that disappears in later studies?",
+    "options": ["The original result came from data mining", "Insiders were trading on private information", "Transaction costs and unmeasured risk were ignored"],
+    "answer": "B",
+    "explanation": "Data mining, ignored costs and missing risk factors are standard reasons why anomalies look profitable in one sample and vanish later. Insider trading is a separate issue about the strong form.",
+    "rationale": {
+      "A": "Incorrect. Searching many data sets produces spurious patterns that fail out of sample, a classic reason anomalies disappear.",
+      "B": "Correct. Insider trading on private information relates to strong-form efficiency and does not explain why a published public-data anomaly fades.",
+      "C": "Incorrect. Many anomalies vanish once realistic costs and risk adjustments are applied."
+    },
+    "tags": ["anomalies"]
+  },
+  {
+    "id": "q-cfa1-market-efficiency-4",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "market-efficiency",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A stock with a beta of 1.2 has returns of 0.50%, 6.80% and 0.90% on days −1, 0 and +1 around an earnings announcement. The market returns on those days are 0.40%, 1.00% and −0.50%, and the daily risk-free rate is 0.01%. The cumulative abnormal return over the three days is closest to:",
+    "options": ["7.30%", "7.13%", "8.20%"],
+    "answer": "B",
+    "explanation": "Expected returns: 0.478%, 1.198%, −0.602%. Abnormal returns: 0.022%, 5.602%, 1.502%. CAR = 7.126% ≈ 7.13%.",
+    "rationale": {
+      "A": "Incorrect. This is the market-adjusted CAR (8.20 − 0.90), which subtracts the raw market return each day and so ignores the beta of 1.2 and the risk-free rate.",
+      "B": "Correct. Summing the CAPM-based abnormal returns gives 7.13%.",
+      "C": "Incorrect. This is the stock's raw cumulative return, with no adjustment for expected return."
+    },
+    "verify": "const rf=0.01,b=1.2,rs=[0.5,6.8,0.9],rm=[0.4,1.0,-0.5]; let c=0; for(let i=0;i<3;i++){c+=rs[i]-(rf+b*(rm[i]-rf));} return c;",
+    "numericAnswer": 7.13,
+    "tolerance": 0.005,
+    "tags": ["cumulative-abnormal-return", "event-study"]
+  }
+]

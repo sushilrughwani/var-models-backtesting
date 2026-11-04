@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-parametric-and-nonparametric-tests-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "parametric-and-nonparametric-tests",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The sample correlation between two return series over 50 months is 0.28. The t-statistic for testing whether the population correlation equals zero is closest to:",
+    "options": ["1.94", "2.10", "2.02"],
+    "answer": "C",
+    "explanation": "t = r√(n - 2)/√(1 - r²) = 0.28 × √48/√(1 - 0.0784) = 1.940/0.960 = 2.02.",
+    "rationale": {
+      "A": "Incorrect. 1.94 is only the numerator r√(n - 2); the denominator √(1 - r²) has been omitted.",
+      "B": "Incorrect. 2.10 divides by (1 - r²) instead of its square root.",
+      "C": "Correct. 0.28 × √48 / √0.9216 = 2.02."
+    },
+    "verify": "const r=0.28, n=50; return r*Math.sqrt(n-2)/Math.sqrt(1-r*r);",
+    "numericAnswer": 2.02,
+    "tolerance": 0.005,
+    "tags": ["correlation-test"]
+  },
+  {
+    "id": "q-cfa1-parametric-and-nonparametric-tests-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "parametric-and-nonparametric-tests",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Eight analysts are ranked on forecast accuracy in two different years. The sum of squared differences between each analyst's two ranks is 30. The Spearman rank correlation coefficient is closest to:",
+    "options": ["0.64", "0.94", "0.36"],
+    "answer": "A",
+    "explanation": "rS = 1 - 6Σd²/[n(n² - 1)] = 1 - 6 × 30/(8 × 63) = 1 - 180/504 = 0.64.",
+    "rationale": {
+      "A": "Correct. 1 - 180/504 = 0.643.",
+      "B": "Incorrect. 0.94 omits the factor of 6 in the numerator (1 - 30/504).",
+      "C": "Incorrect. 0.36 is 6Σd²/[n(n² - 1)] alone; it forgets to subtract from 1."
+    },
+    "verify": "const n=8; return 1 - 6*30/(n*(n*n-1));",
+    "numericAnswer": 0.64,
+    "tolerance": 0.005,
+    "tags": ["spearman-rank-correlation"]
+  },
+  {
+    "id": "q-cfa1-parametric-and-nonparametric-tests-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "parametric-and-nonparametric-tests",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In which situation is a non-parametric test most appropriate?",
+    "options": ["Testing whether the mean of 500 normally distributed returns equals zero", "Testing the association between two variables when the sample is small and contains extreme outliers", "Testing whether a normal population's variance equals a hypothesised value"],
+    "answer": "B",
+    "explanation": "Small samples with extreme outliers violate the assumptions behind parametric tests; a rank-based measure such as Spearman's correlation is more reliable.",
+    "rationale": {
+      "A": "Incorrect. A large sample from a normal population satisfies the t-test assumptions, and the parametric test is more powerful.",
+      "B": "Correct. Outliers and small samples undermine normality assumptions, favouring a rank-based test.",
+      "C": "Incorrect. With a normal population, the parametric chi-square test of a variance is appropriate."
+    },
+    "tags": ["nonparametric"]
+  },
+  {
+    "id": "q-cfa1-parametric-and-nonparametric-tests-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "parametric-and-nonparametric-tests",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst cross-classifies 300 funds by investment style (value, blend, growth) and by whether they outperformed their benchmark (yes, no). The chi-square statistic is 7.10. The 5% upper critical values are 5.991 for 2 df and 11.070 for 5 df. The analyst should:",
+    "options": ["reject independence, because the statistic exceeds the critical value for 2 degrees of freedom", "fail to reject independence, because the statistic is below the critical value for 5 degrees of freedom", "fail to reject independence, because a two-tailed test is required"],
+    "answer": "A",
+    "explanation": "A 3 × 2 table has (3 - 1)(2 - 1) = 2 degrees of freedom. Since 7.10 > 5.991, independence is rejected: outperformance appears related to style.",
+    "rationale": {
+      "A": "Correct. df = (3 - 1)(2 - 1) = 2 and 7.10 exceeds 5.991.",
+      "B": "Incorrect. 5 df uses (number of cells - 1); the correct df is (r - 1)(c - 1) = 2.",
+      "C": "Incorrect. The chi-square test of independence is upper-tailed; only large values indicate dependence."
+    },
+    "tags": ["chi-square-independence"]
+  }
+]

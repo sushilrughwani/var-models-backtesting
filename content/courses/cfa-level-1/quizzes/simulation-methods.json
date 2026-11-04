@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-simulation-methods-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "simulation-methods",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A share's price rises from USD 40 to USD 43.20 over one year. The continuously compounded return is closest to:",
+    "options": ["7.70%", "8.00%", "8.33%"],
+    "answer": "A",
+    "explanation": "The holding period return is 43.20/40 - 1 = 8%. The continuously compounded return is ln(43.20/40) = ln(1.08) = 7.70%.",
+    "rationale": {
+      "A": "Correct. ln(1.08) = 7.70%.",
+      "B": "Incorrect. 8.00% is the holding period return, not the log return.",
+      "C": "Incorrect. 8.33% is e^0.08 - 1, which converts 8% in the wrong direction (from a log return to an HPR)."
+    },
+    "verify": "return Math.log(43.2/40)*100;",
+    "numericAnswer": 7.70,
+    "tolerance": 0.005,
+    "tags": ["continuously-compounded-return"]
+  },
+  {
+    "id": "q-cfa1-simulation-methods-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "simulation-methods",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Weekly continuously compounded returns on a stock are independent and identically distributed with a standard deviation of 2%. Assuming 52 weeks per year, the annualised standard deviation is closest to:",
+    "options": ["104.00%", "14.42%", "2.00%"],
+    "answer": "B",
+    "explanation": "Variance scales with time, so volatility scales with the square root of time: 2% × √52 = 14.42%.",
+    "rationale": {
+      "A": "Incorrect. 104% multiplies the weekly volatility by 52; it is variance, not standard deviation, that scales linearly with time.",
+      "B": "Correct. 2% × √52 = 14.42%.",
+      "C": "Incorrect. 2% is the weekly figure; it has not been annualised."
+    },
+    "verify": "return 2*Math.sqrt(52);",
+    "numericAnswer": 14.42,
+    "tolerance": 0.005,
+    "tags": ["volatility-scaling"]
+  },
+  {
+    "id": "q-cfa1-simulation-methods-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "simulation-methods",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about modelling asset prices is most accurate?",
+    "options": ["If continuously compounded returns are normally distributed, prices are lognormally distributed and cannot be negative", "Holding period returns over consecutive periods can be added to obtain the multi-period holding period return", "A lognormal distribution is symmetric around its mean, like the normal distribution"],
+    "answer": "A",
+    "explanation": "Normal log returns imply that P_T = P_0 × e^r is lognormal: bounded below by zero and right-skewed.",
+    "rationale": {
+      "A": "Correct. Exponentiating a normal variable produces a lognormal one, which is always positive.",
+      "B": "Incorrect. Holding period returns compound multiplicatively; only continuously compounded returns are additive.",
+      "C": "Incorrect. The lognormal distribution is right-skewed, with its mean above its median."
+    },
+    "tags": ["lognormal"]
+  },
+  {
+    "id": "q-cfa1-simulation-methods-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "simulation-methods",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst estimates the standard error of a fund's mean return by repeatedly drawing samples with replacement from 120 observed monthly returns. Compared with a Monte Carlo approach, this method:",
+    "options": ["requires the analyst to specify a probability distribution for returns", "can generate monthly returns more extreme than any observed in the sample", "relies on the observed sample being representative of the population"],
+    "answer": "C",
+    "explanation": "This is bootstrap resampling. It needs no assumed distribution but treats the observed sample as the population, so it can only reproduce outcomes that occurred in the data.",
+    "rationale": {
+      "A": "Incorrect. Specifying a distribution is required by Monte Carlo simulation, not by bootstrapping.",
+      "B": "Incorrect. Bootstrapping reuses observed values, so it cannot produce returns outside the historical range.",
+      "C": "Correct. The bootstrap's validity depends on the sample representing the population well."
+    },
+    "tags": ["bootstrap", "monte-carlo"]
+  }
+]

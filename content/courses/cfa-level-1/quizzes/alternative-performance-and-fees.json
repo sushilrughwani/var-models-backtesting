@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-alternative-performance-and-fees-1",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "alternative-performance-and-fees",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A hedge fund begins the year with USD 150 million and ends with USD 180 million before fees. It charges a 1.5% management fee on year-end AUM and a 15% incentive fee calculated net of the management fee, subject to a 6% hard hurdle. Total fees for the year (USD millions) are closest to:",
+    "options": ["6.80", "5.85", "5.45"],
+    "answer": "C",
+    "explanation": "Management fee = 0.015 × 180 = 2.70. Value after management fee = 177.30. Hurdle level = 150 × 1.06 = 159. Incentive = 0.15 × (177.30 − 159) = 2.745. Total fees = 2.70 + 2.745 = 5.45 million.",
+    "rationale": {
+      "A": "Incorrect. 6.80 treats the hurdle as soft, charging the incentive on the whole 27.30 gain after the management fee.",
+      "B": "Incorrect. 5.85 computes the incentive on the gross value of 180 above the hurdle, ignoring that it is net of the management fee.",
+      "C": "Correct. With a hard hurdle the incentive applies only to the 18.30 above the 159 hurdle level, giving total fees of 5.45."
+    },
+    "verify": "const m=0.015*180, pre=180-m, inc=0.15*(pre-150*1.06); return m+inc;",
+    "numericAnswer": 5.45,
+    "tolerance": 0.005,
+    "tags": ["hurdle-rate", "fees"]
+  },
+  {
+    "id": "q-cfa1-alternative-performance-and-fees-2",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "alternative-performance-and-fees",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A fund's high-water mark is USD 120 million. It starts the year at USD 105 million and earns a 20% gross return. The management fee is 2% of year-end AUM and the incentive fee is 20%, calculated net of the management fee, with no hurdle. The incentive fee (USD millions) is closest to:",
+    "options": ["0.70", "3.70", "1.20"],
+    "answer": "A",
+    "explanation": "Gross value = 105 × 1.20 = 126. Management fee = 0.02 × 126 = 2.52, leaving 123.48. Incentive applies only above the HWM: 0.20 × (123.48 − 120) = 0.70 million.",
+    "rationale": {
+      "A": "Correct. Only the 3.48 above the 120 high-water mark earns an incentive fee: 0.20 × 3.48 = 0.70.",
+      "B": "Incorrect. 3.70 ignores the high-water mark and charges 20% on the full 18.48 gain from 105.",
+      "C": "Incorrect. 1.20 uses the gross value of 126 above the HWM, forgetting to deduct the management fee first."
+    },
+    "verify": "const g=105*1.2, pre=g-0.02*g; return 0.2*Math.max(0,pre-120);",
+    "numericAnswer": 0.70,
+    "tolerance": 0.005,
+    "tags": ["high-water-mark"]
+  },
+  {
+    "id": "q-cfa1-alternative-performance-and-fees-3",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "alternative-performance-and-fees",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investor finances a real asset with USD 40 of her own cash and USD 60 of borrowed money at 4%. The asset returns 6%. The return on the investor's own cash is closest to:",
+    "options": ["7.20%", "9.00%", "7.33%"],
+    "answer": "B",
+    "explanation": "r_L = r + (Vb/Vc)(r − r_b) = 6% + (60/40)(6% − 4%) = 6% + 3% = 9.00%.",
+    "rationale": {
+      "A": "Incorrect. 7.20% divides borrowed funds by total assets (60/100) rather than by the investor's own cash.",
+      "B": "Correct. The leverage ratio is 60/40 = 1.5, so the levered return is 6% + 1.5 × 2% = 9.00%.",
+      "C": "Incorrect. 7.33% inverts the ratio, using 40/60 instead of 60/40."
+    },
+    "verify": "return (0.06 + (60/40)*(0.06-0.04))*100;",
+    "numericAnswer": 9.0,
+    "tolerance": 0.005,
+    "tags": ["leverage"]
+  },
+  {
+    "id": "q-cfa1-alternative-performance-and-fees-4",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "alternative-performance-and-fees",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A private equity fund pays carried interest to the GP on each profitable exit as it occurs. Which provision best protects LPs if later deals in the fund lose money?",
+    "options": ["A high-water mark", "A clawback provision", "A soft hurdle rate"],
+    "answer": "B",
+    "explanation": "This is a deal-by-deal (American) waterfall. If later losses mean the GP received more carry than it earned over the life of the fund, a clawback requires the GP to return the excess to LPs.",
+    "rationale": {
+      "A": "Incorrect. A high-water mark is mainly a hedge fund mechanism based on NAV peaks; it does not recover carry already paid on earlier exits.",
+      "B": "Correct. A clawback forces the GP to repay carried interest that later losses show was not earned.",
+      "C": "Incorrect. A soft hurdle actually makes the incentive fee more generous to the GP once the hurdle is cleared."
+    },
+    "tags": ["waterfall", "clawback"]
+  }
+]

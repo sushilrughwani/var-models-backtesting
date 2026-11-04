@@ -1,0 +1,865 @@
+[
+  {
+    "id": "cfa1-eth-0001",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Priya Nandakumar, a CFA charterholder, works for Veloria Asset Partners in a country whose securities law requires less disclosure of conflicts than the Code and Standards. The firm is headquartered in a country whose law is also less strict than the Code. Which rule should Nandakumar follow?",
+    "options": [
+      "The Code and Standards, because they are stricter than the applicable law",
+      "Local securities law, because her conduct is legal where she works",
+      "The law of the country where her firm is headquartered"
+    ],
+    "answer": "A",
+    "explanation": "When applicable law and the Code differ, members must follow the stricter requirement. Here the Code is the stricter standard.",
+    "rationale": {
+      "A": "Correct. Members must comply with the more demanding of the applicable law and the Code and Standards; here that is the Code.",
+      "B": "Incorrect. Legality is a minimum; if the Code imposes a higher requirement, the member must meet it.",
+      "C": "Incorrect. The location of headquarters does not change the rule; the stricter of the applicable law and the Code governs."
+    },
+    "tags": [
+      "professionalism",
+      "knowledge-of-law"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0002",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Tomas Rehn, an equity analyst at Kestrel Research, is invited by Brightwater Mining, a company he covers, to tour its remote mine site. Brightwater offers to fly him on a commercial flight and also to host him for an extra weekend at a luxury ski lodge near the site, all at Brightwater's expense. Rehn's report on the company is due next month. Which action best preserves his independence and objectivity?",
+    "options": [
+      "Accept the full package, provided he discloses it to his supervisor",
+      "Have Kestrel pay for his travel where possible and decline the ski weekend",
+      "Accept the package because his current rating on Brightwater is already a buy"
+    ],
+    "answer": "B",
+    "explanation": "Issuer-paid travel and lavish hospitality can compromise, or appear to compromise, an analyst's objectivity. The best practice is for the analyst's firm to pay for ordinary travel and for the analyst to decline luxury extras.",
+    "rationale": {
+      "A": "Incorrect. Disclosure to a supervisor does not cure the threat to objectivity created by a lavish weekend paid for by a covered issuer.",
+      "B": "Correct. Paying for his own travel and declining the luxury weekend removes the issuer's ability to influence his research.",
+      "C": "Incorrect. An existing positive rating does not remove the conflict; the gift could still influence future changes to the rating."
+    },
+    "tags": [
+      "professionalism",
+      "independence-objectivity"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0003",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Marisol Ferreira, a portfolio manager at Tidewell Advisors, receives two concert tickets of modest value from a long-standing client as thanks for strong performance last year. Under the Code and Standards, Ferreira:",
+    "options": [
+      "must refuse the tickets, because any gift from a client creates a conflict",
+      "may accept the tickets only after the client obtains written consent from Tidewell",
+      "may accept the tickets and should disclose the gift to her employer"
+    ],
+    "answer": "C",
+    "explanation": "Gifts from clients that reward past performance are less likely to threaten objectivity than gifts from issuers or brokers. A member may accept a modest client gift but should disclose it to the employer.",
+    "rationale": {
+      "A": "Incorrect. Client gifts for past service are not automatically prohibited; the concern is mainly gifts that could influence future behaviour.",
+      "B": "Incorrect. It is the member, not the client, who discloses to the employer, and a modest thank-you gift does not require a written consent process run by the client.",
+      "C": "Correct. A modest client gift for past performance may be accepted, but the employer should be told so it can judge any effect on the member's independence."
+    },
+    "tags": [
+      "professionalism",
+      "independence-objectivity",
+      "gifts"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0004",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Jae-won Park, an analyst at Northgate Securities, copies several charts and a paragraph of conclusions from a report written by Halcyon Independent Research into his own client report. He checks that the numbers are correct but does not name Halcyon as the source. Park has most likely:",
+    "options": [
+      "violated the standard on misrepresentation",
+      "not violated any standard, because Halcyon's report was distributed to many investors",
+      "not violated any standard, because he verified the data before using it"
+    ],
+    "answer": "A",
+    "explanation": "Presenting another firm's analysis and conclusions as one's own is plagiarism, a form of misrepresentation, whether or not the figures are accurate.",
+    "rationale": {
+      "A": "Correct. Using another party's work without attribution misrepresents who did the analysis.",
+      "B": "Incorrect. Wide distribution does not make another firm's analysis his own; attribution is still required.",
+      "C": "Incorrect. Checking accuracy does not remove the duty to credit the original author of the charts and conclusions."
+    },
+    "tags": [
+      "professionalism",
+      "misrepresentation",
+      "plagiarism"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0005",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following actions by Elias Moreau, a CFA charterholder, is most likely a violation of the standard on misconduct?",
+    "options": [
+      "Receiving a speeding ticket while driving to a client meeting",
+      "Submitting inflated expense claims to his employer for meals that never took place",
+      "Being briefly detained during a peaceful protest about a local zoning issue"
+    ],
+    "answer": "B",
+    "explanation": "The misconduct standard targets conduct involving dishonesty, fraud, or deceit, or any act that reflects poorly on professional reputation, integrity, or competence. Fabricating expenses is dishonest.",
+    "rationale": {
+      "A": "Incorrect. A minor traffic offence does not involve dishonesty and does not reflect on professional integrity.",
+      "B": "Correct. Falsifying expense claims is a dishonest act that reflects adversely on his integrity.",
+      "C": "Incorrect. Lawful personal activity that involves no dishonesty or fraud is generally not covered by the misconduct standard."
+    },
+    "tags": [
+      "professionalism",
+      "misconduct"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0006",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Leah Okonkwo, a CFA charterholder at Sablewood Capital, finds that her supervisor has been understating fees in client statements. Okonkwo is not involved in preparing the statements. Under the Code and Standards, her most appropriate first course of action is to:",
+    "options": [
+      "report the supervisor directly to the securities regulator, as the Code requires",
+      "resign from Sablewood immediately",
+      "raise the matter with the supervisor or compliance and, if it is not corrected, dissociate herself from the activity"
+    ],
+    "answer": "C",
+    "explanation": "A member who learns of a violation should first try to stop it through internal channels such as supervisors or compliance. If the conduct continues, the member must dissociate from it, which may ultimately mean resigning. The Code does not itself require reporting to regulators, although local law may.",
+    "rationale": {
+      "A": "Incorrect. The Code does not require members to report violations to authorities, although doing so may be wise or legally required in some places.",
+      "B": "Incorrect. Resignation may be needed in the end, but it is not the required first step when internal remedies have not been tried.",
+      "C": "Correct. She should escalate internally first and, if the practice continues, dissociate herself from it."
+    },
+    "tags": [
+      "professionalism",
+      "knowledge-of-law",
+      "dissociation"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0007",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "While riding an elevator, Gustav Lindqvist, a portfolio manager at Ferncliff Partners, overhears two executives of Orvane Pharmaceuticals say that a buyer will announce a takeover of Orvane on Monday at a large premium. The information has not been made public. Lindqvist:",
+    "options": [
+      "may not trade Orvane shares or cause others to trade until the information is public",
+      "may trade, because he did not receive the information in confidence",
+      "may trade a small position, because a small trade will not move the price"
+    ],
+    "answer": "A",
+    "explanation": "The information is both material and nonpublic. How it was obtained is irrelevant: members in possession of material nonpublic information must not act on it or cause others to act on it.",
+    "rationale": {
+      "A": "Correct. He must not trade or pass on the information until it has been disseminated to the market.",
+      "B": "Incorrect. The prohibition applies however the information was obtained, including by accident.",
+      "C": "Incorrect. The size of the trade does not matter; any trade based on the information is prohibited."
+    },
+    "tags": [
+      "integrity-of-capital-markets",
+      "mnpi"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0008",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Ana Kovač, an analyst at Ridgecrest Equity, counts delivery trucks at Polmar Foods' distribution centres, interviews independent grocers, and reviews public shipping data. She concludes that Polmar's next quarter will disappoint and issues a sell recommendation before Polmar reports. Kovač has:",
+    "options": [
+      "violated the standard on material nonpublic information, because her conclusion is not known to the market",
+      "not violated any standard, because her conclusion is built from public and nonmaterial nonpublic information",
+      "violated the standard unless Polmar confirms her conclusion before she publishes"
+    ],
+    "answer": "B",
+    "explanation": "Under the mosaic theory, an analyst may act on a conclusion assembled from public information and nonmaterial nonpublic information, even if that conclusion would be material had the company announced it.",
+    "rationale": {
+      "A": "Incorrect. A conclusion reached by analysing public and nonmaterial pieces is allowed even if it is material and not widely known.",
+      "B": "Correct. This is the mosaic theory: careful analysis of public and nonmaterial items is permitted and is what good research does.",
+      "C": "Incorrect. There is no requirement to get the company's confirmation; asking for it could itself prompt selective disclosure."
+    },
+    "tags": [
+      "integrity-of-capital-markets",
+      "mosaic-theory"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0009",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Ravi Desai, a trader at Lanternfish Capital, repeatedly buys and sells the same thinly traded stock between two accounts the firm controls. The trades leave the firm's net position unchanged but greatly increase reported daily volume, which Desai hopes will attract outside buyers. Desai has most likely:",
+    "options": [
+      "not violated any standard, because each trade was executed at prevailing market prices",
+      "not violated any standard, because the trades were for the firm's own accounts",
+      "violated the standard on market manipulation by creating a misleading picture of trading activity"
+    ],
+    "answer": "C",
+    "explanation": "Trades designed to inflate volume artificially and mislead other market participants are transaction-based manipulation, regardless of the prices used or the accounts involved.",
+    "rationale": {
+      "A": "Incorrect. Using market prices does not make the trades legitimate; their purpose is to mislead others about real interest in the stock.",
+      "B": "Incorrect. Manipulation is prohibited whoever's accounts are used.",
+      "C": "Correct. Wash-style trades that distort volume in order to attract investors are market manipulation."
+    },
+    "tags": [
+      "integrity-of-capital-markets",
+      "market-manipulation"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0010",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "During a private meeting, the chief financial officer of Calderon Industrial tells Mei Tanaka, an analyst at Ashbury Securities, that the company will cut its full-year earnings guidance next week. No public announcement has been made. Tanaka's most appropriate action is to:",
+    "options": [
+      "encourage Calderon to make the information public and not act on it in the meantime",
+      "send the information to all Ashbury clients at the same time so that no client is favoured",
+      "update her recommendation right away, because the company chose to disclose the information"
+    ],
+    "answer": "A",
+    "explanation": "Information disclosed selectively by an issuer to one analyst is still material and nonpublic. The analyst should urge the company to disseminate it publicly and must not act on it or pass it to others until then.",
+    "rationale": {
+      "A": "Correct. She should press for public dissemination and must refrain from trading or recommending on the basis of the information.",
+      "B": "Incorrect. Telling all clients at once may satisfy fair dealing, but it does not make acting on material nonpublic information acceptable.",
+      "C": "Incorrect. The issuer's willingness to tell her does not make the information public; acting on it would violate the standard."
+    },
+    "tags": [
+      "integrity-of-capital-markets",
+      "mnpi",
+      "selective-disclosure"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0011",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following may claim compliance with the Global Investment Performance Standards (GIPS)?",
+    "options": [
+      "An individual portfolio manager, for the accounts she personally manages",
+      "An investment management firm that meets all applicable requirements firm-wide",
+      "A single investment product, once its returns have been verified by an outside party"
+    ],
+    "answer": "B",
+    "explanation": "Only an investment firm (or an asset owner) as a whole can claim GIPS compliance, and only if it meets all applicable requirements across the firm. Individuals and single products cannot claim compliance.",
+    "rationale": {
+      "A": "Incorrect. Individuals cannot claim compliance; the claim is made by the firm.",
+      "B": "Correct. Compliance is claimed on a firm-wide basis by a firm that meets every applicable requirement.",
+      "C": "Incorrect. Compliance cannot be claimed for one product, and verification is optional rather than a route to a product-level claim."
+    },
+    "tags": [
+      "gips",
+      "gips-compliance-claim"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0012",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Arnav Mehta manages the defined benefit pension assets of Corliss Manufacturing. Corliss's chief executive asks Mehta to vote all proxies held by the plan in favour of management at companies whose boards include Corliss directors. Under the Code and Standards, Mehta's duty of loyalty is owed primarily to:",
+    "options": [
+      "Corliss's senior management, who hired him",
+      "his own employer, which is paid by Corliss",
+      "the plan's participants and beneficiaries"
+    ],
+    "answer": "C",
+    "explanation": "When managing pension assets, the client to whom loyalty is owed is the plan's participants and beneficiaries. Proxies should be voted in their best interest.",
+    "rationale": {
+      "A": "Incorrect. The sponsor's management chose the manager, but the plan assets exist for participants and beneficiaries.",
+      "B": "Incorrect. The employer relationship does not change who the ultimate beneficiaries of the duty are.",
+      "C": "Correct. Duties of loyalty, prudence, and care run to the plan's participants and beneficiaries."
+    },
+    "tags": [
+      "duties-to-clients",
+      "loyalty-prudence-care",
+      "proxy-voting"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0013",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which use of client brokerage commissions by Westmoor Investment Counsel is most consistent with its duty of loyalty to clients?",
+    "options": [
+      "Paying for research that is used in managing the accounts that generated the commissions",
+      "Paying the rent on Westmoor's new office space",
+      "Paying for a marketing database used to find new clients"
+    ],
+    "answer": "A",
+    "explanation": "Client brokerage belongs to the client. It may be used to obtain goods or services, such as research, that directly help the manager make investment decisions for those clients.",
+    "rationale": {
+      "A": "Correct. Research that helps manage the clients' own accounts is a proper use of their commissions.",
+      "B": "Incorrect. Office rent benefits the firm, not the clients whose commissions paid for it.",
+      "C": "Incorrect. A marketing database helps Westmoor grow its business, not the existing clients who paid the commissions."
+    },
+    "tags": [
+      "duties-to-clients",
+      "loyalty-prudence-care",
+      "soft-dollars"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0014",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst at Halvorsen Capital downgrades Trellis Software from buy to sell. Before the downgrade is released through the firm's normal electronic channel, a portfolio manager telephones Halvorsen's five largest institutional clients to tell them about it. This most likely:",
+    "options": [
+      "does not violate any standard, because large institutional clients pay higher fees",
+      "violates the standard on fair dealing",
+      "does not violate any standard, provided all clients learn of the downgrade on the same day"
+    ],
+    "answer": "B",
+    "explanation": "Firms may offer different levels of service if they are disclosed, but changes in investment recommendations must be spread so that all clients have a fair chance to act. Giving some clients an early tip on a downgrade disadvantages the rest.",
+    "rationale": {
+      "A": "Incorrect. Higher fees can pay for extra services, but not for advance notice of a rating change that lets some clients trade first.",
+      "B": "Correct. Telling a favoured group about the downgrade first fails to treat all clients fairly.",
+      "C": "Incorrect. Even within one day, the clients who are called first can trade before the others, which is unfair."
+    },
+    "tags": [
+      "duties-to-clients",
+      "fair-dealing"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0015",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Rosalind Achebe, a portfolio manager at Quillon Advisors, receives a limited allocation of an oversubscribed initial public offering that is suitable for several client accounts. One of those accounts belongs to her brother-in-law, who pays Quillon's standard fees and has the same objectives as other clients. To avoid any appearance of favouritism, Achebe leaves his account out and divides the shares among the other suitable accounts. Achebe's approach is:",
+    "options": [
+      "appropriate, because accounts of family members must always be excluded from oversubscribed offerings",
+      "appropriate, because members should give family accounts priority only when shares are plentiful",
+      "inappropriate, because his account should be treated like any other fee-paying client and receive a pro rata share"
+    ],
+    "answer": "C",
+    "explanation": "A family member who is a regular fee-paying client must be treated the same as any other client. Excluding the account disadvantages that client; the fair approach is a pro rata allocation among all suitable accounts.",
+    "rationale": {
+      "A": "Incorrect. The Code does not require excluding family members who are genuine fee-paying clients; doing so is unfair to them.",
+      "B": "Incorrect. Family accounts should never get priority, but they should not be penalised either.",
+      "C": "Correct. A fee-paying family member's account deserves the same fair, pro rata treatment as other suitable client accounts."
+    },
+    "tags": [
+      "duties-to-clients",
+      "fair-dealing",
+      "ipo-allocation"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0016",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Bettina Kraus has an investment policy statement with Ellery Wealth that calls for a conservative, income-oriented portfolio. She calls her adviser and asks him, on her own initiative, to put 40% of her portfolio into a single speculative technology stock. The adviser's most appropriate response is to:",
+    "options": [
+      "explain how the trade conflicts with her policy statement and discuss whether the statement should be updated before acting",
+      "refuse the order, because advisers may never execute unsolicited trades that are unsuitable",
+      "execute the order at once, because the client directed it"
+    ],
+    "answer": "A",
+    "explanation": "For an unsolicited trade that would materially change the portfolio's risk, the adviser should explain the inconsistency with the IPS and ask whether the client's objectives have changed. If they have, the IPS should be updated; if not, the adviser may need to refuse the trade or seek the client's acknowledgment of the risk.",
+    "rationale": {
+      "A": "Correct. Discussing the conflict with the IPS and reviewing whether it should change is the required first step for a large unsolicited trade.",
+      "B": "Incorrect. Unsolicited trades are not automatically prohibited; the adviser should first discuss the trade's effect on the overall portfolio.",
+      "C": "Incorrect. Executing a trade this large without discussing its effect on suitability ignores the adviser's duty to the client."
+    },
+    "tags": [
+      "duties-to-clients",
+      "suitability"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0017",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Amadou Sow manages a balanced portfolio for a client who has just divorced and received a large inheritance. Sow's next scheduled review of the client's investment policy statement is two years away. Sow should:",
+    "options": [
+      "keep the current allocation until the scheduled review",
+      "reassess the client's circumstances and update the investment policy statement now",
+      "rebalance the portfolio back to its existing target weights"
+    ],
+    "answer": "B",
+    "explanation": "The IPS should be reviewed at least annually and whenever the client's circumstances change materially. Divorce and an inheritance are material changes.",
+    "rationale": {
+      "A": "Incorrect. A major change in circumstances calls for a review now, not at a fixed future date.",
+      "B": "Correct. Material life events require reassessing the client's objectives and constraints and updating the IPS.",
+      "C": "Incorrect. Rebalancing to the old targets assumes the old targets are still suitable, which may no longer be true."
+    },
+    "tags": [
+      "duties-to-clients",
+      "suitability",
+      "ips"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0018",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Oskar Brandt manages the Lindale Small-Cap Value Fund. Believing that large-cap growth stocks are temporarily cheap, he moves 30% of the fund into large-cap growth names without changing the fund's disclosures. Brandt has most likely:",
+    "options": [
+      "not violated any standard, because the move improved the fund's returns",
+      "not violated any standard, because each stock is a suitable investment for a typical investor",
+      "violated the standard on suitability, because the holdings are inconsistent with the fund's stated mandate"
+    ],
+    "answer": "C",
+    "explanation": "When managing a fund to a stated strategy, suitability is judged against that mandate. Investing heavily outside the disclosed style without changing the disclosures breaches the duty to manage within the mandate.",
+    "rationale": {
+      "A": "Incorrect. Good results do not excuse departing from the mandate investors relied on.",
+      "B": "Incorrect. Suitability for a fund is measured against its stated objectives, not against a generic investor.",
+      "C": "Correct. A small-cap value fund that holds 30% large-cap growth is no longer consistent with its stated mandate."
+    },
+    "tags": [
+      "duties-to-clients",
+      "suitability",
+      "fund-mandate"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0019",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In a pitch to prospective clients, Brightfield Asset Management presents a ten-year track record based solely on its single best-performing account, labelled 'Our Growth Strategy Results'. The firm manages twelve other accounts in the same strategy. This presentation:",
+    "options": [
+      "violates the standard on performance presentation because it is misleading",
+      "is acceptable if it includes a statement that past performance does not guarantee future results",
+      "is acceptable because the account's returns are actual, not hypothetical"
+    ],
+    "answer": "A",
+    "explanation": "Presenting the best account as if it represented the whole strategy is cherry-picking and gives a misleading picture of the firm's performance.",
+    "rationale": {
+      "A": "Correct. Showing only the best account as the strategy's record misrepresents the results clients could expect.",
+      "B": "Incorrect. A general disclaimer does not cure a selective presentation.",
+      "C": "Incorrect. Real returns can still mislead when they are chosen selectively to represent a broader strategy."
+    },
+    "tags": [
+      "duties-to-clients",
+      "performance-presentation"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0020",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Fenwick Capital, which claims GIPS compliance, manages fifteen fee-paying discretionary portfolios in its core bond strategy. When building the core bond composite, the firm leaves out two portfolios that underperformed badly last year. This practice is:",
+    "options": [
+      "acceptable, because firms may choose which portfolios best represent a strategy",
+      "not acceptable, because all actual fee-paying discretionary portfolios must be included in at least one composite",
+      "acceptable, provided the excluded portfolios are disclosed in a footnote"
+    ],
+    "answer": "B",
+    "explanation": "Under GIPS, every actual fee-paying discretionary portfolio must be included in at least one composite. Leaving out poor performers is exactly the cherry-picking the standards are designed to stop.",
+    "rationale": {
+      "A": "Incorrect. Firms cannot pick and choose; composites must contain all portfolios that meet the composite definition.",
+      "B": "Correct. All fee-paying discretionary portfolios must be in at least one composite, so the two poor performers cannot be dropped.",
+      "C": "Incorrect. Disclosure does not make the omission acceptable; the portfolios must be included."
+    },
+    "tags": [
+      "gips",
+      "composites"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0021",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Staff of CFA Institute's professional conduct program ask Yusuf Arslan, a CFA charterholder, for confidential information about a client in connection with an investigation into Arslan's own conduct. Arslan:",
+    "options": [
+      "must refuse, because client information may never be shared without a court order",
+      "may share the information only after receiving the client's written consent",
+      "may share the information with the professional conduct program"
+    ],
+    "answer": "C",
+    "explanation": "Members must keep client information confidential, but sharing it with CFA Institute's professional conduct program is allowed, because that program itself keeps the information confidential.",
+    "rationale": {
+      "A": "Incorrect. There are exceptions to confidentiality, including legal requirements and cooperation with the professional conduct program.",
+      "B": "Incorrect. Client consent is not needed to cooperate with a professional conduct investigation.",
+      "C": "Correct. Cooperating with the professional conduct program is an accepted exception to the duty of confidentiality."
+    },
+    "tags": [
+      "duties-to-clients",
+      "confidentiality"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0022",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A portfolio managed by Harrowgate Investments earned monthly time-weighted returns of 4%, −6%, and 5% over a quarter. The portfolio's quarterly time-weighted return is closest to:",
+    "options": [
+      "2.65%",
+      "3.00%",
+      "1.00%"
+    ],
+    "answer": "A",
+    "explanation": "Link the sub-period returns geometrically: (1.04)(0.94)(1.05) − 1 = 0.02648, or about 2.65%.",
+    "rationale": {
+      "A": "Correct. Geometric linking gives 1.04 × 0.94 × 1.05 − 1 = 2.65%.",
+      "B": "Incorrect. 3.00% is the simple sum of the monthly returns, which ignores compounding.",
+      "C": "Incorrect. 1.00% is the arithmetic average monthly return, not the quarterly return."
+    },
+    "verify": "return ((1.04*0.94*1.05)-1)*100;",
+    "numericAnswer": 2.65,
+    "tolerance": 0.005,
+    "tags": [
+      "gips",
+      "time-weighted-return",
+      "performance-calculation"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0023",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Kofi Mensah, a CFA charterholder, plans to leave Ostrander Wealth to start his own advisory firm. He has no non-compete agreement. Which of his actions most likely violates the standard on loyalty to his employer?",
+    "options": [
+      "Registering his new company and leasing office space during evenings before he resigns",
+      "Copying Ostrander's client contact list to his personal drive to use after he leaves",
+      "After leaving, contacting former clients whose names he remembers by using public directories"
+    ],
+    "answer": "B",
+    "explanation": "Members may prepare to compete on their own time, but they may not take employer records such as client lists. After leaving, and absent a non-compete agreement, contacting former clients using memory and public sources is allowed.",
+    "rationale": {
+      "A": "Incorrect. Preparing a new business on his own time, without harming his employer, is allowed.",
+      "B": "Correct. Client lists belong to the employer; copying one for later use is a breach of loyalty.",
+      "C": "Incorrect. Without a non-compete, he may contact former clients after leaving, as long as he does not use the employer's records."
+    },
+    "tags": [
+      "duties-to-employers",
+      "loyalty",
+      "leaving-employer"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0024",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Hana Sato, a financial planner at Pembrook Advisors, begins charging fees to friends for weekend financial planning, a service Pembrook also offers. She mentions it casually to her supervisor, who says it sounds fine. Sato's conduct is:",
+    "options": [
+      "compliant, because her supervisor gave oral approval",
+      "compliant, because her clients are friends, not Pembrook clients",
+      "not fully compliant, because she should disclose the terms and obtain written consent from Pembrook"
+    ],
+    "answer": "C",
+    "explanation": "Independent practice that competes with the employer requires written consent from the employer after the member discloses the nature, compensation, and duration of the work. A casual oral approval falls short.",
+    "rationale": {
+      "A": "Incorrect. Oral approval after a casual mention does not meet the requirement for written consent based on full disclosure.",
+      "B": "Incorrect. The work competes with Pembrook's services, so it does not matter that the clients are friends.",
+      "C": "Correct. She must give full details of the arrangement and obtain written consent before doing competing paid work."
+    },
+    "tags": [
+      "duties-to-employers",
+      "additional-compensation",
+      "independent-practice"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0025",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Dmitri Volkov, head of compliance at Saltmarsh Securities, receives a credible tip that one of the firm's traders may be trading ahead of large client orders. Volkov's most appropriate response is to:",
+    "options": [
+      "promptly investigate and limit or monitor the trader's activities while the investigation proceeds",
+      "ask the trader for an explanation and close the matter if the trader denies it",
+      "wait until the next scheduled annual compliance review to examine the trader's records"
+    ],
+    "answer": "A",
+    "explanation": "A supervisor who learns of a possible violation must respond promptly: investigate and take steps, such as limiting the employee's activities or increasing monitoring, to prevent further violations.",
+    "rationale": {
+      "A": "Correct. Prompt investigation together with interim limits or monitoring is the expected supervisory response.",
+      "B": "Incorrect. Accepting the trader's assurance without an investigation is not reasonable supervision.",
+      "C": "Incorrect. Waiting months allows possible harm to clients to continue; the response must be prompt."
+    },
+    "tags": [
+      "duties-to-employers",
+      "supervisors"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0026",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Ayesha Rahman is promoted to head of the trading desk at Corvane Partners and discovers that the firm has no written compliance procedures for her area. Her most appropriate action is to:",
+    "options": [
+      "accept the role and rely on the honesty of her experienced traders",
+      "decline in writing to accept supervisory responsibility until the firm adopts adequate procedures",
+      "resign immediately and report Corvane to its regulator"
+    ],
+    "answer": "B",
+    "explanation": "A supervisor cannot carry out supervisory duties properly without an adequate compliance system. If one does not exist, the member should decline in writing to accept supervisory responsibility until reasonable procedures are adopted.",
+    "rationale": {
+      "A": "Incorrect. Relying on people's integrity is not a substitute for a compliance system.",
+      "B": "Correct. Declining supervisory responsibility in writing until adequate procedures exist is the recommended action.",
+      "C": "Incorrect. Resignation and reporting go further than required; the first step is to decline responsibility and press for procedures."
+    },
+    "tags": [
+      "duties-to-employers",
+      "supervisors",
+      "compliance-systems"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0027",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A GIPS composite at Thornbury Asset Management contains two portfolios. Portfolio X began the month with USD 30 million and returned 10%. Portfolio Y began with USD 70 million and returned 4%. Using beginning-of-period asset weights, the composite return for the month is closest to:",
+    "options": [
+      "7.00%",
+      "8.20%",
+      "5.80%"
+    ],
+    "answer": "C",
+    "explanation": "Weight each return by beginning assets: 0.30 × 10% + 0.70 × 4% = 3.0% + 2.8% = 5.80%.",
+    "rationale": {
+      "A": "Incorrect. 7.00% is the equal-weighted average, which ignores the difference in portfolio size.",
+      "B": "Incorrect. 8.20% reverses the weights, giving 70% to Portfolio X and 30% to Portfolio Y.",
+      "C": "Correct. Asset weighting by beginning values gives 0.3 × 10% + 0.7 × 4% = 5.80%."
+    },
+    "verify": "const wx=30/100, wy=70/100; return (wx*0.10+wy*0.04)*100;",
+    "numericAnswer": 5.8,
+    "tolerance": 0.005,
+    "tags": [
+      "gips",
+      "composite-return",
+      "performance-calculation"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0028",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A research report by Lucia Romano of Bexley Partners states: 'Harlow Retail's earnings will grow 20% next year.' The figure comes from her own forecasting model, and the report does not say it is an estimate. Romano has most likely:",
+    "options": [
+      "violated the standard on communication with clients, because she did not separate opinion from fact",
+      "not violated any standard, because the forecast comes from a reasonable model",
+      "not violated any standard, as long as the report includes a general risk disclaimer"
+    ],
+    "answer": "A",
+    "explanation": "Members must clearly distinguish facts from opinions in their communications. A forecast presented as a certain outcome is an opinion dressed up as fact.",
+    "rationale": {
+      "A": "Correct. Presenting a model-based projection as a fact fails to separate opinion from fact.",
+      "B": "Incorrect. A reasonable basis is necessary but separate; the projection must still be labelled as an opinion or estimate.",
+      "C": "Incorrect. A boilerplate risk warning does not fix a specific statement that presents a forecast as fact."
+    },
+    "tags": [
+      "investment-analysis",
+      "communication",
+      "fact-vs-opinion"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0029",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Felix Duarte is leaving Granger Research for a competitor. He wants to take the spreadsheets and research notes he built to support his recommendations at Granger. Under the Code and Standards, Duarte:",
+    "options": [
+      "may take the files, because he created them himself",
+      "may not take the files without Granger's permission, because the records belong to his employer",
+      "may take copies, provided he deletes the originals from Granger's systems"
+    ],
+    "answer": "B",
+    "explanation": "Records created in the course of employment belong to the employer. Without permission, a departing member must not take them and must rebuild any analysis from public or original sources at the new firm.",
+    "rationale": {
+      "A": "Incorrect. Authorship does not give him ownership; records created for his employer are the employer's property.",
+      "B": "Correct. Supporting records are the employer's property, so he needs Granger's permission to take them and otherwise must recreate his work.",
+      "C": "Incorrect. Deleting the originals would make things worse; Granger must keep them, and taking copies is still not allowed."
+    },
+    "tags": [
+      "investment-analysis",
+      "record-retention"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0030",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Nadia Haddad, an analyst at Corrigan Securities, issues a buy recommendation on Velmont Energy, in which she personally owns a meaningful number of shares. Under the Code and Standards, Haddad should:",
+    "options": [
+      "sell her shares before the recommendation is published",
+      "disclose her ownership to her employer and in the recommendation to clients",
+      "make no disclosure, because buying the shares was legal"
+    ],
+    "answer": "B",
+    "explanation": "Members must fully disclose to clients and their employer any matters, such as personal ownership of a recommended security, that could reasonably be expected to impair their objectivity.",
+    "rationale": {
+      "A": "Incorrect. Selling is not required; the key requirement is full and prominent disclosure.",
+      "B": "Correct. Personal ownership of a recommended stock is a conflict that must be disclosed to clients and the employer.",
+      "C": "Incorrect. Legality of the purchase does not remove the conflict, which must be disclosed."
+    },
+    "tags": [
+      "conflicts-of-interest",
+      "disclosure"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0031",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Jasper Whitlock, a portfolio manager at Marlowe Investments, decides to buy shares of Ellison Robotics for all his client accounts. He would also like to buy shares for his own personal account. The most appropriate sequence is to:",
+    "options": [
+      "buy for his personal account first, because the order is small",
+      "buy for his personal account at the same time and tell compliance afterwards",
+      "complete the client orders first and then place his personal order"
+    ],
+    "answer": "C",
+    "explanation": "Client and employer transactions must take priority over personal transactions in which the member has a beneficial interest. The personal trade should follow the client trades.",
+    "rationale": {
+      "A": "Incorrect. Order size does not matter; trading ahead of clients puts the member's interest first.",
+      "B": "Incorrect. Telling compliance afterwards does not give clients the priority they are owed.",
+      "C": "Correct. Clients' orders are executed first, then the member's own trade."
+    },
+    "tags": [
+      "conflicts-of-interest",
+      "priority-of-transactions"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0032",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Paulo Reyes, a portfolio manager at Ashgrove Capital, manages his wife's brokerage account for no fee. Expecting a price rise, he places a buy order in Delacroix Biotech for her account a few minutes before placing the same order for his fee-paying clients. Reyes has:",
+    "options": [
+      "violated the standard on priority of transactions, because he has a beneficial interest in his wife's account",
+      "not violated any standard, because his wife is a separate legal person",
+      "not violated any standard, because his wife's account is treated like any other client account"
+    ],
+    "answer": "A",
+    "explanation": "An account in which the member has a beneficial interest, such as a spouse's account he manages without fees, is treated as a personal account. Its trades must not be placed ahead of client trades.",
+    "rationale": {
+      "A": "Correct. He has a beneficial interest in his wife's account, so trading it ahead of clients breaches the priority of client transactions.",
+      "B": "Incorrect. Separate legal status does not remove his beneficial interest in household assets he manages.",
+      "C": "Incorrect. A non-fee family account he benefits from is a personal account, not an ordinary client account, and was in fact favoured here."
+    },
+    "tags": [
+      "conflicts-of-interest",
+      "priority-of-transactions",
+      "beneficial-ownership"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0033",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Liang Wei, an adviser at Fairhaven Financial, receives a fee from a local estate-planning lawyer for each client he refers. Liang has told Fairhaven about the arrangement but has not told the clients he refers. Liang has most likely:",
+    "options": [
+      "not violated any standard, because his employer was informed",
+      "violated the standard on referral fees, because clients must be told before they engage the service",
+      "not violated any standard, because the lawyer, not the client, pays the fee"
+    ],
+    "answer": "B",
+    "explanation": "Members must disclose referral compensation to their employer, clients, and prospective clients before entering into an agreement for services, so clients can judge any bias in the recommendation.",
+    "rationale": {
+      "A": "Incorrect. Disclosure to the employer alone is not enough; clients must be told as well.",
+      "B": "Correct. The referred clients must learn of the fee arrangement before they engage the lawyer.",
+      "C": "Incorrect. Who pays the fee does not matter; the payment can still bias the referral and must be disclosed."
+    },
+    "tags": [
+      "conflicts-of-interest",
+      "referral-fees"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0034",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following statements by Tobias Grant on his professional profile is most appropriate under the standard on referring to CFA Institute, the CFA designation, and the CFA Program?",
+    "options": [
+      "\"As a CFA charterholder, I deliver superior investment returns.\"",
+      "\"I am a CFA Level II.\"",
+      "\"I passed Level II of the CFA Program on my first attempt and am a Level III candidate.\""
+    ],
+    "answer": "C",
+    "explanation": "Members and candidates may state factual information about their progress in the program, including passing levels on the first attempt. They may not suggest superior performance from the designation or imply a partial designation.",
+    "rationale": {
+      "A": "Incorrect. Claiming the designation produces superior returns overstates what it means.",
+      "B": "Incorrect. There is no partial designation such as 'CFA Level II'; the wording implies one.",
+      "C": "Correct. Stating factually that he passed a level and is enrolled as a candidate is acceptable."
+    },
+    "tags": [
+      "responsibilities-as-member",
+      "reference-to-cfa"
+    ]
+  },
+  {
+    "id": "cfa1-eth-0035",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "After sitting the Level I exam, a candidate, Sienna Clarke, posts online that the exam 'had a lot of questions on duration and two specific questions on the treatment of inventory write-downs.' Clarke has most likely:",
+    "options": [
+      "violated the standard on conduct as a candidate by revealing confidential exam content",
+      "not violated any standard, because she did not reproduce any exact questions",
+      "not violated any standard, because the exam had already been given"
+    ],
+    "answer": "A",
+    "explanation": "Candidates must not disclose confidential exam information, including the specific topics or formulas tested. General comments about difficulty are fine, but describing particular content is not.",
+    "rationale": {
+      "A": "Correct. Describing specific topics and questions tested reveals confidential exam content.",
+      "B": "Incorrect. Disclosing specific tested content is a violation even without quoting questions word for word.",
+      "C": "Incorrect. The obligation of confidentiality continues after the exam has been given."
+    },
+    "tags": [
+      "responsibilities-as-member",
+      "conduct-in-program",
+      "exam-confidentiality"
+    ]
+  }
+]

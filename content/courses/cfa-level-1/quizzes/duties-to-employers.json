@@ -1,0 +1,86 @@
+[
+  {
+    "id": "q-cfa1-duties-to-employers-1",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "duties-to-employers",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "While still employed at the fictional Granite Peak Advisors, Lucas Moreau, CFA, spends his weekends registering a company name and signing an office lease for the advisory firm he will launch after resigning. He has not contacted any Granite Peak clients. Lucas has:",
+    "options": [
+      "Not violated the Standards, because preparing to leave outside working hours is permitted",
+      "Violated the duty of loyalty, because any preparation to compete is prohibited while employed",
+      "Violated the standard on additional compensation"
+    ],
+    "answer": "A",
+    "explanation": "Members may make arrangements to leave, such as forming a company and leasing space, provided they do not solicit clients, take records or otherwise harm the employer while employed.",
+    "rationale": {
+      "A": "Correct. Preparation on his own time, without solicitation or misuse of firm property, is allowed.",
+      "B": "Incorrect. The duty of loyalty does not forbid preparing to leave; it forbids harming the employer while still employed.",
+      "C": "Incorrect. Lucas has not accepted any compensation that competes with his employer's interest."
+    }
+  },
+  {
+    "id": "q-cfa1-duties-to-employers-2",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "duties-to-employers",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "On her last day at the fictional Brightwater Capital, Aisha Bello, CFA, emails herself a spreadsheet of client contacts that she personally compiled over five years. She has no non-compete agreement. Aisha has most likely:",
+    "options": [
+      "Complied with the Standards, because she created the spreadsheet",
+      "Complied with the Standards, because she has no non-compete agreement",
+      "Violated the duty of loyalty, because the records belong to her employer"
+    ],
+    "answer": "C",
+    "explanation": "Records created in the course of employment are the employer's property. The absence of a non-compete allows her to contact former clients later using memory or public sources, but not to take firm records.",
+    "rationale": {
+      "A": "Incorrect. Authorship does not change ownership; work product belongs to the employer.",
+      "B": "Incorrect. A non-compete governs contacting clients after leaving, not taking firm records.",
+      "C": "Correct. Copying firm records without permission violates the duty of loyalty."
+    }
+  },
+  {
+    "id": "q-cfa1-duties-to-employers-3",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "duties-to-employers",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A wealthy client of Henrik Solberg, CFA, offers him a personal annual bonus equal to 2% of any portfolio gain above 8%. Henrik works for the fictional Fjordline Asset Management. To comply with the Standards, Henrik must:",
+    "options": [
+      "Simply mention the bonus to his manager verbally after receiving it",
+      "Obtain written consent from Fjordline before accepting the arrangement",
+      "Decline the bonus, because client-paid compensation is always prohibited"
+    ],
+    "answer": "B",
+    "explanation": "Compensation that might create a conflict with the employer's interest requires written consent from all parties involved, which in practice means the employer's written consent before acceptance.",
+    "rationale": {
+      "A": "Incorrect. Verbal, after-the-fact disclosure does not satisfy the requirement for prior written consent.",
+      "B": "Correct. Written employer consent, obtained before accepting, is required.",
+      "C": "Incorrect. Such arrangements are permitted with proper written consent; they are not banned outright."
+    }
+  },
+  {
+    "id": "q-cfa1-duties-to-employers-4",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "duties-to-employers",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Priyanka Rao, CFA, is head of trading at the fictional Larchmont Securities. Surveillance shows one of her traders may have placed personal orders ahead of client orders. The trader promises it will not happen again. Priyanka's most appropriate response is to:",
+    "options": [
+      "Accept the trader's assurance and close the matter",
+      "Promptly investigate and take steps, such as limiting the trader's activities or increasing monitoring, to prevent further violations",
+      "Report the trader to CFA Institute and take no internal action"
+    ],
+    "answer": "B",
+    "explanation": "Supervisors must make reasonable efforts to prevent and detect violations. On suspecting one, they should investigate promptly and take protective steps; relying on the employee's promise is inadequate.",
+    "rationale": {
+      "A": "Incorrect. An employee's assurance alone does not satisfy the supervisor's duty to investigate and prevent recurrence.",
+      "B": "Correct. Prompt investigation and protective restrictions are what the supervisory duty requires.",
+      "C": "Incorrect. The supervisory duty is about internal prevention and detection; external reporting without internal action falls short."
+    }
+  }
+]

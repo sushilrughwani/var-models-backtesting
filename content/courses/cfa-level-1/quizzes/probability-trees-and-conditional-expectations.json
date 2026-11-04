@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-probability-trees-and-conditional-expectations-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "probability-trees-and-conditional-expectations",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A stock will return 12% with probability 0.5, 4% with probability 0.3 and -6% with probability 0.2. The standard deviation of the stock's return is closest to:",
+    "options": ["7.36%", "6.93%", "6.00%"],
+    "answer": "B",
+    "explanation": "E(R) = 0.5(12) + 0.3(4) + 0.2(-6) = 6%. Variance = 0.5(6²) + 0.3(-2)² + 0.2(-12)² = 18 + 1.2 + 28.8 = 48. Standard deviation = √48 = 6.93%.",
+    "rationale": {
+      "A": "Incorrect. 7.36% treats the three outcomes as equally likely instead of weighting by their probabilities.",
+      "B": "Correct. √48 = 6.93%.",
+      "C": "Incorrect. 6.00% is the expected return, not the standard deviation."
+    },
+    "verify": "const r=[12,4,-6], p=[0.5,0.3,0.2]; const m=r.reduce((a,x,i)=>a+p[i]*x,0); const v=r.reduce((a,x,i)=>a+p[i]*(x-m)**2,0); return Math.sqrt(v);",
+    "numericAnswer": 6.93,
+    "tolerance": 0.005,
+    "tags": ["expected-value", "variance"]
+  },
+  {
+    "id": "q-cfa1-probability-trees-and-conditional-expectations-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "probability-trees-and-conditional-expectations",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The probability of a recession next year is 25%. A borrower's probability of default is 8% in a recession and 2% otherwise. The unconditional probability of default is closest to:",
+    "options": ["5.0%", "2.0%", "3.5%"],
+    "answer": "C",
+    "explanation": "Total probability rule: P(default) = 0.25(0.08) + 0.75(0.02) = 0.020 + 0.015 = 0.035, or 3.5%.",
+    "rationale": {
+      "A": "Incorrect. 5.0% is the simple average of 8% and 2%, ignoring that recession is less likely than expansion.",
+      "B": "Incorrect. 2.0% is only the joint probability of a recession and a default (0.25 × 0.08); the expansion path is missing.",
+      "C": "Correct. 0.25 × 0.08 + 0.75 × 0.02 = 3.5%."
+    },
+    "verify": "return (0.25*0.08 + 0.75*0.02)*100;",
+    "numericAnswer": 3.5,
+    "tolerance": 0.05,
+    "tags": ["total-probability-rule"]
+  },
+  {
+    "id": "q-cfa1-probability-trees-and-conditional-expectations-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "probability-trees-and-conditional-expectations",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Using the same facts (recession probability 25%; default probability 8% in a recession and 2% otherwise), if the borrower defaults, the probability that the economy was in recession is closest to:",
+    "options": ["57.1%", "25.0%", "8.0%"],
+    "answer": "A",
+    "explanation": "Bayes: P(recession | default) = P(default | recession) × P(recession) / P(default) = 0.08 × 0.25 / 0.035 = 0.571.",
+    "rationale": {
+      "A": "Correct. 0.020/0.035 = 57.1%; a default is strong evidence of recession.",
+      "B": "Incorrect. 25% is the prior probability of recession; it ignores the information that a default occurred.",
+      "C": "Incorrect. 8% is P(default | recession), the reverse conditional probability."
+    },
+    "verify": "return 0.25*0.08/(0.25*0.08+0.75*0.02)*100;",
+    "numericAnswer": 57.1,
+    "tolerance": 0.05,
+    "tags": ["bayes"]
+  },
+  {
+    "id": "q-cfa1-probability-trees-and-conditional-expectations-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "probability-trees-and-conditional-expectations",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Events A and B each have a positive probability and are mutually exclusive. Which statement is most accurate?",
+    "options": ["A and B are independent because the occurrence of one has no bearing on the other", "A and B are dependent because P(A | B) = 0, which differs from P(A)", "The joint probability of A and B equals P(A) × P(B)"],
+    "answer": "B",
+    "explanation": "If A and B cannot occur together, learning that B happened tells you A did not, so P(A | B) = 0 ≠ P(A). The events are dependent, and their joint probability is zero.",
+    "rationale": {
+      "A": "Incorrect. Mutually exclusive events with positive probabilities are never independent; one rules out the other.",
+      "B": "Correct. P(A | B) = 0 differs from P(A) > 0, which is the definition of dependence.",
+      "C": "Incorrect. The joint probability of mutually exclusive events is 0, whereas P(A) × P(B) is positive."
+    },
+    "tags": ["independence"]
+  }
+]

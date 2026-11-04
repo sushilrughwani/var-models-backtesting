@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-market-organization-1",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "market-organization",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investor buys a stock at USD 50 using 40% initial margin. The maintenance margin is 30%. The price below which the investor receives a margin call is closest to:",
+    "options": ["USD 35.00", "USD 42.86", "USD 28.57"],
+    "answer": "B",
+    "explanation": "Margin call price = P0 × (1 − IM)/(1 − MM) = 50 × 0.60/0.70 = 42.86.",
+    "rationale": {
+      "A": "Incorrect. This is 50 × (1 − 0.30), which applies the maintenance margin to the purchase price instead of solving the equity condition.",
+      "B": "Correct. The loan per share is 30; equity equals 30% of value when P − 30 = 0.30P, giving P = 42.86.",
+      "C": "Incorrect. This is 50 × 0.40/0.70, which uses the initial margin instead of (1 − initial margin) in the numerator."
+    },
+    "verify": "return 50*(1-0.4)/(1-0.3);",
+    "numericAnswer": 42.86,
+    "tolerance": 0.01,
+    "tags": ["margin", "leverage"]
+  },
+  {
+    "id": "q-cfa1-market-organization-2",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "market-organization",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An investor buys one share at USD 25 with 40% initial margin and borrows the rest at 6% a year. The stock pays no dividend and there are no commissions. One year later the share is sold for USD 27.50. The return on the investor's equity is closest to:",
+    "options": ["25.00%", "10.00%", "16.00%"],
+    "answer": "C",
+    "explanation": "Equity = 10, loan = 15, interest = 0.90. Ending equity = 27.50 − 15 − 0.90 = 11.60. Return = 11.60/10 − 1 = 16.00%.",
+    "rationale": {
+      "A": "Incorrect. This is the 10% price change times the 2.5 leverage ratio, ignoring the 0.90 of interest on the margin loan.",
+      "B": "Incorrect. This is the unleveraged price return of the stock.",
+      "C": "Correct. After repaying the 15 loan and 0.90 interest, equity grows from 10 to 11.60, a 16.00% return."
+    },
+    "verify": "const loan=25*0.6, eq=25*0.4; return ((27.5-loan-loan*0.06)/eq-1)*100;",
+    "numericAnswer": 16.0,
+    "tolerance": 0.005,
+    "tags": ["margin", "leveraged-return"]
+  },
+  {
+    "id": "q-cfa1-market-organization-3",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "market-organization",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A trader holds a stock trading at USD 80 and wants to limit losses if the price falls sharply, while staying invested if the price rises. Which order best meets this goal?",
+    "options": ["A limit sell order at USD 85", "A stop-loss sell order at USD 72", "A market sell order"],
+    "answer": "B",
+    "explanation": "A stop-loss sell order becomes active only if the price trades down to the stop level, so the position is kept on the upside and exited on a fall.",
+    "rationale": {
+      "A": "Incorrect. A limit sell at 85 exits the position on a rise, which locks in gains but does nothing to protect against a fall.",
+      "B": "Correct. The stop order sits below the market and triggers a sale only if the price falls to 72, capping the loss (though the fill may be below 72).",
+      "C": "Incorrect. A market sell exits immediately, so the trader gives up any upside."
+    },
+    "tags": ["orders", "stop-orders"]
+  },
+  {
+    "id": "q-cfa1-market-organization-4",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "market-organization",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In a market where all participants submit orders to a central book that matches buyers and sellers by price priority and then time priority, the market is best described as:",
+    "options": ["order-driven", "quote-driven", "brokered"],
+    "answer": "A",
+    "explanation": "Order-driven markets match public orders using rules such as price and time priority; no dealer has to stand on the other side.",
+    "rationale": {
+      "A": "Correct. A central limit order book with matching rules is the defining feature of an order-driven market.",
+      "B": "Incorrect. In a quote-driven market investors trade against dealers' posted bid and ask prices.",
+      "C": "Incorrect. Brokered markets rely on brokers searching for counterparties, typically for unique or illiquid assets."
+    },
+    "tags": ["market-structure"]
+  }
+]

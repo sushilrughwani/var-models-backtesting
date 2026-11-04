@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-hypothesis-testing-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "hypothesis-testing",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A sample of 49 daily returns has a mean of 0.9% and a standard deviation of 2.8%. To test whether the population mean equals zero, the t-statistic is closest to:",
+    "options": ["2.25", "0.32", "15.75"],
+    "answer": "A",
+    "explanation": "Standard error = 2.8/√49 = 0.4. t = (0.9 - 0)/0.4 = 2.25.",
+    "rationale": {
+      "A": "Correct. t = 0.9/(2.8/7) = 2.25.",
+      "B": "Incorrect. 0.32 divides the mean by the standard deviation instead of the standard error.",
+      "C": "Incorrect. 15.75 divides the standard deviation by n (49) instead of √n (7)."
+    },
+    "verify": "return 0.9/(2.8/Math.sqrt(49));",
+    "numericAnswer": 2.25,
+    "tolerance": 0.005,
+    "tags": ["t-test"]
+  },
+  {
+    "id": "q-cfa1-hypothesis-testing-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "hypothesis-testing",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An analyst tests whether a fund's return variance differs from 100 (a standard deviation of 10%). A sample of 31 monthly returns from a normal population has a standard deviation of 12%. The test statistic is closest to:",
+    "options": ["36.00", "44.64", "43.20"],
+    "answer": "C",
+    "explanation": "Chi-square = (n - 1)s²/σ0² = 30 × 144/100 = 43.20, with 30 degrees of freedom.",
+    "rationale": {
+      "A": "Incorrect. 36.00 uses standard deviations (30 × 12/10) instead of variances.",
+      "B": "Incorrect. 44.64 multiplies by n = 31 instead of n - 1 = 30.",
+      "C": "Correct. 30 × 144/100 = 43.20."
+    },
+    "verify": "return 30*144/100;",
+    "numericAnswer": 43.2,
+    "tolerance": 0.005,
+    "tags": ["chi-square-test", "variance"]
+  },
+  {
+    "id": "q-cfa1-hypothesis-testing-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "hypothesis-testing",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Holding the sample size constant, an analyst lowers the significance level of a test from 5% to 1%. The most likely effect is that the probability of a:",
+    "options": ["Type I error rises and the power of the test rises", "Type II error rises and the power of the test falls", "Type II error falls and the power of the test rises"],
+    "answer": "B",
+    "explanation": "A lower α makes rejection harder. Fewer true nulls are wrongly rejected (fewer Type I errors), but more false nulls survive (more Type II errors), so power = 1 - β falls.",
+    "rationale": {
+      "A": "Incorrect. Lowering α reduces, not raises, the probability of a Type I error.",
+      "B": "Correct. A stricter rejection rule increases β and decreases power.",
+      "C": "Incorrect. With a fixed sample size, the Type I and Type II error probabilities move in opposite directions."
+    },
+    "tags": ["type-i-error", "type-ii-error", "power"]
+  },
+  {
+    "id": "q-cfa1-hypothesis-testing-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "hypothesis-testing",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst records the monthly returns of the same 40 funds before and after a regulatory change and wants to test whether mean returns changed. The appropriate test is a:",
+    "options": ["t-test of the mean of the paired differences with 39 degrees of freedom", "pooled-variance t-test of the difference between two independent means with 78 degrees of freedom", "F-test of the ratio of the two sample variances"],
+    "answer": "A",
+    "explanation": "The same funds are measured twice, so the samples are dependent. Compute each fund's difference and test whether the mean difference is zero with n - 1 = 39 degrees of freedom.",
+    "rationale": {
+      "A": "Correct. Dependent (paired) samples call for a t-test on the mean difference, df = 40 - 1.",
+      "B": "Incorrect. The pooled test assumes independent samples, which is violated when the same funds appear in both.",
+      "C": "Incorrect. An F-test compares variances, not means."
+    },
+    "tags": ["paired-comparison"]
+  }
+]

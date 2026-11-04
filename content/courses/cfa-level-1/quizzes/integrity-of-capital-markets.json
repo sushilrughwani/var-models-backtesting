@@ -1,0 +1,86 @@
+[
+  {
+    "id": "q-cfa1-integrity-of-capital-markets-1",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "integrity-of-capital-markets",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "During an invitation-only call with ten analysts, the CFO of the fictional Quartz Pharmaceuticals reveals that regulators have rejected the company's lead drug. No public announcement has been made. This information is best described as:",
+    "options": [
+      "Public, because ten analysts heard it",
+      "Material and nonpublic",
+      "Nonmaterial, because it came from management"
+    ],
+    "answer": "B",
+    "explanation": "A drug rejection would likely move the share price, so it is material. Disclosure to a select group does not make it public.",
+    "rationale": {
+      "A": "Incorrect. Selective disclosure to a small group does not disseminate information to the market.",
+      "B": "Correct. The news is price-sensitive and has not been broadly released.",
+      "C": "Incorrect. A specific statement from the CFO is highly reliable, which makes it more, not less, likely to be material."
+    }
+  },
+  {
+    "id": "q-cfa1-integrity-of-capital-markets-2",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "integrity-of-capital-markets",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Rafael Costa, CFA, combines satellite images of factory car parks, public shipping data and conversations with industry suppliers about general demand to conclude that the fictional Vantor Motors will badly miss its sales target. He issues a sell recommendation. Rafael has most likely:",
+    "options": [
+      "Violated the standard on material nonpublic information, because his conclusion is material",
+      "Violated the standard on market manipulation, because his report may move the price",
+      "Complied with the Standards, because he built his conclusion from public and nonmaterial nonpublic information"
+    ],
+    "answer": "C",
+    "explanation": "Under the mosaic theory, an analyst may reach a material conclusion from public information and nonmaterial nonpublic information. Rafael should document his inputs.",
+    "rationale": {
+      "A": "Incorrect. A material conclusion is acceptable if no individual input was material nonpublic information.",
+      "B": "Incorrect. A genuine research report that affects the price is not manipulation; there is no intent to mislead.",
+      "C": "Correct. This is a textbook application of the mosaic theory."
+    }
+  },
+  {
+    "id": "q-cfa1-integrity-of-capital-markets-3",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "integrity-of-capital-markets",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Ellen Voss, a trader at the fictional Ashgrove Capital, repeatedly buys and sells a thinly traded stock between two accounts she controls so that the stock appears on high-volume screens, attracting other buyers. Ellen is most likely:",
+    "options": [
+      "Engaged in transaction-based market manipulation",
+      "Engaged in information-based market manipulation",
+      "Not in violation, because she did not spread any false statements"
+    ],
+    "answer": "A",
+    "explanation": "Trading between one's own accounts to create artificial volume, with the intent to mislead other investors, is transaction-based manipulation.",
+    "rationale": {
+      "A": "Correct. The trades create a false impression of activity with intent to mislead, which is transaction-based manipulation.",
+      "B": "Incorrect. Information-based manipulation involves spreading false or misleading information; Ellen used trades, not statements.",
+      "C": "Incorrect. Manipulation does not require false statements; deceptive trading alone can violate the standard."
+    }
+  },
+  {
+    "id": "q-cfa1-integrity-of-capital-markets-4",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "integrity-of-capital-markets",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Kwame Asante, CFA, overhears his sister-in-law, a lawyer, discussing an unannounced takeover of the fictional Beryl Foods. Kwame does not trade, but he mentions it to a close friend, who buys Beryl shares. Which statement is most accurate?",
+    "options": [
+      "Kwame did not violate the Standards because he did not trade himself",
+      "Kwame violated the Standards by causing another person to act on material nonpublic information",
+      "Only the friend could have violated the Standards, because Kwame received the information accidentally"
+    ],
+    "answer": "B",
+    "explanation": "The prohibition covers acting or causing others to act on material nonpublic information, regardless of how it was obtained.",
+    "rationale": {
+      "A": "Incorrect. Tipping others is prohibited even if the member does not personally trade.",
+      "B": "Correct. Passing on the takeover news caused his friend to trade on material nonpublic information.",
+      "C": "Incorrect. How the information was obtained does not matter; once Kwame knew it was material and nonpublic, he could not pass it on."
+    }
+  }
+]

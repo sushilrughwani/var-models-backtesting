@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q-cfa1-ifrs-vs-us-gaap-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "ifrs-vs-us-gaap",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A US GAAP company using LIFO reports COGS of USD 5,000 million. Its LIFO reserve was USD 180 million at the start of the year and USD 230 million at the end. COGS on a FIFO basis (USD millions) is closest to:",
+    "options": ["5,050", "4,950", "4,770"],
+    "answer": "B",
+    "explanation": "FIFO COGS = LIFO COGS − change in LIFO reserve = 5,000 − (230 − 180) = 4,950.",
+    "rationale": {
+      "A": "Incorrect. This adds the change in the reserve. A rising reserve means LIFO COGS is higher than FIFO COGS, so the change is subtracted.",
+      "B": "Correct. 5,000 − 50 = 4,950.",
+      "C": "Incorrect. This subtracts the ending reserve (230) instead of the change in the reserve."
+    },
+    "verify": "return 5000-(230-180);",
+    "numericAnswer": 4950,
+    "tolerance": 0.5,
+    "tags": ["lifo-reserve", "inventory"]
+  },
+  {
+    "id": "q-cfa1-ifrs-vs-us-gaap-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "ifrs-vs-us-gaap",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An IFRS company reports cash flow from operations of USD 1,200 million. It classifies interest paid of USD 80 million as a financing activity. To compare it with a US GAAP peer, its restated operating cash flow (USD millions) is closest to:",
+    "options": ["1,280", "1,200", "1,120"],
+    "answer": "C",
+    "explanation": "US GAAP requires interest paid to be an operating outflow, so move it back into CFO: 1,200 − 80 = 1,120.",
+    "rationale": {
+      "A": "Incorrect. This adds interest paid; moving an outflow into operating activities reduces CFO.",
+      "B": "Incorrect. No adjustment is made, leaving CFO overstated relative to the US GAAP peer.",
+      "C": "Correct. 1,200 − 80 = 1,120 on a US GAAP basis."
+    },
+    "verify": "return 1200-80;",
+    "numericAnswer": 1120,
+    "tolerance": 0.5,
+    "tags": ["cash-flow-classification"]
+  },
+  {
+    "id": "q-cfa1-ifrs-vs-us-gaap-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "ifrs-vs-us-gaap",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Inventory previously written down to net realisable value recovers in value the following year. Which statement is most accurate?",
+    "options": [
+      "IFRS permits a reversal of the write-down up to the original cost; US GAAP does not",
+      "Both IFRS and US GAAP require the write-down to be reversed",
+      "US GAAP permits the reversal; IFRS prohibits it"
+    ],
+    "answer": "A",
+    "explanation": "IFRS allows inventory write-downs to be reversed (limited to the amount originally written down). US GAAP prohibits reversals.",
+    "rationale": {
+      "A": "Correct. Reversals are allowed only under IFRS, capped at the original write-down.",
+      "B": "Incorrect. US GAAP does not allow reversals of inventory write-downs.",
+      "C": "Incorrect. This reverses the two frameworks."
+    },
+    "tags": ["inventory", "write-down-reversal"]
+  },
+  {
+    "id": "q-cfa1-ifrs-vs-us-gaap-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "ifrs-vs-us-gaap",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An IFRS company capitalises development costs that meet the recognition criteria, while an otherwise identical US GAAP company expenses them. In the year the costs are incurred, the IFRS company will most likely report:",
+    "options": [
+      "Lower net income and lower operating cash flow",
+      "Higher net income but the same operating cash flow",
+      "Higher net income and higher operating cash flow"
+    ],
+    "answer": "C",
+    "explanation": "Capitalisation replaces a full expense with a smaller amortisation charge, raising profit, and the spending is classified as an investing outflow rather than an operating outflow, raising CFO.",
+    "rationale": {
+      "A": "Incorrect. Capitalisation has the opposite effect on both measures.",
+      "B": "Incorrect. Operating cash flow also differs because capitalised costs are investing outflows.",
+      "C": "Correct. Profit is higher (amortisation < full expense) and CFO is higher (outflow moved to investing)."
+    },
+    "tags": ["development-costs", "capitalisation"]
+  }
+]

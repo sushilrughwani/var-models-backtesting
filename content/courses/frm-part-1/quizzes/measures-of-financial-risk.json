@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-measures-of-financial-risk-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "measures-of-financial-risk",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A USD 20 million portfolio has normally distributed daily returns with a mean of zero and a standard deviation of 2%. Using z = 1.645, the one-day 95% VaR is closest to:",
+    "options": ["USD 400,000", "USD 930,400", "USD 658,000", "USD 824,900"],
+    "answer": "C",
+    "explanation": "VaR = V × z × σ = 20,000,000 × 1.645 × 0.02 = USD 658,000.",
+    "rationale": {
+      "A": "Incorrect. USD 400,000 is one standard deviation (V × σ); the z-value of 1.645 has been left out.",
+      "B": "Incorrect. USD 930,400 uses the 99% z-value of 2.326 instead of 1.645.",
+      "C": "Correct. 20m × 1.645 × 0.02 = USD 658,000.",
+      "D": "Incorrect. USD 824,900 is the 95% expected shortfall, using the factor φ(1.645)/0.05 ≈ 2.062 rather than the VaR quantile."
+    },
+    "verify": "return 20000000*1.645*0.02;",
+    "numericAnswer": 658000,
+    "tolerance": 0.5,
+    "tags": ["var", "delta-normal"]
+  },
+  {
+    "id": "q-frm1-measures-of-financial-risk-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "measures-of-financial-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A risk manager has 100 equally likely loss scenarios for a portfolio. The five largest losses (USD millions) are 12, 9, 8, 7 and 6. Defining the 95% expected shortfall as the average of the worst 5% of scenarios, the 95% ES is closest to:",
+    "options": ["USD 6.0 million", "USD 7.5 million", "USD 12.0 million", "USD 8.4 million"],
+    "answer": "D",
+    "explanation": "The worst 5% of 100 scenarios is the five largest losses: (12 + 9 + 8 + 7 + 6) / 5 = 42 / 5 = 8.4.",
+    "rationale": {
+      "A": "Incorrect. 6.0 is the fifth-worst loss, a VaR-style quantile, not the average of the tail.",
+      "B": "Incorrect. 7.5 averages only the four losses from 9 down to 6 and drops the worst loss of 12.",
+      "C": "Incorrect. 12.0 is the single worst loss, not the average of the tail.",
+      "D": "Correct. The average of the five worst losses is 8.4."
+    },
+    "verify": "const t=[12,9,8,7,6]; return t.reduce((a,b)=>a+b,0)/t.length;",
+    "numericAnswer": 8.4,
+    "tolerance": 0.05,
+    "tags": ["expected-shortfall"]
+  },
+  {
+    "id": "q-frm1-measures-of-financial-risk-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "measures-of-financial-risk",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which property of a coherent risk measure can value at risk violate, and in what setting is this most likely?",
+    "options": ["Subadditivity, in portfolios with lumpy, non-normal losses such as loans that either repay or default", "Monotonicity, in portfolios with normally distributed returns", "Translation invariance, whenever the portfolio contains cash", "Positive homogeneity, whenever position sizes are doubled"],
+    "answer": "A",
+    "explanation": "VaR satisfies monotonicity, translation invariance and positive homogeneity. It can fail subadditivity, so that a combined portfolio shows more VaR than the sum of its parts, typically with discrete or highly skewed loss distributions.",
+    "rationale": {
+      "A": "Correct. Subadditivity failures arise with lumpy distributions such as default-or-not loan losses.",
+      "B": "Incorrect. VaR is monotonic, and under normality it is fully coherent.",
+      "C": "Incorrect. Adding cash reduces VaR one-for-one, so translation invariance holds.",
+      "D": "Incorrect. Scaling a position scales its loss quantile by the same factor, so homogeneity holds."
+    },
+    "tags": ["coherent-risk-measures", "subadditivity"]
+  },
+  {
+    "id": "q-frm1-measures-of-financial-risk-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "measures-of-financial-risk",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A spectral risk measure is a weighted average of loss quantiles. Which statement about the weighting scheme is most accurate?",
+    "options": ["VaR is coherent because it puts all of its weight on a single quantile", "Expected shortfall is not coherent because it weights all tail quantiles equally", "The measure is coherent when the weights are non-decreasing as losses become larger, which ES satisfies and VaR does not", "Any set of positive weights that sums to one produces a coherent measure"],
+    "answer": "C",
+    "explanation": "Coherence requires that larger losses never receive less weight. ES gives zero weight below the confidence level and equal weight above it, which is non-decreasing. VaR gives all weight to one quantile and zero to worse quantiles, so weights fall as losses grow.",
+    "rationale": {
+      "A": "Incorrect. Putting zero weight on losses worse than the VaR quantile is exactly why VaR is not a coherent spectral measure.",
+      "B": "Incorrect. Equal weights over the tail are non-decreasing, so ES is coherent.",
+      "C": "Correct. Non-decreasing weights are the coherence condition; ES meets it, VaR does not.",
+      "D": "Incorrect. Weights that decline for larger losses, such as VaR's, give a non-coherent measure even though they are positive and sum to one."
+    },
+    "tags": ["spectral-risk-measures"]
+  }
+]

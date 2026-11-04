@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-rates-and-returns-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "rates-and-returns",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A stock returns 15% in year 1, -10% in year 2 and 8% in year 3. Its geometric mean annual return is closest to:",
+    "options": ["4.33%", "3.78%", "11.78%"],
+    "answer": "B",
+    "explanation": "Multiply the growth factors: 1.15 × 0.90 × 1.08 = 1.1178. Take the cube root and subtract 1: 1.1178^(1/3) - 1 = 3.78%.",
+    "rationale": {
+      "A": "Incorrect. 4.33% is the arithmetic mean (13%/3), which ignores compounding and overstates realised growth.",
+      "B": "Correct. The geometric mean is (1.15 × 0.90 × 1.08)^(1/3) - 1 = 3.78%.",
+      "C": "Incorrect. 11.78% is the cumulative three-year return, not an annual rate."
+    },
+    "verify": "return (Math.pow(1.15*0.90*1.08, 1/3) - 1) * 100;",
+    "numericAnswer": 3.78,
+    "tolerance": 0.005,
+    "tags": ["geometric-mean"]
+  },
+  {
+    "id": "q-cfa1-rates-and-returns-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "rates-and-returns",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An investor puts USD 500 into a fund at time 0 and adds another USD 500 at the end of year 1. At the end of year 2 the account is worth USD 1,100. The investor's annual money-weighted return is closest to:",
+    "options": ["6.52%", "10.00%", "5.00%"],
+    "answer": "A",
+    "explanation": "Solve -500 - 500/(1+r) + 1,100/(1+r)^2 = 0. The IRR is 6.52%.",
+    "rationale": {
+      "A": "Correct. 6.52% is the IRR of the cash flows -500, -500 and +1,100.",
+      "B": "Incorrect. 10% is the total gain (100) divided by total contributions (1,000); it ignores timing and is not an annual rate.",
+      "C": "Incorrect. 5% simply halves the 10% total gain; it ignores that the second 500 was invested for only one year."
+    },
+    "verify": "const f=r=>-500-500/(1+r)+1100/Math.pow(1+r,2); let a=0, b=0.5; for(let i=0;i<200;i++){const m=(a+b)/2; if(f(a)*f(m)<=0) b=m; else a=m;} return a*100;",
+    "numericAnswer": 6.52,
+    "tolerance": 0.005,
+    "tags": ["money-weighted-return"]
+  },
+  {
+    "id": "q-cfa1-rates-and-returns-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "rates-and-returns",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A pension plan wants to evaluate an external equity manager. The plan, not the manager, decides when money is added to or withdrawn from the account. The most appropriate return measure is the:",
+    "options": ["money-weighted return, because it captures the dollar amounts actually invested", "arithmetic mean of monthly returns, because it is an unbiased forecast", "time-weighted return, because it removes the effect of external cash flows"],
+    "answer": "C",
+    "explanation": "When the manager does not control the timing or size of cash flows, the time-weighted return isolates the manager's investment decisions by chain-linking sub-period returns.",
+    "rationale": {
+      "A": "Incorrect. The money-weighted return is affected by the plan's own contribution timing, which the manager does not control.",
+      "B": "Incorrect. The arithmetic mean neither handles cash flows nor measures compound performance.",
+      "C": "Correct. The time-weighted return neutralises the size and timing of client cash flows, so it reflects manager skill."
+    },
+    "tags": ["time-weighted-return"]
+  },
+  {
+    "id": "q-cfa1-rates-and-returns-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "rates-and-returns",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investment earned a total return of 12% over 18 months. Its annualised (compound) return is closest to:",
+    "options": ["8.00%", "18.53%", "7.85%"],
+    "answer": "C",
+    "explanation": "The period is 1.5 years, so annualise with (1.12)^(1/1.5) - 1 = 7.85%.",
+    "rationale": {
+      "A": "Incorrect. 8.00% divides 12% by 1.5, a simple rate that ignores compounding.",
+      "B": "Incorrect. 18.53% raises 1.12 to the power 1.5 instead of 1/1.5, inverting the exponent.",
+      "C": "Correct. (1.12)^(1/1.5) - 1 = 7.85%."
+    },
+    "verify": "return (Math.pow(1.12, 1/1.5) - 1) * 100;",
+    "numericAnswer": 7.85,
+    "tolerance": 0.005,
+    "tags": ["annualising"]
+  }
+]

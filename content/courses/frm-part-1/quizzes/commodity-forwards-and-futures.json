@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-commodity-forwards-and-futures-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "commodity-forwards-and-futures",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A commodity trades at USD 100. The risk-free rate is 5%, storage costs are 2% of value per year and the convenience yield is 3% per year, all continuously compounded. The 6-month futures price is closest to:",
+    "options": ["USD 100.00", "USD 103.56", "USD 105.13", "USD 102.02"],
+    "answer": "D",
+    "explanation": "F = S e^((r + u − y)T) = 100 × e^((0.05 + 0.02 − 0.03) × 0.5) = 100 × e^0.02 = 102.02.",
+    "rationale": {
+      "A": "Incorrect. 100.00 subtracts storage costs instead of adding them, so the net carry becomes zero.",
+      "B": "Incorrect. 103.56 ignores the convenience yield and uses only r + u.",
+      "C": "Incorrect. 105.13 adds the convenience yield to the carry; it should reduce the forward price.",
+      "D": "Correct. The net carry is 5% + 2% − 3% = 4% a year, applied for half a year."
+    },
+    "verify": "return 100*Math.exp((0.05+0.02-0.03)*0.5);",
+    "numericAnswer": 102.02,
+    "tolerance": 0.005,
+    "tags": ["convenience-yield", "storage-costs"]
+  },
+  {
+    "id": "q-frm1-commodity-forwards-and-futures-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "commodity-forwards-and-futures",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Copper trades at USD 70 per unit spot and the 1-year futures price is USD 68. The risk-free rate is 5% and storage costs are 1% of value per year, both continuously compounded. The implied convenience yield is closest to:",
+    "options": ["8.90%", "7.90%", "3.10%", "2.90%"],
+    "answer": "A",
+    "explanation": "From F = S e^((r + u − y)T): y = r + u − ln(F/S)/T = 0.05 + 0.01 − ln(68/70) = 0.06 + 0.0290 = 8.90%.",
+    "rationale": {
+      "A": "Correct. y = 6% − ln(68/70) = 6% + 2.90% = 8.90%.",
+      "B": "Incorrect. 7.90% leaves out the 1% storage cost.",
+      "C": "Incorrect. 3.10% adds ln(68/70) instead of subtracting it, reversing the sign of the log term.",
+      "D": "Incorrect. 2.90% is just −ln(F/S); it ignores the interest and storage that the convenience yield must offset."
+    },
+    "verify": "return (0.05+0.01-Math.log(68/70))*100;",
+    "numericAnswer": 8.9,
+    "tolerance": 0.005,
+    "tags": ["convenience-yield", "backwardation"]
+  },
+  {
+    "id": "q-frm1-commodity-forwards-and-futures-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "commodity-forwards-and-futures",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "The futures curve for natural gas slopes downward: longer-dated contracts trade below the spot price. Which explanation is most consistent with this shape?",
+    "options": ["Storage costs are unusually high relative to interest rates", "The convenience yield exceeds the sum of the risk-free rate and storage costs", "Inventories are plentiful, so holding gas offers little benefit", "Futures prices exceed the expected future spot price"],
+    "answer": "B",
+    "explanation": "F = S e^((r + u − y)T) is below S only when y > r + u. A large convenience yield, usually caused by tight inventories, produces backwardation.",
+    "rationale": {
+      "A": "Incorrect. High storage costs push futures prices above spot, producing contango.",
+      "B": "Correct. Backwardation requires the convenience yield to outweigh interest plus storage.",
+      "C": "Incorrect. Plentiful inventories mean a low convenience yield, which is associated with contango.",
+      "D": "Incorrect. That describes contango relative to expected spot, not a futures curve below the current spot price."
+    },
+    "tags": ["contango-backwardation"]
+  },
+  {
+    "id": "q-frm1-commodity-forwards-and-futures-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "commodity-forwards-and-futures",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "For crude oil, the observed 1-year futures price is well below (S + U)e^(rT), where U is the present value of storage costs. Which statement is most accurate?",
+    "options": ["A riskless profit is available by selling oil from inventory and buying futures, and refiners will do so", "The futures price must be wrong because the cost-of-carry relationship holds as an equality for all commodities", "This is consistent with no-arbitrage because oil is a consumption commodity whose holders value physical inventory", "A riskless profit is available by buying spot oil, storing it and selling futures"],
+    "answer": "C",
+    "explanation": "For consumption commodities only the upper bound is enforced. Holders keep oil for production, so they will not sell inventory to exploit a low futures price; the gap is the convenience yield.",
+    "rationale": {
+      "A": "Incorrect. Refiners hold oil to keep plants running and generally will not sell inventory for this trade.",
+      "B": "Incorrect. The equality holds for investment commodities such as gold, not for consumption commodities.",
+      "C": "Correct. A futures price below full carry simply implies a positive convenience yield.",
+      "D": "Incorrect. Cash-and-carry profits only when the futures price is above full carry; here it would lose money."
+    },
+    "tags": ["consumption-commodities", "arbitrage"]
+  }
+]

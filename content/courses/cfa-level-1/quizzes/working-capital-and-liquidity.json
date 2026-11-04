@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-working-capital-and-liquidity-1",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "working-capital-and-liquidity",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A company has days of inventory outstanding of 52, days of sales outstanding of 38 and days of payables outstanding of 41. Its cash conversion cycle is closest to:",
+    "options": ["131 days", "55 days", "49 days"],
+    "answer": "C",
+    "explanation": "CCC = DIO + DSO - DPO = 52 + 38 - 41 = 49 days.",
+    "rationale": {
+      "A": "Incorrect. 131 days adds DPO instead of subtracting it; supplier credit shortens the cycle.",
+      "B": "Incorrect. 55 days subtracts DSO and adds DPO (52 - 38 + 41), reversing the roles of receivables and payables.",
+      "C": "Correct. 52 + 38 - 41 = 49 days of cash tied up in operations."
+    },
+    "verify": "return 52+38-41;",
+    "numericAnswer": 49,
+    "tolerance": 0.5,
+    "tags": ["cash-conversion-cycle"]
+  },
+  {
+    "id": "q-cfa1-working-capital-and-liquidity-2",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "working-capital-and-liquidity",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A supplier offers terms of 1/15, net 45. Using a 365-day year, the effective annual cost of forgoing the discount and paying on day 45 is closest to:",
+    "options": ["13.01%", "12.29%", "12.87%"],
+    "answer": "A",
+    "explanation": "Cost = (1 + 0.01/0.99)^(365/30) - 1 = (1.010101)^12.1667 - 1 = 13.01%.",
+    "rationale": {
+      "A": "Correct. The firm pays 1/0.99 more for 30 extra days of credit; compounding over 365/30 periods gives 13.01%.",
+      "B": "Incorrect. 12.29% is the simple annualisation (0.010101 × 365/30), which ignores compounding.",
+      "C": "Incorrect. 12.87% uses 1.01 instead of 1/(1 - 0.01); the discount is earned on the 99% actually paid."
+    },
+    "verify": "const d=0.01, N=45, D=15; return ((1+d/(1-d))**(365/(N-D))-1)*100;",
+    "numericAnswer": 13.01,
+    "tolerance": 0.005,
+    "tags": ["trade-credit", "short-term-financing"]
+  },
+  {
+    "id": "q-cfa1-working-capital-and-liquidity-3",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "working-capital-and-liquidity",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following is best classified as a secondary source of liquidity?",
+    "options": ["Drawing on an existing committed bank line of credit", "Negotiating with lenders to restructure existing debt", "Cash flow generated from normal operations"],
+    "answer": "B",
+    "explanation": "Secondary sources, such as renegotiating debt, liquidating assets or filing for bankruptcy protection, are used under stress and usually change the firm's financial or operating position.",
+    "rationale": {
+      "A": "Incorrect. Bank lines are a normal, primary source of liquidity.",
+      "B": "Correct. Restructuring debt is a stress measure that alters the firm's financial position.",
+      "C": "Incorrect. Operating cash flow is the most basic primary source."
+    },
+    "tags": ["liquidity-sources"]
+  },
+  {
+    "id": "q-cfa1-working-capital-and-liquidity-4",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "working-capital-and-liquidity",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A firm keeps minimal inventory and cash and finances most of its current assets with short-term borrowings that must be rolled over frequently. Compared with a conservative approach, this working capital approach most likely has:",
+    "options": ["lower financing costs but higher refinancing risk", "higher financing costs and lower refinancing risk", "lower financing costs and lower refinancing risk"],
+    "answer": "A",
+    "explanation": "This is an aggressive approach. Short-term funding is usually cheaper and lean current assets reduce carrying costs, but frequent rollovers expose the firm to the risk that credit is withdrawn or repriced.",
+    "rationale": {
+      "A": "Correct. Aggressive policies trade lower cost for greater refinancing and liquidity risk.",
+      "B": "Incorrect. This describes a conservative approach: long-term funding and generous current assets cost more but are safer.",
+      "C": "Incorrect. There is no free lunch: relying on short-term debt increases refinancing risk."
+    },
+    "tags": ["working-capital-approach"]
+  }
+]

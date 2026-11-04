@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-cfa1-put-call-parity-1",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "put-call-parity",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A non-dividend-paying share trades at USD 75. A six-month European put with an exercise price of USD 70 costs USD 2.10, and the annual risk-free rate is 4%. Using put-call parity, the price of a six-month European call with the same exercise price is closest to:",
+    "options": ["USD 8.46", "USD 7.10", "USD 4.26"],
+    "answer": "A",
+    "explanation": "c0 = S0 + p0 − X/(1 + r)^T = 75 + 2.10 − 70/1.04^0.5 = 77.10 − 68.6406 = 8.46.",
+    "rationale": {
+      "A": "Correct. 75 + 2.10 − 68.64 = 8.46.",
+      "B": "Incorrect. 7.10 uses the undiscounted exercise price of 70.",
+      "C": "Incorrect. 4.26 = 75 − 2.10 − 68.64 subtracts the put price instead of adding it."
+    },
+    "verify": "return 75+2.1-70/Math.pow(1.04,0.5);",
+    "numericAnswer": 8.46,
+    "tolerance": 0.01,
+    "tags": ["put-call-parity"]
+  },
+  {
+    "id": "q-cfa1-put-call-parity-2",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "put-call-parity",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The one-year forward price of an asset is USD 105. A one-year European call on the asset with an exercise price of USD 100 costs USD 9.00, and the annual risk-free rate is 3%. Using put-call-forward parity, the price of a one-year European put with the same exercise price is closest to:",
+    "options": ["USD 4.00", "USD 4.15", "USD 13.85"],
+    "answer": "B",
+    "explanation": "p0 = c0 − (F0 − X)/(1 + r)^T = 9.00 − 5/1.03 = 9.00 − 4.85 = 4.15.",
+    "rationale": {
+      "A": "Incorrect. 4.00 = 9 − 5 fails to discount the difference between the forward price and the exercise price.",
+      "B": "Correct. 9.00 − 5/1.03 = 4.15.",
+      "C": "Incorrect. 13.85 adds the discounted difference instead of subtracting it; when F0 > X, the call is worth more than the put."
+    },
+    "verify": "return 9-(105-100)/1.03;",
+    "numericAnswer": 4.15,
+    "tolerance": 0.01,
+    "tags": ["put-call-forward-parity"]
+  },
+  {
+    "id": "q-cfa1-put-call-parity-3",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "put-call-parity",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A synthetic European put can be created by:",
+    "options": [
+      "buying the underlying, buying a call and borrowing the present value of the exercise price",
+      "writing a call, buying the underlying and lending the present value of the exercise price",
+      "buying a call, short-selling the underlying and lending the present value of the exercise price"
+    ],
+    "answer": "C",
+    "explanation": "From parity, p0 = c0 − S0 + X/(1 + r)^T: buy the call, short the underlying and buy a risk-free bond (lend) worth the PV of X.",
+    "rationale": {
+      "A": "Incorrect. This combination has the wrong signs on the underlying and the bond.",
+      "B": "Incorrect. Writing a call and buying the underlying is a covered call; adding a bond does not create a put, because the call and underlying signs are reversed.",
+      "C": "Correct. Long call, short underlying and long bond replicates a long put."
+    },
+    "tags": ["synthetic-positions"]
+  },
+  {
+    "id": "q-cfa1-put-call-parity-4",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "put-call-parity",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A non-dividend-paying share trades at USD 40. One-year European options with an exercise price of USD 40 are quoted at USD 4.50 (call) and USD 3.20 (put). The annual risk-free rate is 5%. The riskless profit per share available today from exploiting the mispricing is closest to:",
+    "options": ["USD 1.30", "USD 2.60", "USD 0.60"],
+    "answer": "C",
+    "explanation": "Parity put = 4.50 − 40 + 40/1.05 = 2.5952. The market put of 3.20 is overpriced. Write the put and buy the synthetic put (buy call, short share, lend 38.0952): 3.20 − 4.50 + 40 − 38.0952 = 0.60.",
+    "rationale": {
+      "A": "Incorrect. 1.30 = 4.50 − 3.20 assumes the parity put equals the call price, which ignores discounting the exercise price.",
+      "B": "Incorrect. 2.60 is the parity value of the put, not the arbitrage profit.",
+      "C": "Correct. 3.20 − 2.5952 = 0.60 per share."
+    },
+    "verify": "const p=4.5-40+40/1.05; return 3.2-p;",
+    "numericAnswer": 0.6,
+    "tolerance": 0.01,
+    "tags": ["parity-arbitrage"]
+  }
+]

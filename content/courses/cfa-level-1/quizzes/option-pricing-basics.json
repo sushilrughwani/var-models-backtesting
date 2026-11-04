@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q-cfa1-option-pricing-basics-1",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "option-pricing-basics",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A put option with an exercise price of USD 40 is priced at USD 3.10 when the underlying trades at USD 38. The put's time value is closest to:",
+    "options": ["USD 3.10", "USD 1.10", "USD 5.10"],
+    "answer": "B",
+    "explanation": "Exercise value = max(0, 40 − 38) = 2.00. Time value = 3.10 − 2.00 = 1.10.",
+    "rationale": {
+      "A": "Incorrect. 3.10 is the full option price; it treats the put as having no exercise value even though it is in the money.",
+      "B": "Correct. 3.10 − 2.00 = 1.10.",
+      "C": "Incorrect. 5.10 adds the exercise value to the price instead of subtracting it."
+    },
+    "verify": "return 3.1-Math.max(0,40-38);",
+    "numericAnswer": 1.1,
+    "tolerance": 0.01,
+    "tags": ["time-value"]
+  },
+  {
+    "id": "q-cfa1-option-pricing-basics-2",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "option-pricing-basics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A one-year European put has an exercise price of USD 60. The underlying trades at USD 55 and the annual risk-free rate is 5%. The no-arbitrage lower bound for the put's price is closest to:",
+    "options": ["USD 0.00", "USD 5.00", "USD 2.14"],
+    "answer": "C",
+    "explanation": "Lower bound = max(0, X/(1 + r)^T − S0) = max(0, 60/1.05 − 55) = 57.14 − 55 = 2.14.",
+    "rationale": {
+      "A": "Incorrect. Zero is the lower bound only when the PV of the exercise price is below the underlying price.",
+      "B": "Incorrect. 5.00 uses the undiscounted exercise price; a European put cannot be exercised today, so X must be discounted.",
+      "C": "Correct. 60/1.05 − 55 = 2.14."
+    },
+    "verify": "return Math.max(0,60/1.05-55);",
+    "numericAnswer": 2.14,
+    "tolerance": 0.01,
+    "tags": ["option-bounds"]
+  },
+  {
+    "id": "q-cfa1-option-pricing-basics-3",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "option-pricing-basics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Holding all else constant, an increase in the volatility of the underlying will most likely:",
+    "options": [
+      "increase the values of both calls and puts",
+      "increase call values and decrease put values",
+      "decrease the values of both calls and puts"
+    ],
+    "answer": "A",
+    "explanation": "Option holders benefit from large favourable moves while their losses are capped at the premium. Higher volatility increases the chance of large moves in either direction, raising the value of both calls and puts.",
+    "rationale": {
+      "A": "Correct. Volatility adds upside without adding downside for both option types.",
+      "B": "Incorrect. This is the effect of a higher underlying price or a higher interest rate, not volatility.",
+      "C": "Incorrect. Lower volatility, not higher, reduces option values."
+    },
+    "tags": ["option-value-drivers"]
+  },
+  {
+    "id": "q-cfa1-option-pricing-basics-4",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "option-pricing-basics",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "For an American call option on a stock that pays no dividends, which statement is most accurate?",
+    "options": [
+      "It should be exercised as soon as it is in the money to lock in the exercise value.",
+      "It is worth more than an otherwise identical European call because of the early exercise right.",
+      "It should not be exercised early, so its value equals that of an otherwise identical European call."
+    ],
+    "answer": "C",
+    "explanation": "The call's lower bound S0 − X/(1 + r)^T exceeds the exercise value S0 − X, so selling the call always beats exercising it. The early exercise right is worthless and the American call equals the European call.",
+    "rationale": {
+      "A": "Incorrect. Exercising early gives up time value and the interest earned by paying X later.",
+      "B": "Incorrect. The early exercise right has no value for calls on non-dividend-paying stocks, so the two prices are equal.",
+      "C": "Correct. Early exercise is never optimal here, so American and European call values coincide."
+    },
+    "tags": ["american-vs-european"]
+  }
+]

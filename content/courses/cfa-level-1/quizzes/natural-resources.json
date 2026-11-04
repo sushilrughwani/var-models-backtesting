@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-natural-resources-1",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "natural-resources",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Over one year, the spot price of copper rises from 50.00 to 52.00. A fully collateralised long futures investor rolls the whole position once, selling the expiring contract at 52.00 and buying the next contract at 53.56. Collateral earns 2%. The investor's total return is closest to:",
+    "options": ["9.00%", "3.00%", "1.00%"],
+    "answer": "B",
+    "explanation": "Spot return = 2/50 = 4%. Roll return = (52.00 − 53.56)/52.00 = −3% (contango). Collateral = 2%. Total = 4% − 3% + 2% = 3.00%.",
+    "rationale": {
+      "A": "Incorrect. 9.00% treats the contango roll as a gain of 3% instead of a loss.",
+      "B": "Correct. Spot +4%, roll −3% and collateral +2% sum to 3.00%.",
+      "C": "Incorrect. 1.00% omits the 2% collateral return."
+    },
+    "verify": "const spot=(52-50)/50, roll=(52-53.56)/52, col=0.02; return (spot+roll+col)*100;",
+    "numericAnswer": 3.0,
+    "tolerance": 0.005,
+    "tags": ["roll-return", "contango"]
+  },
+  {
+    "id": "q-cfa1-natural-resources-2",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "natural-resources",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A commodity index rolls 50% of its position in a contract this month. The expiring contract is priced at 70.00 and the next contract at 66.50. The roll return contributed this month is closest to:",
+    "options": ["2.63%", "5.00%", "2.50%"],
+    "answer": "C",
+    "explanation": "Roll return = (70.00 − 66.50)/70.00 × 50% = 5% × 0.5 = 2.50%. The curve is in backwardation, so the roll is positive.",
+    "rationale": {
+      "A": "Incorrect. 2.63% divides the price difference by the far contract price (66.50) instead of the near contract.",
+      "B": "Incorrect. 5.00% assumes the entire position is rolled, ignoring that only half is.",
+      "C": "Correct. The 5% backwardation gain applies to half the position, giving 2.50%."
+    },
+    "verify": "return (70-66.5)/70*0.5*100;",
+    "numericAnswer": 2.5,
+    "tolerance": 0.005,
+    "tags": ["roll-return", "backwardation"]
+  },
+  {
+    "id": "q-cfa1-natural-resources-3",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "natural-resources",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which feature most clearly distinguishes timberland from farmland as an investment?",
+    "options": ["Timberland returns do not depend on commodity prices.", "Harvesting can be delayed when prices are low because trees keep growing.", "Timberland has no exposure to weather or natural disasters."],
+    "answer": "B",
+    "explanation": "Trees can be left standing and continue to grow, so the owner can time harvests to prices. Crops must be harvested when they mature.",
+    "rationale": {
+      "A": "Incorrect. Timber prices are one of the three main sources of timberland return.",
+      "B": "Correct. Harvest flexibility, with continued biological growth, is the distinctive advantage of timberland.",
+      "C": "Incorrect. Timberland faces fire, storm and pest risk."
+    },
+    "tags": ["timberland", "farmland"]
+  },
+  {
+    "id": "q-cfa1-natural-resources-4",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "natural-resources",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A commodity futures curve is most likely to be in backwardation when:",
+    "options": ["inventories are scarce and the convenience yield of holding the physical commodity is high", "inventories are plentiful and storage costs are high", "interest rates are high and the commodity is costly to insure"],
+    "answer": "A",
+    "explanation": "Backwardation (futures below spot) arises when holding the physical good today is valuable because supplies are tight, so the convenience yield outweighs carrying costs.",
+    "rationale": {
+      "A": "Correct. A high convenience yield pushes futures prices below spot.",
+      "B": "Incorrect. Ample inventories and high storage costs are associated with contango.",
+      "C": "Incorrect. High financing and insurance costs raise carrying costs, which also push the curve toward contango."
+    },
+    "tags": ["futures-curve"]
+  }
+]

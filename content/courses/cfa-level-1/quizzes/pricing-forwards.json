@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-cfa1-pricing-forwards-1",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "pricing-forwards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "At the moment a forward contract is initiated at its no-arbitrage forward price, the value of the long position is:",
+    "options": [
+      "zero",
+      "the spot price minus the forward price",
+      "the present value of the forward price"
+    ],
+    "answer": "A",
+    "explanation": "The forward price is chosen so that neither party has an advantage, so the contract has zero value to both sides at initiation.",
+    "rationale": {
+      "A": "Correct. No-arbitrage pricing sets the forward price so that the initial value is zero.",
+      "B": "Incorrect. At initiation S0 − F0 is generally negative (F0 includes carry) and is not the contract's value.",
+      "C": "Incorrect. The present value of the forward price equals the carry-adjusted spot price; it is a component of value, not the value of the contract."
+    },
+    "tags": ["price-vs-value"]
+  },
+  {
+    "id": "q-cfa1-pricing-forwards-2",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "pricing-forwards",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An investor entered a nine-month long forward on a non-dividend-paying share when the spot price was USD 80 and the annual risk-free rate was 3%. Three months later the share trades at USD 83 and the rate is unchanged. The value of the long forward is closest to:",
+    "options": ["USD 1.21", "USD 3.00", "USD 2.41"],
+    "answer": "C",
+    "explanation": "F0 = 80 × 1.03^0.75 = 81.7933. Remaining time = 0.5 years. V = 83 − 81.7933 / 1.03^0.5 = 83 − 80.5934 = 2.41.",
+    "rationale": {
+      "A": "Incorrect. 1.21 = 83 − 81.79 fails to discount the forward price over the remaining six months.",
+      "B": "Incorrect. 3.00 = 83 − 80 compares the new spot with the old spot and ignores the carry built into the forward price.",
+      "C": "Correct. 83 − 81.7933 / 1.03^0.5 = 2.41."
+    },
+    "verify": "const F0=80*Math.pow(1.03,0.75); return 83-F0/Math.pow(1.03,0.5);",
+    "numericAnswer": 2.41,
+    "tolerance": 0.01,
+    "tags": ["forward-valuation"]
+  },
+  {
+    "id": "q-cfa1-pricing-forwards-3",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "pricing-forwards",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The spot exchange rate is 1.1000 USD per EUR. The one-year risk-free rate is 4.5% in USD and 3.0% in EUR (annual compounding). The no-arbitrage one-year forward rate in USD per EUR is closest to:",
+    "options": ["1.0842", "1.1160", "1.1495"],
+    "answer": "B",
+    "explanation": "With USD as the price currency and EUR as the base currency: F0 = 1.1000 × 1.045 / 1.03 = 1.1160.",
+    "rationale": {
+      "A": "Incorrect. 1.0842 inverts the rates, putting the EUR rate in the numerator.",
+      "B": "Correct. 1.1000 × 1.045 / 1.03 = 1.1160.",
+      "C": "Incorrect. 1.1495 = 1.1000 × 1.045 ignores the interest earned on the base currency (EUR)."
+    },
+    "verify": "return 1.1*1.045/1.03;",
+    "numericAnswer": 1.116,
+    "tolerance": 0.0001,
+    "tags": ["currency-forward"]
+  },
+  {
+    "id": "q-cfa1-pricing-forwards-4",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "pricing-forwards",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A one-year forward on a non-dividend-paying share was initiated when the spot price was USD 120 and the annual risk-free rate was 4%. Six months later the spot price is USD 115 and the rate is unchanged. The value of the short forward position (in USD) is closest to:",
+    "options": ["7.38", "−7.38", "5.00"],
+    "answer": "A",
+    "explanation": "F0 = 120 × 1.04 = 124.80. Long value = 115 − 124.80 / 1.04^0.5 = 115 − 122.376 = −7.376. Short value = +7.38.",
+    "rationale": {
+      "A": "Correct. The short gains when the spot falls: −(115 − 122.376) = 7.38.",
+      "B": "Incorrect. −7.38 is the value of the long position, not the short.",
+      "C": "Incorrect. 5.00 = 120 − 115 ignores the carry in the forward price and discounting."
+    },
+    "verify": "const F0=120*1.04; return -(115-F0/Math.pow(1.04,0.5));",
+    "numericAnswer": 7.38,
+    "tolerance": 0.01,
+    "tags": ["forward-valuation"]
+  }
+]

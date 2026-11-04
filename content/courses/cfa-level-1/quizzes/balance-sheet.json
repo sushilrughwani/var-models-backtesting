@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-balance-sheet-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "balance-sheet",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A company reports cash of USD 60, marketable securities of USD 40, receivables of USD 100 and inventory of USD 250 (all in millions). Current liabilities total USD 300 million. The quick ratio is closest to:",
+    "options": ["1.50", "0.67", "0.33"],
+    "answer": "B",
+    "explanation": "Quick ratio = (60 + 40 + 100) / 300 = 0.67. Inventory is excluded.",
+    "rationale": {
+      "A": "Incorrect. 1.50 is the current ratio, which includes inventory: 450 / 300.",
+      "B": "Correct. Cash, marketable securities and receivables total 200; 200 / 300 = 0.67.",
+      "C": "Incorrect. 0.33 is the cash ratio, which also excludes receivables: 100 / 300."
+    },
+    "verify": "return (60 + 40 + 100)/300;",
+    "numericAnswer": 0.67,
+    "tolerance": 0.005,
+    "tags": ["liquidity-ratios"]
+  },
+  {
+    "id": "q-cfa1-balance-sheet-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "balance-sheet",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company has total shareholders' equity of USD 800 million, goodwill of USD 150 million, other identifiable intangible assets of USD 50 million and 40 million shares outstanding. Tangible book value per share (USD) is closest to:",
+    "options": ["20.00", "16.25", "15.00"],
+    "answer": "C",
+    "explanation": "Tangible equity = 800 - 150 - 50 = 600; 600 / 40 = 15.00.",
+    "rationale": {
+      "A": "Incorrect. 20.00 is ordinary book value per share (800 / 40) with no intangibles removed.",
+      "B": "Incorrect. 16.25 removes goodwill but not the other intangible assets: 650 / 40.",
+      "C": "Correct. Removing both goodwill and other intangibles leaves 600; 600 / 40 = 15.00."
+    },
+    "verify": "return (800 - 150 - 50)/40;",
+    "numericAnswer": 15.0,
+    "tolerance": 0.005,
+    "tags": ["book-value", "intangibles"]
+  },
+  {
+    "id": "q-cfa1-balance-sheet-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "balance-sheet",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Under IFRS, a company buys corporate bonds with the sole business objective of holding them to collect contractual interest and principal. The cash flows are solely payments of principal and interest. The bonds are most likely measured at:",
+    "options": ["amortised cost.", "fair value through other comprehensive income.", "fair value through profit or loss."],
+    "answer": "A",
+    "explanation": "A hold-to-collect business model with simple principal-and-interest cash flows leads to amortised cost measurement.",
+    "rationale": {
+      "A": "Correct. Hold-to-collect debt with principal-and-interest cash flows is carried at amortised cost.",
+      "B": "Incorrect. FVOCI applies when the model is to collect cash flows and also sell the assets.",
+      "C": "Incorrect. FVPL is the residual category, for example for trading portfolios."
+    },
+    "tags": ["financial-assets", "measurement"]
+  },
+  {
+    "id": "q-cfa1-balance-sheet-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "balance-sheet",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An unrealised gain on equity securities held for trading and measured at fair value through profit or loss is reported in:",
+    "options": ["other comprehensive income.", "net income (profit or loss).", "retained earnings directly, with no income statement effect."],
+    "answer": "B",
+    "explanation": "For FVPL assets, all fair value changes, realised or unrealised, are recognised in profit or loss.",
+    "rationale": {
+      "A": "Incorrect. OCI is used for FVOCI assets, not trading securities.",
+      "B": "Correct. FVPL means fair value changes go through profit or loss.",
+      "C": "Incorrect. Gains reach retained earnings only through net income; there is no direct posting."
+    },
+    "tags": ["financial-assets"]
+  }
+]

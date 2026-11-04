@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-fintech-in-investment-management-1",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "fintech-in-investment-management",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "During a trading session a stock trades 4,000 shares at USD 20.00 and 6,000 shares at USD 20.50. The volume-weighted average price (VWAP) for the session is closest to:",
+    "options": ["USD 20.25", "USD 20.30", "USD 20.50"],
+    "answer": "B",
+    "explanation": "VWAP = (4,000 × 20.00 + 6,000 × 20.50) / 10,000 = (80,000 + 123,000) / 10,000 = USD 20.30.",
+    "rationale": {
+      "A": "Incorrect. USD 20.25 is the simple average of the two prices, ignoring the different volumes.",
+      "B": "Correct. Weighting each price by its volume gives USD 20.30.",
+      "C": "Incorrect. USD 20.50 is just the price of the larger trade, not a weighted average."
+    },
+    "verify": "return (4000*20+6000*20.5)/10000;",
+    "numericAnswer": 20.3,
+    "tolerance": 0.005,
+    "tags": ["algorithmic-trading", "vwap"]
+  },
+  {
+    "id": "q-cfa1-fintech-in-investment-management-2",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "fintech-in-investment-management",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investor with a USD 150,000 portfolio compares a robo-adviser charging 0.30% a year with a traditional adviser charging 1.10% a year. The annual fee saving from using the robo-adviser is closest to:",
+    "options": ["USD 1,650", "USD 450", "USD 1,200"],
+    "answer": "C",
+    "explanation": "Traditional fee = 0.011 × 150,000 = 1,650. Robo fee = 0.003 × 150,000 = 450. Saving = USD 1,200.",
+    "rationale": {
+      "A": "Incorrect. USD 1,650 is the traditional adviser's total fee, not the difference.",
+      "B": "Incorrect. USD 450 is the robo-adviser's fee, not the saving.",
+      "C": "Correct. (1.10% − 0.30%) × 150,000 = USD 1,200."
+    },
+    "verify": "return 150000*(0.011-0.003);",
+    "numericAnswer": 1200,
+    "tolerance": 0.5,
+    "tags": ["robo-advice"]
+  },
+  {
+    "id": "q-cfa1-fintech-in-investment-management-3",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "fintech-in-investment-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with a permissionless distributed ledger, a permissioned distributed ledger most likely:",
+    "options": ["allows anyone to join the network and validate transactions", "restricts which participants can join or validate, which can improve speed and privacy", "requires proof of work to reach consensus"],
+    "answer": "B",
+    "explanation": "Permissioned networks limit participation to approved members, which suits institutions needing control, privacy and faster processing. Open participation describes permissionless networks.",
+    "rationale": {
+      "A": "Incorrect. Open access to join and validate describes a permissionless ledger.",
+      "B": "Correct. Restricted participation is the defining feature of a permissioned ledger.",
+      "C": "Incorrect. Proof of work is associated mainly with permissionless networks; permissioned networks typically use lighter consensus methods."
+    },
+    "tags": ["distributed-ledger"]
+  },
+  {
+    "id": "q-cfa1-fintech-in-investment-management-4",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "fintech-in-investment-management",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which statement about high-frequency trading (HFT) is most accurate?",
+    "options": ["HFT guarantees deeper liquidity in all market conditions.", "HFT is a form of fundamental analysis that holds positions for months.", "HFT can narrow bid-ask spreads in normal markets but may withdraw liquidity during periods of stress."],
+    "answer": "C",
+    "explanation": "HFT firms often act as very fast market makers, tightening spreads in normal conditions. In turbulent markets they can withdraw quickly, so liquidity may evaporate and price moves can be amplified.",
+    "rationale": {
+      "A": "Incorrect. Liquidity provided by HFT can disappear when markets are stressed.",
+      "B": "Incorrect. HFT holds positions for fractions of a second to minutes and relies on market microstructure, not fundamental analysis.",
+      "C": "Correct. HFT tends to improve liquidity in normal times but can amplify stress."
+    },
+    "tags": ["high-frequency-trading"]
+  }
+]

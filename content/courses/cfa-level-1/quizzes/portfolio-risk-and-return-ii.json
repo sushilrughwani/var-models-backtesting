@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-cfa1-portfolio-risk-and-return-ii-1",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-risk-and-return-ii",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A stock has a standard deviation of 30% and a correlation of 0.50 with the market. The market's standard deviation is 20% and its expected return is 8.5%; the risk-free rate is 2.5%. The stock's CAPM required return is closest to:",
+    "options": ["11.50%", "3.40%", "7.00%"],
+    "answer": "C",
+    "explanation": "β = ρσi/σm = 0.50 × 30 / 20 = 0.75. Required return = 2.5% + 0.75 × (8.5% − 2.5%) = 2.5% + 4.5% = 7.00%.",
+    "rationale": {
+      "A": "Incorrect. 11.50% uses β = σi/σm = 1.5, forgetting to multiply by the correlation.",
+      "B": "Incorrect. 3.40% computes beta as covariance divided by σm (0.03/0.20 = 0.15) instead of σm².",
+      "C": "Correct. β = 0.75 and 2.5% + 0.75 × 6% = 7.00%."
+    },
+    "verify": "const rho=0.5,si=0.30,sm=0.20,rf=2.5,rm=8.5; const b=rho*si/sm; return rf+b*(rm-rf);",
+    "numericAnswer": 7.0,
+    "tolerance": 0.005,
+    "tags": ["beta", "capm"]
+  },
+  {
+    "id": "q-cfa1-portfolio-risk-and-return-ii-2",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-risk-and-return-ii",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A portfolio returned 10% with a beta of 0.9. The risk-free rate was 2% and the market returned 9%. The portfolio's Jensen's alpha is closest to:",
+    "options": ["1.70%", "1.00%", "8.00%"],
+    "answer": "A",
+    "explanation": "CAPM-required return = 2% + 0.9 × (9% − 2%) = 8.3%. Alpha = 10% − 8.3% = 1.70%.",
+    "rationale": {
+      "A": "Correct. 10% − [2% + 0.9 × 7%] = 1.70%.",
+      "B": "Incorrect. 1.00% is simply the portfolio return minus the market return, ignoring beta and the risk-free rate.",
+      "C": "Incorrect. 8.00% is the excess return over the risk-free rate, not the excess over the CAPM-required return."
+    },
+    "verify": "const rp=10,b=0.9,rf=2,rm=9; return rp-(rf+b*(rm-rf));",
+    "numericAnswer": 1.7,
+    "tolerance": 0.005,
+    "tags": ["jensens-alpha", "performance-measurement"]
+  },
+  {
+    "id": "q-cfa1-portfolio-risk-and-return-ii-3",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-risk-and-return-ii",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about the capital market line (CML) and the security market line (SML) is most accurate?",
+    "options": [
+      "The CML measures risk with beta, while the SML measures risk with standard deviation.",
+      "The SML applies to individual securities and inefficient portfolios, while the CML applies only to efficient portfolios.",
+      "A security plotting above the SML is overvalued."
+    ],
+    "answer": "B",
+    "explanation": "The CML plots expected return against total risk and contains only combinations of the risk-free asset and the market portfolio. The SML plots expected return against beta and prices every asset. A security above the SML offers more than its required return, so it is undervalued.",
+    "rationale": {
+      "A": "Incorrect. It is the reverse: the CML uses standard deviation and the SML uses beta.",
+      "B": "Correct. The SML prices all assets by systematic risk; the CML holds only efficient portfolios.",
+      "C": "Incorrect. Plotting above the SML means the expected return exceeds the required return, so the security is undervalued."
+    },
+    "tags": ["cml", "sml"]
+  },
+  {
+    "id": "q-cfa1-portfolio-risk-and-return-ii-4",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-risk-and-return-ii",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A pension fund allocates money to 15 external equity managers, each running a slice of a well-diversified total portfolio. To compare the managers' risk-adjusted performance, the fund should most appropriately use:",
+    "options": ["the Sharpe ratio", "M-squared", "the Treynor ratio"],
+    "answer": "C",
+    "explanation": "When a manager's portfolio is only one part of a diversified whole, its unsystematic risk is diversified away at the total-fund level, so the relevant risk is beta. Treynor (or Jensen's alpha) is appropriate; Sharpe and M² use total risk.",
+    "rationale": {
+      "A": "Incorrect. The Sharpe ratio penalises total risk, including unsystematic risk that diversifies away in the total fund.",
+      "B": "Incorrect. M² is a rescaled Sharpe ratio and also uses total risk.",
+      "C": "Correct. Treynor uses beta, the risk that matters for a component of a diversified portfolio."
+    },
+    "tags": ["treynor", "performance-measurement"]
+  }
+]

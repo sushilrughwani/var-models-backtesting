@@ -1,0 +1,86 @@
+[
+  {
+    "id": "q-cfa1-professionalism-1",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "professionalism",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Arjun Mehta, CFA, works in a country whose securities law imposes no restrictions on gifts to analysts. The Code and Standards restrict gifts that could compromise objectivity. Arjun should:",
+    "options": [
+      "Follow local law, because the law of the country where he works always takes precedence",
+      "Follow the Code and Standards, because they are stricter than local law in this case",
+      "Follow whichever rule his employer prefers"
+    ],
+    "answer": "B",
+    "explanation": "Under the knowledge of the law requirement, members comply with the stricter of applicable law and the Code and Standards.",
+    "rationale": {
+      "A": "Incorrect. Local law does not automatically prevail; when the Standards are stricter, they govern.",
+      "B": "Correct. The stricter rule applies, and here that is the Code and Standards.",
+      "C": "Incorrect. Employer preference does not override the stricter-rule principle."
+    }
+  },
+  {
+    "id": "q-cfa1-professionalism-2",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "professionalism",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Mei Takahashi, CFA, is hired by a small biotech company to write a research report on the company. She will receive a fixed fee regardless of her conclusions, and the report will clearly state that the company paid for it. Mei's arrangement:",
+    "options": [
+      "Is consistent with the standard on independence and objectivity",
+      "Violates the standard on independence and objectivity because any issuer-paid research is prohibited",
+      "Would be acceptable only if her fee rose with a favourable rating"
+    ],
+    "answer": "A",
+    "explanation": "Issuer-paid research is allowed when the analyst is paid a flat fee unrelated to the conclusions and the arrangement is disclosed.",
+    "rationale": {
+      "A": "Correct. A flat fee independent of the conclusions, plus clear disclosure, protects objectivity.",
+      "B": "Incorrect. Issuer-paid research is not prohibited outright; it must be structured and disclosed to protect objectivity.",
+      "C": "Incorrect. Linking pay to a favourable rating would directly compromise objectivity and be a violation."
+    }
+  },
+  {
+    "id": "q-cfa1-professionalism-3",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "professionalism",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Oliver Grant, a CFA candidate at the fictional Pemberton Wealth, tells prospective clients that a balanced fund of equities and corporate bonds he manages is \"guaranteed to earn at least 6% a year.\" Oliver has most likely violated the standard concerning:",
+    "options": [
+      "Misconduct",
+      "Knowledge of the law",
+      "Misrepresentation"
+    ],
+    "answer": "C",
+    "explanation": "Promising a guaranteed return on a portfolio of risky assets misrepresents its risk and expected outcome.",
+    "rationale": {
+      "A": "Incorrect. Misconduct concerns dishonesty and acts reflecting adversely on professional integrity in general; the specific issue here is a misleading guarantee, which is addressed by misrepresentation.",
+      "B": "Incorrect. Nothing indicates a conflict between law and the Standards; the problem is the false guarantee.",
+      "C": "Correct. Guaranteeing returns on risky investments is a classic misrepresentation."
+    }
+  },
+  {
+    "id": "q-cfa1-professionalism-4",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "professionalism",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Sofia Brandt, CFA, discovers that her manager at the fictional Elm Street Advisors is backdating trade tickets to shift losses away from favoured clients. She reports it to compliance, but the practice continues. To comply with the Standards, Sofia must at minimum:",
+    "options": [
+      "Report the activity to the national securities regulator immediately",
+      "Dissociate herself from the activity, which may require refusing related work or resigning",
+      "Do nothing further, since she has already notified compliance"
+    ],
+    "answer": "B",
+    "explanation": "Members must not knowingly participate in or assist violations. When internal escalation fails, they must dissociate; external reporting may be advisable or legally required but is not mandated by the Standards.",
+    "rationale": {
+      "A": "Incorrect. Reporting to a regulator may be appropriate or legally required, but the Standards do not mandate it.",
+      "B": "Correct. Dissociation is the minimum requirement once internal reporting fails to stop the violation.",
+      "C": "Incorrect. Continuing to work alongside the violation without dissociating could amount to participating in or assisting it."
+    }
+  }
+]

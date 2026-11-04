@@ -1,0 +1,74 @@
+[
+  {
+    "id": "q-cfa1-behavioral-biases-1",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "behavioral-biases",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Tomas bought a stock at USD 40. It now trades at USD 28 after a profit warning. He refuses to sell, saying he will exit once it returns to USD 40, and he recently sold a different stock just after it rose 10%. His behaviour is best explained by:",
+    "options": ["loss aversion", "availability bias", "conservatism bias"],
+    "answer": "A",
+    "explanation": "Holding a loser to avoid realising a loss while quickly selling a winner is the disposition effect, which arises from loss aversion (often reinforced by anchoring on the purchase price).",
+    "rationale": {
+      "A": "Correct. Loss aversion produces the disposition effect: selling winners early and holding losers too long.",
+      "B": "Incorrect. Availability bias concerns judging probability by how easily examples come to mind.",
+      "C": "Incorrect. Conservatism is under-reacting to new information; Tomas's main issue is reluctance to realise a loss."
+    },
+    "tags": ["loss-aversion", "disposition-effect"]
+  },
+  {
+    "id": "q-cfa1-behavioral-biases-2",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "behavioral-biases",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst keeps her earnings forecast for a firm almost unchanged after the firm reports a major new contract, explaining that one announcement should not change a long-established view. This is most likely an example of:",
+    "options": ["status quo bias", "conservatism bias", "illusion of control bias"],
+    "answer": "B",
+    "explanation": "Conservatism is a belief-perseverance bias in which people fail to update their beliefs sufficiently when new information arrives.",
+    "rationale": {
+      "A": "Incorrect. Status quo bias is an emotional preference for inaction in portfolio decisions, not insufficient updating of a forecast.",
+      "B": "Correct. Under-reacting to new information and sticking with a prior forecast is conservatism.",
+      "C": "Incorrect. Illusion of control is believing one can influence outcomes that one cannot."
+    },
+    "tags": ["belief-perseverance"]
+  },
+  {
+    "id": "q-cfa1-behavioral-biases-3",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "behavioral-biases",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which bias is classified as an emotional bias rather than a cognitive error?",
+    "options": ["Mental accounting", "Anchoring and adjustment", "Overconfidence"],
+    "answer": "C",
+    "explanation": "Overconfidence has cognitive elements but is classified as emotional because it is rooted in feelings about one's own ability and is hard to correct. Mental accounting and anchoring are information-processing cognitive errors.",
+    "rationale": {
+      "A": "Incorrect. Mental accounting is an information-processing cognitive error.",
+      "B": "Incorrect. Anchoring and adjustment is an information-processing cognitive error.",
+      "C": "Correct. Overconfidence is treated as an emotional bias."
+    },
+    "tags": ["emotional-biases", "classification"]
+  },
+  {
+    "id": "q-cfa1-behavioral-biases-4",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "behavioral-biases",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A very wealthy client holds an inherited block of shares worth 5% of her assets and refuses to sell because her grandmother founded the company. Her financial goals are not threatened by the position. The adviser's most appropriate response is to:",
+    "options": ["adapt to the bias by keeping the holding and managing the rest of the portfolio around it", "moderate the bias by insisting the shares be sold immediately", "ignore the bias because endowment is a cognitive error that will correct itself"],
+    "answer": "A",
+    "explanation": "Endowment bias is emotional, the client is wealthy and the position is small relative to her goals, so the cost of the bias is low. Adapting is appropriate.",
+    "rationale": {
+      "A": "Correct. Emotional bias plus high wealth and low stakes points to adapting.",
+      "B": "Incorrect. Forcing a sale fights an emotional bias when its cost to the client's goals is small.",
+      "C": "Incorrect. Endowment is an emotional bias, and biases do not simply correct themselves."
+    },
+    "tags": ["endowment", "moderate-vs-adapt"]
+  }
+]

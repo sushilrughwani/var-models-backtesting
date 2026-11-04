@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q-cfa1-alternative-investment-features-1",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "alternative-investment-features",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An LP has USD 30 million invested in a private fund that earns a gross return of 12% for the year. The fund charges a 2% management fee on invested capital and a 20% incentive fee on gains net of the management fee. The LP's net return for the year is closest to:",
+    "options": ["10.00%", "7.60%", "8.00%"],
+    "answer": "C",
+    "explanation": "Gross gain = 30 × 0.12 = 3.6m. Management fee = 30 × 0.02 = 0.6m. Incentive fee = 0.20 × (3.6 − 0.6) = 0.6m. Net gain = 3.6 − 0.6 − 0.6 = 2.4m, so the net return is 2.4 / 30 = 8.00%.",
+    "rationale": {
+      "A": "Incorrect. 10.00% deducts only the management fee and ignores the incentive fee.",
+      "B": "Incorrect. 7.60% charges the incentive fee on the gross gain of 3.6m (0.72m) instead of on the gain net of the management fee.",
+      "C": "Correct. The incentive fee is 20% of the 3.0m gain after the management fee, leaving a net gain of 2.4m, or 8.00%."
+    },
+    "verify": "const inv=30,g=inv*0.12,m=inv*0.02,inc=0.2*(g-m); return (g-m-inc)/inv*100;",
+    "numericAnswer": 8.0,
+    "tolerance": 0.005,
+    "tags": ["fees", "fund-investing"]
+  },
+  {
+    "id": "q-cfa1-alternative-investment-features-2",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "alternative-investment-features",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Compared with investing through a fund, direct investing in private assets most likely offers the investor:",
+    "options": ["greater control and lower fees, but requires more in-house expertise", "greater diversification and lower required expertise", "lower fees and greater diversification, with no loss of control"],
+    "answer": "A",
+    "explanation": "Direct investing removes the intermediary, so the investor keeps full control and avoids fund fees, but it must build its own expert team and usually ends up holding fewer, larger positions.",
+    "rationale": {
+      "A": "Correct. Direct investing maximises control and minimises fees at the cost of needing substantial expertise.",
+      "B": "Incorrect. Fund investing, not direct investing, gives the most diversification for the least expertise.",
+      "C": "Incorrect. Direct investing reduces diversification because the investor holds fewer assets than a pooled fund."
+    },
+    "tags": ["access-methods"]
+  },
+  {
+    "id": "q-cfa1-alternative-investment-features-3",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "alternative-investment-features",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In a private equity limited partnership, which statement is most accurate?",
+    "options": ["Limited partners make the investment decisions and bear unlimited liability.", "The general partner manages the fund, while limited partners' liability is limited to their committed capital.", "Both the general partner and the limited partners share management duties equally."],
+    "answer": "B",
+    "explanation": "The GP runs the fund and in principle has unlimited liability; LPs are passive investors whose potential loss is capped at the capital they committed.",
+    "rationale": {
+      "A": "Incorrect. This reverses the roles; LPs are passive and their liability is limited.",
+      "B": "Correct. The GP manages the fund; LP liability is limited to the commitment.",
+      "C": "Incorrect. LPs take no part in day-to-day management, which is what preserves their limited liability."
+    },
+    "tags": ["limited-partnership"]
+  },
+  {
+    "id": "q-cfa1-alternative-investment-features-4",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "alternative-investment-features",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A pension fund that is already an LP in a buyout fund is offered the chance to invest additional capital directly in one of the fund's portfolio companies at no fee. The most significant risk the pension fund should consider is:",
+    "options": ["paying a second layer of management and incentive fees", "losing its limited liability status in the main fund", "adverse selection and increased concentration in a single deal"],
+    "answer": "C",
+    "explanation": "This is a co-investment. Its main benefit is low or zero fees; its main risks are that the GP may offer less attractive deals and that the LP concentrates more capital in one company.",
+    "rationale": {
+      "A": "Incorrect. The co-investment is offered at no fee, so fee layering is not the issue.",
+      "B": "Incorrect. Co-investing alongside the fund does not make the LP a manager of the main fund.",
+      "C": "Correct. Co-investors face adverse selection and concentration risk."
+    },
+    "tags": ["co-investment"]
+  }
+]

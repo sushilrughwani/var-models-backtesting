@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-calculating-and-applying-var-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "calculating-and-applying-var",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio holds 500 long put options on a stock priced at USD 50. Each put has a delta of −0.4, and the stock's daily volatility is 1.5%. Using the delta-normal approach and z = 1.645, the one-day 95% VaR of the position is closest to:",
+    "options": ["USD 246.75", "USD 616.88", "USD 348.90", "USD 98.70"],
+    "answer": "A",
+    "explanation": "VaR ≈ N × |δ| × S × σ × z = 500 × 0.4 × 50 × 0.015 × 1.645 = USD 246.75.",
+    "rationale": {
+      "A": "Correct. 500 × 0.4 × 50 × 0.015 × 1.645 = 246.75.",
+      "B": "Incorrect. 616.88 is the VaR of 500 shares; it omits the option delta of 0.4.",
+      "C": "Incorrect. 348.90 uses the 99% z-value of 2.326 instead of 1.645.",
+      "D": "Incorrect. 98.70 multiplies the share VaR by delta squared (0.16) instead of by the absolute delta."
+    },
+    "verify": "return 500*0.4*50*0.015*1.645;",
+    "numericAnswer": 246.75,
+    "tolerance": 0.01,
+    "tags": ["delta-normal", "options"]
+  },
+  {
+    "id": "q-frm1-calculating-and-applying-var-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "calculating-and-applying-var",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A dealer is short 1,000 call options on a stock priced at USD 80. Each call has delta 0.5 and gamma 0.03, and the stock's daily volatility is 2%. Using the delta-gamma approximation with z = 2.326, the one-day 99% VaR is closest to:",
+    "options": ["USD 1,860.80", "USD 1,653.05", "USD 6,541.34", "USD 2,068.55"],
+    "answer": "D",
+    "explanation": "ΔS = 80 × 0.02 × 2.326 = 3.7216. Delta term = 0.5 × 3.7216 = 1.8608. Gamma term = 0.5 × 0.03 × 3.7216² = 0.20775. A short option has negative gamma, so the gamma term adds to the loss: 1,000 × (1.8608 + 0.20775) = USD 2,068.55.",
+    "rationale": {
+      "A": "Incorrect. 1,860.80 is the delta-only VaR; it ignores gamma.",
+      "B": "Incorrect. 1,653.05 subtracts the gamma term, which is right for a long option but wrong for a short one.",
+      "C": "Incorrect. 6,541.34 scales the correct one-day figure by √10, turning it into a 10-day VaR.",
+      "D": "Correct. For a short option the gamma term increases VaR: 1,000 × 2.06855 = 2,068.55."
+    },
+    "verify": "const d=80*0.02*2.326; return 1000*(0.5*d+0.5*0.03*d*d);",
+    "numericAnswer": 2068.55,
+    "tolerance": 0.01,
+    "tags": ["delta-gamma", "options"]
+  },
+  {
+    "id": "q-frm1-calculating-and-applying-var-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "calculating-and-applying-var",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which is the most significant weakness of historical simulation VaR?",
+    "options": ["It requires returns to be normally distributed", "Its results depend heavily on the historical window, and VaR can jump when large days enter or leave the sample", "It cannot be applied to portfolios containing options", "It requires an estimate of the full correlation matrix"],
+    "answer": "B",
+    "explanation": "Historical simulation makes no distributional assumption and revalues the portfolio directly, so options are handled. Its main problem is dependence on the window: a calm window understates risk, and the estimate shifts abruptly as extreme days roll in and out.",
+    "rationale": {
+      "A": "Incorrect. Historical simulation is non-parametric; normality is an assumption of the delta-normal method.",
+      "B": "Correct. Window dependence and ghost effects are the key weaknesses.",
+      "C": "Incorrect. Each scenario can fully revalue options, so non-linearity is captured.",
+      "D": "Incorrect. Correlations are embedded in the historical data; no matrix needs to be estimated."
+    },
+    "tags": ["historical-simulation"]
+  },
+  {
+    "id": "q-frm1-calculating-and-applying-var-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "calculating-and-applying-var",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A desk holds a large book of short out-of-the-money options and wants a 10-day VaR that properly reflects large price moves. Which approach is most appropriate?",
+    "options": ["Delta-normal VaR scaled by the square root of 10", "Delta approximation applied to a 10-day price move", "Monte Carlo simulation with full revaluation of every option on each scenario", "Standard deviation of the book's daily P&L multiplied by 10"],
+    "answer": "C",
+    "explanation": "Short options have strong negative convexity and their losses grow sharply for large moves. Only full revaluation captures this; local delta methods and simple scaling miss the curvature.",
+    "rationale": {
+      "A": "Incorrect. Delta-normal ignores gamma, which understates losses on a short option book, and √T scaling adds further error.",
+      "B": "Incorrect. A delta approximation is linear and misses curvature, which is largest for big 10-day moves.",
+      "C": "Correct. Full revaluation captures the non-linear payoff across the whole distribution.",
+      "D": "Incorrect. Multiplying by 10 instead of √10 is wrong scaling, and a standard deviation is not a quantile."
+    },
+    "tags": ["monte-carlo", "full-revaluation"]
+  }
+]

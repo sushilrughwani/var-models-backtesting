@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-business-cycles-1",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "business-cycles",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A country has a working-age population of 50 million. Of these, 30 million are employed and 2 million are unemployed and actively looking for work. The unemployment rate is closest to:",
+    "options": ["4.00%", "6.25%", "6.67%"],
+    "answer": "B",
+    "explanation": "Labour force = 30 + 2 = 32 million. Unemployment rate = 2 / 32 = 6.25%.",
+    "rationale": {
+      "A": "Incorrect. 4.00% divides the unemployed by the whole working-age population instead of the labour force.",
+      "B": "Correct. The unemployed are divided by the labour force (employed plus unemployed): 2/32 = 6.25%.",
+      "C": "Incorrect. 6.67% divides by the employed only, leaving the unemployed out of the labour force."
+    },
+    "verify": "const emp=30, unemp=2; return unemp/(emp+unemp)*100;",
+    "numericAnswer": 6.25,
+    "tolerance": 0.005,
+    "tags": ["unemployment"]
+  },
+  {
+    "id": "q-cfa1-business-cycles-2",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "business-cycles",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following is most likely classified as a leading economic indicator?",
+    "options": ["Industrial production", "Inventory-to-sales ratio", "Building permits for new homes"],
+    "answer": "C",
+    "explanation": "Building permits signal construction activity that has not happened yet, so they turn before the overall economy.",
+    "rationale": {
+      "A": "Incorrect. Industrial production moves with the economy and is a coincident indicator.",
+      "B": "Incorrect. The inventory-to-sales ratio rises after sales have already weakened, so it is a lagging indicator.",
+      "C": "Correct. Permits are issued before construction starts, so they lead economic activity."
+    },
+    "tags": ["economic-indicators"]
+  },
+  {
+    "id": "q-cfa1-business-cycles-3",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "business-cycles",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Real GDP is above its trend level, but its growth rate has fallen for two consecutive quarters. Unsold goods are accumulating and inflation is near its highest level of the cycle. The economy is most likely in the:",
+    "options": ["slowdown phase", "recovery phase", "contraction phase"],
+    "answer": "A",
+    "explanation": "Activity above trend with fading growth, rising inventories and late-peaking inflation describes the slowdown phase after the peak.",
+    "rationale": {
+      "A": "Correct. The slowdown phase is above trend but decelerating, with inventories building and inflation peaking late.",
+      "B": "Incorrect. In recovery, activity is below trend and inventories are being rebuilt, with low inflation.",
+      "C": "Incorrect. In contraction, activity is below trend and falling; here output is still above trend."
+    },
+    "tags": ["business-cycle-phases"]
+  },
+  {
+    "id": "q-cfa1-business-cycles-4",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "business-cycles",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A labour force of 80 million includes 6 million unemployed. During a recession, 1.5 million of the unemployed become discouraged and stop looking for work; nothing else changes. The new unemployment rate is closest to:",
+    "options": ["7.50%", "5.63%", "5.73%"],
+    "answer": "C",
+    "explanation": "Discouraged workers leave both the unemployed count and the labour force: 4.5 / 78.5 = 5.73%.",
+    "rationale": {
+      "A": "Incorrect. 7.50% is the original rate (6/80), ignoring the discouraged workers.",
+      "B": "Incorrect. 5.63% removes the discouraged workers from the unemployed but forgets to remove them from the labour force (4.5/80).",
+      "C": "Correct. Both numerator and denominator fall by 1.5 million: 4.5/78.5 = 5.73%. The rate falls even though no jobs were created."
+    },
+    "verify": "const lf=80, u=6, d=1.5; return (u-d)/(lf-d)*100;",
+    "numericAnswer": 5.73,
+    "tolerance": 0.005,
+    "tags": ["unemployment", "discouraged-workers"]
+  }
+]

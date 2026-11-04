@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-cfa1-term-structure-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "term-structure",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The 2-year spot rate is 4.0% and the 3-year spot rate is 4.6%, both with annual compounding. The implied 1-year forward rate two years from now (2y1y) is closest to:",
+    "options": ["4.30%", "5.81%", "4.60%"],
+    "answer": "B",
+    "explanation": "f = 1.046^3 / 1.04^2 − 1 = 5.81%.",
+    "rationale": {
+      "A": "Incorrect. 4.30% is the simple average of the two spot rates, not the marginal forward rate.",
+      "B": "Correct. No arbitrage requires 1.046^3 = 1.04^2 × (1 + f), giving f = 5.81%.",
+      "C": "Incorrect. 4.60% is the 3-year spot rate; on an upward-sloping curve the forward lies above the spot rate."
+    },
+    "verify": "return (Math.pow(1.046,3)/Math.pow(1.04,2)-1)*100;",
+    "numericAnswer": 5.81,
+    "tolerance": 0.005,
+    "tags": ["forward-rates"]
+  },
+  {
+    "id": "q-cfa1-term-structure-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "term-structure",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The 1-year spot rate is 2.5% and the 1-year forward rate one year from now (1y1y) is 3.5%. The 2-year spot rate is closest to:",
+    "options": ["3.00%", "6.09%", "3.50%"],
+    "answer": "A",
+    "explanation": "(1 + z2)^2 = 1.025 × 1.035, so z2 = (1.025 × 1.035)^0.5 − 1 = 3.00%.",
+    "rationale": {
+      "A": "Correct. The 2-year spot rate is the geometric mean of the 1-year spot and the 1y1y forward.",
+      "B": "Incorrect. 6.09% is the total 2-year return (1.025 × 1.035 − 1); it has not been annualised.",
+      "C": "Incorrect. 3.50% is the forward rate; the spot rate is an average of the 2.5% and 3.5% rates."
+    },
+    "verify": "return (Math.sqrt(1.025*1.035)-1)*100;",
+    "numericAnswer": 3.0,
+    "tolerance": 0.005,
+    "tags": ["spot-rates"]
+  },
+  {
+    "id": "q-cfa1-term-structure-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "term-structure",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The 1-year and 2-year spot rates are 2.0% and 3.0% (annual compounding). The 2-year par rate is closest to:",
+    "options": ["3.00%", "2.50%", "2.99%"],
+    "answer": "C",
+    "explanation": "DF1 = 1/1.02 = 0.980392, DF2 = 1/1.03^2 = 0.942596. Par rate = (1 − 0.942596)/(0.980392 + 0.942596) = 2.99%.",
+    "rationale": {
+      "A": "Incorrect. 3.00% is the 2-year spot rate; on an upward-sloping curve the par rate is slightly lower.",
+      "B": "Incorrect. 2.50% is the simple average of the spot rates, which is not how par rates are derived.",
+      "C": "Correct. The coupon that prices a 2-year bond at par using the spot rates is 2.99%."
+    },
+    "verify": "const d1=1/1.02, d2=1/Math.pow(1.03,2); return (1-d2)/(d1+d2)*100;",
+    "numericAnswer": 2.99,
+    "tolerance": 0.005,
+    "tags": ["par-curve"]
+  },
+  {
+    "id": "q-cfa1-term-structure-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "term-structure",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst argues that the government yield curve slopes upward even though investors expect short-term rates to remain unchanged, because investors require extra compensation for holding longer maturities. This view is most consistent with:",
+    "options": [
+      "The unbiased expectations theory",
+      "The liquidity preference theory",
+      "The segmented markets theory"
+    ],
+    "answer": "B",
+    "explanation": "Liquidity preference theory says forward rates equal expected future spot rates plus a premium for bearing the risk of longer maturities, so the curve can slope upward with flat rate expectations.",
+    "rationale": {
+      "A": "Incorrect. Under unbiased expectations an upward slope must mean rates are expected to rise; there is no risk premium.",
+      "B": "Correct. A liquidity (term) premium for longer maturities produces an upward slope even with unchanged expectations.",
+      "C": "Incorrect. Segmented markets attributes rates to supply and demand within separate maturity segments, not to a premium for maturity risk."
+    },
+    "tags": ["term-structure-theories"]
+  }
+]

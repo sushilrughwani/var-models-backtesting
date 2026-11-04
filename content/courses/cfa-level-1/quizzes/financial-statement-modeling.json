@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q-cfa1-financial-statement-modeling-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-statement-modeling",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An analyst forecasts next year's revenue at USD 3,650 million and expects days sales outstanding of 40 days (365-day year). Forecast accounts receivable (USD millions) is closest to:",
+    "options": ["91.25", "400.00", "405.56"],
+    "answer": "B",
+    "explanation": "AR = revenue × DSO / 365 = 3,650 × 40 / 365 = 400.",
+    "rationale": {
+      "A": "Incorrect. This divides revenue by DSO (3,650 / 40), which has no economic meaning.",
+      "B": "Correct. 3,650 × 40 / 365 = 400.",
+      "C": "Incorrect. This uses a 360-day year instead of the 365 days stated."
+    },
+    "verify": "return 3650*40/365;",
+    "numericAnswer": 400,
+    "tolerance": 0.01,
+    "tags": ["working-capital-forecast"]
+  },
+  {
+    "id": "q-cfa1-financial-statement-modeling-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-statement-modeling",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company's revenue this year is USD 1,000 million. An analyst forecasts 5% revenue growth and a gross margin of 35% next year. Forecast cost of goods sold (USD millions) is closest to:",
+    "options": ["367.5", "650.0", "682.5"],
+    "answer": "C",
+    "explanation": "Revenue = 1,000 × 1.05 = 1,050. COGS = 1,050 × (1 − 0.35) = 682.5.",
+    "rationale": {
+      "A": "Incorrect. 1,050 × 35% = 367.5 is gross profit, not COGS.",
+      "B": "Incorrect. This applies the 65% cost ratio to current revenue and ignores the 5% growth.",
+      "C": "Correct. 1,050 × 0.65 = 682.5."
+    },
+    "verify": "const r=1000*1.05; return r*(1-0.35);",
+    "numericAnswer": 682.5,
+    "tolerance": 0.05,
+    "tags": ["cost-forecast", "gross-margin"]
+  },
+  {
+    "id": "q-cfa1-financial-statement-modeling-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-statement-modeling",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A software company has mostly fixed operating costs. If an analyst forecasts strong revenue growth, the operating margin forecast should most likely:",
+    "options": [
+      "Stay constant, because costs are modeled as a percentage of revenue",
+      "Fall, because higher revenue requires proportionally more fixed costs",
+      "Rise, because fixed costs are spread over a larger revenue base"
+    ],
+    "answer": "C",
+    "explanation": "With high operating leverage, costs grow more slowly than revenue, so operating profit grows faster than revenue and margins expand.",
+    "rationale": {
+      "A": "Incorrect. Modeling all costs as a flat percentage of revenue ignores the fixed-cost structure.",
+      "B": "Incorrect. Fixed costs by definition do not rise proportionally with revenue.",
+      "C": "Correct. Operating leverage means margins expand as revenue grows over a largely fixed cost base."
+    },
+    "tags": ["operating-leverage"]
+  },
+  {
+    "id": "q-cfa1-financial-statement-modeling-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-statement-modeling",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst models a rapidly expanding retailer with stable days ratios. Which forecasting choice is most likely to overstate free cash flow?",
+    "options": [
+      "Setting capital expenditures equal to depreciation",
+      "Forecasting inventory from cost of goods sold and DOH",
+      "Including the increase in net working capital as a cash outflow"
+    ],
+    "answer": "A",
+    "explanation": "A growing retailer needs growth capex (new stores) on top of maintenance capex. Capex equal to depreciation covers only replacement, so free cash flow is overstated.",
+    "rationale": {
+      "A": "Correct. Ignoring growth capex understates investment and therefore overstates free cash flow.",
+      "B": "Incorrect. Inventory is carried at cost, so forecasting it from COGS and DOH is the appropriate method.",
+      "C": "Incorrect. Treating the increase in NWC as an outflow is correct; omitting it would overstate free cash flow."
+    },
+    "tags": ["capex", "free-cash-flow"]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-big-data-techniques-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "big-data-techniques",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A credit model is evaluated on 200 test loans. It produces 45 true positives, 15 false positives, 5 false negatives and 135 true negatives, where 'positive' means default. The model's precision is closest to:",
+    "options": ["0.90", "0.75", "0.82"],
+    "answer": "B",
+    "explanation": "Precision = TP / (TP + FP) = 45 / (45 + 15) = 45/60 = 0.75.",
+    "rationale": {
+      "A": "Incorrect. 0.90 is the recall, TP / (TP + FN) = 45/50. Precision divides by predicted positives, not actual positives.",
+      "B": "Correct. Of the 60 loans the model flagged as defaults, 45 actually defaulted: 45/60 = 0.75.",
+      "C": "Incorrect. 0.82 is the F1 score, the harmonic mean of precision (0.75) and recall (0.90)."
+    },
+    "verify": "const TP=45, FP=15; return TP/(TP+FP);",
+    "numericAnswer": 0.75,
+    "tolerance": 0.005,
+    "tags": ["machine-learning", "model-evaluation"]
+  },
+  {
+    "id": "q-cfa1-big-data-techniques-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "big-data-techniques",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A fraud classifier tested on 200 transactions shows TP = 30, FP = 10, FN = 30 and TN = 130. Its F1 score is closest to:",
+    "options": ["0.800", "0.625", "0.600"],
+    "answer": "C",
+    "explanation": "Precision = 30/40 = 0.75; recall = 30/60 = 0.50. F1 = 2 × 0.75 × 0.50 / (0.75 + 0.50) = 0.75 / 1.25 = 0.60.",
+    "rationale": {
+      "A": "Incorrect. 0.800 is the accuracy, (30 + 130)/200. Accuracy is flattered by the large number of true negatives.",
+      "B": "Incorrect. 0.625 is the simple arithmetic average of precision and recall. F1 is the harmonic mean, which is pulled toward the lower value.",
+      "C": "Correct. The harmonic mean of 0.75 precision and 0.50 recall is 0.60."
+    },
+    "verify": "const p=30/40, r=30/60; return 2*p*r/(p+r);",
+    "numericAnswer": 0.6,
+    "tolerance": 0.0005,
+    "tags": ["machine-learning", "model-evaluation"]
+  },
+  {
+    "id": "q-cfa1-big-data-techniques-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "big-data-techniques",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A stock-selection model explains 95% of the variation in returns in its training sample but performs no better than chance in the test sample. The most likely explanation is that the model:",
+    "options": ["is overfitted to noise in the training data", "is underfitted because it is too simple", "was trained with unsupervised rather than supervised learning"],
+    "answer": "A",
+    "explanation": "Excellent in-sample fit combined with poor out-of-sample performance is the classic sign of overfitting: the model has learned noise specific to the training data.",
+    "rationale": {
+      "A": "Correct. An overly complex model memorises noise, so it fits the training data well but fails to generalise.",
+      "B": "Incorrect. An underfitted model performs poorly even in sample; here the in-sample fit is very high.",
+      "C": "Incorrect. Predicting returns from features with a known target is supervised learning, and the learning type does not explain the in-sample/out-of-sample gap."
+    },
+    "tags": ["machine-learning", "overfitting"]
+  },
+  {
+    "id": "q-cfa1-big-data-techniques-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "big-data-techniques",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An analyst uses an algorithm to group 500 stocks according to similarities in their daily return patterns, without supplying any sector labels. This is best described as:",
+    "options": ["supervised learning", "unsupervised learning", "natural language processing"],
+    "answer": "B",
+    "explanation": "Clustering observations without labelled targets is unsupervised learning.",
+    "rationale": {
+      "A": "Incorrect. Supervised learning requires a labelled target for each observation; no labels are given here.",
+      "B": "Correct. The algorithm discovers groupings on its own, which is unsupervised learning (clustering).",
+      "C": "Incorrect. NLP analyses text; this task uses numerical return data."
+    },
+    "tags": ["machine-learning", "unsupervised-learning"]
+  }
+]

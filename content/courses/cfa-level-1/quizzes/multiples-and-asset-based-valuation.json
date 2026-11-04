@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-multiples-and-asset-based-valuation-1",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "multiples-and-asset-based-valuation",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company pays out 45% of its earnings, its required return on equity is 10% and its long-run growth rate is 4%. Its justified leading P/E ratio is closest to:",
+    "options": ["7.8", "4.5", "7.5"],
+    "answer": "C",
+    "explanation": "Justified leading P/E = payout/(r − g) = 0.45/(0.10 − 0.04) = 7.5.",
+    "rationale": {
+      "A": "Incorrect. This is the justified trailing P/E, which multiplies by (1 + g) = 1.04.",
+      "B": "Incorrect. This divides the payout ratio by r alone instead of by r − g.",
+      "C": "Correct. The payout ratio of 0.45 divided by r − g of 0.06 gives a leading P/E of 7.5."
+    },
+    "verify": "return 0.45/(0.10-0.04);",
+    "numericAnswer": 7.5,
+    "tolerance": 0.05,
+    "tags": ["justified-pe"]
+  },
+  {
+    "id": "q-cfa1-multiples-and-asset-based-valuation-2",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "multiples-and-asset-based-valuation",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A company has EBITDA of USD 50 million, debt of USD 180 million, cash of USD 30 million and 25 million shares outstanding. Comparable companies trade at an EV/EBITDA multiple of 9.0x. The implied value per share is closest to:",
+    "options": ["USD 12.00", "USD 18.00", "USD 10.80"],
+    "answer": "A",
+    "explanation": "Implied EV = 9.0 × 50 = 450. Equity value = 450 − 180 + 30 = 300. Per share = 300/25 = 12.00.",
+    "rationale": {
+      "A": "Correct. Subtracting debt and adding cash converts the 450 enterprise value into 300 of equity, or 12.00 per share.",
+      "B": "Incorrect. This treats enterprise value as equity value and divides 450 by 25 without removing net debt.",
+      "C": "Incorrect. This subtracts debt but forgets to add back the 30 of cash (270/25)."
+    },
+    "verify": "return (9.0*50-180+30)/25;",
+    "numericAnswer": 12.0,
+    "tolerance": 0.01,
+    "tags": ["ev-ebitda", "enterprise-value"]
+  },
+  {
+    "id": "q-cfa1-multiples-and-asset-based-valuation-3",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "multiples-and-asset-based-valuation",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank earns a sustainable return on equity of 14%. Its required return on equity is 10% and its long-run growth rate is 6%. Its justified price-to-book ratio is closest to:",
+    "options": ["1.4", "2.0", "3.5"],
+    "answer": "B",
+    "explanation": "Justified P/B = (ROE − g)/(r − g) = (0.14 − 0.06)/(0.10 − 0.06) = 0.08/0.04 = 2.0.",
+    "rationale": {
+      "A": "Incorrect. This is ROE divided by r, which ignores growth.",
+      "B": "Correct. The spread of ROE over growth (8%) divided by the spread of r over growth (4%) gives 2.0.",
+      "C": "Incorrect. This divides ROE by r − g, omitting the subtraction of g in the numerator."
+    },
+    "verify": "return (0.14-0.06)/(0.10-0.06);",
+    "numericAnswer": 2.0,
+    "tolerance": 0.05,
+    "tags": ["justified-pb"]
+  },
+  {
+    "id": "q-cfa1-multiples-and-asset-based-valuation-4",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "multiples-and-asset-based-valuation",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An asset-based valuation approach is most appropriate for which company?",
+    "options": ["A holding company whose assets are mainly listed shares and investment property", "A fast-growing software firm with valuable brands and code", "A consulting firm whose main assets are its employees"],
+    "answer": "A",
+    "explanation": "Asset-based valuation works best when assets are mostly tangible or financial and have observable market values.",
+    "rationale": {
+      "A": "Correct. Listed shares and investment property can be marked to fair value reliably, so assets minus liabilities is a sensible estimate of equity value.",
+      "B": "Incorrect. Much of the value of a software firm is intangible and largely off the balance sheet, so asset-based value would understate it.",
+      "C": "Incorrect. Human capital does not appear on the balance sheet, so an asset-based approach misses most of the firm's value."
+    },
+    "tags": ["asset-based-valuation"]
+  }
+]

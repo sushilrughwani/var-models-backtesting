@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q-cfa1-stakeholders-and-governance-1",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "stakeholders-and-governance",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company has debt with a face value of 200 due in one year. A risky project would leave the firm worth 400 with probability 0.4 or 100 with probability 0.6. Assuming shareholders have limited liability, the expected payoff to shareholders from the risky project is closest to:",
+    "options": ["20", "80", "140"],
+    "answer": "B",
+    "explanation": "Equity payoff = max(V - 200, 0). Good state: 400 - 200 = 200; bad state: max(100 - 200, 0) = 0. Expected = 0.4 × 200 + 0.6 × 0 = 80.",
+    "rationale": {
+      "A": "Incorrect. 20 is expected firm value (0.4 × 400 + 0.6 × 100 = 220) minus debt of 200; it treats the bad-state equity payoff as -100, ignoring limited liability.",
+      "B": "Correct. Shareholders receive 200 in the good state and zero in the bad state, so the expected payoff is 0.4 × 200 = 80.",
+      "C": "Incorrect. 140 is the expected payoff to creditors: 0.4 × 200 + 0.6 × 100."
+    },
+    "verify": "const F=200; return 0.4*Math.max(400-F,0)+0.6*Math.max(100-F,0);",
+    "numericAnswer": 80,
+    "tolerance": 0.5,
+    "tags": ["stakeholders", "asset-substitution"]
+  },
+  {
+    "id": "q-cfa1-stakeholders-and-governance-2",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "stakeholders-and-governance",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which stakeholder group is most likely to oppose a large special dividend financed from the company's cash reserves?",
+    "options": ["Shareholders", "Creditors", "Tax authorities"],
+    "answer": "B",
+    "explanation": "Cash paid out as dividends is no longer available to service debt, so creditors bear more default risk. Shareholders receive the cash, and tax authorities typically collect dividend tax.",
+    "rationale": {
+      "A": "Incorrect. Shareholders receive the dividend, so they are its beneficiaries.",
+      "B": "Correct. A large payout reduces the assets that protect creditors' fixed claims.",
+      "C": "Incorrect. Tax authorities generally have no reason to object and may collect tax on the dividends."
+    },
+    "tags": ["stakeholders", "dividend-conflict"]
+  },
+  {
+    "id": "q-cfa1-stakeholders-and-governance-3",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "stakeholders-and-governance",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "After issuing substantial debt, the owners of a firm replace a low-risk project with a higher-risk project that has a lower expected firm value. This behaviour is best explained by the fact that:",
+    "options": ["equity holders capture the upside of risk while creditors bear much of the downside", "managers are more risk-averse than shareholders", "creditors benefit from higher volatility because their claim is fixed"],
+    "answer": "A",
+    "explanation": "Equity's payoff, max(V - F, 0), is like a call option: limited liability puts a floor at zero, so more volatility raises its value even if total firm value falls. Creditors, with a capped payoff, lose.",
+    "rationale": {
+      "A": "Correct. This is asset substitution: owners shift risk onto creditors.",
+      "B": "Incorrect. Managerial risk aversion would push toward the safe project, not away from it.",
+      "C": "Incorrect. A fixed, capped claim makes creditors worse off when volatility rises."
+    },
+    "tags": ["stakeholders", "asset-substitution"]
+  },
+  {
+    "id": "q-cfa1-stakeholders-and-governance-4",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "stakeholders-and-governance",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A director argues that the company should accept slightly lower near-term profits to raise supplier payment speed and employee training, because long-run value depends on those relationships. This view is most consistent with:",
+    "options": ["shareholder theory, because it rejects any trade-off with other groups", "the creditor-protection view, because it reduces default risk", "stakeholder theory"],
+    "answer": "C",
+    "explanation": "Stakeholder theory holds that management should balance the interests of employees, suppliers, customers and others alongside shareholders, since long-run value depends on these relationships.",
+    "rationale": {
+      "A": "Incorrect. Shareholder theory focuses on maximising equity value and relies on contracts to protect others; explicitly balancing groups is the hallmark of stakeholder theory.",
+      "B": "Incorrect. The argument is about employees and suppliers, not about protecting lenders from default.",
+      "C": "Correct. Balancing multiple groups' interests for long-run value is the essence of stakeholder theory."
+    },
+    "tags": ["stakeholder-theory"]
+  }
+]

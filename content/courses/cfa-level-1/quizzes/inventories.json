@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-inventories-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "inventories",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company begins the year with 50 units of inventory costing USD 20 each. It then buys 100 units at USD 22 and later 50 units at USD 25. It sells 120 units during the year and uses periodic LIFO. Cost of goods sold (USD) is closest to:",
+    "options": ["2,540", "2,790", "2,670"],
+    "answer": "B",
+    "explanation": "LIFO expenses the newest costs first: 50 × 25 + 70 × 22 = 1,250 + 1,540 = 2,790.",
+    "rationale": {
+      "A": "Incorrect. 2,540 is FIFO COGS: 50 × 20 + 70 × 22.",
+      "B": "Correct. Under LIFO the latest 50 units at 25 and then 70 units at 22 are expensed: 2,790.",
+      "C": "Incorrect. 2,670 is weighted average COGS: (4,450 / 200) × 120."
+    },
+    "verify": "return 50*25 + 70*22;",
+    "numericAnswer": 2790,
+    "tolerance": 0.5,
+    "tags": ["lifo", "cost-flow"]
+  },
+  {
+    "id": "q-cfa1-inventories-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "inventories",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A US company using LIFO reports cost of goods sold of USD 8,000 million. Its LIFO reserve was USD 1,200 million at the start of the year and USD 1,500 million at the end. Cost of goods sold on a FIFO basis (USD millions) is closest to:",
+    "options": ["7,700", "8,300", "6,500"],
+    "answer": "A",
+    "explanation": "FIFO COGS = LIFO COGS - change in LIFO reserve = 8,000 - (1,500 - 1,200) = 7,700.",
+    "rationale": {
+      "A": "Correct. Subtract the 300 increase in the reserve from LIFO COGS.",
+      "B": "Incorrect. 8,300 adds the change in reserve; FIFO COGS is lower when prices are rising.",
+      "C": "Incorrect. 6,500 subtracts the ending reserve level rather than its change."
+    },
+    "verify": "return 8000 - (1500 - 1200);",
+    "numericAnswer": 7700,
+    "tolerance": 0.5,
+    "tags": ["lifo-reserve"]
+  },
+  {
+    "id": "q-cfa1-inventories-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "inventories",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An IFRS company holds inventory with a cost of USD 80,000. At the end of year 1 its net realisable value is USD 70,000. At the end of year 2, with the same goods still on hand, net realisable value has risen to USD 84,000. The carrying amount of the inventory at the end of year 2 (USD) is closest to:",
+    "options": ["70,000", "84,000", "80,000"],
+    "answer": "C",
+    "explanation": "IFRS requires the year-1 write-down to 70,000 and allows a reversal when NRV recovers, but only up to original cost of 80,000.",
+    "rationale": {
+      "A": "Incorrect. 70,000 would apply under US GAAP, which prohibits reversals, but IFRS allows them.",
+      "B": "Incorrect. Inventory cannot be written up above its original cost.",
+      "C": "Correct. The 10,000 write-down is reversed, capping the carrying amount at the original cost of 80,000."
+    },
+    "verify": "return Math.min(80000, Math.max(70000, 84000));",
+    "numericAnswer": 80000,
+    "tolerance": 0.5,
+    "tags": ["write-downs", "ifrs-vs-us-gaap"]
+  },
+  {
+    "id": "q-cfa1-inventories-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "inventories",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "During a period of rising inventory costs and stable inventory quantities, a company using LIFO rather than FIFO will most likely report:",
+    "options": ["higher net income and higher ending inventory.", "a lower gross margin and higher operating cash flow.", "a higher current ratio."],
+    "answer": "B",
+    "explanation": "LIFO expenses the newest, highest costs, lowering gross margin and taxable income. Lower taxes paid mean higher operating cash flow.",
+    "rationale": {
+      "A": "Incorrect. That describes FIFO in rising prices.",
+      "B": "Correct. Higher COGS reduces the gross margin and the tax bill, increasing CFO.",
+      "C": "Incorrect. LIFO inventory carries old, low costs, so current assets and the current ratio are lower."
+    },
+    "tags": ["lifo", "ratios"]
+  }
+]

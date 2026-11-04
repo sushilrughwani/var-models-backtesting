@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-random-variables-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "random-variables",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An operational loss X (USD millions) equals 0 with probability 0.80, 20 with probability 0.15 and 100 with probability 0.05. The expected loss (USD millions) is closest to:",
+    "options": ["40.0", "8.0", "3.0", "5.0"],
+    "answer": "B",
+    "explanation": "E[X] = 0(0.80) + 20(0.15) + 100(0.05) = 0 + 3 + 5 = 8.",
+    "rationale": {
+      "A": "Incorrect. 40 is the simple average of the three loss values, ignoring the probabilities.",
+      "B": "Correct. Probability-weighted average: 3 + 5 = 8.",
+      "C": "Incorrect. 3 includes only the contribution of the USD 20 million loss.",
+      "D": "Incorrect. 5 includes only the contribution of the USD 100 million loss."
+    },
+    "verify": "return 0*0.80 + 20*0.15 + 100*0.05;",
+    "numericAnswer": 8,
+    "tolerance": 0.05,
+    "tags": ["expected-value"]
+  },
+  {
+    "id": "q-frm1-random-variables-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "random-variables",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Using the same loss distribution (0 with probability 0.80, 20 with probability 0.15, 100 with probability 0.05, in USD millions), the standard deviation of the loss (USD millions) is closest to:",
+    "options": ["23.66", "496.00", "22.27", "24.08"],
+    "answer": "C",
+    "explanation": "E[X²] = 400(0.15) + 10,000(0.05) = 560. Variance = 560 − 8² = 496. Standard deviation = √496 = 22.27.",
+    "rationale": {
+      "A": "Incorrect. 23.66 is √560, the square root of E[X²] without subtracting the squared mean.",
+      "B": "Incorrect. 496 is the variance; the question asks for the standard deviation.",
+      "C": "Correct. σ = √(560 − 64) = √496 = 22.27.",
+      "D": "Incorrect. 24.08 is √(560 + 20), produced by adding rather than subtracting a mean-related term; the shortcut is E[X²] − μ²."
+    },
+    "verify": "const m=20*0.15+100*0.05; const m2=400*0.15+10000*0.05; return Math.sqrt(m2-m*m);",
+    "numericAnswer": 22.27,
+    "tolerance": 0.005,
+    "tags": ["variance"]
+  },
+  {
+    "id": "q-frm1-random-variables-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "random-variables",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A random variable X has mean 5 and variance 4. If Y = 3 − 2X, the variance of Y is closest to:",
+    "options": ["−8", "8", "11", "16"],
+    "answer": "D",
+    "explanation": "Var(a + bX) = b²Var(X) = (−2)² × 4 = 16. The constant 3 does not affect variance.",
+    "rationale": {
+      "A": "Incorrect. −8 multiplies the variance by b = −2 instead of b² = 4; a variance can never be negative.",
+      "B": "Incorrect. 8 multiplies by |b| = 2 rather than b² = 4.",
+      "C": "Incorrect. 11 wrongly adds the constant 3 to 2 × 4; constants do not change variance and b must be squared.",
+      "D": "Correct. (−2)² × 4 = 16."
+    },
+    "verify": "const b=-2, v=4; return b*b*v;",
+    "numericAnswer": 16,
+    "tolerance": 0.05,
+    "tags": ["linear-transformation"]
+  },
+  {
+    "id": "q-frm1-random-variables-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "random-variables",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A risk analyst reports that the distribution of daily trading losses has a kurtosis of 7. Relative to a normal distribution with the same mean and variance, this distribution most likely has:",
+    "options": [
+      "a longer right tail but thinner left tail, with zero excess kurtosis.",
+      "fatter tails, so extreme losses occur more often than the normal predicts.",
+      "thinner tails, so extreme losses occur less often than the normal predicts.",
+      "the same tail behaviour, because kurtosis only measures asymmetry."
+    ],
+    "answer": "B",
+    "explanation": "A normal distribution has kurtosis 3. A kurtosis of 7 means excess kurtosis of 4: heavier tails than the normal.",
+    "rationale": {
+      "A": "Incorrect. Asymmetry between tails is measured by skewness; excess kurtosis here is 7 − 3 = 4, not zero.",
+      "B": "Correct. Kurtosis above 3 indicates fat tails and more frequent extreme outcomes.",
+      "C": "Incorrect. Thin tails correspond to kurtosis below 3.",
+      "D": "Incorrect. Kurtosis measures tail heaviness; skewness measures asymmetry."
+    },
+    "tags": ["kurtosis"]
+  }
+]

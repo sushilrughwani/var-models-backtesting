@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-fiscal-policy-1",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "fiscal-policy",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In an economy with a marginal propensity to consume of 0.90 and a proportional tax rate of 20%, the government increases spending by 20 billion. The resulting increase in GDP is closest to:",
+    "options": ["71.4 billion", "200.0 billion", "64.3 billion"],
+    "answer": "A",
+    "explanation": "Multiplier = 1 / [1 − 0.90 × (1 − 0.20)] = 1 / 0.28 = 3.571. ΔY = 3.571 × 20 = 71.4 billion.",
+    "rationale": {
+      "A": "Correct. The multiplier including the tax leakage is 3.571, so GDP rises by about 71.4 billion.",
+      "B": "Incorrect. 200 billion uses 1/(1 − c) = 10 and ignores the tax rate, overstating the multiplier.",
+      "C": "Incorrect. 64.3 billion applies the tax-cut formula (c × ΔT × multiplier) to a spending increase. Government purchases enter the spending chain in full."
+    },
+    "verify": "const c=0.9,t=0.2,dG=20; return dG/(1-c*(1-t));",
+    "numericAnswer": 71.4,
+    "tolerance": 0.05,
+    "tags": ["fiscal-multiplier"]
+  },
+  {
+    "id": "q-cfa1-fiscal-policy-2",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "fiscal-policy",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The marginal propensity to consume is 0.75 and the proportional income tax rate is 20%. The government cuts lump-sum taxes by 8 billion. The resulting increase in GDP is closest to:",
+    "options": ["20 billion", "15 billion", "24 billion"],
+    "answer": "B",
+    "explanation": "Multiplier = 1 / [1 − 0.75 × 0.80] = 2.5. First-round spending = 0.75 × 8 = 6 billion. ΔY = 6 × 2.5 = 15 billion.",
+    "rationale": {
+      "A": "Incorrect. 20 billion applies the multiplier to the whole tax cut, ignoring that a quarter of the extra disposable income is saved before it is spent.",
+      "B": "Correct. Only the spent part of the tax cut (6 billion) starts the multiplier chain: 6 × 2.5 = 15 billion.",
+      "C": "Incorrect. 24 billion uses the multiplier without taxes, 1/(1 − 0.75) = 4, on the 6 billion of first-round spending."
+    },
+    "verify": "const c=0.75,t=0.2,dT=8; return c*dT/(1-c*(1-t));",
+    "numericAnswer": 15,
+    "tolerance": 0.05,
+    "tags": ["fiscal-multiplier", "tax-policy"]
+  },
+  {
+    "id": "q-cfa1-fiscal-policy-3",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "fiscal-policy",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A stimulus bill takes nine months to pass through the legislature after economists agree that a recession has begun. This delay is best described as the:",
+    "options": ["recognition lag", "impact lag", "action lag"],
+    "answer": "C",
+    "explanation": "The action lag is the time between recognising a problem and enacting the policy response.",
+    "rationale": {
+      "A": "Incorrect. The recognition lag is the time needed to realise the recession has started; here that has already happened.",
+      "B": "Incorrect. The impact lag is the time after enactment for the measures to affect the economy.",
+      "C": "Correct. Debating and legislating the response is the action lag."
+    },
+    "tags": ["policy-lags"]
+  },
+  {
+    "id": "q-cfa1-fiscal-policy-4",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "fiscal-policy",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A government finances a tax cut by issuing bonds. If Ricardian equivalence holds, the most likely effect on household consumption is:",
+    "options": ["a large increase, because disposable income has risen", "little or no change, because households save the tax cut to meet expected future taxes", "a decrease, because higher interest rates crowd out consumer borrowing"],
+    "answer": "B",
+    "explanation": "Under Ricardian equivalence households recognise that today's debt-financed tax cut implies higher taxes later, so they save the windfall and consumption is unchanged.",
+    "rationale": {
+      "A": "Incorrect. This is the standard multiplier view; Ricardian equivalence argues households look through the temporary rise in disposable income.",
+      "B": "Correct. Expected future taxes offset the current tax cut, so households save rather than spend it.",
+      "C": "Incorrect. Crowding out concerns the effect of government borrowing on interest rates and investment; it is not the Ricardian argument."
+    },
+    "tags": ["ricardian-equivalence"]
+  }
+]

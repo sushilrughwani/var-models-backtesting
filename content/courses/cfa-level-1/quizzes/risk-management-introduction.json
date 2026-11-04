@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-risk-management-introduction-1",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "risk-management-introduction",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio worth USD 20 million has a daily return standard deviation of 1.5%. Assuming normally distributed returns and a one-tailed z-value of 2.33, the daily 99% value at risk is closest to:",
+    "options": ["USD 493,500", "USD 300,000", "USD 699,000"],
+    "answer": "C",
+    "explanation": "VaR = z × σ × V = 2.33 × 0.015 × 20,000,000 = USD 699,000.",
+    "rationale": {
+      "A": "Incorrect. USD 493,500 uses z = 1.645, the 95% value, rather than 2.33 for 99%.",
+      "B": "Incorrect. USD 300,000 is one standard deviation of value; it omits the z-multiplier.",
+      "C": "Correct. 2.33 × 0.015 × 20,000,000 = USD 699,000."
+    },
+    "verify": "return 2.33*0.015*20000000;",
+    "numericAnswer": 699000,
+    "tolerance": 1,
+    "tags": ["value-at-risk"]
+  },
+  {
+    "id": "q-cfa1-risk-management-introduction-2",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "risk-management-introduction",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A lender has USD 5 million exposure to a borrower with a 3% probability of default. The expected recovery rate in default is 60%. The expected credit loss is closest to:",
+    "options": ["USD 60,000", "USD 90,000", "USD 150,000"],
+    "answer": "A",
+    "explanation": "LGD = 1 − 0.60 = 0.40. EL = PD × LGD × EAD = 0.03 × 0.40 × 5,000,000 = USD 60,000.",
+    "rationale": {
+      "A": "Correct. 0.03 × 0.40 × 5,000,000 = USD 60,000.",
+      "B": "Incorrect. USD 90,000 uses the 60% recovery rate in place of the 40% loss given default.",
+      "C": "Incorrect. USD 150,000 assumes nothing is recovered (LGD = 100%)."
+    },
+    "verify": "const ead=5000000,pd=0.03,rec=0.6; return pd*(1-rec)*ead;",
+    "numericAnswer": 60000,
+    "tolerance": 1,
+    "tags": ["credit-risk", "expected-loss"]
+  },
+  {
+    "id": "q-cfa1-risk-management-introduction-3",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "risk-management-introduction",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following is best classified as a non-financial risk?",
+    "options": ["The risk that a counterparty fails to make a swap payment", "The risk that a pricing model contains a coding error", "The risk that a bond cannot be sold quickly without a large price concession"],
+    "answer": "B",
+    "explanation": "Model risk - losses from flawed models or their misuse - is a non-financial risk. Counterparty default is credit risk and difficulty selling is liquidity risk, both financial.",
+    "rationale": {
+      "A": "Incorrect. A counterparty failing to pay is credit risk, a financial risk.",
+      "B": "Correct. Model risk is a non-financial risk.",
+      "C": "Incorrect. Being unable to sell near fair value is liquidity risk, a financial risk."
+    },
+    "tags": ["risk-types"]
+  },
+  {
+    "id": "q-cfa1-risk-management-introduction-4",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "risk-management-introduction",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An exporter expects to receive EUR 10 million in six months and enters a forward contract to sell the euros at a fixed rate. This risk-modification method is best described as:",
+    "options": ["risk avoidance", "risk acceptance through self-insurance", "risk shifting"],
+    "answer": "C",
+    "explanation": "Using a derivative such as a forward to change the distribution of outcomes from an exposure is risk shifting. The exporter still does the business (no avoidance) and does not simply bear the risk (no acceptance).",
+    "rationale": {
+      "A": "Incorrect. Avoidance would mean not taking the foreign-currency business at all.",
+      "B": "Incorrect. Self-insurance means bearing the risk internally, not hedging it with a contract.",
+      "C": "Correct. Derivatives shift risk by altering the payoff distribution."
+    },
+    "tags": ["risk-modification"]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-interest-rate-risk-and-duration-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "interest-rate-risk-and-duration",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A semiannual-pay bond has an annualised Macaulay duration of 7.20 years and a yield to maturity of 6.00% (stated annually). Its annualised modified duration is closest to:",
+    "options": ["6.79", "6.99", "7.20"],
+    "answer": "B",
+    "explanation": "Modified duration divides Macaulay duration by one plus the periodic yield. The periodic yield is 6%/2 = 3%, so ModDur = 7.20 / 1.03 = 6.99.",
+    "rationale": {
+      "A": "Incorrect. This divides by 1.06, using the annual yield instead of the semiannual periodic yield of 3%.",
+      "B": "Correct. 7.20 / (1 + 0.06/2) = 6.99.",
+      "C": "Incorrect. This is the Macaulay duration itself; it must be divided by (1 + periodic yield) to measure price sensitivity."
+    },
+    "verify": "return 7.2/(1+0.06/2);",
+    "numericAnswer": 6.99,
+    "tolerance": 0.005,
+    "tags": ["modified-duration", "macaulay-duration"]
+  },
+  {
+    "id": "q-cfa1-interest-rate-risk-and-duration-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "interest-rate-risk-and-duration",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An analyst values a callable bond at 100.00. When the benchmark yield curve is shifted down by 50 bp the model value is 103.20, and when it is shifted up by 50 bp the value is 97.10. The bond's effective duration is closest to:",
+    "options": ["3.05", "12.20", "6.10"],
+    "answer": "C",
+    "explanation": "EffDur = (PV− − PV+) / (2 × ΔCurve × PV0) = (103.20 − 97.10) / (2 × 0.005 × 100.00) = 6.10.",
+    "rationale": {
+      "A": "Incorrect. This uses a curve shift of 0.01 (100 bp) instead of 0.005, which halves the answer.",
+      "B": "Incorrect. This omits the 2 in the denominator, even though the price difference spans a total shift of 100 bp.",
+      "C": "Correct. 6.10 / (2 × 0.005 × 100) = 6.10."
+    },
+    "verify": "return (103.2-97.1)/(2*0.005*100);",
+    "numericAnswer": 6.1,
+    "tolerance": 0.005,
+    "tags": ["effective-duration"]
+  },
+  {
+    "id": "q-cfa1-interest-rate-risk-and-duration-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "interest-rate-risk-and-duration",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An investor with a 2-year horizon buys a bond whose Macaulay duration is 6 years. Immediately afterwards, yields rise by 100 bp and stay there. Relative to the yield at purchase, the investor's realised horizon yield will most likely be:",
+    "options": ["lower, because market price risk dominates", "higher, because coupon reinvestment risk dominates", "about the same, because the two effects offset"],
+    "answer": "A",
+    "explanation": "The duration gap is 6 − 2 = +4. With a horizon shorter than Macaulay duration, the capital loss on sale outweighs the extra reinvestment income, so the horizon yield falls.",
+    "rationale": {
+      "A": "Correct. A positive duration gap means price risk dominates, so higher yields reduce the horizon return.",
+      "B": "Incorrect. Reinvestment effects dominate only when the horizon is longer than Macaulay duration.",
+      "C": "Incorrect. Approximate offset occurs only when the horizon equals Macaulay duration."
+    },
+    "tags": ["duration-gap", "investment-horizon"]
+  },
+  {
+    "id": "q-cfa1-interest-rate-risk-and-duration-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "interest-rate-risk-and-duration",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "All bonds below are option-free, have the same yield and are priced at a premium or discount accordingly. Which one has the highest modified duration?",
+    "options": ["10-year bond with an 8% coupon", "10-year bond with a 2% coupon", "5-year bond with a 2% coupon"],
+    "answer": "B",
+    "explanation": "Duration rises with maturity and falls as the coupon increases. The long, low-coupon bond has the most value concentrated far in the future.",
+    "rationale": {
+      "A": "Incorrect. A higher coupon returns more value early, which lowers duration compared with the 2% bond of the same maturity.",
+      "B": "Correct. It combines the longer maturity with the lower coupon.",
+      "C": "Incorrect. With the same low coupon but half the maturity, its cash flows arrive sooner, so its duration is lower."
+    },
+    "tags": ["duration-drivers"]
+  }
+]

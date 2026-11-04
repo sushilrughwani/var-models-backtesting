@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-pricing-conventions-and-arbitrage-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "pricing-conventions-and-arbitrage",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A Treasury with 6 months to maturity pays a 3% annual coupon semiannually on face value 100 and trades at a full price of 99.80. The 6-month discount factor implied by this bond is closest to:",
+    "options": ["0.96893", "0.98325", "0.99800", "0.98522"],
+    "answer": "B",
+    "explanation": "The bond's only remaining cash flow is 100 + 1.5 = 101.5 at 6 months, so d(0.5) = 99.80 / 101.5 = 0.98325.",
+    "rationale": {
+      "A": "Incorrect. 0.96893 divides by 103, treating the full annual coupon of 3 as paid at maturity instead of the semiannual coupon of 1.5.",
+      "B": "Correct. Price divided by the final payment of face plus semiannual coupon: 99.80 / 101.5 = 0.98325.",
+      "C": "Incorrect. 0.99800 divides by face value only and ignores the final coupon.",
+      "D": "Incorrect. 0.98522 is 1/1.015, which discounts at the coupon rate rather than using the market price."
+    },
+    "verify": "return 99.80/101.5;",
+    "numericAnswer": 0.98325,
+    "tolerance": 0.00001,
+    "tags": ["discount-factors"]
+  },
+  {
+    "id": "q-frm1-pricing-conventions-and-arbitrage-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "pricing-conventions-and-arbitrage",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Discount factors are d(0.5) = 0.980, d(1.0) = 0.955 and d(1.5) = 0.930. The price of a 1.5-year bond with face value 100 paying a 6% annual coupon semiannually is closest to:",
+    "options": ["110.19", "98.81", "101.37", "101.60"],
+    "answer": "D",
+    "explanation": "Cash flows are 3, 3 and 103. Price = 3 × 0.980 + 3 × 0.955 + 103 × 0.930 = 2.940 + 2.865 + 95.790 = 101.595 ≈ 101.60.",
+    "rationale": {
+      "A": "Incorrect. 110.19 uses the full annual coupon of 6 every six months (6, 6, 106).",
+      "B": "Incorrect. 98.81 forgets the final coupon of 3 paid together with the face value at 1.5 years.",
+      "C": "Incorrect. 101.37 discounts every cash flow with the 1.5-year factor instead of each date's own factor.",
+      "D": "Correct. Each semiannual cash flow is multiplied by its own discount factor and summed: 101.60."
+    },
+    "verify": "return 3*0.980+3*0.955+103*0.930;",
+    "numericAnswer": 101.595,
+    "tolerance": 0.006,
+    "tags": ["discount-factors", "bond-pricing"]
+  },
+  {
+    "id": "q-frm1-pricing-conventions-and-arbitrage-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "pricing-conventions-and-arbitrage",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A portfolio of two Treasuries exactly replicates the cash flows of a third Treasury and costs 100.85. The third Treasury trades at 101.40. Ignoring transaction costs, which trade captures the arbitrage?",
+    "options": [
+      "Sell the third Treasury and buy the replicating portfolio, earning 0.55 per 100 face today",
+      "Buy the third Treasury and sell the replicating portfolio, earning 0.55 per 100 face today",
+      "Buy both the third Treasury and the replicating portfolio and hold them to maturity",
+      "No arbitrage exists because the two positions have different coupon rates"
+    ],
+    "answer": "A",
+    "explanation": "The third Treasury is rich relative to identical cash flows. Selling the rich bond and buying the cheap replicating portfolio collects 101.40 − 100.85 = 0.55 today, and all future cash flows cancel.",
+    "rationale": {
+      "A": "Correct. Sell the expensive side, buy the cheap side; the future cash flows offset and the 0.55 profit is locked in upfront.",
+      "B": "Incorrect. This buys the expensive bond and sells the cheap portfolio, which costs 0.55 today rather than earning it.",
+      "C": "Incorrect. Buying both positions doubles the exposure and does not lock in any riskless profit.",
+      "D": "Incorrect. Coupon rates do not matter; the law of one price applies because the cash flows are identical date by date."
+    },
+    "tags": ["law-of-one-price", "arbitrage"]
+  },
+  {
+    "id": "q-frm1-pricing-conventions-and-arbitrage-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "pricing-conventions-and-arbitrage",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A 5% Treasury paying semiannual coupons is quoted at a clean price of 98.40 per 100 face. Settlement is 73 days after the last coupon date, and the current coupon period has 181 days (actual/actual). The invoice (dirty) price is closest to:",
+    "options": ["97.39", "100.42", "99.41", "98.40"],
+    "answer": "C",
+    "explanation": "Accrued interest = 2.5 × 73 / 181 = 1.0083. Dirty price = 98.40 + 1.0083 = 99.41.",
+    "rationale": {
+      "A": "Incorrect. 97.39 subtracts accrued interest from the clean price instead of adding it.",
+      "B": "Incorrect. 100.42 accrues the full annual coupon of 5 rather than the semiannual coupon of 2.5.",
+      "C": "Correct. The buyer pays the clean price plus the seller's share of the coupon: 98.40 + 1.0083 = 99.41.",
+      "D": "Incorrect. 98.40 is the quoted clean price; it leaves out accrued interest."
+    },
+    "verify": "return 98.40+2.5*73/181;",
+    "numericAnswer": 99.41,
+    "tolerance": 0.01,
+    "tags": ["accrued-interest", "day-count"]
+  }
+]

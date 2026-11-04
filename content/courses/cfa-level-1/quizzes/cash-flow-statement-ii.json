@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-cash-flow-statement-ii-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "cash-flow-statement-ii",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A US GAAP company reports cash flow from operations of USD 500 million, interest paid of USD 60 million and capital expenditure of USD 200 million. The tax rate is 30%. Free cash flow to the firm (USD millions) is closest to:",
+    "options": ["300", "342", "360"],
+    "answer": "B",
+    "explanation": "FCFF = CFO + interest × (1 - t) - capex = 500 + 60 × 0.7 - 200 = 342.",
+    "rationale": {
+      "A": "Incorrect. 300 forgets to add back after-tax interest, which under US GAAP was deducted in CFO.",
+      "B": "Correct. Adding after-tax interest of 42 and subtracting capex of 200 from CFO gives 342.",
+      "C": "Incorrect. 360 adds back pre-tax interest; the tax shield on interest stays with the firm."
+    },
+    "verify": "return 500 + 60*(1-0.3) - 200;",
+    "numericAnswer": 342,
+    "tolerance": 0.5,
+    "tags": ["fcff"]
+  },
+  {
+    "id": "q-cfa1-cash-flow-statement-ii-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "cash-flow-statement-ii",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A US GAAP company reports cash flow from operations of USD 500 million and capital expenditure of USD 200 million. During the year it issued USD 90 million of new debt and repaid USD 50 million of existing debt. Free cash flow to equity (USD millions) is closest to:",
+    "options": ["340", "260", "382"],
+    "answer": "A",
+    "explanation": "Net borrowing = 90 - 50 = 40. FCFE = CFO - capex + net borrowing = 500 - 200 + 40 = 340.",
+    "rationale": {
+      "A": "Correct. 500 - 200 + 40 = 340.",
+      "B": "Incorrect. 260 subtracts net borrowing instead of adding it.",
+      "C": "Incorrect. 382 starts from FCFF (which adds back after-tax interest) and then adds net borrowing; FCFE must not add back interest."
+    },
+    "verify": "return 500 - 200 + (90 - 50);",
+    "numericAnswer": 340,
+    "tolerance": 0.5,
+    "tags": ["fcfe"]
+  },
+  {
+    "id": "q-cfa1-cash-flow-statement-ii-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "cash-flow-statement-ii",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A company reports cash flow from operations of USD 500 million, after deducting interest paid of USD 60 million and taxes paid of USD 120 million. Its cash flow interest coverage ratio is closest to:",
+    "options": ["9.33", "8.33", "11.33"],
+    "answer": "C",
+    "explanation": "Interest coverage = (CFO + interest paid + taxes paid) / interest paid = (500 + 60 + 120) / 60 = 11.33.",
+    "rationale": {
+      "A": "Incorrect. 9.33 adds back interest but forgets to add back taxes paid.",
+      "B": "Incorrect. 8.33 divides CFO by interest without adding back interest or taxes.",
+      "C": "Correct. Adding back both interest and taxes gives 680 / 60 = 11.33."
+    },
+    "verify": "return (500 + 60 + 120)/60;",
+    "numericAnswer": 11.33,
+    "tolerance": 0.005,
+    "tags": ["coverage-ratios"]
+  },
+  {
+    "id": "q-cfa1-cash-flow-statement-ii-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "cash-flow-statement-ii",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A company's reinvestment ratio (cash flow from operations divided by cash paid for long-term assets) is 0.6. This most likely indicates that:",
+    "options": ["operating cash flow covers only 60% of capital spending, so the rest must come from external financing or existing cash.", "the company reinvests 60% of its net income in long-term assets.", "the company could repay its long-term debt in 0.6 years from operating cash flow."],
+    "answer": "A",
+    "explanation": "A reinvestment ratio below 1 means CFO is insufficient to fund capital expenditure.",
+    "rationale": {
+      "A": "Correct. The ratio compares CFO with capex; 0.6 means a 40% funding gap.",
+      "B": "Incorrect. The ratio uses operating cash flow, not net income, and measures coverage, not a payout share.",
+      "C": "Incorrect. That describes a debt payment or debt coverage ratio, not the reinvestment ratio."
+    },
+    "tags": ["cash-flow-ratios"]
+  }
+]

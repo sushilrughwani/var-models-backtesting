@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-estimation-and-inference-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "estimation-and-inference",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A population of returns has a standard deviation of 20%. For a random sample of 64 observations, the standard error of the sample mean is closest to:",
+    "options": ["0.31%", "6.25%", "2.50%"],
+    "answer": "C",
+    "explanation": "Standard error = σ/√n = 20/√64 = 20/8 = 2.50%.",
+    "rationale": {
+      "A": "Incorrect. 0.31% divides by n (64) instead of √n (8).",
+      "B": "Incorrect. 6.25 is σ²/n, the variance of the sample mean, not its standard deviation.",
+      "C": "Correct. 20/8 = 2.50%."
+    },
+    "verify": "return 20/Math.sqrt(64);",
+    "numericAnswer": 2.5,
+    "tolerance": 0.005,
+    "tags": ["standard-error"]
+  },
+  {
+    "id": "q-cfa1-estimation-and-inference-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "estimation-and-inference",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A sample of 25 annual returns has a mean of 8% and a sample standard deviation of 10%. The population variance is unknown and returns are approximately normal. Given t(24 df, 2.5% in each tail) = 2.064, the upper limit of the 95% confidence interval for the population mean is closest to:",
+    "options": ["11.92%", "12.13%", "28.64%"],
+    "answer": "B",
+    "explanation": "SE = 10/√25 = 2%. Upper limit = 8 + 2.064 × 2 = 12.13%.",
+    "rationale": {
+      "A": "Incorrect. 11.92% uses the z factor of 1.96, but the variance is unknown and the sample is small, so t is required.",
+      "B": "Correct. 8 + 2.064 × 2 = 12.13%.",
+      "C": "Incorrect. 28.64% multiplies the reliability factor by the sample standard deviation instead of the standard error."
+    },
+    "verify": "return 8 + 2.064*10/Math.sqrt(25);",
+    "numericAnswer": 12.13,
+    "tolerance": 0.005,
+    "tags": ["confidence-interval", "t-distribution"]
+  },
+  {
+    "id": "q-cfa1-estimation-and-inference-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "estimation-and-inference",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A manager wants a 200-bond portfolio that tracks a 5,000-bond index. She divides the index into groups by maturity, sector and credit rating and randomly selects bonds from every group in proportion to its index weight. This approach is best described as:",
+    "options": ["stratified random sampling", "cluster sampling", "judgmental sampling"],
+    "answer": "A",
+    "explanation": "Dividing the population into subgroups and sampling randomly from each in proportion to its size is stratified random sampling.",
+    "rationale": {
+      "A": "Correct. Every stratum is represented in proportion to its size, which is the defining feature of stratified sampling.",
+      "B": "Incorrect. Cluster sampling randomly chooses only some clusters to sample; here every group is sampled.",
+      "C": "Incorrect. The selection within each group is random, not based on the manager's judgment."
+    },
+    "tags": ["sampling-methods"]
+  },
+  {
+    "id": "q-cfa1-estimation-and-inference-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "estimation-and-inference",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A population of daily returns is strongly skewed with finite variance σ². According to the central limit theorem, for a random sample of 100 observations:",
+    "options": ["the population distribution becomes approximately normal", "the sample mean is approximately normally distributed with variance σ²/100", "the sample mean has the same skewness as the population"],
+    "answer": "B",
+    "explanation": "The CLT says the sampling distribution of the mean is approximately normal for large n, with mean μ and variance σ²/n, regardless of the population's shape.",
+    "rationale": {
+      "A": "Incorrect. The CLT says nothing about the population changing shape; it concerns the distribution of the sample mean.",
+      "B": "Correct. With n = 100, the sample mean is approximately normal with variance σ²/100.",
+      "C": "Incorrect. Averaging washes out skewness, so the sample mean's distribution approaches symmetry."
+    },
+    "tags": ["central-limit-theorem"]
+  }
+]

@@ -1,0 +1,85 @@
+[
+  {
+    "id": "q-cfa1-fixed-income-issuance-and-trading-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-issuance-and-trading",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In which type of bond offering does the issuer, rather than the investment bank, bear the risk that part of the issue remains unsold?",
+    "options": ["Underwritten offering", "Best-efforts offering", "Firm commitment offering"],
+    "answer": "B",
+    "explanation": "In a best-efforts offering the bank only acts as a broker, so any unsold bonds are the issuer's problem.",
+    "rationale": {
+      "A": "Incorrect. In an underwritten offering the bank buys the issue and bears the resale risk.",
+      "B": "Correct. The bank sells what it can as an agent; the issuer bears the risk of an incomplete sale.",
+      "C": "Incorrect. A firm commitment is another name for an underwritten offering, where the bank bears the risk."
+    },
+    "tags": ["primary-market"]
+  },
+  {
+    "id": "q-cfa1-fixed-income-issuance-and-trading-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-issuance-and-trading",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank enters a 30-day repo, delivering bonds with a market value of USD 20,000,000. The haircut is 2% and the repo rate is 2.80% on an actual/360 basis. The repo interest is closest to:",
+    "options": ["USD 45,733", "USD 46,667", "USD 45,107"],
+    "answer": "A",
+    "explanation": "Cash lent = 20,000,000 × 0.98 = 19,600,000. Interest = 19,600,000 × 0.028 × 30/360 = USD 45,733.33.",
+    "rationale": {
+      "A": "Correct. Interest is charged on the cash lent after the haircut, using a 360-day year.",
+      "B": "Incorrect. USD 46,667 applies the repo rate to the full collateral value, ignoring the 2% haircut.",
+      "C": "Incorrect. USD 45,107 uses a 365-day year instead of the 360-day convention given."
+    },
+    "verify": "const cash=20000000*(1-0.02); return cash*0.028*30/360;",
+    "numericAnswer": 45733,
+    "tolerance": 0.5,
+    "tags": ["repo"]
+  },
+  {
+    "id": "q-cfa1-fixed-income-issuance-and-trading-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-issuance-and-trading",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "All else equal, which repo would most likely carry the highest haircut?",
+    "options": [
+      "An overnight repo backed by on-the-run government bills",
+      "A one-week repo backed by investment-grade agency bonds",
+      "A three-month repo backed by thinly traded high-yield corporate bonds"
+    ],
+    "answer": "C",
+    "explanation": "Haircuts rise with collateral credit risk, illiquidity and the length of the repo term. Long-term, illiquid, low-rated collateral needs the biggest cushion.",
+    "rationale": {
+      "A": "Incorrect. Short-term, highly liquid government collateral needs the smallest haircut.",
+      "B": "Incorrect. Agency bonds and a one-week term carry modest risk compared with high-yield collateral over three months.",
+      "C": "Correct. Low credit quality, poor liquidity and a longer term all increase the haircut a cash lender requires."
+    },
+    "tags": ["repo"]
+  },
+  {
+    "id": "q-cfa1-fixed-income-issuance-and-trading-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-issuance-and-trading",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A highly rated company funds part of its working capital by continuously rolling over commercial paper. The main reason rating agencies expect it to maintain a committed bank credit line is to address:",
+    "options": [
+      "The risk that maturing paper cannot be refinanced if investors stop buying new paper",
+      "The interest rate risk created by the paper's long maturity",
+      "The legal requirement that commercial paper be secured by bank collateral"
+    ],
+    "answer": "A",
+    "explanation": "Commercial paper is short-term and unsecured. If market conditions deteriorate, investors may refuse to buy new paper, so a backup line provides cash to repay maturing paper (rollover risk).",
+    "rationale": {
+      "A": "Correct. The backup line covers rollover risk when the CP market closes to the issuer.",
+      "B": "Incorrect. Commercial paper has a short maturity, so interest rate risk is small.",
+      "C": "Incorrect. Commercial paper is unsecured; the credit line is a liquidity backstop, not collateral."
+    },
+    "tags": ["commercial-paper"]
+  }
+]

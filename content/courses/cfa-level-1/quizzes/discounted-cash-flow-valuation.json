@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-discounted-cash-flow-valuation-1",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "discounted-cash-flow-valuation",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A company has just paid an annual dividend of USD 1.50. Dividends are expected to grow at 5% a year indefinitely, and the required return on equity is 9%. The intrinsic value per share using the Gordon growth model is closest to:",
+    "options": ["USD 37.50", "USD 39.38", "USD 26.25"],
+    "answer": "B",
+    "explanation": "D1 = 1.50 × 1.05 = 1.575. V0 = 1.575/(0.09 − 0.05) = 39.38.",
+    "rationale": {
+      "A": "Incorrect. This uses D0 = 1.50 instead of next year's dividend D1 in the numerator.",
+      "B": "Correct. Next year's dividend of 1.575 divided by r − g of 4% gives 39.38.",
+      "C": "Incorrect. This divides D1 by r − g computed as 6% (for example 0.09 − 0.03), misreading the growth rate."
+    },
+    "verify": "return 1.5*1.05/(0.09-0.05);",
+    "numericAnswer": 39.38,
+    "tolerance": 0.01,
+    "tags": ["gordon-growth"]
+  },
+  {
+    "id": "q-cfa1-discounted-cash-flow-valuation-2",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "discounted-cash-flow-valuation",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A stock has just paid a dividend of USD 1.00. Dividends will grow at 20% a year for the next two years and at 5% a year thereafter. The required return is 11%. The intrinsic value per share is closest to:",
+    "options": ["USD 21.73", "USD 27.45", "USD 22.70"],
+    "answer": "C",
+    "explanation": "D1 = 1.20, D2 = 1.44, D3 = 1.512. V2 = 1.512/(0.11 − 0.05) = 25.20. V0 = 1.20/1.11 + (1.44 + 25.20)/1.11² = 1.081 + 21.621 = 22.70.",
+    "rationale": {
+      "A": "Incorrect. This computes the terminal value as D2/(r − g) instead of D3/(r − g), forgetting to grow the dividend one more year.",
+      "B": "Incorrect. This adds the terminal value of 25.20 without discounting it back two years.",
+      "C": "Correct. Discounting D1, D2 and the year-2 terminal value of 25.20 at 11% gives 22.70."
+    },
+    "verify": "const r=0.11, D1=1.2, D2=1.44, D3=D2*1.05, V2=D3/(r-0.05); return D1/(1+r)+(D2+V2)/(1+r)**2;",
+    "numericAnswer": 22.7,
+    "tolerance": 0.01,
+    "tags": ["two-stage-ddm", "terminal-value"]
+  },
+  {
+    "id": "q-cfa1-discounted-cash-flow-valuation-3",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "discounted-cash-flow-valuation",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company earns a return on equity of 15% and pays out 40% of its earnings as dividends. Its sustainable growth rate is closest to:",
+    "options": ["9.00%", "6.00%", "15.00%"],
+    "answer": "A",
+    "explanation": "g = retention ratio × ROE = (1 − 0.40) × 15% = 9.00%.",
+    "rationale": {
+      "A": "Correct. The firm retains 60% of earnings and reinvests them at 15%, so g = 9.00%.",
+      "B": "Incorrect. This multiplies ROE by the payout ratio instead of the retention ratio.",
+      "C": "Incorrect. This equals ROE, which would only be the growth rate if the firm retained all earnings."
+    },
+    "verify": "return (1-0.40)*15;",
+    "numericAnswer": 9.0,
+    "tolerance": 0.005,
+    "tags": ["sustainable-growth"]
+  },
+  {
+    "id": "q-cfa1-discounted-cash-flow-valuation-4",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "discounted-cash-flow-valuation",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst is valuing a profitable, fast-growing technology company that has never paid a dividend and does not plan to for several years. Which present value approach is most appropriate?",
+    "options": ["A Gordon growth model applied to the current dividend", "A preferred share perpetuity model", "A free cash flow to equity model"],
+    "answer": "C",
+    "explanation": "When a firm pays no dividends, or dividends do not reflect its earning power, discounting free cash flow to equity captures the cash available to shareholders.",
+    "rationale": {
+      "A": "Incorrect. With no current dividend and growth well above any sustainable rate, a single-stage dividend model is unusable.",
+      "B": "Incorrect. A perpetuity model suits a fixed-dividend preferred share, not a growing common share with no dividend.",
+      "C": "Correct. FCFE measures cash available to equity holders regardless of the firm's dividend policy."
+    },
+    "tags": ["model-selection", "fcfe"]
+  }
+]

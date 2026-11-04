@@ -1,0 +1,403 @@
+[
+  {
+    "id": "cfa1-econ-0001",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Veltrano Water is the only supplier in its region. It faces the inverse demand curve P = 100 - 2Q (P in USD, Q in thousands of units) and has a constant marginal cost of USD 20 per unit. The profit-maximizing price is closest to:",
+    "options": ["USD 60", "USD 50", "USD 20"],
+    "answer": "A",
+    "explanation": "With linear demand, MR = 100 - 4Q. Setting MR = MC: 100 - 4Q = 20, so Q = 20. Price from the demand curve: P = 100 - 2(20) = USD 60.",
+    "rationale": {
+      "A": "Correct. MR = MC gives Q = 20 and the demand curve then gives P = USD 60.",
+      "B": "Incorrect. USD 50 is the revenue-maximizing price (MR = 0 at Q = 25); it ignores marginal cost.",
+      "C": "Incorrect. USD 20 is the price where P = MC, which is the perfectly competitive outcome, not the monopoly outcome."
+    },
+    "verify": "const a=100,b=2,mc=20; const q=(a-mc)/(2*b); return a-b*q;",
+    "numericAnswer": 60,
+    "tolerance": 0.5,
+    "tags": ["monopoly", "profit-maximization"]
+  },
+  {
+    "id": "cfa1-econ-0002",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A perfectly competitive grain mill sells its output at a market price of USD 12 per unit. At its profit-maximizing output, average total cost is USD 14 and average variable cost is USD 10. The mill should most likely:",
+    "options": [
+      "shut down immediately because price is below average total cost",
+      "keep operating in the short run but exit in the long run if the price does not recover",
+      "keep operating in both the short run and the long run because price exceeds average variable cost"
+    ],
+    "answer": "B",
+    "explanation": "Price (12) exceeds AVC (10), so each unit covers its variable cost and contributes USD 2 toward fixed costs; operating loses less than shutting down. Price is below ATC (14), so the firm makes an economic loss and will exit in the long run unless conditions improve.",
+    "rationale": {
+      "A": "Incorrect. The short-run shutdown point is where price falls below AVC, not ATC; here operating covers part of fixed costs.",
+      "B": "Correct. AVC < P < ATC means operate in the short run (losses are smaller than fixed costs) but exit in the long run.",
+      "C": "Incorrect. In the long run all costs are variable, so a price below ATC means persistent economic losses and exit."
+    },
+    "tags": ["perfect-competition", "shutdown-point"]
+  },
+  {
+    "id": "cfa1-econ-0003",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A market has five firms with market shares of 35%, 25%, 20%, 12% and 8%. The Herfindahl-Hirschman Index (using shares expressed as whole percentages) is closest to:",
+    "options": ["92", "2,394", "2,458"],
+    "answer": "C",
+    "explanation": "HHI = 35^2 + 25^2 + 20^2 + 12^2 + 8^2 = 1,225 + 625 + 400 + 144 + 64 = 2,458.",
+    "rationale": {
+      "A": "Incorrect. 92 is the four-firm concentration ratio (35 + 25 + 20 + 12), not the HHI.",
+      "B": "Incorrect. 2,394 squares only the four largest firms and omits the 8% firm; the HHI sums the squared shares of all firms.",
+      "C": "Correct. Summing the squared shares of all five firms gives 2,458."
+    },
+    "verify": "return [35,25,20,12,8].reduce((s,x)=>s+x*x,0);",
+    "numericAnswer": 2458,
+    "tolerance": 0.5,
+    "tags": ["hhi", "market-concentration"]
+  },
+  {
+    "id": "cfa1-econ-0004",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following economic indicators is best classified as a lagging indicator?",
+    "options": [
+      "Average duration of unemployment",
+      "Average weekly hours worked in manufacturing",
+      "Industrial production"
+    ],
+    "answer": "A",
+    "explanation": "Unemployment duration keeps lengthening after a downturn has begun and keeps falling well after recovery starts, so it confirms turning points after the fact.",
+    "rationale": {
+      "A": "Correct. The average duration of unemployment changes after the cycle has turned, which makes it a lagging indicator.",
+      "B": "Incorrect. Firms adjust hours before hiring or firing, so average weekly hours is a leading indicator.",
+      "C": "Incorrect. Industrial production moves with the cycle and is a coincident indicator."
+    },
+    "tags": ["economic-indicators"]
+  },
+  {
+    "id": "cfa1-econ-0005",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "As an economy moves from its peak into the early part of a contraction, sales fall faster than firms expected. The inventory-to-sales ratio most likely:",
+    "options": [
+      "falls, because firms rush to rebuild depleted stock",
+      "rises, because unsold goods pile up before firms cut production",
+      "stays stable, because firms adjust output immediately to match sales"
+    ],
+    "answer": "B",
+    "explanation": "Production plans are set in advance, so when sales slow unexpectedly inventories accumulate and the ratio rises. Firms then cut production to work off excess stock, which deepens the contraction.",
+    "rationale": {
+      "A": "Incorrect. Restocking and a falling ratio are typical of a recovery, when sales pick up faster than production.",
+      "B": "Correct. An unexpected drop in sales leaves unwanted inventory, so the ratio rises until production is cut.",
+      "C": "Incorrect. Production cannot be adjusted instantly; the lag is exactly why the inventory cycle exists."
+    },
+    "tags": ["business-cycle", "inventory-cycle"]
+  },
+  {
+    "id": "cfa1-econ-0006",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In the economy of Morevia, the marginal propensity to consume is 0.80 and the proportional income tax rate is 25%. If government spending rises by EUR 40 billion, the eventual increase in GDP is closest to:",
+    "options": ["EUR 200 billion", "EUR 50 billion", "EUR 100 billion"],
+    "answer": "C",
+    "explanation": "Fiscal multiplier = 1 / [1 - MPC(1 - t)] = 1 / [1 - 0.80 x 0.75] = 1 / 0.40 = 2.5. Change in GDP = 2.5 x 40 = EUR 100 billion.",
+    "rationale": {
+      "A": "Incorrect. EUR 200 billion uses the simple multiplier 1/(1 - MPC) = 5 and ignores the income tax leakage.",
+      "B": "Incorrect. EUR 50 billion uses 1/[1 - MPC x t] = 1.25, applying the tax rate instead of (1 - t) to the MPC.",
+      "C": "Correct. The multiplier with taxes is 2.5, so GDP rises by EUR 100 billion."
+    },
+    "verify": "const c=0.8,t=0.25,g=40; return g/(1-c*(1-t));",
+    "numericAnswer": 100,
+    "tolerance": 0.5,
+    "tags": ["fiscal-multiplier"]
+  },
+  {
+    "id": "cfa1-econ-0007",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A government raises spending by USD 10 billion and finances it entirely with a lump-sum tax increase of USD 10 billion. If the marginal propensity to consume is 0.75 and there are no other taxes, the change in GDP is closest to:",
+    "options": ["USD 0", "USD 10 billion", "USD 40 billion"],
+    "answer": "B",
+    "explanation": "Spending multiplier = 1/(1 - 0.75) = 4, so spending adds 40. Tax multiplier = -0.75/(1 - 0.75) = -3, so taxes subtract 30. Net change = +USD 10 billion (the balanced-budget multiplier equals 1).",
+    "rationale": {
+      "A": "Incorrect. Assuming the tax fully offsets the spending ignores that households cut consumption by only MPC x tax in the first round.",
+      "B": "Correct. +40 from spending and -30 from taxes gives a net USD 10 billion increase.",
+      "C": "Incorrect. USD 40 billion applies the spending multiplier and ignores the contractionary effect of the tax increase."
+    },
+    "verify": "const c=0.75,dg=10,dt=10; return dg/(1-c) - c*dt/(1-c);",
+    "numericAnswer": 10,
+    "tolerance": 0.5,
+    "tags": ["balanced-budget-multiplier", "fiscal-multiplier"]
+  },
+  {
+    "id": "cfa1-econ-0008",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following is best described as an automatic stabilizer?",
+    "options": [
+      "A progressive income tax system",
+      "A one-off infrastructure package approved by parliament during a recession",
+      "A cut in the central bank's policy rate"
+    ],
+    "answer": "A",
+    "explanation": "Automatic stabilizers change the fiscal stance without new legislation: with progressive taxes, tax receipts fall faster than income in a downturn and rise faster in a boom.",
+    "rationale": {
+      "A": "Correct. Progressive taxes automatically reduce the tax take when incomes fall, cushioning the downturn without new decisions.",
+      "B": "Incorrect. A specific spending package needs a policy decision, so it is discretionary fiscal policy.",
+      "C": "Incorrect. A policy-rate cut is a monetary policy action, not a fiscal stabilizer."
+    },
+    "tags": ["fiscal-policy", "automatic-stabilizers"]
+  },
+  {
+    "id": "cfa1-econ-0009",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bank in Ranpur receives a new cash deposit of INR 1,000 million. The required reserve ratio is 10%, banks hold no excess reserves and the public holds no extra cash. The maximum total increase in deposits across the banking system, including the initial deposit, is closest to:",
+    "options": ["INR 9,000 million", "INR 100 million", "INR 10,000 million"],
+    "answer": "C",
+    "explanation": "Money multiplier = 1 / reserve ratio = 1 / 0.10 = 10. Total deposits = 1,000 x 10 = INR 10,000 million.",
+    "rationale": {
+      "A": "Incorrect. INR 9,000 million is the additional deposits created by lending; it excludes the initial deposit the question asks to include.",
+      "B": "Incorrect. INR 100 million multiplies the deposit by the reserve ratio, which gives the required reserves on the first deposit, not total deposits.",
+      "C": "Correct. A multiplier of 10 applied to INR 1,000 million gives INR 10,000 million."
+    },
+    "verify": "const d=1000,rr=0.10; return d/rr;",
+    "numericAnswer": 10000,
+    "tolerance": 0.5,
+    "tags": ["money-multiplier", "monetary-policy"]
+  },
+  {
+    "id": "cfa1-econ-0010",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "In an economy, the money supply grows by 6.0% per year, velocity is constant and real output grows by 2.5% per year. Using the quantity theory of money in its approximate growth-rate form, the inflation rate is closest to:",
+    "options": ["8.5%", "3.5%", "6.0%"],
+    "answer": "B",
+    "explanation": "MV = PY in growth rates: %M + %V = %P + %Y. With %V = 0: inflation = 6.0% - 2.5% = 3.5%.",
+    "rationale": {
+      "A": "Incorrect. 8.5% adds real growth to money growth instead of subtracting it.",
+      "B": "Correct. Inflation = money growth - real output growth = 3.5%.",
+      "C": "Incorrect. 6.0% assumes all money growth becomes inflation and ignores real output growth."
+    },
+    "verify": "const m=6.0,v=0,y=2.5; return m+v-y;",
+    "numericAnswer": 3.5,
+    "tolerance": 0.05,
+    "tags": ["quantity-theory-of-money"]
+  },
+  {
+    "id": "cfa1-econ-0011",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "The central bank of Ostland targets 2.0% inflation and estimates trend real growth at 1.5%. Its policy rate is currently 2.5%. The stance of monetary policy is best described as:",
+    "options": [
+      "expansionary, because the policy rate is below the neutral rate of about 3.5%",
+      "contractionary, because the policy rate is above the inflation target",
+      "neutral, because the policy rate is above trend real growth"
+    ],
+    "answer": "A",
+    "explanation": "Neutral nominal rate = trend real growth + inflation target = 1.5% + 2.0% = 3.5%. A 2.5% policy rate sits below neutral, so policy is expansionary (accommodative).",
+    "rationale": {
+      "A": "Correct. The policy rate is about 1 percentage point below the 3.5% neutral rate, so policy is stimulative.",
+      "B": "Incorrect. The stance is judged against the neutral rate (real growth plus inflation target), not against the inflation target alone.",
+      "C": "Incorrect. Comparing with trend real growth alone omits expected inflation from the neutral nominal rate."
+    },
+    "tags": ["neutral-rate", "monetary-policy"]
+  },
+  {
+    "id": "cfa1-econ-0012",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An analyst flags the growing threat of state-sponsored cyberattacks on financial infrastructure, a risk that is already known and is expected to evolve and expand over many years. This is best classified as:",
+    "options": ["event risk", "exogenous risk", "thematic risk"],
+    "answer": "C",
+    "explanation": "Thematic risks are known risks that develop and spread over an extended period, such as climate change or cyber threats.",
+    "rationale": {
+      "A": "Incorrect. Event risk is tied to known dates or scheduled events, such as elections or treaty deadlines.",
+      "B": "Incorrect. Exogenous risk refers to sudden, unanticipated shocks, such as an unexpected invasion or uprising.",
+      "C": "Correct. A known, long-running and evolving threat is a thematic risk."
+    },
+    "tags": ["geopolitical-risk"]
+  },
+  {
+    "id": "cfa1-econ-0013",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In response to a border dispute, the government of Kestria freezes the overseas reserves of a neighbouring country's central bank and bars that country's banks from its domestic payment system. This action is best classified as a geopolitical:",
+    "options": ["national security tool", "financial tool", "economic tool"],
+    "answer": "B",
+    "explanation": "Financial tools restrict access to currencies, payment systems and capital, for example through asset freezes, investment restrictions and financial sanctions.",
+    "rationale": {
+      "A": "Incorrect. National security tools involve armed force, espionage or other direct action affecting physical infrastructure or territory.",
+      "B": "Correct. Freezing reserves and cutting off payment-system access are financial sanctions, a financial tool.",
+      "C": "Incorrect. Economic tools work through trade and production, such as tariffs, trade agreements or nationalization."
+    },
+    "tags": ["geopolitics", "geopolitical-tools"]
+  },
+  {
+    "id": "cfa1-econ-0014",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In Alvoria, one worker-day produces either 10 tonnes of wheat or 5 bolts of cloth. In Brenland, one worker-day produces either 6 tonnes of wheat or 4 bolts of cloth. In the country with the comparative advantage in cloth, the opportunity cost of one bolt of cloth is closest to:",
+    "options": ["1.50 tonnes of wheat", "2.00 tonnes of wheat", "0.67 tonnes of wheat"],
+    "answer": "A",
+    "explanation": "Opportunity cost of cloth: Alvoria 10/5 = 2.00 wheat; Brenland 6/4 = 1.50 wheat. Brenland has the lower cost, so it has the comparative advantage in cloth at 1.50 tonnes of wheat per bolt.",
+    "rationale": {
+      "A": "Correct. Brenland gives up 1.50 tonnes of wheat per bolt, less than Alvoria, so it has the comparative advantage.",
+      "B": "Incorrect. 2.00 is Alvoria's opportunity cost; Alvoria has the absolute advantage in both goods but the comparative advantage in wheat.",
+      "C": "Incorrect. 0.67 inverts the ratio (bolts of cloth per tonne of wheat in Brenland), which is the opportunity cost of wheat, not cloth."
+    },
+    "verify": "const aw=10,ac=5,bw=6,bc=4; return Math.min(aw/ac,bw/bc);",
+    "numericAnswer": 1.5,
+    "tolerance": 0.005,
+    "tags": ["comparative-advantage", "international-trade"]
+  },
+  {
+    "id": "cfa1-econ-0015",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A small importing country can restrict imports of steel either with a tariff or with a quota that allows the same import volume. If the quota licences are given free of charge to foreign exporters, the quota differs from the tariff mainly in that:",
+    "options": [
+      "domestic consumers pay a lower price for steel",
+      "domestic steel producers sell a smaller quantity",
+      "the revenue the government would have collected is captured as quota rent by foreign exporters"
+    ],
+    "answer": "C",
+    "explanation": "An equivalent quota produces the same domestic price, consumption and domestic output as the tariff. The difference is who gets the price wedge on imports: the government under a tariff, the licence holders under a quota. Giving the rent to foreigners makes the national welfare loss larger.",
+    "rationale": {
+      "A": "Incorrect. A quota with the same import volume raises the domestic price by the same amount as the tariff.",
+      "B": "Incorrect. Domestic producers face the same higher price and produce the same quantity under both measures.",
+      "C": "Correct. The tariff revenue becomes quota rent, and here it goes to foreign exporters, so the importing country loses it."
+    },
+    "tags": ["trade-restrictions", "tariffs", "quotas"]
+  },
+  {
+    "id": "cfa1-econ-0016",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The nominal spot rate is 1.1000 USD/EUR (USD per EUR). The eurozone price index is 120 and the US price index is 110. From the perspective of a US resident, the real exchange rate (USD/EUR) is closest to:",
+    "options": ["1.01", "1.20", "1.10"],
+    "answer": "B",
+    "explanation": "Real exchange rate (d/f) = S(d/f) x (P_f / P_d) = 1.1000 x (120 / 110) = 1.20.",
+    "rationale": {
+      "A": "Incorrect. 1.01 inverts the price ratio (P_USD / P_EUR); the foreign price level belongs in the numerator.",
+      "B": "Correct. Multiplying the nominal rate by foreign over domestic prices gives 1.20.",
+      "C": "Incorrect. 1.10 is the nominal rate; it ignores the difference in price levels."
+    },
+    "verify": "const s=1.10,pf=120,pd=110; return s*pf/pd;",
+    "numericAnswer": 1.2,
+    "tolerance": 0.005,
+    "tags": ["real-exchange-rate", "fx-market"]
+  },
+  {
+    "id": "cfa1-econ-0017",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement best describes a currency board arrangement?",
+    "options": [
+      "The monetary authority commits by law to exchange domestic currency for a specified foreign currency at a fixed rate and backs the monetary base with that foreign currency, largely giving up independent monetary policy.",
+      "The central bank pegs the currency loosely but keeps full freedom to print money and act as lender of last resort.",
+      "The exchange rate floats freely while the central bank uses capital controls to target domestic interest rates."
+    ],
+    "answer": "A",
+    "explanation": "A currency board issues domestic currency only against foreign-currency reserves at a legally fixed rate. Money supply then follows reserve flows, so domestic monetary policy and the lender-of-last-resort role are largely given up.",
+    "rationale": {
+      "A": "Correct. A legal commitment, full foreign-currency backing and loss of independent monetary policy are the defining features.",
+      "B": "Incorrect. A currency board cannot freely create money; it may only issue currency backed by reserves, which limits the lender-of-last-resort role.",
+      "C": "Incorrect. A currency board fixes the exchange rate; it is the opposite of a free float."
+    },
+    "tags": ["exchange-rate-regimes", "capital-flows"]
+  },
+  {
+    "id": "cfa1-econ-0018",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A dealer quotes 1.0850 USD/EUR (USD per EUR) and 150.20 JPY/USD (JPY per USD). The JPY/EUR cross rate (JPY per EUR) is closest to:",
+    "options": ["138.43", "162.97", "0.0061"],
+    "answer": "B",
+    "explanation": "JPY/EUR = (JPY/USD) x (USD/EUR) = 150.20 x 1.0850 = 162.97. The USD cancels.",
+    "rationale": {
+      "A": "Incorrect. 138.43 divides 150.20 by 1.0850; the USD does not cancel, so the units are wrong.",
+      "B": "Correct. Multiplying the two quotes cancels the USD and gives 162.97 JPY per EUR.",
+      "C": "Incorrect. 0.0061 is the reciprocal of the correct answer, the EUR/JPY rate (EUR per JPY)."
+    },
+    "verify": "return 150.20*1.0850;",
+    "numericAnswer": 162.97,
+    "tolerance": 0.005,
+    "tags": ["cross-rates"]
+  },
+  {
+    "id": "cfa1-econ-0019",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The spot rate is 1.2500 USD/GBP (USD per GBP). The 180-day USD interest rate is 4.00% and the 180-day GBP interest rate is 5.00%, both annualized on an actual/360 basis. The 180-day forward rate (USD/GBP) consistent with covered interest rate parity is closest to:",
+    "options": ["1.2381", "1.2561", "1.2439"],
+    "answer": "C",
+    "explanation": "F(USD/GBP) = S x (1 + i_USD x 180/360) / (1 + i_GBP x 180/360) = 1.2500 x 1.02 / 1.025 = 1.2439. The GBP, with the higher interest rate, trades at a forward discount.",
+    "rationale": {
+      "A": "Incorrect. 1.2381 uses the full annual rates (1.04/1.05) and ignores the 180/360 day-count adjustment.",
+      "B": "Incorrect. 1.2561 puts the base-currency (GBP) rate in the numerator; the price-currency (USD) rate belongs on top.",
+      "C": "Correct. Using price-currency over base-currency interest factors for half a year gives 1.2439."
+    },
+    "verify": "const s=1.25,iu=0.04,ig=0.05,t=180/360; return s*(1+iu*t)/(1+ig*t);",
+    "numericAnswer": 1.2439,
+    "tolerance": 0.00005,
+    "tags": ["forward-rates", "interest-rate-parity"]
+  },
+  {
+    "id": "cfa1-econ-0020",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The spot rate is 1.3200 CAD/USD (CAD per USD) and the 3-month forward points are quoted as +45. Forward points are scaled to the fourth decimal place. The forward premium of the USD, expressed as a percentage of the spot rate, is closest to:",
+    "options": ["0.34%", "3.41%", "0.45%"],
+    "answer": "A",
+    "explanation": "Forward = 1.3200 + 45/10,000 = 1.3245. Premium = (1.3245 - 1.3200) / 1.3200 = 0.0045 / 1.32 = 0.34%.",
+    "rationale": {
+      "A": "Correct. Scaling 45 points to 0.0045 and dividing by spot gives 0.34%.",
+      "B": "Incorrect. 3.41% scales the points to 0.045 (third decimal place) instead of 0.0045.",
+      "C": "Incorrect. 0.45% treats the points as a percentage directly and does not divide by the spot rate."
+    },
+    "verify": "const s=1.32,pts=45; return (pts/10000)/s*100;",
+    "numericAnswer": 0.34,
+    "tolerance": 0.005,
+    "tags": ["forward-points", "forward-premium"]
+  }
+]

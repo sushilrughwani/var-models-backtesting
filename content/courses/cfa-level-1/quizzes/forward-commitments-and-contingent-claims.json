@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-cfa1-forward-commitments-and-contingent-claims-1",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "forward-commitments-and-contingent-claims",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following derivatives is a contingent claim?",
+    "options": ["Credit default swap", "Interest rate swap", "Futures contract"],
+    "answer": "A",
+    "explanation": "A credit default swap pays the protection buyer only if a credit event occurs, so its payoff is contingent. Interest rate swaps and futures oblige both parties to perform.",
+    "rationale": {
+      "A": "Correct. The CDS payout depends on whether a credit event occurs, making it a contingent claim despite its name.",
+      "B": "Incorrect. An interest rate swap obliges both parties to exchange cash flows; it is a forward commitment.",
+      "C": "Incorrect. A futures contract obliges both parties to transact at the futures price; it is a forward commitment."
+    },
+    "tags": ["classification"]
+  },
+  {
+    "id": "q-cfa1-forward-commitments-and-contingent-claims-2",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "forward-commitments-and-contingent-claims",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A trader writes a European put with a strike of USD 40 and receives a premium of USD 1.80. If the underlying is USD 35 at expiration, the trader's profit per share (in USD) is closest to:",
+    "options": ["1.80", "−5.00", "−3.20"],
+    "answer": "C",
+    "explanation": "Put payoff to the holder = max(0, 40 − 35) = 5. The writer pays 5 and keeps the 1.80 premium: profit = −5 + 1.80 = −3.20.",
+    "rationale": {
+      "A": "Incorrect. The writer keeps the full premium only if the put expires out of the money (underlying above 40).",
+      "B": "Incorrect. −5.00 is the writer's payoff; it ignores the premium received.",
+      "C": "Correct. −5.00 + 1.80 = −3.20."
+    },
+    "verify": "return -Math.max(0,40-35)+1.8;",
+    "numericAnswer": -3.2,
+    "tolerance": 0.01,
+    "tags": ["option-payoff"]
+  },
+  {
+    "id": "q-cfa1-forward-commitments-and-contingent-claims-3",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "forward-commitments-and-contingent-claims",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investor buys a call option with an exercise price of USD 75 for a premium of USD 4.20. The underlying price at expiration at which the investor breaks even is closest to:",
+    "options": ["USD 70.80", "USD 79.20", "USD 75.00"],
+    "answer": "B",
+    "explanation": "A call buyer breaks even when the payoff equals the premium: S_T − 75 = 4.20, so S_T = 79.20.",
+    "rationale": {
+      "A": "Incorrect. 70.80 = X − premium is the break-even for a put buyer, not a call buyer.",
+      "B": "Correct. X + premium = 75 + 4.20 = 79.20.",
+      "C": "Incorrect. At 75 the call pays nothing, so the investor has lost the full premium."
+    },
+    "verify": "return 75+4.2;",
+    "numericAnswer": 79.2,
+    "tolerance": 0.01,
+    "tags": ["break-even"]
+  },
+  {
+    "id": "q-cfa1-forward-commitments-and-contingent-claims-4",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "forward-commitments-and-contingent-claims",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with buying a call option, entering a long forward contract on the same underlying most likely involves:",
+    "options": [
+      "an upfront premium and a loss limited to that premium",
+      "no upfront payment and losses that grow one-for-one as the underlying falls",
+      "a payoff that is zero whenever the underlying falls below the forward price"
+    ],
+    "answer": "B",
+    "explanation": "A forward has zero value at initiation, so nothing is paid upfront, and its payoff S_T − F_0 is symmetric: every unit the underlying falls below F_0 is a unit lost.",
+    "rationale": {
+      "A": "Incorrect. This describes the call option, not the forward.",
+      "B": "Correct. Forward commitments require no premium and have linear, symmetric payoffs.",
+      "C": "Incorrect. A zero floor on the payoff is a feature of the call option; the long forward loses when S_T is below F_0."
+    },
+    "tags": ["symmetric-payoff"]
+  }
+]

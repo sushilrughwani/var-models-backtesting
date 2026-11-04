@@ -1,0 +1,89 @@
+[
+  {
+    "id": "q-frm1-insurance-companies-and-pension-plans-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "insurance-companies-and-pension-plans",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A property-casualty insurer reports a loss ratio of 68%, an expense ratio of 31%, policyholder dividends of 2% of premiums and investment income of 5% of premiums. Its operating ratio is closest to:",
+    "options": ["99%", "101%", "94%", "96%"],
+    "answer": "D",
+    "explanation": "Combined ratio = 68% + 31% = 99%. After dividends = 101%. Operating ratio = 101% − 5% = 96%.",
+    "rationale": {
+      "A": "Incorrect. 99% is the combined ratio before dividends and before investment income.",
+      "B": "Incorrect. 101% is the combined ratio after dividends; investment income has not been subtracted.",
+      "C": "Incorrect. 94% subtracts investment income but forgets to add the 2% policyholder dividends.",
+      "D": "Correct. 68 + 31 + 2 − 5 = 96%."
+    },
+    "verify": "return 68+31+2-5;",
+    "numericAnswer": 96,
+    "tolerance": 0.5,
+    "tags": ["combined-ratio"]
+  },
+  {
+    "id": "q-frm1-insurance-companies-and-pension-plans-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "insurance-companies-and-pension-plans",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A 45-year-old buys a one-year term life policy paying USD 500,000 on death. The probability of death within the year is 0.004, the interest rate is 5% per annum with annual compounding, and deaths are assumed to occur halfway through the year. The breakeven premium paid at the start of the year is closest to:",
+    "options": ["USD 1,951.80", "USD 2,000.00", "USD 1,904.76", "USD 2,050.00"],
+    "answer": "A",
+    "explanation": "Expected payout = 500,000 × 0.004 = 2,000, received at t = 0.5. PV = 2,000 / 1.05^0.5 = 1,951.80.",
+    "rationale": {
+      "A": "Correct. The expected payout of 2,000 discounted half a year at 5% is 1,951.80.",
+      "B": "Incorrect. 2,000 is the undiscounted expected payout; it ignores the time value of money.",
+      "C": "Incorrect. 1,904.76 discounts for a full year, but deaths are assumed to occur mid-year.",
+      "D": "Incorrect. 2,050 compounds the expected payout forward instead of discounting it."
+    },
+    "verify": "return 500000*0.004/Math.pow(1.05,0.5);",
+    "numericAnswer": 1951.8,
+    "tolerance": 0.01,
+    "tags": ["mortality", "term-insurance"]
+  },
+  {
+    "id": "q-frm1-insurance-companies-and-pension-plans-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "insurance-companies-and-pension-plans",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A health insurer finds that people who buy its policies without a medical exam are, on average, much less healthy than the general population. This is an example of:",
+    "options": ["Moral hazard", "Adverse selection", "Longevity risk", "Basis risk"],
+    "answer": "B",
+    "explanation": "People who know they are high risk are more eager to buy insurance at a pooled price, so the insured pool is riskier than average. Underwriting such as medical checks counters this.",
+    "rationale": {
+      "A": "Incorrect. Moral hazard is a change in behaviour after the policy is bought, such as taking less care.",
+      "B": "Correct. High-risk individuals self-select into the insured pool before the policy is written.",
+      "C": "Incorrect. Longevity risk is the risk that annuitants live longer than expected.",
+      "D": "Incorrect. Basis risk concerns imperfect hedges, not the selection of insured customers."
+    },
+    "tags": ["adverse-selection"]
+  },
+  {
+    "id": "q-frm1-insurance-companies-and-pension-plans-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "insurance-companies-and-pension-plans",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A company sponsors a defined benefit pension plan. Over a year its plan assets return 4%, while long-term interest rates fall sharply. Which outcome is most likely, and who bears it?",
+    "options": [
+      "The funding ratio improves because asset returns were positive; the employees benefit",
+      "The funding ratio is unchanged because pension promises are fixed in nominal terms",
+      "The funding ratio deteriorates because the present value of liabilities rises; the employer must cover the shortfall",
+      "The funding ratio deteriorates; the employees absorb the shortfall through lower pensions"
+    ],
+    "answer": "C",
+    "explanation": "Lower discount rates raise the present value of promised pensions, often by more than a modest asset gain. In a DB plan the employer guarantees the benefit formula and must fund any deficit.",
+    "rationale": {
+      "A": "Incorrect. Positive asset returns can be outweighed by a large rise in the value of liabilities.",
+      "B": "Incorrect. Nominal promises are fixed, but their present value rises when discount rates fall.",
+      "C": "Correct. Liabilities grow faster than assets, and the sponsoring employer bears the deficit in a DB plan.",
+      "D": "Incorrect. Employees bear investment risk in a defined contribution plan, not a defined benefit plan."
+    },
+    "tags": ["pension-plans", "defined-benefit"]
+  }
+]

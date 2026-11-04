@@ -1,0 +1,90 @@
+[
+  {
+    "id": "q-cfa1-gips-introduction-1",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "gips-introduction",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following can claim compliance with the Global Investment Performance Standards?",
+    "options": [
+      "An individual portfolio manager with a strong track record",
+      "A single mutual fund product, independent of its manager",
+      "An investment management firm that meets all applicable requirements"
+    ],
+    "answer": "C",
+    "explanation": "Compliance is claimed at the firm level and requires meeting all applicable requirements. Individuals and stand-alone products cannot claim compliance.",
+    "rationale": {
+      "A": "Incorrect. Individuals cannot claim compliance; only firms (and asset owners) can.",
+      "B": "Incorrect. A product cannot be compliant on its own; compliance is a firm-wide claim.",
+      "C": "Correct. A firm that meets every applicable requirement may claim compliance."
+    }
+  },
+  {
+    "id": "q-cfa1-gips-introduction-2",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "gips-introduction",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "The fictional Thornbury Capital wants to market its Emerging Markets Equity composite. One fee-paying, discretionary emerging markets account lost heavily last year, and the marketing team proposes leaving it out of the composite. Under GIPS, this proposal is:",
+    "options": [
+      "Not permitted, because all fee-paying discretionary portfolios must be included in at least one composite",
+      "Permitted, if the firm discloses that one account was excluded",
+      "Permitted, because composites may be built from a firm's most representative accounts"
+    ],
+    "answer": "A",
+    "explanation": "Requiring every actual fee-paying discretionary portfolio to be in at least one composite prevents cherry-picking. A losing account that fits the strategy must be included.",
+    "rationale": {
+      "A": "Correct. Excluding the account would be cherry-picking, which composite rules are designed to prevent.",
+      "B": "Incorrect. Disclosure does not cure the exclusion of an eligible portfolio; inclusion is required.",
+      "C": "Incorrect. Composites are defined by strategy, not by which accounts look best."
+    }
+  },
+  {
+    "id": "q-cfa1-gips-introduction-3",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "gips-introduction",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A composite at the fictional Pinecrest Advisors contains three portfolios. Portfolio X began the year at USD 40 million and returned 5%; Portfolio Y began at USD 35 million and returned 8%; Portfolio Z began at USD 25 million and returned -3%. Using beginning-of-period asset weights, the composite return is closest to:",
+    "options": [
+      "3.33%",
+      "4.05%",
+      "6.40%"
+    ],
+    "answer": "B",
+    "explanation": "Weights are 40/100 = 0.40, 35/100 = 0.35 and 25/100 = 0.25. Composite return = 0.40 × 5% + 0.35 × 8% + 0.25 × (-3%) = 2.00% + 2.80% - 0.75% = 4.05%.",
+    "rationale": {
+      "A": "Incorrect. 3.33% is the simple equal-weighted average (5 + 8 - 3)/3, which ignores portfolio size.",
+      "B": "Correct. Asset-weighting the three returns gives 4.05%.",
+      "C": "Incorrect. 6.40% results from dropping the losing Portfolio Z and weighting only X and Y, which is cherry-picking."
+    },
+    "verify": "const v=[40,35,25], r=[5,8,-3]; const t=v.reduce((a,b)=>a+b,0); return v.reduce((s,x,i)=>s+x/t*r[i],0);",
+    "numericAnswer": 4.05,
+    "tolerance": 0.005,
+    "tags": ["gips", "composite-return"]
+  },
+  {
+    "id": "q-cfa1-gips-introduction-4",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "gips-introduction",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "The fictional Wexford Partners states in its marketing: \"Wexford complies with GIPS for all composites except our real estate strategy, and our flagship composite has been verified.\" Which of the following is most accurate?",
+    "options": [
+      "The claim is acceptable because the exception is clearly disclosed",
+      "The claim is acceptable because verification of the flagship composite substitutes for full compliance",
+      "The claim is not acceptable because compliance is all-or-nothing on a firm-wide basis"
+    ],
+    "answer": "C",
+    "explanation": "A firm cannot claim partial compliance. It must meet all applicable requirements firm-wide. Verification is also performed for the firm as a whole and does not substitute for compliance.",
+    "rationale": {
+      "A": "Incorrect. Disclosing an exception does not make a partial compliance claim acceptable.",
+      "B": "Incorrect. Verification tests the firm's compliance; it is firm-wide and cannot replace meeting the requirements.",
+      "C": "Correct. Compliance must be firm-wide and complete; \"except\" claims are not allowed."
+    }
+  }
+]

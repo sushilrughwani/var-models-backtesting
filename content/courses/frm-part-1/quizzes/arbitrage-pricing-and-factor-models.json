@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-arbitrage-pricing-and-factor-models-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "arbitrage-pricing-and-factor-models",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The risk-free rate is 2%. A stock has a sensitivity of 0.8 to factor 1, whose risk premium is 6%, and a sensitivity of 1.5 to factor 2, whose risk premium is 3%. Under the APT, the stock's expected return is closest to:",
+    "options": ["9.30%", "11.30%", "6.80%", "12.35%"],
+    "answer": "B",
+    "explanation": "E(R) = 2% + 0.8 × 6% + 1.5 × 3% = 2% + 4.8% + 4.5% = 11.30%.",
+    "rationale": {
+      "A": "Incorrect. 9.30% sums the two factor contributions but omits the risk-free rate.",
+      "B": "Correct. Add the risk-free rate to each sensitivity times its factor premium: 2 + 4.8 + 4.5 = 11.30%.",
+      "C": "Incorrect. 6.80% includes only factor 1 (2 + 4.8) and ignores the second factor.",
+      "D": "Incorrect. 12.35% averages the sensitivities and premiums instead of multiplying each sensitivity by its own premium."
+    },
+    "verify": "return 2 + 0.8*6 + 1.5*3;",
+    "numericAnswer": 11.3,
+    "tolerance": 0.005,
+    "tags": ["apt", "expected-return"]
+  },
+  {
+    "id": "q-frm1-arbitrage-pricing-and-factor-models-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "arbitrage-pricing-and-factor-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A stock's expected return is 9%. It has a sensitivity of 1.1 to GDP growth and -0.4 to inflation. Forecasters expected GDP growth of 2.5% and inflation of 2.0%; actual GDP growth was 1.5% and actual inflation was 3.5%. The firm-specific return was +0.8%. Using a two-factor model, the realized return is closest to:",
+    "options": ["9.80%", "9.30%", "8.10%", "10.05%"],
+    "answer": "C",
+    "explanation": "Surprises: GDP = 1.5 - 2.5 = -1.0%; inflation = 3.5 - 2.0 = +1.5%. R = 9 + 1.1(-1.0) + (-0.4)(1.5) + 0.8 = 9 - 1.1 - 0.6 + 0.8 = 8.10%.",
+    "rationale": {
+      "A": "Incorrect. 9.80% adds only the firm-specific return and ignores both factor surprises.",
+      "B": "Incorrect. 9.30% treats the inflation sensitivity as +0.4, so the inflation surprise adds 0.6% instead of subtracting it.",
+      "C": "Correct. Use surprises (actual minus expected) times sensitivities, plus the firm-specific shock: 8.10%.",
+      "D": "Incorrect. 10.05% multiplies the sensitivities by factor levels (1.5% and 3.5%) instead of factor surprises."
+    },
+    "verify": "const fg=1.5-2.5, fi=3.5-2.0; return 9 + 1.1*fg + (-0.4)*fi + 0.8;",
+    "numericAnswer": 8.1,
+    "tolerance": 0.005,
+    "tags": ["factor-model", "surprises"]
+  },
+  {
+    "id": "q-frm1-arbitrage-pricing-and-factor-models-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "arbitrage-pricing-and-factor-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A USD 50 million portfolio has a sensitivity of 0.9 to factor 1 and 1.4 to factor 2. Pure factor portfolios exist for each factor (sensitivity of 1 to their own factor and 0 to the other). To eliminate the factor 1 exposure while keeping the factor 2 exposure, the manager should short a position in factor portfolio 1 (in USD millions) of closest to:",
+    "options": ["50", "70", "115", "45"],
+    "answer": "D",
+    "explanation": "The required short equals the factor 1 sensitivity times portfolio value: 0.9 × 50 = USD 45 million. Factor portfolio 1 has zero loading on factor 2, so the factor 2 exposure of 1.4 is unaffected.",
+    "rationale": {
+      "A": "Incorrect. Shorting the full portfolio value would push the factor 1 sensitivity to 0.9 - 1.0 = -0.1, an over-hedge.",
+      "B": "Incorrect. 70 uses the factor 2 sensitivity (1.4 × 50), which is the exposure the manager wants to keep.",
+      "C": "Incorrect. 115 adds both sensitivities (2.3 × 50) and would hedge the wrong amount in the wrong factor portfolio.",
+      "D": "Correct. Short 0.9 × 50 = USD 45 million of factor portfolio 1 to bring the factor 1 sensitivity to zero."
+    },
+    "verify": "return 0.9*50;",
+    "numericAnswer": 45,
+    "tolerance": 0.5,
+    "tags": ["hedging", "factor-portfolios"]
+  },
+  {
+    "id": "q-frm1-arbitrage-pricing-and-factor-models-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "arbitrage-pricing-and-factor-models",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which statement about the arbitrage pricing theory (APT) compared with the CAPM is most accurate?",
+    "options": [
+      "The APT requires investors to hold mean-variance efficient portfolios, while the CAPM does not.",
+      "The APT derives expected returns from the absence of arbitrage on well-diversified portfolios but does not specify which factors are priced.",
+      "The APT states that firm-specific risk earns a premium because many assets are available.",
+      "The APT and the CAPM both require the true market portfolio to be observable."
+    ],
+    "answer": "B",
+    "explanation": "The APT rests on a factor model, diversification and no-arbitrage. It produces a linear relation between expected returns and factor sensitivities but leaves the identity and number of factors to empirical work.",
+    "rationale": {
+      "A": "Incorrect. Mean-variance investor assumptions belong to the CAPM, not the APT.",
+      "B": "Correct. The APT is a no-arbitrage result and is silent on which factors matter.",
+      "C": "Incorrect. Firm-specific risk is diversified away in large portfolios, so it earns no premium under the APT.",
+      "D": "Incorrect. Only the CAPM depends on the market portfolio; the APT needs no market portfolio at all."
+    },
+    "tags": ["apt", "capm"]
+  }
+]

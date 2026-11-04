@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-real-estate-and-infrastructure-1",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "real-estate-and-infrastructure",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A warehouse has expected gross potential rent of USD 3.2 million next year, a vacancy and collection loss of 8%, operating expenses of USD 1.1 million and mortgage interest of USD 0.3 million. Using a cap rate of 7%, the property's value (USD millions) is closest to:",
+    "options": ["22.06", "26.34", "30.00"],
+    "answer": "B",
+    "explanation": "Effective gross income = 3.2 × 0.92 = 2.944. NOI = 2.944 − 1.1 = 1.844 (interest is a financing cost and is excluded). Value = 1.844 / 0.07 = 26.34 million.",
+    "rationale": {
+      "A": "Incorrect. 22.06 deducts mortgage interest from NOI; NOI is measured before financing costs.",
+      "B": "Correct. NOI of 1.844 million capitalised at 7% gives 26.34 million.",
+      "C": "Incorrect. 30.00 ignores the 8% vacancy and collection loss."
+    },
+    "verify": "const noi=3.2*0.92-1.1; return noi/0.07;",
+    "numericAnswer": 26.34,
+    "tolerance": 0.005,
+    "tags": ["noi", "cap-rate"]
+  },
+  {
+    "id": "q-cfa1-real-estate-and-infrastructure-2",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "real-estate-and-infrastructure",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A comparable apartment building with NOI of USD 900,000 recently sold for USD 15 million. A similar building has NOI of USD 1.2 million. Using the cap rate implied by the comparable sale, the similar building's value (USD millions) is closest to:",
+    "options": ["11.25", "15.00", "20.00"],
+    "answer": "C",
+    "explanation": "Implied cap rate = 0.9 / 15 = 6%. Value = 1.2 / 0.06 = 20.00 million.",
+    "rationale": {
+      "A": "Incorrect. 11.25 scales the comparable price by 0.9/1.2 instead of 1.2/0.9, inverting the NOI ratio.",
+      "B": "Incorrect. 15.00 simply copies the comparable's price without adjusting for the higher NOI.",
+      "C": "Correct. The comparable implies a 6% cap rate; 1.2 million / 0.06 = 20.00 million."
+    },
+    "verify": "const cap=0.9/15; return 1.2/cap;",
+    "numericAnswer": 20.0,
+    "tolerance": 0.005,
+    "tags": ["cap-rate", "sales-comparison"]
+  },
+  {
+    "id": "q-cfa1-real-estate-and-infrastructure-3",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "real-estate-and-infrastructure",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Compared with a brownfield infrastructure investment, a greenfield infrastructure investment most likely has:",
+    "options": ["construction risk and a higher expected return", "an established operating history and lower risk", "lower risk because it is usually funded by availability payments"],
+    "answer": "A",
+    "explanation": "Greenfield projects are new builds, so investors bear construction and ramp-up risk and require higher expected returns. Brownfield assets already operate and have an income history.",
+    "rationale": {
+      "A": "Correct. Greenfield means building from scratch, which adds construction risk and raises the required return.",
+      "B": "Incorrect. This describes a brownfield asset.",
+      "C": "Incorrect. Availability payments are a revenue model used in some social infrastructure; they do not make greenfield projects lower risk than brownfield ones."
+    },
+    "tags": ["infrastructure"]
+  },
+  {
+    "id": "q-cfa1-real-estate-and-infrastructure-4",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "real-estate-and-infrastructure",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An investor buys units of a listed fund that holds commercial mortgage-backed securities. In the public/private and debt/equity classification of real estate, this investment is best described as:",
+    "options": ["private equity", "public debt", "public equity"],
+    "answer": "B",
+    "explanation": "Mortgage-backed securities are claims on mortgage cash flows (debt) and trade in public markets, so exposure through a listed vehicle holding them is public debt real estate.",
+    "rationale": {
+      "A": "Incorrect. Private equity real estate is direct or fund ownership of properties.",
+      "B": "Correct. Traded mortgage-backed securities are public debt exposure to real estate.",
+      "C": "Incorrect. Public equity would be shares of equity REITs or real estate operating companies that own properties."
+    },
+    "tags": ["real-estate-forms"]
+  }
+]

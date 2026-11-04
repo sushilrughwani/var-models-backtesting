@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-company-analysis-forecasting-1",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "company-analysis-forecasting",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An analyst uses a top-down approach. The market is worth USD 2,000 million this year and is expected to grow 5%. The company's market share is expected to rise from 15% to 16%. Next year's revenue forecast, in USD millions, is closest to:",
+    "options": ["320.0", "315.0", "336.0"],
+    "answer": "C",
+    "explanation": "Revenue = 2,000 × 1.05 × 0.16 = 336.0.",
+    "rationale": {
+      "A": "Incorrect. This applies the new share to this year's market size and ignores 5% market growth.",
+      "B": "Incorrect. This grows the market but keeps the old 15% share.",
+      "C": "Correct. Next year's market of 2,100 times a 16% share gives 336.0."
+    },
+    "verify": "return 2000*1.05*0.16;",
+    "numericAnswer": 336.0,
+    "tolerance": 0.05,
+    "tags": ["top-down", "revenue-forecast"]
+  },
+  {
+    "id": "q-cfa1-company-analysis-forecasting-2",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "company-analysis-forecasting",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company is forecast to have revenue of USD 730 million and cost of goods sold of USD 438 million next year. The analyst assumes days of sales outstanding of 50. Forecast accounts receivable, in USD millions, is closest to:",
+    "options": ["100.0", "60.0", "14.6"],
+    "answer": "A",
+    "explanation": "AR = revenue × DSO/365 = 730 × 50/365 = 100.0.",
+    "rationale": {
+      "A": "Correct. Receivables are driven by revenue: 730 × 50/365 = 100.0.",
+      "B": "Incorrect. This applies DSO to cost of goods sold (438 × 50/365); receivables relate to sales, not COGS.",
+      "C": "Incorrect. This divides revenue by DSO (730/50), confusing days with turnover."
+    },
+    "verify": "return 730*50/365;",
+    "numericAnswer": 100.0,
+    "tolerance": 0.05,
+    "tags": ["working-capital"]
+  },
+  {
+    "id": "q-cfa1-company-analysis-forecasting-3",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "company-analysis-forecasting",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Revenue is forecast to grow from USD 800 million to USD 900 million. Maintenance capex is assumed equal to depreciation of USD 40 million, and the firm needs USD 0.30 of new fixed assets for each extra USD 1 of revenue. Forecast total capital expenditure, in USD millions, is closest to:",
+    "options": ["30.0", "70.0", "310.0"],
+    "answer": "B",
+    "explanation": "Capex = maintenance + growth = 40 + 0.30 × (900 − 800) = 40 + 30 = 70.0.",
+    "rationale": {
+      "A": "Incorrect. This is growth capex only and leaves out maintenance capex.",
+      "B": "Correct. Maintenance capex of 40 plus growth capex of 30 gives 70.0.",
+      "C": "Incorrect. This applies the capital-intensity ratio to the full revenue level (0.30 × 900 + 40) rather than to the increase."
+    },
+    "verify": "return 40+0.30*(900-800);",
+    "numericAnswer": 70.0,
+    "tolerance": 0.05,
+    "tags": ["capex"]
+  },
+  {
+    "id": "q-cfa1-company-analysis-forecasting-4",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "company-analysis-forecasting",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "For which company is an analyst most likely to choose a longer explicit forecast horizon before applying a terminal value?",
+    "options": ["A mature regulated water utility with stable growth", "A large consumer staples firm with steady margins", "A young software firm growing revenue at 40% a year"],
+    "answer": "C",
+    "explanation": "The explicit horizon should run until the business reaches a steady state. A fast-growing young firm will take many years for its growth and margins to normalise.",
+    "rationale": {
+      "A": "Incorrect. A mature utility is already close to steady state, so a short explicit horizon suffices.",
+      "B": "Incorrect. Steady margins and growth mean the firm is near steady state already.",
+      "C": "Correct. Rapid growth that must eventually slow means the forecast must extend far enough for growth, margins and reinvestment to normalise."
+    },
+    "tags": ["forecast-horizon"]
+  }
+]

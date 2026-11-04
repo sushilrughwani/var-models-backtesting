@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-company-analysis-past-and-present-1",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "company-analysis-past-and-present",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A manufacturer shipped 6% more units this year and its average selling price rose 3%. Its revenue growth is closest to:",
+    "options": ["9.18%", "9.00%", "3.00%"],
+    "answer": "A",
+    "explanation": "Revenue = volume × price, so growth = 1.06 × 1.03 − 1 = 9.18%.",
+    "rationale": {
+      "A": "Correct. Volume and price growth compound: 1.06 × 1.03 − 1 = 9.18%.",
+      "B": "Incorrect. This adds the two growth rates and ignores the cross term (0.06 × 0.03).",
+      "C": "Incorrect. This is only the price growth and ignores higher volume."
+    },
+    "verify": "return (1.06*1.03-1)*100;",
+    "numericAnswer": 9.18,
+    "tolerance": 0.005,
+    "tags": ["revenue-drivers"]
+  },
+  {
+    "id": "q-cfa1-company-analysis-past-and-present-2",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "company-analysis-past-and-present",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company has two segments. Segment X revenue grew from USD 300 million to USD 345 million, and Segment Y revenue fell from USD 500 million to USD 480 million. Segment X's contribution to total revenue growth, in percentage points, is closest to:",
+    "options": ["15.00", "3.13", "5.63"],
+    "answer": "C",
+    "explanation": "Contribution = change in segment revenue / total prior revenue = 45/800 = 5.63 percentage points.",
+    "rationale": {
+      "A": "Incorrect. This is Segment X's own growth rate (45/300), not its contribution to total growth.",
+      "B": "Incorrect. This is total revenue growth (825/800 − 1), which also includes Segment Y's decline.",
+      "C": "Correct. Segment X added 45 on a prior total base of 800, contributing 5.63 points."
+    },
+    "verify": "return (345-300)/(300+500)*100;",
+    "numericAnswer": 5.63,
+    "tolerance": 0.005,
+    "tags": ["segment-analysis"]
+  },
+  {
+    "id": "q-cfa1-company-analysis-past-and-present-3",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "company-analysis-past-and-present",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company's revenue rose from USD 1,200 million to USD 1,320 million, and its operating profit rose from USD 150 million to USD 186 million. Its incremental operating margin is closest to:",
+    "options": ["14.09%", "30.00%", "12.50%"],
+    "answer": "B",
+    "explanation": "Incremental margin = (186 − 150)/(1,320 − 1,200) = 36/120 = 30.00%.",
+    "rationale": {
+      "A": "Incorrect. This is the current-year operating margin (186/1,320), not the margin on the extra revenue.",
+      "B": "Correct. The extra 120 of revenue produced 36 of extra operating profit, a 30.00% incremental margin.",
+      "C": "Incorrect. This is the prior-year operating margin (150/1,200)."
+    },
+    "verify": "return (186-150)/(1320-1200)*100;",
+    "numericAnswer": 30.0,
+    "tolerance": 0.005,
+    "tags": ["margins", "operating-leverage"]
+  },
+  {
+    "id": "q-cfa1-company-analysis-past-and-present-4",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "company-analysis-past-and-present",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A retailer reports that unit volumes rose 4% while revenue fell 1%, and no individual product price was cut. The most likely explanation is:",
+    "options": ["an unfavourable shift in product mix toward cheaper items", "an increase in operating leverage", "a decline in the number of units sold per store"],
+    "answer": "A",
+    "explanation": "If volume rose and no prices were cut, average price must have fallen because customers bought a cheaper mix of products.",
+    "rationale": {
+      "A": "Correct. Revenue = volume × average price; average price falls when the mix shifts to lower-priced items even without price cuts.",
+      "B": "Incorrect. Operating leverage concerns how profit responds to revenue, not why revenue fell.",
+      "C": "Incorrect. Total units rose 4%, so lower volume is not the explanation."
+    },
+    "tags": ["revenue-drivers", "mix"]
+  }
+]

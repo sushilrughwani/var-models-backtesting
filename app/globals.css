@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Colour tokens come from config/site.ts (injected as --c-* variables in app/layout.tsx).
+ * The defaults below are only a fallback.
+ */
+:root {
+  --c-primary: #1d4ed8;
+  --c-primary-foreground: #ffffff;
+  --c-accent: #0f766e;
+  --c-accent-foreground: #ffffff;
+  --c-highlight: #b45309;
+  --c-background: #f8fafc;
+  --c-surface: #ffffff;
+  --c-surface-muted: #f1f5f9;
+  --c-foreground: #0f172a;
+  --c-muted: #475569;
+  --c-border: #e2e8f0;
+  --c-success: #15803d;
+  --c-warning: #b45309;
+  --c-danger: #b91c1c;
+}
+
+@theme inline {
+  --color-primary: var(--c-primary);
+  --color-primary-foreground: var(--c-primary-foreground);
+  --color-accent: var(--c-accent);
+  --color-accent-foreground: var(--c-accent-foreground);
+  --color-highlight: var(--c-highlight);
+  --color-background: var(--c-background);
+  --color-surface: var(--c-surface);
+  --color-surface-muted: var(--c-surface-muted);
+  --color-foreground: var(--c-foreground);
+  --color-muted: var(--c-muted);
+  --color-border: var(--c-border);
+  --color-success: var(--c-success);
+  --color-warning: var(--c-warning);
+  --color-danger: var(--c-danger);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--c-background);
+  color: var(--c-foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--c-primary) 25%, transparent);
+}
+
+/* Prose (lesson notes, blog, kits) tuned to theme tokens */
+.prose-fa {
+  --tw-prose-body: var(--c-foreground);
+  --tw-prose-headings: var(--c-foreground);
+  --tw-prose-links: var(--c-primary);
+  --tw-prose-bold: var(--c-foreground);
+  --tw-prose-counters: var(--c-muted);
+  --tw-prose-bullets: var(--c-muted);
+  --tw-prose-hr: var(--c-border);
+  --tw-prose-quotes: var(--c-foreground);
+  --tw-prose-quote-borders: var(--c-primary);
+  --tw-prose-code: var(--c-foreground);
+  --tw-prose-pre-code: #e2e8f0;
+  --tw-prose-pre-bg: #0f172a;
+  --tw-prose-th-borders: var(--c-border);
+  --tw-prose-td-borders: var(--c-border);
+}
+.prose-fa :where(code):not(:where(pre code)) {
+  background: var(--c-surface-muted);
+  padding: 0.1em 0.35em;
+  border-radius: 0.3em;
+  font-weight: 500;
+}
+.prose-fa :where(code):not(:where(pre code))::before,
+.prose-fa :where(code):not(:where(pre code))::after {
+  content: none;
+}
+.prose-fa table {
+  display: block;
+  overflow-x: auto;
+}
+
+/* KaTeX: allow wide display equations to scroll instead of overflowing on phones */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+.bg-grid {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--c-border) 60%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--c-border) 60%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Print styles: teaching kits, certificates and formula sheets */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .print-break {
+    break-after: page;
+  }
+  .print-plain {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}

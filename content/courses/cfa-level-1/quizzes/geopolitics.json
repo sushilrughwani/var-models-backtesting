@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q-cfa1-geopolitics-1",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "geopolitics",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A national election is scheduled for next March, and an analyst is assessing how its outcome could affect a portfolio of domestic utilities. This risk is best classified as:",
+    "options": ["event risk", "exogenous risk", "thematic risk"],
+    "answer": "A",
+    "explanation": "Risks tied to known dates, such as scheduled elections, are event risks.",
+    "rationale": {
+      "A": "Correct. The election date is known in advance, which is the defining feature of event risk.",
+      "B": "Incorrect. Exogenous risk is a sudden, unanticipated shock; a scheduled election is anticipated.",
+      "C": "Incorrect. Thematic risk is a long-running structural trend, not a single dated event."
+    },
+    "tags": ["geopolitical-risk"]
+  },
+  {
+    "id": "q-cfa1-geopolitics-2",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "geopolitics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A group of countries negotiates common trade rules, open capital flows and shared product standards that apply to all members equally. This environment best fits which regime?",
+    "options": ["Bilateralism", "Multilateralism", "Hegemony"],
+    "answer": "B",
+    "explanation": "Many countries cooperating under shared rules while keeping flows open combines cooperation with globalisation, which is multilateralism.",
+    "rationale": {
+      "A": "Incorrect. Bilateralism is cooperation between pairs of countries, with a more nationalist tilt; here many countries share one rule set.",
+      "B": "Correct. Cooperative behaviour plus open, globalised flows across many members is multilateralism.",
+      "C": "Incorrect. Hegemony describes a dominant power setting the rules non-cooperatively, not equal shared rules."
+    },
+    "tags": ["geopolitical-regimes"]
+  },
+  {
+    "id": "q-cfa1-geopolitics-3",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "geopolitics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A government bars a rival country's banks from using the international payments network denominated in its currency. This action is best described as a:",
+    "options": ["national security tool", "cooperative economic tool", "financial tool"],
+    "answer": "C",
+    "explanation": "Restricting access to a currency's payment system is a financial tool of geopolitics, like sanctions and capital controls.",
+    "rationale": {
+      "A": "Incorrect. National security tools involve military force, espionage or alliances.",
+      "B": "Incorrect. Cooperative economic tools are things like free trade agreements; this action is non-cooperative and works through the financial system.",
+      "C": "Correct. Using control over a currency and payment network to pressure another state is a financial tool."
+    },
+    "tags": ["geopolitical-tools"]
+  },
+  {
+    "id": "q-cfa1-geopolitics-4",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "geopolitics",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An analyst models a trade dispute with three scenarios for a company's EPS: no escalation (probability 60%, EPS 2.50), tariffs imposed (30%, EPS 2.00) and a full embargo (10%, EPS 1.20). The probability-weighted EPS is closest to:",
+    "options": ["2.50", "1.90", "2.22"],
+    "answer": "C",
+    "explanation": "Expected EPS = 0.60 × 2.50 + 0.30 × 2.00 + 0.10 × 1.20 = 1.50 + 0.60 + 0.12 = 2.22.",
+    "rationale": {
+      "A": "Incorrect. 2.50 is the no-escalation forecast and ignores the probability of adverse scenarios.",
+      "B": "Incorrect. 1.90 is the simple average of the three EPS values, which treats the scenarios as equally likely.",
+      "C": "Correct. Weighting each scenario's EPS by its probability gives 2.22."
+    },
+    "verify": "return 0.6*2.5+0.3*2.0+0.1*1.2;",
+    "numericAnswer": 2.22,
+    "tolerance": 0.005,
+    "tags": ["scenario-analysis"]
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q-cfa1-organizational-forms-1",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "organizational-forms",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A corporation earns pretax profit of USD 500,000, pays corporate tax at 21% and distributes all remaining profit as dividends. Its sole shareholder pays 15% tax on dividends. The amount the shareholder keeps after all taxes is closest to:",
+    "options": ["USD 395,000", "USD 320,000", "USD 335,750"],
+    "answer": "C",
+    "explanation": "After corporate tax: 500,000 × 0.79 = 395,000. After dividend tax: 395,000 × 0.85 = 335,750. Effective rate = 1 - 0.79 × 0.85 = 32.85%.",
+    "rationale": {
+      "A": "Incorrect. 395,000 is profit after corporate tax only; it ignores the shareholder-level tax on the dividend.",
+      "B": "Incorrect. 320,000 results from adding the two rates (21% + 15% = 36%). The dividend tax applies only to profit remaining after corporate tax.",
+      "C": "Correct. Apply the taxes sequentially: 500,000 × (1 - 0.21) × (1 - 0.15) = 335,750."
+    },
+    "verify": "return 500000*(1-0.21)*(1-0.15);",
+    "numericAnswer": 335750,
+    "tolerance": 1,
+    "tags": ["organizational-forms", "double-taxation"]
+  },
+  {
+    "id": "q-cfa1-organizational-forms-2",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "organizational-forms",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In a limited partnership, which party typically manages the business and bears unlimited liability for its debts?",
+    "options": ["The general partner", "The limited partners", "All partners in proportion to their capital"],
+    "answer": "A",
+    "explanation": "A limited partnership needs at least one general partner, who runs the business and has unlimited liability. Limited partners supply capital, do not manage and risk only what they invested.",
+    "rationale": {
+      "A": "Correct. The general partner manages the partnership and is personally liable for its obligations.",
+      "B": "Incorrect. Limited partners are passive investors whose losses are capped at their investment.",
+      "C": "Incorrect. Proportional sharing of unlimited liability does not describe a limited partnership; liability differs sharply between the GP and the LPs."
+    },
+    "tags": ["organizational-forms", "limited-partnership"]
+  },
+  {
+    "id": "q-cfa1-organizational-forms-3",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "organizational-forms",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with a publicly listed company of similar size, a privately held company is most likely to have:",
+    "options": ["lower disclosure requirements and less liquid shares", "more dispersed ownership and lower regulatory costs", "greater access to equity capital and a continuously observable share price"],
+    "answer": "A",
+    "explanation": "Private firms face lighter disclosure obligations, their shares are not exchange-traded and therefore illiquid, and ownership tends to be concentrated among founders, families or private equity investors.",
+    "rationale": {
+      "A": "Correct. Light disclosure and illiquid shares are the defining trade-offs of private ownership.",
+      "B": "Incorrect. Lower regulatory cost is right, but private ownership is usually concentrated, not dispersed.",
+      "C": "Incorrect. Broad equity access and a market price are advantages of being public, not private."
+    },
+    "tags": ["public-vs-private"]
+  },
+  {
+    "id": "q-cfa1-organizational-forms-4",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "organizational-forms",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A profitable private technology firm wants its shares to begin trading on an exchange so that early employees and venture investors can sell, but it has no need for new capital and wants to avoid underwriting fees. The route that best fits these goals is:",
+    "options": ["an underwritten initial public offering", "a traditional direct listing", "a leveraged buyout"],
+    "answer": "B",
+    "explanation": "In a traditional direct listing, existing shares simply begin trading on an exchange. No new shares are sold and no underwriter is required, which matches a firm seeking liquidity rather than capital.",
+    "rationale": {
+      "A": "Incorrect. An IPO is the classic route for raising capital and involves an underwriter and its fees, which the firm wants to avoid.",
+      "B": "Correct. A direct listing provides a public market for existing holders without raising new capital or paying underwriting fees.",
+      "C": "Incorrect. A leveraged buyout takes a public company private; it moves in the opposite direction."
+    },
+    "tags": ["public-vs-private", "direct-listing"]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-long-lived-assets-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "long-lived-assets",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company buys equipment for USD 60,000 with an estimated residual value of USD 6,000 and a useful life of four years. Using the double-declining balance method, depreciation expense in year 2 (USD) is closest to:",
+    "options": ["15,000", "13,500", "30,000"],
+    "answer": "A",
+    "explanation": "The DDB rate is 2/4 = 50%. Year 1: 60,000 × 50% = 30,000, leaving 30,000. Year 2: 30,000 × 50% = 15,000. Book value of 15,000 is still above the 6,000 residual.",
+    "rationale": {
+      "A": "Correct. Apply 50% to the opening year-2 book value of 30,000.",
+      "B": "Incorrect. 13,500 is straight-line depreciation: (60,000 - 6,000) / 4.",
+      "C": "Incorrect. 30,000 is year-1 DDB depreciation, not year 2."
+    },
+    "verify": "const r = 2/4; const bv1 = 60000*(1-r); return bv1*r;",
+    "numericAnswer": 15000,
+    "tolerance": 0.5,
+    "tags": ["depreciation", "ddb"]
+  },
+  {
+    "id": "q-cfa1-long-lived-assets-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "long-lived-assets",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An IFRS company holds a production line with a carrying amount of USD 120,000. Undiscounted expected future cash flows are USD 125,000, fair value less costs to sell is USD 95,000 and value in use is USD 104,000. The impairment loss (USD) is closest to:",
+    "options": ["0", "16,000", "25,000"],
+    "answer": "B",
+    "explanation": "Recoverable amount = max(95,000, 104,000) = 104,000. Impairment loss = 120,000 - 104,000 = 16,000.",
+    "rationale": {
+      "A": "Incorrect. Zero results from applying the US GAAP recoverability test with undiscounted cash flows; IFRS uses recoverable amount.",
+      "B": "Correct. The carrying amount exceeds the recoverable amount (value in use) by 16,000.",
+      "C": "Incorrect. 25,000 uses fair value less costs to sell, but recoverable amount is the higher of that and value in use."
+    },
+    "verify": "return 120000 - Math.max(95000, 104000);",
+    "numericAnswer": 16000,
+    "tolerance": 0.5,
+    "tags": ["impairment", "ifrs-vs-us-gaap"]
+  },
+  {
+    "id": "q-cfa1-long-lived-assets-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "long-lived-assets",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Compared with expensing it, capitalising an expenditure in the year it is incurred most likely results in:",
+    "options": ["higher cash flow from operations and lower cash flow from investing.", "lower net income and higher total assets.", "higher total cash flow."],
+    "answer": "A",
+    "explanation": "The cash outflow is classified as investing instead of operating, so CFO is higher and CFI lower. Total cash flow is unchanged and current net income is higher.",
+    "rationale": {
+      "A": "Correct. Capitalised spending is an investing outflow, so CFO rises and CFI falls.",
+      "B": "Incorrect. Assets are higher, but net income is also higher in the first year because only depreciation is expensed.",
+      "C": "Incorrect. Accounting classification does not change the actual cash spent."
+    },
+    "tags": ["capitalisation"]
+  },
+  {
+    "id": "q-cfa1-long-lived-assets-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "long-lived-assets",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An IFRS company uses the revaluation model for its land. The land is revalued upward for the first time, with no previous revaluation decreases. The increase is most likely recognised in:",
+    "options": ["profit or loss.", "no statement until the land is sold.", "other comprehensive income, accumulating in a revaluation surplus in equity."],
+    "answer": "C",
+    "explanation": "Upward revaluations go to OCI and a revaluation surplus, unless they reverse a decrease previously recognised in profit.",
+    "rationale": {
+      "A": "Incorrect. Only an increase that reverses a previous loss recognised in profit goes to profit or loss.",
+      "B": "Incorrect. Under the revaluation model the gain is recognised when the asset is revalued, not deferred until sale.",
+      "C": "Correct. A first-time upward revaluation is credited to OCI and the revaluation surplus."
+    },
+    "tags": ["revaluation-model"]
+  }
+]

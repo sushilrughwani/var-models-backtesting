@@ -1,0 +1,86 @@
+[
+  {
+    "id": "q-cfa1-investment-analysis-and-conflicts-1",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "investment-analysis-and-conflicts",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following is the most appropriate way for Elena Vasquez, who earned the charter and keeps her membership current, to refer to her credential?",
+    "options": [
+      "Elena Vasquez, CFA",
+      "Elena Vasquez, a CFA",
+      "Elena Vasquez, CFA (Level III)"
+    ],
+    "answer": "A",
+    "explanation": "The CFA mark must be used as an adjective or after the holder's name, never as a noun, and there are no partial or level-specific designations.",
+    "rationale": {
+      "A": "Correct. Placing CFA after the name is proper usage for a charterholder with current membership.",
+      "B": "Incorrect. \"A CFA\" uses the mark as a noun, which is not permitted.",
+      "C": "Incorrect. Adding a level implies a partial or graded designation, which does not exist."
+    }
+  },
+  {
+    "id": "q-cfa1-investment-analysis-and-conflicts-2",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "investment-analysis-and-conflicts",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Diego Fuentes, CFA, manages a fee-paying discretionary account for his father at the fictional Lowell Partners. When an oversubscribed block of a popular new issue is allocated, Diego leaves his father's account out so that no one can accuse him of favouritism, even though the issue suits the account. Diego's action is:",
+    "options": [
+      "Required by the standard on priority of transactions",
+      "Inconsistent with the Standards, because a family fee-paying client account should be treated like any other client account",
+      "Acceptable only if his father consents in writing to always being excluded"
+    ],
+    "answer": "B",
+    "explanation": "Family members who are fee-paying clients should be treated like other clients - neither favoured nor disadvantaged. Excluding the account disadvantages a client.",
+    "rationale": {
+      "A": "Incorrect. Priority of transactions restricts trades in which the member has beneficial ownership ahead of clients; it does not require disadvantaging genuine client accounts.",
+      "B": "Correct. The father's account is a client account and should be included in allocations on the same basis as other suitable accounts.",
+      "C": "Incorrect. The issue is fair treatment of a client; systematic exclusion still disadvantages that client and is not the intended approach."
+    }
+  },
+  {
+    "id": "q-cfa1-investment-analysis-and-conflicts-3",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "investment-analysis-and-conflicts",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Grace Mwangi, CFA, a financial planner at the fictional Cedarline Wealth, receives a payment from an estate-planning firm for every client she refers to it. To comply with the standard on referral fees, Grace should:",
+    "options": [
+      "Disclose the arrangement only if a client asks about it",
+      "Disclose the arrangement to her employer only",
+      "Disclose the nature and estimated value of the payment to her employer and to clients before they engage the estate-planning firm"
+    ],
+    "answer": "C",
+    "explanation": "Referral compensation must be disclosed to the employer, clients and prospects as appropriate, including its nature and estimated value, before the client enters into the arrangement.",
+    "rationale": {
+      "A": "Incorrect. Disclosure is required proactively, not only on request.",
+      "B": "Incorrect. Clients and prospects must also be told so they can assess any bias.",
+      "C": "Correct. Full, timely disclosure of nature and value to both employer and clients is required."
+    }
+  },
+  {
+    "id": "q-cfa1-investment-analysis-and-conflicts-4",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "investment-analysis-and-conflicts",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Samuel Okafor, CFA, sits on an investment committee at the fictional Brantley Asset Management that votes to add a stock to the recommended list. Samuel voted against it, but the committee followed a thorough, well-documented process. Which action is most consistent with the standard on diligence and reasonable basis?",
+    "options": [
+      "Samuel may remain associated with the recommendation and may document his dissenting opinion",
+      "Samuel must publicly dissociate from the recommendation because he disagrees with it",
+      "Samuel must resign from the committee because he cannot support a group decision he opposed"
+    ],
+    "answer": "A",
+    "explanation": "Disagreement alone does not require dissociation. If the group process was sound and the recommendation has a reasonable and adequate basis, a member may stay associated and may record a dissent.",
+    "rationale": {
+      "A": "Correct. A sound process and reasonable basis allow Samuel to remain associated while documenting his view.",
+      "B": "Incorrect. Dissociation is needed only if the basis or process is inadequate, not merely because he disagrees.",
+      "C": "Incorrect. Resignation is not required when the committee's process and basis are sound."
+    }
+  }
+]

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-security-market-indexes-1",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "security-market-indexes",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A price-weighted index contains three stocks. Their prices move from USD 20, 50 and 130 to USD 24, 45 and 136 over a month. The shares outstanding are 30 million, 8 million and 2 million respectively. The index's price return for the month is closest to:",
+    "options": ["4.87%", "7.30%", "2.50%"],
+    "answer": "C",
+    "explanation": "Price-weighted return = sum of end prices / sum of start prices − 1 = 205/200 − 1 = 2.50%. Shares outstanding are irrelevant.",
+    "rationale": {
+      "A": "Incorrect. This is the equal-weighted return, the simple average of 20%, −10% and 4.62%.",
+      "B": "Incorrect. This is the market-cap-weighted return, which uses shares outstanding; a price-weighted index ignores them.",
+      "C": "Correct. The sum of prices rises from 200 to 205, a 2.50% increase."
+    },
+    "verify": "return ((24+45+136)/(20+50+130)-1)*100;",
+    "numericAnswer": 2.5,
+    "tolerance": 0.005,
+    "tags": ["price-weighted"]
+  },
+  {
+    "id": "q-cfa1-security-market-indexes-2",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "security-market-indexes",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A price-weighted index of three stocks has a divisor of 3. The stock prices are USD 24, 45 and 136. The stock priced at USD 136 then splits 4-for-1. The new divisor is closest to:",
+    "options": ["1.507", "3.000", "0.750"],
+    "answer": "A",
+    "explanation": "Index before the split = 205/3 = 68.33. After the split the prices sum to 24 + 45 + 34 = 103. New divisor = 103/68.33 = 1.507, keeping the index at 68.33.",
+    "rationale": {
+      "A": "Correct. The divisor is reset so the post-split price sum produces the same index level: 103/68.33 = 1.507.",
+      "B": "Incorrect. Keeping the divisor at 3 would cause the index to drop to 34.33 even though no value was lost.",
+      "C": "Incorrect. This divides the old divisor by the split ratio, which is not how the divisor is adjusted."
+    },
+    "verify": "const v=(24+45+136)/3; return (24+45+136/4)/v;",
+    "numericAnswer": 1.507,
+    "tolerance": 0.001,
+    "tags": ["divisor", "stock-split"]
+  },
+  {
+    "id": "q-cfa1-security-market-indexes-3",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "security-market-indexes",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A price return index rises from 1,250 to 1,290 over a year. During the year its constituents pay income equivalent to 18 index points. The total return of the index for the year is closest to:",
+    "options": ["3.20%", "4.64%", "1.44%"],
+    "answer": "B",
+    "explanation": "Total return = (1,290 − 1,250 + 18)/1,250 = 58/1,250 = 4.64%.",
+    "rationale": {
+      "A": "Incorrect. This is only the price return, ignoring income.",
+      "B": "Correct. Total return adds the income return (1.44%) to the price return (3.20%).",
+      "C": "Incorrect. This is only the income return, 18/1,250."
+    },
+    "verify": "return ((1290+18)/1250-1)*100;",
+    "numericAnswer": 4.64,
+    "tolerance": 0.005,
+    "tags": ["total-return"]
+  },
+  {
+    "id": "q-cfa1-security-market-indexes-4",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "security-market-indexes",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which index weighting method is most likely to require frequent rebalancing and to give the index a tilt toward smaller companies?",
+    "options": ["Market-capitalisation weighting", "Equal weighting", "Price weighting"],
+    "answer": "B",
+    "explanation": "Equal weighting gives a small firm the same weight as a giant one and its weights drift as prices move, so it must be rebalanced back to 1/N regularly.",
+    "rationale": {
+      "A": "Incorrect. Cap weights move automatically with prices, so cap-weighted indexes are largely self-rebalancing and tilt toward large firms.",
+      "B": "Correct. Equal weighting overweights small firms relative to their market value and needs regular rebalancing to restore 1/N weights.",
+      "C": "Incorrect. Price weighting tilts toward high-priced shares, not small companies, and does not rebalance to targets."
+    },
+    "tags": ["weighting-methods", "rebalancing"]
+  }
+]

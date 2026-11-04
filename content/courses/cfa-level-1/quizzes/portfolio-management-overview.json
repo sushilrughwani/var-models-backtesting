@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-portfolio-management-overview-1",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-management-overview",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio holds 50% in Stock X (standard deviation 20%) and 50% in Stock Y (standard deviation 30%). The correlation between the two returns is 0.40. The portfolio standard deviation is closest to:",
+    "options": ["25.00%", "21.10%", "18.03%"],
+    "answer": "B",
+    "explanation": "Variance = 0.25(0.04) + 0.25(0.09) + 2(0.5)(0.5)(0.40)(0.20)(0.30) = 0.01 + 0.0225 + 0.012 = 0.0445. Standard deviation = √0.0445 = 21.10%.",
+    "rationale": {
+      "A": "Incorrect. 25% is the weighted average of the two standard deviations, which is only correct if the correlation is +1.",
+      "B": "Correct. Variance = 0.01 + 0.0225 + 2(0.25)(0.40)(0.06) = 0.0445, and √0.0445 = 21.10%.",
+      "C": "Incorrect. 18.03% ignores the covariance term, as if the correlation were zero."
+    },
+    "verify": "const w=0.5,s1=0.2,s2=0.3,r=0.4; return 100*Math.sqrt(w*w*s1*s1+w*w*s2*s2+2*w*w*r*s1*s2);",
+    "numericAnswer": 21.1,
+    "tolerance": 0.01,
+    "tags": ["diversification", "portfolio-variance"]
+  },
+  {
+    "id": "q-cfa1-portfolio-management-overview-2",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-management-overview",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Under a defined contribution pension plan, the investment risk is borne primarily by:",
+    "options": ["the employee", "the employer", "the plan's actuary"],
+    "answer": "A",
+    "explanation": "In a defined contribution plan the employer commits only to a contribution; the retirement outcome depends on how the employee's account performs, so the employee bears the investment risk.",
+    "rationale": {
+      "A": "Correct. The employee chooses investments and the final benefit depends on their performance.",
+      "B": "Incorrect. The employer bears investment risk in a defined benefit plan, where it promises a specified benefit.",
+      "C": "Incorrect. An actuary estimates liabilities for DB plans but bears no investment risk."
+    },
+    "tags": ["pension-plans"]
+  },
+  {
+    "id": "q-cfa1-portfolio-management-overview-3",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-management-overview",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with a university endowment, a commercial bank's investment portfolio most likely has:",
+    "options": ["a longer time horizon", "higher risk tolerance", "greater liquidity needs"],
+    "answer": "C",
+    "explanation": "Banks fund themselves with deposits that can be withdrawn at short notice, so their securities portfolios must be liquid, short-horizon and conservative. Endowments have perpetual horizons and relatively high risk tolerance.",
+    "rationale": {
+      "A": "Incorrect. Endowments typically have a perpetual horizon; banks have short horizons matching their deposit liabilities.",
+      "B": "Incorrect. Banks have low risk tolerance because they must repay deposits at par.",
+      "C": "Correct. Short-term deposit liabilities create high liquidity needs for banks."
+    },
+    "tags": ["investor-types"]
+  },
+  {
+    "id": "q-cfa1-portfolio-management-overview-4",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "portfolio-management-overview",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An equally weighted portfolio contains 5 stocks. Each stock has a standard deviation of 30% and every pair of stocks has a correlation of 0.20. The portfolio's diversification ratio (portfolio standard deviation divided by a single stock's standard deviation) is closest to:",
+    "options": ["0.45", "0.20", "0.60"],
+    "answer": "C",
+    "explanation": "σp² = 0.09 × (1/5 + 4/5 × 0.20) = 0.09 × 0.36 = 0.0324, so σp = 18%. Diversification ratio = 18 / 30 = 0.60.",
+    "rationale": {
+      "A": "Incorrect. 0.45 is the limiting ratio √0.20 for an infinitely large portfolio, not for 5 stocks.",
+      "B": "Incorrect. 0.20 simply repeats the correlation; the ratio depends on both n and ρ.",
+      "C": "Correct. σp = √0.0324 = 18%, and 18% / 30% = 0.60."
+    },
+    "verify": "const n=5,s=0.3,r=0.2; return Math.sqrt(s*s*(1/n+(1-1/n)*r))/s;",
+    "numericAnswer": 0.6,
+    "tolerance": 0.005,
+    "tags": ["diversification-ratio"]
+  }
+]

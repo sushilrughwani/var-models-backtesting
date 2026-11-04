@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-capital-structure-1",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "capital-structure",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In a world with no taxes and perfect capital markets, a firm's unlevered cost of capital is 9%, its cost of debt is 5% and its debt-to-equity ratio is 0.6. According to Modigliani-Miller, its cost of equity is closest to:",
+    "options": ["10.68%", "7.40%", "11.40%"],
+    "answer": "C",
+    "explanation": "MM Proposition II without taxes: r_e = r_0 + (r_0 - r_d)(D/E) = 9% + (9% - 5%)(0.6) = 11.40%.",
+    "rationale": {
+      "A": "Incorrect. 10.68% applies a (1 - t) factor of 0.7, which belongs only in the version with corporate taxes.",
+      "B": "Incorrect. 7.40% starts from the cost of debt (5% + 4% × 0.6) instead of the unlevered cost of capital.",
+      "C": "Correct. 0.09 + 0.04 × 0.6 = 0.114, or 11.40%."
+    },
+    "verify": "const r0=0.09, rd=0.05, de=0.6; return (r0+(r0-rd)*de)*100;",
+    "numericAnswer": 11.4,
+    "tolerance": 0.005,
+    "tags": ["modigliani-miller", "cost-of-equity"]
+  },
+  {
+    "id": "q-cfa1-capital-structure-2",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "capital-structure",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An all-equity firm is worth 800 million. It issues 300 million of perpetual debt and uses the proceeds to repurchase shares. Under Modigliani-Miller with a 30% corporate tax rate and no costs of financial distress, the value of the levered firm is closest to:",
+    "options": ["890 million", "800 million", "1,100 million"],
+    "answer": "A",
+    "explanation": "V_L = V_U + tD = 800 + 0.30 × 300 = 890 million.",
+    "rationale": {
+      "A": "Correct. The present value of the perpetual tax shield is 0.30 × 300 = 90 million, added to the unlevered value.",
+      "B": "Incorrect. 800 million is the MM result without taxes; with taxes the tax shield adds value.",
+      "C": "Incorrect. 1,100 million adds the full amount of debt; issuing debt to buy back shares only changes the split of value, apart from the tax shield."
+    },
+    "verify": "return 800+0.30*300;",
+    "numericAnswer": 890,
+    "tolerance": 0.5,
+    "tags": ["modigliani-miller", "tax-shield"]
+  },
+  {
+    "id": "q-cfa1-capital-structure-3",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "capital-structure",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "According to the pecking order theory, a profitable company that needs to fund a new project will most likely prefer, in order:",
+    "options": ["new equity, then debt, then retained earnings", "retained earnings, then debt, then new equity", "debt, then new equity, then retained earnings"],
+    "answer": "B",
+    "explanation": "Because of information asymmetry, issuing securities sends signals. Internal funds send none, debt sends little, and new equity can signal overvaluation, so it is used last.",
+    "rationale": {
+      "A": "Incorrect. This reverses the pecking order; new equity is the least preferred source.",
+      "B": "Correct. Internal funds first, then debt, then new equity as a last resort.",
+      "C": "Incorrect. Internal funds come first because they avoid issuance costs and negative signals."
+    },
+    "tags": ["pecking-order"]
+  },
+  {
+    "id": "q-cfa1-capital-structure-4",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "capital-structure",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Under the static trade-off theory, which company is most likely to have the highest optimal debt ratio?",
+    "options": ["A regulated utility with stable cash flows and large tangible assets", "A software start-up with negative cash flow and mostly intangible assets", "A biotech firm whose value depends on the outcome of drug trials"],
+    "answer": "A",
+    "explanation": "The optimal debt level balances tax shields against expected costs of financial distress. Stable cash flows and tangible, collateral-friendly assets keep distress costs low, supporting more debt.",
+    "rationale": {
+      "A": "Correct. Low business risk and tangible assets mean low expected distress costs, so the optimum is reached at higher leverage.",
+      "B": "Incorrect. Negative cash flows leave no taxable income to shield and intangible assets give little collateral, so distress costs dominate.",
+      "C": "Incorrect. Binary, uncertain outcomes create high distress risk and high indirect bankruptcy costs."
+    },
+    "tags": ["trade-off-theory", "leverage-drivers"]
+  }
+]

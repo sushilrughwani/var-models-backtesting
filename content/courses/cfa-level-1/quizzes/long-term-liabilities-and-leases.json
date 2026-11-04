@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q-cfa1-long-term-liabilities-and-leases-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "long-term-liabilities-and-leases",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company issues a 3-year bond with a face value of USD 100,000 and a 4% annual coupon when the market rate is 5%. Using the effective interest method, interest expense for Year 1 is closest to:",
+    "options": ["4,000", "5,000", "4,864"],
+    "answer": "C",
+    "explanation": "Issue price = 4,000/1.05 + 4,000/1.05^2 + 104,000/1.05^3 = 97,276.75. Year 1 interest expense = 97,276.75 × 5% = 4,863.84.",
+    "rationale": {
+      "A": "Incorrect. 4,000 is the coupon payment (face × coupon rate), not interest expense under the effective interest method.",
+      "B": "Incorrect. This applies the market rate to the face value instead of to the issue price (carrying amount).",
+      "C": "Correct. Market rate at issue × opening carrying amount: 97,276.75 × 0.05 ≈ 4,864."
+    },
+    "verify": "const p=4000/1.05+4000/1.05**2+104000/1.05**3; return p*0.05;",
+    "numericAnswer": 4864,
+    "tolerance": 0.5,
+    "tags": ["bonds-payable", "effective-interest"]
+  },
+  {
+    "id": "q-cfa1-long-term-liabilities-and-leases-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "long-term-liabilities-and-leases",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A lessee signs a 4-year lease requiring payments of USD 50,000 at the end of each year. The appropriate discount rate is 6%. The lease liability recognised at commencement is closest to:",
+    "options": ["173,255", "183,651", "200,000"],
+    "answer": "A",
+    "explanation": "PV of a 4-year ordinary annuity of 50,000 at 6% = 173,255.",
+    "rationale": {
+      "A": "Correct. Discount each year-end payment: 50,000 × [1 − 1.06^−4] / 0.06 = 173,255.",
+      "B": "Incorrect. This treats payments as made at the start of each year (annuity due), but the payments are in arrears.",
+      "C": "Incorrect. This is the undiscounted sum of payments; the liability is a present value."
+    },
+    "verify": "let s=0; for(let t=1;t<=4;t++){s+=50000/1.06**t;} return s;",
+    "numericAnswer": 173255,
+    "tolerance": 0.5,
+    "tags": ["leases", "lease-liability"]
+  },
+  {
+    "id": "q-cfa1-long-term-liabilities-and-leases-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "long-term-liabilities-and-leases",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Two otherwise identical companies lease the same equipment on the same terms. One reports under IFRS; the other reports under US GAAP and classifies the lease as an operating lease. In the first year of the lease, compared with the US GAAP company, the IFRS company will most likely report:",
+    "options": [
+      "Lower operating cash flow and lower EBITDA",
+      "Higher operating cash flow and higher EBITDA",
+      "The same operating cash flow and the same total lease expense"
+    ],
+    "answer": "B",
+    "explanation": "Under IFRS the lease cost is split into depreciation and interest, which sit below EBITDA, and the principal portion of the payment is a financing outflow. The US GAAP operating lease reports a single lease cost in operating expenses and the whole payment in operating cash flow.",
+    "rationale": {
+      "A": "Incorrect. The IFRS company moves costs out of operating expenses and principal out of operating cash flow, so both measures are higher, not lower.",
+      "B": "Correct. Depreciation and interest are excluded from EBITDA, and principal repayments are financing flows, raising both EBITDA and CFO.",
+      "C": "Incorrect. First-year total expense is higher under the IFRS front-loaded pattern, and operating cash flow differs because of classification."
+    },
+    "tags": ["leases", "ifrs-vs-us-gaap"]
+  },
+  {
+    "id": "q-cfa1-long-term-liabilities-and-leases-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "long-term-liabilities-and-leases",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A company's defined benefit plan has assets with a fair value of USD 4.2 billion and a benefit obligation of USD 5.0 billion. On the balance sheet the company reports:",
+    "options": [
+      "A net pension asset of USD 0.8 billion",
+      "A net pension liability of USD 0.8 billion",
+      "A pension liability of USD 5.0 billion and plan assets of USD 4.2 billion shown separately"
+    ],
+    "answer": "B",
+    "explanation": "Funded status = plan assets − obligation = 4.2 − 5.0 = −0.8 billion, reported as a net pension liability.",
+    "rationale": {
+      "A": "Incorrect. The plan is underfunded, so the net position is a liability, not an asset.",
+      "B": "Correct. The balance sheet shows the net funded status, a deficit of 0.8 billion.",
+      "C": "Incorrect. Plan assets and the obligation are netted; the gross amounts appear only in the notes."
+    },
+    "tags": ["pensions", "funded-status"]
+  }
+]

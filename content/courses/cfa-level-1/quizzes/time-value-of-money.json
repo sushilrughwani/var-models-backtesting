@@ -1,0 +1,86 @@
+[
+  {
+    "id": "q-cfa1-time-value-of-money-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "time-value-of-money",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bank quotes a stated annual rate of 8% compounded monthly. The effective annual rate is closest to:",
+    "options": ["8.30%", "8.00%", "8.24%"],
+    "answer": "A",
+    "explanation": "EAR = (1 + 0.08/12)^12 - 1 = 8.30%.",
+    "rationale": {
+      "A": "Correct. Monthly compounding gives (1 + 0.08/12)^12 - 1 = 8.30%.",
+      "B": "Incorrect. 8.00% is the stated rate; it ignores the effect of compounding within the year.",
+      "C": "Incorrect. 8.24% is the EAR with quarterly compounding, (1.02)^4 - 1."
+    },
+    "verify": "return (Math.pow(1 + 0.08/12, 12) - 1) * 100;",
+    "numericAnswer": 8.30,
+    "tolerance": 0.005,
+    "tags": ["effective-annual-rate"]
+  },
+  {
+    "id": "q-cfa1-time-value-of-money-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "time-value-of-money",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An equipment lease requires five annual payments of USD 1,000, with the first payment due today. At a discount rate of 7%, the present value of the lease payments is closest to:",
+    "options": ["USD 4,100.20", "USD 4,387.21", "USD 5,750.74"],
+    "answer": "B",
+    "explanation": "This is an annuity due. Ordinary annuity PV = 1,000 × [1 - 1.07^-5]/0.07 = 4,100.20; multiply by 1.07 to get 4,387.21.",
+    "rationale": {
+      "A": "Incorrect. 4,100.20 treats the payments as an ordinary annuity (end of period), discounting each one a period too far.",
+      "B": "Correct. Annuity due PV = 4,100.20 × 1.07 = 4,387.21.",
+      "C": "Incorrect. 5,750.74 is the future value of an ordinary annuity, not a present value."
+    },
+    "verify": "const a = 1000*(1-Math.pow(1.07,-5))/0.07; return a*1.07;",
+    "numericAnswer": 4387.21,
+    "tolerance": 0.01,
+    "tags": ["annuity-due"]
+  },
+  {
+    "id": "q-cfa1-time-value-of-money-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "time-value-of-money",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A preferred share will pay a fixed dividend of USD 5 per year forever, with the first dividend paid at the end of year 4. If the required return is 8%, the share's value today is closest to:",
+    "options": ["USD 62.50", "USD 45.94", "USD 49.61"],
+    "answer": "C",
+    "explanation": "The perpetuity formula 5/0.08 = 62.50 gives the value at the end of year 3, one period before the first dividend. Discount three periods: 62.50/1.08^3 = 49.61.",
+    "rationale": {
+      "A": "Incorrect. 62.50 is the value at the end of year 3; it has not been discounted to today.",
+      "B": "Incorrect. 45.94 discounts 62.50 four periods instead of three, forgetting that A/r is valued one period before the first payment.",
+      "C": "Correct. 62.50/1.08^3 = 49.61."
+    },
+    "verify": "return 5/0.08/Math.pow(1.08,3);",
+    "numericAnswer": 49.61,
+    "tolerance": 0.01,
+    "tags": ["perpetuity", "deferred-cash-flows"]
+  },
+  {
+    "id": "q-cfa1-time-value-of-money-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "time-value-of-money",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A share trades at USD 50. It has just paid a dividend of USD 2.00, and dividends are expected to grow at 4% per year forever. The implied required rate of return is closest to:",
+    "options": ["8.00%", "8.16%", "4.16%"],
+    "answer": "B",
+    "explanation": "D1 = 2.00 × 1.04 = 2.08. Implied return = D1/P0 + g = 2.08/50 + 4% = 4.16% + 4% = 8.16%.",
+    "rationale": {
+      "A": "Incorrect. 8.00% uses the dividend just paid (D0 = 2.00) instead of next year's dividend D1.",
+      "B": "Correct. r = 2.08/50 + 0.04 = 8.16%.",
+      "C": "Incorrect. 4.16% is only the forward dividend yield; the growth rate must be added."
+    },
+    "verify": "return (2*1.04/50 + 0.04)*100;",
+    "numericAnswer": 8.16,
+    "tolerance": 0.005,
+    "tags": ["implied-return", "growing-perpetuity"]
+  }
+]

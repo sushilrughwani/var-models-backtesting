@@ -1,0 +1,89 @@
+[
+  {
+    "id": "q-cfa1-derivative-markets-and-instruments-1",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "derivative-markets-and-instruments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Compared with an over-the-counter (OTC) derivative, an exchange-traded derivative is most likely to offer:",
+    "options": [
+      "terms tailored to the user's exact amount and date",
+      "standardised terms and clearing through a central counterparty",
+      "greater privacy about the price and size of the trade"
+    ],
+    "answer": "B",
+    "explanation": "Exchanges standardise contract size, expiry and settlement, and every trade is cleared through a central counterparty with daily margining.",
+    "rationale": {
+      "A": "Incorrect. Customisation is the defining advantage of OTC contracts, not exchange contracts.",
+      "B": "Correct. Standardisation and central clearing are core features of exchange-traded derivatives.",
+      "C": "Incorrect. Exchange markets are more transparent: prices and volumes are publicly reported."
+    },
+    "tags": ["exchange-vs-otc"]
+  },
+  {
+    "id": "q-cfa1-derivative-markets-and-instruments-2",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "derivative-markets-and-instruments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An investor buys equity index futures with a notional value of USD 250,000, posting initial margin of USD 12,500. If the index rises by 3%, the return on the margin posted is closest to:",
+    "options": ["3%", "20%", "60%"],
+    "answer": "C",
+    "explanation": "Gain = 250,000 × 0.03 = 7,500. Return on margin = 7,500 / 12,500 = 60%. Leverage of 20 times turns a 3% move into a 60% return.",
+    "rationale": {
+      "A": "Incorrect. 3% is the return on the full notional, as if the investor had paid the entire USD 250,000 in cash.",
+      "B": "Incorrect. 20 is the leverage ratio (250,000 / 12,500), not the return.",
+      "C": "Correct. 7,500 / 12,500 = 60%."
+    },
+    "verify": "const gain=250000*0.03; return gain/12500*100;",
+    "numericAnswer": 60,
+    "tolerance": 0.5,
+    "tags": ["leverage"]
+  },
+  {
+    "id": "q-cfa1-derivative-markets-and-instruments-3",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "derivative-markets-and-instruments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about a central counterparty (CCP) is most accurate?",
+    "options": [
+      "It becomes the buyer to every seller and the seller to every buyer, and manages credit risk through margin.",
+      "It takes the opposite side of trades to profit from price movements in the underlying.",
+      "It is used only in exchange markets and never for OTC derivatives."
+    ],
+    "answer": "A",
+    "explanation": "The CCP interposes itself between counterparties. Its long and short positions offset, so it has no net market exposure; it bears credit risk, which margin and default funds control. Many standard OTC swaps are now centrally cleared too.",
+    "rationale": {
+      "A": "Correct. This describes novation and margin-based credit risk management by a CCP.",
+      "B": "Incorrect. The CCP's positions offset; it does not speculate on the underlying.",
+      "C": "Incorrect. Since the financial crisis, standardised OTC contracts such as plain-vanilla interest rate swaps are commonly centrally cleared."
+    },
+    "tags": ["clearing"]
+  },
+  {
+    "id": "q-cfa1-derivative-markets-and-instruments-4",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "derivative-markets-and-instruments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following is least likely to be considered a benefit of derivative markets?",
+    "options": [
+      "Price discovery through liquid, low-cost trading",
+      "Transfer of risk from hedgers to those willing to bear it",
+      "Elimination of losses for all participants through leverage"
+    ],
+    "answer": "C",
+    "explanation": "Leverage magnifies both gains and losses; it is a risk of derivatives, not a benefit. Price discovery and risk transfer are genuine benefits.",
+    "rationale": {
+      "A": "Incorrect. Price discovery is a recognised benefit because futures markets often reflect new information quickly.",
+      "B": "Incorrect. Risk transfer is the central economic purpose of derivatives.",
+      "C": "Correct. Derivatives are zero-sum between counterparties before costs, and leverage increases the size of potential losses."
+    },
+    "tags": ["benefits-and-risks"]
+  }
+]

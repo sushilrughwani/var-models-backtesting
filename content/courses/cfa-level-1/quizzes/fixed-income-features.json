@@ -1,0 +1,89 @@
+[
+  {
+    "id": "q-cfa1-fixed-income-features-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-features",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bond has a par value of USD 2,000,000 and a 5.2% coupon rate paid quarterly. Each coupon payment is closest to:",
+    "options": ["USD 104,000", "USD 26,000", "USD 52,000"],
+    "answer": "B",
+    "explanation": "Coupon = 0.052 × 2,000,000 / 4 = USD 26,000 per quarter.",
+    "rationale": {
+      "A": "Incorrect. USD 104,000 is the annual coupon; it has not been divided by the four payments per year.",
+      "B": "Correct. Annual coupon of USD 104,000 divided by 4 quarterly payments = USD 26,000.",
+      "C": "Incorrect. USD 52,000 divides by 2, which would be a semiannual coupon, not quarterly."
+    },
+    "verify": "return 0.052*2000000/4;",
+    "numericAnswer": 26000,
+    "tolerance": 0.5,
+    "tags": ["coupon", "bond-features"]
+  },
+  {
+    "id": "q-cfa1-fixed-income-features-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-features",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following indenture clauses is best described as a negative covenant?",
+    "options": [
+      "The issuer must deliver audited financial statements to the trustee each year.",
+      "The issuer must keep its production facilities adequately insured.",
+      "The issuer may not grant a lien on assets already pledged to existing bondholders."
+    ],
+    "answer": "C",
+    "explanation": "Negative covenants restrict issuer actions. Prohibiting new liens on pledged assets (a negative pledge) is a restriction; reporting and insurance are things the issuer must do.",
+    "rationale": {
+      "A": "Incorrect. Delivering financial statements is a required action, so it is an affirmative covenant.",
+      "B": "Incorrect. Maintaining insurance is a required action, so it is an affirmative covenant.",
+      "C": "Correct. A prohibition on pledging assets to new lenders restricts what the issuer can do, which makes it a negative covenant."
+    },
+    "tags": ["covenants"]
+  },
+  {
+    "id": "q-cfa1-fixed-income-features-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-features",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Three bonds from the same issuer have identical maturity, coupon and seniority. One is straight, one is callable and one is putable. Ranked from highest to lowest yield, the order is most likely:",
+    "options": [
+      "Callable, straight, putable",
+      "Putable, straight, callable",
+      "Straight, callable, putable"
+    ],
+    "answer": "A",
+    "explanation": "A call is the issuer's option, so investors demand extra yield. A put is the investor's option, so investors accept less yield. The straight bond sits between them.",
+    "rationale": {
+      "A": "Correct. Issuer-held call raises the required yield; investor-held put lowers it.",
+      "B": "Incorrect. This reverses the effect of the options; the investor pays for a put through a lower yield.",
+      "C": "Incorrect. The callable bond must offer more yield than the straight bond to compensate investors for call risk."
+    },
+    "tags": ["embedded-options"]
+  },
+  {
+    "id": "q-cfa1-fixed-income-features-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "fixed-income-features",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst notes that a bond's timely payment is guaranteed by a large commercial bank through a letter of credit. The most important remaining risk the analyst should assess is:",
+    "options": [
+      "The risk that the issuer breaches its affirmative covenants",
+      "The credit risk of the bank providing the letter of credit",
+      "The risk that the bond is subordinated to the issuer's secured debt"
+    ],
+    "answer": "B",
+    "explanation": "A letter of credit is an external credit enhancement. It shifts much of the default risk onto the guarantor, so the bond can be no safer than the bank behind the guarantee.",
+    "rationale": {
+      "A": "Incorrect. Covenant breaches matter, but the guarantee means payment depends mainly on the bank's ability to honour it.",
+      "B": "Correct. External enhancements expose the investor to the guarantor's creditworthiness; if the bank fails, the protection disappears.",
+      "C": "Incorrect. Subordination affects recovery from the issuer, but with a bank guarantee the dominant concern is the guarantor's credit quality."
+    },
+    "tags": ["credit-enhancement"]
+  }
+]

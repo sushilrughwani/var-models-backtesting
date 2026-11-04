@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-cost-of-capital-1",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "cost-of-capital",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A company's target capital structure is 40% debt and 60% common equity. Its before-tax cost of debt is 7%, its cost of equity is 12% and its marginal tax rate is 20%. The company's WACC is closest to:",
+    "options": ["10.00%", "8.80%", "9.44%"],
+    "answer": "C",
+    "explanation": "WACC = 0.40 × 7% × (1 - 0.20) + 0.60 × 12% = 2.24% + 7.20% = 9.44%.",
+    "rationale": {
+      "A": "Incorrect. 10.00% ignores the tax deductibility of interest (0.40 × 7% + 0.60 × 12%).",
+      "B": "Incorrect. 8.80% uses equal 50/50 weights instead of the 40/60 target structure.",
+      "C": "Correct. The after-tax cost of debt is 5.60%; weighting gives 2.24% + 7.20% = 9.44%."
+    },
+    "verify": "return (0.4*0.07*(1-0.2)+0.6*0.12)*100;",
+    "numericAnswer": 9.44,
+    "tolerance": 0.005,
+    "tags": ["wacc"]
+  },
+  {
+    "id": "q-cfa1-cost-of-capital-2",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "cost-of-capital",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A stock trades at USD 36.00 and has just paid an annual dividend of USD 1.80. Dividends are expected to grow at 4% a year indefinitely. Using the constant-growth dividend discount model, the cost of equity is closest to:",
+    "options": ["9.00%", "9.20%", "5.20%"],
+    "answer": "B",
+    "explanation": "D1 = 1.80 × 1.04 = 1.872. r_e = D1/P0 + g = 1.872/36 + 0.04 = 0.052 + 0.04 = 9.20%.",
+    "rationale": {
+      "A": "Incorrect. 9.00% uses the just-paid dividend D0 (1.80/36 + 4%) instead of next year's dividend D1.",
+      "B": "Correct. The expected dividend yield of 5.20% plus 4% growth gives 9.20%.",
+      "C": "Incorrect. 5.20% is only the dividend yield D1/P0; the growth rate must be added."
+    },
+    "verify": "const D1=1.80*1.04; return (D1/36+0.04)*100;",
+    "numericAnswer": 9.2,
+    "tolerance": 0.005,
+    "tags": ["cost-of-equity", "ddm"]
+  },
+  {
+    "id": "q-cfa1-cost-of-capital-3",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "cost-of-capital",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A firm issued 10-year bonds with a 4% coupon five years ago. Because its credit quality has since declined, the bonds now trade at a yield to maturity of 6.5%. For estimating the firm's WACC today, the before-tax cost of debt is best estimated as:",
+    "options": ["6.5%, the current yield to maturity", "4%, the coupon rate on the outstanding bonds", "5.25%, the average of the coupon rate and the current yield"],
+    "answer": "A",
+    "explanation": "The cost of debt is the rate the firm would pay to borrow today, which is reflected in the current yield to maturity, not the historical coupon.",
+    "rationale": {
+      "A": "Correct. Market yield captures the current required return on the firm's debt.",
+      "B": "Incorrect. The coupon reflects conditions when the bond was issued and is a historical cost.",
+      "C": "Incorrect. Averaging a historical and a current rate has no economic basis."
+    },
+    "tags": ["cost-of-debt"]
+  },
+  {
+    "id": "q-cfa1-cost-of-capital-4",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "cost-of-capital",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A diversified manufacturer with a WACC of 8% is evaluating a new venture in an industry that is far riskier than its existing business. The most appropriate discount rate for the venture is:",
+    "options": ["8%, because the firm's WACC applies to all its projects", "a rate below 8%, because diversification lowers the firm's overall risk", "a rate above 8% that reflects the venture's own risk"],
+    "answer": "C",
+    "explanation": "WACC is the hurdle rate for projects of average risk for the firm. A riskier project needs a higher, project-specific required return; using the firm WACC would make risky projects look too attractive.",
+    "rationale": {
+      "A": "Incorrect. Applying the firm-wide WACC to a riskier project overstates its NPV and leads to over-investment in risky ventures.",
+      "B": "Incorrect. The firm's diversification does not reduce the systematic risk of the venture itself.",
+      "C": "Correct. The discount rate should match the risk of the specific project."
+    },
+    "tags": ["wacc", "project-risk"]
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-regression-diagnostics-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "regression-diagnostics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A regression with three explanatory variables is estimated on 150 observations. For White's test, the squared residuals are regressed on the three regressors, their squares and all cross-products, producing an R² of 0.09. The test statistic and its null distribution are:",
+    "options": ["13.50, chi-square with 3 degrees of freedom", "13.50, chi-square with 6 degrees of freedom", "12.60, chi-square with 9 degrees of freedom", "13.50, chi-square with 9 degrees of freedom"],
+    "answer": "D",
+    "explanation": "LM = n × R² = 150 × 0.09 = 13.5. The auxiliary regression has 3 levels + 3 squares + 3 cross-products = 9 slope terms, so the statistic is chi-square with 9 degrees of freedom (5% critical value 16.92, so homoskedasticity is not rejected).",
+    "rationale": {
+      "A": "Incorrect. Three degrees of freedom counts only the original regressors and ignores the squares and cross-products.",
+      "B": "Incorrect. Six degrees of freedom forgets the three cross-product terms.",
+      "C": "Incorrect. 12.60 multiplies R² by n − 10 = 140 instead of by the sample size n = 150.",
+      "D": "Correct. nR² = 13.5 with 9 degrees of freedom."
+    },
+    "verify": "const n=150,r2=0.09; return n*r2;",
+    "numericAnswer": 13.5,
+    "tolerance": 0.005,
+    "tags": ["heteroskedasticity", "white-test"]
+  },
+  {
+    "id": "q-frm1-regression-diagnostics-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "regression-diagnostics",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "In the true model Y = α + 0.6 X1 − 0.8 X2 + ε, the slope from regressing X2 on X1 is 0.5. If an analyst regresses Y on X1 only, the slope on X1 will tend toward approximately:",
+    "options": ["0.20", "1.00", "0.60", "-0.40"],
+    "answer": "A",
+    "explanation": "Omitted variable bias = β2 × δ = −0.8 × 0.5 = −0.40. The estimated slope tends to 0.6 − 0.40 = 0.20.",
+    "rationale": {
+      "A": "Correct. 0.6 + (−0.8)(0.5) = 0.20.",
+      "B": "Incorrect. 1.00 adds the bias with the wrong sign, ignoring that β2 is negative.",
+      "C": "Incorrect. 0.60 assumes there is no bias, which would require X2 to be uncorrelated with X1.",
+      "D": "Incorrect. −0.40 is the bias alone, not the slope the analyst will estimate."
+    },
+    "verify": "const b1=0.6,b2=-0.8,d=0.5; return b1+b2*d;",
+    "numericAnswer": 0.2,
+    "tolerance": 0.005,
+    "tags": ["omitted-variable-bias"]
+  },
+  {
+    "id": "q-frm1-regression-diagnostics-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "regression-diagnostics",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A regression of trading losses on position size shows residuals whose spread increases sharply with position size. Which statement about the OLS results is most accurate?",
+    "options": ["The coefficient estimates are biased, so the regression must be re-estimated with fewer observations", "The coefficient estimates remain unbiased, but the usual standard errors are unreliable", "Both the coefficient estimates and the standard errors are unaffected", "The R-squared is automatically overstated, but t-tests remain valid"],
+    "answer": "B",
+    "explanation": "Residual variance rising with the regressor is heteroskedasticity. OLS coefficients stay unbiased and consistent, but the conventional standard errors are wrong, so inference should use heteroskedasticity-robust (White) standard errors.",
+    "rationale": {
+      "A": "Incorrect. Heteroskedasticity does not bias OLS coefficients, and dropping observations is not the remedy.",
+      "B": "Correct. Unbiased coefficients, invalid conventional standard errors.",
+      "C": "Incorrect. The standard errors, and therefore t-tests and confidence intervals, are affected.",
+      "D": "Incorrect. The key problem is that t-tests are no longer valid with the usual standard errors."
+    },
+    "tags": ["heteroskedasticity"]
+  },
+  {
+    "id": "q-frm1-regression-diagnostics-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "regression-diagnostics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst adds a regressor whose true coefficient is zero but which is moderately correlated with the existing regressors. The most likely effect on the coefficients of the original regressors is that they:",
+    "options": ["become biased toward zero", "become biased away from zero", "remain unbiased but are estimated less precisely", "remain unbiased and are estimated more precisely"],
+    "answer": "C",
+    "explanation": "An extraneous variable does not introduce bias, because its true coefficient is zero. However, its correlation with the useful regressors inflates their standard errors. This is the variance side of the bias-variance trade-off in model selection.",
+    "rationale": {
+      "A": "Incorrect. Including an irrelevant variable does not bias the other coefficients.",
+      "B": "Incorrect. There is no bias in either direction; bias comes from omitting relevant correlated variables.",
+      "C": "Correct. No bias, but larger standard errors.",
+      "D": "Incorrect. Precision falls, not rises, when a correlated irrelevant variable is added."
+    },
+    "tags": ["model-specification", "bias-variance"]
+  }
+]

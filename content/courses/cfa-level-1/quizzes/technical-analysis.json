@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-technical-analysis-1",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "technical-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Over the past 14 trading days a stock's daily price gains summed to 18 and its daily price losses summed to 12. The stock's 14-day relative strength index is closest to:",
+    "options": ["40.00", "60.00", "1.50"],
+    "answer": "B",
+    "explanation": "Average gain = 18/14, average loss = 12/14, so RS = 18/12 = 1.5. RSI = 100 − 100/(1 + 1.5) = 100 − 40 = 60.00.",
+    "rationale": {
+      "A": "Incorrect. 40 inverts the ratio, using average loss divided by average gain (RS = 0.667).",
+      "B": "Correct. RS = 1.5 and RSI = 100 − 100/2.5 = 60.",
+      "C": "Incorrect. 1.50 is RS, not the RSI; RS must be converted to the 0-100 scale."
+    },
+    "verify": "const g=18/14,l=12/14; return 100-100/(1+g/l);",
+    "numericAnswer": 60,
+    "tolerance": 0.005,
+    "tags": ["rsi", "oscillators"]
+  },
+  {
+    "id": "q-cfa1-technical-analysis-2",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "technical-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "After a long decline, a stock forms an inverse head-and-shoulders pattern. The head is at 30 and the neckline is at 42. Once the price breaks above the neckline, the price target is closest to:",
+    "options": ["30.00", "48.00", "54.00"],
+    "answer": "C",
+    "explanation": "Height = neckline − head = 42 − 30 = 12. For an inverse pattern the target is above the neckline: 42 + 12 = 54.",
+    "rationale": {
+      "A": "Incorrect. 30 applies the head-and-shoulders top formula (42 − 12), projecting the wrong way for an inverse pattern.",
+      "B": "Incorrect. 48 adds only half the pattern height to the neckline.",
+      "C": "Correct. Neckline + (neckline − head) = 42 + 12 = 54."
+    },
+    "verify": "const head=30,neck=42; return neck+(neck-head);",
+    "numericAnswer": 54,
+    "tolerance": 0.005,
+    "tags": ["chart-patterns"]
+  },
+  {
+    "id": "q-cfa1-technical-analysis-3",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "technical-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A stock's 50-day moving average crosses above its 200-day moving average. A technical analyst would most likely interpret this as:",
+    "options": ["a golden cross, a bullish signal", "a death cross, a bearish signal", "a continuation pattern known as a pennant"],
+    "answer": "A",
+    "explanation": "When a short-term moving average rises above a long-term moving average, recent prices are outpacing the longer trend: a golden cross, read as bullish.",
+    "rationale": {
+      "A": "Correct. Short-term average crossing above long-term average is a golden cross.",
+      "B": "Incorrect. A death cross is the short-term average crossing below the long-term average.",
+      "C": "Incorrect. A pennant is a chart pattern of converging trendlines, not a moving-average crossover."
+    },
+    "tags": ["moving-averages"]
+  },
+  {
+    "id": "q-cfa1-technical-analysis-4",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "lesson": "technical-analysis",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "The equity put/call ratio has risen to an unusually high level and investor surveys show extreme pessimism. A technical analyst using these as contrarian indicators would most likely conclude that:",
+    "options": ["the market is likely to keep falling because sentiment is negative", "the market may be near a bottom", "sentiment indicators carry no information about future prices"],
+    "answer": "B",
+    "explanation": "Contrarian analysts reason that when nearly everyone is bearish and already positioned for declines, few sellers remain, so extreme pessimism often precedes a rebound.",
+    "rationale": {
+      "A": "Incorrect. This reads sentiment directly rather than as a contrarian signal.",
+      "B": "Correct. Extreme bearish sentiment is read contrarily as a possible market bottom.",
+      "C": "Incorrect. Technicians use sentiment indicators precisely because they believe they carry information."
+    },
+    "tags": ["sentiment-indicators"]
+  }
+]

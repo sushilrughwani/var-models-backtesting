@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-asset-backed-and-mortgage-securities-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "asset-backed-and-mortgage-securities",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A mortgage pool is prepaying at a conditional prepayment rate (CPR) of 8%. The single monthly mortality rate (SMM) is closest to:",
+    "options": ["0.67%", "0.64%", "0.69%"],
+    "answer": "C",
+    "explanation": "SMM = 1 − (1 − CPR)^(1/12) = 1 − 0.92^(1/12) = 0.69%.",
+    "rationale": {
+      "A": "Incorrect. This divides the CPR by 12, which ignores the compounding of monthly prepayments on a declining balance.",
+      "B": "Incorrect. This uses (1 + CPR)^(1/12) − 1, treating the CPR like a growth rate instead of a survival-based rate.",
+      "C": "Correct. 1 − 0.92^(1/12) = 0.6924%."
+    },
+    "verify": "return (1-Math.pow(1-0.08,1/12))*100;",
+    "numericAnswer": 0.69,
+    "tolerance": 0.005,
+    "tags": ["smm", "cpr", "prepayment"]
+  },
+  {
+    "id": "q-cfa1-asset-backed-and-mortgage-securities-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "asset-backed-and-mortgage-securities",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A pass-through pool has a beginning-of-month balance of USD 80,000,000 and scheduled principal of USD 150,000 this month. The pool prepays at 8% CPR. The prepayment for the month is closest to:",
+    "options": ["USD 553,951", "USD 552,912", "USD 532,333"],
+    "answer": "B",
+    "explanation": "SMM = 1 − 0.92^(1/12) = 0.6924%. Prepayment = SMM × (80,000,000 − 150,000) = 0.006924 × 79,850,000 = USD 552,912.",
+    "rationale": {
+      "A": "Incorrect. This applies SMM to the full beginning balance without first subtracting scheduled principal.",
+      "B": "Correct. SMM is applied to the balance after scheduled principal: 79,850,000 × 0.6924%.",
+      "C": "Incorrect. This uses CPR/12 = 0.6667% as the SMM instead of the geometric conversion."
+    },
+    "verify": "const smm=1-Math.pow(0.92,1/12); return smm*(80000000-150000);",
+    "numericAnswer": 552912,
+    "tolerance": 1,
+    "tags": ["pass-through", "prepayment"]
+  },
+  {
+    "id": "q-cfa1-asset-backed-and-mortgage-securities-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "asset-backed-and-mortgage-securities",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Mortgage rates rise sharply shortly after an investor buys an agency mortgage pass-through. The investor most likely faces:",
+    "options": ["extension risk, as prepayments slow and the security's expected life lengthens", "contraction risk, as prepayments accelerate", "increased default risk, because the government guarantee lapses"],
+    "answer": "A",
+    "explanation": "Higher rates reduce refinancing incentives, so prepayments slow. Principal returns later, just when the investor would like to reinvest at the new, higher rates.",
+    "rationale": {
+      "A": "Correct. Rising rates cause extension risk.",
+      "B": "Incorrect. Contraction risk arises when rates fall and borrowers refinance.",
+      "C": "Incorrect. Agency guarantees do not depend on the rate level, so the main risk is prepayment timing, not default."
+    },
+    "tags": ["extension-risk", "prepayment-risk"]
+  },
+  {
+    "id": "q-cfa1-asset-backed-and-mortgage-securities-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "asset-backed-and-mortgage-securities",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A CMO consists of a planned amortisation class (PAC) tranche with a 100-300 PSA collar and a support tranche. If actual prepayments run at 400 PSA for an extended period, the most likely result is that:",
+    "options": ["the PAC tranche absorbs the excess prepayments first", "both tranches shorten by the same proportion", "the support tranche absorbs the excess principal and shortens, and once it is exhausted the PAC schedule can be broken"],
+    "answer": "C",
+    "explanation": "The support tranche exists to absorb deviations from the PAC schedule. Sustained speeds above the collar drain the support tranche; once it is paid off, the PAC tranche starts receiving the excess principal and no longer follows its schedule.",
+    "rationale": {
+      "A": "Incorrect. The PAC tranche is protected; the support tranche takes prepayment surprises first.",
+      "B": "Incorrect. CMOs allocate principal by rule, not pro rata, so the two tranches are affected very differently.",
+      "C": "Correct. Support tranches bear most of the prepayment risk, and the PAC is protected only while support principal remains."
+    },
+    "tags": ["cmo", "pac-tranche", "support-tranche"]
+  }
+]

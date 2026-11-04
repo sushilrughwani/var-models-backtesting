@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-monetary-policy-1",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "monetary-policy",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A central bank has an inflation target of 2.0% and estimates trend real GDP growth at 1.8%. Its policy rate is 3.25%. The neutral policy rate and the current policy stance are closest to:",
+    "options": ["3.80%; expansionary", "2.00%; contractionary", "3.80%; contractionary"],
+    "answer": "A",
+    "explanation": "Neutral rate = trend real growth + inflation target = 1.8% + 2.0% = 3.80%. A policy rate of 3.25% is below neutral, so policy is expansionary.",
+    "rationale": {
+      "A": "Correct. The neutral rate is 3.80% and the policy rate is 0.55 points below it, which stimulates the economy.",
+      "B": "Incorrect. This uses only the inflation target as the benchmark and ignores trend real growth.",
+      "C": "Incorrect. The neutral rate is right, but a policy rate below neutral is expansionary, not contractionary."
+    },
+    "verify": "const g=1.8, target=2.0; return g+target;",
+    "numericAnswer": 3.8,
+    "tolerance": 0.005,
+    "tags": ["neutral-rate", "policy-stance"]
+  },
+  {
+    "id": "q-cfa1-monetary-policy-2",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "monetary-policy",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The required reserve ratio is 12.5%. A bank receives a new deposit of 40 million, and all banks lend out every unit above required reserves. The maximum total deposits the banking system can support from this deposit are closest to:",
+    "options": ["280 million", "320 million", "35 million"],
+    "answer": "B",
+    "explanation": "Money multiplier = 1 / 0.125 = 8. Maximum deposits = 40 × 8 = 320 million.",
+    "rationale": {
+      "A": "Incorrect. 280 million is the additional money created through lending (320 − 40), not the total deposits supported.",
+      "B": "Correct. The multiplier of 8 applied to the 40 million deposit gives 320 million of total deposits.",
+      "C": "Incorrect. 35 million is only the first loan the receiving bank can make (40 × 0.875), ignoring the redeposit chain."
+    },
+    "verify": "const r=0.125, D=40; return D/r;",
+    "numericAnswer": 320,
+    "tolerance": 0.5,
+    "tags": ["money-multiplier"]
+  },
+  {
+    "id": "q-cfa1-monetary-policy-3",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "monetary-policy",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A central bank wants to tighten monetary conditions using open market operations. It will most likely:",
+    "options": ["buy government bonds from commercial banks", "lower the required reserve ratio", "sell government bonds to commercial banks"],
+    "answer": "C",
+    "explanation": "Selling bonds takes reserves out of the banking system, which pushes short-term interest rates up and restricts lending.",
+    "rationale": {
+      "A": "Incorrect. Buying bonds adds reserves to banks and loosens monetary conditions.",
+      "B": "Incorrect. Lowering the reserve ratio raises the money multiplier, which is expansionary, and it is not an open market operation.",
+      "C": "Correct. Selling bonds drains reserves and raises short-term rates."
+    },
+    "tags": ["open-market-operations"]
+  },
+  {
+    "id": "q-cfa1-monetary-policy-4",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "monetary-policy",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A government sharply increases spending while its central bank raises the policy rate well above neutral. The most likely outcome of this policy mix is:",
+    "options": ["falling interest rates and a strongly expansionary effect on aggregate demand", "higher interest rates and a public sector that grows relative to the private sector", "a private sector that grows relative to the public sector"],
+    "answer": "B",
+    "explanation": "Easy fiscal plus tight monetary policy produces high interest rates that restrain private spending while government demand expands, so the public sector's share of output rises.",
+    "rationale": {
+      "A": "Incorrect. Strongly expansionary demand with falling rates describes easy fiscal combined with easy monetary policy.",
+      "B": "Correct. Tight money raises rates and squeezes private demand, while expansionary fiscal policy enlarges the public sector.",
+      "C": "Incorrect. Private-sector growth relative to the public sector results from tight fiscal combined with easy monetary policy."
+    },
+    "tags": ["policy-mix"]
+  }
+]

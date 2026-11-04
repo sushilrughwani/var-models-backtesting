@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-income-statement-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "income-statement",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company had 2,000,000 common shares outstanding on 1 January. It issued 600,000 shares on 1 July and repurchased 200,000 shares on 1 October. Net income was USD 5,000,000 and preferred dividends were USD 500,000. Basic EPS (USD) is closest to:",
+    "options": ["2.00", "1.88", "2.22"],
+    "answer": "A",
+    "explanation": "Weighted shares = 2,000,000 + 600,000 × 6/12 - 200,000 × 3/12 = 2,250,000. Basic EPS = (5,000,000 - 500,000) / 2,250,000 = 2.00.",
+    "rationale": {
+      "A": "Correct. Profit to common holders of 4,500,000 divided by 2,250,000 weighted shares gives 2.00.",
+      "B": "Incorrect. 1.88 uses year-end shares (2,400,000) instead of the time-weighted average.",
+      "C": "Incorrect. 2.22 forgets to subtract preferred dividends from net income."
+    },
+    "verify": "const w = 2000000 + 600000*6/12 - 200000*3/12; return (5000000 - 500000)/w;",
+    "numericAnswer": 2.0,
+    "tolerance": 0.005,
+    "tags": ["eps", "weighted-average-shares"]
+  },
+  {
+    "id": "q-cfa1-income-statement-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "income-statement",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A company has net income of USD 10,000,000, no preferred shares and 4,000,000 weighted average common shares. It also has 500,000 employee options outstanding with an exercise price of USD 30. The average market price of the shares during the year was USD 40. Diluted EPS (USD) is closest to:",
+    "options": ["2.50", "2.22", "2.42"],
+    "answer": "C",
+    "explanation": "Treasury stock method: proceeds 500,000 × 30 = 15,000,000 buy back 15,000,000 / 40 = 375,000 shares, so 125,000 incremental shares. Diluted EPS = 10,000,000 / 4,125,000 = 2.42.",
+    "rationale": {
+      "A": "Incorrect. 2.50 is basic EPS; the options are in the money and therefore dilutive.",
+      "B": "Incorrect. 2.22 adds all 500,000 option shares and ignores the assumed repurchase under the treasury stock method.",
+      "C": "Correct. Adding only the 125,000 net incremental shares gives 10,000,000 / 4,125,000 = 2.42."
+    },
+    "verify": "const inc = 500000 - 500000*30/40; return 10000000/(4000000 + inc);",
+    "numericAnswer": 2.42,
+    "tolerance": 0.005,
+    "tags": ["eps", "diluted-eps", "treasury-stock-method"]
+  },
+  {
+    "id": "q-cfa1-income-statement-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "income-statement",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A company sells one of its business segments during the year. The results of that segment are most likely reported on the income statement:",
+    "options": ["as an unusual item within operating income, before tax.", "separately, net of tax, below income from continuing operations.", "only in other comprehensive income."],
+    "answer": "B",
+    "explanation": "Discontinued operations are presented as a separate line, net of tax, after income from continuing operations so analysts can exclude them from forecasts.",
+    "rationale": {
+      "A": "Incorrect. Unusual or infrequent items are reported pre-tax in continuing operations, but a disposed segment qualifies as a discontinued operation.",
+      "B": "Correct. Discontinued operations are shown net of tax below continuing operations.",
+      "C": "Incorrect. Discontinued operations pass through profit or loss, not OCI."
+    },
+    "tags": ["non-recurring-items"]
+  },
+  {
+    "id": "q-cfa1-income-statement-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "income-statement",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A telecom company sells a handset together with a two-year service plan for a single price. Under the contract-based revenue recognition model, the company should:",
+    "options": ["recognise the full price as revenue when the contract is signed.", "recognise the full price evenly over the two-year service period.", "allocate the price between the handset and the service by relative standalone selling prices, recognising each when control transfers."],
+    "answer": "C",
+    "explanation": "The handset and the service are separate performance obligations. The price is allocated by relative standalone selling prices; handset revenue is recognised at delivery and service revenue over time.",
+    "rationale": {
+      "A": "Incorrect. Signing a contract does not satisfy the service obligation, which is delivered over two years.",
+      "B": "Incorrect. This ignores that the handset obligation is satisfied at delivery.",
+      "C": "Correct. Identify the separate obligations, allocate the price, and recognise each when (or as) it is satisfied."
+    },
+    "tags": ["revenue-recognition"]
+  }
+]

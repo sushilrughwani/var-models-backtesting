@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q-cfa1-futures-vs-forwards-1",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "futures-vs-forwards",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A trader is long one futures contract on 50 units at a price of USD 400. Initial margin is USD 2,000 and maintenance margin is USD 1,500. If the next settlement price is USD 388, the variation margin the trader must deposit is closest to:",
+    "options": ["USD 100", "USD 0", "USD 600"],
+    "answer": "C",
+    "explanation": "Loss = (388 − 400) × 50 = −600. Balance = 2,000 − 600 = 1,400, below the 1,500 maintenance level. Variation margin restores the initial margin: 2,000 − 1,400 = 600.",
+    "rationale": {
+      "A": "Incorrect. 100 only brings the account back to the maintenance margin; variation margin restores the initial margin.",
+      "B": "Incorrect. The balance of 1,400 is below the maintenance margin, so a call is triggered.",
+      "C": "Correct. 2,000 − 1,400 = 600."
+    },
+    "verify": "const bal=2000+(388-400)*50; return bal<1500 ? 2000-bal : 0;",
+    "numericAnswer": 600,
+    "tolerance": 0.5,
+    "tags": ["margin"]
+  },
+  {
+    "id": "q-cfa1-futures-vs-forwards-2",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "futures-vs-forwards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Immediately after the daily mark-to-market settlement, the value of a futures position is:",
+    "options": [
+      "equal to the cumulative gain since the position was opened",
+      "zero",
+      "equal to the initial margin"
+    ],
+    "answer": "B",
+    "explanation": "Daily settlement pays out all gains and losses in cash, effectively re-striking the contract at the new settlement price, so its value resets to zero.",
+    "rationale": {
+      "A": "Incorrect. Cumulative gains have already been paid into or out of the margin account; they are not part of the contract's remaining value.",
+      "B": "Correct. Mark-to-market resets the value of a futures contract to zero each day.",
+      "C": "Incorrect. Initial margin is collateral held in the account, not the value of the contract."
+    },
+    "tags": ["futures-value"]
+  },
+  {
+    "id": "q-cfa1-futures-vs-forwards-3",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "futures-vs-forwards",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "If futures prices on an asset are strongly positively correlated with interest rates, the futures price is most likely:",
+    "options": [
+      "higher than the forward price on the same asset and date",
+      "lower than the forward price on the same asset and date",
+      "equal to the forward price on the same asset and date"
+    ],
+    "answer": "A",
+    "explanation": "With positive correlation, a long futures position receives daily gains when rates are high (reinvested at high rates) and pays losses when rates are low (financed cheaply). This makes the futures contract more attractive, so its price exceeds the forward price.",
+    "rationale": {
+      "A": "Correct. Positive correlation between futures prices and rates favours the long futures holder, pushing the futures price above the forward price.",
+      "B": "Incorrect. A futures price below the forward price results from negative correlation, as with interest rate futures.",
+      "C": "Incorrect. Equality holds when rates are constant or uncorrelated with the futures price."
+    },
+    "tags": ["futures-vs-forward-price"]
+  },
+  {
+    "id": "q-cfa1-futures-vs-forwards-4",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "futures-vs-forwards",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A manager is short 4 equity index futures contracts with a multiplier of USD 250 per index point. The settlement price falls from 4,000 to 3,960. The amount credited to (positive) or debited from (negative) the manager's margin account, in USD, is closest to:",
+    "options": ["10,000", "40,000", "−40,000"],
+    "answer": "B",
+    "explanation": "The short gains when the futures price falls: 4 × 250 × (4,000 − 3,960) = 40,000 credited.",
+    "rationale": {
+      "A": "Incorrect. 10,000 is the gain on a single contract; the manager holds four.",
+      "B": "Correct. 4 × 250 × 40 = 40,000 credited to the short.",
+      "C": "Incorrect. −40,000 would apply to a long position; a short benefits from a falling price."
+    },
+    "verify": "return 4*250*(4000-3960);",
+    "numericAnswer": 40000,
+    "tolerance": 0.5,
+    "tags": ["mark-to-market"]
+  }
+]

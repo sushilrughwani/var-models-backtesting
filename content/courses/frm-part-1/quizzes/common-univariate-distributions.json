@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-common-univariate-distributions-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "common-univariate-distributions",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio contains 20 loans that default independently, each with probability 0.04. The probability that exactly two loans default is closest to:",
+    "options": ["0.1458", "0.3040", "0.0016", "0.3683"],
+    "answer": "A",
+    "explanation": "P(X = 2) = C(20, 2) × 0.04² × 0.96^18 = 190 × 0.0016 × 0.4796 = 0.1458.",
+    "rationale": {
+      "A": "Correct. Binomial probability with n = 20, p = 0.04, k = 2 is 0.1458.",
+      "B": "Incorrect. 0.304 is C(20, 2) × 0.04², omitting the factor 0.96^18 for the 18 surviving loans.",
+      "C": "Incorrect. 0.0016 is 0.04², ignoring both the number of orderings and the survival probabilities.",
+      "D": "Incorrect. 0.3683 is the probability of exactly one default, not two."
+    },
+    "verify": "const n=20,p=0.04,k=2; const c=n*(n-1)/2; return c*Math.pow(p,k)*Math.pow(1-p,n-k);",
+    "numericAnswer": 0.1458,
+    "tolerance": 0.00005,
+    "tags": ["binomial"]
+  },
+  {
+    "id": "q-frm1-common-univariate-distributions-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "common-univariate-distributions",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Large operational losses at a bank arrive according to a Poisson process with a mean of 1.5 per year. The probability of at most one large loss next year is closest to:",
+    "options": ["0.2231", "0.3347", "0.5578", "0.7769"],
+    "answer": "C",
+    "explanation": "P(X ≤ 1) = e^(−1.5)(1 + 1.5) = 0.2231 × 2.5 = 0.5578.",
+    "rationale": {
+      "A": "Incorrect. 0.2231 is P(X = 0) only.",
+      "B": "Incorrect. 0.3347 is P(X = 1) only.",
+      "C": "Correct. Add P(0) = 0.2231 and P(1) = 0.3347 to get 0.5578.",
+      "D": "Incorrect. 0.7769 is 1 − P(0), the probability of at least one loss."
+    },
+    "verify": "const l=1.5; return Math.exp(-l)*(1+l);",
+    "numericAnswer": 0.5578,
+    "tolerance": 0.00005,
+    "tags": ["poisson"]
+  },
+  {
+    "id": "q-frm1-common-univariate-distributions-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "common-univariate-distributions",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Daily portfolio returns are normally distributed with a mean of 0.5% and a standard deviation of 2%. Using a one-tailed critical value of 1.645, the 5th percentile of the daily return is closest to:",
+    "options": ["−3.29%", "−3.42%", "−4.15%", "−2.79%"],
+    "answer": "D",
+    "explanation": "5th percentile = μ − 1.645σ = 0.5% − 1.645 × 2% = −2.79%.",
+    "rationale": {
+      "A": "Incorrect. −3.29% ignores the positive mean of 0.5%.",
+      "B": "Incorrect. −3.42% uses the two-tailed 5% value of 1.96 instead of 1.645.",
+      "C": "Incorrect. −4.15% uses 2.326, the 1% one-tailed critical value.",
+      "D": "Correct. 0.5 − 3.29 = −2.79%."
+    },
+    "verify": "return 0.5 - 1.645*2;",
+    "numericAnswer": -2.79,
+    "tolerance": 0.005,
+    "tags": ["normal", "quantile"]
+  },
+  {
+    "id": "q-frm1-common-univariate-distributions-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "common-univariate-distributions",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which statement about distributions derived from the normal is correct?",
+    "options": [
+      "A chi-square variable with k degrees of freedom has mean 2k and variance k.",
+      "The F distribution is symmetric around 1 and can take negative values.",
+      "A Student's t distribution with 5 degrees of freedom has a variance greater than 1 and fatter tails than the standard normal.",
+      "As degrees of freedom increase, the Student's t distribution develops fatter tails."
+    ],
+    "answer": "C",
+    "explanation": "The t variance is ν/(ν − 2) = 5/3 ≈ 1.67 for ν = 5, above the standard normal's 1, with fatter tails. It converges to the normal as ν rises.",
+    "rationale": {
+      "A": "Incorrect. The moments are reversed: a chi-square has mean k and variance 2k.",
+      "B": "Incorrect. The F distribution is a ratio of non-negative chi-squares, so it is non-negative and right-skewed.",
+      "C": "Correct. Variance 5/3 > 1, and the t has heavier tails than the normal.",
+      "D": "Incorrect. More degrees of freedom make the t thinner-tailed, approaching the standard normal."
+    },
+    "tags": ["student-t", "chi-square", "f-distribution"]
+  }
+]

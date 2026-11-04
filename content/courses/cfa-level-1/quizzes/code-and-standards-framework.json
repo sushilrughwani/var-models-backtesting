@@ -1,0 +1,86 @@
+[
+  {
+    "id": "q-cfa1-code-and-standards-framework-1",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "code-and-standards-framework",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Ines Duarte registered for the CFA Level I exam two months ago and works as a trainee at the fictional Kestrel Bank. Regarding the Code of Ethics and Standards of Professional Conduct, Ines is:",
+    "options": [
+      "Not yet bound, because only charterholders are subject to them",
+      "Bound only after she passes Level I",
+      "Already bound, because candidates are subject to them from enrolment"
+    ],
+    "answer": "C",
+    "explanation": "The Code and Standards apply to all members and to all candidates in the CFA Program, starting when they enrol.",
+    "rationale": {
+      "A": "Incorrect. The framework applies to members and candidates, not only to charterholders.",
+      "B": "Incorrect. There is no waiting period tied to passing an exam; candidates are bound from enrolment.",
+      "C": "Correct. Enrolment as a candidate is enough to be bound by the Code and Standards."
+    }
+  },
+  {
+    "id": "q-cfa1-code-and-standards-framework-2",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "code-and-standards-framework",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A portfolio manager at the fictional Halcyon Trust buys shares for her own account before executing a large client order in the same stock. The Standard most directly concerned with this conduct falls under:",
+    "options": [
+      "Conflicts of interest",
+      "Duties to employers",
+      "Integrity of capital markets"
+    ],
+    "answer": "A",
+    "explanation": "Trading ahead of clients is addressed by the priority of transactions requirement, which sits within Standard VI, Conflicts of Interest.",
+    "rationale": {
+      "A": "Correct. Priority of transactions, which requires client trades to come before personal trades, is part of Standard VI on conflicts of interest.",
+      "B": "Incorrect. Duties to employers covers loyalty to the employer, additional compensation and supervision, not the ordering of personal and client trades.",
+      "C": "Incorrect. Integrity of capital markets covers material nonpublic information and manipulation; front-running a client is primarily a priority-of-transactions issue."
+    }
+  },
+  {
+    "id": "q-cfa1-code-and-standards-framework-3",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "code-and-standards-framework",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "After an investigation, CFA Institute professional conduct staff propose a one-year suspension for Dario Lund, a fictional charterholder. Dario believes he did nothing wrong. Which of the following is most accurate?",
+    "options": [
+      "The proposed sanction is final once staff issue it",
+      "Dario may reject the proposed sanction, and the matter is then referred to a hearing panel",
+      "Dario may appeal only to a national securities regulator"
+    ],
+    "answer": "B",
+    "explanation": "A member or candidate can accept or reject a proposed sanction. If rejected, a hearing panel of volunteers from the disciplinary review committee decides whether a violation occurred and what sanction, if any, applies.",
+    "rationale": {
+      "A": "Incorrect. A proposal from staff is not final; the individual has the right to reject it.",
+      "B": "Correct. Rejection sends the case to a hearing panel for an independent determination.",
+      "C": "Incorrect. The Professional Conduct Program is a self-regulatory process; the next step after rejection is a hearing panel, not an outside regulator."
+    }
+  },
+  {
+    "id": "q-cfa1-code-and-standards-framework-4",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "lesson": "code-and-standards-framework",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which statement best describes the relationship between the Code of Ethics and the Standards of Professional Conduct?",
+    "options": [
+      "The Standards are broad aspirations, while the Code sets out detailed rules for specific situations",
+      "The Code applies to members, while the Standards apply only to candidates",
+      "The Code states broad ethical principles, and the Standards set out more specific obligations that put those principles into practice"
+    ],
+    "answer": "C",
+    "explanation": "The Code is a short set of principles; the Standards are organised into seven areas with sub-sections that specify required conduct. Both apply to members and candidates.",
+    "rationale": {
+      "A": "Incorrect. This reverses the roles: the Code is the broad layer and the Standards are the specific layer.",
+      "B": "Incorrect. Both the Code and the Standards apply to members and candidates alike.",
+      "C": "Correct. The Code provides principles and the Standards make them concrete and testable."
+    }
+  }
+]

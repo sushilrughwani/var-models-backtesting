@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q-cfa1-capital-investments-and-allocation-1",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "capital-investments-and-allocation",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A project requires an initial investment of 2,500 and is expected to generate after-tax cash flows of 900 at the end of each of the next four years. If the required rate of return is 12%, the project's NPV is closest to:",
+    "options": ["1,100.00", "233.61", "-338.35"],
+    "answer": "B",
+    "explanation": "PV of inflows = 900 × [1 - 1.12^-4] / 0.12 = 2,733.61. NPV = 2,733.61 - 2,500 = 233.61.",
+    "rationale": {
+      "A": "Incorrect. 1,100 is the undiscounted surplus (4 × 900 - 2,500); it ignores the time value of money.",
+      "B": "Correct. Discounting four payments of 900 at 12% gives 2,733.61, so NPV = 233.61.",
+      "C": "Incorrect. -338.35 discounts only three cash flows of 900, omitting the fourth year."
+    },
+    "verify": "let pv=0; for(let t=1;t<=4;t++) pv+=900/1.12**t; return pv-2500;",
+    "numericAnswer": 233.61,
+    "tolerance": 0.01,
+    "tags": ["npv"]
+  },
+  {
+    "id": "q-cfa1-capital-investments-and-allocation-2",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "capital-investments-and-allocation",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A firm with a 10% cost of capital must choose one of two mutually exclusive projects. Project X has an IRR of 22% and an NPV of 40. Project Y has an IRR of 16% and an NPV of 65. The firm should:",
+    "options": ["choose Project X, because it has the higher IRR", "reject both, because the IRRs disagree", "choose Project Y, because it has the higher NPV"],
+    "answer": "C",
+    "explanation": "When NPV and IRR rank mutually exclusive projects differently, NPV is the better guide because it measures the value added to shareholders in money terms and uses a realistic reinvestment assumption.",
+    "rationale": {
+      "A": "Incorrect. IRR ignores scale and assumes reinvestment at the IRR; a higher IRR does not mean more value created.",
+      "B": "Incorrect. Both projects exceed the 10% hurdle and have positive NPVs; conflicting rankings do not mean both should be rejected.",
+      "C": "Correct. Project Y adds 65 of value versus 40 for Project X, so it maximises shareholder wealth."
+    },
+    "tags": ["npv-vs-irr", "mutually-exclusive"]
+  },
+  {
+    "id": "q-cfa1-capital-investments-and-allocation-3",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "capital-investments-and-allocation",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "When estimating the cash flows of a proposed new product line, an analyst should exclude:",
+    "options": ["the cost of a consumer survey on the product completed and paid for last year", "lost after-tax profits on an existing product that the new line will partly replace", "the rental income the firm forgoes by using its own vacant warehouse for the project"],
+    "answer": "A",
+    "explanation": "The survey is a sunk cost: it has been paid whatever the decision, so it is not incremental. Cannibalisation and forgone rent are relevant incremental effects.",
+    "rationale": {
+      "A": "Correct. Sunk costs cannot be recovered by rejecting the project and must be ignored.",
+      "B": "Incorrect. Cannibalised sales are a negative externality that reduces incremental cash flow and must be included.",
+      "C": "Incorrect. Forgone rent is an opportunity cost and must be charged to the project."
+    },
+    "tags": ["incremental-cash-flows", "sunk-costs"]
+  },
+  {
+    "id": "q-cfa1-capital-investments-and-allocation-4",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "lesson": "capital-investments-and-allocation",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A pharmaceutical company builds a small pilot plant with the right, but not the obligation, to add a full-scale facility if trials succeed. This feature is best described as:",
+    "options": ["an abandonment option", "an expansion option", "a timing option"],
+    "answer": "B",
+    "explanation": "The right to scale up if results are favourable is an expansion option, which adds value beyond the pilot plant's static NPV.",
+    "rationale": {
+      "A": "Incorrect. An abandonment option is the right to exit if results are poor, not to grow if they are good.",
+      "B": "Correct. Adding capacity after success is the classic expansion option.",
+      "C": "Incorrect. A timing option is the right to delay the initial investment; here the pilot is already being built."
+    },
+    "tags": ["real-options"]
+  }
+]

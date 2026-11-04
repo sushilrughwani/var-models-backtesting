@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-firms-and-market-structures-1",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "firms-and-market-structures",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A monopolist faces the demand curve P = 120 − 3Q and has a constant marginal cost of 30. The profit-maximising price is closest to:",
+    "options": ["30", "60", "75"],
+    "answer": "C",
+    "explanation": "MR = 120 − 6Q. Setting MR = MC: 120 − 6Q = 30, so Q = 15. Price from demand: P = 120 − 3(15) = 75.",
+    "rationale": {
+      "A": "Incorrect. A price of 30 equals marginal cost, which is the perfectly competitive outcome (Q = 30), not the monopoly outcome.",
+      "B": "Incorrect. 60 is the price where MR = 0 (Q = 20), which maximises revenue rather than profit.",
+      "C": "Correct. The monopolist produces 15 units where MR = MC and charges 75, read from the demand curve."
+    },
+    "verify": "const a=120,b=3,mc=30; const q=(a-mc)/(2*b); return a-b*q;",
+    "numericAnswer": 75,
+    "tolerance": 0.5,
+    "tags": ["monopoly", "profit-maximisation"]
+  },
+  {
+    "id": "q-cfa1-firms-and-market-structures-2",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "firms-and-market-structures",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An industry has five firms with market shares of 35%, 25%, 20%, 10% and 10%. If the two smallest firms merge, the industry's Herfindahl-Hirschman Index after the merger is closest to:",
+    "options": ["2,650", "2,450", "100"],
+    "answer": "A",
+    "explanation": "After the merger the shares are 35, 25, 20 and 20. HHI = 1,225 + 625 + 400 + 400 = 2,650.",
+    "rationale": {
+      "A": "Correct. Squaring the post-merger shares and summing gives 2,650.",
+      "B": "Incorrect. 2,450 is the HHI before the merger (1,225 + 625 + 400 + 100 + 100).",
+      "C": "Incorrect. 100 is the post-merger four-firm concentration ratio in percent, not the HHI."
+    },
+    "verify": "return [35,25,20,20].reduce((s,x)=>s+x*x,0);",
+    "numericAnswer": 2650,
+    "tolerance": 0.5,
+    "tags": ["concentration", "hhi"]
+  },
+  {
+    "id": "q-cfa1-firms-and-market-structures-3",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "firms-and-market-structures",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A firm in a perfectly competitive market faces a price that is above its average variable cost but below its average total cost. In the short run the firm should:",
+    "options": ["shut down immediately to stop the losses", "continue operating while incurring a loss", "raise its price to cover average total cost"],
+    "answer": "B",
+    "explanation": "When price covers AVC, operating covers all variable costs and part of fixed costs, so the loss is smaller than the fixed cost that would be lost by shutting down.",
+    "rationale": {
+      "A": "Incorrect. Shutting down would leave the firm paying its full fixed costs, a larger loss than operating. The short-run shutdown point is P < AVC.",
+      "B": "Correct. Revenue covers variable costs and contributes to fixed costs, so operating minimises the loss in the short run.",
+      "C": "Incorrect. A perfectly competitive firm is a price taker; any price above the market price would leave it with no sales."
+    },
+    "tags": ["shutdown", "perfect-competition"]
+  },
+  {
+    "id": "q-cfa1-firms-and-market-structures-4",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "firms-and-market-structures",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "In an industry with a few large firms, each firm believes rivals will match any price cut but will not follow a price increase. The most likely consequence is that:",
+    "options": ["prices tend to remain stable even when marginal costs change somewhat", "the industry quickly reaches the perfectly competitive price", "each firm earns zero economic profit in the long run because of free entry"],
+    "answer": "A",
+    "explanation": "This is the kinked demand curve model of oligopoly. The kink creates a gap in the marginal revenue curve, so moderate shifts in marginal cost leave the profit-maximising price unchanged.",
+    "rationale": {
+      "A": "Correct. The discontinuity in MR at the kink means price is sticky over a range of marginal cost.",
+      "B": "Incorrect. Nothing in the model drives price down to marginal cost; firms avoid price wars by not cutting.",
+      "C": "Incorrect. Oligopolies have high barriers to entry, so there is no free entry to eliminate economic profit."
+    },
+    "tags": ["oligopoly", "kinked-demand"]
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm1-enterprise-risk-management-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "enterprise-risk-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A firm has stand-alone economic capital of USD 600 million for credit risk and USD 800 million for market risk. The correlation between the two is 0.25. Using the square-root aggregation formula, total economic capital (USD millions) is closest to:",
+    "options": ["1,000.00", "1,400.00", "1,058.30", "1,113.55"],
+    "answer": "D",
+    "explanation": "Total = √(600² + 800² + 2 × 0.25 × 600 × 800) = √(360,000 + 640,000 + 240,000) = √1,240,000 = 1,113.55.",
+    "rationale": {
+      "A": "Incorrect. 1,000.00 assumes zero correlation and drops the cross term.",
+      "B": "Incorrect. 1,400.00 is the simple sum, which assumes perfect correlation and no diversification.",
+      "C": "Incorrect. 1,058.30 forgets to double the cross term (uses 0.25 × 600 × 800 once).",
+      "D": "Correct. Including the doubled cross term gives √1,240,000 = 1,113.55."
+    },
+    "verify": "const a=600,b=800,r=0.25; return Math.sqrt(a*a+b*b+2*r*a*b);",
+    "numericAnswer": 1113.55,
+    "tolerance": 0.01,
+    "tags": ["economic-capital", "aggregation"]
+  },
+  {
+    "id": "q-frm1-enterprise-risk-management-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "enterprise-risk-management",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Two business units each require stand-alone economic capital of USD 500 million. The correlation between their losses is 0.6. The diversification benefit, as a percentage of the sum of stand-alone capital, is closest to:",
+    "options": ["10.56%", "40.00%", "29.29%", "20.00%"],
+    "answer": "A",
+    "explanation": "Total = √(500² + 500² + 2 × 0.6 × 500 × 500) = √800,000 = 894.43. Benefit = 1,000 - 894.43 = 105.57, which is 10.56% of 1,000.",
+    "rationale": {
+      "A": "Correct. Aggregated capital is 894.43, a saving of 105.57 or 10.56% of the 1,000 stand-alone sum.",
+      "B": "Incorrect. 40.00% simply takes 1 - ρ, which is not how capital aggregates.",
+      "C": "Incorrect. 29.29% is the benefit at zero correlation (1 - √2/2), ignoring the 0.6 correlation.",
+      "D": "Incorrect. 20.00% takes (1 - ρ)/2, a linear shortcut that does not follow the square-root formula."
+    },
+    "verify": "const t=Math.sqrt(500*500*2+2*0.6*500*500); return (1000-t)/1000*100;",
+    "numericAnswer": 10.56,
+    "tolerance": 0.005,
+    "tags": ["diversification", "economic-capital"]
+  },
+  {
+    "id": "q-frm1-enterprise-risk-management-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "enterprise-risk-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which outcome is most directly a benefit of moving from silo-based risk management to enterprise risk management?",
+    "options": [
+      "Each department can set its own risk limits without reference to the rest of the firm.",
+      "The firm can recognize offsetting exposures and avoid paying to hedge the same net risk twice.",
+      "Correlations between risks become irrelevant to capital planning.",
+      "The firm no longer needs a board risk committee."
+    ],
+    "answer": "B",
+    "explanation": "An integrated view reveals natural offsets and concentrations, so hedging and capital decisions are based on net firm-wide risk.",
+    "rationale": {
+      "A": "Incorrect. That describes silo management; ERM cascades limits from one firm-wide risk appetite.",
+      "B": "Correct. Seeing risks together avoids over-hedging exposures that already offset.",
+      "C": "Incorrect. ERM makes correlations central, because aggregation depends on them.",
+      "D": "Incorrect. ERM strengthens, not removes, board-level oversight."
+    },
+    "tags": ["erm-benefits"]
+  },
+  {
+    "id": "q-frm1-enterprise-risk-management-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "enterprise-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An insurer's risk team wants to assess how a rapid, policy-driven shift away from fossil fuels could affect its investment portfolio over the next decade. Little historical data exists for such an event. Which tool is most appropriate?",
+    "options": [
+      "A one-day historical-simulation VaR using the last two years of data",
+      "Scenario analysis built on severe but plausible transition pathways",
+      "A credit rating transition matrix estimated from the past 30 years",
+      "Aggregating stand-alone capital assuming perfect correlation"
+    ],
+    "answer": "B",
+    "explanation": "Climate transition risk is forward-looking and lacks relevant history, so scenario analysis with internally consistent pathways is the natural ERM tool.",
+    "rationale": {
+      "A": "Incorrect. A short-horizon historical VaR cannot capture a decade-long structural shift that has not occurred in the data.",
+      "B": "Correct. Scenario analysis explores plausible futures where history is a poor guide.",
+      "C": "Incorrect. Historical transition matrices reflect past conditions, not a policy-driven transition.",
+      "D": "Incorrect. That is a conservative capital aggregation choice, not a way to understand the risk itself."
+    },
+    "tags": ["scenario-analysis", "emerging-risks"]
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q-cfa1-capital-flows-and-fx-market-1",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "capital-flows-and-fx-market",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "For an Indian analyst, the INR/USD spot rate (rupees per US dollar) rises from 83.00 to 85.00 over a year. Indian inflation is 5% and US inflation is 3% over the same period. The percentage change in the real INR/USD exchange rate is closest to:",
+    "options": ["2.41%", "0.46%", "4.40%"],
+    "answer": "B",
+    "explanation": "Real rate change = (85/83) × (1.03/1.05) − 1 = 1.02410 × 0.98095 − 1 = 0.46%. Foreign (US) inflation goes in the numerator and domestic (Indian) inflation in the denominator.",
+    "rationale": {
+      "A": "Incorrect. 2.41% is the nominal change only; it ignores the inflation differential.",
+      "B": "Correct. Higher Indian inflation offsets most of the rupee's nominal depreciation, leaving a real rise in INR/USD of about 0.46%.",
+      "C": "Incorrect. 4.40% places the price levels the wrong way round, multiplying by domestic over foreign inflation."
+    },
+    "verify": "return ((85/83)*(1.03/1.05)-1)*100;",
+    "numericAnswer": 0.46,
+    "tolerance": 0.005,
+    "tags": ["real-exchange-rate"]
+  },
+  {
+    "id": "q-cfa1-capital-flows-and-fx-market-2",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "capital-flows-and-fx-market",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A country maintains a fixed exchange rate against the euro and allows capital to flow freely across its borders. According to the impossible trinity, the country:",
+    "options": ["cannot run an independent monetary policy", "must impose capital controls to keep its peg", "can set its policy rate freely as long as reserves are large"],
+    "answer": "A",
+    "explanation": "Only two of fixed rate, free capital mobility and independent monetary policy can be held at once. With the first two chosen, interest rates must follow the anchor currency.",
+    "rationale": {
+      "A": "Correct. With a peg and open capital, any rate gap versus the euro area would trigger flows that break the peg, so monetary policy is not independent.",
+      "B": "Incorrect. Capital controls are one way to regain policy independence, but the country has chosen free capital flows; the trinity does not require controls to hold a peg.",
+      "C": "Incorrect. Reserves can delay pressure but cannot permanently allow independent rates under a peg with open capital."
+    },
+    "tags": ["impossible-trinity"]
+  },
+  {
+    "id": "q-cfa1-capital-flows-and-fx-market-3",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "capital-flows-and-fx-market",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A country's law requires that every unit of domestic currency in circulation be backed by US dollar reserves at a fixed conversion rate. This regime is best described as a:",
+    "options": ["crawling peg", "managed float", "currency board"],
+    "answer": "C",
+    "explanation": "A currency board issues domestic currency only against full backing in a reserve currency at a legally fixed rate.",
+    "rationale": {
+      "A": "Incorrect. A crawling peg adjusts the rate in small steps and does not require full legal reserve backing.",
+      "B": "Incorrect. A managed float lets the market set the rate with occasional intervention and no fixed conversion rate.",
+      "C": "Correct. Full reserve backing at a fixed rate, enshrined in law, defines a currency board."
+    },
+    "tags": ["exchange-rate-regimes"]
+  },
+  {
+    "id": "q-cfa1-capital-flows-and-fx-market-4",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "lesson": "capital-flows-and-fx-market",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "The JPY/USD exchange rate, quoted as yen per US dollar, moves from 145 to 150. This means that:",
+    "options": ["the US dollar has appreciated against the yen", "the yen has appreciated against the US dollar", "both currencies have appreciated in real terms"],
+    "answer": "A",
+    "explanation": "The dollar is the base currency in a JPY/USD quote. More yen are now needed to buy one dollar, so the dollar has appreciated and the yen has depreciated.",
+    "rationale": {
+      "A": "Correct. A higher yen-per-dollar quote means the dollar buys more yen: the dollar appreciated.",
+      "B": "Incorrect. Needing more yen per dollar means the yen has lost value, not gained it.",
+      "C": "Incorrect. Two currencies cannot both appreciate against each other, and no price-level data are given for a real comparison."
+    },
+    "tags": ["fx-quotes"]
+  }
+]

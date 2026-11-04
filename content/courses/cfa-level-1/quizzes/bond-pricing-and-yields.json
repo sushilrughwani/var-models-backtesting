@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-cfa1-bond-pricing-and-yields-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "bond-pricing-and-yields",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A 4-year bond with a 7% annual coupon and a par value of 100 has a yield to maturity of 5%. Its price is closest to:",
+    "options": ["100.00", "107.09", "107.17"],
+    "answer": "B",
+    "explanation": "PV = 7/1.05 + 7/1.05^2 + 7/1.05^3 + 107/1.05^4 = 107.09. The coupon exceeds the yield, so the bond trades at a premium.",
+    "rationale": {
+      "A": "Incorrect. A bond trades at par only when its coupon rate equals its yield; here the coupon is higher.",
+      "B": "Correct. Discounting the annual cash flows at 5% gives 107.09.",
+      "C": "Incorrect. 107.17 treats the bond as semiannual (3.5 per period at 2.5% for 8 periods), but the coupon is annual."
+    },
+    "verify": "const y=0.05; let p=0; for(let t=1;t<=4;t++){p+=7/Math.pow(1+y,t);} return p+100/Math.pow(1+y,4);",
+    "numericAnswer": 107.09,
+    "tolerance": 0.01,
+    "tags": ["bond-pricing"]
+  },
+  {
+    "id": "q-cfa1-bond-pricing-and-yields-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "bond-pricing-and-yields",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A 2-year bond pays a 6% annual coupon on par of 100. The 1-year spot rate is 4% and the 2-year spot rate is 5%. The bond's arbitrage-free price is closest to:",
+    "options": ["101.86", "103.77", "101.91"],
+    "answer": "C",
+    "explanation": "PV = 6/1.04 + 106/1.05^2 = 5.7692 + 96.1451 = 101.91.",
+    "rationale": {
+      "A": "Incorrect. 101.86 discounts both cash flows at the 5% two-year spot rate instead of using the 4% rate for year 1.",
+      "B": "Incorrect. 103.77 discounts both cash flows at the 4% one-year spot rate.",
+      "C": "Correct. Each cash flow is discounted at its own spot rate, giving 101.91."
+    },
+    "verify": "return 6/1.04 + 106/Math.pow(1.05,2);",
+    "numericAnswer": 101.91,
+    "tolerance": 0.01,
+    "tags": ["spot-rates"]
+  },
+  {
+    "id": "q-cfa1-bond-pricing-and-yields-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "bond-pricing-and-yields",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A 5% semiannual-pay bond (par 100) has exactly 3 years remaining at its last coupon date and a yield to maturity of 6%. Settlement occurs 90 days into a 180-day coupon period (30/360). The flat price is closest to:",
+    "options": ["97.49", "98.74", "97.29"],
+    "answer": "A",
+    "explanation": "PV at last coupon (PMT 2.5, r 3%, N 6) = 97.2914. Full price = 97.2914 × 1.03^0.5 = 98.7400. Accrued interest = 0.5 × 2.5 = 1.25. Flat price = 98.7400 − 1.25 = 97.49.",
+    "rationale": {
+      "A": "Correct. Compounding the last-coupon price forward and subtracting accrued interest gives a flat price of 97.49.",
+      "B": "Incorrect. 98.74 is the full (dirty) price; accrued interest has not been subtracted.",
+      "C": "Incorrect. 97.29 is the price on the last coupon date; it has not been moved forward to settlement."
+    },
+    "verify": "const r=0.03; let pv=0; for(let t=1;t<=6;t++){pv+=2.5/Math.pow(1+r,t);} pv+=100/Math.pow(1+r,6); const full=pv*Math.pow(1+r,90/180); return full-2.5*90/180;",
+    "numericAnswer": 97.49,
+    "tolerance": 0.01,
+    "tags": ["accrued-interest", "full-price"]
+  },
+  {
+    "id": "q-cfa1-bond-pricing-and-yields-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "bond-pricing-and-yields",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A bond is trading at a premium to par. If its yield to maturity stays unchanged, as the bond approaches maturity its price will most likely:",
+    "options": [
+      "Rise further above par",
+      "Remain constant at its current premium",
+      "Decline toward par"
+    ],
+    "answer": "C",
+    "explanation": "With a constant yield, the pull-to-par effect moves a premium bond's price down toward par as fewer above-market coupons remain.",
+    "rationale": {
+      "A": "Incorrect. Fewer remaining above-market coupons means a smaller premium, not a larger one.",
+      "B": "Incorrect. The premium cannot persist because at maturity the bond pays exactly par.",
+      "C": "Correct. A premium bond's price is pulled down to par as maturity approaches."
+    },
+    "tags": ["pull-to-par"]
+  }
+]

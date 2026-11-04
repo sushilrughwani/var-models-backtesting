@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q-cfa1-financial-analysis-techniques-1",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-analysis-techniques",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A company has a net profit margin of 8%, total asset turnover of 1.5 and financial leverage (average assets / average equity) of 2.0. Its return on equity is closest to:",
+    "options": ["12.0%", "11.5%", "24.0%"],
+    "answer": "C",
+    "explanation": "Three-part DuPont: ROE = 8% × 1.5 × 2.0 = 24%.",
+    "rationale": {
+      "A": "Incorrect. 8% × 1.5 = 12% is ROA; it omits the leverage multiplier.",
+      "B": "Incorrect. This adds the components (8 + 1.5 + 2.0) instead of multiplying them.",
+      "C": "Correct. Net margin × asset turnover × leverage = 0.08 × 1.5 × 2.0 = 24%."
+    },
+    "verify": "return 0.08*1.5*2.0*100;",
+    "numericAnswer": 24,
+    "tolerance": 0.05,
+    "tags": ["dupont", "roe"]
+  },
+  {
+    "id": "q-cfa1-financial-analysis-techniques-2",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-analysis-techniques",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A retailer has days sales outstanding of 40, days of inventory on hand of 55 and days payables outstanding of 30. Its cash conversion cycle in days is closest to:",
+    "options": ["65", "125", "15"],
+    "answer": "A",
+    "explanation": "CCC = DSO + DOH − DPO = 40 + 55 − 30 = 65 days.",
+    "rationale": {
+      "A": "Correct. 40 + 55 − 30 = 65 days.",
+      "B": "Incorrect. This adds DPO (40 + 55 + 30). Supplier credit shortens the cycle, so DPO is subtracted.",
+      "C": "Incorrect. This subtracts DOH and adds DPO (40 − 55 + 30), reversing two signs."
+    },
+    "verify": "return 40+55-30;",
+    "numericAnswer": 65,
+    "tolerance": 0.5,
+    "tags": ["cash-conversion-cycle", "activity-ratios"]
+  },
+  {
+    "id": "q-cfa1-financial-analysis-techniques-3",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-analysis-techniques",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Over two years a company's ROE rose from 14% to 18%. Its tax burden, operating margin and asset turnover were unchanged, but its interest burden (EBT/EBIT) fell slightly. The rise in ROE is most likely explained by:",
+    "options": [
+      "Improved cost control",
+      "Higher financial leverage",
+      "A lower effective tax rate"
+    ],
+    "answer": "B",
+    "explanation": "With tax burden, operating margin and turnover flat, the only remaining driver that could raise ROE is leverage. More debt also explains why the interest burden fell (more interest expense).",
+    "rationale": {
+      "A": "Incorrect. Better cost control would raise the operating margin, which was unchanged.",
+      "B": "Correct. Higher assets-to-equity boosts ROE, and the extra debt raises interest cost, lowering the interest burden ratio.",
+      "C": "Incorrect. A lower tax rate would raise the tax burden ratio, which was unchanged."
+    },
+    "tags": ["dupont", "leverage"]
+  },
+  {
+    "id": "q-cfa1-financial-analysis-techniques-4",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "lesson": "financial-analysis-techniques",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Compared with the current ratio, the quick ratio is a more conservative liquidity measure mainly because it:",
+    "options": [
+      "Excludes inventory and prepaid expenses from current assets",
+      "Includes long-term debt in the denominator",
+      "Uses operating cash flow instead of current assets"
+    ],
+    "answer": "A",
+    "explanation": "The quick ratio keeps only cash, marketable securities and receivables in the numerator, dropping less liquid inventory and prepaid items.",
+    "rationale": {
+      "A": "Correct. Removing inventory and prepaids leaves only assets that convert to cash quickly.",
+      "B": "Incorrect. Both ratios use current liabilities as the denominator; long-term debt is a solvency consideration.",
+      "C": "Incorrect. That describes the cash flow ratio, not the quick ratio."
+    },
+    "tags": ["liquidity-ratios"]
+  }
+]

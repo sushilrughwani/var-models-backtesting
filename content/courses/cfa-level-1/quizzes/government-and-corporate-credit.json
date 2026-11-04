@@ -1,0 +1,106 @@
+[
+  {
+    "id": "q-cfa1-government-and-corporate-credit-1",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "government-and-corporate-credit",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Brennick Foods has total debt of USD 900 million, cash of USD 100 million, EBITDA of USD 250 million and EBIT of USD 190 million. Its gross Debt/EBITDA ratio is closest to:",
+    "options": [
+      "3.20×",
+      "4.74×",
+      "3.60×"
+    ],
+    "answer": "C",
+    "explanation": "Debt/EBITDA = 900 / 250 = 3.60×.",
+    "rationale": {
+      "A": "Incorrect. This is net debt/EBITDA, (900 − 100)/250; the question asks for the gross ratio.",
+      "B": "Incorrect. This divides by EBIT instead of EBITDA.",
+      "C": "Correct. 900 / 250 = 3.60×."
+    },
+    "verify": "return 900/250;",
+    "numericAnswer": 3.6,
+    "tolerance": 0.005,
+    "tags": [
+      "leverage-ratios"
+    ]
+  },
+  {
+    "id": "q-cfa1-government-and-corporate-credit-2",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "government-and-corporate-credit",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A company has total debt of USD 900 million and shareholders' equity of USD 600 million. It then borrows an additional USD 150 million to fund a share repurchase of the same amount. Its debt-to-capital ratio after the repurchase is closest to:",
+    "options": [
+      "70.0%",
+      "60.0%",
+      "233.3%"
+    ],
+    "answer": "A",
+    "explanation": "After the transaction, debt = 900 + 150 = 1,050 and equity = 600 − 150 = 450. Debt/capital = 1,050 / (1,050 + 450) = 70.0%.",
+    "rationale": {
+      "A": "Correct. 1,050 / 1,500 = 70.0%; leverage has risen from 60.0%.",
+      "B": "Incorrect. This is the ratio before the transaction, 900/1,500; it ignores both the new debt and the reduced equity.",
+      "C": "Incorrect. This is the debt-to-equity ratio, 1,050/450, not debt to total capital."
+    },
+    "verify": "return 1050/1500*100;",
+    "numericAnswer": 70.0,
+    "tolerance": 0.05,
+    "tags": [
+      "leverage-ratios",
+      "shareholder-payouts"
+    ]
+  },
+  {
+    "id": "q-cfa1-government-and-corporate-credit-3",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "government-and-corporate-credit",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A sovereign issues bonds denominated in its own currency and bonds denominated in US dollars. Compared with its US dollar debt, its local-currency debt most likely has a credit rating that is:",
+    "options": [
+      "lower, because local-currency markets are less liquid",
+      "equal or higher, because the government can tax and create its own currency",
+      "always identical, because both are obligations of the same issuer"
+    ],
+    "answer": "B",
+    "explanation": "A government controls its own currency through taxation and money creation, so it can almost always meet local-currency obligations. Foreign-currency debt requires hard-currency earnings or reserves, so it is generally rated the same or lower.",
+    "rationale": {
+      "A": "Incorrect. Market liquidity does not drive the default-risk distinction; currency control does.",
+      "B": "Correct. Agencies commonly rate local-currency sovereign debt at or above foreign-currency debt.",
+      "C": "Incorrect. Agencies assign separate local- and foreign-currency ratings precisely because the risks differ."
+    },
+    "tags": [
+      "sovereign-credit"
+    ]
+  },
+  {
+    "id": "q-cfa1-government-and-corporate-credit-4",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "lesson": "government-and-corporate-credit",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A city issues two bonds: a general obligation bond and a revenue bond to fund a new convention centre. An analyst evaluating the revenue bond should focus primarily on:",
+    "options": [
+      "the city's tax base, debt per capita and pension liabilities",
+      "the projected net revenue of the convention centre relative to its debt service",
+      "the national government's foreign exchange reserves"
+    ],
+    "answer": "B",
+    "explanation": "Revenue bonds are repaid only from the cash flows of the project they fund, so the analysis resembles corporate credit and centres on the debt service coverage ratio.",
+    "rationale": {
+      "A": "Incorrect. These factors are central to the general obligation bond, which is backed by the city's taxing power.",
+      "B": "Correct. Debt service coverage from project revenues is the key metric for a revenue bond.",
+      "C": "Incorrect. National external liquidity is a sovereign factor and has little direct bearing on a local project's ability to pay."
+    },
+    "tags": [
+      "municipal-bonds",
+      "revenue-bonds"
+    ]
+  }
+]

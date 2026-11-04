@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-equity-securities-overview-1",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "equity-securities-overview",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A company earned net income of USD 15.3 million. Its book equity was USD 80 million at the start of the year and USD 100 million at the end. Return on equity based on average equity is closest to:",
+    "options": ["15.30%", "19.13%", "17.00%"],
+    "answer": "C",
+    "explanation": "Average equity = (80 + 100)/2 = 90. ROE = 15.3/90 = 17.00%.",
+    "rationale": {
+      "A": "Incorrect. This divides by ending equity of 100 rather than average equity.",
+      "B": "Incorrect. This divides by beginning equity of 80 rather than average equity.",
+      "C": "Correct. Net income divided by average equity of 90 is 17.00%."
+    },
+    "verify": "return 15.3/((80+100)/2)*100;",
+    "numericAnswer": 17.0,
+    "tolerance": 0.005,
+    "tags": ["roe"]
+  },
+  {
+    "id": "q-cfa1-equity-securities-overview-2",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "equity-securities-overview",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A stock trades at USD 52. It has just paid an annual dividend of USD 2.00, and dividends are expected to grow at 4% a year indefinitely. The implied cost of equity is closest to:",
+    "options": ["7.85%", "8.00%", "4.00%"],
+    "answer": "B",
+    "explanation": "D1 = 2.00 × 1.04 = 2.08. Cost of equity = 2.08/52 + 0.04 = 0.04 + 0.04 = 8.00%.",
+    "rationale": {
+      "A": "Incorrect. This uses the dividend just paid (D0) instead of next year's dividend (D1).",
+      "B": "Correct. The dividend yield on D1 is 4.00% and adding 4% growth gives 8.00%.",
+      "C": "Incorrect. This is only the growth rate (or only the dividend yield), not their sum."
+    },
+    "verify": "return (2*1.04/52+0.04)*100;",
+    "numericAnswer": 8.0,
+    "tolerance": 0.005,
+    "tags": ["cost-of-equity"]
+  },
+  {
+    "id": "q-cfa1-equity-securities-overview-3",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "equity-securities-overview",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A shareholder owns 1,000 shares of a company that uses cumulative voting. Five board seats are up for election. The maximum number of votes the shareholder can cast for a single candidate is:",
+    "options": ["5,000", "1,000", "200"],
+    "answer": "A",
+    "explanation": "Under cumulative voting, total votes = shares × seats = 1,000 × 5 = 5,000, and all can be cast for one candidate.",
+    "rationale": {
+      "A": "Correct. Cumulative voting allows all 5,000 votes to be concentrated on one candidate.",
+      "B": "Incorrect. 1,000 is the maximum for any one candidate under statutory voting, not cumulative voting.",
+      "C": "Incorrect. This divides shares by seats, which has no meaning in either voting system."
+    },
+    "verify": "return 1000*5;",
+    "numericAnswer": 5000,
+    "tolerance": 0.5,
+    "tags": ["voting-rights"]
+  },
+  {
+    "id": "q-cfa1-equity-securities-overview-4",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "lesson": "equity-securities-overview",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "From the investor's perspective, which type of preference share is most likely to be the least risky, all else equal?",
+    "options": ["Non-cumulative, non-participating", "Common shares with a fixed dividend policy", "Cumulative preference shares"],
+    "answer": "C",
+    "explanation": "With cumulative preference shares, any skipped dividends accrue and must be paid before common shareholders receive anything, which reduces the holder's risk.",
+    "rationale": {
+      "A": "Incorrect. If a dividend on non-cumulative shares is skipped, it is lost for good, so the holder bears more risk.",
+      "B": "Incorrect. Common shares are residual claims and rank below all preference shares, regardless of dividend policy.",
+      "C": "Correct. Accrued unpaid dividends must be paid in full before any common dividend, so the claim is more secure."
+    },
+    "tags": ["preference-shares"]
+  }
+]

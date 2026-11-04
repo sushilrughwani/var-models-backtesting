@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa1-private-capital-1",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "private-capital",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A buyout fund acquires a company with EBITDA of USD 40 million at 8× EBITDA, financed with USD 200 million of debt. After four years EBITDA is 50 million, the company is sold at 9× EBITDA, and debt outstanding is 140 million. Assuming no interim cash flows, the fund's annual IRR on equity is closest to:",
+    "options": ["8.90%", "39.58%", "26.78%"],
+    "answer": "C",
+    "explanation": "Entry EV = 320, entry equity = 320 − 200 = 120. Exit EV = 450, exit equity = 450 − 140 = 310. MOIC = 310/120 = 2.583. IRR = 2.583^(1/4) − 1 = 26.78%.",
+    "rationale": {
+      "A": "Incorrect. 8.90% is the growth in enterprise value (450/320 over four years), ignoring leverage and debt paydown.",
+      "B": "Incorrect. 39.58% divides the total gain (MOIC − 1) by four years, a simple average that ignores compounding.",
+      "C": "Correct. Equity grows from 120 to 310, a 2.583× multiple, which compounds to 26.78% a year over four years."
+    },
+    "verify": "const e0=40*8-200, e1=50*9-140; return (Math.pow(e1/e0,1/4)-1)*100;",
+    "numericAnswer": 26.78,
+    "tolerance": 0.005,
+    "tags": ["lbo", "irr"]
+  },
+  {
+    "id": "q-cfa1-private-capital-2",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "private-capital",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A venture capital fund invests USD 8 million in a start-up in exchange for a 25% ownership stake. The start-up's pre-money valuation (USD millions) is closest to:",
+    "options": ["24.0", "32.0", "10.7"],
+    "answer": "A",
+    "explanation": "Post-money = 8 / 0.25 = 32 million. Pre-money = 32 − 8 = 24 million.",
+    "rationale": {
+      "A": "Correct. Post-money is 32 million; subtracting the new 8 million gives a pre-money value of 24 million.",
+      "B": "Incorrect. 32.0 is the post-money valuation, which includes the new investment.",
+      "C": "Incorrect. 10.7 divides the investment by the founders' 75% share, which has no economic meaning here."
+    },
+    "verify": "const post=8/0.25; return post-8;",
+    "numericAnswer": 24.0,
+    "tolerance": 0.05,
+    "tags": ["venture-capital", "valuation"]
+  },
+  {
+    "id": "q-cfa1-private-capital-3",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "private-capital",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A private equity sponsor wants to exit a portfolio company quickly and confidentially, and believes a strategic buyer will pay a premium for synergies. The most appropriate exit route is:",
+    "options": ["an initial public offering", "a recapitalisation", "a trade sale"],
+    "answer": "C",
+    "explanation": "A trade sale to a strategic buyer is typically fast and private, and the buyer may pay extra for synergies. An IPO is slow, public and market-dependent; a recapitalisation returns cash without a full exit.",
+    "rationale": {
+      "A": "Incorrect. An IPO is lengthy, expensive and very public, and depends on equity market conditions.",
+      "B": "Incorrect. A recapitalisation pays the sponsor a debt-funded dividend but leaves it as the owner, so it is not an exit.",
+      "C": "Correct. A trade sale is quick, confidential and can capture a synergy premium from a strategic buyer."
+    },
+    "tags": ["exit-routes"]
+  },
+  {
+    "id": "q-cfa1-private-capital-4",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "lesson": "private-capital",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which form of private debt is most likely subordinated to senior loans and accompanied by warrants or conversion rights?",
+    "options": ["Mezzanine debt", "Direct lending", "Unitranche debt"],
+    "answer": "A",
+    "explanation": "Mezzanine debt ranks below senior debt and above equity, so it carries a higher yield and often an equity kicker such as warrants.",
+    "rationale": {
+      "A": "Correct. Mezzanine debt is subordinated and commonly includes warrants or conversion features.",
+      "B": "Incorrect. Direct lending is usually senior and secured.",
+      "C": "Incorrect. Unitranche debt combines senior and subordinated debt into one loan at a blended rate; it is not purely subordinated."
+    },
+    "tags": ["private-debt"]
+  }
+]

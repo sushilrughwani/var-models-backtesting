@@ -1,0 +1,98 @@
+[
+  {
+    "id": "q-frm1-governance-of-risk-management-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "governance-of-risk-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Within the three lines of defence model, which group is the third line?",
+    "options": [
+      "The trading and lending business units",
+      "The independent risk management function",
+      "The compliance department",
+      "Internal audit"
+    ],
+    "answer": "D",
+    "explanation": "The first line is the business that takes the risk, the second line is risk management and compliance, and the third line is internal audit, which gives independent assurance to the audit committee.",
+    "rationale": {
+      "A": "Incorrect. Business units take and own risk; they are the first line.",
+      "B": "Incorrect. Risk management provides independent oversight and challenge as the second line.",
+      "C": "Incorrect. Compliance is also part of the second line.",
+      "D": "Correct. Internal audit independently assesses whether the first two lines are working."
+    },
+    "tags": ["three-lines-of-defence"]
+  },
+  {
+    "id": "q-frm1-governance-of-risk-management-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "governance-of-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "At Northfield Securities, the chief risk officer reports to the head of trading and may present to the board risk committee only when the CEO approves. Which change would most improve the effectiveness of risk governance?",
+    "options": [
+      "Give the CRO a direct, standing reporting line to the board risk committee and independence from the business lines",
+      "Move the CRO to report to the head of internal audit",
+      "Ask the head of trading to present risk reports to the board in place of the CRO",
+      "Increase the CRO's bonus link to trading revenue so incentives are aligned with the desk"
+    ],
+    "answer": "A",
+    "explanation": "The CRO must be independent of the risk-takers and have unfiltered access to the board risk committee. The current setup lets the business control what the board hears about risk.",
+    "rationale": {
+      "A": "Correct. Independence from the business and direct board access are the core requirements for an effective CRO.",
+      "B": "Incorrect. Internal audit is the third line and must assess the risk function independently; merging them weakens both.",
+      "C": "Incorrect. This removes the independent voice entirely and lets the risk-taker report on its own risks.",
+      "D": "Incorrect. Tying the CRO's pay to trading revenue undermines independence further."
+    },
+    "tags": ["cro", "board-oversight"]
+  },
+  {
+    "id": "q-frm1-governance-of-risk-management-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "governance-of-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Two years after a trader received a large bonus, the trades that generated it are found to have been mismarked. The bank recovers part of the bonus that was already paid out. This mechanism is best described as:",
+    "options": [
+      "Malus",
+      "Clawback",
+      "Deferral",
+      "A risk limit"
+    ],
+    "answer": "B",
+    "explanation": "Clawback recovers compensation that has already been paid. Malus reduces or cancels awards that have not yet vested. Deferral delays payment; a risk limit caps exposure.",
+    "rationale": {
+      "A": "Incorrect. Malus applies to unvested or unpaid awards, not to money already received.",
+      "B": "Correct. Recovering pay already received is clawback.",
+      "C": "Incorrect. Deferral postpones payment but is not itself a recovery mechanism.",
+      "D": "Incorrect. A risk limit restricts positions; it does not recover compensation."
+    },
+    "tags": ["compensation", "incentives"]
+  },
+  {
+    "id": "q-frm1-governance-of-risk-management-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "governance-of-risk-management",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A board wants to divide oversight work among its committees. Which assignment is most appropriate?",
+    "options": [
+      "The audit committee approves the risk appetite statement and sets trading limits",
+      "The compensation committee oversees the external auditor's independence",
+      "The audit committee oversees financial reporting and internal controls, while the risk committee oversees risk appetite and major exposures",
+      "The risk committee is chaired by the CEO so that it is close to the business"
+    ],
+    "answer": "C",
+    "explanation": "The audit committee focuses on the integrity of financial statements, internal controls and the auditors. The risk committee oversees risk appetite, limits and the risk function. Both should be led by independent directors.",
+    "rationale": {
+      "A": "Incorrect. Risk appetite is a board and risk-committee matter; setting trading limits is management's job within that appetite.",
+      "B": "Incorrect. Auditor independence is an audit committee responsibility; the compensation committee handles pay design.",
+      "C": "Correct. This is the standard split of responsibilities.",
+      "D": "Incorrect. The risk committee should be chaired by an independent director, not by an executive whose decisions it oversees."
+    },
+    "tags": ["board-committees"]
+  }
+]

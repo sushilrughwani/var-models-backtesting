@@ -1,0 +1,89 @@
+[
+  {
+    "id": "q-frm1-banks-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "banks",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bank has total assets of USD 85bn, including loans of USD 50bn yielding 5% and securities of USD 30bn yielding 2.5%; the remaining assets earn nothing. It funds itself with deposits of USD 60bn at 1% and other borrowings of USD 12bn at 3.5%. The bank's net interest margin on total assets is closest to:",
+    "options": ["3.82%", "2.62%", "1.20%", "2.79%"],
+    "answer": "B",
+    "explanation": "Interest income = 50 × 5% + 30 × 2.5% = 3.25bn. Interest expense = 60 × 1% + 12 × 3.5% = 1.02bn. NII = 2.23bn. NIM = 2.23 / 85 = 2.62%.",
+    "rationale": {
+      "A": "Incorrect. 3.82% is interest income divided by assets; interest expense has not been subtracted.",
+      "B": "Correct. NII of 2.23bn divided by total assets of 85bn gives 2.62%.",
+      "C": "Incorrect. 1.20% is interest expense divided by assets, i.e. the funding cost ratio, not the margin.",
+      "D": "Incorrect. 2.79% divides NII by the 80bn of earning assets, but the question asks for the margin on total assets."
+    },
+    "verify": "const ii=50*0.05+30*0.025, ie=60*0.01+12*0.035; return (ii-ie)/85*100;",
+    "numericAnswer": 2.62,
+    "tolerance": 0.005,
+    "tags": ["net-interest-margin"]
+  },
+  {
+    "id": "q-frm1-banks-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "banks",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank has total assets of USD 100bn and equity of USD 6bn. A severe recession causes unexpected credit losses equal to 1.5% of total assets. Ignoring taxes and any offsetting profits, the percentage decline in the bank's equity is closest to:",
+    "options": ["1.5%", "6.0%", "18.8%", "25.0%"],
+    "answer": "D",
+    "explanation": "The loss is 1.5% × 100bn = 1.5bn. Equity falls by 1.5 / 6 = 25%. Leverage of about 16.7× magnifies a 1.5% asset loss into a 25% equity loss.",
+    "rationale": {
+      "A": "Incorrect. 1.5% is the loss as a share of assets; it ignores the leverage effect on equity.",
+      "B": "Incorrect. 6.0% is the equity-to-assets ratio, not the decline in equity.",
+      "C": "Incorrect. 18.8% applies a 25% tax shield to the loss, but the question says to ignore taxes.",
+      "D": "Correct. A 1.5bn loss against 6bn of equity is a 25% decline."
+    },
+    "verify": "return 0.015*100/6*100;",
+    "numericAnswer": 25.0,
+    "tolerance": 0.05,
+    "tags": ["leverage", "capital"]
+  },
+  {
+    "id": "q-frm1-banks-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "banks",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An issuer wants to raise equity with no risk that it receives less than an agreed price per share. Which arrangement with an investment bank achieves this?",
+    "options": ["A firm commitment underwriting", "A best-efforts underwriting", "A Dutch auction IPO", "A private placement on a best-efforts basis"],
+    "answer": "A",
+    "explanation": "In a firm commitment the bank buys the entire issue from the issuer at an agreed price and then resells it, so the bank, not the issuer, bears the price risk.",
+    "rationale": {
+      "A": "Correct. The bank guarantees the price by purchasing the whole issue and bearing the resale risk.",
+      "B": "Incorrect. Under best efforts the bank only sells what it can for a fee; the issuer bears the risk of a low price or unsold shares.",
+      "C": "Incorrect. In a Dutch auction the price is set by investor bids, so the issuer does not know the price in advance.",
+      "D": "Incorrect. A best-efforts private placement still leaves the issuer exposed to the price investors are willing to pay."
+    },
+    "tags": ["investment-banking", "underwriting"]
+  },
+  {
+    "id": "q-frm1-banks-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "banks",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement best describes the moral hazard created by deposit insurance?",
+    "options": [
+      "Insured depositors run on banks more often because they know they will be repaid",
+      "Banks must hold more capital, which lowers their return on equity",
+      "Insured depositors have little reason to monitor their bank, so the bank can take more risk without paying higher deposit rates",
+      "Deposit insurance forces banks to move loans off the balance sheet through securitisation"
+    ],
+    "answer": "C",
+    "explanation": "Because insured deposits are safe regardless of the bank's risk, depositors stop demanding compensation for risk. The bank keeps the upside of risky lending while the insurer bears much of the downside.",
+    "rationale": {
+      "A": "Incorrect. Deposit insurance reduces, not increases, the incentive to run.",
+      "B": "Incorrect. Capital requirements are a response to moral hazard, not the moral hazard itself.",
+      "C": "Correct. Weaker market discipline from depositors is the core moral hazard problem.",
+      "D": "Incorrect. Securitisation is driven by capital and funding motives (originate-to-distribute), not by deposit insurance."
+    },
+    "tags": ["deposit-insurance", "moral-hazard"]
+  }
+]

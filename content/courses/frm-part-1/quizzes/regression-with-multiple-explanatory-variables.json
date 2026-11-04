@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-regression-with-multiple-explanatory-variables-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "regression-with-multiple-explanatory-variables",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A regression of a bank's quarterly loan-loss rate on four macroeconomic variables, estimated with 50 observations, has an R-squared of 0.30. The adjusted R-squared is closest to:",
+    "options": ["0.2543", "0.2378", "0.3000", "0.2205"],
+    "answer": "B",
+    "explanation": "Adjusted R² = 1 − (1 − R²)(n − 1)/(n − k − 1) = 1 − 0.70 × 49/45 = 1 − 0.7622 = 0.2378.",
+    "rationale": {
+      "A": "Incorrect. 0.2543 uses n − k = 46 in the denominator, forgetting the degree of freedom used by the intercept.",
+      "B": "Correct. 1 − 0.70 × 49/45 = 0.2378.",
+      "C": "Incorrect. 0.30 is the unadjusted R-squared; it ignores the penalty for the four regressors.",
+      "D": "Incorrect. 0.2205 uses n − k − 2 = 44, subtracting one degree of freedom too many."
+    },
+    "verify": "const n=50,k=4,r2=0.30; return 1-(1-r2)*(n-1)/(n-k-1);",
+    "numericAnswer": 0.2378,
+    "tolerance": 0.0001,
+    "tags": ["adjusted-r-squared", "multiple-regression"]
+  },
+  {
+    "id": "q-frm1-regression-with-multiple-explanatory-variables-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "regression-with-multiple-explanatory-variables",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An analyst estimates a five-regressor model of hedge fund returns with 80 monthly observations and obtains R² = 0.50. Dropping three of the regressors gives R² = 0.46. The F-statistic for testing whether the three dropped coefficients are jointly zero is closest to:",
+    "options": ["5.92", "1.83", "1.97", "24.67"],
+    "answer": "C",
+    "explanation": "F = [(R²U − R²R)/q] / [(1 − R²U)/(n − kU − 1)] = (0.04/3)/(0.50/74) = 0.013333/0.006757 = 1.97. This is below the 5% critical value F(3,74) ≈ 2.73, so the three variables are not jointly significant.",
+    "rationale": {
+      "A": "Incorrect. 5.92 forgets to divide the increase in R² by the number of restrictions q = 3.",
+      "B": "Incorrect. 1.83 uses the restricted model's 1 − R² (0.54) in the denominator instead of the unrestricted model's 0.50.",
+      "C": "Correct. (0.04/3)/(0.50/74) = 1.97.",
+      "D": "Incorrect. 24.67 puts the unrestricted R² itself (0.50) in the numerator, which is the overall F-test logic, not the test of the three restrictions."
+    },
+    "verify": "const n=80,k=5,ru=0.50,rr=0.46,q=3; return ((ru-rr)/q)/((1-ru)/(n-k-1));",
+    "numericAnswer": 1.97,
+    "tolerance": 0.005,
+    "tags": ["f-test", "joint-hypothesis"]
+  },
+  {
+    "id": "q-frm1-regression-with-multiple-explanatory-variables-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "regression-with-multiple-explanatory-variables",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A regression of corporate bond spreads on leverage and on interest coverage has an R² of 0.78 and a highly significant F-statistic, yet neither slope has a t-statistic above 1.5. The correlation between leverage and interest coverage is −0.95. Which statement is most accurate?",
+    "options": ["Multicollinearity is inflating the standard errors; the slope estimates remain unbiased", "Multicollinearity is biasing both slope estimates toward zero", "The F-test must be wrong because at least one t-statistic should be significant", "Heteroskedasticity is the most likely cause, so robust standard errors will restore significance"],
+    "answer": "A",
+    "explanation": "High R² and a significant F together with weak individual t-statistics is the textbook symptom of multicollinearity. Highly correlated regressors make it hard to separate their individual effects, which inflates standard errors, but OLS remains unbiased.",
+    "rationale": {
+      "A": "Correct. Correlated regressors inflate the variance of each estimate without introducing bias.",
+      "B": "Incorrect. Multicollinearity does not bias OLS; it makes the estimates imprecise.",
+      "C": "Incorrect. Joint significance with individual insignificance is perfectly possible when regressors move together.",
+      "D": "Incorrect. Heteroskedasticity concerns the error variance, not correlation between regressors, and robust standard errors do not cure multicollinearity."
+    },
+    "tags": ["multicollinearity"]
+  },
+  {
+    "id": "q-frm1-regression-with-multiple-explanatory-variables-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "regression-with-multiple-explanatory-variables",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A simple regression of a stock's return on the market return gives a slope of 1.30. After adding a size factor that is positively correlated with the market and has a positive effect on the stock, the market slope falls to 1.05. The best explanation is that:",
+    "options": ["the first regression was correctly specified and the second suffers from multicollinearity", "adding any regressor mechanically reduces existing slopes", "the market slope now measures the total effect of the market including its link to size", "the original slope partly captured the omitted size effect; 1.05 is the partial effect holding size constant"],
+    "answer": "D",
+    "explanation": "In multiple regression each slope is a partial effect. When the correlated, relevant size factor was omitted, the market slope absorbed part of its influence. Including it lets the market slope measure the effect of the market with size held fixed.",
+    "rationale": {
+      "A": "Incorrect. Omitting a relevant correlated variable is the bigger problem; the first model's slope was distorted by it.",
+      "B": "Incorrect. Slopes change only when the new regressor is correlated with existing ones; the direction depends on the correlations and effects.",
+      "C": "Incorrect. It is the simple regression slope that mixes in the size link; the multiple regression slope holds size constant.",
+      "D": "Correct. The drop from 1.30 to 1.05 removes the part of the size effect that the market slope had been picking up."
+    },
+    "tags": ["partial-effect", "interpretation"]
+  }
+]

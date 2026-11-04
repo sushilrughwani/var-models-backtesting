@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-cfa1-binomial-valuation-1",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "binomial-valuation",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "In a one-period binomial model, the up factor is 1.15, the down factor is 0.90 and the risk-free rate per period is 3%. The risk-neutral probability of an up move is closest to:",
+    "options": ["0.48", "0.52", "0.50"],
+    "answer": "B",
+    "explanation": "π = (1 + r − d)/(u − d) = (1.03 − 0.90)/(1.15 − 0.90) = 0.13/0.25 = 0.52.",
+    "rationale": {
+      "A": "Incorrect. 0.48 is the risk-neutral probability of a down move, 1 − π.",
+      "B": "Correct. 0.13 / 0.25 = 0.52.",
+      "C": "Incorrect. 0.50 assumes equal probabilities instead of computing them from u, d and r."
+    },
+    "verify": "return (1.03-0.9)/(1.15-0.9);",
+    "numericAnswer": 0.52,
+    "tolerance": 0.005,
+    "tags": ["risk-neutral-probability"]
+  },
+  {
+    "id": "q-cfa1-binomial-valuation-2",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "binomial-valuation",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A share trades at USD 100. In one year it will be either USD 120 or USD 90. The annual risk-free rate is 4%. Using a one-period binomial model, the value of a one-year European call with an exercise price of USD 100 is closest to:",
+    "options": ["USD 9.33", "USD 9.62", "USD 8.97"],
+    "answer": "C",
+    "explanation": "u = 1.20, d = 0.90. π = (1.04 − 0.90)/(1.20 − 0.90) = 0.4667. c+ = 20, c− = 0. c0 = 0.4667 × 20 / 1.04 = 8.97.",
+    "rationale": {
+      "A": "Incorrect. 9.33 is the risk-neutral expected payoff before discounting at the risk-free rate.",
+      "B": "Incorrect. 9.62 uses a 50% probability of an up move instead of the risk-neutral probability.",
+      "C": "Correct. 0.4667 × 20 / 1.04 = 8.97."
+    },
+    "verify": "const q=(1.04-0.9)/(1.2-0.9); return q*20/1.04;",
+    "numericAnswer": 8.97,
+    "tolerance": 0.01,
+    "tags": ["binomial-call"]
+  },
+  {
+    "id": "q-cfa1-binomial-valuation-3",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "binomial-valuation",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Using the same tree (share at USD 100 moving to USD 120 or USD 90) and a call with an exercise price of USD 100, the number of shares that must be bought per call written to form a riskless portfolio is closest to:",
+    "options": ["0.67", "0.47", "1.50"],
+    "answer": "A",
+    "explanation": "h = (c+ − c−)/(S+ − S−) = (20 − 0)/(120 − 90) = 0.67 shares per call.",
+    "rationale": {
+      "A": "Correct. 20 / 30 = 0.67.",
+      "B": "Incorrect. 0.47 is the risk-neutral probability of an up move, not the hedge ratio.",
+      "C": "Incorrect. 1.50 inverts the ratio (change in share price divided by change in option value)."
+    },
+    "verify": "return (20-0)/(120-90);",
+    "numericAnswer": 0.67,
+    "tolerance": 0.005,
+    "tags": ["hedge-ratio"]
+  },
+  {
+    "id": "q-cfa1-binomial-valuation-4",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "lesson": "binomial-valuation",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "In a one-period binomial model, an analyst raises her estimate of the real-world probability that the share price will rise, while the current share price, the up and down factors and the risk-free rate are unchanged. The no-arbitrage value of a call option will most likely:",
+    "options": [
+      "increase, because the call pays off in the up state",
+      "remain unchanged",
+      "decrease, because the risk-neutral probability falls"
+    ],
+    "answer": "B",
+    "explanation": "The option is priced by replication using the share and a risk-free bond. Its value depends on S0, u, d, r and X, not on real-world probabilities, which are already reflected in the current share price.",
+    "rationale": {
+      "A": "Incorrect. Real-world probabilities do not enter the no-arbitrage valuation; only the risk-neutral probability does.",
+      "B": "Correct. With S0, u, d and r unchanged, the risk-neutral probability and the replicating portfolio are unchanged, so the call value is unchanged.",
+      "C": "Incorrect. The risk-neutral probability depends only on u, d and r, none of which has changed."
+    },
+    "tags": ["risk-neutral-valuation"]
+  }
+]

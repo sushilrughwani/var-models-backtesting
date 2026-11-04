@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm1-risk-management-building-blocks-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-management-building-blocks",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bank lends USD 25 million to a borrower with a one-year probability of default of 1.5% and an expected recovery rate of 35%. The one-year expected loss on the loan is closest to:",
+    "options": ["USD 131,250", "USD 243,750", "USD 375,000", "USD 1,975,227"],
+    "answer": "B",
+    "explanation": "LGD = 1 - 0.35 = 0.65. EL = PD × LGD × EAD = 0.015 × 0.65 × 25,000,000 = 243,750.",
+    "rationale": {
+      "A": "Incorrect. This uses the recovery rate (35%) in place of the loss given default (65%).",
+      "B": "Correct. EL = 0.015 × 0.65 × 25,000,000 = USD 243,750.",
+      "C": "Incorrect. This ignores recoveries entirely, implicitly assuming LGD = 100%.",
+      "D": "Incorrect. This is the unexpected loss EAD × LGD × √(PD(1 − PD)), not the expected loss."
+    },
+    "verify": "const ead=25e6,pd=0.015,rr=0.35; return pd*(1-rr)*ead;",
+    "numericAnswer": 243750,
+    "tolerance": 1,
+    "tags": ["expected-loss", "credit-risk"]
+  },
+  {
+    "id": "q-frm1-risk-management-building-blocks-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-management-building-blocks",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio's one-year loss distribution (USD millions) is: 0 with probability 0.85, 1 with 0.09, 4 with 0.04, 10 with 0.015 and 25 with 0.005. Defining unexpected loss as the 99% loss quantile minus expected loss, the unexpected loss is closest to (USD millions):",
+    "options": ["3.48", "0.53", "10.00", "9.48"],
+    "answer": "D",
+    "explanation": "EL = 1(0.09) + 4(0.04) + 10(0.015) + 25(0.005) = 0.525. Cumulative probabilities are 0.85, 0.94, 0.98, 0.995, 1.00, so the first loss with cumulative probability of at least 0.99 is 10. UL = 10 - 0.525 = 9.475 ≈ 9.48.",
+    "rationale": {
+      "A": "Incorrect. This uses a loss of 4 as the quantile, but its cumulative probability is only 0.98, below 0.99.",
+      "B": "Incorrect. 0.53 is the expected loss, not the unexpected loss.",
+      "C": "Incorrect. 10 is the 99% quantile itself; expected loss must be subtracted.",
+      "D": "Correct. UL = 10 - 0.525 = 9.475, about 9.48 million."
+    },
+    "verify": "const L=[0,1,4,10,25],p=[0.85,0.09,0.04,0.015,0.005]; let el=0; for(let i=0;i<5;i++) el+=L[i]*p[i]; let c=0,q=0; for(let i=0;i<5;i++){c+=p[i]; if(c>=0.99-1e-12){q=L[i];break;}} return q-el;",
+    "numericAnswer": 9.48,
+    "tolerance": 0.006,
+    "tags": ["unexpected-loss", "economic-capital"]
+  },
+  {
+    "id": "q-frm1-risk-management-building-blocks-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-management-building-blocks",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A consumer lender wants to decide how each part of its credit loss distribution should be absorbed. Which allocation is most appropriate?",
+    "options": [
+      "Expected loss is covered by pricing and provisions; unexpected loss is covered by capital",
+      "Expected loss is covered by capital; unexpected loss is covered by pricing",
+      "Both expected and unexpected loss are covered entirely by loan pricing",
+      "Unexpected loss is covered by provisions; expected loss needs no coverage because it is predictable"
+    ],
+    "answer": "A",
+    "explanation": "Because expected loss is predictable it is built into loan spreads and provisioned. Capital is the buffer for losses above that average, that is, unexpected loss.",
+    "rationale": {
+      "A": "Correct. EL is a cost of doing business priced into products; capital absorbs deviations above EL.",
+      "B": "Incorrect. This reverses the roles; holding capital for a predictable cost while pricing for random shocks is backwards.",
+      "C": "Incorrect. Pricing cannot reliably cover rare, large deviations; that is the job of capital.",
+      "D": "Incorrect. Predictable losses still need to be covered; they are provisioned, and UL is covered by capital, not provisions."
+    },
+    "tags": ["expected-loss", "unexpected-loss", "capital"]
+  },
+  {
+    "id": "q-frm1-risk-management-building-blocks-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-management-building-blocks",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A risk committee is assessing a planned entry into a market for a brand-new product type with no trading history and no comparable products. Which statement best describes this exposure?",
+    "options": [
+      "It is pure market risk, so a historical VaR model is the right primary tool",
+      "It is expected loss, so it should be priced into the product and ignored thereafter",
+      "It is closer to uncertainty than risk, so judgement, scenarios and extra buffers should supplement any model",
+      "It is operational risk only, because there is no price history"
+    ],
+    "answer": "C",
+    "explanation": "With no history and no comparables, probabilities cannot be estimated credibly. That is uncertainty rather than measurable risk, where models are weak and judgement, scenario analysis and conservative buffers matter most.",
+    "rationale": {
+      "A": "Incorrect. A historical model needs history, which by assumption does not exist.",
+      "B": "Incorrect. Expected loss requires a reliable estimate of the average loss, which cannot be made here.",
+      "C": "Correct. Unknown probabilities define uncertainty; models must be supplemented by judgement and buffers.",
+      "D": "Incorrect. Lack of price history does not turn the exposure into operational risk; the issue is the inability to assign probabilities."
+    },
+    "tags": ["risk-vs-uncertainty"]
+  }
+]
