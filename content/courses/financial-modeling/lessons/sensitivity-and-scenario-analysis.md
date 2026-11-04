@@ -47,7 +47,7 @@ Northwind Components Ltd, base case from the previous lessons: FCFF 108.75, 119.
 
 **Part A - Two-way table (USD per share).**
 
-| WACC \ g | 1.5% | 2.0% | 2.5% | 3.0% | 3.5% |
+| WACC (rows) / g (columns) | 1.5% | 2.0% | 2.5% | 3.0% | 3.5% |
 |---|---|---|---|---|---|
 | 8.0% | 33.43 | 35.94 | 38.92 | 42.48 | 46.84 |
 | 8.5% | 30.67 | 32.79 | 35.26 | 38.18 | 41.68 |
@@ -55,7 +55,7 @@ Northwind Components Ltd, base case from the previous lessons: FCFF 108.75, 119.
 | 9.5% | 26.20 | 27.74 | 29.51 | 31.55 | 33.93 |
 | 10.0% | 24.35 | 25.70 | 27.21 | 28.95 | 30.95 |
 
-Check one cell by hand: at WACC 8.5% and g 2.5%, PV of forecast FCFF = 502.16 and TV = 145.75 × 1.025 / 0.06 = 2,489.90, with PV 1,655.89; EV = 2,158.06. Equity = 2,158.06 − 313 = 1,845.06; price = (1,845.06 + 80) / 54.6 = 35.26. Value is far more sensitive to WACC than to growth at the low-WACC end, and the market price of 27.50 is only reached at a WACC near 10%.
+Check one cell by hand: at WACC 8.5% and g 2.5%, PV of forecast FCFF = 502.16 and TV = 145.75 × 1.025 / 0.06 = 2,489.90, with PV 1,655.89; EV = 2,158.06. Equity = 2,158.06 − 313 = 1,845.06; price = (1,845.06 + 80) / 54.6 = 35.26. Value becomes most sensitive toward the top-right corner, where WACC minus g is smallest, and the market price of 27.50 is only reached at a WACC near 10%.
 
 **Part B - Scenarios.**
 

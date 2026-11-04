@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-fm-sensitivity-and-scenario-analysis-1",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "sensitivity-and-scenario-analysis",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind Components Ltd's scenario values per share are USD 26.09 (downside), 32.16 (base) and 37.59 (upside). The analyst assigns probabilities of 20%, 50% and 30% respectively. The probability-weighted value per share is closest to:",
+    "options": ["USD 31.95", "USD 32.58", "USD 31.43", "USD 32.16"],
+    "answer": "B",
+    "explanation": "0.20 × 26.09 + 0.50 × 32.16 + 0.30 × 37.59 = 5.218 + 16.08 + 11.277 = 32.58.",
+    "rationale": {
+      "A": "Incorrect. 31.95 is the simple average, which ignores the probabilities.",
+      "B": "Correct. Multiply each value by its probability and sum.",
+      "C": "Incorrect. 31.43 swaps the downside and upside probabilities.",
+      "D": "Incorrect. 32.16 is the base case only."
+    },
+    "verify": "return 0.2*26.09+0.5*32.16+0.3*37.59;",
+    "numericAnswer": 32.58,
+    "tolerance": 0.01,
+    "tags": ["scenario-analysis", "expected-value"]
+  },
+  {
+    "id": "q-fm-sensitivity-and-scenario-analysis-2",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "sensitivity-and-scenario-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In Northwind's downside scenario the EBIT margin falls by 1.5 percentage points with revenue unchanged. Base 2026 figures (USD millions): revenue 1,250, EBIT 175, D&A 44, capex 56, increase in NWC 10.5; tax rate 25%. Downside 2026 FCFF is closest to:",
+    "options": ["USD 90.00 million", "USD 106.78 million", "USD 108.75 million", "USD 94.69 million"],
+    "answer": "D",
+    "explanation": "Downside EBIT = 175 − 0.015 × 1,250 = 156.25. NOPAT = 117.19. FCFF = 117.19 + 44 − 56 − 10.5 = 94.69.",
+    "rationale": {
+      "A": "Incorrect. 90.00 deducts the full 18.75 pre-tax margin loss from FCFF, ignoring the tax saving.",
+      "B": "Incorrect. 106.78 cuts EBIT by 1.5% of EBIT instead of 1.5 points of revenue.",
+      "C": "Incorrect. 108.75 is the base-case FCFF.",
+      "D": "Correct. The margin cut reduces EBIT by 18.75 and FCFF by 14.06 after tax."
+    },
+    "verify": "const ebit=175-0.015*1250; return ebit*0.75+44-56-10.5;",
+    "numericAnswer": 94.69,
+    "tolerance": 0.005,
+    "tags": ["scenario-analysis", "fcff"]
+  },
+  {
+    "id": "q-fm-sensitivity-and-scenario-analysis-3",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "sensitivity-and-scenario-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Northwind's FCFF for 2026-2030 is 108.75, 119.75, 132.00, 138.50 and 145.75 (USD millions). For one cell of a sensitivity table, WACC is 8.5% and terminal growth is 2.5%, with year-end discounting from today. Enterprise value is closest to:",
+    "options": ["USD 2,151 million", "USD 2,120 million", "USD 2,158 million", "USD 1,989 million"],
+    "answer": "C",
+    "explanation": "PV of FCFF at 8.5% = 502.16. TV = 145.75 × 1.025 / 0.06 = 2,489.90; PV = 2,489.90 / 1.085^5 = 1,655.89. EV = 2,158.06.",
+    "rationale": {
+      "A": "Incorrect. 2,151 discounts the forecast cash flows at the old 9.0% WACC and only the TV at 8.5%.",
+      "B": "Incorrect. 2,120 computes the TV at 8.5% but discounts it back at 9.0%.",
+      "C": "Correct. Every discounting step and the TV denominator use 8.5%.",
+      "D": "Incorrect. 1,989 is the base case at 9.0% WACC."
+    },
+    "verify": "const f=[108.75,119.75,132,138.5,145.75],w=0.085,g=0.025; let pv=0; f.forEach((x,i)=>{pv+=x/Math.pow(1+w,i+1);}); return pv+f[4]*(1+g)/(w-g)/Math.pow(1+w,5);",
+    "numericAnswer": 2158,
+    "tolerance": 0.5,
+    "tags": ["sensitivity", "dcf"]
+  },
+  {
+    "id": "q-fm-sensitivity-and-scenario-analysis-4",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "sensitivity-and-scenario-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst builds a two-way data table with terminal growth rates across the top row and WACC values down the left column. How should the Data Table dialog be completed?",
+    "options": [
+      "Row input cell: the terminal growth input; column input cell: the WACC input",
+      "Row input cell: the WACC input; column input cell: the terminal growth input",
+      "Row input cell: the value-per-share output; column input cell: blank",
+      "Either way round, because Excel detects which input is which"
+    ],
+    "answer": "A",
+    "explanation": "The row input cell is the model input that the values along the top row replace; the column input cell is the input that the values down the side replace.",
+    "rationale": {
+      "A": "Correct. Values across the top feed the row input cell, values down the side feed the column input cell.",
+      "B": "Incorrect. This swaps the inputs and produces a wrong, transposed table without any error message.",
+      "C": "Incorrect. The output link goes in the table's top-left corner, not in the input cell boxes.",
+      "D": "Incorrect. Excel does not detect the mapping; a swap silently gives wrong values."
+    },
+    "tags": ["data-table", "excel"]
+  }
+]
