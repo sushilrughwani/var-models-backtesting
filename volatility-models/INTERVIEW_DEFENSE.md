@@ -1,6 +1,6 @@
 # INTERVIEW DEFENSE
 
-> **Status:** answers that depend on this project's real results contain **⟨pending⟩** slots. Yahoo Finance was blocked in the environment where the code was built, so no real-data run exists yet. Fill each slot from `outputs/key_results.json` and the CSV named in brackets after running `python main.py`. Numbers already shown come from executed code (tests or `src/worked_examples.py`).
+> All numbers come from the real-data run of `python main.py` on 2026-11-04 (data 2015-01-01 → 2026-11-04). The source file is named in brackets after each number. Toy-example numbers come from `src/worked_examples.py`. Asset order in lists is NIFTY50 / SP500 / RELIANCE.
 
 ---
 
@@ -22,15 +22,16 @@ Dividends and splits create price jumps that are not investment returns. Adjuste
 
 Rows with missing or non-positive prices, or with `High == Low` (stale quotes), are dropped.
 
-- Dropped per asset: NIFTY50 ⟨pending⟩, SP500 ⟨pending⟩, RELIANCE ⟨pending⟩ [`data_cleaning.csv`]
+- Dropped per asset: NIFTY50 0, SP500 0, RELIANCE 2 (both `High == Low`) [`data_cleaning.csv`]
+- Clean returns: 2,914 / 2,976 / 2,921 days
 
 ---
 
 **4. What are the stylized facts, and what did you find?**
 
-- **Fat tails:** excess kurtosis ⟨pending⟩ / ⟨pending⟩ / ⟨pending⟩; Jarque–Bera p ≈ ⟨pending⟩.
-- **Clustering:** Ljung–Box(20) on $r^2$ has Q = ⟨pending⟩ against ⟨pending⟩ for $r$.
-- **Leverage:** corr($r_t$, $r_{t+1}^2$) = ⟨pending⟩.
+- **Fat tails:** excess kurtosis 19.6 / 15.9 / 8.5; skewness −1.29 / −0.64 / +0.17; Jarque–Bera = 47,200 / 31,567 / 8,779, p ≈ 0 for all three.
+- **Clustering:** Ljung–Box(20) on $r^2$ has Q = 2,009 / 3,706 / 1,468, against 94 / 288 / 40 for $r$. Squared returns are 7–37 times more autocorrelated.
+- **Leverage:** corr($r_t$, $|r_{t+1}|$) = −0.050 / −0.120 / −0.010, negative for all three. corr($r_t$, $r_{t+1}^2$) = +0.048 / −0.078 / +0.025, negative only for SP500 (see Q8).
 
 [`stylized_facts.csv`, `ljung_box.csv`]
 
@@ -38,13 +39,15 @@ Rows with missing or non-positive prices, or with `High == Low` (stale quotes), 
 
 **5. Make "fat tails" concrete.**
 
-Under a normal distribution, a 4σ day happens once in about 15,787 days (about 63 years). The data show ⟨pending⟩ such days for SP500 against ⟨pending⟩ expected [`stylized_facts.csv`: `obs_4sigma_days`, `exp_4sigma_days_normal`].
+Under a normal distribution, a 4σ day happens once in about 15,787 days (about 63 years). The data show 22 such days for SP500 against 0.19 expected (NIFTY50: 16 vs 0.18; RELIANCE: 18 vs 0.19), about 100 times more than a normal distribution allows [`stylized_facts.csv`: `obs_4sigma_days`, `exp_4sigma_days_normal`].
 
 ---
 
 **6. Why are returns nearly uncorrelated while squared returns are strongly correlated?**
 
 Markets are close to efficient in the direction of moves, but not in their size. Information arrives in bursts, and uncertainty regimes persist. So the size of moves (volatility) is forecastable even though the sign is not.
+
+Honest caveat from the data: with about 2,900 days, Ljung–Box also rejects for raw returns (Q(20) = 94 / 288 / 40, p < 0.01). The autocorrelations are small, mostly crisis-period reversals, and economically tiny compared with the $r^2$ values of Q = 1,468–3,706.
 
 ---
 
@@ -61,7 +64,9 @@ Negative returns raise future volatility more than positive returns of the same 
 - **Financial leverage:** a lower share price means a higher debt/equity ratio, so riskier equity.
 - **Volatility feedback:** expected higher risk forces prices down.
 
-Measured as a negative corr($r_t$, $r_{t+1}^2$).
+**In this data:** corr($r_t$, $|r_{t+1}|$) is negative for all three assets (−0.050 / −0.120 / −0.010). corr($r_t$, $r_{t+1}^2$) is negative only for SP500 (−0.078) and slightly positive for NIFTY50 (+0.048) and RELIANCE (+0.025).
+
+The reason is that squaring makes the correlation hostage to a few extreme days. In March 2020, huge down days were followed by huge rebound days, which pushes the correlation positive. The absolute-value version and the GJR γ, which is significant for all three assets (Q30), are the more robust evidence. A good interview answer is to say you checked the measure and explain why the two disagree.
 
 ---
 
@@ -78,13 +83,19 @@ A single σ under-states risk exactly when it matters (turbulent regimes) and ov
 - **Short (20d):** reacts fast, but has few observations, so it is noisy.
 - **Long (252d):** smooth, but slow to react.
 
-Measured as the average absolute daily change of annualised vol: 20d ⟨pending⟩ vs 252d ⟨pending⟩ for SP500 [`key_results.json → historical`].
+Measured as the average absolute daily change of annualised vol, for SP500:
+
+- 20d: 0.58 percentage points per day
+- 60d: 0.22
+- 252d: 0.059, about 10 times smoother
+
+[`key_results.json → historical`]
 
 ---
 
 **11. What is the ghost effect?**
 
-With equal weights, one extreme day keeps the estimate high for exactly N days. The estimate then drops abruptly when that day leaves the window, although nothing happened in the market on the drop day. In the data, the largest shock (SP500 on ⟨pending⟩, return ⟨pending⟩) exits the 60-day window 60 trading days later (chart `05_hist_vol_SP500.png`).
+With equal weights, one extreme day keeps the estimate high for exactly N days. The estimate then drops abruptly when that day leaves the window, although nothing happened in the market on the drop day. In the data, the largest shock (SP500 on 2020-03-16, return −12.77%) exits the 60-day window 60 trading days later (chart `05_hist_vol_SP500.png`).
 
 ---
 
@@ -145,8 +156,8 @@ By maximum likelihood. Under normal errors, $\ln L = -\frac12\sum[\ln2\pi + \ln\
 
 With the same backcast, `arch` matches the manual version:
 
-- max parameter difference ⟨pending⟩
-- log-likelihood difference ⟨pending⟩
+- max parameter difference 4×10⁻⁶ (SP500 α: 0.155071 vs 0.155074)
+- log-likelihood difference below 10⁻⁶
 
 [`garch_manual_vs_arch.csv`]. On simulated data the difference is below 5e-3 (test).
 
@@ -166,19 +177,19 @@ Taking expectations, $V = \omega + (\alpha+\beta)V$, so $V = \omega/(1-\alpha-\b
 
 **21. What persistence did you find, and what does it mean?**
 
-α + β = ⟨pending⟩ (NIFTY50), ⟨pending⟩ (SP500), ⟨pending⟩ (RELIANCE) [`garch_summary.csv`: `normal_persistence`]. Close to 1 means volatility shocks decay slowly.
+α + β = 0.976 (NIFTY50), 0.964 (SP500), 0.948 (RELIANCE) [`garch_summary.csv`: `normal_persistence`]. Close to 1 means volatility shocks decay slowly.
 
 ---
 
 **22. What is the half-life?**
 
-$\ln0.5/\ln(\alpha+\beta)$ = ⟨pending⟩ / ⟨pending⟩ / ⟨pending⟩ trading days. It is the time for half of a variance shock (relative to $V_L$) to disappear.
+$\ln0.5/\ln(\alpha+\beta)$ = 28.6 / 18.9 / 13.1 trading days. It is the time for half of a variance shock (relative to $V_L$) to disappear.
 
 ---
 
 **23. What are the long-run variance and vol?**
 
-$V_L = \omega/(1-\alpha-\beta)$. Annualised long-run vol is ⟨pending⟩ / ⟨pending⟩ / ⟨pending⟩ [`normal_long_run_annual_vol`]. Compare it with the sample vol ⟨pending⟩ [`stylized_facts.csv`: `vol_annual`]: they should be close if the model fits well.
+$V_L = \omega/(1-\alpha-\beta)$. Annualised long-run vol is 15.8% / 16.6% / 26.6% [`normal_long_run_annual_vol`]. The sample vol is 16.3% / 17.7% / 27.0% [`stylized_facts.csv`: `vol_annual`]. They are close, as they should be when the model fits well.
 
 ---
 
@@ -192,7 +203,10 @@ The implication: EWMA is an integrated GARCH (IGARCH) with no long-run level, so
 
 **25. What does the term-structure chart show?**
 
-$E[\sigma^2_{t+h}] = V_L + (\alpha+\beta)^{h-1}(\sigma^2_{t+1}-V_L)$. The next-day vol of ⟨pending⟩ converges towards the long-run ⟨pending⟩ over 252 days (`08_garch_term_structure.png`). The manual formula is asserted equal to `arch.forecast`.
+$E[\sigma^2_{t+h}] = V_L + (\alpha+\beta)^{h-1}(\sigma^2_{t+1}-V_L)$. At the end of the sample, next-day vol is 15.8% / 13.7% / 48.0%, and it converges towards the long-run 15.8% / 16.6% / 26.6% over 252 days (`08_garch_term_structure.png`):
+
+- SP500 starts below its long-run level and rises.
+- RELIANCE starts far above it, after a genuine +11.0% day on 2026-11-02 (volume about 7 times the median), and falls. The manual formula is asserted equal to `arch.forecast`.
 
 This matters for risk because a 10-day VaR uses the sum of the variances over the next 10 days, not $\sqrt{10}\,\sigma_{1d}$, when vol is far from its long-run level.
 
@@ -202,9 +216,11 @@ This matters for risk because a 10-day VaR uses the sum of the variances over th
 
 [`garch_information_criteria.csv`]
 
-- Log-likelihood: GARCH-t ⟨pending⟩ vs normal ⟨pending⟩.
-- AIC/BIC: ⟨pending⟩.
-- Estimated ν: ⟨pending⟩ / ⟨pending⟩ / ⟨pending⟩.
+- Log-likelihood, GARCH-t vs normal: −3,668 vs −3,735 / −3,755 vs −3,847 / −5,347 vs −5,485.
+- AIC, t vs normal: 7,345 vs 7,476 / 7,518 vs 7,699 / 10,703 vs 10,975. BIC agrees. The t wins clearly for every asset, because one extra parameter buys 67–137 log-likelihood points.
+- Estimated ν: 7.0 / 5.8 / 5.2.
+
+However, out of sample GARCH-t did **not** beat GARCH-normal on QLIKE (ranks 3 / 3 / 2). The t improves the description of the shock distribution (tails, and therefore VaR quantiles), not the variance forecast itself.
 
 A small ν means standardised residuals are still fat-tailed: GARCH explains part of the kurtosis (clustering), but not all of it.
 
@@ -218,7 +234,7 @@ The normal MLE is a quasi-MLE (QMLE). The variance parameters are still consiste
 
 **28. How do you read the standard errors and t-stats?**
 
-t = estimate / SE, and |t| > 1.96 is significant at 5%. For SP500: α t = ⟨pending⟩, β t = ⟨pending⟩ [`garch_params.csv`].
+t = estimate / SE, and |t| > 1.96 is significant at 5%. For SP500: α = 0.155 (t = 6.79), β = 0.809 (t = 31.2) [`garch_params.csv`].
 
 ---
 
@@ -232,7 +248,13 @@ $\sigma_t^2 = \omega + (\alpha + \gamma I_{t-1})r_{t-1}^2 + \beta\sigma_{t-1}^2$
 
 **30. Is γ significant?**
 
-γ = ⟨pending⟩ (t = ⟨pending⟩, p = ⟨pending⟩) for SP500; ⟨pending⟩ for NIFTY50; ⟨pending⟩ for RELIANCE [`garch_summary.csv`: `gjr_gamma`, `gjr_gamma_t`, `gjr_gamma_p`]. A frequent finding is that α drops towards 0 in GJR: positive shocks barely raise vol at all.
+Yes, for all three assets [`garch_summary.csv`: `gjr_gamma`, `gjr_gamma_t`, `gjr_gamma_p`]:
+
+- SP500: γ = 0.224 (t = 4.98, p < 0.001)
+- NIFTY50: γ = 0.153 (t = 4.24, p < 0.001)
+- RELIANCE: γ = 0.076 (t = 2.42, p = 0.016)
+
+In GJR, α collapses to 0.023 / 0.033 / 0.033 and is not significant for the indices (p = 0.35 / 0.24, and 0.08 for RELIANCE). Positive shocks barely raise index volatility at all; almost all the news reaction comes from bad news. The leverage effect is strongest for the indices and weaker for a single stock.
 
 ---
 
@@ -249,7 +271,7 @@ Toy example: after −2% the GJR variance is 1.64, against 1.24 after +2% (MATH 
 
 **32. GJR persistence?**
 
-α + γ/2 + β, because the indicator is on about half the time. Our values are ⟨pending⟩. The long-run variance is $\omega/(1-\alpha-\gamma/2-\beta)$.
+α + γ/2 + β, because the indicator is on about half the time. Our values are 0.964 / 0.967 / 0.954. The long-run variance is $\omega/(1-\alpha-\gamma/2-\beta)$.
 
 ---
 
@@ -265,8 +287,8 @@ The high–low range uses the whole intraday path, not just two points. For a dr
 
 It ignores overnight gaps, assumes no drift, is biased down by discrete trading, and needs clean High/Low data.
 
-- Mean ratio Parkinson / close-to-close: ⟨pending⟩ (NIFTY50), ⟨pending⟩ (SP500), ⟨pending⟩ (RELIANCE).
-- Overnight share of return variance: ⟨pending⟩ / ⟨pending⟩ / ⟨pending⟩ [`key_results.json → parkinson`].
+- Mean ratio Parkinson / close-to-close (20d): 0.84 (NIFTY50), 0.81 (SP500), 0.92 (RELIANCE). Parkinson is 8–19% lower.
+- Overnight share of return variance, $\sum(\ln O_t/C_{t-1})^2/\sum r_t^2$: 39.9% / 21.2% / 22.6% [`key_results.json → parkinson`].
 
 The larger the overnight share, the more Parkinson under-states total vol.
 
@@ -274,7 +296,9 @@ The larger the overnight share, the more Parkinson under-states total vol.
 
 **35. How did Parkinson rank as a forecaster?**
 
-QLIKE rank: ⟨pending⟩ [`model_ranking.csv`]. If it ranks low, the overnight bias is the likely reason: the forecast is systematically too small. QLIKE punishes under-prediction more than over-prediction.
+QLIKE rank: 7th of 8 for all three assets [`model_ranking.csv`]. The overnight bias is the reason: the forecast is systematically too small. Its Mincer–Zarnowitz slope is b = 1.44 / 1.85 / 1.23 (> 1 means under-prediction), and QLIKE punishes under-prediction more than over-prediction.
+
+Interestingly, on MSE it ranks 2nd for NIFTY50. That shows how differently the two losses can judge the same forecast.
 
 ---
 
@@ -308,9 +332,11 @@ Both rank forecasts consistently with an unbiased noisy proxy (Patton, 2011). Bu
 
 [`rank_summary_qlike.csv`, `model_ranking.csv`]
 
-- By QLIKE: ⟨pending⟩ for NIFTY50, ⟨pending⟩ for SP500, ⟨pending⟩ for RELIANCE.
-- By MSE: ⟨pending⟩.
-- Mean QLIKE rank across assets: ⟨pending⟩.
+- **By QLIKE: GJR-GARCH ranks 1st for all three assets** (QLIKE 0.781 / 0.916 / 1.920).
+- By MSE: GJR-GARCH for NIFTY50 and RELIANCE; GARCH for SP500 (27.9 vs 28.7 for GJR).
+- Mean QLIKE rank across assets: GJR 1.0, GARCH 2.3, GARCH-t 2.7, EWMA 4.0, HIST20 5.0, HIST60 6.0, PARK20 7.0, HIST252 8.0.
+
+The ordering is very stable: GARCH family, then EWMA, then rolling windows from short to long. That matches the stylized facts: clustering plus asymmetry.
 
 ---
 
@@ -320,9 +346,13 @@ Regress $RV_t = a + b h_t + e_t$.
 
 - Unbiased forecasts have a = 0 and b = 1.
 - b < 1 means the forecast over-reacts (too volatile); b > 1 means it under-reacts.
-- $R^2$ is low for every model (⟨pending⟩) because $r^2$ is so noisy. That does not mean the models are bad.
+- $R^2$ is low for every model (0.004–0.30) because $r^2$ is so noisy. That does not mean the models are bad.
 
-For SP500 GARCH: b = ⟨pending⟩, joint p = ⟨pending⟩ [`mincer_zarnowitz.csv`].
+Results [`mincer_zarnowitz.csv`]:
+
+- **SP500 GARCH:** a = 0.08, b = 0.995, joint p = 0.62, $R^2$ = 0.29. That is essentially an unbiased forecast.
+- **All three rolling-window models** reject a = 0, b = 1 for every asset (p ≤ 0.03), with b = 0.34–0.65: their forecasts move too much relative to what they predict.
+- **RELIANCE GARCH-type models** have b = 1.47–1.72 (too smooth), but the joint test does not reject (p ≥ 0.12) because the standard errors are wide.
 
 ---
 
@@ -336,9 +366,15 @@ The residuals are heteroskedastic (bigger when vol is high) and autocorrelated. 
 
 [`covid_reaction.csv`]
 
-- Pre-shock (19-Feb-2020) vol versus peak, SP500: GARCH ⟨pending⟩ → ⟨pending⟩, EWMA ⟨pending⟩ → ⟨pending⟩, HIST252 ⟨pending⟩ → ⟨pending⟩.
-- Trading days to peak: GARCH ⟨pending⟩, EWMA ⟨pending⟩, HIST60 ⟨pending⟩.
-- Days from peak back to halfway: ⟨pending⟩.
+- Pre-shock (19-Feb-2020) vol versus peak, SP500: GARCH 9.7% → 128.5% (17-Mar), EWMA 11.1% → 84.8% (25-Mar), HIST252 11.8% → 34.0% (30-Jul).
+- Trading days to peak: GARCH and GJR 18, EWMA 24, HIST20 27, HIST60 62, HIST252 112.
+- Trading days from peak back halfway to pre-shock: GJR 7, GARCH 10, GARCH-t 13, HIST20 17, HIST60 22, EWMA 30. HIST252 never got back halfway by end-August.
+
+This is the theory made visible:
+
+- GARCH reacts fastest and also decays fastest, because it mean-reverts with persistence 0.96.
+- EWMA reacts almost as fast but decays slowly, because its persistence is 1.
+- Long windows are useless in a crash: HIST252 peaked four months after the crash bottomed.
 
 The usual pattern is that EWMA and GARCH react within days and decay smoothly, while HIST252 barely moves and then shows a ghost drop a year later.
 
@@ -408,10 +444,10 @@ The ranking alone does not say. I would add a Diebold–Mariano test on the QLIK
 
 > "I built a volatility-forecasting project on real daily data for the Nifty 50, the S&P 500 and Reliance, from 2015 to today.
 >
-> First, I showed why constant volatility is wrong. Returns have excess kurtosis of ⟨pending⟩ and Jarque–Bera rejects normality. Squared returns are strongly autocorrelated, with a Ljung–Box Q of ⟨pending⟩, so volatility clusters. There is also a leverage effect: a negative correlation of ⟨pending⟩ between today's return and tomorrow's squared return.
+> First, I showed why constant volatility is wrong. Returns have excess kurtosis of 16 to 20 for the indices, and the S&P had 22 four-sigma days where a normal distribution expects 0.2. Squared returns are strongly autocorrelated, with Ljung–Box Q above 1,400 against under 300 for raw returns, so volatility clusters. And there is a leverage effect: down days predict larger moves.
 >
-> Then I implemented five model families. Rolling windows show the responsiveness–noise trade-off and the ghost effect. EWMA uses λ = 0.94, written as a loop first and checked against pandas. GARCH(1,1) I estimated by writing the log-likelihood myself and maximising it with scipy, and it matches the `arch` library. Persistence is about ⟨pending⟩, so the half-life of a shock is ⟨pending⟩ days, and the long-run vol is ⟨pending⟩. I also fitted Student-t errors, which win on AIC with ν ≈ ⟨pending⟩, and GJR-GARCH, where the leverage term γ is significant with t = ⟨pending⟩. Finally, Parkinson range-based vol, which turned out to be biased down because of overnight gaps.
+> Then I implemented five model families. Rolling windows show the responsiveness–noise trade-off and the ghost effect. EWMA uses λ = 0.94, written as a loop first and checked against pandas. GARCH(1,1) I estimated by writing the log-likelihood myself and maximising it with scipy, and it matches the `arch` library. Persistence is 0.95 to 0.98, so the half-life of a shock is 13 to 29 days, and long-run vol is about 16% for the indices and 27% for Reliance. I also fitted Student-t errors, which win on AIC everywhere with ν between 5 and 7, and GJR-GARCH, where the leverage term γ is significant for all three, with t = 5.0 on the S&P. Finally, Parkinson range-based vol, which turned out to be biased down because of overnight gaps.
 >
-> The core of the project is an honest out-of-sample test. Models are re-estimated every 20 days on past data only, with a unit test that proves there is no look-ahead. Forecasts are scored against squared returns with MSE and QLIKE, plus Mincer–Zarnowitz regressions. ⟨pending: winner⟩ ranked first on QLIKE across assets, and the COVID zoom shows EWMA and GARCH reacting within days while the one-year window barely moved.
+> The core of the project is an honest out-of-sample test. Models are re-estimated every 20 days on past data only, with a unit test that proves there is no look-ahead. Forecasts are scored against squared returns with MSE and QLIKE, plus Mincer–Zarnowitz regressions. GJR-GARCH ranked first on QLIKE for all three assets, then GARCH, EWMA and the rolling windows. In the COVID crash, GARCH peaked 18 trading days after the sell-off began and halved back within about 10 days, EWMA took 30 days to decay, and the one-year window peaked four months late.
 >
 > Every forecast is exported to a CSV that feeds my VaR backtesting project. Next I would add EGARCH, DCC-GARCH for correlations, intraday realised volatility and a comparison with implied vol."

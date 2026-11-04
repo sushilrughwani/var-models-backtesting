@@ -73,6 +73,9 @@ Choices made without asking (the brief said to work non-interactively). Each one
 
 ---
 
-## Environment limitation (this session)
+## Data notes
 
-The cloud environment that built this project blocks Yahoo Finance at the network level: `query1.finance.yahoo.com`, `query2.finance.yahoo.com`, `fc.yahoo.com` and `guce.yahoo.com` all returned HTTP 403 from the egress proxy. No real data could be downloaded and `data/` is empty. Following the hard rule, **no results were produced and no numbers from real data appear in the docs**. See PROGRESS.md for how to finish.
+- **Download environment.** The first build session could not reach Yahoo Finance (HTTP 403 from the egress proxy). Once network access was allowed, the data was downloaded on 2026-11-04 and cached in `data/`. All results use that real data.
+- **Last dates differ by asset.** The final date is 2026-11-04 for NIFTY50 and RELIANCE and 2026-11-03 for SP500, because of time zones at download time.
+- **Reliance +11.0% on 2026-11-02.** This return was checked and kept. Volume was about 7 times the 1-year median, the stock gapped up at the open, and the new price level held on the following days. It is not an adjustment error, and it drives Reliance's high end-of-sample vol (48% next-day GARCH vol).
+- **Synthetic-data test.** The no-data STOP test stubs the download function instead of blocking the network, so it is deterministic whether or not Yahoo is reachable.
