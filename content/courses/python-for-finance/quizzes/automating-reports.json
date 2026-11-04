@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-py-automating-reports-1",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "lesson": "automating-reports",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "What does pd.read_excel(\"report.xlsx\", sheet_name=None) return for a workbook with three sheets?",
+    "options": ["A single DataFrame containing only the first sheet", "A single DataFrame with all three sheets stacked vertically", "A dictionary mapping each sheet name to its DataFrame", "A list of openpyxl worksheet objects"],
+    "answer": "C",
+    "explanation": "sheet_name=None tells pandas to read every sheet; the result is a dict keyed by sheet name.",
+    "rationale": {
+      "A": "Incorrect. Reading only the first sheet is the default behaviour (sheet_name=0), not sheet_name=None.",
+      "B": "Incorrect. pandas does not concatenate sheets automatically; you would use pd.concat on the dict values.",
+      "C": "Correct. You get {\"Summary\": df1, \"Monthly\": df2, ...}.",
+      "D": "Incorrect. read_excel returns pandas objects, not openpyxl worksheets."
+    },
+    "tags": ["read-excel"]
+  },
+  {
+    "id": "q-py-automating-reports-2",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "lesson": "automating-reports",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A report's monthly returns sheet shows 4%, −2% and 3% for the quarter. A reconciliation check computes (1 + monthly).prod() - 1. As a percentage, the result is closest to:",
+    "options": ["5.00%", "1.67%", "1.63%", "4.98%"],
+    "answer": "D",
+    "explanation": "Compounding: 1.04 × 0.98 × 1.03 − 1 = 1.049776 − 1 = 4.98%.",
+    "rationale": {
+      "A": "Incorrect. 5.00% adds the monthly returns instead of compounding them.",
+      "B": "Incorrect. 1.67% is the arithmetic average monthly return, not the quarterly return.",
+      "C": "Incorrect. 1.63% is the geometric average monthly return, (1.049776)^(1/3) − 1, not the quarterly total.",
+      "D": "Correct. The compounded quarterly return is 4.98%."
+    },
+    "verify": "return (1.04*0.98*1.03-1)*100;",
+    "numericAnswer": 4.98,
+    "tolerance": 0.005,
+    "tags": ["reconciliation", "compounding"]
+  },
+  {
+    "id": "q-py-automating-reports-3",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "lesson": "automating-reports",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A script writes a return of 7.25 (meaning 7.25%) into a cell and then sets cell.number_format = \"0.00%\". What will Excel display in that cell?",
+    "options": ["7.25%", "725.00%", "0.07%", "72.50%"],
+    "answer": "B",
+    "explanation": "A percentage format multiplies the stored value by 100 for display. 7.25 × 100 = 725.00%. The value should have been written as 0.0725.",
+    "rationale": {
+      "A": "Incorrect. 7.25% would be displayed only if the stored value were 0.0725.",
+      "B": "Correct. Excel shows 7.25 × 100 = 725.00%.",
+      "C": "Incorrect. 0.07% would require dividing by 100; percentage formats multiply instead.",
+      "D": "Incorrect. 72.50% would correspond to a stored value of 0.725."
+    },
+    "verify": "return 7.25*100;",
+    "numericAnswer": 725,
+    "tolerance": 0.005,
+    "tags": ["openpyxl", "number-format"]
+  },
+  {
+    "id": "q-py-automating-reports-4",
+    "course": "python-for-finance",
+    "topic": "automation-and-backtesting",
+    "lesson": "automating-reports",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A January-to-June report computes monthly returns with prices.resample(\"ME\").last().pct_change().dropna() and finds only five rows. What is the problem and a correct fix?",
+    "options": ["January's return is lost because there is no earlier month-end; prepend the starting price before calling pct_change", "resample drops the month with the fewest trading days; use resample(\"D\") instead", "dropna removes June because it has missing values; use fillna(0) instead", "pct_change only works on weekly data; convert to weekly first"],
+    "answer": "A",
+    "explanation": "pct_change compares each row with the previous one, so the first month-end has nothing to compare with. Concatenating the first available price in front (pd.concat([prices.iloc[:1], month_end])) restores January.",
+    "rationale": {
+      "A": "Correct. Adding the start price as a base observation gives January its return, and the six months then compound to the YTD figure.",
+      "B": "Incorrect. resample keeps every month; daily resampling would not produce monthly returns.",
+      "C": "Incorrect. The missing row is the first one (January), and filling it with 0 would report a false 0% return.",
+      "D": "Incorrect. pct_change works at any frequency."
+    },
+    "tags": ["resample", "monthly-returns"]
+  }
+]
