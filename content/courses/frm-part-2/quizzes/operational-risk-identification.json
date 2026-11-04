@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-operational-risk-identification-1",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-identification",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A scenario workshop produces three scenarios: a processing failure expected once every 5 years with severity USD 10 million, a cyber outage expected once every 25 years with severity USD 50 million, and a conduct case expected once every 40 years with severity USD 120 million. The combined expected annual loss is closest to:",
+    "options": ["USD 7.0 million", "USD 60.0 million", "USD 9,300 million", "USD 4.0 million"],
+    "answer": "A",
+    "explanation": "Frequencies are 1/5 = 0.2, 1/25 = 0.04 and 1/40 = 0.025. Expected annual loss = 0.2 × 10 + 0.04 × 50 + 0.025 × 120 = 2 + 2 + 3 = USD 7.0 million.",
+    "rationale": {
+      "A": "Correct. Summing frequency × severity gives 2.0 + 2.0 + 3.0 = 7.0.",
+      "B": "Incorrect. 60.0 is the simple average of the three severities, ignoring frequency entirely.",
+      "C": "Incorrect. 9,300 multiplies severity by the return period (5 × 10 + 25 × 50 + 40 × 120) instead of by the frequency 1/N.",
+      "D": "Incorrect. 4.0 omits the conduct scenario, which contributes 3.0 on its own."
+    },
+    "verify": "return (1/5)*10 + (1/25)*50 + (1/40)*120;",
+    "numericAnswer": 7.0,
+    "tolerance": 0.05,
+    "tags": ["scenario-analysis"]
+  },
+  {
+    "id": "q-frm2-operational-risk-identification-2",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-identification",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "In an RCSA using 1-5 scales, a risk is rated inherent likelihood 5 and inherent impact 4. A new automated control reduces likelihood to 2 but leaves impact unchanged. The residual risk score is closest to:",
+    "options": ["20", "12", "10", "8"],
+    "answer": "D",
+    "explanation": "Residual score = residual likelihood × residual impact = 2 × 4 = 8, down from an inherent score of 5 × 4 = 20.",
+    "rationale": {
+      "A": "Incorrect. 20 is the inherent score before the control.",
+      "B": "Incorrect. 12 subtracts the likelihood reduction from the inherent score (20 − 3 − 5) or otherwise mixes additive and multiplicative scoring.",
+      "C": "Incorrect. 10 multiplies the new likelihood of 2 by the inherent likelihood of 5 instead of by the impact of 4.",
+      "D": "Correct. 2 × 4 = 8."
+    },
+    "verify": "return 2*4;",
+    "numericAnswer": 8,
+    "tolerance": 0.01,
+    "tags": ["rcsa"]
+  },
+  {
+    "id": "q-frm2-operational-risk-identification-3",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-identification",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following is the best example of a leading key risk indicator for operational losses in a settlements department?",
+    "options": [
+      "Total settlement losses booked last quarter",
+      "Number of customer complaints resolved last month",
+      "Vacancy rate and overtime hours among settlement control staff",
+      "Number of regulatory fines paid in the past year"
+    ],
+    "answer": "C",
+    "explanation": "A leading indicator changes before losses materialise. Understaffing and overtime in a control team raise the probability of future errors, whereas booked losses, resolved complaints and fines describe events that have already happened.",
+    "rationale": {
+      "A": "Incorrect. Booked losses are a lagging measure of past events.",
+      "B": "Incorrect. Resolved complaints describe past problems, not future exposure.",
+      "C": "Correct. Staffing strain signals rising error risk before losses occur.",
+      "D": "Incorrect. Fines paid are a lagging outcome of past failures."
+    },
+    "tags": ["kri"]
+  },
+  {
+    "id": "q-frm2-operational-risk-identification-4",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "operational-risk-identification",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "In a scenario workshop, the head of the business states his severity estimate first and all other participants then give figures within 10% of it. Which combination best describes the problem and a suitable remedy?",
+    "options": [
+      "Availability bias; use only internal loss data to set severities",
+      "Anchoring and groupthink; collect independent written estimates before discussion and use an independent facilitator",
+      "Overconfidence; widen every estimate by a fixed 50%",
+      "Survivorship bias; remove the head of business from the workshop permanently"
+    ],
+    "answer": "B",
+    "explanation": "Participants anchoring on the most senior person's number is anchoring combined with groupthink. Collecting independent estimates first and using a neutral facilitator are standard mitigants; benchmarking against external data also helps.",
+    "rationale": {
+      "A": "Incorrect. Availability bias concerns overweighting recent or memorable events, and relying only on internal data would lose the tail perspective scenarios provide.",
+      "B": "Correct. The pattern is anchoring and groupthink, mitigated by independent estimates and facilitation.",
+      "C": "Incorrect. A mechanical widening does not address why estimates converged on one person's view.",
+      "D": "Incorrect. Survivorship bias is unrelated, and excluding key experts loses valuable knowledge."
+    },
+    "tags": ["scenario-analysis", "biases"]
+  }
+]
