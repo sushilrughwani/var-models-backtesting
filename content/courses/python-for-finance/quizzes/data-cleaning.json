@@ -1,0 +1,104 @@
+[
+  {
+    "id": "q-py-data-cleaning-1",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "data-cleaning",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A thinly traded bond has no price on one day in an otherwise complete daily series used for a risk report. Which treatment is most appropriate?",
+    "options": [
+      "Replace the missing price with the average price over the whole sample",
+      "Set the missing price to 0",
+      "Replace the missing daily return with the mean daily return",
+      "Forward-fill the last available price, with a limit on how many days can be filled"
+    ],
+    "answer": "D",
+    "explanation": "If an instrument did not trade, its last observed price is the best available mark. A fill limit prevents stale prices from masking a genuine data problem.",
+    "rationale": {
+      "A": "Incorrect. A full-sample average uses future information and can sit far from the current price, creating two fake large returns.",
+      "B": "Incorrect. A zero price creates a -100% return followed by an infinite one.",
+      "C": "Incorrect. Filling with the mean return invents data and understates volatility.",
+      "D": "Correct. ffill(limit=...) carries the last mark forward for short gaps only."
+    },
+    "tags": ["missing-data", "ffill"]
+  },
+  {
+    "id": "q-py-data-cleaning-2",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "data-cleaning",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A stock closes at 90.00 the day before a 3-for-1 split and at 31.20 on the split's effective date. After correctly adjusting the history, the split-day return is:",
+    "options": [
+      "-65.33%",
+      "4.00%",
+      "-30.67%",
+      "-88.44%"
+    ],
+    "answer": "B",
+    "explanation": "Divide pre-split prices by the split ratio: 90.00 / 3 = 30.00. The adjusted return is 31.20 / 30.00 − 1 = 4.00%.",
+    "rationale": {
+      "A": "Incorrect. This is the raw, unadjusted return 31.20 / 90.00 − 1, a mechanical artefact of the split.",
+      "B": "Correct. 31.20 / 30.00 − 1 = 0.04.",
+      "C": "Incorrect. This adjusts with a ratio of 2 (90 / 2 = 45) instead of 3.",
+      "D": "Incorrect. This divides the post-split price by 3 as well, adjusting the wrong side of the split."
+    },
+    "verify": "return (31.2/(90/3)-1)*100;",
+    "numericAnswer": 4.0,
+    "tolerance": 0.005,
+    "tags": ["corporate-actions", "stock-split"]
+  },
+  {
+    "id": "q-py-data-cleaning-3",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "data-cleaning",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A Series is `[10, NaN, NaN, NaN, 11, NaN]`. How many NaN values remain after `s.ffill(limit=2)`?",
+    "options": [
+      "0",
+      "2",
+      "1",
+      "4"
+    ],
+    "answer": "C",
+    "explanation": "The run of three NaNs after 10 is filled for only two positions, leaving the third as NaN. The final NaN after 11 is filled. One NaN remains.",
+    "rationale": {
+      "A": "Incorrect. This ignores the limit; unlimited ffill would fill all four.",
+      "B": "Incorrect. The trailing NaN after 11 is also filled (it is a gap of one), so only one remains.",
+      "C": "Correct. Result: [10, 10, 10, NaN, 11, 11].",
+      "D": "Incorrect. This is the count before filling."
+    },
+    "verify": "const s=[10,null,null,null,11,null]; let last=null, run=0; const out=s.map(v=>{ if(v!==null){last=v;run=0;return v;} run++; return (last!==null && run<=2)?last:null; }); return out.filter(v=>v===null).length;",
+    "numericAnswer": 1,
+    "tolerance": 0.001,
+    "tags": ["missing-data", "ffill"]
+  },
+  {
+    "id": "q-py-data-cleaning-4",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "data-cleaning",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "In a sample of eight daily returns, a bad print creates a +25% return. Its ordinary z-score is only about 2.5, but its robust z-score (median and MAD) is above 40. Why do the two measures disagree so much?",
+    "options": [
+      "The outlier itself inflates the mean and standard deviation, shrinking its own ordinary z-score, while the median and MAD are barely affected",
+      "Robust z-scores always exaggerate values by the factor 1.4826",
+      "Ordinary z-scores cannot be computed when the data contain a positive outlier",
+      "The MAD is larger than the standard deviation, which makes robust z-scores larger"
+    ],
+    "answer": "A",
+    "explanation": "With few observations, one extreme value dominates the sample mean and standard deviation (masking). The median and median absolute deviation are resistant to a small number of extreme values, so the outlier stands out clearly.",
+    "rationale": {
+      "A": "Correct. Masking: the outlier pulls up the mean and blows up the standard deviation used to judge it.",
+      "B": "Incorrect. 1.4826 scales the MAD to be comparable to a standard deviation under normality; it does not exaggerate scores.",
+      "C": "Incorrect. Ordinary z-scores can always be computed; they are just distorted by the outlier.",
+      "D": "Incorrect. Here the MAD is much smaller than the inflated standard deviation, which is why robust scores are larger."
+    },
+    "tags": ["outliers", "robust-statistics"]
+  }
+]

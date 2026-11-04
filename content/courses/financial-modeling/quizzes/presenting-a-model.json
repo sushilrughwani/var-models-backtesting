@@ -1,0 +1,89 @@
+[
+  {
+    "id": "q-fm-presenting-a-model-1",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "presenting-a-model",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind Components Ltd's revenue was USD 1,180 million in 2025 and is forecast at 1,484 million in 2030. For the dashboard, the compound annual growth rate over these five years is closest to:",
+    "options": ["5.15%", "5.90%", "4.69%", "25.76%"],
+    "answer": "C",
+    "explanation": "CAGR = (1,484 / 1,180)^(1/5) − 1 = 4.69%.",
+    "rationale": {
+      "A": "Incorrect. 5.15% divides total growth of 25.76% by five, ignoring compounding.",
+      "B": "Incorrect. 5.90% compounds over four periods instead of five.",
+      "C": "Correct. Five years of compounding from 2025 to 2030.",
+      "D": "Incorrect. 25.76% is cumulative growth, not an annual rate."
+    },
+    "verify": "return (Math.pow(1484/1180,1/5)-1)*100;",
+    "numericAnswer": 4.69,
+    "tolerance": 0.005,
+    "tags": ["dashboard", "cagr"]
+  },
+  {
+    "id": "q-fm-presenting-a-model-2",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "presenting-a-model",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind's target price is USD 31.71, at which diluted shares are 52.08 million. Net claims in the EV-to-equity bridge (debt less cash plus NCI less the associate) total 313 million, and 2026E EBITDA is 219 million. The EV/EBITDA multiple implied by the target price is closest to:",
+    "options": ["7.54x", "8.97x", "9.82x", "6.11x"],
+    "answer": "B",
+    "explanation": "Equity = 31.71 × 52.08 = 1,651.5. EV = 1,651.5 + 313 = 1,964.5. EV/EBITDA = 1,964.5 / 219 = 8.97x.",
+    "rationale": {
+      "A": "Incorrect. 7.54x divides equity value, not EV, by EBITDA.",
+      "B": "Correct. Add the net claims to equity value to reach EV, then divide by 2026E EBITDA.",
+      "C": "Incorrect. 9.82x divides by 2025 LTM EBITDA of 200 instead of 2026E EBITDA.",
+      "D": "Incorrect. 6.11x subtracts the net claims from equity instead of adding them."
+    },
+    "verify": "return (31.71*52.08+313)/219;",
+    "numericAnswer": 8.97,
+    "tolerance": 0.005,
+    "tags": ["implied-multiple", "target-price"]
+  },
+  {
+    "id": "q-fm-presenting-a-model-3",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "presenting-a-model",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A house rule rates a stock Buy above +10% upside, Sell below −10% and Hold otherwise. Cell C8 holds upside as a decimal. If the share price rises to USD 30.00 with an unchanged target of 31.71, what does the formula =IF(C8>0.1,\"Buy\",IF(C8<-0.1,\"Sell\",\"Hold\")) return?",
+    "options": ["Buy", "Sell", "An error, because the IF statements are nested", "Hold"],
+    "answer": "D",
+    "explanation": "Upside = 31.71 / 30.00 − 1 = 5.7%, which is neither above 10% nor below −10%, so the formula returns Hold.",
+    "rationale": {
+      "A": "Incorrect. 5.7% does not exceed the 10% Buy threshold.",
+      "B": "Incorrect. Upside is positive, far from the −10% Sell threshold.",
+      "C": "Incorrect. Nested IF statements are valid Excel syntax.",
+      "D": "Correct. The upside falls in the Hold band."
+    },
+    "tags": ["rating", "excel"]
+  },
+  {
+    "id": "q-fm-presenting-a-model-4",
+    "course": "financial-modeling",
+    "topic": "analysis-and-presentation",
+    "lesson": "presenting-a-model",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which structure is best for the written investment conclusion that accompanies Northwind's dashboard?",
+    "options": [
+      "Rating and target price first, then thesis points tied to model drivers, valuation support, quantified risks and catalysts",
+      "A chronological account of how the model was built, ending with the rating",
+      "A list of every assumption in the model, without a rating, so readers can decide",
+      "The rating only, because the dashboard speaks for itself"
+    ],
+    "answer": "A",
+    "explanation": "Decision makers read the top first. An answer-first structure, supported by drivers, valuation and quantified risks, is clear and testable.",
+    "rationale": {
+      "A": "Correct. Lead with the answer, then support it and state what could go wrong.",
+      "B": "Incorrect. Process narratives bury the recommendation.",
+      "C": "Incorrect. The analyst's job is to reach and defend a conclusion.",
+      "D": "Incorrect. Readers need the reasons and risks behind the rating."
+    },
+    "tags": ["investment-conclusion", "communication"]
+  }
+]

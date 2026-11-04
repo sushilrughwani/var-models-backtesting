@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-interest-rate-risk-in-banking-book-1",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "interest-rate-risk-in-banking-book",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bank has USD 600 million of rate-sensitive assets and USD 750 million of rate-sensitive liabilities repricing within one year. Using the simple cumulative gap approach, the change in annual net interest income (USD million) if rates rise by 150 basis points is closest to:",
+    "options": ["2.25", "-9.00", "-2.25", "-11.25"],
+    "answer": "C",
+    "explanation": "Gap = 600 − 750 = −150. ΔNII = −150 × 0.015 = −2.25 million. A liability-sensitive bank loses NII when rates rise.",
+    "rationale": {
+      "A": "Incorrect. +2.25 has the sign reversed; a negative gap loses when rates rise.",
+      "B": "Incorrect. −9.00 applies the shock to the assets alone (600 × 0.015) with the wrong sign logic.",
+      "C": "Correct. −150 × 0.015 = −2.25.",
+      "D": "Incorrect. −11.25 applies the shock to all rate-sensitive liabilities, ignoring the offsetting assets."
+    },
+    "verify": "return (600-750)*0.015;",
+    "numericAnswer": -2.25,
+    "tolerance": 0.005,
+    "tags": ["repricing-gap", "nii"]
+  },
+  {
+    "id": "q-frm2-interest-rate-risk-in-banking-book-2",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "interest-rate-risk-in-banking-book",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank has assets of USD 500 million with modified duration 3.0 and liabilities of USD 460 million with modified duration 1.0. Using a duration approximation, the change in economic value of equity (USD million) for a parallel 100 basis point rise in rates is closest to:",
+    "options": ["-10.0", "-10.4", "-19.6", "-15.0"],
+    "answer": "B",
+    "explanation": "ΔEVE ≈ −(D_A × A − D_L × L) × Δy = −(3.0 × 500 − 1.0 × 460) × 0.01 = −(1,500 − 460) × 0.01 = −10.4 million.",
+    "rationale": {
+      "A": "Incorrect. −10.0 uses (D_A − D_L) × A, ignoring that liabilities are smaller than assets (no L/A weighting).",
+      "B": "Correct. −(1,500 − 460) × 0.01 = −10.4.",
+      "C": "Incorrect. −19.6 adds the liability term instead of subtracting it.",
+      "D": "Incorrect. −15.0 considers only the asset side."
+    },
+    "verify": "return -(3.0*500-1.0*460)*0.01;",
+    "numericAnswer": -10.4,
+    "tolerance": 0.05,
+    "tags": ["eve", "duration-gap"]
+  },
+  {
+    "id": "q-frm2-interest-rate-risk-in-banking-book-3",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "interest-rate-risk-in-banking-book",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A bank's loans reset monthly off the prime rate, while its wholesale funding resets monthly off an overnight risk-free rate. The main source of interest rate risk in the banking book in this position is:",
+    "options": [
+      "basis risk",
+      "repricing risk",
+      "behavioural option risk",
+      "yield curve risk"
+    ],
+    "answer": "A",
+    "explanation": "Both sides reprice at the same frequency, so there is little repricing gap. The risk is that the two reference rates do not move one-for-one: basis risk.",
+    "rationale": {
+      "A": "Correct. Different indices with the same repricing timing create basis risk.",
+      "B": "Incorrect. Repricing dates are matched, so gap risk is small.",
+      "C": "Incorrect. No customer options such as prepayment or withdrawal are described.",
+      "D": "Incorrect. Both legs sit at the same short tenor, so curve shape changes matter little."
+    },
+    "tags": ["basis-risk"]
+  },
+  {
+    "id": "q-frm2-interest-rate-risk-in-banking-book-4",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "interest-rate-risk-in-banking-book",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A bank funds 10-year fixed-rate mortgages with 10-year fixed-rate bonds but invests its equity in overnight assets. Which statement best describes its interest rate risk profile?",
+    "options": [
+      "Both NII and EVE are fully insensitive to rate changes",
+      "EVE is highly sensitive because the mortgages are long-dated, while NII is unaffected",
+      "NII is sensitive because equity is invested overnight, while EVE is relatively insensitive",
+      "Neither measure is relevant because the bank has no trading book"
+    ],
+    "answer": "C",
+    "explanation": "Mortgages and bonds are matched in duration, so their values offset and EVE changes little. Equity invested overnight reprices immediately, so earnings on it move with rates: NII is sensitive. This shows that NII and EVE can give different signals.",
+    "rationale": {
+      "A": "Incorrect. The overnight investment of equity makes NII rate-sensitive.",
+      "B": "Incorrect. The long mortgages are hedged by equally long liabilities, so EVE sensitivity is low.",
+      "C": "Correct. Matched long positions stabilise EVE, but overnight assets make NII move with rates.",
+      "D": "Incorrect. IRRBB applies precisely to non-trading positions."
+    },
+    "tags": ["nii-vs-eve"]
+  }
+]
