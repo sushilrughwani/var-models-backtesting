@@ -19,7 +19,7 @@ Once a risk has been identified and measured (see the previous lesson), manageme
 - **Mitigate**: reduce the probability or size of loss with controls, collateral, limits or diversification.
 - **Transfer**: pass the risk to someone else through insurance, derivatives (forwards, futures, swaps, options) or securitisation.
 
-The choice is not binary. A firm may retain the first slice of a risk, transfer the middle and avoid the extreme.
+Responses can be combined across layers of the same risk.
 
 ### Should a firm hedge at all?
 In a perfect market with no taxes, no bankruptcy costs and no information gaps, hedging cannot create value. Shareholders can diversify or hedge in their own portfolios, so a firm spending money to do it for them adds nothing. This is the Modigliani-Miller style argument.
@@ -53,7 +53,7 @@ Hedging decisions need an anchor. The **risk appetite statement (RAS)** is a boa
 **Risk capacity** is the maximum risk the firm could bear before failing; **risk appetite** is the smaller amount it chooses to take; **limits** translate appetite into day-to-day controls.
 
 ### Choosing instruments
-Forwards and swaps lock in a price but give up upside. Options protect the downside while keeping upside, at the cost of a premium. Static hedges are set and left; dynamic hedges are rebalanced and require more monitoring. Firms must also decide whether to hedge accounting exposure, cash flows or economic value, and these can point in different directions.
+Forwards and swaps lock in a price but give up upside. Options protect the downside while keeping upside, at the cost of a premium. Firms must also decide whether to hedge accounting exposure, cash flows or economic value, and these can point in different directions.
 
 ## Worked example
 **Part A - Tax convexity.** A company will earn either USD 20 million or USD 80 million next year, each with probability 50%. Tax is 20% on earnings up to 50 million and 40% on earnings above that. A perfect hedge would fix earnings at the expected 50 million.

@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-operational-risk-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "operational-risk",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Under the basic indicator approach, operational risk capital is 15% of average annual gross income over the past three years, excluding years with negative gross income. A bank's gross income for the last three years was EUR 400 million, −EUR 50 million and EUR 500 million. Its capital charge is closest to:",
+    "options": ["EUR 42.5 million", "EUR 45.0 million", "EUR 67.5 million", "EUR 75.0 million"],
+    "answer": "C",
+    "explanation": "Exclude the negative year. Average = (400 + 500) / 2 = 450. Capital = 0.15 × 450 = EUR 67.5 million.",
+    "rationale": {
+      "A": "Incorrect. 42.5 includes the negative year in both the sum and the count: 0.15 × 850 / 3.",
+      "B": "Incorrect. 45.0 drops the negative value but still divides by three years.",
+      "C": "Correct. 15% of the 450 average of positive years is 67.5.",
+      "D": "Incorrect. 75.0 uses only the most recent year's 500."
+    },
+    "verify": "return 0.15*(400+500)/2;",
+    "numericAnswer": 67.5,
+    "tolerance": 0.05,
+    "tags": ["basic-indicator-approach"]
+  },
+  {
+    "id": "q-frm1-operational-risk-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "operational-risk",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A bank has a business indicator of EUR 3 billion and average annual operational losses of EUR 40 million over the last ten years. Marginal BIC coefficients are 12% up to EUR 1 billion and 15% from EUR 1 billion to EUR 30 billion. The loss component is 15 times average annual losses and ILM = ln(e − 1 + (LC/BIC)^0.8). Operational risk capital under the standardised approach is closest to:",
+    "options": ["EUR 420 million", "EUR 468 million", "EUR 450 million", "EUR 360 million"],
+    "answer": "B",
+    "explanation": "BIC = 0.12 × 1 + 0.15 × 2 = 0.42bn. LC = 15 × 0.04 = 0.60bn. LC/BIC = 1.4286; ^0.8 = 1.3302. ILM = ln(1.71828 + 1.3302) = ln 3.0485 = 1.1146. Capital = 0.42 × 1.1146 = EUR 0.468bn.",
+    "rationale": {
+      "A": "Incorrect. 420 is the BIC alone; it ignores the internal loss multiplier.",
+      "B": "Correct. BIC × ILM = 0.42 × 1.1146 = EUR 468 million.",
+      "C": "Incorrect. 450 applies 15% to the entire BI instead of using marginal coefficients, and ignores ILM.",
+      "D": "Incorrect. 360 applies 12% to the entire BI and ignores ILM."
+    },
+    "verify": "const bic=0.12*1+0.15*2, lc=15*0.04; const ilm=Math.log(Math.E-1+Math.pow(lc/bic,0.8)); return bic*ilm*1000;",
+    "numericAnswer": 468,
+    "tolerance": 0.5,
+    "tags": ["standardised-approach", "ilm"]
+  },
+  {
+    "id": "q-frm1-operational-risk-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "operational-risk",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An equities trader at a bank exceeds his limits and conceals the resulting losses by booking fictitious offsetting trades. Under the standard Basel event-type classification, this loss is best classified as:",
+    "options": ["Internal fraud", "External fraud", "Execution, delivery and process management", "Business disruption and system failures"],
+    "answer": "A",
+    "explanation": "Deliberate unauthorised activity by an employee, including concealing positions, is internal fraud.",
+    "rationale": {
+      "A": "Correct. Unauthorised trading and concealment by an employee is internal fraud.",
+      "B": "Incorrect. External fraud is committed by parties outside the firm.",
+      "C": "Incorrect. Execution and process losses are unintentional errors, not deliberate concealment.",
+      "D": "Incorrect. Nothing here involves a system outage or disruption."
+    },
+    "tags": ["event-types"]
+  },
+  {
+    "id": "q-frm1-operational-risk-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "operational-risk",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Under the Basel III standardised approach for operational risk, what is the effect of a bank's loss component being larger than its business indicator component?",
+    "options": ["The ILM equals exactly 1, so capital equals the BIC", "The ILM falls below 1, reducing capital", "The bank must switch to an internal model", "The ILM rises above 1, so capital exceeds the BIC"],
+    "answer": "D",
+    "explanation": "ILM = ln(e − 1 + (LC/BIC)^0.8). With LC/BIC above 1, the argument of the log exceeds e, so ILM exceeds 1 and capital = BIC × ILM is above the BIC.",
+    "rationale": {
+      "A": "Incorrect. ILM equals 1 only when LC equals BIC (or when the supervisor sets it to 1).",
+      "B": "Incorrect. ILM falls below 1 only when the loss history is lighter than the BIC, i.e. LC < BIC.",
+      "C": "Incorrect. The Basel III approach removed internal models for regulatory operational risk capital.",
+      "D": "Correct. A heavy loss history raises ILM above 1 and increases capital."
+    },
+    "tags": ["ilm", "standardised-approach"]
+  }
+]

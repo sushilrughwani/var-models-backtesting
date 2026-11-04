@@ -1,0 +1,122 @@
+[
+  {
+    "id": "fc-cfa1-corp-001",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "Which organizational form typically faces double taxation?",
+    "back": "A corporation taxed as a separate entity: profits are taxed at the corporate level and again when distributed to shareholders as dividends. Sole proprietorships and partnerships are pass-through entities.",
+    "tags": [
+      "organizational-forms"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-002",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "What is the main conflict of interest between shareholders and creditors?",
+    "back": "Shareholders have limited downside and unlimited upside, so they may favour riskier projects or higher payouts; creditors bear the downside and prefer lower risk and conservative leverage.",
+    "tags": [
+      "governance"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-003",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "NPV and IRR rank two mutually exclusive projects differently. Which do you follow?",
+    "back": "NPV. It measures the direct increase in shareholder wealth and assumes reinvestment at the cost of capital, whereas IRR assumes reinvestment at the IRR and ignores project scale.",
+    "tags": [
+      "capital-investments"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-004",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "Write the weighted average cost of capital.",
+    "back": "$WACC = w_d r_d (1 - t) + w_p r_p + w_e r_e$, using target (market-value) weights and the after-tax cost of debt.",
+    "tags": [
+      "cost-of-capital"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-005",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "How is the cost of equity estimated with the CAPM?",
+    "back": "$r_e = R_f + \\beta_i\\,[E(R_m) - R_f]$.",
+    "tags": [
+      "cost-of-capital"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-006",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "What is the bond yield plus risk premium approach?",
+    "back": "Cost of equity = the company's own long-term bond yield + a risk premium (typically 3-5 percentage points) for equity's extra risk.",
+    "tags": [
+      "cost-of-capital"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-007",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "State Modigliani-Miller Proposition II without taxes.",
+    "back": "$r_e = r_0 + (r_0 - r_d)\\frac{D}{E}$. The cost of equity rises linearly with leverage, exactly offsetting cheaper debt, so WACC stays constant.",
+    "tags": [
+      "capital-structure"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-008",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "How do corporate taxes change MM Proposition I?",
+    "back": "$V_L = V_U + tD$. The interest tax shield adds value, so with taxes alone the model points to 100% debt.",
+    "tags": [
+      "capital-structure"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-009",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "What does the static trade-off theory of capital structure say?",
+    "back": "Optimal leverage is where the marginal benefit of the debt tax shield equals the marginal expected cost of financial distress. Beyond that point, more debt lowers firm value.",
+    "tags": [
+      "capital-structure"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-010",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "What is the pecking order theory?",
+    "back": "Because of information asymmetry, managers prefer internal funds first, then debt, and issue new equity last. An equity issue tends to signal that managers think the shares are overvalued.",
+    "tags": [
+      "capital-structure"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-011",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "How is the cash conversion cycle calculated, and is a shorter one better?",
+    "back": "CCC = days of inventory on hand + days sales outstanding − days payables outstanding. Generally a shorter cycle means less cash tied up in working capital.",
+    "tags": [
+      "working-capital"
+    ]
+  },
+  {
+    "id": "fc-cfa1-corp-012",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "front": "What is the annualized cost of forgoing a 2/10 net 30 trade discount?",
+    "back": "$\\left(1 + \\frac{0.02}{0.98}\\right)^{365/20} - 1 \\approx 44.6\\%$. Paying on day 10 is usually far cheaper than this implicit borrowing cost.",
+    "tags": [
+      "working-capital"
+    ]
+  }
+]

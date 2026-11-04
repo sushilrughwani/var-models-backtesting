@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-external-and-internal-credit-ratings-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "external-and-internal-credit-ratings",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A one-year transition matrix gives the following probabilities for a B-rated issuer: to A 5%, stay B 85%, to C 8%, to default 2%. One-year default probabilities for A- and C-rated issuers are 0.5% and 10%, and default is absorbing. Assuming the matrix is constant, the two-year default probability for a B-rated issuer is closest to:",
+    "options": ["4.00%", "3.96%", "4.53%", "2.53%"],
+    "answer": "C",
+    "explanation": "Sum all paths ending in default: 0.05 × 0.005 + 0.85 × 0.02 + 0.08 × 0.10 + 0.02 × 1 = 0.00025 + 0.017 + 0.008 + 0.02 = 0.04525, or 4.53%.",
+    "rationale": {
+      "A": "Incorrect. 4.00% simply doubles the one-year PD and ignores migration.",
+      "B": "Incorrect. 3.96% compounds the 2% PD as 1 − 0.98², assuming the issuer stays B-rated.",
+      "C": "Correct. Summing every path to default gives 4.525%.",
+      "D": "Incorrect. 2.53% includes only defaults occurring in year 2 and omits the 2% that default in year 1 and remain in default."
+    },
+    "verify": "return (0.05*0.005+0.85*0.02+0.08*0.10+0.02*1)*100;",
+    "numericAnswer": 4.53,
+    "tolerance": 0.006,
+    "tags": ["transition-matrix", "default-probability"]
+  },
+  {
+    "id": "q-frm1-external-and-internal-credit-ratings-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "external-and-internal-credit-ratings",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Using a constant one-year transition matrix, a B-rated issuer moves to A with probability 5%, stays B with 85%, moves to C with 8% and defaults with 2%. An A-rated issuer stays A with probability 90%, and a C-rated issuer moves to A with probability 1%. Defaulted issuers stay in default. The probability that a B-rated issuer is rated A at the end of two years is closest to:",
+    "options": ["5.00%", "4.50%", "10.00%", "8.83%"],
+    "answer": "D",
+    "explanation": "Paths ending in A: B→A→A = 0.05 × 0.90 = 0.045; B→B→A = 0.85 × 0.05 = 0.0425; B→C→A = 0.08 × 0.01 = 0.0008; B→D→A = 0. Total = 0.0883 = 8.83%.",
+    "rationale": {
+      "A": "Incorrect. 5.00% is the one-year upgrade probability, not the two-year probability.",
+      "B": "Incorrect. 4.50% counts only the path that upgrades in year 1 and stays A.",
+      "C": "Incorrect. 10.00% doubles the one-year probability instead of summing the actual paths.",
+      "D": "Correct. Summing the three non-zero paths gives 8.83%."
+    },
+    "verify": "return (0.05*0.90+0.85*0.05+0.08*0.01)*100;",
+    "numericAnswer": 8.83,
+    "tolerance": 0.005,
+    "tags": ["transition-matrix", "migration"]
+  },
+  {
+    "id": "q-frm1-external-and-internal-credit-ratings-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "external-and-internal-credit-ratings",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with point-in-time credit measures, through-the-cycle ratings are best described as:",
+    "options": ["more stable, but slower to reflect sudden changes in a borrower's condition", "more volatile and more procyclical", "better predictors of default over the next few months", "derived mainly from daily equity prices and CDS spreads"],
+    "answer": "A",
+    "explanation": "TTC ratings look past the business cycle and change only for durable shifts, which makes them stable but laggy. PIT measures based on market data react quickly and are procyclical.",
+    "rationale": {
+      "A": "Correct. Stability at the cost of timeliness is the TTC trade-off.",
+      "B": "Incorrect. Volatility and procyclicality describe PIT measures.",
+      "C": "Incorrect. PIT measures generally predict near-term default better.",
+      "D": "Incorrect. Market-price-based inputs are typical of PIT measures, not agency TTC ratings."
+    },
+    "tags": ["through-the-cycle", "point-in-time"]
+  },
+  {
+    "id": "q-frm1-external-and-internal-credit-ratings-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "external-and-internal-credit-ratings",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which pair shows the lowest investment-grade long-term rating on the S&P and Moody's scales?",
+    "options": ["BB+ and Ba1", "BBB− and Baa3", "BBB and Baa2", "A− and A3"],
+    "answer": "B",
+    "explanation": "Investment grade runs from AAA/Aaa down to BBB−/Baa3. BB+/Ba1 is the highest speculative-grade notch.",
+    "rationale": {
+      "A": "Incorrect. BB+ and Ba1 are the highest speculative-grade ratings, one notch below investment grade.",
+      "B": "Correct. BBB− and Baa3 are the lowest investment-grade notches.",
+      "C": "Incorrect. BBB and Baa2 are investment grade but one notch above the boundary.",
+      "D": "Incorrect. A− and A3 are well inside investment grade."
+    },
+    "tags": ["rating-scales"]
+  }
+]

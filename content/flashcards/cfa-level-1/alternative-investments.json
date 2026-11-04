@@ -1,0 +1,82 @@
+[
+  {
+    "id": "fc-cfa1-alt-001",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "front": "How do a high-water mark and a hurdle rate affect hedge fund incentive fees?",
+    "back": "A high-water mark means incentive fees are paid only on gains above the fund's previous peak value. A hurdle rate must be exceeded first: a hard hurdle charges fees only above it, a soft hurdle charges on all gains once it is cleared.",
+    "tags": [
+      "fees"
+    ]
+  },
+  {
+    "id": "fc-cfa1-alt-002",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "front": "European versus American distribution waterfall in private equity?",
+    "back": "European (whole-of-fund): the GP earns carried interest only after LPs get back all contributed capital plus any preferred return. American (deal-by-deal): carry is paid per deal, so a clawback provision matters more.",
+    "tags": [
+      "private-equity"
+    ]
+  },
+  {
+    "id": "fc-cfa1-alt-003",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "front": "How is a property valued with the direct capitalization method?",
+    "back": "$\\text{Value} = \\frac{NOI_1}{\\text{Cap rate}}$. A lower cap rate implies a higher value.",
+    "tags": [
+      "real-estate"
+    ]
+  },
+  {
+    "id": "fc-cfa1-alt-004",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "front": "What are the components of a commodity futures return?",
+    "back": "Spot price return + roll return + collateral (interest) return. Roll return is positive in backwardation and negative in contango.",
+    "tags": [
+      "commodities"
+    ]
+  },
+  {
+    "id": "fc-cfa1-alt-005",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "front": "Brownfield versus greenfield infrastructure?",
+    "back": "Brownfield assets already exist and operate, with more predictable cash flows. Greenfield assets are still to be built, with higher construction and demand risk.",
+    "tags": [
+      "infrastructure"
+    ]
+  },
+  {
+    "id": "fc-cfa1-alt-006",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "front": "Common trap: why do hedge fund index returns tend to look too good?",
+    "back": "Survivorship bias (failed funds drop out) and backfill bias (funds add strong past histories when they join) both push reported index returns up.",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "fc-cfa1-alt-007",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "front": "Fund investing, co-investing and direct investing: how do they differ?",
+    "back": "Fund investing: invest via a manager's fund (highest fees, least control). Co-investing: invest alongside the fund directly in a deal. Direct investing: buy assets without an intermediary (most control, needs most expertise).",
+    "tags": [
+      "structures"
+    ]
+  },
+  {
+    "id": "fc-cfa1-alt-008",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "front": "What happens to measured risk in appraisal-based real estate indexes?",
+    "back": "Appraisals smooth returns, so volatility and correlations with other assets are understated, making the asset class look more attractive in an optimizer.",
+    "tags": [
+      "real-estate"
+    ]
+  }
+]

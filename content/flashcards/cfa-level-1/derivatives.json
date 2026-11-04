@@ -1,0 +1,122 @@
+[
+  {
+    "id": "fc-cfa1-deriv-001",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "How do futures differ from forwards?",
+    "back": "Futures are standardized and exchange-traded, with a clearinghouse as counterparty and daily mark-to-market with margin. Forwards are private, customizable OTC contracts that carry counterparty risk.",
+    "tags": [
+      "instruments"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-002",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "What is the no-arbitrage forward price of an asset with carry benefits and costs?",
+    "back": "$F_0(T) = \\left(S_0 - PV(\\text{benefits}) + PV(\\text{costs})\\right)(1 + r)^T$. With no carry, $F_0(T) = S_0(1 + r)^T$.",
+    "tags": [
+      "pricing"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-003",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "Price versus value: what is a forward contract worth at initiation and later?",
+    "back": "Value is zero at initiation; the forward price is fixed so this holds. Later, the long's value (no carry) is $V_t = S_t - F_0(T)(1 + r)^{-(T - t)}$.",
+    "tags": [
+      "pricing"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-004",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "What are contango and backwardation?",
+    "back": "Contango: futures price above spot (typical when carry costs exceed benefits). Backwardation: futures price below spot, often when convenience yield is high.",
+    "tags": [
+      "pricing"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-005",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "State put-call parity for European options.",
+    "back": "$S_0 + p_0 = c_0 + X(1 + r)^{-T}$: a protective put equals a fiduciary call.",
+    "tags": [
+      "options"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-006",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "State put-call-forward parity.",
+    "back": "$F_0(T)(1 + r)^{-T} + p_0 = c_0 + X(1 + r)^{-T}$, replacing the spot asset with a forward plus a risk-free bond.",
+    "tags": [
+      "options"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-007",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "When is a call in the money and when is a put in the money?",
+    "back": "A call is in the money when S > X; a put is in the money when S < X. At S = X both are at the money.",
+    "tags": [
+      "options"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-008",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "What is the lower bound of a European call on a non-dividend-paying stock?",
+    "back": "$c_0 \\geq \\max\\left(0,\\; S_0 - X(1 + r)^{-T}\\right)$.",
+    "tags": [
+      "options"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-009",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "What happens to call and put values when volatility or interest rates rise?",
+    "back": "Higher volatility raises both calls and puts. Higher interest rates raise call values and lower put values.",
+    "tags": [
+      "options"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-010",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "What is the risk-neutral probability in a one-period binomial model?",
+    "back": "$\\pi = \\frac{1 + r - d}{u - d}$, where u and d are the up and down gross return factors. The option value is the expected payoff under π discounted at r.",
+    "tags": [
+      "options"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-011",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "How can an interest rate swap be viewed?",
+    "back": "As a series of forward rate agreements (or a long position in one bond and a short in another). The fixed swap rate is set so the swap's value is zero at initiation.",
+    "tags": [
+      "swaps"
+    ]
+  },
+  {
+    "id": "fc-cfa1-deriv-012",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "front": "Who pays and who receives in a credit default swap?",
+    "back": "The protection buyer pays periodic premiums; the protection seller pays the loss (par minus recovery) if a credit event occurs on the reference entity.",
+    "tags": [
+      "swaps"
+    ]
+  }
+]

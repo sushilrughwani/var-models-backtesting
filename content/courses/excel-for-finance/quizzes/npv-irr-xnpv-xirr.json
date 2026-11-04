@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-xl-npv-irr-xnpv-xirr-1",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "npv-irr-xnpv-xirr",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A project costs USD 50,000 today (cell B2 = -50000) and returns USD 15,000, 20,000 and 25,000 at the end of years 1 to 3 (cells B3:B5). The discount rate is 8%. What is the project's NPV, as given by `=NPV(8%, B3:B5) + B2`?",
+    "options": ["816.18", "881.47", "10,000.00", "50,881.47"],
+    "answer": "B",
+    "explanation": "PVs: 15,000/1.08 = 13,888.89; 20,000/1.08² = 17,146.78; 25,000/1.08³ = 19,845.81. Sum 50,881.47, minus the 50,000 cost = 881.47.",
+    "rationale": {
+      "A": "Incorrect. 816.18 comes from `=NPV(8%, B2:B5)`, which discounts the time-0 cost by a year; it equals 881.47 / 1.08.",
+      "B": "Correct. Present value of inflows 50,881.47 less the 50,000 investment gives 881.47.",
+      "C": "Incorrect. 10,000 is the undiscounted sum of the cash flows; it ignores the time value of money.",
+      "D": "Incorrect. 50,881.47 is the present value of the inflows only; the investment has not been added."
+    },
+    "verify": "const r=0.08; return -50000+15000/(1+r)+20000/Math.pow(1+r,2)+25000/Math.pow(1+r,3);",
+    "numericAnswer": 881.47,
+    "tolerance": 0.01,
+    "tags": ["npv"]
+  },
+  {
+    "id": "q-xl-npv-irr-xnpv-xirr-2",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "npv-irr-xnpv-xirr",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An investor pays USD 10,000 on 1 January 2026 and receives USD 11,000 on 1 July 2026, which is 181 days later. What does `XIRR` return for these two cash flows?",
+    "options": ["10.00%", "20.00%", "20.17%", "21.19%"],
+    "answer": "D",
+    "explanation": "XIRR solves 10,000 = 11,000 / (1 + r)^(181/365), so r = 1.1^(365/181) − 1 = 21.19%, an annual effective rate.",
+    "rationale": {
+      "A": "Incorrect. 10% is the holding-period return over 181 days, not an annual rate.",
+      "B": "Incorrect. 20% simply doubles the half-year return; it ignores compounding and the exact day count.",
+      "C": "Incorrect. 20.17% is the simple annualisation 10% × 365/181; XIRR compounds, so it is higher.",
+      "D": "Correct. 1.1^(365/181) − 1 = 21.19%."
+    },
+    "verify": "return (Math.pow(1.1,365/181)-1)*100;",
+    "numericAnswer": 21.19,
+    "tolerance": 0.005,
+    "tags": ["xirr"]
+  },
+  {
+    "id": "q-xl-npv-irr-xnpv-xirr-3",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "npv-irr-xnpv-xirr",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about Excel's `XNPV` function is correct?",
+    "options": ["It discounts each cash flow to the first date in the list, using actual days divided by 365", "It assumes the first cash flow arrives one period after today, like `NPV`", "It requires a monthly rate when cash flows are monthly", "It uses a 360-day year, as in money-market conventions"],
+    "answer": "A",
+    "explanation": "XNPV measures time as (date − first date) / 365 and discounts at the annual rate supplied. The first cash flow is therefore not discounted, so the time-0 investment belongs inside the range.",
+    "rationale": {
+      "A": "Correct. Exponents are actual days from the first date divided by 365.",
+      "B": "Incorrect. That is the behaviour of `NPV`; XNPV leaves the first flow undiscounted.",
+      "C": "Incorrect. XNPV always takes an annual rate because it converts days into years.",
+      "D": "Incorrect. XNPV uses 365 days, not 360."
+    },
+    "tags": ["xnpv"]
+  },
+  {
+    "id": "q-xl-npv-irr-xnpv-xirr-4",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "npv-irr-xnpv-xirr",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A mining project has cash flows of -100 today, +250 in year 1 and -154 in year 2 (decommissioning). An analyst reports `=IRR(B2:B4)` as the project's return. What is the main problem?",
+    "options": ["IRR cannot handle negative cash flows after year 0 and will always return an error", "The analyst should have used `=IRR(B3:B4) + B2`, as with NPV", "The cash flows change sign twice, so more than one IRR can exist and the single figure reported may mislead", "IRR must be multiplied by the number of years to give an annual rate"],
+    "answer": "C",
+    "explanation": "With two sign changes (minus, plus, minus) the NPV profile can cross zero twice. Here NPV is zero at 10% and at 40%, and positive only between them, so a single IRR figure says little. NPV at the actual hurdle rate is the reliable decision rule.",
+    "rationale": {
+      "A": "Incorrect. IRR accepts negative flows in any position; it may simply find one of several roots.",
+      "B": "Incorrect. Unlike NPV, IRR expects the time-0 flow inside the range; the analyst's syntax is correct.",
+      "C": "Correct. Multiple sign changes can produce multiple IRRs (here 10% and 40%), so use NPV.",
+      "D": "Incorrect. IRR already returns a per-period rate; with annual flows it is an annual rate."
+    },
+    "tags": ["irr", "multiple-irr"]
+  }
+]

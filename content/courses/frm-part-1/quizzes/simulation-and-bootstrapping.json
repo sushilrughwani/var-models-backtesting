@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-simulation-and-bootstrapping-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "simulation-and-bootstrapping",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A Monte Carlo simulation of 2,500 paths estimates the expected discounted payoff of an Asian option at 15.0, with a standard deviation of simulated payoffs of 20.0. The half-width of the 95% confidence interval for the option value is closest to:",
+    "options": ["0.40", "0.016", "39.20", "0.78"],
+    "answer": "D",
+    "explanation": "SE = 20/√2,500 = 20/50 = 0.40. Half-width = 1.96 × 0.40 = 0.784, so the interval is about 15.0 ± 0.78.",
+    "rationale": {
+      "A": "Incorrect. 0.40 is the standard error; it has not been multiplied by 1.96.",
+      "B": "Incorrect. 0.016 divides by the number of paths (2,500) instead of its square root.",
+      "C": "Incorrect. 39.20 is 1.96 times the standard deviation of a single payoff, ignoring the averaging over 2,500 paths.",
+      "D": "Correct. 1.96 × 20/√2,500 = 0.78."
+    },
+    "verify": "const s=20,b=2500; return 1.96*s/Math.sqrt(b);",
+    "numericAnswer": 0.78,
+    "tolerance": 0.005,
+    "tags": ["monte-carlo", "standard-error"]
+  },
+  {
+    "id": "q-frm1-simulation-and-bootstrapping-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "simulation-and-bootstrapping",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A Monte Carlo VaR model run with 2,500 replications produces an estimate with a standard error of 0.40. Assuming no variance reduction technique is used, how many replications are needed to reduce the standard error to 0.10?",
+    "options": ["10,000", "40,000", "5,000", "640,000"],
+    "answer": "B",
+    "explanation": "The standard error falls with the square root of the number of replications. Reducing it by a factor of 4 requires 4² = 16 times as many replications: 2,500 × 16 = 40,000.",
+    "rationale": {
+      "A": "Incorrect. 10,000 scales replications linearly with the desired reduction (×4), which would only halve the standard error.",
+      "B": "Correct. 2,500 × (0.40/0.10)² = 40,000.",
+      "C": "Incorrect. Doubling replications reduces the standard error only by the factor √2, to about 0.28.",
+      "D": "Incorrect. 640,000 raises the reduction factor to the fourth power (4⁴ = 256) instead of squaring it."
+    },
+    "verify": "const b=2500,se0=0.40,se1=0.10; return b*(se0/se1)**2;",
+    "numericAnswer": 40000,
+    "tolerance": 0.5,
+    "tags": ["monte-carlo", "replications"]
+  },
+  {
+    "id": "q-frm1-simulation-and-bootstrapping-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "simulation-and-bootstrapping",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A quant uses antithetic variates, pairing every standard normal draw z with −z, to price two instruments by simulation: a long call option and a long straddle (call plus put at the same strike, at the money). The technique is most likely to:",
+    "options": ["reduce simulation error for the call but provide little or no benefit for the straddle", "reduce simulation error for both instruments equally", "reduce simulation error for the straddle but not for the call", "increase bias in both estimates because the draws are no longer independent"],
+    "answer": "A",
+    "explanation": "Antithetic variates work when the paired outcomes are negatively correlated, which happens when the payoff is monotonic in the draw. A call payoff rises with z, so g(z) and g(−z) are negatively correlated. An at-the-money straddle pays off for large moves in either direction, so g(z) and g(−z) tend to be similar and positively correlated, giving little or no benefit.",
+    "rationale": {
+      "A": "Correct. Monotonic payoff (call) benefits; symmetric, non-monotonic payoff (straddle) does not.",
+      "B": "Incorrect. The benefit depends on the correlation within each pair, which differs sharply between the two payoffs.",
+      "C": "Incorrect. This reverses the logic; the straddle's symmetric payoff defeats the antithetic pairing.",
+      "D": "Incorrect. Antithetic estimates remain unbiased; pairing changes the variance, not the expected value."
+    },
+    "tags": ["variance-reduction", "antithetic-variates"]
+  },
+  {
+    "id": "q-frm1-simulation-and-bootstrapping-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "simulation-and-bootstrapping",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A risk manager estimates 99% VaR by bootstrapping five years of daily returns from a calm period that contains no market crisis. Which is the most significant limitation of this approach?",
+    "options": ["The bootstrap requires returns to be normally distributed", "The bootstrap cannot be applied to more than one year of data", "The simulated losses cannot be more severe than the worst day in the calm sample, so tail risk is likely understated", "The bootstrap always overstates VaR because it samples with replacement"],
+    "answer": "C",
+    "explanation": "The bootstrap resamples only the observations it is given. If the historical sample contains no crisis, no resampled scenario can contain crisis-sized losses, so VaR is likely to be understated.",
+    "rationale": {
+      "A": "Incorrect. A key advantage of the bootstrap is that it requires no distributional assumption.",
+      "B": "Incorrect. There is no such restriction; longer samples generally help.",
+      "C": "Correct. Resampled outcomes are bounded by the historical extremes, and this sample lacks stressed periods.",
+      "D": "Incorrect. Sampling with replacement does not systematically overstate VaR; here the bias is likely in the opposite direction."
+    },
+    "tags": ["bootstrap", "limitations"]
+  }
+]

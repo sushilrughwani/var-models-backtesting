@@ -1,0 +1,122 @@
+[
+  {
+    "id": "fc-cfa1-econ-001",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "What is the profit-maximizing rule for any firm, and how does it look in perfect competition?",
+    "back": "Produce where marginal revenue = marginal cost. A perfectly competitive firm is a price taker, so P = MR = MC; in the long run economic profit is zero.",
+    "tags": [
+      "market-structures"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-002",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "How does a monopolist set price and output?",
+    "back": "It produces where MR = MC and charges the highest price the demand curve allows for that quantity, so price exceeds marginal cost (unlike perfect competition).",
+    "tags": [
+      "market-structures"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-003",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "What are the key features of monopolistic competition?",
+    "back": "Many firms, differentiated products, low barriers to entry and some pricing power. In the long run entry drives economic profit to zero, and firms operate with excess capacity.",
+    "tags": [
+      "market-structures"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-004",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "What is the Herfindahl-Hirschman Index and why is it better than an N-firm concentration ratio?",
+    "back": "HHI is the sum of squared market shares of the largest firms. Unlike the concentration ratio, it rises when top firms merge with each other and weights large firms more heavily.",
+    "tags": [
+      "market-structures"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-005",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "What does the kinked demand curve model of oligopoly predict?",
+    "back": "Rivals match price cuts but ignore price increases, so demand is elastic above the current price and inelastic below. The resulting gap in MR makes prices sticky.",
+    "tags": [
+      "market-structures"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-006",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "What is the fiscal multiplier with a proportional income tax?",
+    "back": "$\\text{Multiplier} = \\frac{1}{1 - c(1 - t)}$, where c is the marginal propensity to consume and t the tax rate. Higher taxes shrink the multiplier.",
+    "tags": [
+      "fiscal-policy"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-007",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "State the quantity theory of money.",
+    "back": "MV = PY: money supply × velocity = price level × real output. If V and Y are stable, money growth translates into inflation (money neutrality).",
+    "tags": [
+      "monetary-policy"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-008",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "What is the Fisher effect?",
+    "back": "Nominal interest rate ≈ real interest rate + expected inflation. Higher expected inflation raises nominal rates one-for-one in the long run.",
+    "tags": [
+      "monetary-policy"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-009",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "How do you tell if monetary policy is expansionary or contractionary?",
+    "back": "Compare the policy rate with the neutral rate (real trend growth rate + inflation target). Policy rate above neutral = contractionary; below = expansionary.",
+    "tags": [
+      "monetary-policy"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-010",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "What happens to a currency's forward premium when its interest rate rises relative to the other currency?",
+    "back": "For a price/base quote, $F = S \\times \\frac{1 + i_{price}\\tau}{1 + i_{base}\\tau}$. The higher-rate currency trades at a forward discount, so a higher base-currency rate lowers F relative to S.",
+    "tags": [
+      "fx"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-011",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "What is the Marshall-Lerner condition?",
+    "back": "A currency depreciation improves the trade balance only if export and import demand are elastic enough; starting from balanced trade, the sum of the export and import demand elasticities must exceed 1.",
+    "tags": [
+      "fx"
+    ]
+  },
+  {
+    "id": "fc-cfa1-econ-012",
+    "course": "cfa-level-1",
+    "topic": "economics",
+    "front": "What is the J-curve effect?",
+    "back": "After a depreciation the trade balance first worsens, because contracted import and export volumes adjust slowly, then improves as quantities respond to the new prices.",
+    "tags": [
+      "fx"
+    ]
+  }
+]

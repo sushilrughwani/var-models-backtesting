@@ -1,0 +1,142 @@
+[
+  {
+    "id": "fc-cfa1-pm-001",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "Which type of risk is rewarded with a higher expected return?",
+    "back": "Only systematic (market) risk. Unsystematic risk can be diversified away at little cost, so markets do not compensate investors for bearing it.",
+    "tags": [
+      "capm"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-002",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "How is beta calculated?",
+    "back": "$\\beta_i = \\frac{Cov(R_i, R_m)}{\\sigma_m^2} = \\rho_{i,m}\\frac{\\sigma_i}{\\sigma_m}$.",
+    "tags": [
+      "capm"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-003",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "What is the security market line, and what does a point above it mean?",
+    "back": "The SML plots $E(R_i) = R_f + \\beta_i[E(R_m) - R_f]$. A security plotting above it offers more return than its beta requires, so it is undervalued.",
+    "tags": [
+      "capm"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-004",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "CML versus SML: what risk measure does each use?",
+    "back": "The CML uses total risk (σ) and applies only to efficient portfolios of the risk-free asset and the market. The SML uses beta and applies to any security or portfolio.",
+    "tags": [
+      "capm"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-005",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "Write the Sharpe ratio and the Treynor ratio.",
+    "back": "$Sharpe = \\frac{R_p - R_f}{\\sigma_p}$; $Treynor = \\frac{R_p - R_f}{\\beta_p}$. Sharpe uses total risk; Treynor uses systematic risk.",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-006",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "What is Jensen's alpha?",
+    "back": "$\\alpha_p = R_p - [R_f + \\beta_p(R_m - R_f)]$: the return above what the CAPM predicts for the portfolio's beta.",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-007",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "What happens to portfolio risk as correlation between two assets falls?",
+    "back": "Portfolio standard deviation falls for any mix with positive weights. With correlation of −1, a combination with zero risk exists; with correlation of +1 there is no diversification benefit.",
+    "tags": [
+      "diversification"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-008",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "Write the mean-variance utility function and a common trap in using it.",
+    "back": "$U = E(r) - \\frac{1}{2}A\\sigma^2$, with A > 0 for risk aversion. Trap: enter returns and standard deviations as decimals, not percentages.",
+    "tags": [
+      "utility"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-009",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "Where is an investor's optimal portfolio?",
+    "back": "At the tangency of the investor's highest attainable indifference curve with the capital allocation line.",
+    "tags": [
+      "utility"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-010",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "What are the objectives and constraints in an investment policy statement?",
+    "back": "Objectives: return and risk. Constraints: liquidity, time horizon, tax, legal and regulatory, and unique circumstances.",
+    "tags": [
+      "ips"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-011",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "Willingness and ability to bear risk conflict. Which usually governs?",
+    "back": "Generally the lower of the two. If willingness exceeds ability, ability limits risk; if ability exceeds willingness, the adviser may educate the client but should not override them.",
+    "tags": [
+      "ips"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-012",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "Strategic versus tactical asset allocation?",
+    "back": "Strategic: the long-run policy mix set from the IPS and capital market expectations. Tactical: deliberate short-term deviations from it to exploit perceived mispricing.",
+    "tags": [
+      "asset-allocation"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-013",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "Cognitive errors versus emotional biases: give an example of each.",
+    "back": "Cognitive errors come from faulty reasoning (e.g., confirmation bias, anchoring) and can be corrected with information. Emotional biases come from feelings (e.g., loss aversion, overconfidence) and are harder to correct.",
+    "tags": [
+      "behavioral"
+    ]
+  },
+  {
+    "id": "fc-cfa1-pm-014",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "front": "Common trap: what does a 1-day 5% VaR of USD 2 million mean?",
+    "back": "There is a 5% probability of losing at least USD 2 million in a day. It is a minimum loss in the tail, not the maximum possible loss.",
+    "tags": [
+      "risk-management"
+    ]
+  }
+]

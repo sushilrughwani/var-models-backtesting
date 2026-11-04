@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-machine-learning-methods-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "machine-learning-methods",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A fraud-detection model is tested on 1,000 card transactions. It produces 60 true positives, 40 false positives, 20 false negatives and 880 true negatives. The model's precision is closest to:",
+    "options": ["0.75", "0.94", "0.60", "0.04"],
+    "answer": "C",
+    "explanation": "Precision = TP/(TP + FP) = 60/(60 + 40) = 0.60: of the transactions flagged as fraud, 60% really were fraud.",
+    "rationale": {
+      "A": "Incorrect. 0.75 is recall, TP/(TP + FN) = 60/80.",
+      "B": "Incorrect. 0.94 is accuracy, (60 + 880)/1,000.",
+      "C": "Correct. 60/100 = 0.60.",
+      "D": "Incorrect. 0.04 is the false positive rate, FP/(FP + TN) = 40/920."
+    },
+    "verify": "const tp=60,fp=40; return tp/(tp+fp);",
+    "numericAnswer": 0.6,
+    "tolerance": 0.005,
+    "tags": ["confusion-matrix", "precision"]
+  },
+  {
+    "id": "q-frm1-machine-learning-methods-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "machine-learning-methods",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A default model evaluated on 500 loans has 45 true positives, 15 false negatives, 45 false positives and 395 true negatives. The F1 score is closest to:",
+    "options": ["0.600", "0.625", "0.880", "0.375"],
+    "answer": "A",
+    "explanation": "Precision = 45/90 = 0.50. Recall = 45/60 = 0.75. F1 = 2 × 0.50 × 0.75/(0.50 + 0.75) = 0.75/1.25 = 0.600.",
+    "rationale": {
+      "A": "Correct. The harmonic mean of 0.50 and 0.75 is 0.600.",
+      "B": "Incorrect. 0.625 is the arithmetic mean of precision and recall; F1 is the harmonic mean.",
+      "C": "Incorrect. 0.880 is accuracy, (45 + 395)/500.",
+      "D": "Incorrect. 0.375 is precision times recall without the factor 2 and the division by their sum."
+    },
+    "verify": "const tp=45,fn=15,fp=45; const p=tp/(tp+fp), r=tp/(tp+fn); return 2*p*r/(p+r);",
+    "numericAnswer": 0.6,
+    "tolerance": 0.0005,
+    "tags": ["confusion-matrix", "f1-score"]
+  },
+  {
+    "id": "q-frm1-machine-learning-methods-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "machine-learning-methods",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst has 200 candidate predictors of corporate default and wants a model that automatically excludes irrelevant predictors by setting their coefficients exactly to zero. Which approach is most appropriate?",
+    "options": ["Ridge regression", "Ordinary least squares with all 200 predictors", "Principal components analysis", "LASSO regression"],
+    "answer": "D",
+    "explanation": "The LASSO penalises the sum of absolute coefficients, which can drive some coefficients exactly to zero and therefore performs variable selection. Ridge only shrinks coefficients towards zero.",
+    "rationale": {
+      "A": "Incorrect. Ridge's squared penalty shrinks coefficients but almost never sets them exactly to zero.",
+      "B": "Incorrect. OLS with 200 predictors keeps every variable and is prone to overfitting.",
+      "C": "Incorrect. PCA builds combinations of all predictors rather than excluding individual ones, and it ignores the default outcome.",
+      "D": "Correct. The absolute-value penalty produces exact zeros, selecting variables."
+    },
+    "tags": ["regularisation", "lasso"]
+  },
+  {
+    "id": "q-frm1-machine-learning-methods-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "machine-learning-methods",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A credit model built with a deep decision tree has a training-set error of 2% and a validation-set error of 18%. A shallower tree has errors of 9% and 10%. Which conclusion is best supported?",
+    "options": ["The deep tree has high bias and should be made more complex", "The deep tree is overfitting (high variance); the shallower tree is likely to generalise better", "The deep tree should be chosen because training error is the best guide to future performance", "Both models should be evaluated again on the validation set after choosing the one with the lowest training error"],
+    "answer": "B",
+    "explanation": "A large gap between low training error and much higher validation error is the signature of overfitting: the deep tree has memorised noise. The shallower tree has slightly higher training error but far lower validation error, so it should generalise better. Its final performance should then be confirmed on an untouched test set.",
+    "rationale": {
+      "A": "Incorrect. High bias shows up as high error on both training and validation data; here training error is very low.",
+      "B": "Correct. Low training error with high validation error indicates high variance.",
+      "C": "Incorrect. Training error rewards complexity and is a poor guide to out-of-sample performance.",
+      "D": "Incorrect. Models should be selected on validation performance, not training error, and then assessed once on a separate test set."
+    },
+    "tags": ["overfitting", "bias-variance", "validation"]
+  }
+]

@@ -1,0 +1,453 @@
+[
+  {
+    "id": "cfa1-der-0001",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Compared with over-the-counter (OTC) derivatives, exchange-traded derivatives are best characterized by:",
+    "options": [
+      "contract terms that are customized to the needs of the two counterparties",
+      "standardized terms and a central clearinghouse that guarantees performance",
+      "lower transparency because trades are not publicly reported"
+    ],
+    "answer": "B",
+    "explanation": "Exchange-traded derivatives are standardized, liquid, transparent and backed by a clearinghouse; OTC derivatives are customized, less transparent and carry more counterparty risk.",
+    "rationale": {
+      "A": "Incorrect. Customization is the defining feature of OTC contracts, not exchange-traded ones.",
+      "B": "Correct. Exchanges list standardized contracts, and the clearinghouse becomes the counterparty to both sides, sharply reducing counterparty credit risk.",
+      "C": "Incorrect. Exchange trading is more transparent; prices and volumes are reported. Limited transparency is a feature of OTC markets."
+    },
+    "tags": [
+      "exchange-vs-otc"
+    ]
+  },
+  {
+    "id": "cfa1-der-0002",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following is most likely a benefit of derivative markets?",
+    "options": [
+      "They eliminate systemic risk because risk is spread among many participants",
+      "They allow speculators to take positions without adding any information to prices",
+      "They support price discovery and let investors transfer risk at lower transaction cost than trading the underlying"
+    ],
+    "answer": "C",
+    "explanation": "Key benefits are risk allocation and transfer, information discovery, and operational advantages (low costs, liquidity, ease of shorting). Systemic risk and excessive speculation are potential drawbacks.",
+    "rationale": {
+      "A": "Incorrect. Derivatives can concentrate or transmit risk across institutions; heavy leverage and interconnectedness are cited as sources of systemic risk, not a cure for it.",
+      "B": "Incorrect. This is a criticism (speculation likened to gambling), and it is also inaccurate: speculative trading generally adds information and liquidity.",
+      "C": "Correct. Derivatives aid price discovery (especially futures), and they offer operational advantages such as lower transaction costs, easier shorting and leverage for transferring risk."
+    },
+    "tags": [
+      "benefits-and-risks"
+    ]
+  },
+  {
+    "id": "cfa1-der-0003",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following derivatives is a contingent claim rather than a forward commitment?",
+    "options": [
+      "A call option on a stock index",
+      "A plain-vanilla interest rate swap",
+      "A long position in an equity index futures contract"
+    ],
+    "answer": "A",
+    "explanation": "Forward commitments (forwards, futures, swaps) obligate both parties. Contingent claims (options, credit derivatives such as CDS) pay off only if a specified event or condition occurs.",
+    "rationale": {
+      "A": "Correct. An option gives its holder the right, but not the obligation, to transact; the payoff depends on whether the holder chooses to exercise, making it a contingent claim.",
+      "B": "Incorrect. A swap obligates both parties to exchange cash flows; it is a series of forward commitments.",
+      "C": "Incorrect. A futures contract obligates both parties to transact at the futures price at expiration; it is a forward commitment."
+    },
+    "tags": [
+      "contingent-claims"
+    ]
+  },
+  {
+    "id": "cfa1-der-0004",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Mira Castellanos buys a European put option on Halvorsen Ltd. shares with an exercise price of EUR 50 for a premium of EUR 4. At expiration the share price is EUR 43. Her profit per share is closest to:",
+    "options": [
+      "EUR 7.00",
+      "EUR 3.00",
+      "EUR 11.00"
+    ],
+    "answer": "B",
+    "explanation": "Put profit = max(0, K - S_T) - premium = max(0, 50 - 43) - 4 = 7 - 4 = EUR 3.00 per share.",
+    "rationale": {
+      "A": "Incorrect. EUR 7.00 is the payoff at expiration; it ignores the premium paid for the put.",
+      "B": "Correct. Payoff is max(0, 50 - 43) = 7; subtracting the EUR 4 premium gives a profit of EUR 3.00.",
+      "C": "Incorrect. EUR 11.00 adds the premium to the payoff instead of subtracting it; the premium is a cost to the put buyer."
+    },
+    "verify": "const K=50, S=43, p=4; return Math.max(0,K-S)-p;",
+    "numericAnswer": 3,
+    "tolerance": 0.005,
+    "tags": [
+      "option-payoff",
+      "profit"
+    ]
+  },
+  {
+    "id": "cfa1-der-0005",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A non-dividend-paying stock trades at USD 60, and the one-year risk-free rate is 5%. A dealer quotes a one-year forward price of USD 65. To exploit the mispricing, an arbitrageur should most likely:",
+    "options": [
+      "sell the stock short, invest the proceeds at the risk-free rate and buy (go long) the forward contract",
+      "do nothing, because the forward price is always above the spot price",
+      "borrow at the risk-free rate, buy the stock and sell (go short) the forward contract"
+    ],
+    "answer": "C",
+    "explanation": "F0 = S0(1 + r)^T = 60 x 1.05 = 63. Quoted F = 65 > 63, so short the forward, borrow 60 and buy the stock; at T deliver the stock for 65 and repay 63, earning 2 risk-free.",
+    "rationale": {
+      "A": "Incorrect. This reverse cash-and-carry trade is appropriate when the forward is underpriced (below USD 63), not overpriced.",
+      "B": "Incorrect. A forward price above spot does not by itself mean it is fair; only the amount above the carry-implied price of USD 63 matters, and here there is a USD 2 arbitrage.",
+      "C": "Correct. The no-arbitrage forward price is 60 x 1.05 = USD 63. The quoted USD 65 is too high, so the arbitrageur sells the overpriced forward and replicates a long forward by buying the stock with borrowed money (cash-and-carry), locking in USD 2 at maturity."
+    },
+    "tags": [
+      "arbitrage",
+      "cash-and-carry"
+    ]
+  },
+  {
+    "id": "cfa1-der-0006",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A stock trades at CAD 50 and will pay a dividend of CAD 1.50 in three months. The annually compounded risk-free rate is 6%. The no-arbitrage price of a one-year forward contract on the stock is closest to:",
+    "options": [
+      "CAD 51.43",
+      "CAD 53.00",
+      "CAD 54.57"
+    ],
+    "answer": "A",
+    "explanation": "F0 = (S0 - PV of benefits) x (1 + r)^T. PV(D) = 1.50/1.06^0.25 = 1.478. F0 = (50 - 1.478) x 1.06 = CAD 51.43.",
+    "rationale": {
+      "A": "Correct. Subtract the PV of the dividend (1.50/1.06^0.25 = 1.478) from spot and compound: (50 - 1.478) x 1.06 = CAD 51.43.",
+      "B": "Incorrect. CAD 53.00 ignores the dividend; a carry benefit received by the holder of the underlying lowers the forward price.",
+      "C": "Incorrect. CAD 54.57 adds the PV of the dividend as if it were a carry cost; dividends are a benefit and must be subtracted."
+    },
+    "verify": "const S=50, D=1.5, r=0.06; return (S - D/(1+r)**0.25)*(1+r);",
+    "numericAnswer": 51.43,
+    "tolerance": 0.005,
+    "tags": [
+      "cost-of-carry",
+      "forward-price"
+    ]
+  },
+  {
+    "id": "cfa1-der-0007",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Six months ago, Okonkwo Capital entered a one-year long forward contract on a non-dividend-paying index at a forward price of USD 105. The index now trades at USD 108, and the annually compounded risk-free rate is 4%. The value of the long forward position per unit of the index is closest to:",
+    "options": [
+      "USD 3.00",
+      "USD -5.04",
+      "USD 5.04"
+    ],
+    "answer": "C",
+    "explanation": "V_t(long) = S_t - PV(F0) = 108 - 105/1.04^0.5 = 108 - 102.96 = USD 5.04.",
+    "rationale": {
+      "A": "Incorrect. USD 3.00 compares spot with the forward price without discounting the forward price over the remaining six months.",
+      "B": "Incorrect. USD -5.04 is the value to the short position (sign reversed), not the long.",
+      "C": "Correct. Value of a long forward = S_t - F0/(1 + r)^(T - t) = 108 - 105/1.04^0.5 = 108 - 102.96 = USD 5.04."
+    },
+    "verify": "const S=108, F=105, r=0.04, T=0.5; return S - F/(1+r)**T;",
+    "numericAnswer": 5.04,
+    "tolerance": 0.005,
+    "tags": [
+      "forward-valuation"
+    ]
+  },
+  {
+    "id": "cfa1-der-0008",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "At the initiation of a forward contract priced at its no-arbitrage level, the value of the contract to the long party is:",
+    "options": [
+      "zero",
+      "equal to the forward price",
+      "equal to the spot price minus the forward price"
+    ],
+    "answer": "A",
+    "explanation": "A forward's price is fixed at initiation so that its value is zero; value becomes non-zero only as the underlying price and time to maturity change.",
+    "rationale": {
+      "A": "Correct. The forward price is set so that neither party pays anything at initiation; the contract therefore has zero value to both sides.",
+      "B": "Incorrect. The forward price is the agreed future transaction price, not the contract's value; price and value are different concepts.",
+      "C": "Incorrect. Spot minus forward price is not the value; the long's value would be spot minus the present value of the forward price, which is zero at initiation by construction."
+    },
+    "tags": [
+      "forward-valuation"
+    ]
+  },
+  {
+    "id": "cfa1-der-0009",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "If futures prices are positively correlated with interest rates, a futures price will most likely be:",
+    "options": [
+      "higher than the price of an otherwise identical forward contract",
+      "lower than the price of an otherwise identical forward contract",
+      "equal to the price of an otherwise identical forward contract"
+    ],
+    "answer": "A",
+    "explanation": "Daily settlement creates interim cash flows. Positive correlation with rates favours the long futures position, so futures price > forward price; negative correlation reverses this.",
+    "rationale": {
+      "A": "Correct. With positive correlation, a long futures holder receives mark-to-market gains when rates are high (reinvested at high rates) and pays losses when rates are low (financed cheaply). This advantage makes the long futures more desirable, pushing its price above the forward price.",
+      "B": "Incorrect. Futures trade below forwards when futures prices are negatively correlated with interest rates.",
+      "C": "Incorrect. Futures and forward prices are equal when interest rates are constant or uncorrelated with futures prices, not under positive correlation."
+    },
+    "tags": [
+      "futures-vs-forwards",
+      "mark-to-market"
+    ]
+  },
+  {
+    "id": "cfa1-der-0010",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A trader takes a long position in one futures contract with an initial margin of USD 6,000 and a maintenance margin of USD 4,500. On the first day the contract loses USD 2,100 in value. The variation margin the trader must deposit is closest to:",
+    "options": [
+      "USD 600",
+      "USD 2,100",
+      "USD 1,500"
+    ],
+    "answer": "B",
+    "explanation": "Ending balance = 6,000 - 2,100 = 3,900 < 4,500, triggering a margin call. Variation margin = initial margin - balance = 6,000 - 3,900 = USD 2,100.",
+    "rationale": {
+      "A": "Incorrect. USD 600 only restores the account to the maintenance margin; a margin call requires topping up to the initial margin.",
+      "B": "Correct. The balance falls to 6,000 - 2,100 = 3,900, below the 4,500 maintenance level, so the account must be restored to the initial margin: 6,000 - 3,900 = USD 2,100.",
+      "C": "Incorrect. USD 1,500 is the difference between initial and maintenance margin, not the amount needed to restore the actual balance."
+    },
+    "verify": "const IM=6000, MM=4500, loss=2100; const bal=IM-loss; return bal<MM ? IM-bal : 0;",
+    "numericAnswer": 2100,
+    "tolerance": 0.5,
+    "tags": [
+      "margin",
+      "variation-margin"
+    ]
+  },
+  {
+    "id": "cfa1-der-0011",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The discount factors for 1, 2 and 3 years are 0.97, 0.93 and 0.89, respectively. The fixed rate on a 3-year annual-pay plain-vanilla interest rate swap with a zero value at initiation is closest to:",
+    "options": [
+      "3.09%",
+      "3.67%",
+      "3.94%"
+    ],
+    "answer": "C",
+    "explanation": "A swap is a portfolio of forwards; setting PV(fixed) = PV(floating) gives r_fix = (1 - D_N)/sum(D_i) = (1 - 0.89)/(0.97 + 0.93 + 0.89) = 3.94%.",
+    "rationale": {
+      "A": "Incorrect. 3.09% is just the 1-year spot rate implied by D1; it ignores the 2- and 3-year cash flows.",
+      "B": "Incorrect. 3.67% divides by the number of periods (3) instead of the sum of the discount factors, so the fixed payments are not discounted.",
+      "C": "Correct. Par swap rate = (1 - D3)/(D1 + D2 + D3) = 0.11/2.79 = 3.94%."
+    },
+    "verify": "const d=[0.97,0.93,0.89]; return 100*(1-d[2])/(d[0]+d[1]+d[2]);",
+    "numericAnswer": 3.94,
+    "tolerance": 0.005,
+    "tags": [
+      "swap-rate",
+      "discount-factors"
+    ]
+  },
+  {
+    "id": "cfa1-der-0012",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Ferreira Industries entered a pay-fixed, receive-floating interest rate swap with a notional of USD 10,000,000 and a fixed rate of 3.00% (annual payments). The swap now has exactly two years remaining, the current par swap rate for two years is 3.50%, and the 1- and 2-year discount factors are 0.97 and 0.94. The value of the swap to Ferreira is closest to:",
+    "options": [
+      "USD 100,000",
+      "USD 95,500",
+      "USD -95,500"
+    ],
+    "answer": "B",
+    "explanation": "Value to fixed payer = (current par rate - original fixed rate) x notional x sum of discount factors = 0.005 x 10,000,000 x 1.91 = USD 95,500.",
+    "rationale": {
+      "A": "Incorrect. USD 100,000 sums the annual rate differences without discounting them.",
+      "B": "Correct. The fixed payer locks in 3.00% when the market rate is 3.50%: value = (0.035 - 0.030) x 10,000,000 x (0.97 + 0.94) = USD 95,500.",
+      "C": "Incorrect. USD -95,500 is the value to the receive-fixed counterparty; a pay-fixed party gains when market swap rates rise."
+    },
+    "verify": "const N=10000000; return (0.035-0.03)*N*(0.97+0.94);",
+    "numericAnswer": 95500,
+    "tolerance": 0.5,
+    "tags": [
+      "swap-valuation"
+    ]
+  },
+  {
+    "id": "cfa1-der-0013",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A call option with an exercise price of CHF 40 trades for CHF 7.50 when the underlying share price is CHF 46. The time value of the option is closest to:",
+    "options": [
+      "CHF 1.50",
+      "CHF 6.00",
+      "CHF 13.50"
+    ],
+    "answer": "A",
+    "explanation": "Option price = intrinsic value + time value. Time value = 7.50 - max(0, 46 - 40) = CHF 1.50.",
+    "rationale": {
+      "A": "Correct. Intrinsic value = 46 - 40 = 6.00; time value = premium - intrinsic = 7.50 - 6.00 = CHF 1.50.",
+      "B": "Incorrect. CHF 6.00 is the intrinsic (exercise) value, not the time value.",
+      "C": "Incorrect. CHF 13.50 adds intrinsic value to the premium; time value is the premium minus intrinsic value."
+    },
+    "verify": "const S=46, K=40, c=7.5; return c-Math.max(0,S-K);",
+    "numericAnswer": 1.5,
+    "tolerance": 0.005,
+    "tags": [
+      "time-value",
+      "intrinsic-value"
+    ]
+  },
+  {
+    "id": "cfa1-der-0014",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "All else equal, an increase in the risk-free interest rate will most likely cause the value of a European put option to:",
+    "options": [
+      "increase",
+      "decrease",
+      "remain unchanged"
+    ],
+    "answer": "B",
+    "explanation": "Higher r reduces PV(K): calls rise in value and puts fall in value, holding other factors constant.",
+    "rationale": {
+      "A": "Incorrect. Call values increase with the risk-free rate; put values move the other way.",
+      "B": "Correct. A higher rate lowers the present value of the exercise price the put holder receives, so the put is worth less (from parity, p = c - S + PV(K), and PV(K) falls while c rises).",
+      "C": "Incorrect. The risk-free rate affects option values through the present value of the exercise price, so the put value does change."
+    },
+    "tags": [
+      "option-value-drivers"
+    ]
+  },
+  {
+    "id": "cfa1-der-0015",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A non-dividend-paying stock trades at USD 52. A one-year European call with an exercise price of USD 50 is priced at USD 6.20, and the annually compounded risk-free rate is 5%. Using put-call parity, the price of the one-year European put with the same exercise price is closest to:",
+    "options": [
+      "USD 4.20",
+      "USD 10.58",
+      "USD 1.82"
+    ],
+    "answer": "C",
+    "explanation": "Put-call parity: S + p = c + PV(K), so p = c + PV(K) - S = 6.20 + 47.62 - 52 = USD 1.82.",
+    "rationale": {
+      "A": "Incorrect. USD 4.20 uses the exercise price without discounting it to present value.",
+      "B": "Incorrect. USD 10.58 adds the stock price and subtracts PV(K), which reverses the signs in the parity relation.",
+      "C": "Correct. p = c - S + K/(1 + r)^T = 6.20 - 52 + 50/1.05 = 6.20 - 52 + 47.62 = USD 1.82."
+    },
+    "verify": "const S=52, K=50, r=0.05, c=6.2; return c - S + K/(1+r);",
+    "numericAnswer": 1.82,
+    "tolerance": 0.005,
+    "tags": [
+      "put-call-parity"
+    ]
+  },
+  {
+    "id": "cfa1-der-0016",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Using put-call parity, which combination of positions replicates a long European put option on a non-dividend-paying stock?",
+    "options": [
+      "A long call, a short position in the stock and a long risk-free bond that pays the exercise price at expiration",
+      "A short call, a long position in the stock and a short risk-free bond that pays the exercise price at expiration",
+      "A long call, a long position in the stock and a short risk-free bond that pays the exercise price at expiration"
+    ],
+    "answer": "A",
+    "explanation": "From the fiduciary call = protective put identity, c + PV(K) = p + S, so p = c - S + PV(K).",
+    "rationale": {
+      "A": "Correct. Rearranging S + p = c + PV(K) gives p = c - S + PV(K): buy the call, short the stock and lend PV(K).",
+      "B": "Incorrect. This is the mirror image: -c + S - PV(K) equals a short put, the opposite of what is required.",
+      "C": "Incorrect. c + S - PV(K) has the wrong sign on the stock; it does not correspond to any parity-consistent put position."
+    },
+    "tags": [
+      "replication",
+      "put-call-parity"
+    ]
+  },
+  {
+    "id": "cfa1-der-0017",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A stock currently trades at GBP 40. In one year it will either rise by a factor of 1.25 or fall by a factor of 0.80. The annually compounded risk-free rate is 5%. Using a one-period binomial model, the value of a one-year European call with an exercise price of GBP 42 is closest to:",
+    "options": [
+      "GBP 4.44",
+      "GBP 4.23",
+      "GBP 3.81"
+    ],
+    "answer": "B",
+    "explanation": "q = (1 + r - d)/(u - d) = 0.25/0.45 = 0.5556. c = [q x 8 + (1 - q) x 0]/1.05 = GBP 4.23.",
+    "rationale": {
+      "A": "Incorrect. GBP 4.44 computes the risk-neutral expected payoff but forgets to discount it at the risk-free rate.",
+      "B": "Correct. Up price 50 gives payoff 8; down price 32 gives 0. q = (1.05 - 0.80)/(1.25 - 0.80) = 0.5556, so c = 0.5556 x 8 / 1.05 = GBP 4.23.",
+      "C": "Incorrect. GBP 3.81 uses a 50/50 probability instead of the risk-neutral probability of 0.5556."
+    },
+    "verify": "const S=40,u=1.25,d=0.8,r=0.05,K=42; const q=(1+r-d)/(u-d); const cu=Math.max(0,S*u-K), cd=Math.max(0,S*d-K); return (q*cu+(1-q)*cd)/(1+r);",
+    "numericAnswer": 4.23,
+    "tolerance": 0.005,
+    "tags": [
+      "binomial",
+      "risk-neutral"
+    ]
+  },
+  {
+    "id": "cfa1-der-0018",
+    "course": "cfa-level-1",
+    "topic": "derivatives",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In a one-period binomial model, the risk-neutral probability of an up move depends on:",
+    "options": [
+      "investors' estimates of the actual probability of an up move",
+      "the expected return on the underlying asset and investors' risk aversion",
+      "the up and down factors and the risk-free rate only"
+    ],
+    "answer": "C",
+    "explanation": "Because a hedge portfolio of the underlying and the option is riskless, the option value is set by arbitrage, and q = (1 + r - d)/(u - d).",
+    "rationale": {
+      "A": "Incorrect. Actual (subjective) probabilities are not needed because the option can be replicated with the underlying and the risk-free asset.",
+      "B": "Incorrect. Expected returns and risk aversion are irrelevant in no-arbitrage pricing; they are embedded in the current underlying price.",
+      "C": "Correct. q = (1 + r - d)/(u - d) uses only u, d and r; the option is priced by replication, so real-world probabilities and risk preferences do not enter."
+    },
+    "tags": [
+      "binomial",
+      "risk-neutral"
+    ]
+  }
+]

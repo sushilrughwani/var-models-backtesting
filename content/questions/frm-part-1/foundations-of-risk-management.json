@@ -1,0 +1,803 @@
+[
+  {
+    "id": "frm1-fnd-0001",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A risk manager at Harlow Commercial Bank is distinguishing risk from uncertainty when briefing the board. Which statement best captures the distinction?",
+    "options": [
+      "Risk refers only to losses, whereas uncertainty refers to both gains and losses.",
+      "Risk refers to outcomes whose probability distribution can be estimated; uncertainty refers to outcomes whose probabilities cannot be meaningfully quantified.",
+      "Risk can always be eliminated through diversification, whereas uncertainty cannot.",
+      "Uncertainty is simply risk measured over a longer time horizon."
+    ],
+    "answer": "B",
+    "explanation": "Risk: probabilities of outcomes are known or estimable. Uncertainty (Knightian): probabilities cannot be reliably assigned.",
+    "rationale": {
+      "A": "Incorrect. Risk concerns variability of outcomes in both directions; the distinction is about measurability, not the sign of outcomes.",
+      "B": "Correct. This is the classic Knightian distinction: risk is measurable variability, uncertainty is not reducible to known probabilities.",
+      "C": "Incorrect. Systematic risk cannot be diversified away; diversifiability is not what separates risk from uncertainty.",
+      "D": "Incorrect. The horizon does not convert risk into uncertainty; the difference is whether probabilities can be assigned."
+    },
+    "tags": [
+      "risk-vs-uncertainty"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0002",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Kestrel Lending has a USD 20 million exposure to a single borrower. The one-year probability of default is 2% and the loss given default is 45%. The expected loss on the exposure is closest to:",
+    "options": [
+      "USD 400,000",
+      "USD 180,000",
+      "USD 220,000",
+      "USD 9,000,000"
+    ],
+    "answer": "B",
+    "explanation": "EL = PD x LGD x EAD = 0.02 x 0.45 x 20m = USD 180,000.",
+    "rationale": {
+      "A": "Incorrect. This is PD x EAD, which ignores the loss given default (assumes zero recovery).",
+      "B": "Correct. EL = PD x LGD x EAD = 0.02 x 0.45 x 20,000,000 = USD 180,000.",
+      "C": "Incorrect. This uses the recovery rate (55%) instead of the LGD (45%).",
+      "D": "Incorrect. This is LGD x EAD, the loss conditional on default, not weighted by the probability of default."
+    },
+    "verify": "return 0.02*0.45*20000000;",
+    "numericAnswer": 180000,
+    "tolerance": 1,
+    "tags": [
+      "expected-loss"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0003",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A loan of USD 10 million has a one-year default probability of 9% and a loss given default of 60%. Treating default as a Bernoulli event with LGD and exposure fixed, the unexpected loss (standard deviation of loss) is closest to:",
+    "options": [
+      "USD 1.80 million",
+      "USD 0.49 million",
+      "USD 0.54 million",
+      "USD 1.72 million"
+    ],
+    "answer": "D",
+    "explanation": "UL = 10m x 0.60 x sqrt(0.09 x 0.91) = 6m x 0.2862 = USD 1.72 million.",
+    "rationale": {
+      "A": "Incorrect. This uses sqrt(PD) and omits the (1 - PD) term in the Bernoulli variance.",
+      "B": "Incorrect. This uses the variance PD(1 - PD) without taking the square root.",
+      "C": "Incorrect. This is the expected loss (PD x LGD x EAD), not the unexpected loss.",
+      "D": "Correct. UL = EAD x LGD x sqrt(PD(1 - PD)) = 6,000,000 x sqrt(0.09 x 0.91) = USD 1.72 million."
+    },
+    "verify": "return 10*0.6*Math.sqrt(0.09*0.91);",
+    "numericAnswer": 1.72,
+    "tolerance": 0.005,
+    "tags": [
+      "unexpected-loss"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0004",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Valmont Tools, a US exporter, expects to receive EUR 5,000,000 in three months. The spot and three-month forward rates are both USD 1.10 per EUR. Valmont sells EUR 4,000,000 forward and leaves the rest unhedged. If the spot rate in three months is USD 1.02 per EUR, Valmont's loss relative to the USD 5,500,000 value at today's rate is closest to:",
+    "options": [
+      "USD 400,000",
+      "USD 80,000",
+      "USD 320,000",
+      "USD 0"
+    ],
+    "answer": "B",
+    "explanation": "Unhedged EUR 1m x (1.10 - 1.02) = USD 80,000; the forward locks 1.10 on the other EUR 4m.",
+    "rationale": {
+      "A": "Incorrect. This applies the rate move to the full EUR 5,000,000, ignoring the forward hedge.",
+      "B": "Correct. Only the unhedged EUR 1,000,000 is exposed: 1,000,000 x (1.10 - 1.02) = USD 80,000.",
+      "C": "Incorrect. This is the loss avoided on the hedged EUR 4,000,000, not the loss on the open position.",
+      "D": "Incorrect. This assumes the exposure is fully hedged; 20% remains open."
+    },
+    "verify": "return (5000000-4000000)*(1.10-1.02);",
+    "numericAnswer": 80000,
+    "tolerance": 1,
+    "tags": [
+      "hedging"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0005",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "The board of Corrin Insurance approves a document stating the amount and types of risk the firm is willing to accept in pursuit of its strategic objectives, which management then translates into desk-level exposure limits. This document is best described as:",
+    "options": [
+      "A risk limit framework",
+      "A risk capacity assessment",
+      "A business continuity plan",
+      "A risk appetite statement"
+    ],
+    "answer": "D",
+    "explanation": "Board sets risk appetite (aggregate willingness); management cascades it into limits; appetite must not exceed risk capacity.",
+    "rationale": {
+      "A": "Incorrect. Limits are the granular controls derived from the appetite, not the board-level statement itself.",
+      "B": "Incorrect. Risk capacity is the maximum risk the firm could bear before breaching constraints; appetite is set at or below capacity.",
+      "C": "Incorrect. A continuity plan addresses operational disruption, not the overall willingness to take risk.",
+      "D": "Correct. The risk appetite statement sets the aggregate level and types of risk the firm is willing to take; limits operationalise it."
+    },
+    "tags": [
+      "risk-appetite"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0006",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Under the Modigliani-Miller framework with perfect markets, hedging does not add value because shareholders can hedge on their own. Which of the following is the strongest argument that hedging can nonetheless increase firm value in practice?",
+    "options": [
+      "Hedging lowers the probability of costly financial distress and can reduce expected taxes when the tax schedule is convex.",
+      "Hedging always increases expected cash flows because derivatives have positive expected payoffs.",
+      "Hedging lets the firm report higher accounting earnings in every period.",
+      "Shareholders are unable to diversify across firms, so they need managers to hedge for them."
+    ],
+    "answer": "A",
+    "explanation": "Hedging creates value only through frictions: financial distress costs, convex taxes, costly external financing, and agency/information problems.",
+    "rationale": {
+      "A": "Correct. Market frictions such as distress costs and convex taxes break the MM irrelevance result, so reducing cash-flow volatility can raise expected after-cost value.",
+      "B": "Incorrect. Fairly priced hedges have roughly zero expected payoff; value comes from reducing frictions, not from expected gains.",
+      "C": "Incorrect. Hedging smooths earnings but does not raise them in every period; it also gives up upside.",
+      "D": "Incorrect. Shareholders can typically diversify easily; the case for hedging rests on firm-level frictions, not shareholder inability to diversify."
+    },
+    "tags": [
+      "hedging-rationale"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0007",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "At Brennock Bank, which function is typically regarded as the third line of defence?",
+    "options": [
+      "Business-line trading desks",
+      "Internal audit",
+      "The independent risk management function",
+      "The compliance department"
+    ],
+    "answer": "B",
+    "explanation": "First line: risk owners (business). Second line: risk management and compliance. Third line: internal audit.",
+    "rationale": {
+      "A": "Incorrect. Business units that own and take risk are the first line.",
+      "B": "Correct. Internal audit provides independent assurance over the first and second lines.",
+      "C": "Incorrect. Risk management oversees and challenges the first line; it is the second line.",
+      "D": "Incorrect. Compliance is normally part of the second line of defence."
+    },
+    "tags": [
+      "three-lines-of-defence"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0008",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following arrangements is most consistent with good practice for the board risk committee of a large financial institution?",
+    "options": [
+      "The committee is chaired by an independent non-executive director and the chief risk officer has direct access to it.",
+      "The chief executive officer chairs the committee to ensure alignment with business strategy.",
+      "The chief risk officer reports only to the head of the largest business line.",
+      "The committee is merged with the audit committee so that risk and financial reporting are reviewed by the same people."
+    ],
+    "answer": "A",
+    "explanation": "Good governance: independent risk committee chair, CRO with direct board access, separation from audit.",
+    "rationale": {
+      "A": "Correct. Independence of the chair and a direct reporting line for the CRO strengthen the committee's ability to challenge management.",
+      "B": "Incorrect. A CEO chair undermines independent oversight of the risks management is taking.",
+      "C": "Incorrect. Reporting to a revenue-generating head compromises the CRO's independence.",
+      "D": "Incorrect. Good practice keeps a separate risk committee; audit focuses on financial reporting and controls."
+    },
+    "tags": [
+      "risk-committee"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0009",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Ashgrove Bank buys protection on a corporate reference entity through a credit default swap. Which statement best describes Ashgrove's position?",
+    "options": [
+      "It receives a periodic premium and pays compensation if the reference entity defaults.",
+      "It pays a periodic premium and receives compensation if the reference entity experiences a credit event.",
+      "It must own the reference entity's bonds in order to enter the contract.",
+      "It has transferred the credit risk with no remaining exposure to any counterparty."
+    ],
+    "answer": "B",
+    "explanation": "CDS buyer pays the spread, receives payment on a credit event, and bears counterparty risk to the seller.",
+    "rationale": {
+      "A": "Incorrect. This describes the protection seller.",
+      "B": "Correct. The protection buyer pays the CDS spread and is compensated for losses upon a credit event.",
+      "C": "Incorrect. CDS can be bought without holding the underlying (a 'naked' CDS).",
+      "D": "Incorrect. The buyer takes on counterparty risk to the protection seller."
+    },
+    "tags": [
+      "credit-default-swaps"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0010",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Analysts reviewing the 2007-2009 crisis argue that the originate-to-distribute model contributed to deteriorating mortgage quality. The main mechanism was that:",
+    "options": [
+      "Originators that sold loans into securitisations retained little exposure, weakening their incentive to screen and monitor borrowers.",
+      "Securitisation forced banks to hold more capital against mortgages, raising lending rates.",
+      "Credit derivatives eliminated credit risk from the financial system entirely.",
+      "Senior tranches absorbed losses before junior tranches, so investors ignored the junior tranches."
+    ],
+    "answer": "A",
+    "explanation": "Originate-to-distribute weakened screening incentives (moral hazard); complexity and rating reliance compounded the problem.",
+    "rationale": {
+      "A": "Correct. Transferring the credit risk created a moral hazard problem: lenders were paid for volume rather than for loan quality.",
+      "B": "Incorrect. Securitisation was often used to reduce capital requirements, not raise them.",
+      "C": "Incorrect. Credit risk was transferred and often concentrated, not eliminated.",
+      "D": "Incorrect. Junior (equity and mezzanine) tranches absorb losses first, not senior tranches."
+    },
+    "tags": [
+      "securitisation"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0011",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The risk-free rate is 3%, the expected market return is 9% and a stock has a beta of 1.3. Using the CAPM, the stock's expected return is closest to:",
+    "options": [
+      "14.7%",
+      "8.7%",
+      "7.6%",
+      "10.8%"
+    ],
+    "answer": "D",
+    "explanation": "E(R) = rf + beta x (E(Rm) - rf) = 3 + 1.3 x 6 = 10.8%.",
+    "rationale": {
+      "A": "Incorrect. This multiplies beta by the market return (9%) instead of the market risk premium (6%).",
+      "B": "Incorrect. This computes 1.3 x 9% - 3%, subtracting the risk-free rate instead of adding it to the premium.",
+      "C": "Incorrect. This divides the market risk premium by beta instead of multiplying.",
+      "D": "Correct. E(R) = 3% + 1.3 x (9% - 3%) = 10.8%."
+    },
+    "verify": "return 3+1.3*(9-3);",
+    "numericAnswer": 10.8,
+    "tolerance": 0.05,
+    "tags": [
+      "capm"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0012",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Stock Q has a return volatility of 25%, the market's volatility is 16% and the correlation between Q and the market is 0.70. Stock Q's beta is closest to:",
+    "options": [
+      "1.56",
+      "0.45",
+      "1.09",
+      "0.70"
+    ],
+    "answer": "C",
+    "explanation": "beta = Cov / Var(M) = rho x sigma_Q / sigma_M = 0.70 x 1.5625 = 1.09.",
+    "rationale": {
+      "A": "Incorrect. This is sigma_Q / sigma_M, which ignores the correlation.",
+      "B": "Incorrect. This inverts the volatility ratio: 0.70 x 16 / 25.",
+      "C": "Correct. beta = rho x sigma_Q / sigma_M = 0.70 x 25 / 16 = 1.09.",
+      "D": "Incorrect. This uses the correlation itself as the beta."
+    },
+    "verify": "return 0.7*25/16;",
+    "numericAnswer": 1.09,
+    "tolerance": 0.005,
+    "tags": [
+      "beta"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0013",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An investor combines the market portfolio and the risk-free asset to target a portfolio volatility of 12%. The market's expected return is 10% with volatility 20%, and the risk-free rate is 4%. Using the capital market line, the portfolio's expected return is closest to:",
+    "options": [
+      "6.0%",
+      "10.0%",
+      "7.6%",
+      "6.4%"
+    ],
+    "answer": "C",
+    "explanation": "Weight in market = 12/20 = 0.6. E(Rp) = 0.4 x 4% + 0.6 x 10% = 7.6%, equivalently rf + Sharpe(M) x sigma_p.",
+    "rationale": {
+      "A": "Incorrect. This is 0.6 x 10%, ignoring the return earned on the 40% held in the risk-free asset.",
+      "B": "Incorrect. This uses the market return rather than the market risk premium in the slope: 4% + (10/20) x 12%.",
+      "C": "Correct. E(Rp) = 4% + (10% - 4%)/20% x 12% = 7.6%.",
+      "D": "Incorrect. This swaps the weights, putting 60% in the risk-free asset and 40% in the market."
+    },
+    "verify": "return 4+(10-4)/20*12;",
+    "numericAnswer": 7.6,
+    "tolerance": 0.05,
+    "tags": [
+      "capital-market-line"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0014",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A portfolio holds 60% in asset X (volatility 20%) and 40% in asset Y (volatility 12%). The correlation between X and Y is 0.30. The portfolio volatility is closest to:",
+    "options": [
+      "16.80%",
+      "12.92%",
+      "14.20%",
+      "13.58%"
+    ],
+    "answer": "C",
+    "explanation": "sigma_p = sqrt(w1^2 s1^2 + w2^2 s2^2 + 2 w1 w2 rho s1 s2) = sqrt(0.02016) = 14.20%.",
+    "rationale": {
+      "A": "Incorrect. This is the weighted average of volatilities, valid only if correlation were 1.",
+      "B": "Incorrect. This drops the covariance term, as if correlation were zero.",
+      "C": "Correct. Variance = 0.36(0.04) + 0.16(0.0144) + 2(0.6)(0.4)(0.3)(0.2)(0.12) = 0.02016; sqrt = 14.20%.",
+      "D": "Incorrect. This omits the factor of 2 on the covariance term."
+    },
+    "verify": "const v=0.36*0.04+0.16*0.0144+2*0.6*0.4*0.3*0.2*0.12; return Math.sqrt(v)*100;",
+    "numericAnswer": 14.2,
+    "tolerance": 0.005,
+    "tags": [
+      "portfolio-variance",
+      "diversification"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0015",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Fund Larkspur earned 11% last year with a return volatility of 16% and a beta of 1.2. The risk-free rate was 3%. The fund's Sharpe ratio is closest to:",
+    "options": [
+      "0.69",
+      "3.13",
+      "6.67",
+      "0.50"
+    ],
+    "answer": "D",
+    "explanation": "Sharpe = (Rp - rf) / sigma_p = 8 / 16 = 0.50.",
+    "rationale": {
+      "A": "Incorrect. This divides the total return by volatility without subtracting the risk-free rate.",
+      "B": "Incorrect. This divides the excess return by the variance (0.0256) instead of the standard deviation.",
+      "C": "Incorrect. This is the Treynor measure, (11 - 3)/1.2, which uses beta instead of total volatility.",
+      "D": "Correct. Sharpe = (11% - 3%) / 16% = 0.50."
+    },
+    "verify": "return (11-3)/16;",
+    "numericAnswer": 0.5,
+    "tolerance": 0.005,
+    "tags": [
+      "sharpe-ratio"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0016",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Portfolio Mirelle returned 12% with a beta of 1.2. The risk-free rate was 2.5% and the market returned 9%. Jensen's alpha is closest to:",
+    "options": [
+      "1.70%",
+      "3.00%",
+      "-1.30%",
+      "7.92%"
+    ],
+    "answer": "A",
+    "explanation": "alpha = Rp - [rf + beta(Rm - rf)] = 12 - (2.5 + 1.2 x 6.5) = 1.70%.",
+    "rationale": {
+      "A": "Correct. CAPM required return = 2.5% + 1.2 x (9% - 2.5%) = 10.3%; alpha = 12% - 10.3% = 1.70%.",
+      "B": "Incorrect. This is the simple excess over the market (12% - 9%), ignoring beta and the risk-free rate.",
+      "C": "Incorrect. This multiplies beta by the market return rather than the market risk premium: 12 - (2.5 + 1.2 x 9).",
+      "D": "Incorrect. This is the Treynor measure, (12 - 2.5)/1.2, not Jensen's alpha."
+    },
+    "verify": "return 12-(2.5+1.2*(9-2.5));",
+    "numericAnswer": 1.7,
+    "tolerance": 0.005,
+    "tags": [
+      "jensens-alpha"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0017",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An active equity manager returned 10.4% versus a benchmark return of 9.1%. The portfolio's volatility was 14%, its tracking error was 2.6% and the risk-free rate was 3%. The information ratio is closest to:",
+    "options": [
+      "4.00",
+      "0.09",
+      "2.85",
+      "0.50"
+    ],
+    "answer": "D",
+    "explanation": "IR = active return / tracking error = 1.3 / 2.6 = 0.50.",
+    "rationale": {
+      "A": "Incorrect. This divides the total portfolio return by tracking error, without subtracting the benchmark.",
+      "B": "Incorrect. This divides the active return by total portfolio volatility instead of tracking error.",
+      "C": "Incorrect. This uses excess return over the risk-free rate, not over the benchmark, in the numerator.",
+      "D": "Correct. IR = (10.4% - 9.1%) / 2.6% = 0.50."
+    },
+    "verify": "return (10.4-9.1)/2.6;",
+    "numericAnswer": 0.5,
+    "tolerance": 0.005,
+    "tags": [
+      "information-ratio"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0018",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A hedge fund returned 9% with total volatility of 12% and downside deviation (below a 4% minimum acceptable return) of 7%. The risk-free rate is 2%. The Sortino ratio using the 4% minimum acceptable return is closest to:",
+    "options": [
+      "0.42",
+      "1.29",
+      "0.71",
+      "1.00"
+    ],
+    "answer": "C",
+    "explanation": "Sortino = (Rp - MAR) / downside deviation = 5 / 7 = 0.71.",
+    "rationale": {
+      "A": "Incorrect. This divides by total volatility (12%) instead of downside deviation.",
+      "B": "Incorrect. This omits the minimum acceptable return from the numerator: 9/7.",
+      "C": "Correct. Sortino = (9% - 4%) / 7% = 0.71.",
+      "D": "Incorrect. This subtracts the risk-free rate (2%) rather than the minimum acceptable return: (9 - 2)/7."
+    },
+    "verify": "return (9-4)/7;",
+    "numericAnswer": 0.71,
+    "tolerance": 0.005,
+    "tags": [
+      "sortino-ratio"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0019",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A portfolio has a Sharpe ratio of 0.45, return volatility of 18% and a beta of 1.2. The risk-free rate is 3%. The portfolio's Treynor measure (in percent) is closest to:",
+    "options": [
+      "6.75",
+      "0.38",
+      "4.25",
+      "9.72"
+    ],
+    "answer": "A",
+    "explanation": "Rp - rf = Sharpe x sigma = 8.1%; Treynor = (Rp - rf) / beta = 8.1 / 1.2 = 6.75.",
+    "rationale": {
+      "A": "Correct. Excess return = 0.45 x 18% = 8.1%; Treynor = 8.1 / 1.2 = 6.75.",
+      "B": "Incorrect. This divides the Sharpe ratio itself by beta rather than the excess return.",
+      "C": "Incorrect. This treats 8.1% as the total return and subtracts the risk-free rate a second time: (8.1 - 3)/1.2.",
+      "D": "Incorrect. This multiplies the excess return by beta instead of dividing."
+    },
+    "verify": "const ex=0.45*18; return ex/1.2;",
+    "numericAnswer": 6.75,
+    "tolerance": 0.005,
+    "tags": [
+      "treynor-ratio"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0020",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A two-factor APT model has a risk-free rate of 3%. The GDP-growth factor has a risk premium of 2.0% and the inflation factor has a risk premium of 1.5%. Stock Delmar has a GDP beta of 1.2 and an inflation beta of -0.4. Delmar's expected return is closest to:",
+    "options": [
+      "6.00%",
+      "4.80%",
+      "1.80%",
+      "6.50%"
+    ],
+    "answer": "B",
+    "explanation": "E(R) = rf + sum(beta_k x lambda_k) = 3 + 2.4 - 0.6 = 4.80%.",
+    "rationale": {
+      "A": "Incorrect. This ignores the negative sign on the inflation beta, adding 0.4 x 1.5%.",
+      "B": "Correct. E(R) = 3% + 1.2(2.0%) - 0.4(1.5%) = 4.80%.",
+      "C": "Incorrect. This omits the risk-free rate and reports only the factor premia.",
+      "D": "Incorrect. This adds the factor premia without scaling them by the factor betas."
+    },
+    "verify": "return 3+1.2*2.0+(-0.4)*1.5;",
+    "numericAnswer": 4.8,
+    "tolerance": 0.005,
+    "tags": [
+      "apt"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0021",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Stock Pemberly has an expected return of 8%. Its sensitivity to GDP growth is 1.5 and its sensitivity to interest rates is -0.8. GDP growth was expected to be 3% but came in at 2%; interest rates were expected to be 4% but came in at 4.5%. Firm-specific news added +0.5%. Using a multifactor model, Pemberly's realised return is closest to:",
+    "options": [
+      "7.9%",
+      "6.1%",
+      "6.6%",
+      "7.4%"
+    ],
+    "answer": "C",
+    "explanation": "Only surprises move returns: R = E(R) + 1.5(-1) - 0.8(+0.5) + 0.5 = 8 - 1.5 - 0.4 + 0.5 = 6.6%.",
+    "rationale": {
+      "A": "Incorrect. This applies the betas to the actual factor levels rather than to the factor surprises.",
+      "B": "Incorrect. This omits the firm-specific return of +0.5%.",
+      "C": "Correct. R = 8 + 1.5(2 - 3) + (-0.8)(4.5 - 4) + 0.5 = 6.6%.",
+      "D": "Incorrect. This ignores the negative sign on the interest rate sensitivity, adding 0.4% instead of subtracting."
+    },
+    "verify": "return 8+1.5*(2-3)+(-0.8)*(4.5-4)+0.5;",
+    "numericAnswer": 6.6,
+    "tolerance": 0.05,
+    "tags": [
+      "multifactor-model"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0022",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A USD 50 million portfolio has a sensitivity of 1.4 to an energy-price factor. A traded instrument has a sensitivity of 2.0 to the same factor and zero sensitivity to other factors. To make the portfolio neutral to the energy factor, the manager should:",
+    "options": [
+      "Short USD 70 million of the instrument",
+      "Short USD 25 million of the instrument",
+      "Short USD 71.4 million of the instrument",
+      "Short USD 35 million of the instrument"
+    ],
+    "answer": "D",
+    "explanation": "Set total exposure to zero: 50 x 1.4 + h x 2.0 = 0, so h = -35 (short USD 35 million).",
+    "rationale": {
+      "A": "Incorrect. This is the portfolio's factor exposure (50 x 1.4) without dividing by the instrument's sensitivity.",
+      "B": "Incorrect. This divides the portfolio value by the instrument's sensitivity, ignoring the portfolio's own sensitivity of 1.4.",
+      "C": "Incorrect. This inverts the ratio of sensitivities: 50 x 2.0 / 1.4.",
+      "D": "Correct. Required position = -(50 x 1.4) / 2.0 = -USD 35 million."
+    },
+    "verify": "return 50*1.4/2.0;",
+    "numericAnswer": 35,
+    "tolerance": 0.05,
+    "tags": [
+      "factor-hedging"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0023",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Following a merger, Tilbury Bancorp finds it cannot produce a consolidated exposure report to a distressed counterparty within a day because each legacy bank uses different customer identifiers. Which risk data aggregation principle is most directly breached?",
+    "options": [
+      "Clarity and usefulness of the board's risk reports",
+      "Frequency of board risk reporting",
+      "Distribution of reports to relevant parties",
+      "Timeliness, supported by an integrated data architecture"
+    ],
+    "answer": "D",
+    "explanation": "The principles require accurate, complete, timely and adaptable aggregation built on sound governance and IT infrastructure; inconsistent identifiers block timely aggregation.",
+    "rationale": {
+      "A": "Incorrect. Report clarity concerns presentation; the problem here is inability to aggregate the data at all, quickly.",
+      "B": "Incorrect. Reporting frequency is a separate principle; the issue is producing ad hoc aggregation on demand.",
+      "C": "Incorrect. Distribution concerns who receives reports, not the ability to compile them.",
+      "D": "Correct. Risk data must be aggregated quickly, especially in stress, which requires consistent identifiers and integrated infrastructure."
+    },
+    "tags": [
+      "risk-data-aggregation"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0024",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Under the principles for effective risk data aggregation and risk reporting, the ability to generate aggregate risk data quickly to meet ad hoc requests, such as during a crisis or for a new supervisory query, is described as:",
+    "options": [
+      "Completeness",
+      "Adaptability",
+      "Accuracy and integrity",
+      "Comprehensiveness of reporting"
+    ],
+    "answer": "B",
+    "explanation": "Aggregation capabilities: accuracy/integrity, completeness, timeliness and adaptability (ad hoc, flexible requests).",
+    "rationale": {
+      "A": "Incorrect. Completeness is capturing all material risk data across the group.",
+      "B": "Correct. Adaptability is the capacity to produce flexible, on-demand aggregations for ad hoc, stress or supervisory needs.",
+      "C": "Incorrect. Accuracy concerns correct, reconciled data with minimal manual intervention.",
+      "D": "Incorrect. This concerns covering all material risk areas in reports, not responsiveness to ad hoc requests."
+    },
+    "tags": [
+      "risk-data-aggregation"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0025",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with managing risks in separate business and risk-type silos, the key benefit of enterprise risk management (ERM) is that it:",
+    "options": [
+      "Eliminates the need for business-line risk limits.",
+      "Removes the need for stress testing because risks are aggregated statistically.",
+      "Captures interactions and correlations among risks so that firm-wide exposure and capital can be assessed on an integrated basis.",
+      "Guarantees that total risk is lower than the sum of individual risks in all scenarios."
+    ],
+    "answer": "C",
+    "explanation": "ERM integrates risk types and business lines, aligning risk with strategy and capital and capturing correlations and concentrations.",
+    "rationale": {
+      "A": "Incorrect. ERM sets firm-wide appetite but still cascades it into business-line limits.",
+      "B": "Incorrect. Scenario analysis and stress testing are core ERM tools, complementing statistical aggregation.",
+      "C": "Correct. ERM aggregates risks across the enterprise, recognising diversification and concentrations that silo approaches miss.",
+      "D": "Incorrect. Diversification benefits can vanish in stress, when correlations rise."
+    },
+    "tags": [
+      "erm"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0026",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Ellery Group's ERM team wants to assess the impact of a severe but plausible combination of a cyber attack, a sharp rise in interest rates and a ratings downgrade for which little historical data exist. The most appropriate tool is:",
+    "options": [
+      "Historical-simulation VaR",
+      "Scenario analysis",
+      "The Sharpe ratio of the firm's investment portfolio",
+      "Parametric VaR under normality"
+    ],
+    "answer": "B",
+    "explanation": "Scenario analysis complements statistical measures by exploring severe, plausible, forward-looking events, including emerging risks.",
+    "rationale": {
+      "A": "Incorrect. Historical simulation can only replay past events, and this combination has little historical precedent.",
+      "B": "Correct. Forward-looking scenarios can combine plausible joint shocks that history does not contain.",
+      "C": "Incorrect. A performance ratio does not assess tail impacts of combined shocks.",
+      "D": "Incorrect. Normal-based VaR understates tails and cannot represent qualitative, combined events well."
+    },
+    "tags": [
+      "scenario-analysis",
+      "erm"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0027",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A single trader at a bank's overseas office built up huge unauthorised futures positions, concealing losses in an error account because he controlled both trading and settlement. Which control failure was most central?",
+    "options": [
+      "Lack of segregation between front-office and back-office duties",
+      "Use of an incorrect volatility model for option pricing",
+      "Excessive reliance on short-term wholesale funding",
+      "Failure to diversify the bank's loan book"
+    ],
+    "answer": "A",
+    "explanation": "Rogue-trading cases (e.g., Barings) show the need for segregation of duties, independent reconciliation and scrutiny of unusually large reported profits.",
+    "rationale": {
+      "A": "Correct. Allowing one person to trade and settle his own trades enabled concealment; segregation of duties is a basic operational control.",
+      "B": "Incorrect. This is model risk; the case turned on unauthorised trading and concealment.",
+      "C": "Incorrect. That describes funding liquidity risk, not the rogue-trading failure here.",
+      "D": "Incorrect. Credit concentration is unrelated to concealed trading losses."
+    },
+    "tags": [
+      "rogue-trading",
+      "operational-risk"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0028",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An industrial firm sold long-term fixed-price oil supply contracts and hedged them with a stack of short-dated futures rolled forward each month. When spot prices fell sharply, the firm faced large margin calls and unwound the hedge at a loss. The principal lesson of this episode is that:",
+    "options": [
+      "A hedge that is economically sound over the long run can still fail if the firm lacks the funding liquidity to meet interim cash flows.",
+      "Futures cannot be used to hedge commodity price risk.",
+      "The firm's loss arose mainly from counterparty default on the futures.",
+      "Rogue trading by an individual trader caused the loss."
+    ],
+    "answer": "A",
+    "explanation": "Stack-and-roll hedges create cash-flow mismatches; when spot fell, margin calls on futures came before gains on long-dated contracts, exposing funding liquidity risk.",
+    "rationale": {
+      "A": "Correct. The maturity mismatch created large interim margin outflows; funding liquidity risk forced the unwind (as in the Metallgesellschaft case).",
+      "B": "Incorrect. Futures are standard hedging tools; the failure came from the funding mismatch and roll structure.",
+      "C": "Incorrect. Exchange-traded futures have minimal counterparty risk; daily margining created the cash drain.",
+      "D": "Incorrect. The strategy was sanctioned by management; the issue was liquidity and hedge design."
+    },
+    "tags": [
+      "liquidity-risk",
+      "hedging"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0029",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "During 2007-2008, repo lenders sharply increased the haircuts they demanded on collateral such as private-label mortgage securities. The most direct effect on dealer banks was that:",
+    "options": [
+      "They had to fund a larger share of their asset holdings with their own capital or sell assets, amplifying deleveraging and fire-sale pressure.",
+      "Their borrowing capacity rose because the collateral was now valued more conservatively.",
+      "They faced lower funding costs because repo became more secure for lenders.",
+      "Their exposure shifted entirely to deposit insurance funds."
+    ],
+    "answer": "A",
+    "explanation": "Rising haircuts = a run on repo: less funding per asset, forced deleveraging and fire sales, feeding contagion across institutions.",
+    "rationale": {
+      "A": "Correct. Higher haircuts reduce the amount borrowable against each unit of collateral, forcing deleveraging, asset sales and further price declines (a run on repo).",
+      "B": "Incorrect. Higher haircuts reduce, not increase, the funding obtainable per unit of collateral.",
+      "C": "Incorrect. Liquidity dried up; effective funding costs and rollover risk rose.",
+      "D": "Incorrect. Repo funding is not covered by deposit insurance, which is why it was vulnerable to runs."
+    },
+    "tags": [
+      "funding-runs",
+      "financial-crisis"
+    ]
+  },
+  {
+    "id": "frm1-fnd-0030",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Marisol Eke, an FRM charterholder at a consulting firm, is asked to validate a pricing model built by a company in which she holds a significant personal investment. Under the GARP Code of Conduct, the most appropriate action is to:",
+    "options": [
+      "Proceed without disclosure, provided she believes her judgment will not be affected.",
+      "Sell the investment after completing the validation.",
+      "Disclose the conflict of interest to her employer and the client and follow their direction, which may include declining the engagement.",
+      "Disclose the conflict only if the validation finds problems with the model."
+    ],
+    "answer": "C",
+    "explanation": "The Code emphasises integrity, objectivity, confidentiality and full disclosure of conflicts of interest.",
+    "rationale": {
+      "A": "Incorrect. Personal belief in objectivity does not remove the obligation to disclose conflicts.",
+      "B": "Incorrect. Selling afterwards does not cure the undisclosed conflict during the engagement.",
+      "C": "Correct. The Code requires members to disclose actual and potential conflicts of interest to all affected parties and act with integrity.",
+      "D": "Incorrect. Disclosure is required up front regardless of the outcome of the work."
+    },
+    "tags": [
+      "garp-code",
+      "conflicts-of-interest"
+    ]
+  }
+]

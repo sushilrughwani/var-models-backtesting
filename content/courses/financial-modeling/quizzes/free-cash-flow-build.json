@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-fm-free-cash-flow-build-1",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "free-cash-flow-build",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind Components Ltd forecasts 2027 EBIT of USD 191 million, D&A of 46, capex of 59 and an increase in net working capital of 10.5 (all USD millions). The tax rate is 25%. Unlevered free cash flow (FCFF) for 2027 is closest to:",
+    "options": ["USD 167.50 million", "USD 140.75 million", "USD 119.75 million", "USD 27.75 million"],
+    "answer": "C",
+    "explanation": "NOPAT = 191 × 0.75 = 143.25. FCFF = 143.25 + 46 − 59 − 10.5 = 119.75.",
+    "rationale": {
+      "A": "Incorrect. 167.50 ignores taxes entirely: 191 + 46 − 59 − 10.5.",
+      "B": "Incorrect. 140.75 adds the working capital increase instead of subtracting it.",
+      "C": "Correct. NOPAT of 143.25 plus D&A, less capex and the NWC increase, gives 119.75.",
+      "D": "Incorrect. 27.75 subtracts D&A instead of adding it back."
+    },
+    "verify": "return 191*(1-0.25)+46-59-10.5;",
+    "numericAnswer": 119.75,
+    "tolerance": 0.005,
+    "tags": ["fcff", "nopat"]
+  },
+  {
+    "id": "q-fm-free-cash-flow-build-2",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "free-cash-flow-build",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "For 2028 Northwind forecasts EBITDA of USD 256 million, D&A of 48, capex of 62 and an increase in net working capital of 10 (USD millions). The tax rate is 25%. FCFF for 2028 is closest to:",
+    "options": ["USD 120.00 million", "USD 132.00 million", "USD 168.00 million", "USD 184.00 million"],
+    "answer": "B",
+    "explanation": "EBIT = 256 − 48 = 208. NOPAT = 208 × 0.75 = 156. FCFF = 156 + 48 − 62 − 10 = 132.",
+    "rationale": {
+      "A": "Incorrect. 120.00 taxes EBITDA (256 × 0.75 = 192) and forgets that D&A is tax deductible.",
+      "B": "Correct. Tax is applied to EBIT, then D&A is added back and capex and the NWC increase are deducted.",
+      "C": "Incorrect. 168.00 taxes EBITDA and then adds D&A back again, double counting it.",
+      "D": "Incorrect. 184.00 ignores taxes: 256 − 62 − 10."
+    },
+    "verify": "const ebit=256-48; return ebit*0.75+48-62-10;",
+    "numericAnswer": 132,
+    "tolerance": 0.005,
+    "tags": ["fcff", "ebitda"]
+  },
+  {
+    "id": "q-fm-free-cash-flow-build-3",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "free-cash-flow-build",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A company reports net income of USD 112.0 million and interest expense of 25.0. D&A is 44, capex is 56 and net working capital rises by 10.5 (USD millions). The tax rate is 25% and there are no non-operating items. FCFF is closest to:",
+    "options": ["USD 129.25 million", "USD 89.50 million", "USD 114.50 million", "USD 108.25 million"],
+    "answer": "D",
+    "explanation": "FCFF = NI + Int × (1 − t) + D&A − Capex − ΔNWC = 112.0 + 18.75 + 44 − 56 − 10.5 = 108.25.",
+    "rationale": {
+      "A": "Incorrect. 129.25 adds the NWC increase instead of subtracting it.",
+      "B": "Incorrect. 89.50 forgets to add back interest, leaving a levered (equity) cash flow.",
+      "C": "Incorrect. 114.50 adds back the full 25.0 of interest; the tax saving on interest is already in net income.",
+      "D": "Correct. Only after-tax interest of 18.75 is added back."
+    },
+    "verify": "return 112+25*(1-0.25)+44-56-10.5;",
+    "numericAnswer": 108.25,
+    "tolerance": 0.005,
+    "tags": ["fcff", "net-income-route"]
+  },
+  {
+    "id": "q-fm-free-cash-flow-build-4",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "free-cash-flow-build",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst building FCFF deducts interest expense before applying the tax rate, arguing that interest is a real cash cost. What is the main problem with this approach in a DCF that discounts at WACC?",
+    "options": [
+      "It double counts the effect of debt financing, because the interest tax shield is already captured in the after-tax cost of debt in WACC",
+      "There is no problem; FCFF should always reflect all cash costs including interest",
+      "It overstates FCFF, because interest should be added back twice",
+      "It only matters if the company has negative net income"
+    ],
+    "answer": "A",
+    "explanation": "FCFF is cash flow before financing. The cost and tax benefit of debt enter through WACC; deducting interest in the cash flow as well counts financing twice.",
+    "rationale": {
+      "A": "Correct. Financing effects belong in the discount rate, not in unlevered cash flow.",
+      "B": "Incorrect. Interest belongs in levered (equity) cash flow, which is discounted at the cost of equity, not WACC.",
+      "C": "Incorrect. Deducting interest understates FCFF; nothing is added back twice.",
+      "D": "Incorrect. The inconsistency exists whatever the level of profit."
+    },
+    "tags": ["fcff", "wacc-consistency"]
+  }
+]

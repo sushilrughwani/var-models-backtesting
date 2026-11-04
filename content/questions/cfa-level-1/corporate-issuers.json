@@ -1,0 +1,409 @@
+[
+  {
+    "id": "cfa1-ci-0001",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Harbin and Ott form a limited partnership to run a boutique hotel. Which statement about this organizational form is most accurate?",
+    "options": [
+      "The general partner runs the business and has unlimited liability, while limited partners' liability is capped at their investment.",
+      "All partners have limited liability and share management duties equally.",
+      "Limited partners have unlimited liability but take no part in management."
+    ],
+    "answer": "A",
+    "explanation": "A limited partnership needs at least one general partner, who manages the business and bears unlimited liability. Limited partners provide capital, generally stay out of management and can lose only what they invested.",
+    "rationale": {
+      "A": "Correct. Unlimited liability with control for the general partner, limited liability without control for limited partners.",
+      "B": "Incorrect. At least one partner (the general partner) must have unlimited liability; equal management describes a general partnership.",
+      "C": "Incorrect. This reverses the arrangement: limited partners are the ones whose liability is limited."
+    },
+    "tags": ["organizational-forms", "partnerships"]
+  },
+  {
+    "id": "cfa1-ci-0002",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with a similar publicly listed company, a privately held company most likely:",
+    "options": [
+      "faces more extensive mandatory public disclosure requirements",
+      "has less liquid shares, with owners who often exercise more direct control and take a longer-term view",
+      "can sell new shares to the general public without registering them with a regulator"
+    ],
+    "answer": "B",
+    "explanation": "Private company shares do not trade on an exchange, so they are illiquid. Ownership is usually concentrated, giving owners close control over management and often a longer investment horizon. Public companies bear heavier disclosure duties and must register public offerings.",
+    "rationale": {
+      "A": "Incorrect. Public companies, not private ones, carry the heavier regulatory and disclosure burden.",
+      "B": "Correct. Illiquidity, concentrated control and longer horizons are typical features of private ownership.",
+      "C": "Incorrect. Offering shares to the general public generally requires registration and makes the company public."
+    },
+    "tags": ["public-vs-private", "ownership"]
+  },
+  {
+    "id": "cfa1-ci-0003",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which action by the management of Corvane Industries most likely transfers value from bondholders to shareholders?",
+    "options": [
+      "Issuing new equity and using the proceeds to repay debt",
+      "Cutting the dividend to build up cash reserves",
+      "Paying a large special dividend financed by new borrowing"
+    ],
+    "answer": "C",
+    "explanation": "Debt-financed payouts move cash to shareholders while raising leverage and default risk, which lowers the value of existing bonds. Equity holders gain from the payout and keep the upside; creditors bear more downside.",
+    "rationale": {
+      "A": "Incorrect. Repaying debt with equity reduces leverage, which benefits bondholders.",
+      "B": "Incorrect. Retaining cash raises the cushion available to creditors, which favours bondholders.",
+      "C": "Correct. Borrowing to pay shareholders raises default risk for existing creditors while shifting cash to equity holders."
+    },
+    "tags": ["stakeholder-conflicts", "creditors"]
+  },
+  {
+    "id": "cfa1-ci-0004",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which mechanism is most directly used by lenders to limit management actions that could harm their interests?",
+    "options": [
+      "Covenants in the loan agreement or bond indenture",
+      "Advisory shareholder votes on executive pay",
+      "Proxy contests to replace directors"
+    ],
+    "answer": "A",
+    "explanation": "Covenants contractually restrict the borrower, for example by limiting additional debt, dividends or asset sales, and require it to maintain financial ratios. They are the creditors' main governance tool.",
+    "rationale": {
+      "A": "Correct. Affirmative and negative covenants are the contractual protections creditors negotiate.",
+      "B": "Incorrect. Say-on-pay votes are a shareholder mechanism; lenders do not vote.",
+      "C": "Incorrect. Proxy contests are used by shareholders to change board composition, not by lenders."
+    },
+    "tags": ["governance-mechanisms", "creditors"]
+  },
+  {
+    "id": "cfa1-ci-0005",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "The board of Peltrix Ltd is divided into three classes, with only one class elected each year. The main governance concern with this structure is that it:",
+    "options": [
+      "allows shareholders to replace the entire board in a single annual meeting",
+      "makes it harder for shareholders or acquirers to change control of the board quickly, which can entrench management",
+      "guarantees that all directors are independent of management"
+    ],
+    "answer": "B",
+    "explanation": "With a staggered (classified) board, replacing a majority takes at least two election cycles. That supports continuity but also acts as a takeover defence and can shield underperforming managers.",
+    "rationale": {
+      "A": "Incorrect. A staggered board does the opposite; only one class is up for election each year.",
+      "B": "Correct. Gaining control of a staggered board takes several years, which can entrench management.",
+      "C": "Incorrect. Board staggering says nothing about director independence."
+    },
+    "tags": ["board-structure", "governance-risks"]
+  },
+  {
+    "id": "cfa1-ci-0006",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst reviewing Solvara Utilities notes that the CEO also chairs the board, most directors have served for more than 15 years and the company buys services from a firm owned by the CEO's family. Within an ESG framework, these observations relate most directly to:",
+    "options": ["environmental factors", "social factors", "governance factors"],
+    "answer": "C",
+    "explanation": "CEO duality, long-tenured (less independent) directors and related-party transactions are all board-oversight and conflict-of-interest issues, which fall under governance.",
+    "rationale": {
+      "A": "Incorrect. Environmental factors cover emissions, resource use, pollution and climate exposure.",
+      "B": "Incorrect. Social factors cover employees, customers, communities, labour practices and product safety.",
+      "C": "Correct. Board independence, leadership structure and related-party dealings are governance concerns."
+    },
+    "tags": ["esg", "governance-risks"]
+  },
+  {
+    "id": "cfa1-ci-0007",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Nordlake Foods reports annual revenue of USD 7,300 million and cost of goods sold of USD 5,110 million. Average inventory is USD 700 million, average receivables USD 800 million and average payables USD 420 million. Using a 365-day year and COGS for inventory and payables, the cash conversion cycle is closest to:",
+    "options": ["120 days", "60 days", "69 days"],
+    "answer": "B",
+    "explanation": "DIO = 700 / (5,110/365) = 50 days. DSO = 800 / (7,300/365) = 40 days. DPO = 420 / (5,110/365) = 30 days. CCC = 50 + 40 - 30 = 60 days.",
+    "rationale": {
+      "A": "Incorrect. 120 days adds days payables instead of subtracting it; supplier credit shortens the cycle.",
+      "B": "Correct. DIO + DSO - DPO = 50 + 40 - 30 = 60 days.",
+      "C": "Incorrect. 69 days computes DPO on revenue (420 / 20 = 21 days) instead of on COGS."
+    },
+    "verify": "const rev=7300,cogs=5110,inv=700,ar=800,ap=420; const dio=inv/(cogs/365), dso=ar/(rev/365), dpo=ap/(cogs/365); return dio+dso-dpo;",
+    "numericAnswer": 60,
+    "tolerance": 0.5,
+    "tags": ["cash-conversion-cycle", "working-capital"]
+  },
+  {
+    "id": "cfa1-ci-0008",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A supplier offers Quillon Ltd terms of 2/10, net 40. If Quillon skips the discount and pays on day 40, the effective annual cost of this trade credit (365-day year, compounded) is closest to:",
+    "options": ["27.86%", "24.83%", "20.24%"],
+    "answer": "A",
+    "explanation": "Paying 98 on day 10 or 100 on day 40 means a 2/98 cost for 30 extra days. Effective annual cost = (1 + 2/98)^(365/30) - 1 = 27.86%.",
+    "rationale": {
+      "A": "Correct. Compounding the 2.04% cost over 365/30 periods gives 27.86%.",
+      "B": "Incorrect. 24.83% annualizes with simple interest (2/98 x 365/30) and ignores compounding.",
+      "C": "Incorrect. 20.24% uses 40 days as the financing period; the extra credit only lasts 40 - 10 = 30 days."
+    },
+    "verify": "const d=0.02,disc=10,net=40; return (Math.pow(1+d/(1-d),365/(net-disc))-1)*100;",
+    "numericAnswer": 27.86,
+    "tolerance": 0.005,
+    "tags": ["trade-credit", "short-term-financing"]
+  },
+  {
+    "id": "cfa1-ci-0009",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following is best classified as a secondary source of liquidity?",
+    "options": [
+      "Cash held in operating bank accounts",
+      "Drawing on an existing committed bank line of credit",
+      "Renegotiating existing debt contracts to reduce interest payments"
+    ],
+    "answer": "C",
+    "explanation": "Primary sources come from normal operations: cash, short-term investments, cash flows and existing short-term funding such as credit lines. Secondary sources, such as renegotiating debt, liquidating assets or filing for bankruptcy protection, can change the firm's financial or operating position.",
+    "rationale": {
+      "A": "Incorrect. Cash balances are a primary source of liquidity.",
+      "B": "Incorrect. Using existing short-term funding such as a committed credit line is a primary source.",
+      "C": "Correct. Renegotiating debt is a secondary source and usually signals weaker financial health."
+    },
+    "tags": ["liquidity", "working-capital"]
+  },
+  {
+    "id": "cfa1-ci-0010",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Tavira Mining is evaluating a project that costs USD 500 million today and is expected to generate after-tax cash flows of USD 150 million, USD 200 million and USD 250 million at the end of years 1, 2 and 3. The cost of capital is 10%. The project's NPV is closest to:",
+    "options": ["USD 100.00 million", "USD -10.52 million", "USD 34.94 million"],
+    "answer": "B",
+    "explanation": "PV of inflows = 150/1.10 + 200/1.10^2 + 250/1.10^3 = 136.36 + 165.29 + 187.83 = 489.48. NPV = 489.48 - 500 = -10.52, so the project should be rejected.",
+    "rationale": {
+      "A": "Incorrect. USD 100 million adds the cash flows without discounting them.",
+      "B": "Correct. Discounted inflows of 489.48 fall short of the 500 outlay, giving NPV of -10.52.",
+      "C": "Incorrect. USD 34.94 million also discounts the initial outlay by one year, but it occurs today (t = 0)."
+    },
+    "verify": "const r=0.10,cf=[150,200,250]; let pv=0; cf.forEach((c,i)=>{pv+=c/Math.pow(1+r,i+1);}); return pv-500;",
+    "numericAnswer": -10.52,
+    "tolerance": 0.005,
+    "tags": ["npv", "capital-budgeting"]
+  },
+  {
+    "id": "cfa1-ci-0011",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A project requires an investment of EUR 1,000 today and returns EUR 600 at the end of each of the next two years. The project's internal rate of return is closest to:",
+    "options": ["13.07%", "20.00%", "10.00%"],
+    "answer": "A",
+    "explanation": "Solve 600/(1 + IRR) + 600/(1 + IRR)^2 = 1,000. Iterating (or with a financial calculator) gives IRR = 13.07%.",
+    "rationale": {
+      "A": "Correct. 13.07% is the discount rate at which the PV of the two inflows equals the EUR 1,000 outlay.",
+      "B": "Incorrect. 20.00% is the total undiscounted gain (200/1,000) and ignores both time and the length of the project.",
+      "C": "Incorrect. 10.00% is the simple average annual gain (200/1,000/2), which ignores the time value of money."
+    },
+    "verify": "let lo=0,hi=1; for(let i=0;i<200;i++){const m=(lo+hi)/2; const npv=600/(1+m)+600/Math.pow(1+m,2)-1000; if(npv>0) lo=m; else hi=m;} return lo*100;",
+    "numericAnswer": 13.07,
+    "tolerance": 0.005,
+    "tags": ["irr", "capital-budgeting"]
+  },
+  {
+    "id": "cfa1-ci-0012",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Elmstead Logistics must choose between two mutually exclusive projects. Project Lark has an NPV of USD 45 million and an IRR of 22%. Project Heron has an NPV of USD 60 million and an IRR of 16%. The cost of capital is 10%. The company should most likely:",
+    "options": [
+      "choose Lark, because its IRR is higher",
+      "accept both, because both have positive NPVs",
+      "choose Heron, because it adds more value for shareholders"
+    ],
+    "answer": "C",
+    "explanation": "When NPV and IRR rank mutually exclusive projects differently (often due to scale or timing differences), NPV is preferred: it measures the value added directly and assumes reinvestment at the cost of capital rather than at the IRR.",
+    "rationale": {
+      "A": "Incorrect. A higher IRR does not mean more value; IRR ignores scale and assumes reinvestment at the project's own IRR.",
+      "B": "Incorrect. The projects are mutually exclusive, so only one can be chosen.",
+      "C": "Correct. Heron's higher NPV means it increases shareholder wealth by more, which is the decision rule to follow."
+    },
+    "tags": ["npv-vs-irr", "capital-allocation"]
+  },
+  {
+    "id": "cfa1-ci-0013",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In a world with no taxes and perfect capital markets, Gallent Corp's cost of capital as an all-equity firm is 10% and its cost of debt is 6%. If Gallent moves to a debt-to-equity ratio of 0.5, its cost of equity under Modigliani-Miller Proposition II is closest to:",
+    "options": ["10.0%", "12.0%", "11.3%"],
+    "answer": "B",
+    "explanation": "r_e = r_0 + (r_0 - r_d) x D/E = 10% + (10% - 6%) x 0.5 = 12.0%.",
+    "rationale": {
+      "A": "Incorrect. 10.0% ignores the financial risk that leverage adds for shareholders.",
+      "B": "Correct. Cost of equity rises linearly with D/E: 10% + 4% x 0.5 = 12.0%.",
+      "C": "Incorrect. 11.3% uses D/V (1/3) instead of D/E (0.5) in the formula."
+    },
+    "verify": "const r0=10,rd=6,de=0.5; return r0+(r0-rd)*de;",
+    "numericAnswer": 12,
+    "tolerance": 0.05,
+    "tags": ["modigliani-miller", "capital-structure"]
+  },
+  {
+    "id": "cfa1-ci-0014",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Under Modigliani-Miller with corporate taxes, an all-equity firm is worth USD 800 million. It issues USD 300 million of permanent debt and uses the proceeds to buy back shares. With a 25% corporate tax rate, the value of the levered firm is closest to:",
+    "options": ["USD 875 million", "USD 800 million", "USD 1,100 million"],
+    "answer": "A",
+    "explanation": "V_L = V_U + t x D = 800 + 0.25 x 300 = USD 875 million. The increase is the present value of the debt tax shield.",
+    "rationale": {
+      "A": "Correct. Adding the 75 million tax shield to the unlevered value gives USD 875 million.",
+      "B": "Incorrect. USD 800 million is the no-tax result; with taxes, debt adds the value of the tax shield.",
+      "C": "Incorrect. USD 1,100 million adds the full debt amount; the proceeds are used for a buyback, so only the tax shield creates value."
+    },
+    "verify": "const vu=800,t=0.25,d=300; return vu+t*d;",
+    "numericAnswer": 875,
+    "tolerance": 0.5,
+    "tags": ["modigliani-miller", "tax-shield"]
+  },
+  {
+    "id": "cfa1-ci-0015",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "According to the pecking order theory, managers prefer sources of financing in which order, from most to least preferred?",
+    "options": [
+      "New equity, then debt, then internal funds",
+      "Debt, then internal funds, then new equity",
+      "Internal funds, then debt, then new equity"
+    ],
+    "answer": "C",
+    "explanation": "Because managers know more than outside investors, issuing securities sends signals. Internal funds send no signal, debt sends a weak one, and new equity suggests managers think the shares are overvalued, so it comes last.",
+    "rationale": {
+      "A": "Incorrect. This reverses the order; new equity sends the most negative signal and is the last resort.",
+      "B": "Incorrect. Internal funds are preferred to debt because they need no outside approval and send no signal.",
+      "C": "Correct. Information asymmetry leads to internal funds first, then debt, then new equity."
+    },
+    "tags": ["pecking-order", "capital-structure"]
+  },
+  {
+    "id": "cfa1-ci-0016",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Brightwell plc has a target capital structure of 60% common equity, 30% debt and 10% preferred stock. Its cost of equity is 11%, pre-tax cost of debt 6% and cost of preferred stock 8%. The marginal tax rate is 25%. The WACC is closest to:",
+    "options": ["9.20%", "8.75%", "8.55%"],
+    "answer": "B",
+    "explanation": "WACC = 0.60 x 11% + 0.30 x 6% x (1 - 0.25) + 0.10 x 8% = 6.60% + 1.35% + 0.80% = 8.75%.",
+    "rationale": {
+      "A": "Incorrect. 9.20% uses the pre-tax cost of debt and ignores the interest tax shield.",
+      "B": "Correct. Only the cost of debt is tax-adjusted, giving 8.75%.",
+      "C": "Incorrect. 8.55% also applies the tax adjustment to preferred stock, but preferred dividends are not tax-deductible."
+    },
+    "verify": "const we=0.6,wd=0.3,wp=0.1,re=11,rd=6,rp=8,t=0.25; return we*re+wd*rd*(1-t)+wp*rp;",
+    "numericAnswer": 8.75,
+    "tolerance": 0.005,
+    "tags": ["wacc", "cost-of-capital"]
+  },
+  {
+    "id": "cfa1-ci-0017",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The risk-free rate is 3.5%, the equity risk premium is 5.5% and Marlow Textiles has a beta of 1.2. Using the CAPM, Marlow's cost of equity is closest to:",
+    "options": ["10.10%", "5.90%", "6.60%"],
+    "answer": "A",
+    "explanation": "r_e = r_f + beta x ERP = 3.5% + 1.2 x 5.5% = 10.10%.",
+    "rationale": {
+      "A": "Correct. Adding beta times the equity risk premium to the risk-free rate gives 10.10%.",
+      "B": "Incorrect. 5.90% treats 5.5% as the expected market return and subtracts the risk-free rate again: 3.5% + 1.2 x (5.5% - 3.5%).",
+      "C": "Incorrect. 6.60% is only the risk premium (1.2 x 5.5%) and omits the risk-free rate."
+    },
+    "verify": "const rf=3.5,b=1.2,erp=5.5; return rf+b*erp;",
+    "numericAnswer": 10.1,
+    "tolerance": 0.005,
+    "tags": ["capm", "cost-of-equity"]
+  },
+  {
+    "id": "cfa1-ci-0018",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An analyst estimates the beta of a new division of Kerrigan Group using a publicly traded pure-play comparable. The comparable has an equity beta of 1.40, a debt-to-equity ratio of 0.8 and a tax rate of 25%. Kerrigan will finance the division at a debt-to-equity ratio of 0.5 and faces a 30% tax rate. The division's relevered equity beta is closest to:",
+    "options": ["0.88", "1.18", "1.40"],
+    "answer": "B",
+    "explanation": "Unlever: beta_A = 1.40 / [1 + (1 - 0.25) x 0.8] = 1.40 / 1.60 = 0.875. Relever: beta_E = 0.875 x [1 + (1 - 0.30) x 0.5] = 0.875 x 1.35 = 1.18.",
+    "rationale": {
+      "A": "Incorrect. 0.88 is the comparable's asset (unlevered) beta; it has not been relevered to Kerrigan's capital structure.",
+      "B": "Correct. Unlevering with the comparable's D/E and tax rate, then relevering with Kerrigan's, gives 1.18.",
+      "C": "Incorrect. 1.40 uses the comparable's equity beta directly and ignores the difference in financial leverage."
+    },
+    "verify": "const be=1.4,de1=0.8,t1=0.25,de2=0.5,t2=0.30; const ba=be/(1+(1-t1)*de1); return ba*(1+(1-t2)*de2);",
+    "numericAnswer": 1.18,
+    "tolerance": 0.005,
+    "tags": ["pure-play-beta", "cost-of-equity"]
+  },
+  {
+    "id": "cfa1-ci-0019",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Ridely, a ride-hailing app, becomes more useful to riders as more drivers join, and more attractive to drivers as more riders sign up. This feature of its business model is best described as:",
+    "options": [
+      "economies of scale in production",
+      "a razor-blade (bait-and-hook) pricing model",
+      "a two-sided network effect"
+    ],
+    "answer": "C",
+    "explanation": "Platform businesses that connect two user groups benefit when growth on one side raises the value for the other side. These cross-side network effects can create strong competitive advantages.",
+    "rationale": {
+      "A": "Incorrect. Economies of scale lower unit costs as output rises; they do not describe users gaining value from other users.",
+      "B": "Incorrect. A razor-blade model sells a base product cheaply and profits on consumables; it is a pricing model, not a network effect.",
+      "C": "Correct. Each user group's value depends on the size of the other group, which is a two-sided network effect."
+    },
+    "tags": ["business-models", "network-effects"]
+  },
+  {
+    "id": "cfa1-ci-0020",
+    "course": "cfa-level-1",
+    "topic": "corporate-issuers",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Inkvale sells its home printers at or below cost and earns most of its profit from proprietary ink cartridges that customers must buy repeatedly. This pricing approach is best described as a:",
+    "options": [
+      "razor-blade (bait-and-hook) model",
+      "freemium model",
+      "subscription model"
+    ],
+    "answer": "A",
+    "explanation": "In a razor-blade model the initial product is priced low to build an installed base, and profits come from high-margin consumables or follow-on purchases.",
+    "rationale": {
+      "A": "Correct. A cheap base product locked to profitable repeat consumables is the razor-blade model.",
+      "B": "Incorrect. Freemium gives a basic version free and charges for premium features; here the printer is sold, not given away with paid upgrades.",
+      "C": "Incorrect. A subscription charges a recurring fee for ongoing access; cartridge purchases are separate transactions."
+    },
+    "tags": ["business-models", "pricing"]
+  }
+]

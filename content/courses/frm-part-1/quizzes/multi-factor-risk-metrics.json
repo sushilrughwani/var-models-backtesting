@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-multi-factor-risk-metrics-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "multi-factor-risk-metrics",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bond's key-rate 01s per 100 face are 0.012 (2-year), 0.031 (5-year), 0.045 (10-year) and 0.020 (30-year). Its DV01 for a parallel shift of the curve is closest to:",
+    "options": ["0.045", "0.108", "0.027", "0.088"],
+    "answer": "B",
+    "explanation": "Key-rate shifts add up to a parallel shift, so DV01 ≈ 0.012 + 0.031 + 0.045 + 0.020 = 0.108.",
+    "rationale": {
+      "A": "Incorrect. 0.045 is only the largest single key-rate exposure, not the total parallel sensitivity.",
+      "B": "Correct. Summing the key-rate 01s gives the parallel-shift DV01 of 0.108.",
+      "C": "Incorrect. 0.027 is the average key-rate 01; the exposures add rather than average.",
+      "D": "Incorrect. 0.088 leaves out the 30-year key-rate exposure."
+    },
+    "verify": "return 0.012+0.031+0.045+0.020;",
+    "numericAnswer": 0.108,
+    "tolerance": 0.0005,
+    "tags": ["key-rate-01"]
+  },
+  {
+    "id": "q-frm1-multi-factor-risk-metrics-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "multi-factor-risk-metrics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Key rates are set at 2, 5, 10 and 30 years. If the 5-year key rate rises by 10 basis points and all other key rates are unchanged, the 7-year spot rate rises by approximately:",
+    "options": ["10 basis points", "4 basis points", "0 basis points", "6 basis points"],
+    "answer": "D",
+    "explanation": "The shift falls linearly from 10 bp at 5 years to 0 at 10 years: 10 × (10 − 7)/(10 − 5) = 6 bp.",
+    "rationale": {
+      "A": "Incorrect. The full 10 bp applies only at the 5-year key rate itself, not between key rates.",
+      "B": "Incorrect. 4 bp uses (7 − 5)/(10 − 5), giving the weight of the 10-year key rate rather than the 5-year one.",
+      "C": "Incorrect. Maturities between key rates are affected by both neighbouring key rates through linear interpolation.",
+      "D": "Correct. Linear interpolation gives 10 × 3/5 = 6 bp at 7 years."
+    },
+    "verify": "return 10*(10-7)/(10-5);",
+    "numericAnswer": 6,
+    "tolerance": 0.05,
+    "tags": ["key-rate-shift"]
+  },
+  {
+    "id": "q-frm1-multi-factor-risk-metrics-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "multi-factor-risk-metrics",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A portfolio has key-rate 01s of USD 4,000 per bp at 5 years and USD 9,000 per bp at 10 years. Hedge bonds have the following key-rate 01s per USD 1 million face: the 10-year bond has USD 20 (5-year) and USD 850 (10-year); the 5-year bond has USD 450 (5-year) and 0 (10-year). The face amount of the 5-year bond to sell is closest to:",
+    "options": ["USD 8.42 million", "USD 8.89 million", "USD 10.59 million", "USD 9.36 million"],
+    "answer": "A",
+    "explanation": "First the 10-year key rate: F10 = 9,000 / 850 = 10.588 million. It covers 10.588 × 20 = 211.76 of 5-year exposure, leaving 4,000 − 211.76 = 3,788.24. F5 = 3,788.24 / 450 = USD 8.42 million.",
+    "rationale": {
+      "A": "Correct. After the 10-year hedge absorbs 211.76 of 5-year exposure, the 5-year bond must cover 3,788.24 / 450 = USD 8.42 million.",
+      "B": "Incorrect. USD 8.89 million (4,000 / 450) ignores the 5-year exposure already hedged by the 10-year bond.",
+      "C": "Incorrect. USD 10.59 million is the face amount of the 10-year bond, not the 5-year bond.",
+      "D": "Incorrect. USD 9.36 million adds the 10-year bond's 5-year exposure instead of subtracting it."
+    },
+    "verify": "const f10=9000/850; return (4000-f10*20)/450;",
+    "numericAnswer": 8.42,
+    "tolerance": 0.005,
+    "tags": ["key-rate-hedging"]
+  },
+  {
+    "id": "q-frm1-multi-factor-risk-metrics-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "multi-factor-risk-metrics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A swap desk builds its curve from quoted par swap rates. To report risk in instruments it can trade directly, it bumps each quoted swap rate by 1 basis point in turn, rebuilds the curve with the other quotes unchanged, and reprices the book. This measure is best described as:",
+    "options": [
+      "Forward-bucket 01s",
+      "Effective duration",
+      "Partial 01s",
+      "Key-rate durations based on spot rates"
+    ],
+    "answer": "C",
+    "explanation": "Partial 01s measure sensitivity to each par instrument used to build the curve: bump one quote, rebuild, reprice. This links risk directly to hedging instruments.",
+    "rationale": {
+      "A": "Incorrect. Forward-bucket 01s shift all forward rates within a maturity bucket, not individual par quotes.",
+      "B": "Incorrect. Effective duration measures the response to a single parallel shift, not to each instrument separately.",
+      "C": "Correct. Bumping each curve-building par quote and rebuilding the curve produces partial 01s.",
+      "D": "Incorrect. Key-rate durations shift chosen spot or par yields with linear fading between key rates, rather than rebuilding the curve from each market quote."
+    },
+    "tags": ["partial-01", "forward-bucket"]
+  }
+]

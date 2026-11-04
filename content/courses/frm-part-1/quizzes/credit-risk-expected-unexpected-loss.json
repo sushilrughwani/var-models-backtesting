@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-frm1-credit-risk-expected-unexpected-loss-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "credit-risk-expected-unexpected-loss",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bank has a USD 5 million exposure to a borrower with a one-year probability of default of 1.5% and an expected recovery rate of 35%. The one-year expected loss is closest to:",
+    "options": ["USD 26,250", "USD 75,000", "USD 48,019", "USD 48,750"],
+    "answer": "D",
+    "explanation": "LGD = 1 − 0.35 = 0.65. EL = 5,000,000 × 0.015 × 0.65 = USD 48,750.",
+    "rationale": {
+      "A": "Incorrect. 26,250 uses the 35% recovery rate in place of the 65% LGD.",
+      "B": "Incorrect. 75,000 assumes the whole exposure is lost in default (LGD of 100%).",
+      "C": "Incorrect. 48,019 multiplies by PD(1 − PD), mixing the variance formula into the expected loss.",
+      "D": "Correct. EAD × PD × LGD = 5m × 0.015 × 0.65 = 48,750."
+    },
+    "verify": "return 5000000*0.015*(1-0.35);",
+    "numericAnswer": 48750,
+    "tolerance": 0.5,
+    "tags": ["expected-loss"]
+  },
+  {
+    "id": "q-frm1-credit-risk-expected-unexpected-loss-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "credit-risk-expected-unexpected-loss",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A USD 8 million loan has a one-year PD of 3% and a known LGD of 40%. The unexpected loss (standard deviation of credit loss) of the loan is closest to:",
+    "options": ["USD 545,879", "USD 93,120", "USD 96,000", "USD 1,364,698"],
+    "answer": "A",
+    "explanation": "UL = EAD × LGD × √(PD(1 − PD)) = 8,000,000 × 0.40 × √(0.03 × 0.97) = 3,200,000 × 0.17059 = USD 545,879.",
+    "rationale": {
+      "A": "Correct. 3.2m × √0.0291 = 545,879.",
+      "B": "Incorrect. 93,120 uses PD(1 − PD) without taking the square root.",
+      "C": "Incorrect. 96,000 is the expected loss, EAD × PD × LGD, not the standard deviation.",
+      "D": "Incorrect. 1,364,698 omits LGD, implicitly assuming nothing is recovered."
+    },
+    "verify": "return 8000000*0.40*Math.sqrt(0.03*0.97);",
+    "numericAnswer": 545879,
+    "tolerance": 0.5,
+    "tags": ["unexpected-loss"]
+  },
+  {
+    "id": "q-frm1-credit-risk-expected-unexpected-loss-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "credit-risk-expected-unexpected-loss",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A large, granular loan portfolio has an average one-year PD of 1% and a correlation of 0.12 with the common factor in a Vasicek one-factor model. Using N⁻¹(0.01) = −2.326 and N⁻¹(0.999) = 3.090, the 99.9% worst-case default rate is closest to:",
+    "options": ["1.86%", "9.04%", "10.46%", "7.68%"],
+    "answer": "B",
+    "explanation": "WCDR = N[(−2.326 + √0.12 × 3.090) / √0.88] = N[(−2.326 + 1.0704) / 0.9381] = N(−1.3385) ≈ 9.04%.",
+    "rationale": {
+      "A": "Incorrect. 1.86% uses ρ (0.12) instead of √ρ to scale N⁻¹(0.999).",
+      "B": "Correct. The standardised value is −1.3385, and N(−1.3385) ≈ 9.04%.",
+      "C": "Incorrect. 10.46% forgets to divide the numerator by √(1 − ρ).",
+      "D": "Incorrect. 7.68% divides by (1 − ρ) instead of √(1 − ρ)."
+    },
+    "verify": "function N(x){const t=1/(1+0.2316419*Math.abs(x));const d=0.3989422804014327*Math.exp(-x*x/2);const p=d*t*(0.319381530+t*(-0.356563782+t*(1.781477937+t*(-1.821255978+t*1.330274429))));return x>0?1-p:p;} return N((-2.326+Math.sqrt(0.12)*3.090)/Math.sqrt(1-0.12))*100;",
+    "numericAnswer": 9.04,
+    "tolerance": 0.005,
+    "tags": ["vasicek", "wcdr"]
+  },
+  {
+    "id": "q-frm1-credit-risk-expected-unexpected-loss-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "credit-risk-expected-unexpected-loss",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about expected loss (EL) and unexpected loss (UL) in a loan portfolio is most accurate?",
+    "options": ["Portfolio UL equals the sum of the individual loans' ULs regardless of correlation", "Regulatory capital is designed mainly to cover EL, while pricing covers UL", "EL is covered through loan pricing and provisions, while capital is held against losses in excess of EL up to a high confidence level", "Higher default correlation reduces portfolio UL because losses offset each other"],
+    "answer": "C",
+    "explanation": "EL is an anticipated cost built into spreads and provisions. Capital absorbs the unexpected part of losses, from EL up to a high quantile. UL aggregates with correlation and only equals the sum of standalone ULs when all correlations are 1.",
+    "rationale": {
+      "A": "Incorrect. ULs add only if every correlation equals 1; otherwise portfolio UL is smaller.",
+      "B": "Incorrect. This reverses the roles of capital and pricing.",
+      "C": "Correct. Pricing and provisions cover EL; capital covers losses beyond EL.",
+      "D": "Incorrect. Higher correlation makes defaults cluster, which increases portfolio UL."
+    },
+    "tags": ["expected-loss", "unexpected-loss", "economic-capital"]
+  }
+]

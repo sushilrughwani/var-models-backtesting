@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-non-stationary-time-series-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "non-stationary-time-series",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An analyst fits the log-linear trend ln Y(t) = 3.0 + 0.05t to a series, with normally distributed residuals of variance 0.04. The forecast of the level of Y at t = 20 is closest to:",
+    "options": ["54.60", "56.83", "4.02", "55.70"],
+    "answer": "D",
+    "explanation": "Fitted log value = 3.0 + 0.05 × 20 = 4.0. Forecast in levels = exp(4.0 + 0.04/2) = exp(4.02) = 55.70.",
+    "rationale": {
+      "A": "Incorrect. 54.60 = exp(4.0) omits the σ²/2 adjustment required when exponentiating a log forecast.",
+      "B": "Incorrect. 56.83 = exp(4.04) adds the full variance instead of half of it.",
+      "C": "Incorrect. 4.02 is the adjusted log value; it still needs to be exponentiated.",
+      "D": "Correct. exp(4.0 + 0.02) = 55.70."
+    },
+    "verify": "const b0=3.0,b1=0.05,t=20,s2=0.04; return Math.exp(b0+b1*t+s2/2);",
+    "numericAnswer": 55.7,
+    "tolerance": 0.005,
+    "tags": ["log-linear-trend", "forecasting"]
+  },
+  {
+    "id": "q-frm1-non-stationary-time-series-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "non-stationary-time-series",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An ADF regression with a constant for the log of a commodity price gives γ-hat = −0.045 with a standard error of 0.020. The 5% Dickey-Fuller critical value is −2.86. The test statistic and correct conclusion are:",
+    "options": ["−2.25; reject the unit root because the statistic is below −1.96", "−2.25; fail to reject the unit root", "2.25; reject the unit root because the absolute value exceeds 1.96", "−0.90; fail to reject the unit root"],
+    "answer": "B",
+    "explanation": "t = −0.045/0.020 = −2.25. Under the null the statistic follows the Dickey-Fuller distribution, so it must be more negative than −2.86 to reject. −2.25 is not, so we fail to reject the unit root and should model the differenced series.",
+    "rationale": {
+      "A": "Incorrect. −1.96 is a normal critical value; the ADF statistic requires the more negative Dickey-Fuller value.",
+      "B": "Correct. −2.25 > −2.86, so the unit root cannot be rejected.",
+      "C": "Incorrect. The ADF test is one-sided (γ < 0) and uses Dickey-Fuller, not normal, critical values; the sign also matters.",
+      "D": "Incorrect. −0.90 multiplies rather than divides (−0.045 × 20); the statistic is the estimate divided by its standard error."
+    },
+    "verify": "return -0.045/0.020;",
+    "numericAnswer": -2.25,
+    "tolerance": 0.005,
+    "tags": ["unit-root", "adf-test"]
+  },
+  {
+    "id": "q-frm1-non-stationary-time-series-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "non-stationary-time-series",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A regression of monthly electricity demand includes an intercept and deterministic seasonal dummies. How many monthly dummy variables should be included?",
+    "options": ["11", "12", "4", "13"],
+    "answer": "A",
+    "explanation": "With an intercept, one month serves as the base, so 12 − 1 = 11 dummies are needed. Each coefficient measures the difference between that month's mean and the base month's mean.",
+    "rationale": {
+      "A": "Correct. Eleven dummies plus the intercept avoid perfect collinearity.",
+      "B": "Incorrect. Twelve dummies plus an intercept create the dummy-variable trap: the dummies sum to the intercept column.",
+      "C": "Incorrect. Four would be one dummy per quarter, not per month, and still too many with an intercept.",
+      "D": "Incorrect. Thirteen wrongly counts the intercept as an additional dummy on top of all twelve months."
+    },
+    "tags": ["seasonality", "dummy-variables"]
+  },
+  {
+    "id": "q-frm1-non-stationary-time-series-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "non-stationary-time-series",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A junior analyst regresses the level of one share price on the level of an unrelated firm's share price over ten years and reports R² = 0.82 with a t-statistic of 14. Both series contain a unit root and the residuals are non-stationary. The best interpretation is:",
+    "options": ["the relationship is strong and can be used for hedging", "the series are cointegrated because the R² is high", "the regression is likely spurious; the analyst should difference the series or test for cointegration", "the result is valid but the standard errors should be made robust to heteroskedasticity"],
+    "answer": "C",
+    "explanation": "Regressing one random walk on another produces high R² and large t-statistics even when the series are unrelated. Non-stationary residuals confirm that the series are not cointegrated, so the inference is invalid.",
+    "rationale": {
+      "A": "Incorrect. The apparent fit is an artefact of both series wandering; it is not a reliable hedging relationship.",
+      "B": "Incorrect. Cointegration requires stationary residuals; here they are non-stationary, and a high R² proves nothing.",
+      "C": "Correct. This is the classic spurious-regression pattern.",
+      "D": "Incorrect. The problem is non-stationarity, not heteroskedasticity; robust standard errors do not fix it."
+    },
+    "tags": ["spurious-regression", "cointegration"]
+  }
+]

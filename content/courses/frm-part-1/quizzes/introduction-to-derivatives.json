@@ -1,0 +1,117 @@
+[
+  {
+    "id": "q-frm1-introduction-to-derivatives-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "introduction-to-derivatives",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investor buys 1,000 European put options on a stock with a strike price of USD 40, paying a premium of USD 3 per option. At expiration the stock price is USD 32. Ignoring the time value of money, the investor's total profit is closest to:",
+    "options": [
+      "USD 8,000",
+      "USD 11,000",
+      "USD 5,000",
+      "A loss of USD 3,000"
+    ],
+    "answer": "C",
+    "explanation": "Payoff per put = max(40 − 32, 0) = 8. Profit per put = 8 − 3 = 5. Total = 1,000 × 5 = USD 5,000.",
+    "rationale": {
+      "A": "Incorrect. 8,000 is the total payoff; the premium paid has not been subtracted.",
+      "B": "Incorrect. 11,000 adds the premium to the payoff instead of subtracting it.",
+      "C": "Correct. Payoff of 8 minus the premium of 3 is 5 per option, or 5,000 in total.",
+      "D": "Incorrect. Losing the whole premium happens only if the put expires out of the money (stock above 40)."
+    },
+    "verify": "return 1000*(Math.max(40-32,0)-3);",
+    "numericAnswer": 5000,
+    "tolerance": 0.5,
+    "tags": [
+      "option-payoffs"
+    ]
+  },
+  {
+    "id": "q-frm1-introduction-to-derivatives-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "introduction-to-derivatives",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A gold producer enters a short forward contract to sell 1,000 ounces of gold in six months at USD 2,000 per ounce. At maturity the spot price of gold is USD 2,150 per ounce. On the forward contract alone, the producer has:",
+    "options": [
+      "A gain of USD 150,000",
+      "No gain or loss, because forwards cost nothing to enter",
+      "A loss of USD 2,150,000",
+      "A loss of USD 150,000"
+    ],
+    "answer": "D",
+    "explanation": "Short forward payoff = (K − S_T) × quantity = (2,000 − 2,150) × 1,000 = −150,000, a loss of USD 150,000. The producer's physical gold is worth more, which offsets the hedge loss.",
+    "rationale": {
+      "A": "Incorrect. This is the payoff to the long side; the short side loses when the price rises above the delivery price.",
+      "B": "Incorrect. A zero initial value does not mean a zero payoff at maturity.",
+      "C": "Incorrect. 2,150,000 is the market value of the gold, not the payoff on the forward.",
+      "D": "Correct. The producer must sell at 2,000 gold worth 2,150, losing 150 per ounce on 1,000 ounces."
+    },
+    "verify": "return Math.abs((2000-2150)*1000);",
+    "numericAnswer": 150000,
+    "tolerance": 0.5,
+    "tags": [
+      "forward-payoff",
+      "hedging"
+    ]
+  },
+  {
+    "id": "q-frm1-introduction-to-derivatives-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "introduction-to-derivatives",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A speculator buys call options with a strike price of USD 75 for a premium of USD 4.50 each. Ignoring the time value of money, the stock price at expiration at which the speculator exactly breaks even is closest to:",
+    "options": [
+      "USD 70.50",
+      "USD 79.50",
+      "USD 75.00",
+      "USD 83.50"
+    ],
+    "answer": "B",
+    "explanation": "A long call breaks even when the payoff equals the premium: S_T − 75 = 4.50, so S_T = 79.50.",
+    "rationale": {
+      "A": "Incorrect. 70.50 is K minus the premium, the breakeven for a long put, not a long call.",
+      "B": "Correct. The stock must rise to strike plus premium, 79.50, to recover the premium.",
+      "C": "Incorrect. At the strike the option pays nothing, so the speculator has lost the full premium.",
+      "D": "Incorrect. 83.50 adds the premium twice."
+    },
+    "verify": "return 75+4.5;",
+    "numericAnswer": 79.5,
+    "tolerance": 0.005,
+    "tags": [
+      "breakeven"
+    ]
+  },
+  {
+    "id": "q-frm1-introduction-to-derivatives-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "introduction-to-derivatives",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A portfolio manager holds a large stock portfolio and wants protection against a market crash while keeping the gains if the market rises. Which derivative strategy best fits this objective?",
+    "options": [
+      "Buy put options on a broad stock index",
+      "Sell index futures contracts",
+      "Sell call options on a broad stock index",
+      "Enter a long forward contract on the index"
+    ],
+    "answer": "A",
+    "explanation": "Long puts pay off when the market falls but expire worthless if it rises, so the manager keeps the upside in exchange for the premium.",
+    "rationale": {
+      "A": "Correct. Puts set a floor on losses while preserving upside, at the cost of the premium.",
+      "B": "Incorrect. Short futures lock in a value and remove upside as well as downside.",
+      "C": "Incorrect. Writing calls earns a premium but caps upside and gives little crash protection.",
+      "D": "Incorrect. A long forward adds market exposure, increasing the loss in a crash."
+    },
+    "tags": [
+      "hedgers",
+      "options"
+    ]
+  }
+]

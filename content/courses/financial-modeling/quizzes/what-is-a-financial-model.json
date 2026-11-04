@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-fm-what-is-a-financial-model-1",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "what-is-a-financial-model",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind Components Ltd begins FY2025 with retained earnings of USD 105.9 million, earns net income of USD 45.0 million and declares dividends of USD 13.5 million. Closing retained earnings (USD million) are closest to:",
+    "options": ["164.4", "137.4", "92.4", "150.9"],
+    "answer": "B",
+    "explanation": "Closing RE = opening RE + net income - dividends = 105.9 + 45.0 - 13.5 = 137.4.",
+    "rationale": {
+      "A": "Incorrect. 164.4 adds the dividends instead of subtracting them: 105.9 + 45.0 + 13.5.",
+      "B": "Correct. 105.9 + 45.0 - 13.5 = 137.4.",
+      "C": "Incorrect. 92.4 deducts the dividends but forgets to add net income: 105.9 - 13.5.",
+      "D": "Incorrect. 150.9 adds net income but ignores dividends: 105.9 + 45.0."
+    },
+    "verify": "return 105.9 + 45.0 - 13.5;",
+    "numericAnswer": 137.4,
+    "tolerance": 0.05,
+    "tags": ["three-statement-links", "retained-earnings"]
+  },
+  {
+    "id": "q-fm-what-is-a-financial-model-2",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "what-is-a-financial-model",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In a three-statement model, depreciation is increased by USD 10 million with no other change. The tax rate is 25%. The change in operating cash flow (USD million) is closest to:",
+    "options": ["-10.0", "-7.5", "+2.5", "0.0"],
+    "answer": "C",
+    "explanation": "Net income falls by 10 x (1 - 0.25) = 7.5, but the extra 10 of depreciation is added back, so operating cash flow rises by 10 - 7.5 = 2.5, which is the tax saving.",
+    "rationale": {
+      "A": "Incorrect. This treats depreciation as a cash expense; it is non-cash and is added back.",
+      "B": "Incorrect. -7.5 is the change in net income, not in operating cash flow.",
+      "C": "Correct. Cash rises by the tax shield: 10 x 25% = 2.5.",
+      "D": "Incorrect. Zero ignores the tax saving that lower taxable income produces."
+    },
+    "verify": "const dDA = 10, t = 0.25; const dNI = -dDA*(1-t); return dNI + dDA;",
+    "numericAnswer": 2.5,
+    "tolerance": 0.05,
+    "tags": ["three-statement-links", "depreciation"]
+  },
+  {
+    "id": "q-fm-what-is-a-financial-model-3",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "what-is-a-financial-model",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A private equity fund wants to know how much acquisition debt Northwind could support and what equity return the fund would earn after five years. Which model is the most appropriate primary tool?",
+    "options": ["A monthly operating budget", "A merger accretion/dilution model", "A trading comparables screen", "A leveraged buyout (LBO) model"],
+    "answer": "D",
+    "explanation": "An LBO model is designed to size debt, schedule its repayment from cash flow and compute sponsor returns such as IRR and multiple of money.",
+    "rationale": {
+      "A": "Incorrect. An operating budget supports internal planning; it does not model acquisition debt or sponsor returns.",
+      "B": "Incorrect. A merger model measures EPS impact for a corporate acquirer, not a financial sponsor's return.",
+      "C": "Incorrect. Comparables give a relative valuation, not debt capacity or returns over a holding period.",
+      "D": "Correct. Debt capacity and sponsor IRR are exactly what an LBO model answers."
+    },
+    "tags": ["model-types"]
+  },
+  {
+    "id": "q-fm-what-is-a-financial-model-4",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "what-is-a-financial-model",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which link is essential for a three-statement model to tie the income statement to the balance sheet?",
+    "options": ["Net income flows into retained earnings (after deducting dividends)", "Revenue flows directly into cash on the balance sheet", "Interest expense is added to the debt balance", "Tax expense is recorded as a non-current asset"],
+    "answer": "A",
+    "explanation": "Net income, less dividends, increases retained earnings in equity. That roll-forward is what connects profitability to the balance sheet.",
+    "rationale": {
+      "A": "Correct. The retained earnings roll-forward is the core link between the income statement and the balance sheet.",
+      "B": "Incorrect. Revenue is not cash; uncollected sales sit in receivables, and costs must also be deducted.",
+      "C": "Incorrect. Cash-paid interest does not increase debt; only payment-in-kind interest would accrue to the balance.",
+      "D": "Incorrect. Tax expense reduces net income; it is not capitalised as an asset in a standard model."
+    },
+    "tags": ["three-statement-links"]
+  }
+]

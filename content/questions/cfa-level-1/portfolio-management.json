@@ -1,0 +1,651 @@
+[
+  {
+    "id": "cfa1-pm-0001",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which type of institutional investor most likely has the longest investment horizon and the lowest liquidity needs?",
+    "options": [
+      "A university endowment",
+      "A property and casualty insurer",
+      "A commercial bank"
+    ],
+    "answer": "A",
+    "explanation": "Endowments and foundations have perpetual horizons and low liquidity needs; insurers and banks have short horizons and high liquidity needs.",
+    "rationale": {
+      "A": "Correct. Endowments are intended to support their institution in perpetuity, so they have very long horizons and modest liquidity needs relative to their assets.",
+      "B": "Incorrect. Property and casualty insurers face uncertain, often short-term claims and therefore have short horizons and high liquidity needs.",
+      "C": "Incorrect. Banks must meet deposit withdrawals and regulatory liquidity requirements, giving them short horizons and high liquidity needs."
+    },
+    "tags": [
+      "investor-types"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0002",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An equally weighted portfolio of ten stocks has a standard deviation of returns of 14%. The average standard deviation of the individual stocks is 20%. The diversification ratio of the portfolio is closest to:",
+    "options": [
+      "1.43",
+      "0.70",
+      "0.30"
+    ],
+    "answer": "B",
+    "explanation": "Diversification ratio = sigma(portfolio)/average sigma(security) = 0.14/0.20 = 0.70; a lower ratio means more diversification benefit.",
+    "rationale": {
+      "A": "Incorrect. 1.43 inverts the ratio (individual risk over portfolio risk).",
+      "B": "Correct. Diversification ratio = portfolio risk / average individual risk = 14%/20% = 0.70.",
+      "C": "Incorrect. 0.30 is the proportional risk reduction (1 minus the ratio), not the ratio itself."
+    },
+    "verify": "return 0.14/0.20;",
+    "numericAnswer": 0.7,
+    "tolerance": 0.005,
+    "tags": [
+      "diversification-ratio"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0003",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In a defined contribution pension plan, the investment risk is borne primarily by:",
+    "options": [
+      "the employer (plan sponsor)",
+      "the pension plan's investment consultant",
+      "the employee (plan participant)"
+    ],
+    "answer": "C",
+    "explanation": "DC plan: contributions defined, benefits uncertain, risk on employee. DB plan: benefits promised, risk on employer.",
+    "rationale": {
+      "A": "Incorrect. The sponsor bears investment risk in a defined benefit plan, where it promises a specified benefit.",
+      "B": "Incorrect. Consultants advise the sponsor but do not bear the plan's investment risk.",
+      "C": "Correct. In a defined contribution plan the employer contributes a set amount; the participant chooses investments and bears the risk that the account is insufficient at retirement."
+    },
+    "tags": [
+      "pension-plans"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0004",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investor with a risk aversion coefficient of 4 is evaluating a portfolio with an expected return of 9% and a standard deviation of 15%. Using U = E(r) - 0.5 x A x sigma^2 (returns in decimals), the portfolio's utility expressed as a percentage is closest to:",
+    "options": [
+      "0.00%",
+      "4.50%",
+      "-21.00%"
+    ],
+    "answer": "B",
+    "explanation": "U = E(r) - 0.5A sigma^2 = 0.09 - 0.5(4)(0.0225) = 0.045 = 4.50%.",
+    "rationale": {
+      "A": "Incorrect. 0.00% omits the 0.5 factor in the utility function.",
+      "B": "Correct. U = 0.09 - 0.5 x 4 x 0.15^2 = 0.09 - 0.045 = 0.045, or 4.50%.",
+      "C": "Incorrect. -21.00% uses the standard deviation instead of the variance."
+    },
+    "verify": "const E=0.09, A=4, s=0.15; return 100*(E-0.5*A*s*s);",
+    "numericAnswer": 4.5,
+    "tolerance": 0.005,
+    "tags": [
+      "utility"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0005",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A portfolio is invested 60% in Fund Alder (standard deviation 20%) and 40% in Fund Birch (standard deviation 12%). The correlation between the funds' returns is 0.30. The portfolio's standard deviation is closest to:",
+    "options": [
+      "14.20%",
+      "16.80%",
+      "12.92%"
+    ],
+    "answer": "A",
+    "explanation": "sigma_p^2 = w1^2 s1^2 + w2^2 s2^2 + 2 w1 w2 rho s1 s2 = 0.0144 + 0.002304 + 0.003456 = 0.02016, so sigma_p = 14.20%.",
+    "rationale": {
+      "A": "Correct. Variance = 0.36(0.04) + 0.16(0.0144) + 2(0.6)(0.4)(0.3)(0.20)(0.12) = 0.02016; sigma = 14.20%.",
+      "B": "Incorrect. 16.80% is the weighted average of the standard deviations, which is correct only if correlation is +1.",
+      "C": "Incorrect. 12.92% ignores the covariance term, as if correlation were zero."
+    },
+    "verify": "const w1=0.6,w2=0.4,s1=0.2,s2=0.12,p=0.3; return 100*Math.sqrt(w1*w1*s1*s1+w2*w2*s2*s2+2*w1*w2*p*s1*s2);",
+    "numericAnswer": 14.2,
+    "tolerance": 0.005,
+    "tags": [
+      "two-asset-portfolio",
+      "correlation"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0006",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An investor with a risk aversion coefficient of 3 can invest in a risky portfolio with an expected return of 10% and a standard deviation of 20%, and in a risk-free asset yielding 3%. The utility-maximizing weight in the risky portfolio is closest to:",
+    "options": [
+      "83.33%",
+      "11.67%",
+      "58.33%"
+    ],
+    "answer": "C",
+    "explanation": "Maximizing U = Rf + y(E(Rp) - Rf) - 0.5 A y^2 sigma^2 gives y* = (0.10 - 0.03)/(3 x 0.20^2) = 58.33% in the risky portfolio.",
+    "rationale": {
+      "A": "Incorrect. 83.33% uses the total expected return instead of the risk premium in the numerator.",
+      "B": "Incorrect. 11.67% divides by A times the standard deviation instead of the variance.",
+      "C": "Correct. y* = (E(Rp) - Rf)/(A sigma^2) = 0.07/(3 x 0.04) = 0.5833, or 58.33%."
+    },
+    "verify": "const E=0.10,rf=0.03,s=0.2,A=3; return 100*(E-rf)/(A*s*s);",
+    "numericAnswer": 58.33,
+    "tolerance": 0.005,
+    "tags": [
+      "optimal-allocation",
+      "capital-allocation-line"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0007",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Plotted in expected return-standard deviation space, the indifference curves of a more risk-averse investor, compared with those of a less risk-averse investor, are most likely:",
+    "options": [
+      "steeper",
+      "flatter",
+      "horizontal"
+    ],
+    "answer": "A",
+    "explanation": "Slope of an indifference curve reflects required compensation for risk; it rises with the risk aversion coefficient. Risk-neutral: horizontal; risk-seeking: downward sloping.",
+    "rationale": {
+      "A": "Correct. A more risk-averse investor requires a larger increase in expected return to accept each additional unit of risk, so the curves are steeper.",
+      "B": "Incorrect. Flatter curves describe a less risk-averse investor who needs little extra return for added risk.",
+      "C": "Incorrect. Horizontal curves describe a risk-neutral investor, who cares only about expected return."
+    },
+    "tags": [
+      "indifference-curves",
+      "risk-aversion"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0008",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The risk-free rate is 3%, the expected market return is 8%, and Vantor Robotics has a beta of 1.2. Using the CAPM, the expected return on Vantor's shares is closest to:",
+    "options": [
+      "9.60%",
+      "12.60%",
+      "9.00%"
+    ],
+    "answer": "C",
+    "explanation": "CAPM: E(Ri) = 3% + 1.2 x (8% - 3%) = 9.00%.",
+    "rationale": {
+      "A": "Incorrect. 9.60% multiplies beta by the market return and omits the risk-free rate entirely.",
+      "B": "Incorrect. 12.60% multiplies beta by the total market return instead of the market risk premium.",
+      "C": "Correct. E(R) = Rf + beta[E(Rm) - Rf] = 3% + 1.2(5%) = 9.00%."
+    },
+    "verify": "return 3+1.2*(8-3);",
+    "numericAnswer": 9,
+    "tolerance": 0.005,
+    "tags": [
+      "capm"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0009",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The correlation between Quillon Foods' returns and the market's returns is 0.60. Quillon's standard deviation is 27% and the market's standard deviation is 18%. Quillon's beta is closest to:",
+    "options": [
+      "1.50",
+      "0.90",
+      "0.40"
+    ],
+    "answer": "B",
+    "explanation": "beta = Cov(i,m)/Var(m) = rho sigma_i sigma_m / sigma_m^2 = rho sigma_i/sigma_m = 0.6 x 1.5 = 0.90.",
+    "rationale": {
+      "A": "Incorrect. 1.50 omits the correlation; only the systematic portion of risk determines beta.",
+      "B": "Correct. beta = rho x sigma_i / sigma_m = 0.60 x 27/18 = 0.90.",
+      "C": "Incorrect. 0.40 inverts the ratio of standard deviations."
+    },
+    "verify": "return 0.6*0.27/0.18;",
+    "numericAnswer": 0.9,
+    "tolerance": 0.005,
+    "tags": [
+      "beta"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0010",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio earned 11.0% last year and has a beta of 0.9. The risk-free rate was 2.5% and the market return was 9.0%. The portfolio's Jensen's alpha is closest to:",
+    "options": [
+      "2.65%",
+      "9.44%",
+      "2.00%"
+    ],
+    "answer": "A",
+    "explanation": "alpha = Rp - [Rf + beta(Rm - Rf)] = 11.0 - (2.5 + 0.9 x 6.5) = 2.65%.",
+    "rationale": {
+      "A": "Correct. CAPM-required return = 2.5% + 0.9(6.5%) = 8.35%; alpha = 11.0% - 8.35% = 2.65%.",
+      "B": "Incorrect. 9.44% is the Treynor ratio (excess return per unit of beta), not Jensen's alpha.",
+      "C": "Incorrect. 2.00% compares the portfolio with the market return without adjusting for the portfolio's beta."
+    },
+    "verify": "return 11-(2.5+0.9*(9-2.5));",
+    "numericAnswer": 2.65,
+    "tolerance": 0.005,
+    "tags": [
+      "jensens-alpha",
+      "performance-evaluation"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0011",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A portfolio returned 12% with a standard deviation of 25%. Over the same period the market returned 9% with a standard deviation of 16%, and the risk-free rate was 3%. The portfolio's M-squared (M2) relative to the market is closest to:",
+    "options": [
+      "3.00%",
+      "-0.38%",
+      "-0.24%"
+    ],
+    "answer": "C",
+    "explanation": "M2 = (Sharpe_p - Sharpe_m) x sigma_m = (0.36 - 0.375) x 16 = -0.24%: the portfolio underperformed on a risk-adjusted basis.",
+    "rationale": {
+      "A": "Incorrect. 3.00% is the raw return difference, ignoring that the portfolio took much more total risk than the market.",
+      "B": "Incorrect. -0.38% scales the Sharpe ratio difference by the portfolio's standard deviation instead of the market's.",
+      "C": "Correct. Sharpe(p) = 9/25 = 0.360; Sharpe(m) = 6/16 = 0.375. M2 = (0.360 - 0.375) x 16% = -0.24%."
+    },
+    "verify": "const Sp=(12-3)/25, Sm=(9-3)/16; return (Sp-Sm)*16;",
+    "numericAnswer": -0.24,
+    "tolerance": 0.005,
+    "tags": [
+      "m-squared",
+      "sharpe-ratio"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0012",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In an investment policy statement, which of the following is classified as an investment objective rather than a constraint?",
+    "options": [
+      "Liquidity needs",
+      "Risk tolerance",
+      "Time horizon"
+    ],
+    "answer": "B",
+    "explanation": "IPS objectives: risk and return. Constraints: liquidity, time horizon, tax concerns, legal and regulatory factors, and unique circumstances.",
+    "rationale": {
+      "A": "Incorrect. Liquidity is one of the IPS constraints (with time horizon, tax, legal/regulatory and unique circumstances).",
+      "B": "Correct. Risk and return are the two investment objectives in an IPS; risk tolerance reflects both ability and willingness to bear risk.",
+      "C": "Incorrect. Time horizon is a constraint, not an objective."
+    },
+    "tags": [
+      "ips",
+      "objectives-constraints"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0013",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Henrik Dahl, a retiree, has a portfolio of EUR 1,200,000 and needs EUR 60,000 at the end of each year for living expenses. He wants the portfolio to keep its real value, and expected inflation is 2%. Using multiplicative compounding, his required nominal annual return is closest to:",
+    "options": [
+      "7.10%",
+      "5.00%",
+      "7.00%"
+    ],
+    "answer": "A",
+    "explanation": "Required return = (1 + 0.05)(1 + 0.02) - 1 = 7.10%.",
+    "rationale": {
+      "A": "Correct. Real spending need = 60,000/1,200,000 = 5%; nominal = 1.05 x 1.02 - 1 = 7.10%.",
+      "B": "Incorrect. 5.00% covers spending but ignores inflation, so the portfolio would lose real value.",
+      "C": "Incorrect. 7.00% adds inflation to the spending rate rather than compounding the two."
+    },
+    "verify": "const spend=60000/1200000; return 100*((1+spend)*1.02-1);",
+    "numericAnswer": 7.1,
+    "tolerance": 0.005,
+    "tags": [
+      "required-return",
+      "ips"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0014",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A young physician with high, stable income, substantial savings and no dependants tells her adviser she cannot tolerate seeing her portfolio fall in value. The adviser's most appropriate response is to:",
+    "options": [
+      "set a high risk tolerance in the IPS because her ability to bear risk is high",
+      "average her ability and willingness to arrive at a moderate risk tolerance without further discussion",
+      "discuss the inconsistency with her and, if her willingness remains low, generally base the IPS on the more conservative of the two assessments"
+    ],
+    "answer": "C",
+    "explanation": "Overall risk tolerance combines ability and willingness. When they conflict, the adviser should explore the conflict with the client; the more conservative assessment is typically adopted.",
+    "rationale": {
+      "A": "Incorrect. Overriding a client's stated willingness ignores a key input and risks the client abandoning the strategy after losses.",
+      "B": "Incorrect. Mechanically averaging the two without discussion fails to address the source of the inconsistency.",
+      "C": "Correct. When ability is high but willingness is low, the adviser should educate the client; if the gap persists, the lower (more conservative) risk tolerance usually governs, because clients rarely stick with strategies they are uncomfortable with."
+    },
+    "tags": [
+      "risk-tolerance",
+      "ability-vs-willingness"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0015",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Analyst Lina Okafor initially forecast Tessaro Corp.'s earnings at USD 2.40 per share. After weak sales data, she lowers the forecast only to USD 2.35, even though the new data suggest earnings near USD 2.00. Her behaviour best illustrates:",
+    "options": [
+      "loss aversion bias",
+      "anchoring and adjustment bias",
+      "overconfidence bias"
+    ],
+    "answer": "B",
+    "explanation": "Anchoring and adjustment: estimates are tied to an initial value and updated too little as new information emerges.",
+    "rationale": {
+      "A": "Incorrect. Loss aversion is an emotional bias about feeling losses more strongly than gains; nothing here concerns realizing losses.",
+      "B": "Correct. She anchors on her initial estimate and adjusts insufficiently when new information arrives, a cognitive information-processing error.",
+      "C": "Incorrect. Overconfidence concerns overestimating one's knowledge or ability; the defining feature here is insufficient adjustment from a starting value."
+    },
+    "tags": [
+      "anchoring",
+      "cognitive-errors"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0016",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following is classified as an emotional bias rather than a cognitive error?",
+    "options": [
+      "Endowment bias",
+      "Conservatism bias",
+      "Availability bias"
+    ],
+    "answer": "A",
+    "explanation": "Emotional biases: loss aversion, overconfidence, self-control, status quo, endowment, regret aversion. Cognitive errors include conservatism, confirmation, representativeness, anchoring, availability, framing and mental accounting.",
+    "rationale": {
+      "A": "Correct. Endowment bias (valuing an asset more simply because one owns it) stems from feelings rather than faulty reasoning, so it is emotional.",
+      "B": "Incorrect. Conservatism (slow updating of views) is a cognitive belief-perseverance error.",
+      "C": "Incorrect. Availability (judging likelihood by ease of recall) is a cognitive information-processing error."
+    },
+    "tags": [
+      "emotional-biases"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0017",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An investor routinely sells stocks soon after they rise in price but holds on to stocks that have fallen, hoping they will recover. This pattern is most consistent with:",
+    "options": [
+      "illusion of control",
+      "representativeness",
+      "loss aversion"
+    ],
+    "answer": "C",
+    "explanation": "The disposition effect (sell winners early, hold losers too long) is a classic consequence of loss aversion.",
+    "rationale": {
+      "A": "Incorrect. Illusion of control is believing one can influence uncontrollable outcomes; it does not explain the asymmetric selling pattern.",
+      "B": "Incorrect. Representativeness is classifying information by resemblance to past categories; it does not explain holding losers and selling winners.",
+      "C": "Correct. Feeling losses more intensely than equal gains leads investors to avoid realizing losses and to lock in gains early (the disposition effect)."
+    },
+    "tags": [
+      "loss-aversion",
+      "disposition-effect"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0018",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In an organization's risk management framework, risk tolerance is best described as:",
+    "options": [
+      "the process of eliminating all risks that could reduce earnings",
+      "the amount and types of risk the organization is willing to accept in pursuit of its objectives",
+      "the allocation of a total risk budget across individual business units"
+    ],
+    "answer": "B",
+    "explanation": "Risk governance sets the framework; risk tolerance states acceptable risk; risk budgeting allocates that risk; risk measurement and monitoring follow.",
+    "rationale": {
+      "A": "Incorrect. Risk management is not about eliminating risk; organizations take risk deliberately to earn returns.",
+      "B": "Correct. Risk tolerance, set by the governing body, defines how much and what kinds of risk the organization will accept.",
+      "C": "Incorrect. This describes risk budgeting, which is performed within the limits set by risk tolerance."
+    },
+    "tags": [
+      "risk-tolerance",
+      "risk-governance"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0019",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following is a non-financial risk?",
+    "options": [
+      "Operational risk",
+      "Credit risk",
+      "Liquidity risk"
+    ],
+    "answer": "A",
+    "explanation": "Financial risks: market, credit, liquidity. Non-financial risks: operational, settlement, legal, compliance, model, tax, solvency and similar.",
+    "rationale": {
+      "A": "Correct. Operational risk (losses from failed processes, people, systems or external events) arises inside the organization and is classed as non-financial.",
+      "B": "Incorrect. Credit risk arises from counterparty default and is a financial risk.",
+      "C": "Incorrect. Liquidity risk arises from the inability to trade at fair value and is a financial risk."
+    },
+    "tags": [
+      "non-financial-risk"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0020",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio is worth USD 50,000,000 and its daily return has a mean of zero and a standard deviation of 1.2%. Using a one-tailed z-value of 1.65, the 1-day 5% value at risk (VaR) is closest to:",
+    "options": [
+      "USD 1,398,000",
+      "USD 990,000",
+      "USD 1,176,000"
+    ],
+    "answer": "B",
+    "explanation": "Parametric VaR = portfolio value x z x sigma = 50,000,000 x 1.65 x 1.2% = USD 990,000.",
+    "rationale": {
+      "A": "Incorrect. USD 1,398,000 uses the 1% one-tailed z-value (2.33), which gives a 1% VaR, not 5%.",
+      "B": "Correct. VaR = 50,000,000 x 1.65 x 0.012 = USD 990,000.",
+      "C": "Incorrect. USD 1,176,000 uses the two-tailed 95% z-value (1.96); VaR concerns only the loss tail."
+    },
+    "verify": "return 50000000*1.65*0.012;",
+    "numericAnswer": 990000,
+    "tolerance": 0.5,
+    "tags": [
+      "var",
+      "risk-measurement"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0021",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A head-and-shoulders pattern that forms after a prolonged uptrend is generally interpreted as:",
+    "options": [
+      "a continuation pattern signalling that the uptrend will resume",
+      "a pattern with no implication for future trend direction",
+      "a reversal pattern signalling that the uptrend is likely to end"
+    ],
+    "answer": "C",
+    "explanation": "Head-and-shoulders (top) = bearish reversal; inverse head-and-shoulders = bullish reversal.",
+    "rationale": {
+      "A": "Incorrect. Continuation patterns include triangles, flags and pennants, not head-and-shoulders.",
+      "B": "Incorrect. Technicians use the pattern precisely because it is taken to signal a trend change and to project a price target.",
+      "C": "Correct. Head-and-shoulders is a classic reversal pattern; a break below the neckline signals a likely downtrend."
+    },
+    "tags": [
+      "chart-patterns"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0022",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A stock has formed a head-and-shoulders top. The head peaked at USD 74, and the neckline is at USD 60. Once the price breaks below the neckline, the technical price target is closest to:",
+    "options": [
+      "USD 46.00",
+      "USD 53.00",
+      "USD 88.00"
+    ],
+    "answer": "A",
+    "explanation": "Price target = neckline - (head - neckline) = 60 - (74 - 60) = USD 46.00.",
+    "rationale": {
+      "A": "Correct. Target = neckline - (head - neckline) = 60 - 14 = USD 46.00.",
+      "B": "Incorrect. USD 53.00 subtracts only half the head-to-neckline distance.",
+      "C": "Incorrect. USD 88.00 adds the distance to the head as if the pattern were bullish."
+    },
+    "verify": "const head=74, neck=60; return neck-(head-neck);",
+    "numericAnswer": 46,
+    "tolerance": 0.005,
+    "tags": [
+      "chart-patterns",
+      "price-target"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0023",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Over the last 14 trading days, a stock's up days produced total price gains of 21 points and its down days produced total price losses of 9 points. The 14-day relative strength index (RSI) is closest to:",
+    "options": [
+      "57.14",
+      "70.00",
+      "30.00"
+    ],
+    "answer": "B",
+    "explanation": "RSI = 100 - 100/(1 + RS), with RS = total gains/total losses = 21/9. RSI = 100 - 30 = 70.00.",
+    "rationale": {
+      "A": "Incorrect. 57.14 uses 100/RS instead of 100/(1 + RS).",
+      "B": "Correct. RS = 21/9 = 2.333; RSI = 100 - 100/(1 + 2.333) = 70.00, at the conventional overbought threshold.",
+      "C": "Incorrect. 30.00 is 100/(1 + RS), the term that is subtracted from 100, not the RSI itself."
+    },
+    "verify": "const RS=21/9; return 100-100/(1+RS);",
+    "numericAnswer": 70,
+    "tolerance": 0.005,
+    "tags": [
+      "rsi",
+      "momentum-oscillators"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0024",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Compared with traditional human advisers, robo-advisers are most likely characterized by:",
+    "options": [
+      "more customized, complex tax and estate planning",
+      "higher fees reflecting the cost of their technology",
+      "lower fees and lower minimum account sizes"
+    ],
+    "answer": "C",
+    "explanation": "Robo-advice provides automated, low-cost portfolio management, usually with passive ETF-based allocations and low minimums.",
+    "rationale": {
+      "A": "Incorrect. Robo-advisers typically offer standardized portfolios; complex, customized planning remains a strength of human advisers.",
+      "B": "Incorrect. Robo-advisers are known for low, not high, fees.",
+      "C": "Correct. Automation lets robo-advisers serve clients at low cost and with low minimum balances, broadening access to advice."
+    },
+    "tags": [
+      "robo-advice"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0025",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about distributed ledger technology (DLT) networks is most accurate?",
+    "options": [
+      "In a permissioned network, network participants may be restricted in what they can view or validate",
+      "In a permissionless network, a central authority must approve each new participant",
+      "Once a transaction is recorded on a permissionless blockchain, it can be easily altered by any participant"
+    ],
+    "answer": "A",
+    "explanation": "Permissionless DLT: open, no central authority, immutable records. Permissioned DLT: participants and their rights are controlled.",
+    "rationale": {
+      "A": "Correct. Permissioned DLT limits participation and access rights to approved members, which suits many institutional uses.",
+      "B": "Incorrect. Permissionless networks (such as public blockchains) are open to anyone with no central gatekeeper.",
+      "C": "Incorrect. Records on a blockchain are designed to be immutable; altering them would require controlling most of the network's computing power."
+    },
+    "tags": [
+      "distributed-ledger"
+    ]
+  },
+  {
+    "id": "cfa1-pm-0026",
+    "course": "cfa-level-1",
+    "topic": "portfolio-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An investment firm buys satellite images of retail store parking lots to estimate quarterly sales before companies report. This is best described as the use of:",
+    "options": [
+      "traditional data from corporate financial statements",
+      "alternative data generated by sensors",
+      "structured data generated by individuals through social media"
+    ],
+    "answer": "B",
+    "explanation": "Alternative data come from individuals, business processes and sensors. Satellite images are sensor-generated, unstructured big data analysed with machine learning.",
+    "rationale": {
+      "A": "Incorrect. Corporate filings are traditional data; the images are used precisely to anticipate them.",
+      "B": "Correct. Satellite imagery is alternative data produced by sensors (part of the Internet of Things), typically large and unstructured.",
+      "C": "Incorrect. Data generated by individuals include social media posts and product reviews; satellite images are sensor-generated and largely unstructured."
+    },
+    "tags": [
+      "big-data",
+      "alternative-data"
+    ]
+  }
+]

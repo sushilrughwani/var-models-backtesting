@@ -1,0 +1,90 @@
+[
+  {
+    "id": "q-xl-cell-references-and-named-ranges-1",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "cell-references-and-named-ranges",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Cell D4 multiplies pre-tax profit in B4 by a tax rate in B1. The reference to B1 has dollar signs before both its column letter and its row number; the reference to B4 has none. If D4 is copied to D9, what does D9 calculate?",
+    "options": [
+      "B4 multiplied by B1",
+      "B9 multiplied by B6",
+      "B9 multiplied by B1",
+      "D9 multiplied by D6"
+    ],
+    "answer": "C",
+    "explanation": "The relative reference B4 moves down five rows with the formula and becomes B9. The fully locked reference to B1 does not move.",
+    "rationale": {
+      "A": "Incorrect. This would only happen if B4 were also locked; relative references shift when copied.",
+      "B": "Incorrect. This is what happens when the tax-rate reference is left relative: it drifts from B1 to B6, which is usually blank.",
+      "C": "Correct. The relative profit reference shifts to B9 while the locked tax rate stays at B1.",
+      "D": "Incorrect. Copying down a column changes row numbers of relative references, not their column letters."
+    }
+  },
+  {
+    "id": "q-xl-cell-references-and-named-ranges-2",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "cell-references-and-named-ranges",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Base revenue of 2,000 is in B1, growth rates 4%, 6% and 8% are in C3:E3, and years 1 to 5 are in A4:A8. C4 holds a formula that computes base revenue × (1 + growth)^year, with B1 fully locked, the growth reference's row locked and the year reference's column locked. After copying C4 to C4:E8, the value in D7 is closest to:",
+    "options": ["2,524.95", "2,382.03", "2,339.72", "2,480.00"],
+    "answer": "A",
+    "explanation": "D7 uses the growth rate in D3 (6%) and the year in A7 (4): 2,000 × 1.06^4 = 2,524.95.",
+    "rationale": {
+      "A": "Correct. Row 7 holds year 4 and column D holds 6%: 2,000 × 1.06^4 = 2,524.95.",
+      "B": "Incorrect. This uses 3 years (2,000 × 1.06^3), confusing the row number with the year: row 7 is year 4.",
+      "C": "Incorrect. This uses the 4% rate from column C (2,000 × 1.04^4), as if the growth column had been locked.",
+      "D": "Incorrect. This applies simple growth, 2,000 × (1 + 0.06 × 4), instead of compounding."
+    },
+    "verify": "return 2000*Math.pow(1.06,4);",
+    "numericAnswer": 2524.95,
+    "tolerance": 0.01
+  },
+  {
+    "id": "q-xl-cell-references-and-named-ranges-3",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "cell-references-and-named-ranges",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "You are editing a formula and the cursor sits inside a plain relative reference to B2. You press F4 three times. What does the reference become?",
+    "options": [
+      "Column and row both locked",
+      "Row locked, column free",
+      "Back to fully relative",
+      "Column locked, row free"
+    ],
+    "answer": "D",
+    "explanation": "F4 cycles: relative → both locked → row locked only → column locked only → relative. The third press gives column locked, row free.",
+    "rationale": {
+      "A": "Incorrect. Both parts are locked after the first press.",
+      "B": "Incorrect. Row-only locking comes after the second press.",
+      "C": "Incorrect. The reference returns to relative after the fourth press.",
+      "D": "Correct. The third press locks only the column letter, so the row can still move when copied."
+    }
+  },
+  {
+    "id": "q-xl-cell-references-and-named-ranges-4",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "cell-references-and-named-ranges",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Units 10, 20 and 30 are in A2:A4 and prices 1.1, 1.2 and 1.3 are in C1:E1. C2 contains a formula that multiplies A2 (with only its column locked) by C1 (with only its row locked). C2 is copied to C2:E4. What value appears in E4?",
+    "options": ["13", "39", "33", "11"],
+    "answer": "B",
+    "explanation": "In E4 the column-locked reference stays in column A but moves to row 4 (30), and the row-locked reference stays in row 1 but moves to column E (1.3): 30 × 1.3 = 39.",
+    "rationale": {
+      "A": "Incorrect. 10 × 1.3 would result if the units reference had its row locked too, so it stayed on A2.",
+      "B": "Correct. Mixed references pick up the units from A4 and the price from E1: 30 × 1.3 = 39.",
+      "C": "Incorrect. 30 × 1.1 would result if the price reference had its column locked too, so it stayed on C1.",
+      "D": "Incorrect. 10 × 1.1 is what fully locked references give in every cell of the grid."
+    },
+    "verify": "const units=[10,20,30], prices=[1.1,1.2,1.3]; return units[2]*prices[2];",
+    "numericAnswer": 39,
+    "tolerance": 0.01
+  }
+]

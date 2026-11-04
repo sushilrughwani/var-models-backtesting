@@ -1,0 +1,962 @@
+[
+  {
+    "id": "frm1-qa-0001",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A credit model flags 90% of borrowers who later default and also flags 10% of borrowers who do not default. The prior probability of default is 4%. Given that a borrower has been flagged, the probability that the borrower defaults is closest to:",
+    "options": [
+      "27.27%",
+      "90.00%",
+      "3.60%",
+      "13.20%"
+    ],
+    "answer": "A",
+    "explanation": "P(flag) = 0.90(0.04) + 0.10(0.96) = 0.132. P(default | flag) = 0.036 / 0.132 = 27.27%.",
+    "rationale": {
+      "A": "Correct. Bayes' rule: 0.90 x 0.04 / (0.90 x 0.04 + 0.10 x 0.96) = 0.036 / 0.132 = 27.27%.",
+      "B": "Incorrect. This is P(flag | default); it confuses the conditional probability with its inverse.",
+      "C": "Incorrect. This is the joint probability P(flag and default), not divided by P(flag).",
+      "D": "Incorrect. This is the unconditional probability of being flagged, P(flag)."
+    },
+    "verify": "const pd=0.04, tp=0.90, fp=0.10; return 100*tp*pd/(tp*pd+fp*(1-pd));",
+    "numericAnswer": 27.27,
+    "tolerance": 0.005,
+    "tags": [
+      "bayes-rule",
+      "conditional-probability"
+    ]
+  },
+  {
+    "id": "frm1-qa-0002",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Events A and B each have a positive probability of occurring. If A and B are mutually exclusive, which statement is correct?",
+    "options": [
+      "P(A or B) = P(A) + P(B) - P(A) x P(B).",
+      "A and B cannot be independent, because P(A and B) = 0 differs from P(A) x P(B) > 0.",
+      "P(A | B) = P(A).",
+      "A and B must be independent, because the occurrence of one tells nothing about the other."
+    ],
+    "answer": "B",
+    "explanation": "Mutually exclusive events with positive probabilities have P(A and B) = 0 < P(A)P(B), so they are dependent.",
+    "rationale": {
+      "A": "Incorrect. That addition rule applies to independent events; for mutually exclusive events P(A or B) = P(A) + P(B).",
+      "B": "Correct. Independence requires P(A and B) = P(A)P(B), which is positive; mutual exclusivity forces the joint probability to zero.",
+      "C": "Incorrect. Since A and B cannot occur together, P(A | B) = 0, not P(A).",
+      "D": "Incorrect. Knowing A occurred tells you B did not occur, which is maximal dependence."
+    },
+    "tags": [
+      "independence",
+      "mutually-exclusive"
+    ]
+  },
+  {
+    "id": "frm1-qa-0003",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A trading desk's daily P&L (USD millions) takes the values -10, 0 and +20 with probabilities 0.2, 0.5 and 0.3. The standard deviation of daily P&L is closest to:",
+    "options": [
+      "USD 12.47 million",
+      "USD 11.83 million",
+      "USD 11.14 million",
+      "USD 124.00 million"
+    ],
+    "answer": "C",
+    "explanation": "E[X] = 0.2(-10) + 0.5(0) + 0.3(20) = 4. E[X^2] = 0.2(100) + 0.3(400) = 140. Var = 140 - 4^2 = 124; SD = sqrt(124) = 11.14.",
+    "rationale": {
+      "A": "Incorrect. This treats the three outcomes as equally likely, ignoring the stated probabilities.",
+      "B": "Incorrect. This is the square root of E[X^2] = 140; the squared mean was not subtracted.",
+      "C": "Correct. E[X] = 4, E[X^2] = 140, variance = 140 - 16 = 124, standard deviation = 11.14.",
+      "D": "Incorrect. This is the variance, not the standard deviation."
+    },
+    "verify": "const x=[-10,0,20], p=[0.2,0.5,0.3]; const m=x.reduce((s,v,i)=>s+v*p[i],0); const m2=x.reduce((s,v,i)=>s+v*v*p[i],0); return Math.sqrt(m2-m*m);",
+    "numericAnswer": 11.14,
+    "tolerance": 0.005,
+    "tags": [
+      "moments",
+      "discrete-random-variable"
+    ]
+  },
+  {
+    "id": "frm1-qa-0004",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A continuous loss-rate variable X has density f(x) = 2x for 0 <= x <= 1 and zero elsewhere. The median of X is closest to:",
+    "options": [
+      "0.5000",
+      "0.6667",
+      "0.2500",
+      "0.7071"
+    ],
+    "answer": "D",
+    "explanation": "F(x) = integral of 2t from 0 to x = x^2. Median m solves m^2 = 0.5, so m = sqrt(0.5) = 0.7071.",
+    "rationale": {
+      "A": "Incorrect. This is the median of a uniform distribution on [0, 1]; the density here is skewed toward 1.",
+      "B": "Incorrect. This is the mean, integral of x times 2x = 2/3, not the median.",
+      "C": "Incorrect. This is F(0.5), the probability below 0.5, not the 50% quantile.",
+      "D": "Correct. The CDF is F(x) = x^2; setting x^2 = 0.5 gives x = 0.7071."
+    },
+    "verify": "return Math.sqrt(0.5);",
+    "numericAnswer": 0.7071,
+    "tolerance": 5e-05,
+    "tags": [
+      "quantiles",
+      "continuous-random-variable"
+    ]
+  },
+  {
+    "id": "frm1-qa-0005",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A return distribution has a long left tail, with a few very large losses and many small gains. Which description best fits this distribution?",
+    "options": [
+      "Negative skewness, with the mean below the median.",
+      "Zero skewness, because skewness measures only tail thickness.",
+      "Negative excess kurtosis, because large losses thin the tails.",
+      "Positive skewness, with the mean above the median."
+    ],
+    "answer": "A",
+    "explanation": "Skewness measures asymmetry. A long left tail (rare large losses) gives negative skewness, so mean < median.",
+    "rationale": {
+      "A": "Correct. A long left tail produces negative skewness and pulls the mean below the median.",
+      "B": "Incorrect. Tail thickness is measured by kurtosis; skewness measures asymmetry.",
+      "C": "Incorrect. Occasional extreme losses fatten tails (higher kurtosis); and the asymmetry is captured by skewness.",
+      "D": "Incorrect. Positive skew corresponds to a long right tail of large gains."
+    },
+    "tags": [
+      "skewness",
+      "moments"
+    ]
+  },
+  {
+    "id": "frm1-qa-0006",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Defaults in a loan portfolio follow a Poisson distribution with an average of 2 defaults per year. The probability of exactly 3 defaults next year is closest to:",
+    "options": [
+      "0.2707",
+      "0.1804",
+      "0.8571",
+      "0.3233"
+    ],
+    "answer": "B",
+    "explanation": "P(X = k) = e^-lambda lambda^k / k!. With lambda = 2, k = 3: e^-2 x 8 / 6 = 0.1804.",
+    "rationale": {
+      "A": "Incorrect. This is P(X = 2), using k equal to the mean instead of 3.",
+      "B": "Correct. P(X = 3) = e^-2 x 2^3 / 3! = 0.1804.",
+      "C": "Incorrect. This is the cumulative probability P(X <= 3).",
+      "D": "Incorrect. This is P(X >= 3) = 1 - P(X <= 2)."
+    },
+    "verify": "const l=2,k=3; return Math.exp(-l)*l**k/6;",
+    "numericAnswer": 0.1804,
+    "tolerance": 5e-05,
+    "tags": [
+      "poisson"
+    ]
+  },
+  {
+    "id": "frm1-qa-0007",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio holds 10 bonds, each with an independent 5% probability of default over the year. The probability that at least one bond defaults is closest to:",
+    "options": [
+      "50.00%",
+      "31.51%",
+      "40.13%",
+      "59.87%"
+    ],
+    "answer": "C",
+    "explanation": "Number of defaults ~ Binomial(10, 0.05). P(at least one) = 1 - P(none) = 1 - 0.95^10 = 40.13%.",
+    "rationale": {
+      "A": "Incorrect. This adds the probabilities (10 x 5%), ignoring the possibility of multiple defaults.",
+      "B": "Incorrect. This is the binomial probability of exactly one default.",
+      "C": "Correct. 1 - 0.95^10 = 40.13%.",
+      "D": "Incorrect. This is the probability of no defaults, 0.95^10."
+    },
+    "verify": "return 100*(1-0.95**10);",
+    "numericAnswer": 40.13,
+    "tolerance": 0.005,
+    "tags": [
+      "binomial"
+    ]
+  },
+  {
+    "id": "frm1-qa-0008",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The natural log of a stock's price in one year is normally distributed with mean 4.60 and standard deviation 0.20. The expected stock price in one year is closest to:",
+    "options": [
+      "103.54",
+      "121.51",
+      "99.48",
+      "101.49"
+    ],
+    "answer": "D",
+    "explanation": "If ln P ~ N(mu, sigma^2), E[P] = exp(mu + 0.5 sigma^2) = exp(4.60 + 0.5 x 0.04) = exp(4.62) = 101.49.",
+    "rationale": {
+      "A": "Incorrect. This uses exp(mu + sigma^2), omitting the factor of one half.",
+      "B": "Incorrect. This adds sigma rather than sigma^2/2 to the exponent.",
+      "C": "Incorrect. exp(mu) = 99.48 is the median of the lognormal, not its mean.",
+      "D": "Correct. For a lognormal variable, E[P] = exp(mu + sigma^2/2) = exp(4.60 + 0.02) = 101.49."
+    },
+    "verify": "const mu=4.6, s=0.2; return Math.exp(mu+0.5*s*s);",
+    "numericAnswer": 101.49,
+    "tolerance": 0.005,
+    "tags": [
+      "lognormal"
+    ]
+  },
+  {
+    "id": "frm1-qa-0009",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio is 60% in asset X (volatility 20%) and 40% in asset Y (volatility 10%). The correlation between X and Y is 0.3. The portfolio volatility is closest to:",
+    "options": [
+      "13.74%",
+      "13.21%",
+      "16.00%",
+      "12.65%"
+    ],
+    "answer": "A",
+    "explanation": "sigma_p^2 = w1^2 s1^2 + w2^2 s2^2 + 2 w1 w2 rho s1 s2 = 0.0144 + 0.0016 + 0.00288 = 0.01888; sigma_p = 13.74%.",
+    "rationale": {
+      "A": "Correct. Variance = 0.36(0.04) + 0.16(0.01) + 2(0.6)(0.4)(0.3)(0.2)(0.1) = 0.01888; volatility = 13.74%.",
+      "B": "Incorrect. This omits the factor of 2 on the covariance term.",
+      "C": "Incorrect. This is the weighted average of volatilities, which holds only if correlation = 1.",
+      "D": "Incorrect. This ignores the covariance term, as if correlation were zero."
+    },
+    "verify": "const w1=0.6,w2=0.4,s1=0.2,s2=0.1,r=0.3; return 100*Math.sqrt(w1*w1*s1*s1+w2*w2*s2*s2+2*w1*w2*r*s1*s2);",
+    "numericAnswer": 13.74,
+    "tolerance": 0.005,
+    "tags": [
+      "portfolio-variance",
+      "correlation"
+    ]
+  },
+  {
+    "id": "frm1-qa-0010",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Two return series have a covariance of 0.006. Their standard deviations are 0.20 and 0.15. Their correlation is closest to:",
+    "options": [
+      "6.67",
+      "0.20",
+      "0.02",
+      "0.04"
+    ],
+    "answer": "B",
+    "explanation": "Correlation = Cov / (sigma_x sigma_y) = 0.006 / 0.03 = 0.20.",
+    "rationale": {
+      "A": "Incorrect. This divides by the product of the variances (0.04 x 0.0225); a correlation cannot exceed 1.",
+      "B": "Correct. rho = 0.006 / (0.20 x 0.15) = 0.20.",
+      "C": "Incorrect. This divides by the sum of the standard deviations (0.35).",
+      "D": "Incorrect. This divides by only one standard deviation (0.15)."
+    },
+    "verify": "return 0.006/(0.20*0.15);",
+    "numericAnswer": 0.2,
+    "tolerance": 0.005,
+    "tags": [
+      "correlation",
+      "covariance"
+    ]
+  },
+  {
+    "id": "frm1-qa-0011",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "X is a standard normal random variable and Y = X^2. Which statement about X and Y is correct?",
+    "options": [
+      "Their correlation is +1, because Y is a function of X.",
+      "Their correlation is positive, because Y rises whenever X rises.",
+      "Their correlation is zero, yet they are not independent.",
+      "Their correlation is zero, so they must be independent."
+    ],
+    "answer": "C",
+    "explanation": "Cov(X, Y) = E[X^3] - E[X]E[X^2] = 0 - 0 = 0, but knowing X determines Y exactly, so they are dependent.",
+    "rationale": {
+      "A": "Incorrect. Correlation measures only linear association; the quadratic relationship is not linear.",
+      "B": "Incorrect. Y falls as X rises over negative values, so the linear association nets to zero.",
+      "C": "Correct. Cov(X, X^2) = E[X^3] = 0 for a symmetric distribution, but Y is a deterministic function of X.",
+      "D": "Incorrect. Zero correlation implies independence only under special cases such as joint normality; here Y depends fully on X."
+    },
+    "tags": [
+      "correlation",
+      "independence"
+    ]
+  },
+  {
+    "id": "frm1-qa-0012",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An analyst observes four monthly returns: 4%, -2%, 6% and 0%. The unbiased sample standard deviation is closest to:",
+    "options": [
+      "6.32%",
+      "3.16%",
+      "13.33%",
+      "3.65%"
+    ],
+    "answer": "D",
+    "explanation": "Mean = 8/4 = 2%. Deviations: 2, -4, 4, -2; squares sum to 40. s^2 = 40/3 = 13.33; s = 3.65%.",
+    "rationale": {
+      "A": "Incorrect. This is the square root of the sum of squared deviations, without dividing by n - 1.",
+      "B": "Incorrect. This divides by n = 4 instead of n - 1 = 3, giving the biased estimator.",
+      "C": "Incorrect. This is the sample variance (in %^2), not the standard deviation.",
+      "D": "Correct. Mean = 2%; squared deviations sum to 40; 40 / 3 = 13.33; square root = 3.65%."
+    },
+    "verify": "const r=[4,-2,6,0]; const m=r.reduce((a,b)=>a+b,0)/r.length; const ss=r.reduce((a,b)=>a+(b-m)**2,0); return Math.sqrt(ss/(r.length-1));",
+    "numericAnswer": 3.65,
+    "tolerance": 0.005,
+    "tags": [
+      "sample-variance",
+      "bias"
+    ]
+  },
+  {
+    "id": "frm1-qa-0013",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "The estimator of variance that divides the sum of squared deviations by n (rather than n - 1) is best described as:",
+    "options": [
+      "Biased in finite samples but consistent.",
+      "Unbiased and consistent.",
+      "Unbiased but inconsistent.",
+      "Biased and inconsistent."
+    ],
+    "answer": "A",
+    "explanation": "E[sum (x - xbar)^2 / n] = (n - 1) sigma^2 / n: biased downward, but the bias goes to zero as n increases, so the estimator is consistent.",
+    "rationale": {
+      "A": "Correct. Its expected value is (n - 1)/n times the true variance, but the bias vanishes as n grows.",
+      "B": "Incorrect. Dividing by n understates the variance on average in finite samples.",
+      "C": "Incorrect. It is biased, and it does converge to the true variance as n grows.",
+      "D": "Incorrect. The bias factor (n - 1)/n tends to 1, so the estimator is consistent."
+    },
+    "tags": [
+      "estimator-properties",
+      "bias",
+      "consistency"
+    ]
+  },
+  {
+    "id": "frm1-qa-0014",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A strategy's 64 monthly returns have a sample mean of 1.2% and a sample standard deviation of 6%. Using a critical value of 1.96, the upper bound of the 95% confidence interval for the mean monthly return is closest to:",
+    "options": [
+      "2.43%",
+      "2.67%",
+      "1.38%",
+      "12.96%"
+    ],
+    "answer": "B",
+    "explanation": "SE = s / sqrt(n) = 6 / 8 = 0.75%. Upper bound = 1.2 + 1.96(0.75) = 2.67%.",
+    "rationale": {
+      "A": "Incorrect. This uses 1.645, the critical value for a 90% two-sided interval.",
+      "B": "Correct. Standard error = 6% / sqrt(64) = 0.75%; upper bound = 1.2% + 1.96 x 0.75% = 2.67%.",
+      "C": "Incorrect. This divides the standard deviation by n = 64 instead of sqrt(n) = 8.",
+      "D": "Incorrect. This uses the standard deviation of returns instead of the standard error of the mean."
+    },
+    "verify": "const m=1.2,s=6,n=64,z=1.96; return m+z*s/Math.sqrt(n);",
+    "numericAnswer": 2.67,
+    "tolerance": 0.005,
+    "tags": [
+      "confidence-interval",
+      "standard-error"
+    ]
+  },
+  {
+    "id": "frm1-qa-0015",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Holding the sample size fixed, a researcher lowers the significance level of a test from 5% to 1%. Which outcome is expected?",
+    "options": [
+      "Both Type I and Type II error probabilities fall.",
+      "The probability of a Type I error rises.",
+      "The probability of a Type II error rises and the power of the test falls.",
+      "The power of the test rises."
+    ],
+    "answer": "C",
+    "explanation": "Significance level = P(Type I). Lowering it widens the non-rejection region, so P(Type II) rises and power falls unless n increases.",
+    "rationale": {
+      "A": "Incorrect. With a fixed sample size, reducing one error probability increases the other.",
+      "B": "Incorrect. The significance level is the Type I error probability, so it falls to 1%.",
+      "C": "Correct. A stricter rejection threshold makes it harder to reject a false null, raising Type II error and lowering power (1 minus Type II probability).",
+      "D": "Incorrect. Rejecting less often lowers the chance of rejecting a false null."
+    },
+    "tags": [
+      "type-i-error",
+      "power"
+    ]
+  },
+  {
+    "id": "frm1-qa-0016",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst runs a two-sided test of H0: mean = 0 and obtains a positive test statistic with a p-value of 0.08. A colleague argues that theory only allows a positive mean and specifies a one-sided alternative (mean > 0) before seeing the data. At the 5% level, which conclusion is correct?",
+    "options": [
+      "The one-sided p-value is 0.16, so the null is not rejected under either test.",
+      "The null is rejected under both tests because 0.08 is close to 0.05.",
+      "There is an 8% probability that the null hypothesis is true.",
+      "The one-sided p-value is 0.04, so the null is rejected under the one-sided test but not under the two-sided test."
+    ],
+    "answer": "D",
+    "explanation": "Two-sided p = 2 x P(T > t). For a positive t and a pre-specified alternative mean > 0, the one-sided p = 0.08 / 2 = 0.04 < 0.05, so reject one-sided; two-sided does not reject.",
+    "rationale": {
+      "A": "Incorrect. Doubling applies when converting a one-sided p-value to a two-sided one, not the reverse.",
+      "B": "Incorrect. The two-sided p-value of 0.08 exceeds 0.05, so the two-sided test does not reject.",
+      "C": "Incorrect. A p-value is the probability of a result at least this extreme assuming H0 is true, not the probability that H0 is true.",
+      "D": "Correct. With a statistic in the direction of the alternative, the one-sided p-value is half the two-sided value, 0.04 < 0.05."
+    },
+    "tags": [
+      "p-value",
+      "one-sided-test"
+    ]
+  },
+  {
+    "id": "frm1-qa-0017",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Over a sample, a fund's mean return is 8% and the market's mean return is 6%. The covariance between fund and market returns is 0.0108 and the market's standard deviation is 12%. The OLS intercept from regressing fund returns on market returns is closest to:",
+    "options": [
+      "3.50%",
+      "7.46%",
+      "0.00%",
+      "2.00%"
+    ],
+    "answer": "A",
+    "explanation": "beta = Cov / Var(market) = 0.0108 / 0.12^2 = 0.75. alpha = mean(Y) - beta x mean(X) = 8 - 0.75(6) = 3.50%.",
+    "rationale": {
+      "A": "Correct. Slope = 0.0108 / 0.0144 = 0.75; intercept = 8% - 0.75 x 6% = 3.50%.",
+      "B": "Incorrect. This divides the covariance by the standard deviation (0.12) instead of the variance, giving slope 0.09.",
+      "C": "Incorrect. This inverts the slope formula (variance / covariance = 1.333), which is not the OLS slope.",
+      "D": "Incorrect. This assumes a slope of 1 and simply subtracts the market mean."
+    },
+    "verify": "const beta=0.0108/(0.12**2); return 8-beta*6;",
+    "numericAnswer": 3.5,
+    "tolerance": 0.005,
+    "tags": [
+      "ols",
+      "intercept",
+      "beta"
+    ]
+  },
+  {
+    "id": "frm1-qa-0018",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In a simple (one-regressor) OLS regression, which statement about the coefficient of determination (R-squared) is correct?",
+    "options": [
+      "A high R-squared proves the regressor causes the dependent variable.",
+      "It equals the square of the sample correlation between the dependent and independent variables.",
+      "It equals the slope coefficient.",
+      "It measures the fraction of the variation in X explained by Y."
+    ],
+    "answer": "B",
+    "explanation": "R-squared = ESS / TSS, the share of the variation in Y explained by X; in simple regression it equals the squared correlation.",
+    "rationale": {
+      "A": "Incorrect. R-squared measures fit, not causation.",
+      "B": "Correct. With one regressor, R-squared = rho^2 between X and Y.",
+      "C": "Incorrect. The slope depends on the units of X and Y; R-squared is unit-free and between 0 and 1.",
+      "D": "Incorrect. R-squared is the fraction of the variation in the dependent variable Y explained by the model."
+    },
+    "tags": [
+      "r-squared"
+    ]
+  },
+  {
+    "id": "frm1-qa-0019",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which assumption is most critical for the OLS slope estimator in a simple regression to be unbiased?",
+    "options": [
+      "The error term is normally distributed.",
+      "The error variance is constant across observations.",
+      "The error term has a conditional mean of zero given the regressor, E[e | X] = 0.",
+      "The dependent variable has a mean of zero."
+    ],
+    "answer": "C",
+    "explanation": "Unbiasedness of OLS rests on E[e | X] = 0 (plus i.i.d. sampling, no large outliers and variation in X). Normality and homoskedasticity matter for inference and efficiency.",
+    "rationale": {
+      "A": "Incorrect. Normality is needed for exact small-sample inference, not for unbiasedness.",
+      "B": "Incorrect. Homoskedasticity affects efficiency and standard errors, not unbiasedness.",
+      "C": "Correct. If the error is mean-independent of X, OLS is unbiased; violations (e.g. omitted variables) bias the slope.",
+      "D": "Incorrect. The intercept absorbs any non-zero mean of Y."
+    },
+    "tags": [
+      "ols-assumptions"
+    ]
+  },
+  {
+    "id": "frm1-qa-0020",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A regression of bank stock returns on 4 explanatory variables using 60 observations has an R-squared of 0.40. The adjusted R-squared is closest to:",
+    "options": [
+      "0.3455",
+      "0.3679",
+      "0.4000",
+      "0.3564"
+    ],
+    "answer": "D",
+    "explanation": "Adj R^2 = 1 - (1 - R^2)(n - 1)/(n - k - 1) = 1 - 0.6(59/55) = 0.3564.",
+    "rationale": {
+      "A": "Incorrect. This uses n / (n - k - 1) = 60/55 instead of (n - 1)/(n - k - 1).",
+      "B": "Incorrect. This uses (n - 1)/(n - k) = 59/56, omitting the 1 for the intercept in the denominator.",
+      "C": "Incorrect. This is the unadjusted R-squared, which ignores the penalty for extra regressors.",
+      "D": "Correct. Adjusted R-squared = 1 - (1 - 0.40)(60 - 1)/(60 - 4 - 1) = 1 - 0.6 x 59/55 = 0.3564."
+    },
+    "verify": "const r2=0.40,n=60,k=4; return 1-(1-r2)*(n-1)/(n-k-1);",
+    "numericAnswer": 0.3564,
+    "tolerance": 5e-05,
+    "tags": [
+      "adjusted-r-squared"
+    ]
+  },
+  {
+    "id": "frm1-qa-0021",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A regression with 3 explanatory variables and an intercept, estimated on 45 observations, has an R-squared of 0.25. The F-statistic for the test that all slope coefficients are jointly zero is closest to:",
+    "options": [
+      "4.56",
+      "4.67",
+      "13.67",
+      "5.00"
+    ],
+    "answer": "A",
+    "explanation": "F = [R^2 / k] / [(1 - R^2) / (n - k - 1)] = 0.08333 / 0.018293 = 4.56, with (3, 41) degrees of freedom.",
+    "rationale": {
+      "A": "Correct. F = (R^2/k) / ((1 - R^2)/(n - k - 1)) = (0.25/3) / (0.75/41) = 4.56.",
+      "B": "Incorrect. This uses n - k = 42 degrees of freedom, forgetting the intercept.",
+      "C": "Incorrect. This omits dividing R-squared by k = 3 in the numerator.",
+      "D": "Incorrect. This uses n = 45 instead of n - k - 1 = 41 as the denominator degrees of freedom."
+    },
+    "verify": "const r2=0.25,k=3,n=45; return (r2/k)/((1-r2)/(n-k-1));",
+    "numericAnswer": 4.56,
+    "tolerance": 0.005,
+    "tags": [
+      "f-test"
+    ]
+  },
+  {
+    "id": "frm1-qa-0022",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A multiple regression has a high R-squared and a highly significant F-statistic, yet none of the individual slope coefficients is significant at the 5% level. The most likely explanation is:",
+    "options": [
+      "Heteroskedasticity in the residuals.",
+      "Multicollinearity among the explanatory variables.",
+      "Omitted variable bias.",
+      "Serial correlation of the dependent variable."
+    ],
+    "answer": "B",
+    "explanation": "Strong correlation among regressors makes it hard to isolate each one's effect, so individual t-statistics are small even though the F-test shows joint significance. A high variance inflation factor (VIF) confirms it.",
+    "rationale": {
+      "A": "Incorrect. Heteroskedasticity distorts standard errors but does not typically create this joint-versus-individual pattern.",
+      "B": "Correct. Highly correlated regressors inflate individual standard errors while the variables jointly explain Y well.",
+      "C": "Incorrect. An omitted variable biases coefficients but does not by itself explain a significant F with no significant t-statistics.",
+      "D": "Incorrect. Persistence in Y is not the classic cause of this symptom."
+    },
+    "tags": [
+      "multicollinearity"
+    ]
+  },
+  {
+    "id": "frm1-qa-0023",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "The residuals from an OLS regression show variance that increases with the level of the explanatory variable. Which statement is correct?",
+    "options": [
+      "The R-squared is invalid, but t-statistics remain reliable.",
+      "No adjustment is needed because OLS remains the best linear unbiased estimator.",
+      "The coefficient estimates remain unbiased, but conventional standard errors are unreliable; heteroskedasticity-robust (White) standard errors should be used.",
+      "The coefficient estimates are biased and must be re-estimated by dropping the largest observations."
+    ],
+    "answer": "C",
+    "explanation": "With heteroskedasticity, OLS coefficients are still unbiased and consistent, but the usual standard errors are wrong. Use White (robust) standard errors or weighted least squares.",
+    "rationale": {
+      "A": "Incorrect. It is the t-statistics (through standard errors) that are affected.",
+      "B": "Incorrect. Under heteroskedasticity OLS is no longer BLUE and conventional inference is wrong.",
+      "C": "Correct. Heteroskedasticity does not bias OLS coefficients but invalidates the usual standard errors and test statistics.",
+      "D": "Incorrect. Heteroskedasticity alone does not bias OLS coefficients, and dropping data is not the remedy."
+    },
+    "tags": [
+      "heteroskedasticity"
+    ]
+  },
+  {
+    "id": "frm1-qa-0024",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The true model is Y = 1.2 X1 + 0.5 X2 + e. An analyst omits X2 and regresses Y on X1 only. In the population, a regression of X2 on X1 has slope 0.4. The probability limit of the analyst's estimated coefficient on X1 is closest to:",
+    "options": [
+      "1.70",
+      "1.20",
+      "1.00",
+      "1.40"
+    ],
+    "answer": "D",
+    "explanation": "Short-regression slope -> beta1 + beta2 x Cov(X1, X2)/Var(X1) = 1.2 + 0.5 x 0.4 = 1.40.",
+    "rationale": {
+      "A": "Incorrect. This adds beta2 in full rather than beta2 times the slope of X2 on X1.",
+      "B": "Incorrect. This assumes no bias, which holds only if X2 is uncorrelated with X1 or has no effect on Y.",
+      "C": "Incorrect. This subtracts the bias; with positive beta2 and positive delta the bias is upward.",
+      "D": "Correct. Omitted variable bias = beta2 x delta = 0.5 x 0.4 = 0.20, so the estimate converges to 1.2 + 0.2 = 1.40."
+    },
+    "verify": "const b1=1.2,b2=0.5,d=0.4; return b1+b2*d;",
+    "numericAnswer": 1.4,
+    "tolerance": 0.005,
+    "tags": [
+      "omitted-variable-bias"
+    ]
+  },
+  {
+    "id": "frm1-qa-0025",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A series follows the AR(1) process y(t) = 0.8 + 0.6 y(t-1) + e(t). The current value is y(t) = 5. The two-step-ahead forecast E[y(t+2)] is closest to:",
+    "options": [
+      "3.08",
+      "3.80",
+      "2.00",
+      "2.60"
+    ],
+    "answer": "A",
+    "explanation": "Iterate the forecast: E[y(t+1)] = 0.8 + 0.6(5) = 3.8; E[y(t+2)] = 0.8 + 0.6(3.8) = 3.08.",
+    "rationale": {
+      "A": "Correct. One step: 0.8 + 0.6 x 5 = 3.8. Two steps: 0.8 + 0.6 x 3.8 = 3.08.",
+      "B": "Incorrect. This is the one-step-ahead forecast.",
+      "C": "Incorrect. This is the long-run mean 0.8 / (1 - 0.6), the limit of forecasts at long horizons.",
+      "D": "Incorrect. This applies 0.6^2 to y(t) but includes the intercept only once (0.8 + 0.36 x 5)."
+    },
+    "verify": "const c=0.8,phi=0.6; let y=5; for(let i=0;i<2;i++) y=c+phi*y; return y;",
+    "numericAnswer": 3.08,
+    "tolerance": 0.005,
+    "tags": [
+      "ar-model",
+      "forecasting"
+    ]
+  },
+  {
+    "id": "frm1-qa-0026",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A series follows the MA(1) process y(t) = mu + e(t) + 0.5 e(t-1), where e(t) is white noise. The first-order autocorrelation of y is closest to:",
+    "options": [
+      "0.25",
+      "0.40",
+      "0.80",
+      "0.50"
+    ],
+    "answer": "B",
+    "explanation": "gamma(0) = (1 + theta^2) sigma^2, gamma(1) = theta sigma^2, so rho(1) = 0.5 / 1.25 = 0.40; autocorrelations beyond lag 1 are zero.",
+    "rationale": {
+      "A": "Incorrect. This uses theta^2, which is not the lag-1 autocorrelation.",
+      "B": "Correct. For an MA(1), rho(1) = theta / (1 + theta^2) = 0.5 / 1.25 = 0.40.",
+      "C": "Incorrect. This is 1 / (1 + theta^2), omitting theta in the numerator.",
+      "D": "Incorrect. This equates the autocorrelation with theta, ignoring the variance 1 + theta^2."
+    },
+    "verify": "const t=0.5; return t/(1+t*t);",
+    "numericAnswer": 0.4,
+    "tolerance": 0.005,
+    "tags": [
+      "ma-model",
+      "autocorrelation"
+    ]
+  },
+  {
+    "id": "frm1-qa-0027",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst examines the sample autocorrelation function (ACF) and partial autocorrelation function (PACF) of a covariance-stationary series. The ACF decays gradually and the PACF has significant spikes at lags 1 and 2 and is insignificant thereafter. The most appropriate model is:",
+    "options": [
+      "Random walk",
+      "MA(2)",
+      "AR(2)",
+      "White noise"
+    ],
+    "answer": "C",
+    "explanation": "AR(p): ACF tails off, PACF cuts off at p. MA(q): ACF cuts off at q, PACF tails off. Spikes at PACF lags 1 and 2 point to AR(2).",
+    "rationale": {
+      "A": "Incorrect. A random walk is not covariance-stationary; its ACF decays extremely slowly from near 1.",
+      "B": "Incorrect. An MA(q) has an ACF that cuts off after lag q and a decaying PACF, the reverse pattern.",
+      "C": "Correct. An AR(p) has a slowly decaying ACF and a PACF that cuts off after lag p.",
+      "D": "Incorrect. White noise has no significant autocorrelations at any lag."
+    },
+    "tags": [
+      "acf",
+      "pacf",
+      "model-selection"
+    ]
+  },
+  {
+    "id": "frm1-qa-0028",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst regresses one random walk on another, independent random walk and finds a high R-squared and a large t-statistic on the slope. This result is best described as:",
+    "options": [
+      "Evidence of a genuine long-run relationship between the series.",
+      "Evidence of heteroskedasticity, correctable with White standard errors.",
+      "A valid result, because large samples make the t-statistic reliable.",
+      "A spurious regression; the series should be differenced (or tested for cointegration) before drawing conclusions."
+    ],
+    "answer": "D",
+    "explanation": "Regressions between independent non-stationary series give spurious significance. Model first differences, or test the residuals for stationarity (cointegration).",
+    "rationale": {
+      "A": "Incorrect. Without cointegration, the apparent relationship is an artefact of shared stochastic trends.",
+      "B": "Incorrect. Robust standard errors do not fix non-stationarity.",
+      "C": "Incorrect. With unit roots the t-statistic does not follow its usual distribution, even in large samples.",
+      "D": "Correct. Regressing independent unit-root series in levels routinely yields misleading significance."
+    },
+    "tags": [
+      "spurious-regression",
+      "unit-root"
+    ]
+  },
+  {
+    "id": "frm1-qa-0029",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst runs an augmented Dickey-Fuller test using the regression Delta y(t) = a + gamma y(t-1) + lagged differences + e(t). Which statement is correct?",
+    "options": [
+      "The null hypothesis is gamma = 0 (a unit root), and rejection requires a t-statistic more negative than Dickey-Fuller critical values, which are larger in magnitude than standard normal ones.",
+      "A significantly positive gamma indicates the series is stationary.",
+      "Failing to reject the null proves the series is stationary.",
+      "The null hypothesis is that the series is stationary, and the test uses standard t critical values."
+    ],
+    "answer": "A",
+    "explanation": "gamma = phi - 1. H0: gamma = 0 (unit root) vs H1: gamma < 0. Compare the t-statistic with Dickey-Fuller critical values (e.g. about -2.86 at 5% with a constant).",
+    "rationale": {
+      "A": "Correct. Under the null the statistic has a non-standard distribution, so special, more negative critical values apply.",
+      "B": "Incorrect. Stationarity corresponds to gamma < 0 (an AR coefficient below 1).",
+      "C": "Incorrect. Failing to reject means a unit root cannot be ruled out; ADF tests are also known for low power.",
+      "D": "Incorrect. The ADF null is non-stationarity (a unit root), and standard t tables are not valid."
+    },
+    "tags": [
+      "unit-root",
+      "adf-test"
+    ]
+  },
+  {
+    "id": "frm1-qa-0030",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which statement about simple and log (continuously compounded) returns is correct?",
+    "options": [
+      "Log returns and simple returns are identical for large price moves.",
+      "Log returns add across time periods, while simple returns aggregate across assets in a portfolio as a weighted average.",
+      "Simple returns add across time periods, while log returns aggregate across assets as a weighted average.",
+      "A log return is always larger than the corresponding simple return."
+    ],
+    "answer": "B",
+    "explanation": "Log return r = ln(1 + R). Time-additive: r(0,T) = sum of r(t). Portfolio simple return = sum of w(i) R(i).",
+    "rationale": {
+      "A": "Incorrect. They are close only for small returns; the gap widens for large moves.",
+      "B": "Correct. Multi-period log returns are sums of single-period log returns; portfolio simple returns are weighted averages of asset simple returns.",
+      "C": "Incorrect. This reverses the two properties.",
+      "D": "Incorrect. ln(1 + R) <= R, so log returns are smaller (for example, 10% simple is about 9.53% log)."
+    },
+    "tags": [
+      "log-returns",
+      "simple-returns"
+    ]
+  },
+  {
+    "id": "frm1-qa-0031",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A currency's daily return volatility is 1.2%. Assuming independent returns and 252 trading days per year, the annualised volatility is closest to:",
+    "options": [
+      "302.40%",
+      "22.93%",
+      "19.05%",
+      "4.16%"
+    ],
+    "answer": "C",
+    "explanation": "With i.i.d. returns, variance scales linearly with time, so sigma_annual = 1.2% x sqrt(252) = 19.05%.",
+    "rationale": {
+      "A": "Incorrect. This multiplies by 252, scaling volatility like a mean or variance.",
+      "B": "Incorrect. This uses 365 calendar days rather than 252 trading days.",
+      "C": "Correct. Volatility scales with the square root of time: 1.2% x sqrt(252) = 19.05%.",
+      "D": "Incorrect. This uses sqrt(12), a monthly-to-annual factor, on daily data."
+    },
+    "verify": "return 1.2*Math.sqrt(252);",
+    "numericAnswer": 19.05,
+    "tolerance": 0.005,
+    "tags": [
+      "volatility-scaling"
+    ]
+  },
+  {
+    "id": "frm1-qa-0032",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A Monte Carlo valuation with 10,000 independent draws produces a payoff standard deviation of 25, so the standard error of the estimated price is 0.25. Approximately how many draws are needed to reduce the standard error to 0.10?",
+    "options": [
+      "390,625",
+      "15,811",
+      "25,000",
+      "62,500"
+    ],
+    "answer": "D",
+    "explanation": "SE = sigma / sqrt(n). Required n = (sigma / SE)^2 = (25 / 0.10)^2 = 62,500, i.e. 2.5^2 = 6.25 times the original 10,000.",
+    "rationale": {
+      "A": "Incorrect. This raises the 2.5 ratio to the fourth power instead of squaring it.",
+      "B": "Incorrect. This scales n by the square root of 2.5 instead of its square.",
+      "C": "Incorrect. This scales n linearly with the reduction in standard error (10,000 x 2.5).",
+      "D": "Correct. SE = sigma / sqrt(n), so n = (25 / 0.10)^2 = 62,500."
+    },
+    "verify": "const sigma=25, se=0.10; return (sigma/se)**2;",
+    "numericAnswer": 62500,
+    "tolerance": 0.5,
+    "tags": [
+      "monte-carlo",
+      "standard-error"
+    ]
+  },
+  {
+    "id": "frm1-qa-0033",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "When pricing a derivative by Monte Carlo, an analyst uses antithetic variates, pairing each standard normal draw z with -z. This technique reduces the variance of the estimate most when:",
+    "options": [
+      "The payoff is a monotonic function of the draw, so the paired payoffs are negatively correlated.",
+      "A control variate with a known mean is unavailable.",
+      "The payoff is symmetric in z, such as a payoff depending on z^2.",
+      "The number of simulations is very large, regardless of the payoff."
+    ],
+    "answer": "A",
+    "explanation": "Var of the pair average = (sigma^2 / 2)(1 + rho). Gains require rho < 0 between f(z) and f(-z), which holds for monotonic payoffs.",
+    "rationale": {
+      "A": "Correct. The variance of the pair average falls when the two payoffs are negatively correlated, which monotonic payoffs ensure.",
+      "B": "Incorrect. Antithetic variates and control variates are separate techniques; one does not depend on the other.",
+      "C": "Incorrect. Then f(z) = f(-z), the pair is perfectly positively correlated and no variance is removed.",
+      "D": "Incorrect. The benefit depends on the correlation between paired payoffs, not on the number of draws."
+    },
+    "tags": [
+      "variance-reduction",
+      "antithetic-variates"
+    ]
+  },
+  {
+    "id": "frm1-qa-0034",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A default-prediction classifier is tested on 200 borrowers: 40 true positives, 10 false positives, 20 false negatives and 130 true negatives (positive = default). The model's recall (sensitivity) is closest to:",
+    "options": [
+      "80.00%",
+      "66.67%",
+      "85.00%",
+      "92.86%"
+    ],
+    "answer": "B",
+    "explanation": "Recall is the share of actual defaulters the model catches: 40 / (40 + 20) = 66.67%.",
+    "rationale": {
+      "A": "Incorrect. This is precision, TP / (TP + FP) = 40 / 50.",
+      "B": "Correct. Recall = TP / (TP + FN) = 40 / 60 = 66.67%.",
+      "C": "Incorrect. This is accuracy, (TP + TN) / total = 170 / 200.",
+      "D": "Incorrect. This is specificity, TN / (TN + FP) = 130 / 140."
+    },
+    "verify": "const tp=40, fn=20; return 100*tp/(tp+fn);",
+    "numericAnswer": 66.67,
+    "tolerance": 0.005,
+    "tags": [
+      "classification",
+      "confusion-matrix"
+    ]
+  },
+  {
+    "id": "frm1-qa-0035",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which statement best distinguishes LASSO from ridge regression?",
+    "options": [
+      "Both methods reduce bias at the cost of higher variance.",
+      "Neither method requires choosing a penalty parameter.",
+      "LASSO uses an absolute-value (L1) penalty that can set some coefficients exactly to zero, performing variable selection; ridge uses a squared (L2) penalty that shrinks coefficients without eliminating them.",
+      "Ridge can set coefficients exactly to zero, while LASSO only shrinks them toward zero."
+    ],
+    "answer": "C",
+    "explanation": "LASSO minimises SSR + lambda x sum |beta|; ridge minimises SSR + lambda x sum beta^2. Only the L1 penalty yields exact zeros.",
+    "rationale": {
+      "A": "Incorrect. Regularisation accepts some bias in exchange for lower variance.",
+      "B": "Incorrect. Both require a tuning parameter, typically chosen by cross-validation.",
+      "C": "Correct. The L1 penalty produces sparse solutions; the L2 penalty only shrinks.",
+      "D": "Incorrect. This reverses the two methods."
+    },
+    "tags": [
+      "regularisation",
+      "lasso",
+      "ridge"
+    ]
+  }
+]

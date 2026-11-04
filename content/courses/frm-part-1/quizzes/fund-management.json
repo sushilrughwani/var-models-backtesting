@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm1-fund-management-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "fund-management",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An open-end mutual fund holds securities worth USD 1,250 million and has liabilities of USD 50 million. There are 40 million shares outstanding. The fund's NAV per share is closest to:",
+    "options": ["USD 31.25", "USD 32.50", "USD 30.00", "USD 28.75"],
+    "answer": "C",
+    "explanation": "NAV = (1,250 − 50) / 40 = USD 30.00.",
+    "rationale": {
+      "A": "Incorrect. 31.25 divides gross assets by shares and forgets to subtract liabilities.",
+      "B": "Incorrect. 32.50 adds liabilities to assets instead of subtracting them.",
+      "C": "Correct. Net assets of 1,200m divided by 40m shares is 30.00.",
+      "D": "Incorrect. 28.75 subtracts liabilities twice."
+    },
+    "verify": "return (1250-50)/40;",
+    "numericAnswer": 30.0,
+    "tolerance": 0.005,
+    "tags": ["nav"]
+  },
+  {
+    "id": "q-frm1-fund-management-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "fund-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A hedge fund earns a gross return of 20% in a year. It charges a 2% management fee and an incentive fee of 20% of the return, after the management fee, in excess of a 4% hurdle rate. The investor's net return is closest to:",
+    "options": ["14.4%", "15.2%", "14.8%", "16.8%"],
+    "answer": "B",
+    "explanation": "Return after management fee = 18%. Incentive fee = 20% × (18% − 4%) = 2.8%. Net return = 18% − 2.8% = 15.2%.",
+    "rationale": {
+      "A": "Incorrect. 14.4% ignores the hurdle and charges 20% on the full 18%.",
+      "B": "Correct. The incentive fee applies only to the 14% excess above the hurdle, giving 15.2%.",
+      "C": "Incorrect. 14.8% computes the incentive base from the gross return (20% − 4% = 16%) rather than the return after the management fee.",
+      "D": "Incorrect. 16.8% subtracts the incentive fee on the gross excess but forgets to deduct the management fee."
+    },
+    "verify": "const a=20-2; return a-0.2*(a-4);",
+    "numericAnswer": 15.2,
+    "tolerance": 0.05,
+    "tags": ["hedge-fund-fees", "hurdle-rate"]
+  },
+  {
+    "id": "q-frm1-fund-management-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "fund-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which feature best explains why an ETF typically trades very close to its NAV while a closed-end fund can trade at a persistent discount?",
+    "options": [
+      "ETFs are actively managed while closed-end funds track indices",
+      "ETFs are priced only once a day at 4 p.m.",
+      "Closed-end funds are not allowed to trade on exchanges",
+      "Authorised participants can create or redeem ETF shares in exchange for the underlying basket, arbitraging away price gaps"
+    ],
+    "answer": "D",
+    "explanation": "The in-kind creation and redemption process lets large institutions profit from any gap between the ETF's price and the value of its holdings, which keeps the two aligned. A closed-end fund has a fixed share count and no such mechanism.",
+    "rationale": {
+      "A": "Incorrect. Most ETFs track indices, and management style does not determine the premium or discount.",
+      "B": "Incorrect. ETFs trade throughout the day; once-a-day pricing describes open-end mutual funds.",
+      "C": "Incorrect. Closed-end fund shares do trade on exchanges, which is exactly why their price can diverge from NAV.",
+      "D": "Correct. Creation and redemption provide an arbitrage link between price and NAV."
+    },
+    "tags": ["etf", "closed-end-fund"]
+  },
+  {
+    "id": "q-frm1-fund-management-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "fund-management",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A hedge fund with a high-water mark falls from USD 100 to USD 80 per unit in year 1 (after fees). In year 2 it rises to USD 95 per unit before incentive fees. Which statement is correct?",
+    "options": [
+      "No incentive fee is charged in year 2, although the management fee is still charged",
+      "An incentive fee is charged on the USD 15 gain in year 2",
+      "Neither a management fee nor an incentive fee is charged in year 2",
+      "The manager must refund all year-1 management fees"
+    ],
+    "answer": "A",
+    "explanation": "The high-water mark is 100. Until the fund exceeds that previous peak, no incentive fee is due. The management fee is based on assets and is charged regardless.",
+    "rationale": {
+      "A": "Correct. The fund is still below the 100 high-water mark, so only the management fee applies.",
+      "B": "Incorrect. Charging on the 15 gain ignores the high-water mark; that would be the result without one.",
+      "C": "Incorrect. The high-water mark affects only the incentive fee, not the asset-based management fee.",
+      "D": "Incorrect. Refunds of past fees relate to clawback provisions, and they apply to incentive fees, not management fees."
+    },
+    "tags": ["high-water-mark"]
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm1-anatomy-of-the-financial-crisis-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "anatomy-of-the-financial-crisis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A dealer has USD 3 billion of equity and funds its holdings of securitized bonds entirely through repo. Lenders raise the haircut on this collateral from 3% to 12%. Assuming the dealer was fully using its funding capacity, the amount of assets it must sell (USD billions) is closest to:",
+    "options": ["25", "9", "97", "75"],
+    "answer": "D",
+    "explanation": "Maximum assets = equity / haircut. Before: 3 / 0.03 = 100. After: 3 / 0.12 = 25. Required sales: 100 - 25 = USD 75 billion.",
+    "rationale": {
+      "A": "Incorrect. 25 is the new maximum asset level, not the amount that must be sold.",
+      "B": "Incorrect. 9 multiplies the original assets by the change in haircut (100 × 9%), which understates the effect.",
+      "C": "Incorrect. 97 subtracts the equity from the original assets, which has no economic meaning here.",
+      "D": "Correct. Assets fall from 100 to 25, so the dealer must sell USD 75 billion."
+    },
+    "verify": "const E=3; return E/0.03 - E/0.12;",
+    "numericAnswer": 75,
+    "tolerance": 0.5,
+    "tags": ["repo", "haircuts", "deleveraging"]
+  },
+  {
+    "id": "q-frm1-anatomy-of-the-financial-crisis-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "anatomy-of-the-financial-crisis",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A household buys a USD 300,000 home with a 5% down payment and finances the rest with a mortgage. If house prices then fall 12% before any principal is repaid, the household's home equity (USD) is closest to:",
+    "options": ["-21,000", "-36,000", "13,200", "15,000"],
+    "answer": "A",
+    "explanation": "Loan = 300,000 × 0.95 = 285,000. New value = 300,000 × 0.88 = 264,000. Equity = 264,000 - 285,000 = -21,000.",
+    "rationale": {
+      "A": "Correct. The home is worth 21,000 less than the mortgage, so equity is negative.",
+      "B": "Incorrect. -36,000 is the fall in the house price, not the change in equity relative to the loan.",
+      "C": "Incorrect. 13,200 applies the 12% fall only to the down payment, ignoring leverage.",
+      "D": "Incorrect. 15,000 is the original down payment, ignoring the price fall."
+    },
+    "verify": "const P=300000, L=P*0.95; return P*0.88 - L;",
+    "numericAnswer": -21000,
+    "tolerance": 0.5,
+    "tags": ["housing", "leverage"]
+  },
+  {
+    "id": "q-frm1-anatomy-of-the-financial-crisis-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "anatomy-of-the-financial-crisis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which factor best explains why a relatively contained volume of subprime mortgage losses became a system-wide crisis in 2007-2008?",
+    "options": [
+      "Central banks raised policy rates sharply in late 2008.",
+      "Opacity about who held the losses, combined with leverage and short-term wholesale funding, triggered runs on repo and ABCP.",
+      "Deposit insurance encouraged retail depositors to withdraw funds from all banks simultaneously.",
+      "Securitization concentrated all mortgage risk in the originating banks' loan books."
+    ],
+    "answer": "B",
+    "explanation": "Investors could not identify where losses sat, so they pulled funding from anything related to mortgages. Highly levered institutions dependent on overnight funding were forced to deleverage, spreading losses through fire sales.",
+    "rationale": {
+      "A": "Incorrect. Policy rates were cut, not raised, as the crisis deepened.",
+      "B": "Correct. Opacity plus leverage and maturity mismatch turned credit losses into a funding panic.",
+      "C": "Incorrect. Deposit insurance reduces retail runs; the decisive runs were in wholesale markets.",
+      "D": "Incorrect. Securitization dispersed risk across many investors and vehicles, which is part of why losses were hard to locate."
+    },
+    "tags": ["contagion", "funding-runs"]
+  },
+  {
+    "id": "q-frm1-anatomy-of-the-financial-crisis-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "anatomy-of-the-financial-crisis",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "In October 2008, the three-month LIBOR-OIS spread rose to several hundred basis points from a level of a few basis points before August 2007. The most appropriate interpretation is that:",
+    "options": [
+      "markets expected the central bank to raise the overnight policy rate sharply over the next three months.",
+      "banks perceived greater credit and liquidity risk in lending to each other on an unsecured basis.",
+      "the yield curve for government bonds had inverted.",
+      "overnight indexed swap rates had become more volatile than LIBOR."
+    ],
+    "answer": "B",
+    "explanation": "OIS reflects the expected path of the overnight policy rate, so subtracting it strips out rate expectations. What remains in LIBOR-OIS is the premium for unsecured bank credit and funding liquidity risk.",
+    "rationale": {
+      "A": "Incorrect. Expected policy-rate changes are captured in OIS itself and cancel in the spread.",
+      "B": "Correct. The spread measures the credit and liquidity premium banks demand from each other.",
+      "C": "Incorrect. The spread is not a measure of the government yield curve slope.",
+      "D": "Incorrect. The spread level, not relative volatility, is the signal; it widened because LIBOR rose relative to OIS."
+    },
+    "tags": ["libor-ois", "funding-stress"]
+  }
+]

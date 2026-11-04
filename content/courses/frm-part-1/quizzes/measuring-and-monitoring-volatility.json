@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-measuring-and-monitoring-volatility-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "measuring-and-monitoring-volatility",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An EWMA model with λ = 0.94 gave yesterday's daily volatility estimate as 1.0%. Yesterday's return was 3.0%. Today's updated daily volatility estimate is closest to:",
+    "options": ["1.12%", "1.22%", "2.92%", "4.35%"],
+    "answer": "B",
+    "explanation": "σ² = 0.94 × 0.01² + 0.06 × 0.03² = 0.000094 + 0.000054 = 0.000148, so σ = √0.000148 = 1.22%.",
+    "rationale": {
+      "A": "Incorrect. 1.12% applies the EWMA weights to the volatilities (0.94 × 1% + 0.06 × 3%) instead of to the variances.",
+      "B": "Correct. Combining variances gives 0.000148, a volatility of 1.22%.",
+      "C": "Incorrect. 2.92% swaps the weights, putting 0.94 on the squared return and 0.06 on the old variance.",
+      "D": "Incorrect. 4.35% fails to square the 3% return before applying the weight."
+    },
+    "verify": "return Math.sqrt(0.94*0.01**2+0.06*0.03**2)*100;",
+    "numericAnswer": 1.22,
+    "tolerance": 0.005,
+    "tags": ["ewma"]
+  },
+  {
+    "id": "q-frm1-measuring-and-monitoring-volatility-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "measuring-and-monitoring-volatility",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A GARCH(1,1) model for daily returns has ω = 0.000003, α = 0.10 and β = 0.86. Assuming 252 trading days per year, the long-run annualized volatility implied by the model is closest to:",
+    "options": ["0.87%", "2.75%", "13.75%", "7.35%"],
+    "answer": "C",
+    "explanation": "V_L = ω / (1 − α − β) = 0.000003 / 0.04 = 0.000075. Daily volatility = √0.000075 = 0.866%. Annualized = 0.866% × √252 = 13.75%.",
+    "rationale": {
+      "A": "Incorrect. 0.87% is the long-run daily volatility; it has not been annualized.",
+      "B": "Incorrect. 2.75% annualizes √ω, treating ω itself as the long-run variance.",
+      "C": "Correct. √(0.000075 × 252) = 13.75%.",
+      "D": "Incorrect. 7.35% divides ω by (1 − β) only, leaving α out of the long-run formula."
+    },
+    "verify": "const VL=0.000003/(1-0.10-0.86); return Math.sqrt(VL*252)*100;",
+    "numericAnswer": 13.75,
+    "tolerance": 0.005,
+    "tags": ["garch", "long-run-variance"]
+  },
+  {
+    "id": "q-frm1-measuring-and-monitoring-volatility-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "measuring-and-monitoring-volatility",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement best distinguishes the EWMA model from a GARCH(1,1) model with ω > 0?",
+    "options": ["EWMA gives equal weight to all observations in the window, while GARCH weights recent observations more heavily", "EWMA forecasts of future variance equal the current estimate, while GARCH forecasts revert towards a long-run variance", "EWMA requires α + β < 1 for stability, while GARCH does not", "EWMA cannot be used to update covariances, while GARCH can"],
+    "answer": "B",
+    "explanation": "EWMA is GARCH with ω = 0 and α + β = 1, so it has no long-run anchor and its forecasts are flat. GARCH with ω > 0 and α + β < 1 mean-reverts to V_L = ω / (1 − α − β).",
+    "rationale": {
+      "A": "Incorrect. EWMA also weights recent observations more heavily; equal weighting is the simple historical method.",
+      "B": "Correct. Mean reversion is the key difference.",
+      "C": "Incorrect. The stability condition α + β < 1 applies to GARCH; EWMA weights sum to exactly 1.",
+      "D": "Incorrect. EWMA is widely used to update covariances with the same λ as for variances."
+    },
+    "tags": ["ewma", "garch", "mean-reversion"]
+  },
+  {
+    "id": "q-frm1-measuring-and-monitoring-volatility-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "measuring-and-monitoring-volatility",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A GARCH(1,1) model estimates current daily volatility at 2.0%, well above its long-run level of 1.2%, with α + β = 0.97. Which conclusion is most appropriate?",
+    "options": ["The volatility term structure is upward sloping, so long-dated options should show higher implied volatility than short-dated options", "Forecast daily volatility will stay at 2.0% for all future horizons", "Forecast volatility will jump back to 1.2% the next day", "The volatility term structure is downward sloping, and the gap to the long-run level halves in roughly 23 days"],
+    "answer": "D",
+    "explanation": "With current variance above V_L, forecasts decline towards V_L, giving a downward-sloping term structure. The half-life is ln 0.5 / ln 0.97 ≈ 22.8 days.",
+    "rationale": {
+      "A": "Incorrect. An upward-sloping structure arises when current volatility is below the long-run level.",
+      "B": "Incorrect. Flat forecasts are a feature of EWMA, not GARCH with a long-run anchor.",
+      "C": "Incorrect. Reversion is gradual; the gap shrinks by a factor of 0.97 per day, not all at once.",
+      "D": "Correct. Downward slope, and ln 0.5 / ln 0.97 ≈ 22.8 days half-life."
+    },
+    "tags": ["garch", "term-structure"]
+  }
+]

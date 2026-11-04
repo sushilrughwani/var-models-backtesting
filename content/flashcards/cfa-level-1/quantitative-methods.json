@@ -1,0 +1,162 @@
+[
+  {
+    "id": "fc-cfa1-quant-001",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "How do you convert a stated annual rate to an effective annual rate?",
+    "back": "$EAR = \\left(1 + \\frac{r_s}{m}\\right)^m - 1$ for m compounding periods per year; with continuous compounding $EAR = e^{r_s} - 1$.",
+    "tags": [
+      "rates-and-returns"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-002",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "Money-weighted versus time-weighted return: which should evaluate a manager?",
+    "back": "Time-weighted return, because it is not affected by the timing and size of client cash flows the manager does not control. The money-weighted return is the IRR of the investor's cash flows.",
+    "tags": [
+      "rates-and-returns"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-003",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "How do arithmetic and geometric mean returns compare?",
+    "back": "The geometric mean is always less than or equal to the arithmetic mean, equal only when all returns are identical. A useful approximation is $G \\approx A - \\frac{\\sigma^2}{2}$.",
+    "tags": [
+      "rates-and-returns"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-004",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "How is the PV of an annuity due related to the PV of an ordinary annuity?",
+    "back": "$PV_{due} = PV_{ordinary} \\times (1 + r)$, because each payment arrives one period earlier.",
+    "tags": [
+      "time-value-of-money"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-005",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "What is the present value of a perpetuity, and of a growing perpetuity?",
+    "back": "Level perpetuity: $PV = \\frac{PMT}{r}$. Growing perpetuity with first payment one period from now: $PV = \\frac{PMT_1}{r - g}$, valid only if r > g.",
+    "tags": [
+      "time-value-of-money"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-006",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "What does the coefficient of variation measure?",
+    "back": "Risk per unit of return: $CV = \\frac{s}{\\bar{X}}$. A lower CV means less dispersion per unit of mean return.",
+    "tags": [
+      "statistics"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-007",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "For a positively skewed distribution, how are mean, median and mode ordered?",
+    "back": "Mean > median > mode. The long right tail pulls the mean up. Negative skew reverses the order.",
+    "tags": [
+      "statistics"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-008",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "What does positive excess kurtosis mean for a return distribution?",
+    "back": "The distribution is leptokurtic: fatter tails (and a more peaked centre) than the normal, so extreme outcomes are more likely than a normal model predicts. Excess kurtosis = kurtosis − 3.",
+    "tags": [
+      "statistics"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-009",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "State Bayes' formula.",
+    "back": "$P(A \\mid B) = \\frac{P(B \\mid A)\\,P(A)}{P(B)}$. It updates a prior probability of A into a posterior after observing B.",
+    "tags": [
+      "probability"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-010",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "Write the variance of a two-asset portfolio.",
+    "back": "$\\sigma_p^2 = w_1^2\\sigma_1^2 + w_2^2\\sigma_2^2 + 2w_1w_2\\rho_{12}\\sigma_1\\sigma_2$. The covariance term is $\\rho_{12}\\sigma_1\\sigma_2$.",
+    "tags": [
+      "portfolio-math"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-011",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "What is a lognormal distribution and why is it used for asset prices?",
+    "back": "A variable is lognormal if its natural log is normally distributed. It is bounded below by zero and right-skewed, matching prices that cannot go negative.",
+    "tags": [
+      "distributions"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-012",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "Distinguish Type I and Type II errors.",
+    "back": "Type I: rejecting a true null hypothesis (probability = significance level α). Type II: failing to reject a false null. Power of a test = 1 − P(Type II error).",
+    "tags": [
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-013",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "What is the standard error of the sample mean, and what happens if the sample size is quadrupled?",
+    "back": "$SE = \\frac{\\sigma}{\\sqrt{n}}$. Quadrupling n halves the standard error, because it shrinks with the square root of n.",
+    "tags": [
+      "estimation"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-014",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "What does the central limit theorem say?",
+    "back": "For a population with finite variance, the distribution of the sample mean approaches a normal distribution with mean μ and variance σ²/n as n grows (n ≥ 30 is the usual rule of thumb), whatever the shape of the population.",
+    "tags": [
+      "estimation"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-015",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "Common trap: how should a p-value be interpreted?",
+    "back": "It is the smallest significance level at which the null can be rejected. Reject the null when p < α. It is not the probability that the null hypothesis is true.",
+    "tags": [
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "fc-cfa1-quant-016",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "front": "In simple linear regression, what is R² and how does it relate to the correlation?",
+    "back": "R² = explained (regression) sum of squares / total sum of squares, the share of variation in Y explained by X. In simple regression R² equals the squared correlation between X and Y.",
+    "tags": [
+      "regression"
+    ]
+  }
+]

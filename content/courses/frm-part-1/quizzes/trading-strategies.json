@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-frm1-trading-strategies-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "trading-strategies",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A trader buys a put with a strike of USD 60 for USD 6.10 and sells a put with a strike of USD 52 for USD 2.30, both with the same expiry. The maximum profit of this bear put spread is closest to:",
+    "options": ["USD 8.00", "USD 4.20", "USD 3.80", "USD 11.80"],
+    "answer": "B",
+    "explanation": "Net debit = 6.10 − 2.30 = 3.80. Maximum payoff (at or below 52) = 60 − 52 = 8.00. Maximum profit = 8.00 − 3.80 = 4.20.",
+    "rationale": {
+      "A": "Incorrect. 8.00 is the maximum payoff; it ignores the net premium paid.",
+      "B": "Correct. Strike width of 8.00 minus the 3.80 debit gives 4.20.",
+      "C": "Incorrect. 3.80 is the net debit, which is the maximum loss, not the maximum profit.",
+      "D": "Incorrect. 11.80 adds the debit to the strike width instead of subtracting it."
+    },
+    "verify": "return (60-52)-(6.10-2.30);",
+    "numericAnswer": 4.2,
+    "tolerance": 0.005,
+    "tags": ["bear-spread"]
+  },
+  {
+    "id": "q-frm1-trading-strategies-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "trading-strategies",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An investor buys a strangle consisting of a put with a strike of USD 45 costing USD 1.20 and a call with a strike of USD 55 costing USD 1.60, same expiry. The upper breakeven stock price at expiry is closest to:",
+    "options": ["USD 55.00", "USD 56.60", "USD 52.80", "USD 57.80"],
+    "answer": "D",
+    "explanation": "Total premium = 1.20 + 1.60 = 2.80. The upper breakeven is the call strike plus total premium: 55 + 2.80 = 57.80. The lower breakeven is 45 − 2.80 = 42.20.",
+    "rationale": {
+      "A": "Incorrect. 55.00 is the call strike; the position still shows a loss of 2.80 there.",
+      "B": "Incorrect. 56.60 adds only the call premium; both premiums must be recovered.",
+      "C": "Incorrect. 52.80 subtracts the premium from the call strike.",
+      "D": "Correct. Call strike plus both premiums: 55 + 2.80 = 57.80."
+    },
+    "verify": "return 55+1.2+1.6;",
+    "numericAnswer": 57.8,
+    "tolerance": 0.005,
+    "tags": ["strangle", "breakeven"]
+  },
+  {
+    "id": "q-frm1-trading-strategies-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "trading-strategies",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A butterfly spread is built by buying a 40-strike call for USD 7.00, selling two 45-strike calls for USD 4.00 each and buying a 50-strike call for USD 2.00, all with the same expiry. If the stock is at USD 47 at expiry, the profit is closest to:",
+    "options": ["USD 2.00", "USD 3.00", "USD 4.00", "−USD 1.00"],
+    "answer": "A",
+    "explanation": "Net cost = 7.00 − 8.00 + 2.00 = 1.00. Payoff at 47: long 40 call = 7, two short 45 calls = −2 × 2 = −4, long 50 call = 0. Payoff = 3; profit = 3 − 1 = 2.00.",
+    "rationale": {
+      "A": "Correct. Payoff of 3.00 less the 1.00 net cost gives 2.00.",
+      "B": "Incorrect. 3.00 is the payoff; it ignores the 1.00 net premium paid.",
+      "C": "Incorrect. 4.00 counts only one short 45 call (payoff 5 − 1); the middle leg is two calls.",
+      "D": "Incorrect. −1.00 is the maximum loss, which occurs only below 40 or above 50."
+    },
+    "verify": "const p=s=>Math.max(s-40,0)-2*Math.max(s-45,0)+Math.max(s-50,0); return p(47)-(7-2*4+2);",
+    "numericAnswer": 2.0,
+    "tolerance": 0.005,
+    "tags": ["butterfly-spread"]
+  },
+  {
+    "id": "q-frm1-trading-strategies-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "trading-strategies",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A portfolio manager owns a stock and writes call options on it (a covered call). By put-call parity, the position's payoff profile is most similar to which of the following, plus a risk-free bond?",
+    "options": ["A long call", "A long put", "A short put", "A long straddle"],
+    "answer": "C",
+    "explanation": "Rearranging parity, S − c = Ke^(−rT) − p. Long stock plus short call equals a risk-free bond plus a short put: limited upside (the premium) and exposure to falls.",
+    "rationale": {
+      "A": "Incorrect. A long call plus a bond replicates a protective put, not a covered call.",
+      "B": "Incorrect. A long put gains when the price falls; a covered call loses when the price falls.",
+      "C": "Correct. S − c = Ke^(−rT) − p, so a covered call is a bond plus a short put.",
+      "D": "Incorrect. A straddle gains from large moves either way, while a covered call is hurt by large falls and capped on rises."
+    },
+    "tags": ["covered-call", "put-call-parity"]
+  }
+]

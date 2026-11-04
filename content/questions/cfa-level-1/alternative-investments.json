@@ -1,0 +1,330 @@
+[
+  {
+    "id": "cfa1-alt-0001",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Harbourview Pension invests in a private equity fund and also invests directly in one of the fund's portfolio companies alongside the general partner, paying reduced fees on that direct stake. The direct stake is best described as:",
+    "options": [
+      "Co-investing",
+      "Fund investing",
+      "Fund-of-funds investing"
+    ],
+    "answer": "A",
+    "explanation": "Investing directly in a portfolio company alongside the GP, usually at reduced fees, is co-investing.",
+    "rationale": {
+      "A": "Correct. Co-investing means investing directly in a deal alongside a fund, typically with lower or no management and incentive fees.",
+      "B": "Incorrect. Fund investing is the commitment to the pooled fund itself, which carries the full fee structure.",
+      "C": "Incorrect. A fund of funds invests in several underlying funds and adds a second layer of fees."
+    },
+    "tags": [
+      "alternative-features",
+      "investment-methods"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0002",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A private equity fund paid the general partner carried interest on early profitable exits. Later investments lost money, so over the fund's life the limited partners did not receive the agreed preferred return. The provision requiring the general partner to return part of the carried interest is a:",
+    "options": [
+      "High-water mark",
+      "Clawback provision",
+      "Catch-up clause"
+    ],
+    "answer": "B",
+    "explanation": "Returning previously paid carried interest when later results fall short is the function of a clawback.",
+    "rationale": {
+      "A": "Incorrect. A high-water mark prevents incentive fees until prior losses are recovered; it does not require repayment of fees already paid.",
+      "B": "Correct. A clawback requires the GP to repay incentive fees received earlier if cumulative fund performance does not justify them.",
+      "C": "Incorrect. A catch-up clause lets the GP receive a larger share of profits after the hurdle is met; it increases rather than reverses GP payouts."
+    },
+    "tags": [
+      "alternative-features",
+      "fund-terms"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0003",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A hedge fund starts the year with USD 100 million and ends the year with USD 115 million before fees. It charges a 2% management fee on year-end assets and a 20% incentive fee on the gain net of the management fee; fees are calculated independently otherwise. The investor's net return is closest to:",
+    "options": [
+      "9.70%",
+      "10.40%",
+      "10.16%"
+    ],
+    "answer": "C",
+    "explanation": "Management fee = 0.02 x 115 = 2.30. Incentive fee = 0.20 x (115 - 100 - 2.30) = 2.54. Total fees = 4.84. Net return = (115 - 4.84 - 100) / 100 = 10.16%.",
+    "rationale": {
+      "A": "Incorrect. This calculates the incentive fee on the gross gain of 15 (fee 3.00) rather than the gain net of the management fee.",
+      "B": "Incorrect. This bases the management fee on beginning assets (2.00) instead of year-end assets.",
+      "C": "Correct. Management fee = 2.30; incentive fee = 20% x (15 - 2.30) = 2.54; net return = (15 - 4.84) / 100 = 10.16%."
+    },
+    "verify": "const b=100,e=115,mf=0.02,inc=0.20; const m=mf*e; const i=inc*(e-b-m); return 100*(e-m-i-b)/b;",
+    "numericAnswer": 10.16,
+    "tolerance": 0.01,
+    "tags": [
+      "alternative-performance",
+      "fees"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0004",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A hedge fund's high-water mark is USD 120 million. The fund starts the year at USD 110 million and ends at USD 132 million before fees. It charges a 1.5% management fee on year-end assets and a 20% incentive fee on the amount above the high-water mark, calculated net of the management fee. Total fees for the year are closest to:",
+    "options": [
+      "USD 3.98 million",
+      "USD 5.98 million",
+      "USD 4.38 million"
+    ],
+    "answer": "A",
+    "explanation": "Management fee = 0.015 x 132 = 1.98. Value net of management fee = 130.02, which is 10.02 above the high-water mark. Incentive fee = 0.20 x 10.02 = 2.004. Total = USD 3.98 million.",
+    "rationale": {
+      "A": "Correct. Management fee = 1.98; incentive fee = 20% x (132 - 1.98 - 120) = 2.00; total = 3.98.",
+      "B": "Incorrect. This charges the incentive fee on the gain from the starting value of 110, ignoring the high-water mark.",
+      "C": "Incorrect. This computes the incentive fee on 132 - 120 = 12 without deducting the management fee first."
+    },
+    "verify": "const hwm=120,e=132,mf=0.015,inc=0.20; const m=mf*e; const i=Math.max(0,inc*(e-m-hwm)); return m+i;",
+    "numericAnswer": 3.98,
+    "tolerance": 0.01,
+    "tags": [
+      "alternative-performance",
+      "high-water-mark"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0005",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A fund earns a 15% gross return for the year. There is no management fee, the incentive fee is 20%, and there is an 8% hard hurdle rate. The investor's net return is closest to:",
+    "options": [
+      "12.00%",
+      "13.60%",
+      "13.40%"
+    ],
+    "answer": "B",
+    "explanation": "Hard hurdle: fee = 0.20 x (15% - 8%) = 1.40%. Net return = 15% - 1.40% = 13.60%.",
+    "rationale": {
+      "A": "Incorrect. This treats the hurdle as soft, charging 20% on the entire 15% return once the hurdle is cleared.",
+      "B": "Correct. With a hard hurdle, the incentive fee applies only to the return above 8%: 20% x 7% = 1.40%, leaving 13.60%.",
+      "C": "Incorrect. This charges the 20% fee on the 8% hurdle portion (1.60%) rather than on the excess above the hurdle."
+    },
+    "verify": "const r=15,h=8,inc=0.20; return r-inc*Math.max(0,r-h);",
+    "numericAnswer": 13.6,
+    "tolerance": 0.01,
+    "tags": [
+      "alternative-performance",
+      "hurdle-rate"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0006",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Ridgeway Capital, a private equity firm, exits its stake in a packaging company by selling it to another private equity firm. This exit route is best described as a:",
+    "options": [
+      "Trade sale",
+      "Initial public offering",
+      "Secondary sale"
+    ],
+    "answer": "C",
+    "explanation": "Selling to another financial sponsor is a secondary sale.",
+    "rationale": {
+      "A": "Incorrect. A trade sale is a sale to a strategic (corporate) buyer, typically a competitor or company in a related business.",
+      "B": "Incorrect. An IPO sells shares to public investors through a listing, not to another private equity firm.",
+      "C": "Correct. A sale of a portfolio company to another private equity firm or financial buyer is a secondary sale (secondary buyout)."
+    },
+    "tags": [
+      "private-capital",
+      "exits"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0007",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A private equity fund acquires Tamsin Manufacturing for an enterprise value of EUR 500 million, financed with 60% debt and 40% equity. After five years, it sells the company for an enterprise value of EUR 650 million, at which point debt has been paid down to EUR 150 million. Ignoring fees and interim cash flows, the annualised return (IRR) on the fund's equity is closest to:",
+    "options": [
+      "20.11%",
+      "30.00%",
+      "11.84%"
+    ],
+    "answer": "A",
+    "explanation": "Initial equity = 0.40 x 500 = 200. Exit equity = 650 - 150 = 500. Multiple = 2.5x. IRR = 2.5^(0.2) - 1 = 20.11%.",
+    "rationale": {
+      "A": "Correct. Equity grows from 200 to 650 - 150 = 500, a 2.5x multiple; IRR = 2.5^(1/5) - 1 = 20.11%.",
+      "B": "Incorrect. This divides the total 150% gain by five years, ignoring compounding.",
+      "C": "Incorrect. This ignores debt paydown, assuming debt is still EUR 300 million at exit (equity 350, multiple 1.75x)."
+    },
+    "verify": "const ev0=500,dr=0.6,ev1=650,d1=150,n=5; const e0=ev0*(1-dr), e1=ev1-d1; return 100*((e1/e0)**(1/n)-1);",
+    "numericAnswer": 20.11,
+    "tolerance": 0.01,
+    "tags": [
+      "private-capital",
+      "lbo"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0008",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An office building generates gross rental income of USD 3.0 million per year and operating expenses of USD 0.6 million. The owner's annual mortgage debt service is USD 0.9 million. Using a capitalization rate of 6%, the building's value is closest to:",
+    "options": [
+      "USD 50.0 million",
+      "USD 40.0 million",
+      "USD 25.0 million"
+    ],
+    "answer": "B",
+    "explanation": "Value = NOI / cap rate = (3.0 - 0.6) / 0.06 = USD 40.0 million.",
+    "rationale": {
+      "A": "Incorrect. This capitalizes gross rental income rather than net operating income.",
+      "B": "Correct. NOI = 3.0 - 0.6 = 2.4 million; value = 2.4 / 0.06 = 40.0 million. Debt service is a financing cost, not an operating expense.",
+      "C": "Incorrect. This deducts debt service from NOI; financing costs are excluded from NOI."
+    },
+    "verify": "return (3.0-0.6)/0.06;",
+    "numericAnswer": 40.0,
+    "tolerance": 0.05,
+    "tags": [
+      "real-estate",
+      "valuation"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0009",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An infrastructure fund buys a stake in a toll road that has operated for twelve years with a well-documented traffic history. This investment is best described as a:",
+    "options": [
+      "Greenfield investment with significant construction risk",
+      "Greenfield investment with relatively predictable cash flows",
+      "Brownfield investment with relatively predictable cash flows"
+    ],
+    "answer": "C",
+    "explanation": "Existing assets with operating histories are brownfield; they generally have more stable cash flows than greenfield projects.",
+    "rationale": {
+      "A": "Incorrect. Greenfield investments are in assets yet to be built; this toll road already operates.",
+      "B": "Incorrect. The asset is existing, so it is brownfield; greenfield assets also lack an operating history to make cash flows predictable.",
+      "C": "Correct. Brownfield investments are in existing, operating assets with established cash flows and lower construction risk."
+    },
+    "tags": [
+      "infrastructure"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0010",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Over a year, a fully collateralized long commodity futures position experiences a spot price return of 3.0%, a roll return of -1.5% because the futures curve is in contango, and a collateral return of 2.0%. The total return is closest to:",
+    "options": [
+      "3.5%",
+      "1.5%",
+      "6.5%"
+    ],
+    "answer": "A",
+    "explanation": "Fully collateralized futures return = spot + roll + collateral = 3.0% + (-1.5%) + 2.0% = 3.5%.",
+    "rationale": {
+      "A": "Correct. Total return = spot return + roll return + collateral return = 3.0 - 1.5 + 2.0 = 3.5%.",
+      "B": "Incorrect. This omits the return earned on the collateral.",
+      "C": "Incorrect. This treats the contango roll return as positive; rolling in contango sells cheaper expiring contracts and buys dearer ones, producing a negative roll return."
+    },
+    "verify": "return 3.0+(-1.5)+2.0;",
+    "numericAnswer": 3.5,
+    "tolerance": 0.05,
+    "tags": [
+      "natural-resources",
+      "commodity-returns"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0011",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A feature that distinguishes timberland from farmland as an investment is that timberland:",
+    "options": [
+      "Produces a crop that must be harvested at a fixed time each year",
+      "Allows the owner to delay harvesting when timber prices are low",
+      "Has no exposure to weather or natural disaster risk"
+    ],
+    "answer": "B",
+    "explanation": "Timberland offers harvest flexibility: biological growth continues while the owner waits for better prices.",
+    "rationale": {
+      "A": "Incorrect. This describes farmland row crops, not timberland.",
+      "B": "Correct. Trees keep growing, so harvest can be deferred until prices improve; crops must generally be harvested when ripe.",
+      "C": "Incorrect. Timberland is exposed to fire, pests, storms and other natural risks."
+    },
+    "tags": [
+      "natural-resources",
+      "timberland"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0012",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Acquirer Corp announces an all-stock acquisition of Target Inc. A hedge fund seeks to profit from the deal spread while limiting exposure to general market moves. The fund's most likely position is:",
+    "options": [
+      "Short Target Inc shares and long Acquirer Corp shares",
+      "Long both Target Inc and Acquirer Corp shares",
+      "Long Target Inc shares and short Acquirer Corp shares"
+    ],
+    "answer": "C",
+    "explanation": "Merger arbitrage in stock deals: long target, short acquirer in the exchange ratio, earning the spread on completion.",
+    "rationale": {
+      "A": "Incorrect. This position profits if the deal fails, the opposite of the standard merger arbitrage trade.",
+      "B": "Incorrect. Being long both adds market exposure and does not isolate the deal spread.",
+      "C": "Correct. In a stock-for-stock deal, merger arbitrage buys the target and shorts the acquirer to capture the spread if the deal closes."
+    },
+    "tags": [
+      "hedge-funds",
+      "strategies"
+    ]
+  },
+  {
+    "id": "cfa1-alt-0013",
+    "course": "cfa-level-1",
+    "topic": "alternative-investments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about a permissionless distributed ledger network is most accurate?",
+    "options": [
+      "Any participant can join the network, view the ledger and help validate transactions without approval from a central authority",
+      "A central administrator approves which participants may validate transactions",
+      "Recorded transactions can be easily altered by any participant after they are confirmed"
+    ],
+    "answer": "A",
+    "explanation": "Permissionless ledgers are open to all participants and rely on decentralised consensus; permissioned ledgers restrict access.",
+    "rationale": {
+      "A": "Correct. Permissionless networks are open: anyone can participate, and consensus replaces a central intermediary.",
+      "B": "Incorrect. This describes a permissioned network, where access and validation rights are restricted.",
+      "C": "Incorrect. Distributed ledgers are designed so that confirmed records are practically immutable, which is a key feature."
+    },
+    "tags": [
+      "digital-assets"
+    ]
+  }
+]

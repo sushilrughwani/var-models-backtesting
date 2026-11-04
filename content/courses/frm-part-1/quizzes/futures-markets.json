@@ -1,0 +1,89 @@
+[
+  {
+    "id": "q-frm1-futures-markets-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "futures-markets",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A trader sells one crude oil futures contract (1,000 barrels) at USD 80.00 per barrel. Initial margin is USD 6,000 and maintenance margin is USD 4,500 per contract. Above what futures price (USD per barrel) will the trader receive a margin call?",
+    "options": ["78.50", "86.00", "81.50", "84.50"],
+    "answer": "C",
+    "explanation": "A short loses when prices rise. The call comes when the loss exceeds 6,000 − 4,500 = 1,500, i.e. 1,500 / 1,000 = 1.50 per barrel. Trigger = 80.00 + 1.50 = 81.50.",
+    "rationale": {
+      "A": "Incorrect. 78.50 is the trigger for a long position, which loses when prices fall.",
+      "B": "Incorrect. 86.00 is the price at which the entire initial margin would be lost, not where the balance hits maintenance.",
+      "C": "Correct. A 1.50 rise wipes out 1,500 of margin and takes the balance to the 4,500 maintenance level.",
+      "D": "Incorrect. 84.50 uses the maintenance margin (4,500 / 1,000) instead of the difference between initial and maintenance margin."
+    },
+    "verify": "return 80+(6000-4500)/1000;",
+    "numericAnswer": 81.5,
+    "tolerance": 0.005,
+    "tags": ["margin-call"]
+  },
+  {
+    "id": "q-frm1-futures-markets-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "futures-markets",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investor buys two wheat futures contracts of 5,000 bushels each at USD 6.00 per bushel. Initial margin is USD 3,000 and maintenance margin USD 2,500 per contract. At the end of the first day the settlement price is USD 5.85. The variation margin the investor must deposit is closest to:",
+    "options": ["USD 1,500", "USD 500", "USD 0", "USD 3,000"],
+    "answer": "A",
+    "explanation": "Loss = 0.15 × 10,000 bushels = 1,500. Balance = 6,000 − 1,500 = 4,500, below the 5,000 maintenance level, so the investor must restore the balance to 6,000 by depositing 1,500.",
+    "rationale": {
+      "A": "Correct. Variation margin restores the account to the initial margin of 6,000.",
+      "B": "Incorrect. 500 only brings the balance back to the maintenance level; the rule is to restore initial margin.",
+      "C": "Incorrect. The 4,500 balance is below the 5,000 maintenance margin, so a call is triggered.",
+      "D": "Incorrect. 3,000 is the initial margin for one contract, not the shortfall."
+    },
+    "verify": "const bal=6000-(6.00-5.85)*10000; return bal<5000 ? 6000-bal : 0;",
+    "numericAnswer": 1500,
+    "tolerance": 0.5,
+    "tags": ["variation-margin"]
+  },
+  {
+    "id": "q-frm1-futures-markets-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "futures-markets",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Trader P, who holds a long position in a futures contract, sells one contract to Trader Q, who had no position before. What is the effect on open interest?",
+    "options": ["It increases by one", "It decreases by one", "It increases by two", "It is unchanged"],
+    "answer": "D",
+    "explanation": "P is closing a long position and Q is opening a new long. The long position simply transfers from P to Q, so the number of outstanding contracts does not change.",
+    "rationale": {
+      "A": "Incorrect. Open interest rises only when both parties open new positions.",
+      "B": "Incorrect. Open interest falls only when both parties close existing positions.",
+      "C": "Incorrect. A single contract traded can change open interest by at most one.",
+      "D": "Correct. One trader exits and another enters, leaving outstanding contracts unchanged."
+    },
+    "tags": ["open-interest"]
+  },
+  {
+    "id": "q-frm1-futures-markets-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "futures-markets",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "During the delivery period, a physically settled futures contract trades well above the spot price of the deliverable asset. Which action would arbitrageurs take, and what is the effect?",
+    "options": [
+      "Buy futures and sell the asset spot, pushing the futures price higher",
+      "Sell futures, buy the asset spot and deliver it, pushing the futures price down toward spot",
+      "Buy futures and take delivery, pushing the spot price down",
+      "Do nothing, because daily settlement prevents arbitrage"
+    ],
+    "answer": "B",
+    "explanation": "If futures exceed spot during delivery, a trader can buy the asset, sell futures and deliver immediately, earning the difference. This selling pressure drives futures down and the buying pressure lifts spot, forcing convergence.",
+    "rationale": {
+      "A": "Incorrect. Buying the expensive futures and selling the cheap spot asset would lock in a loss.",
+      "B": "Correct. Sell the overpriced futures, buy spot and deliver; this enforces convergence.",
+      "C": "Incorrect. Taking delivery at an above-spot price is unprofitable when futures exceed spot.",
+      "D": "Incorrect. Daily settlement affects cash flows but does not stop the delivery arbitrage."
+    },
+    "tags": ["convergence"]
+  }
+]

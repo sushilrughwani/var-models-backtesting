@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-duration-and-convexity-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "duration-and-convexity",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bond is priced at 100.00. If all rates fall by 50 basis points its price rises to 104.40; if all rates rise by 50 basis points its price falls to 95.90. The bond's effective duration is closest to:",
+    "options": ["4.25", "17.00", "8.50", "0.085"],
+    "answer": "C",
+    "explanation": "D = (P− − P+) / (2 × P × Δy) = (104.40 − 95.90) / (2 × 100 × 0.005) = 8.50 / 1.00 = 8.50.",
+    "rationale": {
+      "A": "Incorrect. 4.25 divides by 2 twice, effectively using a 100 bp bump in the denominator.",
+      "B": "Incorrect. 17.00 forgets the factor of 2 in the denominator: the price difference spans a 100 bp range, not 50 bp.",
+      "C": "Correct. The central-difference formula gives 8.50 / (2 × 100 × 0.005) = 8.50.",
+      "D": "Incorrect. 0.085 is the DV01 per 100 face, a currency measure, not duration."
+    },
+    "verify": "return (104.40-95.90)/(2*100*0.005);",
+    "numericAnswer": 8.5,
+    "tolerance": 0.005,
+    "tags": ["effective-duration"]
+  },
+  {
+    "id": "q-frm1-duration-and-convexity-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "duration-and-convexity",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bond has an effective duration of 8.5 and an effective convexity of 120. Using the duration-convexity approximation, the percentage price change for a 100 basis point parallel rise in rates is closest to:",
+    "options": ["-7.90%", "-8.50%", "-7.30%", "-9.10%"],
+    "answer": "A",
+    "explanation": "ΔP/P ≈ −8.5 × 0.01 + 0.5 × 120 × 0.01^2 = −0.085 + 0.006 = −0.079, or −7.90%.",
+    "rationale": {
+      "A": "Correct. Duration gives −8.50% and the convexity adjustment adds +0.60%, for −7.90%.",
+      "B": "Incorrect. −8.50% uses duration alone and ignores the positive convexity adjustment.",
+      "C": "Incorrect. −7.30% omits the ½ in the convexity term, adding 1.20% instead of 0.60%.",
+      "D": "Incorrect. −9.10% subtracts the convexity term; for positive convexity the adjustment is always added."
+    },
+    "verify": "return (-8.5*0.01+0.5*120*0.0001)*100;",
+    "numericAnswer": -7.9,
+    "tolerance": 0.005,
+    "tags": ["convexity"]
+  },
+  {
+    "id": "q-frm1-duration-and-convexity-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "duration-and-convexity",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A trader is long USD 25 million face of a bond with a DV01 of 0.0820 per 100 face. She hedges with a second bond whose DV01 is 0.0450 per 100 face. The face amount of the hedge bond to sell is closest to:",
+    "options": ["USD 13.72 million", "USD 25.00 million", "USD 20.50 million", "USD 45.56 million"],
+    "answer": "D",
+    "explanation": "Hedge face = 25 million × 0.0820 / 0.0450 = USD 45.56 million. The hedge bond is less rate-sensitive per 100 face, so more of it is required.",
+    "rationale": {
+      "A": "Incorrect. USD 13.72 million inverts the DV01 ratio (0.0450 / 0.0820).",
+      "B": "Incorrect. Matching face amounts ignores that the two bonds have different DV01s.",
+      "C": "Incorrect. USD 20.50 million is 25 million × 0.82, which mistakenly scales by the position's DV01 without dividing by the hedge DV01.",
+      "D": "Correct. Matching DV01s requires 25 × 0.0820 / 0.0450 = USD 45.56 million face of the hedge bond, sold short."
+    },
+    "verify": "return 25*0.0820/0.0450;",
+    "numericAnswer": 45.56,
+    "tolerance": 0.005,
+    "tags": ["dv01", "hedging"]
+  },
+  {
+    "id": "q-frm1-duration-and-convexity-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "duration-and-convexity",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A risk manager measures the interest rate risk of a callable corporate bond trading near its call price. Which approach is most appropriate?",
+    "options": [
+      "Modified duration, because it is based on the bond's yield to maturity",
+      "Effective duration and effective convexity, which may show negative convexity",
+      "Macaulay duration, because it measures the average time to cash flows",
+      "Modified duration with positive convexity, since all fixed-rate bonds have positive convexity"
+    ],
+    "answer": "B",
+    "explanation": "A callable bond's cash flows change when rates move because the issuer may call it. Effective measures, computed by repricing with the embedded option, capture this and typically reveal negative convexity near the call price.",
+    "rationale": {
+      "A": "Incorrect. Modified duration assumes fixed cash flows and so overstates price gains when falling rates make a call more likely.",
+      "B": "Correct. Bump-and-reprice effective measures include the call option and can show the negative convexity that caps price gains.",
+      "C": "Incorrect. Macaulay duration is a time measure for fixed cash flows and ignores the call feature.",
+      "D": "Incorrect. Callable bonds can have negative convexity at low rates; positive convexity is guaranteed only for option-free bonds."
+    },
+    "tags": ["effective-duration", "negative-convexity"]
+  }
+]

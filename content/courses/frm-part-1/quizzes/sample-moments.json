@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm1-sample-moments-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "sample-moments",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A hedge fund reports five annual returns (%): 5, −3, 8, 1 and 4. The unbiased sample variance of these returns (in %²) is closest to:",
+    "options": ["14.0", "4.18", "17.5", "3.74"],
+    "answer": "C",
+    "explanation": "Mean = 3. Squared deviations: 4, 36, 25, 4, 1, summing to 70. s² = 70/(5 − 1) = 17.5.",
+    "rationale": {
+      "A": "Incorrect. 14.0 divides by n = 5, giving the biased estimator.",
+      "B": "Incorrect. 4.18 is the sample standard deviation √17.5, not the variance.",
+      "C": "Correct. Dividing the sum of squared deviations by n − 1 = 4 gives 17.5.",
+      "D": "Incorrect. 3.74 is √14, the square root of the biased variance."
+    },
+    "verify": "const x=[5,-3,8,1,4]; const m=x.reduce((a,b)=>a+b,0)/x.length; return x.reduce((a,b)=>a+(b-m)**2,0)/(x.length-1);",
+    "numericAnswer": 17.5,
+    "tolerance": 0.05,
+    "tags": ["sample-variance"]
+  },
+  {
+    "id": "q-frm1-sample-moments-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "sample-moments",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A strategy's monthly returns have a sample standard deviation of 1.2%. Based on 36 monthly observations, the standard error of the sample mean return is closest to:",
+    "options": ["0.03%", "0.20%", "1.20%", "7.20%"],
+    "answer": "B",
+    "explanation": "SE = s/√n = 1.2%/√36 = 1.2%/6 = 0.20%.",
+    "rationale": {
+      "A": "Incorrect. 0.03% divides by n = 36 instead of √36 = 6.",
+      "B": "Correct. Divide the standard deviation by the square root of the sample size: 1.2/6 = 0.20%.",
+      "C": "Incorrect. 1.20% is the standard deviation of individual returns, not of the sample mean.",
+      "D": "Incorrect. 7.20% multiplies by √n instead of dividing."
+    },
+    "verify": "return 1.2/Math.sqrt(36);",
+    "numericAnswer": 0.2,
+    "tolerance": 0.005,
+    "tags": ["standard-error"]
+  },
+  {
+    "id": "q-frm1-sample-moments-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "sample-moments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst estimates return variance by dividing the sum of squared deviations from the sample mean by n rather than n − 1. Which description of this estimator is most accurate?",
+    "options": [
+      "Unbiased and consistent.",
+      "Biased upward and inconsistent.",
+      "Unbiased but inconsistent.",
+      "Biased downward but consistent."
+    ],
+    "answer": "D",
+    "explanation": "Its expectation is (n − 1)σ²/n, below σ², so it is biased downward. The bias factor tends to 1 as n grows, so it is consistent.",
+    "rationale": {
+      "A": "Incorrect. Its expected value is (n − 1)σ²/n, not σ², so it is biased.",
+      "B": "Incorrect. The bias is downward, because deviations from the fitted mean understate dispersion, and the estimator converges to σ².",
+      "C": "Incorrect. It is biased in finite samples, and it is consistent rather than inconsistent.",
+      "D": "Correct. Biased low in finite samples, but the bias vanishes as n increases, so it is consistent."
+    },
+    "tags": ["bias", "consistency"]
+  },
+  {
+    "id": "q-frm1-sample-moments-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "sample-moments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Daily returns on a credit portfolio are iid, strongly right-skewed and have a finite variance. A risk analyst computes the mean of 500 daily returns. According to the central limit theorem:",
+    "options": [
+      "the distribution of the sample mean is approximately normal, even though individual returns are skewed.",
+      "the individual daily returns become approximately normally distributed as the sample grows.",
+      "the sample mean has the same skewness as the individual returns regardless of sample size.",
+      "the sample mean converges to zero because positive and negative returns cancel out."
+    ],
+    "answer": "A",
+    "explanation": "The CLT concerns the sampling distribution of the mean: with iid data and finite variance, the standardised sample mean is approximately standard normal for large n.",
+    "rationale": {
+      "A": "Correct. The CLT applies to the sample mean, not the underlying data.",
+      "B": "Incorrect. The data keep their own skewed distribution; collecting more of them does not change it.",
+      "C": "Incorrect. Skewness of the sample mean shrinks as n grows, which is why it approaches the normal.",
+      "D": "Incorrect. The law of large numbers says the sample mean converges to the true mean μ, not to zero."
+    },
+    "tags": ["central-limit-theorem"]
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-fm-model-structure-and-standards-1",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "model-structure-and-standards",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Under the most common modelling colour convention, a typed historical revenue figure and a growth-rate assumption should both be shown in:",
+    "options": ["Black font", "Green font", "Blue font", "Red font"],
+    "answer": "C",
+    "explanation": "Blue font marks hard-coded inputs, which includes historical data and assumptions. Black is for same-sheet formulas and green for links to other sheets.",
+    "rationale": {
+      "A": "Incorrect. Black font is reserved for formulas calculated on the same sheet.",
+      "B": "Incorrect. Green font marks formulas that link to another worksheet.",
+      "C": "Correct. Both are hard-coded values, so they are blue.",
+      "D": "Incorrect. Red is not part of the standard input convention; it is sometimes used for flags or errors."
+    },
+    "tags": ["formatting"]
+  },
+  {
+    "id": "q-fm-model-structure-and-standards-2",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "model-structure-and-standards",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Prior-year revenue is in D8 and each forecast year's growth assumption sits on row 5 of the same column. Which formula in E8, copied across the forecast row, follows best practice?",
+    "options": ["`=D8*1.06`", "`=D8*(1+E5)`", "`=500*(1+E5)`", "`=D8+E5`"],
+    "answer": "B",
+    "explanation": "The formula references the prior year and the same-column growth input, so it can be copied across and every assumption remains flexible.",
+    "rationale": {
+      "A": "Incorrect. The growth rate is hard-coded inside the formula and cannot be changed from the inputs.",
+      "B": "Correct. It links to the input cell and copies consistently across the row.",
+      "C": "Incorrect. The base revenue is hard-coded, so every year grows from 500 rather than compounding from the prior year.",
+      "D": "Incorrect. Adding a percentage to a revenue level mixes units; growth must multiply."
+    },
+    "tags": ["formula-design"]
+  },
+  {
+    "id": "q-fm-model-structure-and-standards-3",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "model-structure-and-standards",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind's FY2025A revenue is USD 500 million. The growth inputs for FY2026E, FY2027E and FY2028E are 6%, 5% and 4%, and the revenue row uses one compounding formula copied across. FY2028E revenue (USD million) is closest to:",
+    "options": ["575.00", "595.51", "520.00", "578.76"],
+    "answer": "D",
+    "explanation": "500 x 1.06 x 1.05 x 1.04 = 578.76.",
+    "rationale": {
+      "A": "Incorrect. 575.00 adds the growth rates (15%) instead of compounding them.",
+      "B": "Incorrect. 595.51 applies 6% in every year, the result of a reference locked on the first input by mistake.",
+      "C": "Incorrect. 520.00 applies only the final year's 4% growth to FY2025 revenue.",
+      "D": "Correct. Compounding each year's growth gives 578.76."
+    },
+    "verify": "return 500*1.06*1.05*1.04;",
+    "numericAnswer": 578.76,
+    "tolerance": 0.01,
+    "tags": ["formula-design"]
+  },
+  {
+    "id": "q-fm-model-structure-and-standards-4",
+    "course": "financial-modeling",
+    "topic": "modeling-foundations",
+    "lesson": "model-structure-and-standards",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A scenario selector cell contains 2. The live growth rate is chosen with a CHOOSE formula whose options, in order, are base 6%, upside 9% and downside 2%. The live growth rate (%) is:",
+    "options": ["6.0%", "2.0%", "9.0%", "5.7%"],
+    "answer": "C",
+    "explanation": "CHOOSE returns the second option in the list when the index is 2, which is the upside case of 9%.",
+    "rationale": {
+      "A": "Incorrect. 6% is the first option (index 1), the base case.",
+      "B": "Incorrect. 2% is the third option (index 3), the downside case.",
+      "C": "Correct. Index 2 returns the second listed value, 9%.",
+      "D": "Incorrect. 5.7% is the simple average of the three cases; CHOOSE does not average."
+    },
+    "verify": "const opts=[6,9,2]; return opts[2-1];",
+    "numericAnswer": 9.0,
+    "tolerance": 0.05,
+    "tags": ["scenarios"]
+  }
+]

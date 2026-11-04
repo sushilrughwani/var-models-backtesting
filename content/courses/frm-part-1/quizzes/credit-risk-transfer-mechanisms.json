@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm1-credit-risk-transfer-mechanisms-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "credit-risk-transfer-mechanisms",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bank buys protection on a corporate bond through a CDS with notional USD 20 million and a spread of 120 bp per year, paid quarterly. The expected recovery rate is 30%. If the reference entity defaults, the payment from the protection seller is closest to:",
+    "options": ["USD 6,000,000", "USD 20,000,000", "USD 240,000", "USD 14,000,000"],
+    "answer": "D",
+    "explanation": "Default payment = notional × (1 − recovery) = 20,000,000 × 0.70 = 14,000,000.",
+    "rationale": {
+      "A": "Incorrect. 6,000,000 is the recovered amount (notional × 30%), not the loss paid by the seller.",
+      "B": "Incorrect. The seller pays the loss, not the full notional, because the bond still recovers 30%.",
+      "C": "Incorrect. 240,000 is the annual premium paid by the buyer (20m × 1.2%).",
+      "D": "Correct. 20,000,000 × (1 − 0.30) = USD 14,000,000."
+    },
+    "verify": "return 20e6*(1-0.30);",
+    "numericAnswer": 14000000,
+    "tolerance": 1,
+    "tags": ["cds", "credit-derivatives"]
+  },
+  {
+    "id": "q-frm1-credit-risk-transfer-mechanisms-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "credit-risk-transfer-mechanisms",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A USD 200 million loan pool backs a CDO with an equity tranche (0-4%), a mezzanine tranche (4-12%) and a senior tranche (12-100%). If pool losses are 7%, the loss on the mezzanine tranche as a percentage of the mezzanine tranche's size is closest to:",
+    "options": ["37.50%", "87.50%", "7.00%", "3.00%"],
+    "answer": "A",
+    "explanation": "Pool loss = 14m. Equity (0-8m) absorbs the first 8m. Mezzanine (8m-24m, size 16m) absorbs the remaining 6m, which is 6/16 = 37.50% of the tranche.",
+    "rationale": {
+      "A": "Correct. 6m of loss on a 16m tranche is 37.50%.",
+      "B": "Incorrect. 87.50% (14/16) assigns the whole pool loss to the mezzanine tranche, forgetting the equity tranche absorbs the first 8m.",
+      "C": "Incorrect. 7.00% is the pool loss rate, not the tranche loss rate.",
+      "D": "Incorrect. 3.00% expresses the mezzanine loss (6m) as a share of the whole 200m pool instead of the tranche."
+    },
+    "verify": "const P=200,L=0.07*P,A=0.04*P,D=0.12*P; return Math.min(Math.max(L-A,0),D-A)/(D-A)*100;",
+    "numericAnswer": 37.5,
+    "tolerance": 0.005,
+    "tags": ["cdo", "tranching", "securitisation"]
+  },
+  {
+    "id": "q-frm1-credit-risk-transfer-mechanisms-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "credit-risk-transfer-mechanisms",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement best explains how the originate-to-distribute model contributed to the 2007-2009 financial crisis?",
+    "options": [
+      "It forced banks to hold every loan to maturity, concentrating mortgage risk on their balance sheets",
+      "Lenders that sold loans soon after origination had weaker incentives to screen borrowers carefully",
+      "It eliminated credit ratings, so investors could not assess structured products",
+      "It required all credit derivatives to be centrally cleared, creating a single point of failure"
+    ],
+    "answer": "B",
+    "explanation": "When originators expect to sell loans quickly, they bear little of the eventual loss, so they have less incentive to underwrite carefully. This moral hazard lowered loan quality in securitised pools.",
+    "rationale": {
+      "A": "Incorrect. That describes the traditional originate-to-hold model, the opposite of originate-to-distribute.",
+      "B": "Correct. Selling loans on reduced the originator's stake in loan quality, weakening screening.",
+      "C": "Incorrect. Ratings were central to the model; the problem was over-reliance on them, not their absence.",
+      "D": "Incorrect. Mandatory central clearing of standardised CDS was a post-crisis reform, not a cause."
+    },
+    "tags": ["originate-to-distribute", "financial-crisis"]
+  },
+  {
+    "id": "q-frm1-credit-risk-transfer-mechanisms-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "credit-risk-transfer-mechanisms",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Holding expected pool losses constant, an increase in default correlation among the loans in a CDO pool is most likely to:",
+    "options": [
+      "Reduce the risk of every tranche equally",
+      "Increase the risk of the equity tranche and reduce the risk of the senior tranche",
+      "Leave all tranches unaffected, because expected pool loss is unchanged",
+      "Increase the risk of the senior tranche and tend to benefit the equity tranche"
+    ],
+    "answer": "D",
+    "explanation": "Higher correlation fattens both tails of the pool loss distribution: scenarios with very few defaults and scenarios with very many become more likely. Senior tranches suffer from the higher chance of large losses, while equity holders benefit from the higher chance of few losses.",
+    "rationale": {
+      "A": "Incorrect. Correlation redistributes risk across tranches; it does not reduce all of them.",
+      "B": "Incorrect. This reverses the effect. Equity tends to benefit and senior tranches become riskier.",
+      "C": "Incorrect. Even with the same expected loss, the shape of the loss distribution changes, which shifts value between tranches.",
+      "D": "Correct. More correlation means more extreme outcomes, which hurts senior tranches and tends to help the equity tranche."
+    },
+    "tags": ["cdo", "default-correlation"]
+  }
+]

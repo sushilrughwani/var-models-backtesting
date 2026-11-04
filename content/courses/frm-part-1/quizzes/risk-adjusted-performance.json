@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-risk-adjusted-performance-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-adjusted-performance",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio returned 14% with a beta of 1.3. The risk-free rate was 2% and the market returned 9%. Jensen's alpha for the portfolio is closest to:",
+    "options": ["0.30%", "5.00%", "9.23%", "2.90%"],
+    "answer": "D",
+    "explanation": "CAPM required return = 2% + 1.3 × (9% − 2%) = 2% + 9.1% = 11.1%. Alpha = 14% − 11.1% = 2.90%.",
+    "rationale": {
+      "A": "Incorrect. 0.30% multiplies beta by the market return (1.3 × 9% = 11.7%) instead of by the market risk premium.",
+      "B": "Incorrect. 5.00% compares the portfolio with the market return directly, ignoring beta.",
+      "C": "Incorrect. 9.23% is the Treynor ratio, (14 − 2)/1.3, not Jensen's alpha.",
+      "D": "Correct. 14% − [2% + 1.3 × 7%] = 2.90%."
+    },
+    "verify": "const Rp=14,rf=2,b=1.3,Rm=9; return Rp-(rf+b*(Rm-rf));",
+    "numericAnswer": 2.9,
+    "tolerance": 0.005,
+    "tags": ["jensens-alpha"]
+  },
+  {
+    "id": "q-frm1-risk-adjusted-performance-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-adjusted-performance",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An active equity manager returned 11.5% against a benchmark return of 9.0%. The portfolio's standard deviation was 16% and its tracking error was 5%. The risk-free rate was 2%. The information ratio is closest to:",
+    "options": ["1.90", "0.50", "0.16", "0.59"],
+    "answer": "B",
+    "explanation": "IR = (R_p − R_B) / tracking error = (11.5 − 9.0) / 5 = 0.50.",
+    "rationale": {
+      "A": "Incorrect. 1.90 subtracts the risk-free rate rather than the benchmark return: (11.5 − 2)/5.",
+      "B": "Correct. Active return of 2.5% divided by tracking error of 5% gives 0.50.",
+      "C": "Incorrect. 0.16 divides the active return by total standard deviation (2.5/16) instead of tracking error.",
+      "D": "Incorrect. 0.59 is the Sharpe ratio, (11.5 − 2)/16."
+    },
+    "verify": "return (11.5-9.0)/5;",
+    "numericAnswer": 0.5,
+    "tolerance": 0.005,
+    "tags": ["information-ratio", "tracking-error"]
+  },
+  {
+    "id": "q-frm1-risk-adjusted-performance-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-adjusted-performance",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A fund returned 9% with a standard deviation of 14% and a downside deviation (below a 1% minimum acceptable return) of 8%. Using a minimum acceptable return of 1%, the fund's Sortino ratio is closest to:",
+    "options": ["1.00", "0.57", "1.13", "0.64"],
+    "answer": "A",
+    "explanation": "Sortino = (R_p − MAR) / downside deviation = (9 − 1) / 8 = 1.00.",
+    "rationale": {
+      "A": "Correct. (9 − 1)/8 = 1.00.",
+      "B": "Incorrect. 0.57 divides by the total standard deviation (8/14) rather than the downside deviation.",
+      "C": "Incorrect. 1.13 forgets to subtract the minimum acceptable return (9/8).",
+      "D": "Incorrect. 0.64 both ignores the MAR and uses total standard deviation (9/14)."
+    },
+    "verify": "return (9-1)/8;",
+    "numericAnswer": 1.0,
+    "tolerance": 0.005,
+    "tags": ["sortino-ratio", "downside-deviation"]
+  },
+  {
+    "id": "q-frm1-risk-adjusted-performance-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "risk-adjusted-performance",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A large pension plan allocates to 25 different equity managers, and the combined portfolio is very well diversified. The plan wants to rank one concentrated manager whose portfolio carries substantial firm-specific risk. Which measure is most appropriate?",
+    "options": [
+      "Sharpe ratio, because it captures the manager's total volatility",
+      "Sortino ratio, because it ignores all forms of systematic risk",
+      "Treynor ratio, because only the manager's systematic risk matters once the sleeve is combined with the other managers",
+      "Raw return, because the plan is diversified and risk adjustment is unnecessary"
+    ],
+    "answer": "C",
+    "explanation": "Within a well-diversified plan, the manager's firm-specific risk largely cancels out across the other 24 managers. The plan bears only the sleeve's systematic risk, which beta captures, so the Treynor ratio (or Jensen's alpha) is the right lens.",
+    "rationale": {
+      "A": "Incorrect. Sharpe penalises idiosyncratic risk that the plan does not actually bear, unfairly hurting the concentrated manager.",
+      "B": "Incorrect. Sortino uses downside deviation of total returns; it does not isolate systematic risk.",
+      "C": "Correct. Treynor uses beta, the risk that remains after diversification across managers.",
+      "D": "Incorrect. Raw returns ignore the systematic risk taken, which still matters to the plan."
+    },
+    "tags": ["treynor-ratio", "measure-selection"]
+  }
+]

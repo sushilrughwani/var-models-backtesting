@@ -1,0 +1,1105 @@
+[
+  {
+    "id": "frm1-vrm-0001",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Halvorsen Capital holds a USD 50 million equity portfolio with a daily return standard deviation of 1.2% and an expected daily return of zero. Assuming normally distributed, i.i.d. returns, the 10-day 99% VaR (z = 2.326) is closest to:",
+    "options": [
+      "USD 4.41 million",
+      "USD 1.40 million",
+      "USD 13.96 million",
+      "USD 3.12 million"
+    ],
+    "answer": "A",
+    "explanation": "1-day VaR = 50m x 0.012 x 2.326 = USD 1.3956m. 10-day VaR = 1.3956 x sqrt(10) = USD 4.41m.",
+    "rationale": {
+      "A": "Correct. 50m x 1.2% x 2.326 x sqrt(10) = USD 4.41 million.",
+      "B": "Incorrect. This is the 1-day 99% VaR; the square-root-of-time scaling to 10 days was omitted.",
+      "C": "Incorrect. The 1-day VaR was multiplied by 10 instead of by sqrt(10); volatility scales with the square root of time.",
+      "D": "Incorrect. This uses the 95% z-value of 1.645 instead of 2.326."
+    },
+    "verify": "return 50*0.012*2.326*Math.sqrt(10);",
+    "numericAnswer": 4.41,
+    "tolerance": 0.005,
+    "tags": [
+      "var",
+      "square-root-of-time"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0002",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A risk manager at Ostrava Partners runs 100 equally likely scenarios for next-day losses. The six largest losses (USD millions) are 12, 9, 8, 7, 6 and 5. Defining 95% expected shortfall as the average of the losses in the worst 5% tail, the 95% ES is closest to:",
+    "options": [
+      "USD 6.0 million",
+      "USD 7.8 million",
+      "USD 9.0 million",
+      "USD 8.4 million"
+    ],
+    "answer": "D",
+    "explanation": "With 100 scenarios, the 5% tail holds 5 scenarios. ES = (12 + 9 + 8 + 7 + 6) / 5 = USD 8.4m.",
+    "rationale": {
+      "A": "Incorrect. This is the 5th-worst loss, a VaR-type quantile, not the average of the tail losses.",
+      "B": "Incorrect. This averages the six largest losses, including one scenario that lies outside the 5% tail.",
+      "C": "Incorrect. This averages only the four worst losses, dropping one tail scenario.",
+      "D": "Correct. The 5% tail contains the 5 worst scenarios: (12 + 9 + 8 + 7 + 6) / 5 = 8.4."
+    },
+    "verify": "const l=[12,9,8,7,6]; return l.reduce((a,b)=>a+b,0)/l.length;",
+    "numericAnswer": 8.4,
+    "tolerance": 0.05,
+    "tags": [
+      "expected-shortfall"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0003",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which statement best explains why expected shortfall is generally preferred to VaR as a coherent risk measure?",
+    "options": [
+      "Expected shortfall is always smaller than VaR at the same confidence level, so it requires less capital.",
+      "Expected shortfall always satisfies subadditivity, whereas VaR can show a merged portfolio as riskier than the sum of its parts.",
+      "Expected shortfall does not depend on the shape of the loss distribution beyond the VaR quantile.",
+      "Expected shortfall fails monotonicity but satisfies all other coherence axioms."
+    ],
+    "answer": "B",
+    "explanation": "A coherent measure satisfies monotonicity, subadditivity, positive homogeneity and translation invariance. VaR can fail subadditivity; ES does not, and it also reflects the size of tail losses.",
+    "rationale": {
+      "A": "Incorrect. ES averages losses beyond the VaR level, so it is at least as large as VaR at the same confidence level.",
+      "B": "Correct. ES is coherent; VaR can violate subadditivity, especially with non-normal or lumpy loss distributions.",
+      "C": "Incorrect. ES is defined precisely by the tail beyond the quantile; it is VaR that ignores the tail shape.",
+      "D": "Incorrect. ES satisfies monotonicity, subadditivity, positive homogeneity and translation invariance."
+    },
+    "tags": [
+      "coherent-risk-measures",
+      "expected-shortfall"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0004",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A desk at Brennvik Bank holds a large portfolio of long call and put options (net positive gamma). Compared with a full revaluation Monte Carlo VaR, a delta-normal VaR for this book will most likely:",
+    "options": [
+      "Understate VaR, because the linear approximation ignores the positive convexity of the position.",
+      "Equal the Monte Carlo VaR, because delta fully captures option price changes for any move size.",
+      "Overstate VaR, because the linear approximation ignores the positive convexity that cushions losses.",
+      "Be unaffected by gamma but overstate VaR because it ignores vega."
+    ],
+    "answer": "C",
+    "explanation": "Delta-normal VaR treats the option book as linear. For a long-gamma position, the true loss for a large adverse move is smaller than delta x move, so the linear method overstates VaR. Full revaluation captures the curvature.",
+    "rationale": {
+      "A": "Incorrect. Ignoring positive gamma overstates losses; understatement occurs for short-option (negative gamma) books.",
+      "B": "Incorrect. Delta is only a first-order approximation; it is accurate only for small moves.",
+      "C": "Correct. With positive gamma, losses for large moves are smaller than the delta approximation predicts, so delta-normal VaR is too high.",
+      "D": "Incorrect. The bias described stems from omitting convexity (gamma), not from vega."
+    },
+    "tags": [
+      "delta-normal",
+      "monte-carlo",
+      "options"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0005",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Kestrel Fund holds USD 6 million in asset X (daily volatility 1.5%) and USD 4 million in asset Y (daily volatility 2.0%). The correlation between daily returns is 0.3. Using the delta-normal approach with z = 1.645, the 1-day 95% portfolio VaR is closest to:",
+    "options": [
+      "USD 279,650",
+      "USD 225,671",
+      "USD 198,084",
+      "USD 212,326"
+    ],
+    "answer": "B",
+    "explanation": "Dollar volatilities: X = 6m x 1.5% = 0.09m, Y = 4m x 2% = 0.08m. Variance = 0.0081 + 0.0064 + 2(0.3)(0.09)(0.08) = 0.018820; sigma = 0.13719m. VaR = 1.645 x 0.13719m = USD 225,671.",
+    "rationale": {
+      "A": "Incorrect. This adds the individual VaRs, which implicitly assumes perfect correlation (no diversification).",
+      "B": "Correct. Portfolio sigma = sqrt(0.09^2 + 0.08^2 + 2 x 0.3 x 0.09 x 0.08) = USD 0.13719m; x 1.645 = USD 225,671.",
+      "C": "Incorrect. This assumes zero correlation, dropping the covariance term.",
+      "D": "Incorrect. The covariance term was included without the factor of 2."
+    },
+    "verify": "const a=6e6*0.015,b=4e6*0.02,r=0.3; return 1.645*Math.sqrt(a*a+b*b+2*r*a*b);",
+    "numericAnswer": 225671,
+    "tolerance": 1,
+    "tags": [
+      "delta-normal",
+      "portfolio-var",
+      "correlation"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0006",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which VaR approach is best suited to a portfolio containing path-dependent exotic options whose values change non-linearly with the underlying?",
+    "options": [
+      "Delta-normal VaR",
+      "Square-root-of-time scaling of a single-day parametric VaR",
+      "Monte Carlo simulation with full revaluation",
+      "Historical simulation using only portfolio-level P&L from the current deltas"
+    ],
+    "answer": "C",
+    "explanation": "Monte Carlo full revaluation generates scenarios for risk factors and reprices every instrument, so it handles non-linear and path-dependent payoffs, at a higher computational cost.",
+    "rationale": {
+      "A": "Incorrect. It linearizes positions and assumes normality, missing curvature and path dependence.",
+      "B": "Incorrect. Scaling a parametric VaR does not address non-linear payoffs.",
+      "C": "Correct. Simulating many paths and repricing each position captures non-linearity and path dependence.",
+      "D": "Incorrect. Applying historical moves to current deltas is still a linear approximation of the option values."
+    },
+    "tags": [
+      "monte-carlo",
+      "non-linear"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0007",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Using an EWMA model with lambda = 0.94, a risk analyst at Tavora Asset Management estimated yesterday's daily volatility at 1.5%. Today's return was 3%. The updated daily volatility estimate is closest to:",
+    "options": [
+      "1.63%",
+      "1.59%",
+      "2.93%",
+      "4.48%"
+    ],
+    "answer": "A",
+    "explanation": "sigma_n^2 = lambda x sigma_(n-1)^2 + (1 - lambda) x u^2 = 0.94(0.000225) + 0.06(0.0009) = 0.0002655, so sigma_n = 1.63%.",
+    "rationale": {
+      "A": "Correct. Variance = 0.94 x 0.015^2 + 0.06 x 0.03^2 = 0.0002655; sqrt = 1.63%.",
+      "B": "Incorrect. This averages the volatility and the absolute return rather than the variance and the squared return.",
+      "C": "Incorrect. The weights were swapped: 0.94 was applied to the squared return and 0.06 to the prior variance.",
+      "D": "Incorrect. The return was not squared before applying the 0.06 weight."
+    },
+    "verify": "return Math.sqrt(0.94*0.015**2+0.06*0.03**2)*100;",
+    "numericAnswer": 1.63,
+    "tolerance": 0.005,
+    "tags": [
+      "ewma",
+      "volatility"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0008",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A GARCH(1,1) model for daily returns has omega = 0.000002, alpha = 0.08 and beta = 0.90. The long-run average daily volatility implied by the model is closest to:",
+    "options": [
+      "0.45%",
+      "0.15%",
+      "0.01%",
+      "1.00%"
+    ],
+    "answer": "D",
+    "explanation": "V_L = omega / (1 - alpha - beta) = 0.000002 / (1 - 0.98) = 0.0001. Long-run daily volatility = sqrt(0.0001) = 1.00%.",
+    "rationale": {
+      "A": "Incorrect. This divides omega by (1 - beta) only, ignoring alpha.",
+      "B": "Incorrect. This divides omega by (1 - alpha) only, ignoring beta.",
+      "C": "Incorrect. This is the long-run variance (0.0001) written as a percentage; the square root was not taken.",
+      "D": "Correct. V_L = omega / (1 - alpha - beta) = 0.000002 / 0.02 = 0.0001; volatility = sqrt(0.0001) = 1.00%."
+    },
+    "verify": "return Math.sqrt(0.000002/(1-0.08-0.90))*100;",
+    "numericAnswer": 1.0,
+    "tolerance": 0.005,
+    "tags": [
+      "garch",
+      "mean-reversion"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0009",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A GARCH(1,1) model has alpha + beta = 0.98 and a long-run daily variance of 0.0001. Today's daily volatility estimate is 1.5%. The expected daily volatility 10 days from now is closest to:",
+    "options": [
+      "1.49%",
+      "1.50%",
+      "1.42%",
+      "1.41%"
+    ],
+    "answer": "C",
+    "explanation": "E[sigma_(n+k)^2] = V_L + (alpha + beta)^k (sigma_n^2 - V_L) = 0.0001 + 0.8171 x 0.000125 = 0.00020213. Volatility = sqrt(0.00020213) = 1.42%.",
+    "rationale": {
+      "A": "Incorrect. The persistence factor was applied once (0.98) instead of raised to the 10th power.",
+      "B": "Incorrect. This assumes no mean reversion, as in EWMA; GARCH volatility drifts toward its long-run level.",
+      "C": "Correct. E[sigma^2] = 0.0001 + 0.98^10 x (0.000225 - 0.0001) = 0.00020213; sqrt = 1.42%.",
+      "D": "Incorrect. The mean-reversion formula was applied to volatilities (1% + 0.98^10 x 0.5%) rather than to variances."
+    },
+    "verify": "const VL=0.0001,p=0.98,s2=0.015**2; return Math.sqrt(VL+p**10*(s2-VL))*100;",
+    "numericAnswer": 1.42,
+    "tolerance": 0.005,
+    "tags": [
+      "garch",
+      "volatility-forecast"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0010",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A simplified one-year rating transition matrix has three states. From A: 90% stay A, 8% move to B, 2% default. From B: 10% move to A, 80% stay B, 10% default. Default is absorbing. Assuming the matrix is stable, the two-year cumulative default probability for a firm rated A today is closest to:",
+    "options": [
+      "4.00%",
+      "4.60%",
+      "3.96%",
+      "2.80%"
+    ],
+    "answer": "B",
+    "explanation": "Two-year PD = P(D in year 1) + P(A then D) + P(B then D) = 0.02 + 0.90(0.02) + 0.08(0.10) = 0.046 = 4.60%.",
+    "rationale": {
+      "A": "Incorrect. This doubles the one-year PD and ignores migration to B, where the default rate is higher.",
+      "B": "Correct. 2% (year 1) + 90% x 2% (stay A, then default) + 8% x 10% (downgrade to B, then default) = 4.60%.",
+      "C": "Incorrect. This is 1 - 0.98^2, which assumes the firm keeps an A-rating default rate in year 2.",
+      "D": "Incorrect. This omits the path where the firm remains A in year 1 and defaults in year 2."
+    },
+    "verify": "return (0.02+0.90*0.02+0.08*0.10)*100;",
+    "numericAnswer": 4.6,
+    "tolerance": 0.005,
+    "tags": [
+      "transition-matrix",
+      "default-probability"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0011",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Compared with a point-in-time rating system, a through-the-cycle rating system is most likely to:",
+    "options": [
+      "Downgrade many borrowers quickly as a recession begins.",
+      "Track one-year default probabilities more closely in every year.",
+      "Rely mainly on equity-market prices updated daily.",
+      "Produce more stable ratings that change little over the business cycle."
+    ],
+    "answer": "D",
+    "explanation": "Through-the-cycle ratings look past temporary conditions, making them stable but slower to reflect current default risk; point-in-time ratings respond to current conditions and are more volatile.",
+    "rationale": {
+      "A": "Incorrect. Rapid cyclical changes are typical of point-in-time ratings.",
+      "B": "Incorrect. Point-in-time systems track current one-year PDs more closely.",
+      "C": "Incorrect. Market-implied measures are point-in-time by nature.",
+      "D": "Correct. Through-the-cycle ratings assess creditworthiness over a full cycle, so they move less with current conditions."
+    },
+    "tags": [
+      "through-the-cycle",
+      "point-in-time"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0012",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which observation about corporate rating transitions is most consistent with empirical evidence?",
+    "options": [
+      "An issuer recently downgraded is more likely to be downgraded again than a similarly rated issuer that was not recently downgraded.",
+      "Rating transitions follow a Markov process, so an issuer's rating history has no predictive value.",
+      "Default probabilities are roughly the same for all investment-grade rating categories.",
+      "Transition probabilities are constant across the economic cycle."
+    ],
+    "answer": "A",
+    "explanation": "Empirical studies find ratings momentum (downgrades follow downgrades) and cyclical variation in transition rates, both departures from a stable Markov chain.",
+    "rationale": {
+      "A": "Correct. This is ratings momentum: transitions are not purely Markov, since past downgrades predict further downgrades.",
+      "B": "Incorrect. Momentum effects show the rating history matters, violating the Markov assumption.",
+      "C": "Incorrect. Default rates rise markedly as ratings fall, even within investment grade.",
+      "D": "Incorrect. Downgrade and default rates increase in recessions."
+    },
+    "tags": [
+      "transition-matrix",
+      "ratings-momentum"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0013",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "For a typical sovereign issuer, how does its local-currency debt rating usually compare with its foreign-currency debt rating?",
+    "options": [
+      "The local-currency rating is usually lower, because inflation risk is higher.",
+      "The two ratings must be identical by regulation.",
+      "The local-currency rating is usually the same or higher, because the government can raise taxes or print its own currency to service it.",
+      "The foreign-currency rating is usually higher because it is backed by reserves."
+    ],
+    "answer": "C",
+    "explanation": "A sovereign controls its own currency and tax base, so local-currency debt carries less default risk; foreign-currency debt depends on access to hard currency.",
+    "rationale": {
+      "A": "Incorrect. Inflation affects value, but default risk on local-currency debt is generally lower.",
+      "B": "Incorrect. Agencies routinely assign different local- and foreign-currency ratings.",
+      "C": "Correct. Governments have more control over local-currency obligations, so default on them is less likely.",
+      "D": "Incorrect. Limited foreign-exchange reserves make foreign-currency debt the riskier obligation."
+    },
+    "tags": [
+      "sovereign-ratings"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0014",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following is least likely to be cited as a cost that discourages a sovereign from defaulting on its debt?",
+    "options": [
+      "A permanent legal requirement to repay creditors in full before any new spending",
+      "Loss of reputation leading to exclusion from, or higher costs in, capital markets",
+      "Damage to the domestic banking system that holds government debt",
+      "Reduced trade and possible trade sanctions"
+    ],
+    "answer": "A",
+    "explanation": "Sovereigns face limited legal enforcement. Costs that discourage default include reputational damage, capital-market exclusion, reduced trade, banking-system stress and political consequences.",
+    "rationale": {
+      "A": "Correct. No such enforcement exists; the difficulty of enforcing claims against sovereigns is precisely why other costs matter.",
+      "B": "Incorrect. Reputation damage and higher borrowing costs are a key cost of default.",
+      "C": "Incorrect. Banks holding sovereign bonds suffer losses, which can trigger a banking crisis.",
+      "D": "Incorrect. Defaults are associated with reduced trade credit and trade flows."
+    },
+    "tags": [
+      "sovereign-default",
+      "country-risk"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0015",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Lindqvist Bank has a USD 20 million exposure at default to a borrower with a one-year probability of default of 2% and an expected recovery rate of 40%. The one-year expected loss is closest to:",
+    "options": [
+      "USD 160,000",
+      "USD 240,000",
+      "USD 400,000",
+      "USD 2,400,000"
+    ],
+    "answer": "B",
+    "explanation": "EL = EAD x PD x LGD = 20,000,000 x 0.02 x 0.60 = USD 240,000.",
+    "rationale": {
+      "A": "Incorrect. The recovery rate (40%) was used in place of loss given default (60%).",
+      "B": "Correct. EL = 20m x 2% x (1 - 40%) = USD 240,000.",
+      "C": "Incorrect. This ignores recovery, treating LGD as 100%.",
+      "D": "Incorrect. The PD was entered as 20% instead of 2%."
+    },
+    "verify": "return 20e6*0.02*(1-0.40);",
+    "numericAnswer": 240000,
+    "tolerance": 1,
+    "tags": [
+      "expected-loss"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0016",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A bank holds a portfolio of 200 loans with identical PD, LGD and exposure. If the default correlation between the loans increases while PD, LGD and exposures stay the same, what happens to the portfolio's expected loss (EL) and unexpected loss (UL)?",
+    "options": [
+      "EL increases and UL is unchanged.",
+      "Both EL and UL increase.",
+      "EL is unchanged and UL decreases.",
+      "EL is unchanged and UL increases."
+    ],
+    "answer": "D",
+    "explanation": "EL = sum of EAD x PD x LGD and is independent of correlation. UL (the standard deviation of losses) rises with default correlation because defaults cluster.",
+    "rationale": {
+      "A": "Incorrect. Correlation does not enter the EL calculation.",
+      "B": "Incorrect. Only UL depends on correlation.",
+      "C": "Incorrect. Higher correlation reduces diversification and therefore raises UL.",
+      "D": "Correct. EL is a sum of individual expected losses and ignores correlation; higher correlation fattens the loss tail and raises UL."
+    },
+    "tags": [
+      "unexpected-loss",
+      "default-correlation"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0017",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Under the Vasicek one-factor model, a loan portfolio has a one-year PD of 1% and an asset correlation of 0.2. Use N^-1(0.01) = -2.326 and N^-1(0.999) = 3.090. The 99.9% worst-case default rate (WCDR) is closest to:",
+    "options": [
+      "17.26%",
+      "14.56%",
+      "2.81%",
+      "11.90%"
+    ],
+    "answer": "B",
+    "explanation": "WCDR = N[(N^-1(PD) + sqrt(rho) N^-1(0.999)) / sqrt(1 - rho)] = N[(-2.326 + 0.4472 x 3.090) / 0.8944] = N(-1.0556) = 14.56%.",
+    "rationale": {
+      "A": "Incorrect. The numerator was not divided by sqrt(1 - rho).",
+      "B": "Correct. WCDR = N[(-2.326 + sqrt(0.2) x 3.090) / sqrt(0.8)] = N(-1.0556) = 14.56%.",
+      "C": "Incorrect. The correlation was used directly instead of its square root when weighting N^-1(0.999).",
+      "D": "Incorrect. The numerator was divided by (1 - rho) instead of sqrt(1 - rho)."
+    },
+    "verify": "const N=x=>{const t=1/(1+0.2316419*Math.abs(x));const d=0.3989422804014327*Math.exp(-x*x/2);const p=d*t*(0.319381530+t*(-0.356563782+t*(1.781477937+t*(-1.821255978+t*1.330274429))));return x>=0?1-p:p;};const rho=0.2; return N((-2.326+Math.sqrt(rho)*3.090)/Math.sqrt(1-rho))*100;",
+    "numericAnswer": 14.56,
+    "tolerance": 0.01,
+    "tags": [
+      "vasicek",
+      "wcdr"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0018",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Under the Basel standardized approach for operational risk, the business indicator component (BIC) uses marginal coefficients of 12% for the first EUR 1 billion of the business indicator (BI) and 15% for BI between EUR 1 billion and EUR 30 billion. For Morvane Bank, with a BI of EUR 1.5 billion, the BIC is closest to:",
+    "options": [
+      "EUR 225 million",
+      "EUR 180 million",
+      "EUR 195 million",
+      "EUR 270 million"
+    ],
+    "answer": "C",
+    "explanation": "The coefficients are marginal: BIC = 0.12 x 1,000m + 0.15 x (1,500m - 1,000m) = 120m + 75m = EUR 195 million.",
+    "rationale": {
+      "A": "Incorrect. The 15% coefficient was applied to the whole BI instead of only the portion above EUR 1 billion.",
+      "B": "Incorrect. The 12% coefficient was applied to the whole BI, ignoring the higher marginal bucket.",
+      "C": "Correct. 12% x 1.0bn + 15% x 0.5bn = 120m + 75m = EUR 195 million.",
+      "D": "Incorrect. This applies 18% (the top bucket coefficient) to the whole BI."
+    },
+    "verify": "const bi=1500; return 0.12*Math.min(bi,1000)+0.15*Math.max(0,bi-1000);",
+    "numericAnswer": 195,
+    "tolerance": 0.5,
+    "tags": [
+      "operational-risk",
+      "standardized-approach"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0019",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A trader at a bank deliberately hides losing positions by booking fictitious offsetting trades and exceeding limits without authorization. Under the Basel operational loss event types, this loss is best classified as:",
+    "options": [
+      "Internal fraud",
+      "External fraud",
+      "Execution, delivery and process management",
+      "Clients, products and business practices"
+    ],
+    "answer": "A",
+    "explanation": "Basel event types distinguish deliberate employee misconduct (internal fraud) from third-party fraud and from unintentional process failures.",
+    "rationale": {
+      "A": "Correct. Intentional unauthorized activity by an employee, such as hiding positions, is internal fraud.",
+      "B": "Incorrect. External fraud is committed by third parties outside the firm.",
+      "C": "Incorrect. That category covers unintentional processing errors, not deliberate misconduct.",
+      "D": "Incorrect. That category covers failures in obligations to clients or product design."
+    },
+    "tags": [
+      "operational-risk",
+      "loss-event-types"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0020",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A reverse stress test is best described as an exercise that:",
+    "options": [
+      "Re-runs last year's stress scenarios in reverse chronological order.",
+      "Applies only favorable market moves to estimate upside potential.",
+      "Replaces VaR with a backtest of historical exceptions.",
+      "Starts from a defined severe outcome, such as breaching minimum capital, and identifies scenarios that could cause it."
+    ],
+    "answer": "D",
+    "explanation": "Instead of asking what a scenario does to the firm, a reverse stress test asks which scenarios would make the firm fail, revealing hidden vulnerabilities.",
+    "rationale": {
+      "A": "Incorrect. The term refers to working backward from outcomes, not reversing time.",
+      "B": "Incorrect. Stress tests focus on adverse outcomes.",
+      "C": "Incorrect. Backtesting checks model accuracy; it is not a reverse stress test.",
+      "D": "Correct. Reverse stress testing works backward from a failure outcome to the scenarios that produce it."
+    },
+    "tags": [
+      "reverse-stress-test"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0021",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which practice is most consistent with sound governance of a bank's stress-testing program?",
+    "options": [
+      "Scenarios are chosen solely by the model developers, and results are reported only to the trading desks.",
+      "Stress tests are limited to scenarios that have occurred historically, so they can be validated precisely.",
+      "Results are treated as probability-weighted forecasts and replace VaR limits.",
+      "The board and senior management are actively involved in setting scenarios and use results in capital and risk-appetite decisions."
+    ],
+    "answer": "D",
+    "explanation": "Stress-testing governance calls for board and senior management involvement, independent review, documented policies and use of results in capital planning and limits.",
+    "rationale": {
+      "A": "Incorrect. This lacks independence and senior oversight.",
+      "B": "Incorrect. Good programs include hypothetical scenarios, since future crises may differ from past ones.",
+      "C": "Incorrect. Stress tests complement VaR; scenarios usually have no assigned probability.",
+      "D": "Correct. Effective governance requires senior engagement and integration of results into decision-making."
+    },
+    "tags": [
+      "stress-testing",
+      "governance"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0022",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Discount factors are 0.980 for 0.5 years, 0.955 for 1.0 year and 0.930 for 1.5 years. The price per 100 face value of a 1.5-year bond paying a 6% annual coupon semiannually is closest to:",
+    "options": [
+      "101.60",
+      "110.19",
+      "98.81",
+      "101.37"
+    ],
+    "answer": "A",
+    "explanation": "Price = sum of cash flows x discount factors = 3(0.980) + 3(0.955) + 103(0.930) = 2.940 + 2.865 + 95.790 = 101.60.",
+    "rationale": {
+      "A": "Correct. 3 x 0.980 + 3 x 0.955 + 103 x 0.930 = 101.595.",
+      "B": "Incorrect. The full annual coupon of 6 was paid every six months instead of 3.",
+      "C": "Incorrect. The final coupon was omitted; only principal was discounted at 1.5 years.",
+      "D": "Incorrect. All cash flows (109 in total) were discounted with the 1.5-year factor."
+    },
+    "verify": "return 3*0.980+3*0.955+103*0.930;",
+    "numericAnswer": 101.6,
+    "tolerance": 0.005,
+    "tags": [
+      "discount-factors",
+      "bond-pricing"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0023",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Using discount factors bootstrapped from other liquid Treasury bonds, an analyst finds that a particular Treasury bond trades at a price below the value implied by those discount factors. Ignoring transaction costs, the arbitrage trade is to:",
+    "options": [
+      "Sell the bond short and buy the replicating portfolio.",
+      "Buy both the bond and the replicating portfolio.",
+      "Buy the bond and sell a portfolio of other bonds that replicates its cash flows.",
+      "Do nothing, because the law of one price applies only to zero-coupon bonds."
+    ],
+    "answer": "C",
+    "explanation": "The law of one price says identical cash flows must have the same price. If the bond is cheap relative to its replicating portfolio, buy it and sell the replication to capture a riskless profit.",
+    "rationale": {
+      "A": "Incorrect. This sells the cheap asset and buys the expensive one, locking in a loss.",
+      "B": "Incorrect. This is a leveraged long position, not an arbitrage.",
+      "C": "Correct. Buying the cheap bond and shorting the replicating portfolio locks in the price difference with no net future cash flows.",
+      "D": "Incorrect. The law of one price applies to any set of identical cash flows."
+    },
+    "tags": [
+      "law-of-one-price",
+      "arbitrage"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0024",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The 1-year spot rate is 2.5% and the 2-year spot rate is 4.2%, both with annual compounding. The 1-year forward rate one year from now is closest to:",
+    "options": [
+      "3.35%",
+      "5.93%",
+      "1.70%",
+      "8.58%"
+    ],
+    "answer": "B",
+    "explanation": "(1 + s2)^2 = (1 + s1)(1 + f). f = 1.042^2 / 1.025 - 1 = 1.085764 / 1.025 - 1 = 5.93%.",
+    "rationale": {
+      "A": "Incorrect. This is the simple average of the two spot rates.",
+      "B": "Correct. (1.042^2 / 1.025) - 1 = 5.93%.",
+      "C": "Incorrect. This is the difference between the two spot rates.",
+      "D": "Incorrect. This is the two-year cumulative return (1.042^2 - 1); it was not divided by the first-year growth factor."
+    },
+    "verify": "return (1.042**2/1.025-1)*100;",
+    "numericAnswer": 5.93,
+    "tolerance": 0.005,
+    "tags": [
+      "forward-rates"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0025",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Annual discount factors are d(1) = 0.98, d(2) = 0.95 and d(3) = 0.91. The 3-year par rate (annual coupon) is closest to:",
+    "options": [
+      "3.19%",
+      "3.00%",
+      "3.17%",
+      "3.30%"
+    ],
+    "answer": "C",
+    "explanation": "A par bond satisfies c(d1 + d2 + d3) + d3 = 1, so c = (1 - 0.91) / (0.98 + 0.95 + 0.91) = 0.09 / 2.84 = 3.17%.",
+    "rationale": {
+      "A": "Incorrect. This is the 3-year spot rate, 0.91^(-1/3) - 1; with an upward-sloping curve the par rate is below the spot rate.",
+      "B": "Incorrect. This divides (1 - d3) by 3 years instead of by the sum of the discount factors.",
+      "C": "Correct. Par rate = (1 - d3) / (d1 + d2 + d3) = 0.09 / 2.84 = 3.17%.",
+      "D": "Incorrect. This is the simple annualized return on the zero, (1/0.91 - 1)/3, not a par rate."
+    },
+    "verify": "const d=[0.98,0.95,0.91]; return (1-d[2])/(d[0]+d[1]+d[2])*100;",
+    "numericAnswer": 3.17,
+    "tolerance": 0.005,
+    "tags": [
+      "par-rates",
+      "discount-factors"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0026",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The 1-year spot rate is 3.0% (annual compounding). A 2-year bond paying a 5% annual coupon trades at 101.50 per 100 face. The 2-year spot rate bootstrapped from these data is closest to:",
+    "options": [
+      "4.23%",
+      "4.20%",
+      "4.31%",
+      "5.00%"
+    ],
+    "answer": "A",
+    "explanation": "PV of year-1 coupon = 5/1.03 = 4.8544. Then (1 + s2)^2 = 105 / (101.50 - 4.8544) = 1.08644, giving s2 = 4.23%.",
+    "rationale": {
+      "A": "Correct. 101.50 - 5/1.03 = 96.6456 = 105/(1 + s2)^2, so s2 = 4.23%.",
+      "B": "Incorrect. This is the bond's yield to maturity, a single blended rate, not the 2-year spot rate.",
+      "C": "Incorrect. The first coupon was subtracted at face value (5) rather than discounted at the 1-year spot rate.",
+      "D": "Incorrect. This is the coupon rate, which equals the spot rate only for a par bond under a flat curve."
+    },
+    "verify": "const pv1=5/1.03; return (Math.sqrt(105/(101.5-pv1))-1)*100;",
+    "numericAnswer": 4.23,
+    "tolerance": 0.005,
+    "tags": [
+      "bootstrapping",
+      "spot-rates"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0027",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Suppose the term structure evolves exactly as today's forward rates predict ('forwards are realized'). Over the next six months, the return on a 10-year coupon bond compared with that on a 2-year zero-coupon bond will be:",
+    "options": [
+      "Higher for the 10-year bond, because it captures more roll-down on an upward-sloping curve.",
+      "The same, both equal to the current six-month spot rate.",
+      "Higher for the 2-year zero, because zeros have no reinvestment risk.",
+      "Impossible to compare without knowing each bond's convexity."
+    ],
+    "answer": "B",
+    "explanation": "Forward rates are built so that rolling over at the short rate and holding longer bonds are equivalent. If the forwards are realized, all bonds earn the current short-term rate; excess carry-roll-down returns arise only when rates differ from the forwards.",
+    "rationale": {
+      "A": "Incorrect. Extra roll-down exists only if the curve stays unchanged, not if forwards are realized.",
+      "B": "Correct. If forwards are realized, every bond earns the short-term spot rate over the period, regardless of maturity.",
+      "C": "Incorrect. Absence of reinvestment risk does not create excess return under realized forwards.",
+      "D": "Incorrect. Under realized forwards the result follows from no-arbitrage pricing, without reference to convexity."
+    },
+    "tags": [
+      "carry-roll-down",
+      "realized-forwards"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0028",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A 2-year bond paying a 6% annual coupon trades at 102.00 per 100 face. Its yield to maturity is closest to:",
+    "options": [
+      "5.88%",
+      "6.00%",
+      "7.11%",
+      "4.93%"
+    ],
+    "answer": "D",
+    "explanation": "Solve 102 = 6/(1+y) + 106/(1+y)^2. The quadratic gives 1/(1+y) = 0.95306, so y = 4.93%.",
+    "rationale": {
+      "A": "Incorrect. This is the current yield (6/102), which ignores the loss of the premium at maturity.",
+      "B": "Incorrect. This is the coupon rate; a premium bond yields less than its coupon.",
+      "C": "Incorrect. This is the YTM for a price of 98, treating the premium as a discount.",
+      "D": "Correct. Solving 6/(1+y) + 106/(1+y)^2 = 102 gives y = 4.93%."
+    },
+    "verify": "const P=102; const a=106,b=6,c=-P; const x=(-b+Math.sqrt(b*b-4*a*c))/(2*a); return (1/x-1)*100;",
+    "numericAnswer": 4.93,
+    "tolerance": 0.005,
+    "tags": [
+      "yield-to-maturity"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0029",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "What is the main limitation of hedging an interest-rate position using a single DV01 or duration measure?",
+    "options": [
+      "It cannot be calculated for bonds with fixed coupons.",
+      "It overstates losses for small rate changes.",
+      "It assumes all rates move by the same amount (a parallel shift), so it fails when the curve twists or changes shape.",
+      "It requires knowing the default probability of the issuer."
+    ],
+    "answer": "C",
+    "explanation": "DV01 and duration are one-factor measures: they treat the whole curve as moving in parallel. Multi-factor measures (key rate 01s, partial 01s) are needed for non-parallel moves.",
+    "rationale": {
+      "A": "Incorrect. DV01 and duration are standard for fixed-coupon bonds.",
+      "B": "Incorrect. For small changes the duration approximation is accurate; error grows with large moves.",
+      "C": "Correct. One-factor metrics hedge only parallel moves; non-parallel shifts leave residual risk.",
+      "D": "Incorrect. DV01 measures rate sensitivity, not credit risk."
+    },
+    "tags": [
+      "dv01",
+      "duration"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0030",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bond has a modified duration of 7.2 and convexity of 65. If its yield rises by 150 basis points, the approximate percentage price change is closest to:",
+    "options": [
+      "-10.80%",
+      "-9.34%",
+      "-11.53%",
+      "-10.07%"
+    ],
+    "answer": "D",
+    "explanation": "%dP = -D x dy + 0.5 x C x dy^2 = -7.2(0.015) + 0.5(65)(0.000225) = -0.1080 + 0.0073 = -10.07%.",
+    "rationale": {
+      "A": "Incorrect. This uses duration only and ignores the convexity adjustment.",
+      "B": "Incorrect. The convexity term was not multiplied by 1/2.",
+      "C": "Incorrect. The convexity adjustment was subtracted; it is positive for both rate rises and falls.",
+      "D": "Correct. -7.2 x 0.015 + 0.5 x 65 x 0.015^2 = -0.10800 + 0.00731 = -10.07%."
+    },
+    "verify": "const D=7.2,C=65,dy=0.015; return (-D*dy+0.5*C*dy*dy)*100;",
+    "numericAnswer": -10.07,
+    "tolerance": 0.005,
+    "tags": [
+      "duration",
+      "convexity"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0031",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Arendal Pension holds a USD 25 million (market value) bond portfolio with a modified duration of 5.6. It hedges with a Treasury bond priced at 98.50 per 100 face with a modified duration of 8.4. The face amount of the Treasury to sell short so that the hedged position is DV01-neutral is closest to:",
+    "options": [
+      "USD 16.67 million",
+      "USD 16.92 million",
+      "USD 16.42 million",
+      "USD 37.50 million"
+    ],
+    "answer": "B",
+    "explanation": "Portfolio DV01 = 25m x 5.6 x 0.0001 = USD 14,000. Hedge DV01 per 1 face = 0.985 x 8.4 x 0.0001 = 0.0008274. Face = 14,000 / 0.0008274 = USD 16.92 million.",
+    "rationale": {
+      "A": "Incorrect. This ignores the hedge bond's price, treating face value as market value.",
+      "B": "Correct. Face = (25m x 5.6) / (8.4 x 0.985) = USD 16.92 million.",
+      "C": "Incorrect. The price factor was multiplied rather than divided, converting market value to face in the wrong direction.",
+      "D": "Incorrect. The duration ratio was inverted (8.4 / 5.6)."
+    },
+    "verify": "return 25*5.6/(8.4*0.985);",
+    "numericAnswer": 16.92,
+    "tolerance": 0.005,
+    "tags": [
+      "hedging",
+      "dv01"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0032",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bond portfolio has key rate 01s (value lost per 1 bp rise) of USD 1,200 at 2 years, USD 3,400 at 5 years and USD 2,100 at 10 years. If the 5-year key rate rises by 4 bp and the 10-year key rate falls by 2 bp, with the 2-year rate unchanged, the change in portfolio value is closest to:",
+    "options": [
+      "USD -9,400",
+      "USD -17,800",
+      "USD +9,400",
+      "USD -13,600"
+    ],
+    "answer": "A",
+    "explanation": "dV = -sum(KR01_i x dy_i in bp) = -(3,400 x 4) - (2,100 x -2) = -13,600 + 4,200 = -USD 9,400.",
+    "rationale": {
+      "A": "Correct. -3,400 x 4 + 2,100 x 2 = -13,600 + 4,200 = -USD 9,400.",
+      "B": "Incorrect. The 10-year move was treated as a rise rather than a fall.",
+      "C": "Incorrect. The sign convention was reversed: a rate rise reduces value when KR01s are positive.",
+      "D": "Incorrect. Only the 5-year move was included; the 10-year decline was ignored."
+    },
+    "verify": "return -(1200*0+3400*4+2100*(-2));",
+    "numericAnswer": -9400,
+    "tolerance": 0.5,
+    "tags": [
+      "key-rate-01",
+      "multi-factor"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0033",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about key rate durations is most accurate?",
+    "options": [
+      "Each key rate duration measures sensitivity to a parallel shift of the entire curve.",
+      "A zero-coupon bond has equal key rate durations at every key rate.",
+      "The sum of a bond's key rate durations approximately equals its effective duration, because shifting all key rates together produces a parallel shift.",
+      "Key rate durations cannot be used to construct hedges."
+    ],
+    "answer": "C",
+    "explanation": "A key rate shift moves rates near one key maturity, tapering to zero at adjacent key rates. Summing all key rate shifts gives a parallel shift, so key rate durations sum to (approximately) effective duration.",
+    "rationale": {
+      "A": "Incorrect. Each measures sensitivity to a localized shift around one key rate only.",
+      "B": "Incorrect. A zero's exposure is concentrated at (or adjacent to) the key rates near its maturity.",
+      "C": "Correct. Key rate shifts are designed so that together they replicate a parallel shift of the whole curve.",
+      "D": "Incorrect. Hedging each key rate exposure with instruments at those maturities is a standard use."
+    },
+    "tags": [
+      "key-rate-duration",
+      "multi-factor"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0034",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A stock trades at USD 50. In one year it will be either USD 60 (u = 1.2) or USD 42.50 (d = 0.85). The one-year risk-free rate is 4% (annual compounding). Using a one-step binomial tree, the value of a one-year European call with a strike of USD 52 is closest to:",
+    "options": [
+      "USD 3.85",
+      "USD 4.18",
+      "USD 4.34",
+      "USD 3.52"
+    ],
+    "answer": "B",
+    "explanation": "Risk-neutral p = (1 + r - d)/(u - d) = 0.19/0.35 = 0.5429. Payoffs: up 60 - 52 = 8, down 0. c = 0.5429 x 8 / 1.04 = USD 4.18.",
+    "rationale": {
+      "A": "Incorrect. This uses a 50% probability instead of the risk-neutral probability.",
+      "B": "Correct. p = (1.04 - 0.85)/(1.2 - 0.85) = 0.5429; c = 0.5429 x 8 / 1.04 = USD 4.18.",
+      "C": "Incorrect. The expected payoff was not discounted at the risk-free rate.",
+      "D": "Incorrect. The up and down risk-neutral probabilities were swapped (0.4571 assigned to the up state)."
+    },
+    "verify": "const S=50,u=1.2,d=0.85,R=1.04,K=52; const p=(R-d)/(u-d); return p*Math.max(S*u-K,0)/R;",
+    "numericAnswer": 4.18,
+    "tolerance": 0.005,
+    "tags": [
+      "binomial",
+      "risk-neutral"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0035",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A stock trades at USD 100. In each of two periods it moves up by a factor of 1.1 or down by 0.9, and the risk-free rate is 2% per period (discrete compounding). The value of a two-period American put with a strike of USD 105 is closest to:",
+    "options": [
+      "USD 6.46",
+      "USD 5.00",
+      "USD 7.44",
+      "USD 7.27"
+    ],
+    "answer": "D",
+    "explanation": "p = (1.02 - 0.9)/0.2 = 0.6. Terminal payoffs: S = 121 gives 0, 99 gives 6, 81 gives 24. Node 110: (0.6(0) + 0.4(6))/1.02 = 2.353 (exercise worthless). Node 90: continuation (0.6(6) + 0.4(24))/1.02 = 12.94 < exercise 15, so 15. Root: (0.6(2.353) + 0.4(15))/1.02 = 7.27 > 5.",
+    "rationale": {
+      "A": "Incorrect. This is the European put value; it ignores early exercise at the down node.",
+      "B": "Incorrect. This is the immediate exercise value at time 0, which is less than the continuation value.",
+      "C": "Incorrect. The early-exercise check was done correctly, but expected values were not discounted at each step.",
+      "D": "Correct. p = 0.6. Down node: max(15, 12.94) = 15 (exercise early). Up node: 2.353. Root: (0.6 x 2.353 + 0.4 x 15)/1.02 = 7.27, which exceeds the immediate payoff of 5."
+    },
+    "verify": "const S=100,u=1.1,d=0.9,R=1.02,K=105,p=(R-d)/(u-d); const put=x=>Math.max(K-x,0); const vu=Math.max(put(S*u),(p*put(S*u*u)+(1-p)*put(S*u*d))/R); const vd=Math.max(put(S*d),(p*put(S*u*d)+(1-p)*put(S*d*d))/R); return Math.max(put(S),(p*vu+(1-p)*vd)/R);",
+    "numericAnswer": 7.27,
+    "tolerance": 0.005,
+    "tags": [
+      "binomial",
+      "american-options"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0036",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In a binomial option pricing model, the value of an option does not depend on the real-world probability of an up move because:",
+    "options": [
+      "The option can be replicated with the underlying and risk-free borrowing or lending, so its price must equal the cost of the replicating portfolio.",
+      "Real-world probabilities are always exactly 50%.",
+      "The expected return on the stock is always zero.",
+      "Options are always priced at intrinsic value in a binomial tree."
+    ],
+    "answer": "A",
+    "explanation": "A hedged portfolio of the option and delta shares is riskless and must earn the risk-free rate. This gives the price independent of real-world probabilities, which justifies risk-neutral valuation.",
+    "rationale": {
+      "A": "Correct. No-arbitrage replication pins down the price; risk preferences and real-world probabilities drop out.",
+      "B": "Incorrect. Real-world probabilities can take any value; they simply do not affect the no-arbitrage price.",
+      "C": "Incorrect. The stock's expected return can be anything; under risk-neutral valuation it is set to the risk-free rate.",
+      "D": "Incorrect. Options generally have time value above intrinsic value."
+    },
+    "tags": [
+      "binomial",
+      "risk-neutral"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0037",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A non-dividend-paying stock trades at USD 40. A 6-month European call has a strike of USD 42. The continuously compounded risk-free rate is 5% and volatility is 25% per year. Using the Black-Scholes-Merton model, the call value is closest to:",
+    "options": [
+      "USD 3.36",
+      "USD 1.97",
+      "USD 2.40",
+      "USD 3.56"
+    ],
+    "answer": "C",
+    "explanation": "d1 = [ln(40/42) + (0.05 + 0.03125)(0.5)] / (0.25 x sqrt(0.5)) = -0.0462; d2 = d1 - 0.1768 = -0.2230. N(d1) = 0.4816, N(d2) = 0.4118. c = 40(0.4816) - 42e^(-0.025)(0.4118) = USD 2.40.",
+    "rationale": {
+      "A": "Incorrect. This is the value of the matching European put (via put-call parity), not the call.",
+      "B": "Incorrect. The strike was not discounted at the risk-free rate in the second term.",
+      "C": "Correct. d1 = -0.0462, d2 = -0.2230; c = 40 x N(d1) - 42e^(-0.025) x N(d2) = 40(0.4816) - 40.963(0.4118) = USD 2.40.",
+      "D": "Incorrect. Annual volatility was used without scaling by the square root of time in d1 and d2."
+    },
+    "verify": "const N=x=>{const t=1/(1+0.2316419*Math.abs(x));const d=0.3989422804014327*Math.exp(-x*x/2);const p=d*t*(0.319381530+t*(-0.356563782+t*(1.781477937+t*(-1.821255978+t*1.330274429))));return x>=0?1-p:p;};const S=40,K=42,r=0.05,s=0.25,T=0.5; const d1=(Math.log(S/K)+(r+s*s/2)*T)/(s*Math.sqrt(T)); const d2=d1-s*Math.sqrt(T); return S*N(d1)-K*Math.exp(-r*T)*N(d2);",
+    "numericAnswer": 2.4,
+    "tolerance": 0.005,
+    "tags": [
+      "black-scholes-merton",
+      "option-pricing"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0038",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A stock is expected to pay a known cash dividend before a European call option on it expires. How is the Black-Scholes-Merton model most commonly adjusted for this dividend?",
+    "options": [
+      "Replace the stock price with the stock price minus the present value of the dividend.",
+      "Add the present value of the dividend to the stock price.",
+      "Increase the volatility input by the dividend yield.",
+      "No adjustment is needed because BSM already assumes dividends are paid."
+    ],
+    "answer": "A",
+    "explanation": "For known cash dividends, value the European option with S replaced by S - PV(dividends). Calls fall in value and puts rise.",
+    "rationale": {
+      "A": "Correct. The dividend leaves the stock before expiry, so the option is valued on the stock price net of the PV of the dividend.",
+      "B": "Incorrect. Dividends reduce the price at which the stock will trade at expiry, lowering call values.",
+      "C": "Incorrect. Dividends affect the price input, not volatility.",
+      "D": "Incorrect. The basic BSM model assumes no dividends during the option's life."
+    },
+    "tags": [
+      "black-scholes-merton",
+      "dividends"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0039",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A dealer's option portfolio has a delta of -450 and a gamma of -60. A traded option on the same stock has a delta of 0.5 and a gamma of 0.04. To make the portfolio both gamma-neutral and delta-neutral, the dealer should:",
+    "options": [
+      "Buy 1,500 options and buy 450 shares",
+      "Sell 1,500 options and buy 1,200 shares",
+      "Buy 1,500 options and buy 300 shares",
+      "Buy 1,500 options and sell 300 shares"
+    ],
+    "answer": "D",
+    "explanation": "Gamma: -60 + n(0.04) = 0 gives n = 1,500 options (buy). Delta after options: -450 + 1,500(0.5) = +300. Sell 300 shares (delta 1 each) to reach delta-neutral.",
+    "rationale": {
+      "A": "Incorrect. This hedges the original delta but ignores the +750 delta added by the options.",
+      "B": "Incorrect. Selling options makes gamma more negative (-120) instead of neutralizing it.",
+      "C": "Incorrect. The residual delta of +300 requires selling, not buying, shares.",
+      "D": "Correct. 60 / 0.04 = 1,500 options bought; they add 750 delta, so the new delta is +300, offset by selling 300 shares."
+    },
+    "verify": "const g=-60,gopt=0.04; return -g/gopt;",
+    "numericAnswer": 1500,
+    "tolerance": 0.5,
+    "tags": [
+      "delta-gamma-hedging",
+      "greeks"
+    ]
+  },
+  {
+    "id": "frm1-vrm-0040",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "For a long at-the-money option that is very close to expiration, which combination of Greeks is most typical?",
+    "options": [
+      "Low gamma and positive theta",
+      "High positive gamma and large negative theta",
+      "Negative gamma and large negative theta",
+      "Zero gamma and zero vega"
+    ],
+    "answer": "B",
+    "explanation": "Gamma and theta are linked: a long-gamma position pays for convexity through time decay. Both effects are largest for ATM options close to expiry.",
+    "rationale": {
+      "A": "Incorrect. Long options generally have negative theta, and ATM gamma peaks near expiry.",
+      "B": "Correct. Near expiry, ATM options have the highest gamma and lose time value fastest.",
+      "C": "Incorrect. Long options always have positive gamma.",
+      "D": "Incorrect. Gamma is large for an ATM option near expiry, not zero."
+    },
+    "tags": [
+      "greeks",
+      "gamma",
+      "theta"
+    ]
+  }
+]

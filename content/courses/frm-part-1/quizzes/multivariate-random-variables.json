@@ -1,0 +1,117 @@
+[
+  {
+    "id": "q-frm1-multivariate-random-variables-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "multivariate-random-variables",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio is invested 50% in asset P (volatility 25%) and 50% in asset Q (volatility 15%). The correlation between their returns is −0.2. The portfolio volatility is closest to:",
+    "options": [
+      "14.58%",
+      "13.23%",
+      "20.00%",
+      "15.81%"
+    ],
+    "answer": "B",
+    "explanation": "σp² = 0.25(0.0625) + 0.25(0.0225) + 2(0.5)(0.5)(−0.2)(0.25)(0.15) = 0.015625 + 0.005625 − 0.00375 = 0.0175. σp = 13.23%.",
+    "rationale": {
+      "A": "Incorrect. 14.58% ignores the covariance term, as if the correlation were zero.",
+      "B": "Correct. Including the negative covariance term gives √0.0175 = 13.23%.",
+      "C": "Incorrect. 20% is the weighted average volatility, valid only if the correlation were +1.",
+      "D": "Incorrect. 15.81% uses a correlation of +0.2 instead of −0.2."
+    },
+    "verify": "const w=0.5,s1=0.25,s2=0.15,r=-0.2; return 100*Math.sqrt(w*w*s1*s1+w*w*s2*s2+2*w*w*r*s1*s2);",
+    "numericAnswer": 13.23,
+    "tolerance": 0.005,
+    "tags": [
+      "portfolio-variance"
+    ]
+  },
+  {
+    "id": "q-frm1-multivariate-random-variables-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "multivariate-random-variables",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "X indicates default of firm A (1 = default) and Y indicates default of firm B. The joint probabilities are P(X=0, Y=0) = 0.5, P(X=0, Y=1) = 0.2, P(X=1, Y=0) = 0.1 and P(X=1, Y=1) = 0.2. The covariance between X and Y is closest to:",
+    "options": [
+      "0.20",
+      "0.12",
+      "0.00",
+      "0.08"
+    ],
+    "answer": "D",
+    "explanation": "E[X] = 0.3, E[Y] = 0.4, E[XY] = P(1,1) = 0.2. Cov = 0.2 − 0.3 × 0.4 = 0.08.",
+    "rationale": {
+      "A": "Incorrect. 0.20 is E[XY]; the product of the means must be subtracted.",
+      "B": "Incorrect. 0.12 is the product of the means, E[X]E[Y], not the covariance.",
+      "C": "Incorrect. Zero would require independence, but P(1,1) = 0.2 differs from 0.3 × 0.4 = 0.12.",
+      "D": "Correct. Cov = E[XY] − E[X]E[Y] = 0.2 − 0.12 = 0.08."
+    },
+    "verify": "const ex=0.1+0.2, ey=0.2+0.2, exy=0.2; return exy-ex*ey;",
+    "numericAnswer": 0.08,
+    "tolerance": 0.0005,
+    "tags": [
+      "covariance",
+      "joint-distribution"
+    ]
+  },
+  {
+    "id": "q-frm1-multivariate-random-variables-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "multivariate-random-variables",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Random variables X and Y have standard deviations of 3 and 4 and a correlation of 0.5. The variance of X − Y is closest to:",
+    "options": [
+      "13",
+      "37",
+      "25",
+      "7"
+    ],
+    "answer": "A",
+    "explanation": "Var(X − Y) = 9 + 16 − 2(0.5)(3)(4) = 25 − 12 = 13.",
+    "rationale": {
+      "A": "Correct. Subtract twice the covariance for a difference: 25 − 12 = 13.",
+      "B": "Incorrect. 37 adds the covariance term, which applies to X + Y, not X − Y.",
+      "C": "Incorrect. 25 ignores the covariance, as if the variables were uncorrelated.",
+      "D": "Incorrect. 7 is 16 − 9, subtracting one variance from the other; in Var(X − Y) both variances are added and only the covariance term is subtracted."
+    },
+    "verify": "const sx=3, sy=4, r=0.5; return sx*sx+sy*sy-2*r*sx*sy;",
+    "numericAnswer": 13,
+    "tolerance": 0.05,
+    "tags": [
+      "variance-of-difference"
+    ]
+  },
+  {
+    "id": "q-frm1-multivariate-random-variables-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "multivariate-random-variables",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A random variable X is symmetric around zero and Y = X². An analyst computes the correlation between X and Y. Which conclusion is correct?",
+    "options": [
+      "The correlation is 1 because Y is a deterministic function of X.",
+      "The correlation is positive because Y increases as |X| increases.",
+      "X and Y are independent because their correlation is zero.",
+      "The correlation is zero, yet X and Y are dependent because correlation captures only linear association."
+    ],
+    "answer": "D",
+    "explanation": "Cov(X, X²) = E[X³] − E[X]E[X²] = 0 for a symmetric X with mean zero, so the correlation is zero, but Y is fully determined by X.",
+    "rationale": {
+      "A": "Incorrect. A correlation of 1 requires an exact positive linear relationship, not any deterministic function.",
+      "B": "Incorrect. Y rises with |X|, not with X; positive and negative X values offset, giving zero covariance.",
+      "C": "Incorrect. Zero correlation does not imply independence; knowing X tells you Y exactly.",
+      "D": "Correct. The relationship is non-linear, so correlation is zero even though the variables are perfectly dependent."
+    },
+    "tags": [
+      "correlation",
+      "independence"
+    ]
+  }
+]

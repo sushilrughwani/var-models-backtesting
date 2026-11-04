@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-stationary-time-series-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "stationary-time-series",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The monthly change in a bank's deposit base follows Y(t) = 1.2 + 0.6 Y(t−1) + ε(t), where ε is white noise. The long-run mean of Y is closest to:",
+    "options": ["0.75", "2.00", "3.00", "1.20"],
+    "answer": "C",
+    "explanation": "For a stationary AR(1), μ = δ/(1 − φ) = 1.2/(1 − 0.6) = 1.2/0.4 = 3.00.",
+    "rationale": {
+      "A": "Incorrect. 0.75 divides by 1 + φ = 1.6 instead of 1 − φ.",
+      "B": "Incorrect. 2.00 divides the constant by φ rather than by 1 − φ.",
+      "C": "Correct. 1.2/0.4 = 3.00.",
+      "D": "Incorrect. 1.20 is the intercept δ, not the mean; they coincide only when φ = 0."
+    },
+    "verify": "const d=1.2,phi=0.6; return d/(1-phi);",
+    "numericAnswer": 3.0,
+    "tolerance": 0.005,
+    "tags": ["ar-model", "long-run-mean"]
+  },
+  {
+    "id": "q-frm1-stationary-time-series-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "stationary-time-series",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A credit spread series follows Y(t) = 1.0 + 0.7 Y(t−1) + ε(t). The current value is Y(T) = 6. The two-period-ahead forecast E[Y(T+2)] is closest to:",
+    "options": ["5.20", "4.64", "3.94", "3.33"],
+    "answer": "B",
+    "explanation": "One step: 1.0 + 0.7 × 6 = 5.20. Two steps: 1.0 + 0.7 × 5.20 = 4.64. Equivalently μ + φ²(Y − μ) = 3.333 + 0.49 × 2.667 = 4.64.",
+    "rationale": {
+      "A": "Incorrect. 5.20 is the one-period-ahead forecast.",
+      "B": "Correct. Iterating the AR(1) twice gives 4.64.",
+      "C": "Incorrect. 3.94 computes 1.0 + 0.7² × 6, adding the constant only once instead of at each step.",
+      "D": "Incorrect. 3.33 is the long-run mean, the forecast only at a very long horizon."
+    },
+    "verify": "const d=1.0,phi=0.7,y=6; const f1=d+phi*y; return d+phi*f1;",
+    "numericAnswer": 4.64,
+    "tolerance": 0.005,
+    "tags": ["forecasting", "mean-reversion"]
+  },
+  {
+    "id": "q-frm1-stationary-time-series-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "stationary-time-series",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "The sample ACF of a stationary series shows significant spikes at lags 1 and 2 and is insignificant thereafter, while the sample PACF decays gradually. The most appropriate model is:",
+    "options": ["AR(2)", "ARMA(1,1)", "white noise", "MA(2)"],
+    "answer": "D",
+    "explanation": "A moving-average process of order q has an ACF that cuts off after lag q and a PACF that decays. A cut-off after lag 2 in the ACF therefore points to MA(2).",
+    "rationale": {
+      "A": "Incorrect. An AR(2) would show a decaying ACF and a PACF that cuts off after lag 2, the reverse pattern.",
+      "B": "Incorrect. An ARMA(1,1) has both ACF and PACF decaying, with no sharp cut-off.",
+      "C": "Incorrect. White noise has no significant autocorrelations at any lag.",
+      "D": "Correct. ACF cuts off at lag 2, PACF decays: MA(2)."
+    },
+    "tags": ["acf", "pacf", "model-identification"]
+  },
+  {
+    "id": "q-frm1-stationary-time-series-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "stationary-time-series",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following is NOT a requirement for a time series to be covariance stationary?",
+    "options": ["The series must be normally distributed", "The mean must be constant over time", "The variance must be constant and finite", "The autocovariance between two observations must depend only on the gap between them"],
+    "answer": "A",
+    "explanation": "Covariance stationarity requires a constant mean, a constant finite variance and autocovariances that depend only on the lag. It places no requirement on the shape of the distribution.",
+    "rationale": {
+      "A": "Correct. Normality is not required; fat-tailed returns can still be covariance stationary.",
+      "B": "Incorrect. A constant mean is one of the three conditions.",
+      "C": "Incorrect. A constant, finite variance is one of the three conditions.",
+      "D": "Incorrect. Autocovariance depending only on the lag is one of the three conditions."
+    },
+    "tags": ["stationarity"]
+  }
+]

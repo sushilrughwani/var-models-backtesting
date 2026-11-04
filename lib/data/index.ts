@@ -35,3 +35,21 @@ export const getBlogPosts = async () => local.getBlogPosts();
 export const getBlogPost = async (slug: string) => local.getBlogPost(slug);
 export const getDiscussionThreads = async (courseSlug: string, lessonSlug: string) =>
   local.getDiscussionThreads(courseSlug, lessonSlug);
+
+import type { Course, CourseOutline } from "./types";
+export function toOutline(c: Course): CourseOutline {
+  return {
+    slug: c.slug,
+    title: c.title,
+    shortTitle: c.shortTitle,
+    accent: c.accent,
+    category: c.category,
+    status: c.status,
+    modules: c.modules.map((m) => ({
+      slug: m.slug,
+      title: m.title,
+      lessons: m.lessons.map((l) => ({ slug: l.slug, title: l.title, duration: l.duration, freePreview: l.freePreview })),
+    })),
+  };
+}
+export const getCourseOutlines = async () => local.getCourses().map(toOutline);

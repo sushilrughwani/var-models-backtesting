@@ -1,0 +1,718 @@
+[
+  {
+    "id": "cfa1-eq-0001",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Lena Varga buys 500 shares of Orvane Ltd at EUR 40 per share using an initial margin of 50%. One year later she sells the shares at EUR 46 after receiving a dividend of EUR 0.80 per share. The margin loan carries interest of 6% per year, paid at the end of the year. Ignoring commissions, her return on the equity she invested is closest to:",
+    "options": [
+      "28.0%",
+      "17.0%",
+      "34.0%"
+    ],
+    "answer": "A",
+    "explanation": "Purchase = 500 x 40 = 20,000; equity = 10,000; loan = 10,000. Profit = 500 x 6 + 500 x 0.80 - 0.06 x 10,000 = 3,000 + 400 - 600 = 2,800. Return = 2,800 / 10,000 = 28.0%.",
+    "rationale": {
+      "A": "Correct. Equity invested is EUR 10,000 and the loan is EUR 10,000. Gain 3,000 plus dividends 400 minus interest 600 gives 2,800, or 28.0% of equity.",
+      "B": "Incorrect. This is the unleveraged return ((46 - 40 + 0.80) / 40); it ignores the margin loan that magnifies the return on equity.",
+      "C": "Incorrect. This omits the EUR 600 of interest on the margin loan."
+    },
+    "verify": "const n=500,p0=40,p1=46,d=0.8,im=0.5,i=0.06; const eq=n*p0*im, loan=n*p0-eq; return 100*(n*(p1-p0)+n*d-i*loan)/eq;",
+    "numericAnswer": 28.0,
+    "tolerance": 0.05,
+    "tags": [
+      "market-organization",
+      "margin"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0002",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Tomas Reyes buys shares at USD 60 per share with an initial margin requirement of 40%. The maintenance margin requirement is 25%. The share price below which he will receive a margin call is closest to:",
+    "options": [
+      "USD 36.00",
+      "USD 48.00",
+      "USD 45.00"
+    ],
+    "answer": "B",
+    "explanation": "Loan per share = 60 x (1 - 0.40) = 36. A margin call occurs when (P - 36) / P = 0.25, so P = 36 / 0.75 = USD 48.00.",
+    "rationale": {
+      "A": "Incorrect. This is only the loan per share (60 x 0.60); it forgets to divide by (1 - maintenance margin).",
+      "B": "Correct. The margin call price is P0 x (1 - initial margin) / (1 - maintenance margin) = 60 x 0.60 / 0.75 = 48.00.",
+      "C": "Incorrect. This applies the maintenance margin directly to the purchase price (60 x 0.75), ignoring that the loan is fixed at 60% of the purchase price."
+    },
+    "verify": "const p0=60,im=0.40,mm=0.25; return p0*(1-im)/(1-mm);",
+    "numericAnswer": 48.0,
+    "tolerance": 0.01,
+    "tags": [
+      "market-organization",
+      "margin-call"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0003",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Priya Nair owns shares of Kestrel Foods currently trading at INR 520. She wants to sell automatically if the price falls to INR 450 in order to limit her losses. Which order is most appropriate?",
+    "options": [
+      "A limit-sell order at INR 450",
+      "A limit-buy order at INR 450",
+      "A stop-sell order at INR 450"
+    ],
+    "answer": "C",
+    "explanation": "To exit a long position only after a decline, use a stop (stop-loss) sell order with the stop price at INR 450.",
+    "rationale": {
+      "A": "Incorrect. A limit-sell at INR 450 is marketable immediately because the current price (INR 520) is above the limit, so it would sell now rather than on a decline.",
+      "B": "Incorrect. A limit-buy order adds to the position when the price falls; it increases rather than limits exposure.",
+      "C": "Correct. A stop-sell order becomes a sell order once the price trades at or below the stop price, which limits losses on a long position."
+    },
+    "tags": [
+      "market-organization",
+      "orders"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0004",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In a particular bond market, investors trade only with dealers who continuously post bid and ask prices and buy or sell from their own inventories. This market is best described as:",
+    "options": [
+      "A quote-driven market",
+      "An order-driven market",
+      "A brokered market"
+    ],
+    "answer": "A",
+    "explanation": "Dealers quoting two-way prices and trading from inventory define a quote-driven (dealer or over-the-counter) market.",
+    "rationale": {
+      "A": "Correct. In quote-driven (dealer) markets, customers trade at prices quoted by dealers who act as counterparties from inventory.",
+      "B": "Incorrect. Order-driven markets match buyer and seller orders using trading rules; dealers are not required as counterparties.",
+      "C": "Incorrect. In brokered markets, brokers search for counterparties for unique or illiquid assets; they do not trade from inventory."
+    },
+    "tags": [
+      "market-organization",
+      "execution-mechanisms"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0005",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An index contains three stocks with beginning prices of EUR 20, EUR 50 and EUR 80. At the end of the period the prices are EUR 25, EUR 45 and EUR 84. No dividends are paid. The price return of a price-weighted index of these stocks is closest to:",
+    "options": [
+      "6.67%",
+      "2.67%",
+      "20.00%"
+    ],
+    "answer": "B",
+    "explanation": "Sum of prices rises from 150 to 154; with an unchanged divisor the index return is 154 / 150 - 1 = 2.67%.",
+    "rationale": {
+      "A": "Incorrect. This is the equal-weighted return, the simple average of the individual returns (25%, -10%, 5%).",
+      "B": "Correct. A price-weighted index return equals the change in the sum of prices: 154 / 150 - 1 = 2.67%.",
+      "C": "Incorrect. This adds the individual returns instead of averaging or weighting them."
+    },
+    "verify": "const b=[20,50,80], e=[25,45,84]; const s=a=>a.reduce((x,y)=>x+y,0); return 100*(s(e)/s(b)-1);",
+    "numericAnswer": 2.67,
+    "tolerance": 0.01,
+    "tags": [
+      "indexes",
+      "price-weighted"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0006",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A market-capitalization-weighted index contains three stocks. Stock P: 10 million shares, price moves from USD 30 to USD 33. Stock Q: 5 million shares, price moves from USD 80 to USD 76. Stock R: 20 million shares, price moves from USD 15 to USD 16.50. The index return for the period is closest to:",
+    "options": [
+      "5.00%",
+      "0.40%",
+      "4.00%"
+    ],
+    "answer": "C",
+    "explanation": "Beginning value = 300 + 400 + 300 = 1,000 million; ending value = 330 + 380 + 330 = 1,040 million. Return = 1,040 / 1,000 - 1 = 4.00%.",
+    "rationale": {
+      "A": "Incorrect. This is the equal-weighted return, averaging the individual returns of 10%, -5% and 10%.",
+      "B": "Incorrect. This is the price-weighted return (125.5 / 125 - 1), which ignores shares outstanding.",
+      "C": "Correct. Total market value rises from USD 1,000 million to USD 1,040 million, a 4.00% return."
+    },
+    "verify": "const n=[10,5,20], b=[30,80,15], e=[33,76,16.5]; let v0=0,v1=0; for(let i=0;i<3;i++){v0+=n[i]*b[i]; v1+=n[i]*e[i];} return 100*(v1/v0-1);",
+    "numericAnswer": 4.0,
+    "tolerance": 0.01,
+    "tags": [
+      "indexes",
+      "market-cap-weighted"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0007",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In a price-weighted index, the constituent with the greatest influence on the index value is the one with the:",
+    "options": [
+      "Highest share price",
+      "Largest market capitalization",
+      "Largest free float"
+    ],
+    "answer": "A",
+    "explanation": "Weights in a price-weighted index are proportional to share prices; firm size and float are irrelevant.",
+    "rationale": {
+      "A": "Correct. Price weighting gives each stock a weight equal to its price divided by the sum of prices, so the highest-priced stock dominates.",
+      "B": "Incorrect. Market capitalization drives weights in a market-cap-weighted index, not a price-weighted one.",
+      "C": "Incorrect. Free float determines weights in a float-adjusted market-cap index, not in a price-weighted index."
+    },
+    "tags": [
+      "indexes",
+      "weighting"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0008",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "If a market is semi-strong-form efficient but not strong-form efficient, which approach would be least likely to earn consistent abnormal returns?",
+    "options": [
+      "Trading on material nonpublic information",
+      "Fundamental analysis of published financial statements",
+      "No approach could earn abnormal returns, including trading on private information"
+    ],
+    "answer": "B",
+    "explanation": "Semi-strong form: prices reflect all public information, so neither technical nor fundamental analysis of public data earns consistent abnormal returns; private information still might.",
+    "rationale": {
+      "A": "Incorrect. Because the market is not strong-form efficient, private information is not fully reflected in prices and could produce abnormal returns.",
+      "B": "Correct. Semi-strong efficiency means prices already reflect all public information, including published financial statements.",
+      "C": "Incorrect. This describes strong-form efficiency, which the question rules out."
+    },
+    "tags": [
+      "market-efficiency",
+      "forms"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0009",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Marco Bellini tends to sell his winning stocks quickly to lock in gains while holding his losing stocks for years in the hope they will recover to his purchase price. This behaviour is most consistent with:",
+    "options": [
+      "Overconfidence",
+      "Representativeness",
+      "Loss aversion"
+    ],
+    "answer": "C",
+    "explanation": "The disposition effect (selling winners, holding losers) is explained by loss aversion from prospect theory.",
+    "rationale": {
+      "A": "Incorrect. Overconfidence leads to excessive trading and underestimating risk, not specifically to holding losers and selling winners.",
+      "B": "Incorrect. Representativeness is judging probabilities by similarity to stereotypes or recent patterns, not reluctance to realise losses.",
+      "C": "Correct. Feeling losses more strongly than equal gains leads investors to avoid realising losses and to lock in gains early (the disposition effect)."
+    },
+    "tags": [
+      "market-efficiency",
+      "behavioural-finance"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0010",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "On the day a merger is announced, Halden Corp's stock returns 7.0% while the market returns 4.0%. Halden's beta is 1.2. For simplicity, the analyst uses a risk-free rate of 1.0% for the event window. Using the CAPM to estimate the expected return, Halden's abnormal return is closest to:",
+    "options": [
+      "2.4%",
+      "3.0%",
+      "2.2%"
+    ],
+    "answer": "A",
+    "explanation": "Abnormal return = actual - expected. Expected (CAPM) = 1.0% + 1.2 x (4.0% - 1.0%) = 4.6%. Abnormal = 7.0% - 4.6% = 2.4%.",
+    "rationale": {
+      "A": "Correct. Expected return = 1.0 + 1.2 x (4.0 - 1.0) = 4.6%, so abnormal return = 7.0 - 4.6 = 2.4%.",
+      "B": "Incorrect. This is the market-adjusted return (7.0 - 4.0), which ignores beta and the risk-free rate.",
+      "C": "Incorrect. This uses beta times the market return (1.2 x 4.0 = 4.8%) and ignores the risk-free rate."
+    },
+    "verify": "const r=7,rm=4,b=1.2,rf=1; return r-(rf+b*(rm-rf));",
+    "numericAnswer": 2.4,
+    "tolerance": 0.05,
+    "tags": [
+      "market-efficiency",
+      "abnormal-return"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0011",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Silverline Utilities' shares trade at USD 50. The company just paid an annual dividend of USD 2.00, and dividends are expected to grow at a constant 4% per year. Using the constant-growth model, the implied cost of equity is closest to:",
+    "options": [
+      "8.00%",
+      "8.16%",
+      "4.16%"
+    ],
+    "answer": "B",
+    "explanation": "D1 = 2.00 x 1.04 = 2.08. Cost of equity = 2.08 / 50 + 0.04 = 0.0816, or 8.16%.",
+    "rationale": {
+      "A": "Incorrect. This uses the dividend just paid (D0) instead of next year's dividend (D1).",
+      "B": "Correct. r = D1 / P + g = (2.00 x 1.04) / 50 + 4% = 4.16% + 4% = 8.16%.",
+      "C": "Incorrect. This is only the forward dividend yield; it omits the growth rate."
+    },
+    "verify": "const p=50,d0=2,g=0.04; return 100*(d0*(1+g)/p+g);",
+    "numericAnswer": 8.16,
+    "tolerance": 0.01,
+    "tags": [
+      "equity-securities",
+      "cost-of-equity"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0012",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Nordhaven Ltd skipped its preference dividend last year. Before it can pay any dividend to common shareholders this year, it must first pay both last year's and this year's preference dividends. Nordhaven's preference shares are most likely:",
+    "options": [
+      "Non-cumulative",
+      "Participating",
+      "Cumulative"
+    ],
+    "answer": "C",
+    "explanation": "Dividends in arrears that must be cleared before common dividends are the defining feature of cumulative preference shares.",
+    "rationale": {
+      "A": "Incorrect. With non-cumulative shares, a skipped dividend is lost and need not be paid later.",
+      "B": "Incorrect. Participating shares may receive extra dividends when profits are high; the feature does not by itself create arrears.",
+      "C": "Correct. Cumulative preference shares accumulate unpaid dividends (arrears) that must be paid before any common dividend."
+    },
+    "tags": [
+      "equity-securities",
+      "preference-shares"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0013",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with statutory voting, cumulative voting in the election of a company's board of directors most likely:",
+    "options": [
+      "Increases the ability of minority shareholders to elect at least one director",
+      "Allows a majority shareholder to elect every director more easily",
+      "Gives each shareholder one vote per seat that cannot be combined"
+    ],
+    "answer": "A",
+    "explanation": "Cumulative voting gives each share one vote per seat and allows votes to be pooled on a single candidate, which helps minority shareholders win representation.",
+    "rationale": {
+      "A": "Correct. Cumulative voting lets shareholders concentrate all their votes (shares x seats) on one candidate, improving minority representation.",
+      "B": "Incorrect. Under statutory voting a majority holder can already win every seat; cumulative voting makes this harder, not easier.",
+      "C": "Incorrect. This describes statutory (straight) voting, not cumulative voting."
+    },
+    "tags": [
+      "equity-securities",
+      "voting-rights"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0014",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Brightwave Audio's revenue rose from USD 500 million to USD 561 million over the year. Unit volume increased by 10%. The average price change per unit over the year is closest to:",
+    "options": [
+      "2.2%",
+      "2.0%",
+      "12.2%"
+    ],
+    "answer": "B",
+    "explanation": "Revenue growth = 561 / 500 - 1 = 12.2%. Price effect = 1.122 / 1.10 - 1 = 2.0%.",
+    "rationale": {
+      "A": "Incorrect. This subtracts volume growth from revenue growth (12.2% - 10%), ignoring the multiplicative relation between price and volume.",
+      "B": "Correct. Revenue = price x volume, so (1 + price change) = 1.122 / 1.10 = 1.02, a 2.0% price increase.",
+      "C": "Incorrect. This is total revenue growth; it attributes all of the growth to price."
+    },
+    "verify": "const r0=500,r1=561,v=0.10; return 100*((r1/r0)/(1+v)-1);",
+    "numericAnswer": 2.0,
+    "tolerance": 0.05,
+    "tags": [
+      "company-analysis",
+      "revenue-drivers"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0015",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Compared with a competitor that has mostly variable costs, a company with a high proportion of fixed operating costs will most likely experience:",
+    "options": [
+      "A smaller percentage change in operating profit for a given percentage change in revenue",
+      "Operating profit that changes in the same proportion as revenue",
+      "A larger percentage change in operating profit for a given percentage change in revenue"
+    ],
+    "answer": "C",
+    "explanation": "Fixed costs create operating leverage: operating profit changes by a larger percentage than revenue.",
+    "rationale": {
+      "A": "Incorrect. This describes a firm with low operating leverage (mostly variable costs).",
+      "B": "Incorrect. That would only be true with no fixed costs (degree of operating leverage of 1).",
+      "C": "Correct. High fixed costs mean high operating leverage, so operating profit is more sensitive to revenue changes."
+    },
+    "tags": [
+      "company-analysis",
+      "operating-leverage"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0016",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst reviewing the past ten years of three companies wants evidence of a durable competitive advantage. Which observation provides the strongest evidence?",
+    "options": [
+      "Return on invested capital has exceeded the company's cost of capital in almost every year",
+      "Revenue grew 40% last year after a large debt-financed acquisition",
+      "Gross margin was the highest in the industry in one year of the ten"
+    ],
+    "answer": "A",
+    "explanation": "Durable advantages show up as returns on invested capital persistently above the cost of capital, not as one-off growth or margin spikes.",
+    "rationale": {
+      "A": "Correct. Sustained returns above the cost of capital indicate the firm can earn economic profits that competitors have not eroded.",
+      "B": "Incorrect. One year of acquired growth says nothing about the persistence of returns and may even destroy value.",
+      "C": "Incorrect. A single year of high margins may reflect cyclical or one-off factors rather than a durable advantage."
+    },
+    "tags": [
+      "company-analysis",
+      "competitive-advantage"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0017",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which industry characteristic most likely supports higher long-run profitability for incumbent firms?",
+    "options": [
+      "Many close substitute products",
+      "High barriers to entry",
+      "A few concentrated suppliers of a critical input"
+    ],
+    "answer": "B",
+    "explanation": "Among the competitive forces, high entry barriers raise profitability, while strong substitutes and powerful suppliers reduce it.",
+    "rationale": {
+      "A": "Incorrect. Close substitutes cap prices and reduce industry profitability.",
+      "B": "Correct. High entry barriers limit new competition and protect incumbents' pricing and margins.",
+      "C": "Incorrect. Concentrated suppliers have bargaining power and can capture industry profits."
+    },
+    "tags": [
+      "industry-analysis",
+      "five-forces"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0018",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In the electric scooter-sharing industry, demand is rising rapidly, prices are falling as firms gain scale, profitability is improving, and competition is moderate because demand growth absorbs new capacity. The industry is most likely in which life-cycle stage?",
+    "options": [
+      "Embryonic",
+      "Shakeout",
+      "Growth"
+    ],
+    "answer": "C",
+    "explanation": "Fast demand growth with falling prices and improving profits, while rivalry stays moderate, matches the growth stage.",
+    "rationale": {
+      "A": "Incorrect. The embryonic stage features slow growth, high prices and frequent losses as the product is still being introduced.",
+      "B": "Incorrect. In shakeout, growth slows, competition intensifies, overcapacity appears and weaker firms exit.",
+      "C": "Correct. Rapidly rising demand, falling prices, improving profitability and limited competitive pressure characterise the growth stage."
+    },
+    "tags": [
+      "industry-analysis",
+      "life-cycle"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0019",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An industry consists of four firms with market shares of 40%, 25%, 20% and 15%. The Herfindahl-Hirschman Index (using shares expressed as decimals) is closest to:",
+    "options": [
+      "0.285",
+      "0.250",
+      "0.263"
+    ],
+    "answer": "A",
+    "explanation": "HHI = 0.40^2 + 0.25^2 + 0.20^2 + 0.15^2 = 0.285.",
+    "rationale": {
+      "A": "Correct. HHI is the sum of squared market shares: 0.16 + 0.0625 + 0.04 + 0.0225 = 0.285.",
+      "B": "Incorrect. This is 1/N, the HHI only if all four firms had equal 25% shares.",
+      "C": "Incorrect. This sums the squared shares of the three largest firms only, omitting the 15% firm."
+    },
+    "verify": "return [0.40,0.25,0.20,0.15].reduce((s,x)=>s+x*x,0);",
+    "numericAnswer": 0.285,
+    "tolerance": 0.0005,
+    "tags": [
+      "industry-analysis",
+      "concentration"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0020",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The market for industrial sensors is USD 2,000 million this year and is expected to grow 6% next year. Ferro Instruments has a 10% market share and is expected to increase it to 11% next year. Ferro's forecast revenue for next year is closest to:",
+    "options": [
+      "USD 220.0 million",
+      "USD 233.2 million",
+      "USD 212.0 million"
+    ],
+    "answer": "B",
+    "explanation": "Revenue forecast = market size x market share = 2,000 x 1.06 x 0.11 = USD 233.2 million.",
+    "rationale": {
+      "A": "Incorrect. This applies the new 11% share to this year's market, forgetting market growth.",
+      "B": "Correct. Next year's market = 2,000 x 1.06 = 2,120; revenue = 11% x 2,120 = 233.2.",
+      "C": "Incorrect. This grows current revenue with the market (200 x 1.06) and ignores the share gain."
+    },
+    "verify": "return 2000*1.06*0.11;",
+    "numericAnswer": 233.2,
+    "tolerance": 0.05,
+    "tags": [
+      "forecasting",
+      "revenue"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0021",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An analyst forecasts the following for Calder Retail next year: revenue USD 1,200 million, gross margin 40%, SG&A equal to 15% of revenue, depreciation and amortisation USD 60 million (not included in SG&A or cost of sales), interest expense USD 30 million and a 25% tax rate. With 50 million shares outstanding, forecast EPS is closest to:",
+    "options": [
+      "USD 4.05",
+      "USD 4.20",
+      "USD 3.15"
+    ],
+    "answer": "C",
+    "explanation": "Gross profit = 0.40 x 1,200 = 480. SG&A = 180. EBIT = 480 - 180 - 60 = 240. EBT = 240 - 30 = 210. Net income = 210 x 0.75 = 157.5. EPS = 157.5 / 50 = USD 3.15.",
+    "rationale": {
+      "A": "Incorrect. This omits depreciation and amortisation: (480 - 180 - 30) x 0.75 / 50.",
+      "B": "Incorrect. This omits taxes: EBT of 210 / 50.",
+      "C": "Correct. EBIT = 480 - 180 - 60 = 240; EBT = 210; net income = 157.5; EPS = 157.5 / 50 = 3.15."
+    },
+    "verify": "const rev=1200,gm=0.40,sga=0.15,da=60,int=30,t=0.25,sh=50; return (rev*gm-rev*sga-da-int)*(1-t)/sh;",
+    "numericAnswer": 3.15,
+    "tolerance": 0.01,
+    "tags": [
+      "forecasting",
+      "earnings"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0022",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst is building an explicit forecast for a steel producer whose earnings are highly cyclical. The explicit forecast horizon should most appropriately:",
+    "options": [
+      "Cover at least one full business cycle",
+      "End at the next expected cyclical peak",
+      "Be limited to one year to reduce forecast error"
+    ],
+    "answer": "A",
+    "explanation": "For cyclical companies, the explicit forecast period should be long enough to reach normalised, mid-cycle earnings, typically at least a full cycle.",
+    "rationale": {
+      "A": "Correct. A horizon spanning a full cycle avoids extrapolating a peak or trough into the terminal value.",
+      "B": "Incorrect. Ending at a peak would embed peak earnings in the terminal value and overstate value.",
+      "C": "Incorrect. A one-year horizon cannot capture cyclical swings and forces the terminal value to rest on unrepresentative earnings."
+    },
+    "tags": [
+      "forecasting",
+      "horizon"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0023",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Westbrook Mills just paid an annual dividend of EUR 1.50. Dividends are expected to grow at 5% per year indefinitely, and the required return on equity is 9%. The intrinsic value per share is closest to:",
+    "options": [
+      "EUR 37.50",
+      "EUR 39.38",
+      "EUR 17.50"
+    ],
+    "answer": "B",
+    "explanation": "D1 = 1.50 x 1.05 = 1.575. V0 = 1.575 / (0.09 - 0.05) = EUR 39.38.",
+    "rationale": {
+      "A": "Incorrect. This uses D0 instead of D1 in the numerator (1.50 / 0.04).",
+      "B": "Correct. V0 = D1 / (r - g) = 1.575 / 0.04 = 39.38.",
+      "C": "Incorrect. This divides D1 by the required return alone, ignoring growth (1.575 / 0.09)."
+    },
+    "verify": "const d0=1.5,g=0.05,r=0.09; return d0*(1+g)/(r-g);",
+    "numericAnswer": 39.38,
+    "tolerance": 0.01,
+    "tags": [
+      "ddm",
+      "gordon-growth"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0024",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Aurora Biotech just paid a dividend of USD 2.00. Dividends are expected to grow at 12% for the next two years and then at 4% per year indefinitely. The required return is 10%. The intrinsic value per share today is closest to:",
+    "options": [
+      "USD 38.67",
+      "USD 47.60",
+      "USD 40.05"
+    ],
+    "answer": "C",
+    "explanation": "D1 = 2.24, D2 = 2.5088, D3 = 2.5088 x 1.04 = 2.6092. Terminal value at t = 2: 2.6092 / (0.10 - 0.04) = 43.486. V0 = 2.24 / 1.1 + (2.5088 + 43.486) / 1.21 = 2.036 + 38.012 = USD 40.05.",
+    "rationale": {
+      "A": "Incorrect. This computes the terminal value as D2 / (r - g) instead of D3 / (r - g), undervaluing the stable-growth stage.",
+      "B": "Incorrect. This fails to discount the terminal value back to today.",
+      "C": "Correct. D1 = 2.24, D2 = 2.5088, D3 = 2.6092; P2 = 2.6092 / 0.06 = 43.49. V0 = 2.24 / 1.10 + (2.5088 + 43.49) / 1.10^2 = 40.05."
+    },
+    "verify": "const d0=2,g1=0.12,g2=0.04,r=0.10; const d1=d0*(1+g1), d2=d1*(1+g1), d3=d2*(1+g2); const p2=d3/(r-g2); return d1/(1+r)+(d2+p2)/(1+r)**2;",
+    "numericAnswer": 40.05,
+    "tolerance": 0.01,
+    "tags": [
+      "ddm",
+      "multistage"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0025",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A non-callable, perpetual preference share has a par value of GBP 100 and pays an annual dividend of 5% of par. If the required return on the share is 7%, its value is closest to:",
+    "options": [
+      "GBP 71.43",
+      "GBP 100.00",
+      "GBP 140.00"
+    ],
+    "answer": "A",
+    "explanation": "A perpetual preference share is a perpetuity: V = D / r = (0.05 x 100) / 0.07 = GBP 71.43.",
+    "rationale": {
+      "A": "Correct. Value = dividend / required return = 5 / 0.07 = 71.43.",
+      "B": "Incorrect. This discounts the dividend at the 5% dividend rate rather than the 7% required return.",
+      "C": "Incorrect. This inverts the inputs, dividing a GBP 7 dividend by 5%."
+    },
+    "verify": "return (0.05*100)/0.07;",
+    "numericAnswer": 71.43,
+    "tolerance": 0.01,
+    "tags": [
+      "ddm",
+      "preferred-stock"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0026",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Kaito Industries has a dividend payout ratio of 40%, a required return on equity of 10% and a sustainable growth rate of 6%. Kaito's justified trailing P/E based on fundamentals is closest to:",
+    "options": [
+      "10.00x",
+      "10.60x",
+      "15.00x"
+    ],
+    "answer": "B",
+    "explanation": "From the Gordon model, P0 / E0 = [D0 / E0 x (1 + g)] / (r - g) = 0.40 x 1.06 / (0.10 - 0.06) = 10.60x.",
+    "rationale": {
+      "A": "Incorrect. This is the justified forward (leading) P/E, payout / (r - g); it omits the (1 + g) factor needed for trailing earnings.",
+      "B": "Correct. Justified trailing P/E = payout x (1 + g) / (r - g) = 0.40 x 1.06 / 0.04 = 10.60.",
+      "C": "Incorrect. This uses the retention ratio (0.60) instead of the payout ratio in the forward P/E formula."
+    },
+    "verify": "const b=0.40,r=0.10,g=0.06; return b*(1+g)/(r-g);",
+    "numericAnswer": 10.6,
+    "tolerance": 0.01,
+    "tags": [
+      "multiples",
+      "justified-pe"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0027",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Delmar Logistics has a market capitalization of INR 3,000 crore, total debt of INR 1,200 crore, cash of INR 300 crore and no preferred stock or minority interest. EBITDA is INR 450 crore. Delmar's EV/EBITDA multiple is closest to:",
+    "options": [
+      "9.33x",
+      "6.67x",
+      "8.67x"
+    ],
+    "answer": "C",
+    "explanation": "Enterprise value = equity value + debt - cash = 3,900. EV/EBITDA = 3,900 / 450 = 8.67x.",
+    "rationale": {
+      "A": "Incorrect. This fails to subtract cash when computing enterprise value.",
+      "B": "Incorrect. This divides equity market value by EBITDA, mismatching an equity numerator with a firm-level denominator.",
+      "C": "Correct. EV = 3,000 + 1,200 - 300 = 3,900; EV/EBITDA = 3,900 / 450 = 8.67."
+    },
+    "verify": "return (3000+1200-300)/450;",
+    "numericAnswer": 8.67,
+    "tolerance": 0.01,
+    "tags": [
+      "multiples",
+      "ev-ebitda"
+    ]
+  },
+  {
+    "id": "cfa1-eq-0028",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Asset-based valuation is most appropriate for which of the following companies?",
+    "options": [
+      "A shipping company that is winding down and holds mostly vessels with active resale markets",
+      "A software company whose value rests mainly on internally developed intangible assets",
+      "A fast-growing consulting firm with few physical assets"
+    ],
+    "answer": "A",
+    "explanation": "Asset-based valuation suits firms with mostly tangible, marketable assets, especially when they are being liquidated, rather than going concerns built on intangibles.",
+    "rationale": {
+      "A": "Correct. Asset-based approaches work best when assets are tangible, readily valued at market and the firm's value lies in its assets, as in liquidation.",
+      "B": "Incorrect. Internally developed intangibles are hard to value and often absent from the balance sheet, making asset-based valuation unreliable.",
+      "C": "Incorrect. A going-concern service firm's value comes from future earnings and human capital, not identifiable assets."
+    },
+    "tags": [
+      "asset-based-valuation"
+    ]
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-country-risk-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "country-risk",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A sovereign's US-dollar bond trades at a spread of 4.5% over US Treasuries of the same maturity. If investors expect a 25% recovery rate in default, the implied annual default probability is closest to:",
+    "options": ["4.50%", "6.00%", "18.00%", "3.38%"],
+    "answer": "B",
+    "explanation": "Spread ≈ PD × (1 − R), so PD ≈ 4.5% / 0.75 = 6.00%.",
+    "rationale": {
+      "A": "Incorrect. 4.50% treats the spread as the default probability, ignoring that investors recover 25%.",
+      "B": "Correct. 4.5% / (1 − 0.25) = 6.00%.",
+      "C": "Incorrect. 18.00% divides by the recovery rate (0.25) instead of the loss rate (0.75).",
+      "D": "Incorrect. 3.38% multiplies the spread by 0.75 instead of dividing by it."
+    },
+    "verify": "return 4.5/(1-0.25);",
+    "numericAnswer": 6.0,
+    "tolerance": 0.005,
+    "tags": ["sovereign-spread", "default-probability"]
+  },
+  {
+    "id": "q-frm1-country-risk-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "country-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An analyst values a project in an emerging market. The risk-free rate is 3.5%, the project beta is 1.2 and the mature-market equity risk premium is 5.5%. The country's sovereign default spread is 2.4%, its equity market volatility is 30% and its government bond volatility is 20%. Adding a country risk premium equal to the default spread scaled by relative volatility, the cost of equity is closest to:",
+    "options": ["12.50%", "10.10%", "13.70%", "11.70%"],
+    "answer": "C",
+    "explanation": "CRP = 2.4% × (30 / 20) = 3.6%. Cost of equity = 3.5% + 1.2 × 5.5% + 3.6% = 3.5% + 6.6% + 3.6% = 13.70%.",
+    "rationale": {
+      "A": "Incorrect. 12.50% adds the unscaled 2.4% default spread instead of the volatility-scaled 3.6%.",
+      "B": "Incorrect. 10.10% omits the country risk premium altogether.",
+      "C": "Correct. 3.5% + 6.6% + 3.6% = 13.70%.",
+      "D": "Incorrect. 11.70% inverts the volatility ratio (20 / 30), giving a CRP of only 1.6%."
+    },
+    "verify": "return 3.5+1.2*5.5+2.4*30/20;",
+    "numericAnswer": 13.7,
+    "tolerance": 0.005,
+    "tags": ["country-risk-premium", "cost-of-equity"]
+  },
+  {
+    "id": "q-frm1-country-risk-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "country-risk",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about sovereign default on local-currency debt is most accurate?",
+    "options": ["It cannot happen, because a government can always print its own currency", "It is always more likely than default on foreign-currency debt", "Local-currency debt is never rated by the major agencies", "It can happen, because printing money to repay has heavy costs such as inflation, so local-currency ratings are usually at or above foreign-currency ratings"],
+    "answer": "D",
+    "explanation": "Governments can print local currency, but doing so can trigger high inflation and currency collapse. Banks' large holdings of government bonds and debt indexation add pressure. Local-currency default is possible but generally less likely, which is reflected in ratings.",
+    "rationale": {
+      "A": "Incorrect. Local-currency defaults have occurred; printing money is not costless.",
+      "B": "Incorrect. Foreign-currency default is generally more likely, because the government cannot create foreign currency.",
+      "C": "Incorrect. Agencies publish separate local- and foreign-currency sovereign ratings.",
+      "D": "Correct. Local-currency default is possible but usually less likely than foreign-currency default."
+    },
+    "tags": ["sovereign-default", "local-currency"]
+  },
+  {
+    "id": "q-frm1-country-risk-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "country-risk",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which consequence is most typical for a government after it defaults on its external debt?",
+    "options": ["Reduced access to international capital markets and higher borrowing costs for years afterwards", "An immediate upgrade of its sovereign rating once the debt is written off", "A stronger domestic currency as capital flows in", "Lower funding costs for domestic banks that hold government bonds"],
+    "answer": "A",
+    "explanation": "Defaulting sovereigns typically face exclusion from markets or much higher spreads, a weaker currency, banking-sector stress and trade disruption. These costs explain why governments try to avoid default.",
+    "rationale": {
+      "A": "Correct. Loss of market access and higher future borrowing costs are classic default costs.",
+      "B": "Incorrect. Ratings are cut to default or near-default levels and recover only gradually.",
+      "C": "Incorrect. Default usually triggers capital flight and currency weakness.",
+      "D": "Incorrect. Banks holding government bonds suffer losses and higher funding costs."
+    },
+    "tags": ["sovereign-default", "costs-of-default"]
+  }
+]

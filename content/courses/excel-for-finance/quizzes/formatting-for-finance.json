@@ -1,0 +1,90 @@
+[
+  {
+    "id": "q-xl-formatting-for-finance-1",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "formatting-for-finance",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Under the most common financial modelling colour convention, what should a reviewer conclude about a number shown in blue font in the middle of a row of calculations?",
+    "options": [
+      "It is a formula that links to another sheet",
+      "It is a formula calculated on the same sheet",
+      "It is a hard-coded input that someone typed in",
+      "It is a check that has failed"
+    ],
+    "answer": "C",
+    "explanation": "Blue font signals a hard-coded input. A blue cell inside a row of formulas suggests a calculation has been overwritten with a typed number and should be investigated.",
+    "rationale": {
+      "A": "Incorrect. Links to other sheets are conventionally green.",
+      "B": "Incorrect. Same-sheet formulas are conventionally black.",
+      "C": "Correct. Blue marks typed inputs, so a blue cell among formulas is a red flag for an overwritten calculation.",
+      "D": "Incorrect. Red, not blue, is commonly used for failed checks or external links."
+    }
+  },
+  {
+    "id": "q-xl-formatting-for-finance-2",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "formatting-for-finance",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A cell contains 4,876,250 and is given the custom number format `#,##0.0,,` (two trailing commas). What does the cell display?",
+    "options": ["4,876.3", "4.88", "4876250.0", "4.9"],
+    "answer": "D",
+    "explanation": "Two trailing commas scale the display by 1,000,000: 4,876,250 / 1,000,000 = 4.87625, shown with one decimal as 4.9.",
+    "rationale": {
+      "A": "Incorrect. 4,876.3 is the display with only one trailing comma (scaling by 1,000).",
+      "B": "Incorrect. The format has one decimal place (0.0), not two.",
+      "C": "Incorrect. This ignores the trailing commas, which scale the displayed value.",
+      "D": "Correct. Scaled by one million and shown to one decimal: 4.9."
+    },
+    "verify": "return Math.round(4876250/1e6*10)/10;",
+    "numericAnswer": 4.9,
+    "tolerance": 0.01
+  },
+  {
+    "id": "q-xl-formatting-for-finance-3",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "formatting-for-finance",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Cells A1, A2 and A3 each contain 2.4 and are formatted to show zero decimal places. A4 contains =SUM(A1:A3) with the same format. What does A4 display?",
+    "options": ["6", "7", "7.2", "8"],
+    "answer": "B",
+    "explanation": "SUM uses stored values: 2.4 × 3 = 7.2, which displays as 7 with no decimals. The cells above each display 2, so the column appears not to foot.",
+    "rationale": {
+      "A": "Incorrect. 6 is the sum of the displayed values; formulas use stored values, not displayed ones.",
+      "B": "Correct. The stored total 7.2 is displayed rounded to 7.",
+      "C": "Incorrect. 7.2 is the stored value, but the zero-decimal format displays it as 7.",
+      "D": "Incorrect. 8 would need each cell rounded up, which neither formatting nor SUM does."
+    },
+    "verify": "return Math.round(2.4*3);",
+    "numericAnswer": 7,
+    "tolerance": 0.01
+  },
+  {
+    "id": "q-xl-formatting-for-finance-4",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "formatting-for-finance",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A cell has the custom number format `#,##0;(#,##0);\"-\"`. Which pair correctly describes how it displays the values −2,500 and 0?",
+    "options": [
+      "(2,500) and -",
+      "-2,500 and 0",
+      "(2,500) and 0",
+      "2,500 and -"
+    ],
+    "answer": "A",
+    "explanation": "The sections are positive; negative; zero. Negatives use the second section, (#,##0), so −2,500 shows as (2,500). Zero uses the third section, a literal dash.",
+    "rationale": {
+      "A": "Correct. The negative section adds parentheses and the zero section shows a dash.",
+      "B": "Incorrect. This is the default General format; the custom sections override both displays.",
+      "C": "Incorrect. The third section replaces zero with a dash.",
+      "D": "Incorrect. The negative section shows parentheses; a negative value never displays as a plain positive number here."
+    }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-xl-tvm-functions-1",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "tvm-functions",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A borrower takes a mortgage of USD 400,000 at 5.4% a year for 25 years with monthly payments. Which value does `=PMT(5.4%/12, 25*12, -400000)` return?",
+    "options": ["29,529.38", "16,952.81", "2,432.52", "1,333.33"],
+    "answer": "C",
+    "explanation": "The periodic rate is 0.054/12 = 0.0045 and nper is 300 months. PMT = 400,000 × 0.0045 / (1 − 1.0045^−300) = 2,432.52 per month. The minus sign in front of the loan makes the payment display as positive.",
+    "rationale": {
+      "A": "Incorrect. 29,529.38 is the annual payment from `=PMT(5.4%, 25, -400000)`; it does not match a monthly schedule.",
+      "B": "Incorrect. 16,952.81 uses the monthly rate but only 25 periods, treating the loan as 25 months long.",
+      "C": "Correct. Monthly rate 0.45% over 300 months gives a payment of 2,432.52.",
+      "D": "Incorrect. 1,333.33 is 400,000 / 300, which ignores interest altogether."
+    },
+    "verify": "const r=0.054/12, n=300, pv=400000; return pv*r/(1-Math.pow(1+r,-n));",
+    "numericAnswer": 2432.52,
+    "tolerance": 0.01,
+    "tags": ["pmt", "period-matching"]
+  },
+  {
+    "id": "q-xl-tvm-functions-2",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "tvm-functions",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An investor deposits USD 2,000 at the START of each year for 10 years into an account earning 5% a year. Which formula result gives the balance at the end of year 10?",
+    "options": ["26,413.57 from `=FV(5%, 10, -2000, 0, 1)`", "25,155.79 from `=FV(5%, 10, -2000)`", "20,000.00 from `=2000*10`", "27,734.25 from `=FV(5%, 10, -2000, 0, 1)*1.05`"],
+    "answer": "A",
+    "explanation": "Start-of-year deposits form an annuity due, so type = 1. The ordinary-annuity FV is 2,000 × (1.05^10 − 1)/0.05 = 25,155.79; multiplying by 1.05 for the extra period of interest gives 26,413.57.",
+    "rationale": {
+      "A": "Correct. Type 1 adds one period of compounding to each deposit: 25,155.79 × 1.05 = 26,413.57.",
+      "B": "Incorrect. 25,155.79 omits the type argument, so Excel assumes end-of-year deposits.",
+      "C": "Incorrect. 20,000 is the sum of the deposits with no interest earned.",
+      "D": "Incorrect. 27,734.25 applies the annuity-due adjustment twice: type 1 already includes the extra factor of 1.05."
+    },
+    "verify": "const r=0.05, n=10, p=2000; return p*(Math.pow(1+r,n)-1)/r*(1+r);",
+    "numericAnswer": 26413.57,
+    "tolerance": 0.01,
+    "tags": ["fv", "annuity-due"]
+  },
+  {
+    "id": "q-xl-tvm-functions-3",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "tvm-functions",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst types `=RATE(60, 600, 30000)` to find the interest rate on a USD 30,000 loan repaid at USD 600 a month, and Excel returns `#NUM!`. What is the most likely cause?",
+    "options": ["The rate must be divided by 12 inside the formula", "RATE cannot solve problems with more than 50 periods", "The guess argument is missing, and it is required", "The payment and the loan amount have the same sign, so no rate can balance the cash flows"],
+    "answer": "D",
+    "explanation": "TVM functions solve an equation that sums discounted cash flows to zero. If the loan (cash received) and the payments (cash paid) are both positive, no interest rate can make them cancel, so RATE fails. Entering the payment as -600 fixes it and returns a monthly rate of about 0.618%, or 7.42% a year.",
+    "rationale": {
+      "A": "Incorrect. RATE outputs a periodic rate; there is no rate input to divide. You multiply the result by 12 afterwards.",
+      "B": "Incorrect. RATE handles any number of periods; 60 is routine.",
+      "C": "Incorrect. Guess is optional and defaults to 10%; it only matters for unusual cash flows.",
+      "D": "Correct. Cash in and cash out must have opposite signs; both are positive here, so the equation has no solution."
+    },
+    "tags": ["rate", "sign-convention"]
+  },
+  {
+    "id": "q-xl-tvm-functions-4",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "tvm-functions",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An investment of USD 8,000 today is expected to be worth USD 12,000 in 6 years, with no cash flows in between. Which value does `=RATE(6, 0, -8000, 12000)` return?",
+    "options": ["8.33%", "6.99%", "6.76%", "50.00%"],
+    "answer": "B",
+    "explanation": "RATE solves 8,000 × (1 + r)^6 = 12,000, so r = 1.5^(1/6) − 1 = 6.99% per year, compounded annually.",
+    "rationale": {
+      "A": "Incorrect. 8.33% is the simple average: a 50% total gain divided by 6 years, which ignores compounding.",
+      "B": "Correct. (12,000 / 8,000)^(1/6) − 1 = 6.99% a year.",
+      "C": "Incorrect. 6.76% is ln(1.5)/6, a continuously compounded rate; RATE assumes discrete compounding once per period.",
+      "D": "Incorrect. 50% is the total return over all six years, not the rate per period."
+    },
+    "verify": "return (Math.pow(12000/8000,1/6)-1)*100;",
+    "numericAnswer": 6.99,
+    "tolerance": 0.005,
+    "tags": ["rate", "compound-growth"]
+  }
+]

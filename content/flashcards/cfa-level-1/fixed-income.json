@@ -1,0 +1,202 @@
+[
+  {
+    "id": "fc-cfa1-fi-001",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "When does a fixed-rate bond trade at a premium, at par or at a discount?",
+    "back": "Premium when the coupon rate > yield to maturity, par when they are equal, discount when coupon < YTM. Price and yield move inversely.",
+    "tags": [
+      "bond-pricing"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-002",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "Flat price, full price and accrued interest: how are they related?",
+    "back": "Full (dirty) price = flat (clean) price + accrued interest. Bonds are usually quoted at the flat price.",
+    "tags": [
+      "bond-pricing"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-003",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "What is the current yield and what does it ignore?",
+    "back": "Annual coupon / flat price. It ignores reinvestment income and any gain or loss from pulling to par.",
+    "tags": [
+      "yields"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-004",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "How are spot rates and a one-year forward rate one year ahead linked?",
+    "back": "$(1 + z_2)^2 = (1 + z_1)(1 + f_{1,1})$. No-arbitrage makes investing for two years equal to rolling two one-year investments.",
+    "tags": [
+      "term-structure"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-005",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "When the spot curve slopes upward, how do forward rates compare with spot rates?",
+    "back": "Forward rates lie above spot rates. With a downward-sloping spot curve, forwards lie below spot rates.",
+    "tags": [
+      "term-structure"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-006",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "How do you get modified duration from Macaulay duration?",
+    "back": "$ModDur = \\frac{MacDur}{1 + r/m}$, where r is the yield per year and m the periods per year.",
+    "tags": [
+      "duration"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-007",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "Write the duration-convexity approximation for a bond's percentage price change.",
+    "back": "$\\%\\Delta P \\approx -ModDur \\times \\Delta y + \\frac{1}{2} \\times Convexity \\times (\\Delta y)^2$.",
+    "tags": [
+      "duration"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-008",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "What is the price value of a basis point (PVBP)?",
+    "back": "The money change in price for a 1 bp yield change: $PVBP = \\frac{PV_{-} - PV_{+}}{2}$, with yields shifted down and up by 1 bp.",
+    "tags": [
+      "duration"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-009",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "When should effective duration be used instead of modified duration?",
+    "back": "For bonds with embedded options (or uncertain cash flows), whose cash flows change with rates. $EffDur = \\frac{PV_{-} - PV_{+}}{2 \\times \\Delta Curve \\times PV_0}$.",
+    "tags": [
+      "duration"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-010",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "What happens to a callable bond's price as yields fall sharply?",
+    "back": "Price appreciation is capped near the call price, producing negative convexity. A putable bond has extra positive convexity when yields rise.",
+    "tags": [
+      "convexity"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-011",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "A bond's Macaulay duration exceeds the investor's horizon. What risk dominates?",
+    "back": "Positive duration gap: market price risk dominates reinvestment risk, so the investor loses if rates rise. Matching Macaulay duration to the horizon immunizes against a single parallel shift.",
+    "tags": [
+      "duration"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-012",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "How does OAS relate to the Z-spread for a callable bond?",
+    "back": "OAS = Z-spread − option value (in bp). For a callable bond the investor is short the call, so OAS < Z-spread; for a putable bond OAS > Z-spread.",
+    "tags": [
+      "spreads"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-013",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "What determines expected loss on a bond?",
+    "back": "Expected loss = probability of default × loss given default, where LGD = exposure × (1 − recovery rate).",
+    "tags": [
+      "credit-risk"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-014",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "How does a widening credit spread affect a bond's price?",
+    "back": "$\\%\\Delta P \\approx -ModDur \\times \\Delta Spread + \\frac{1}{2} \\times Convexity \\times (\\Delta Spread)^2$. Spread duration converts a spread move into a price change.",
+    "tags": [
+      "credit-risk"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-015",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "What are the four Cs of credit analysis?",
+    "back": "Capacity (ability to pay from cash flow), collateral, covenants and character. Some versions add conditions.",
+    "tags": [
+      "credit-risk"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-016",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "What is notching in credit ratings?",
+    "back": "Assigning an issue a rating different from the issuer rating to reflect seniority and recovery prospects. Subordinated debt is notched down, and notching is wider for high-yield issuers.",
+    "tags": [
+      "credit-risk"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-017",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "A floating-rate note's quoted margin is above the required (discount) margin. Where is its price?",
+    "back": "Above par, because it pays more spread than the market requires. Equal margins put the price at par on a reset date.",
+    "tags": [
+      "fi-features"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-018",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "What are contraction risk and extension risk in mortgage-backed securities?",
+    "back": "Contraction risk: rates fall, prepayments speed up and the investor reinvests at lower rates. Extension risk: rates rise, prepayments slow and the security's life lengthens just as its value drops.",
+    "tags": [
+      "mbs"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-019",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "How does a sequential-pay CMO redistribute prepayment risk?",
+    "back": "Principal goes first to the shortest tranche until it is retired, then the next. Short tranches get less extension risk; long tranches get more protection against contraction.",
+    "tags": [
+      "mbs"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fi-020",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "front": "Why is a special purpose entity used in securitization?",
+    "back": "The SPE legally owns the assets and is bankruptcy-remote from the originator, so bondholders' claims depend on the asset pool rather than the originator's credit.",
+    "tags": [
+      "securitization"
+    ]
+  }
+]

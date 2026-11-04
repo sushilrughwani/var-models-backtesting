@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm1-learning-from-financial-disasters-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "learning-from-financial-disasters",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A hedge fund holds USD 100 billion of assets financed with USD 4 billion of equity and the rest borrowed. If the value of the assets falls by 3%, the percentage loss on the fund's equity is closest to:",
+    "options": ["3.00%", "72.00%", "75.00%", "12.00%"],
+    "answer": "C",
+    "explanation": "Leverage = 100 / 4 = 25. Asset loss = 3% × 100 = USD 3 billion, which is 3 / 4 = 75% of equity.",
+    "rationale": {
+      "A": "Incorrect. 3.00% is the asset loss and ignores leverage entirely.",
+      "B": "Incorrect. 72.00% multiplies by the debt-to-equity ratio (96 / 4 = 24) instead of assets to equity (25).",
+      "C": "Correct. A USD 3 billion loss against USD 4 billion of equity is 75%.",
+      "D": "Incorrect. 12.00% multiplies the 3% fall by the equity amount of 4 rather than by leverage."
+    },
+    "verify": "const A=100,E=4; return 0.03*A/E*100;",
+    "numericAnswer": 75,
+    "tolerance": 0.005,
+    "tags": ["leverage", "ltcm"]
+  },
+  {
+    "id": "q-frm1-learning-from-financial-disasters-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "learning-from-financial-disasters",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A municipal investment pool has USD 5 billion of equity and uses reverse repos to hold USD 12 billion of bonds with a duration of 4. If yields rise by 2 percentage points, the loss as a percentage of the pool's equity is closest to:",
+    "options": ["8.00%", "19.20%", "11.20%", "16.00%"],
+    "answer": "B",
+    "explanation": "Loss ≈ 4 × 12 × 0.02 = USD 0.96 billion. As a share of equity: 0.96 / 5 = 19.20%.",
+    "rationale": {
+      "A": "Incorrect. 8.00% is duration times the yield change, the loss on an unlevered portfolio.",
+      "B": "Correct. Apply duration to total assets (0.96 billion) and divide by equity: 19.20%.",
+      "C": "Incorrect. 11.20% applies duration only to the borrowed USD 7 billion instead of all USD 12 billion of assets.",
+      "D": "Incorrect. 16.00% assumes leverage of 2 instead of the actual 12 / 5 = 2.4."
+    },
+    "verify": "return 4*12*0.02/5*100;",
+    "numericAnswer": 19.2,
+    "tolerance": 0.005,
+    "tags": ["orange-county", "duration", "leverage"]
+  },
+  {
+    "id": "q-frm1-learning-from-financial-disasters-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "learning-from-financial-disasters",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A firm sells ten-year fixed-price fuel supply contracts and hedges them by rolling one-month futures. Prices fall sharply, triggering large margin calls on the futures while gains on the customer contracts will be realized only over many years. This situation most closely resembles which historical case and risk type?",
+    "options": [
+      "Barings, rogue-trading risk",
+      "LTCM, model risk from tail correlations",
+      "Metallgesellschaft, funding liquidity risk",
+      "Bankers Trust, conduct risk"
+    ],
+    "answer": "C",
+    "explanation": "Metallgesellschaft's stack-and-roll hedge created a mismatch between immediate margin outflows and slow inflows from long-dated contracts: a funding liquidity problem rather than a pure market-risk mistake.",
+    "rationale": {
+      "A": "Incorrect. Barings involved concealed unauthorized trading, not a disclosed hedging strategy.",
+      "B": "Incorrect. LTCM's losses came from widening spreads and correlated convergence trades, not a maturity-mismatched hedge.",
+      "C": "Correct. The cash-flow mismatch of a rolled short-term hedge against long-term commitments is the Metallgesellschaft lesson.",
+      "D": "Incorrect. Bankers Trust concerned selling complex leveraged swaps to clients."
+    },
+    "tags": ["metallgesellschaft", "liquidity-risk"]
+  },
+  {
+    "id": "q-frm1-learning-from-financial-disasters-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "learning-from-financial-disasters",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which control weakness was most central to the collapse of Barings in 1995?",
+    "options": [
+      "The trader in Singapore controlled both trading and the settlement of his own trades.",
+      "The bank's VaR model used too short a historical window.",
+      "The bank sold leveraged swaps to corporate clients who did not understand them.",
+      "The bank relied on short-term repo funding that was withdrawn in a market-wide run."
+    ],
+    "answer": "A",
+    "explanation": "Leeson ran both front-office trading and back-office settlement, letting him hide losses in an error account. Segregation of duties is the key lesson.",
+    "rationale": {
+      "A": "Correct. Lack of segregation of duties allowed losses to be concealed for years.",
+      "B": "Incorrect. The problem was hidden, unauthorized positions, not a VaR calibration choice.",
+      "C": "Incorrect. That describes the Bankers Trust episode.",
+      "D": "Incorrect. A wholesale funding run describes cases such as Northern Rock or the 2008 dealer runs, not Barings."
+    },
+    "tags": ["barings", "operational-risk"]
+  }
+]

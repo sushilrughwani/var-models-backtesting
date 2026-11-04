@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-bond-yields-and-returns-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "bond-yields-and-returns",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An investor buys a bond at a full price of 98.00, receives a coupon of 5.00 during the year and sells the bond at a full price of 99.00 at year end. The realized gross return is closest to:",
+    "options": ["1.02%", "5.10%", "6.06%", "6.12%"],
+    "answer": "D",
+    "explanation": "R = (99.00 + 5.00 − 98.00) / 98.00 = 6.00 / 98.00 = 6.12%.",
+    "rationale": {
+      "A": "Incorrect. 1.02% counts only the price gain and leaves out the coupon.",
+      "B": "Incorrect. 5.10% is the coupon income alone divided by the purchase price (current yield), ignoring the price gain.",
+      "C": "Incorrect. 6.06% divides the total gain by the ending price of 99 instead of the starting price.",
+      "D": "Correct. Price gain plus coupon, divided by the starting price: 6.12%."
+    },
+    "verify": "return (99+5-98)/98*100;",
+    "numericAnswer": 6.12,
+    "tolerance": 0.005,
+    "tags": ["realized-return"]
+  },
+  {
+    "id": "q-frm1-bond-yields-and-returns-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "bond-yields-and-returns",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Benchmark spot rates (annual compounding) are 3.0% for 1 year and 3.5% for 2 years. A 2-year corporate bond paying a 4% annual coupon on face value 100 trades at 99.00. The spread (a constant added to each benchmark spot rate) that reprices the bond to its market price is closest to:",
+    "options": ["103.43 basis points", "104.42 basis points", "153.43 basis points", "106.56 basis points"],
+    "answer": "B",
+    "explanation": "Solve 4/(1.03 + s) + 104/(1.035 + s)^2 = 99.00 by iteration: s = 0.010442, or 104.42 basis points.",
+    "rationale": {
+      "A": "Incorrect. 103.43 bp is the bond's YTM (4.5343%) minus the 2-year spot rate, a yield spread rather than a spread to the whole curve.",
+      "B": "Correct. Adding 104.42 bp to both spot rates discounts the cash flows to exactly 99.00.",
+      "C": "Incorrect. 153.43 bp subtracts the 1-year spot rate from the bond's YTM, comparing rates of different maturities.",
+      "D": "Incorrect. 106.56 bp adds the spread only to the 2-year rate and leaves the first coupon discounted at the plain 3% benchmark."
+    },
+    "verify": "const f=s=>4/(1.03+s)+104/Math.pow(1.035+s,2)-99; let a=-0.5,b=0.5; for(let i=0;i<200;i++){const m=(a+b)/2; if(f(a)*f(m)<=0){b=m;}else{a=m;}} return (a+b)/2*10000;",
+    "numericAnswer": 104.42,
+    "tolerance": 0.05,
+    "tags": ["spreads"]
+  },
+  {
+    "id": "q-frm1-bond-yields-and-returns-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "bond-yields-and-returns",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "The spot curve slopes upward. An analyst computes one-year expected returns for a 2-year bond and a 10-year bond assuming that today's forward rates are realized. Which statement is correct?",
+    "options": [
+      "The 10-year bond earns more because it has more roll-down",
+      "Each bond earns its own yield to maturity",
+      "Both bonds earn the current one-year spot rate",
+      "The 2-year bond earns more because its price is less sensitive to rates"
+    ],
+    "answer": "C",
+    "explanation": "If forward rates are realized, every default-free bond returns the one-period spot rate over the period; forwards already embed the rising rates that offset any roll-down.",
+    "rationale": {
+      "A": "Incorrect. Roll-down gains appear under the unchanged-term-structure assumption, not when forwards are realized.",
+      "B": "Incorrect. Earning the YTM over one period corresponds to the unchanged-yield scenario.",
+      "C": "Correct. Under realized forwards all bonds earn the same one-period return, equal to today's one-year spot rate.",
+      "D": "Incorrect. Under realized forwards, rate sensitivity does not create a return difference because the path is already priced in."
+    },
+    "tags": ["carry-roll-down"]
+  },
+  {
+    "id": "q-frm1-bond-yields-and-returns-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "bond-yields-and-returns",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Spot rates (annual compounding) are 2% for 1 year and 4% for 2 years. A 2-year bond pays a 5% annual coupon on face value 100. If the term structure stays unchanged over the next year, the bond's one-year realized return is closest to:",
+    "options": ["5.85%", "2.00%", "3.95%", "4.00%"],
+    "answer": "A",
+    "explanation": "P0 = 5/1.02 + 105/1.04^2 = 101.9804. After one year the remaining 105 is discounted at the unchanged 1-year rate: P1 = 105/1.02 = 102.9412. R = (102.9412 + 5 − 101.9804)/101.9804 = 5.85%.",
+    "rationale": {
+      "A": "Correct. With the curve unchanged, the final cash flow rolls down to the 2% one-year rate, producing a return of 5.85%.",
+      "B": "Incorrect. 2.00% is the return if today's forward rates are realized, not if the term structure is unchanged.",
+      "C": "Incorrect. 3.95% is the bond's yield to maturity, the return under the unchanged-yield scenario.",
+      "D": "Incorrect. 4.00% is the 2-year spot rate, which is not the one-year holding-period return."
+    },
+    "verify": "const p0=5/1.02+105/Math.pow(1.04,2); const p1=105/1.02; return (p1+5-p0)/p0*100;",
+    "numericAnswer": 5.85,
+    "tolerance": 0.005,
+    "tags": ["carry-roll-down", "realized-return"]
+  }
+]

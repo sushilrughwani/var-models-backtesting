@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa1-simple-linear-regression-1",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "simple-linear-regression",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "For a sample, Cov(X, Y) = 18, Var(X) = 24, the mean of X is 5 and the mean of Y is 9. The estimated intercept of the regression of Y on X is closest to:",
+    "options": ["0.75", "12.75", "5.25"],
+    "answer": "C",
+    "explanation": "Slope = 18/24 = 0.75. Intercept = mean of Y - slope × mean of X = 9 - 0.75 × 5 = 5.25.",
+    "rationale": {
+      "A": "Incorrect. 0.75 is the slope, not the intercept.",
+      "B": "Incorrect. 12.75 adds slope × mean of X to the mean of Y instead of subtracting it.",
+      "C": "Correct. 9 - 0.75 × 5 = 5.25."
+    },
+    "verify": "const b1 = 18/24; return 9 - b1*5;",
+    "numericAnswer": 5.25,
+    "tolerance": 0.005,
+    "tags": ["ols-coefficients"]
+  },
+  {
+    "id": "q-cfa1-simple-linear-regression-2",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "simple-linear-regression",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A simple linear regression estimated with 22 observations has a regression sum of squares of 60 and a sum of squared errors of 40. The F-statistic is closest to:",
+    "options": ["1.50", "30.00", "33.00"],
+    "answer": "B",
+    "explanation": "MSR = 60/1 = 60. MSE = 40/(22 - 2) = 2. F = 60/2 = 30.00.",
+    "rationale": {
+      "A": "Incorrect. 1.50 divides SSR by SSE without converting them to mean squares.",
+      "B": "Correct. F = MSR/MSE = 60/2 = 30.",
+      "C": "Incorrect. 33.00 divides SSE by n = 22 instead of n - 2 = 20 degrees of freedom."
+    },
+    "verify": "return (60/1)/(40/(22-2));",
+    "numericAnswer": 30,
+    "tolerance": 0.005,
+    "tags": ["anova", "f-test"]
+  },
+  {
+    "id": "q-cfa1-simple-linear-regression-3",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "simple-linear-regression",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A regression of a stock's excess returns on the market's excess returns gives a slope (beta) of 1.25 with a standard error of 0.20. The t-statistic for testing whether the stock's beta differs from 1 is closest to:",
+    "options": ["6.25", "0.25", "1.25"],
+    "answer": "C",
+    "explanation": "t = (estimated slope - hypothesised value)/standard error = (1.25 - 1)/0.20 = 1.25.",
+    "rationale": {
+      "A": "Incorrect. 6.25 tests whether beta differs from 0, not from 1.",
+      "B": "Incorrect. 0.25 is the difference between the estimate and 1, not divided by the standard error.",
+      "C": "Correct. (1.25 - 1)/0.20 = 1.25."
+    },
+    "verify": "return (1.25 - 1)/0.20;",
+    "numericAnswer": 1.25,
+    "tolerance": 0.005,
+    "tags": ["slope-test"]
+  },
+  {
+    "id": "q-cfa1-simple-linear-regression-4",
+    "course": "cfa-level-1",
+    "topic": "quantitative-methods",
+    "lesson": "simple-linear-regression",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst estimates ln(Revenue) = 3.2 + 0.04 × (Number of stores). The slope coefficient is best interpreted as:",
+    "options": ["each additional store increases revenue by approximately 4%", "each additional store increases revenue by 0.04 currency units", "a 1% increase in the number of stores increases revenue by 0.04%"],
+    "answer": "A",
+    "explanation": "In a log-lin model, the slope measures the relative change in the dependent variable for a one-unit change in the independent variable: about 4% per extra store.",
+    "rationale": {
+      "A": "Correct. A log-lin slope is a relative (percentage) change in Y per unit of X.",
+      "B": "Incorrect. That interpretation fits a lin-lin model; here the dependent variable is in logs.",
+      "C": "Incorrect. That is the elasticity interpretation of a log-log model; the number of stores is not logged."
+    },
+    "tags": ["functional-forms"]
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm1-properties-of-options-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "properties-of-options",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A non-dividend-paying stock trades at USD 40. A European call has a strike of USD 38 and expires in 9 months. The risk-free rate is 5% per year with continuous compounding. The lower bound for the call price is closest to:",
+    "options": ["USD 2.00", "USD 0.55", "USD 40.00", "USD 3.40"],
+    "answer": "D",
+    "explanation": "c ≥ S − Ke^(−rT) = 40 − 38e^(−0.05 × 0.75) = 40 − 36.60 = 3.40.",
+    "rationale": {
+      "A": "Incorrect. 2.00 is S − K, which ignores discounting the strike; it is the bound for immediate exercise, not for a European call.",
+      "B": "Incorrect. 0.55 compounds the strike instead of discounting it.",
+      "C": "Incorrect. 40.00 is the upper bound for a call, the stock price itself.",
+      "D": "Correct. The stock price minus the present value of the strike is 3.40."
+    },
+    "verify": "return 40-38*Math.exp(-0.05*0.75);",
+    "numericAnswer": 3.4,
+    "tolerance": 0.005,
+    "tags": ["option-bounds"]
+  },
+  {
+    "id": "q-frm1-properties-of-options-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "properties-of-options",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A non-dividend-paying stock trades at USD 30. A 6-month European call with a strike of USD 32 is priced at USD 1.80. The risk-free rate is 4% per year, continuously compounded. Using put-call parity, the price of a European put with the same strike and expiry is closest to:",
+    "options": ["USD 3.17", "USD 3.80", "USD 0.43", "USD 1.80"],
+    "answer": "A",
+    "explanation": "p = c + Ke^(−rT) − S = 1.80 + 32e^(−0.02) − 30 = 1.80 + 31.37 − 30 = 3.17.",
+    "rationale": {
+      "A": "Correct. Parity gives p = 1.80 + 31.37 − 30 = 3.17.",
+      "B": "Incorrect. 3.80 forgets to discount the strike.",
+      "C": "Incorrect. 0.43 reverses the signs of the strike and stock terms (S + c − Ke^(−rT)).",
+      "D": "Incorrect. Calls and puts with the same strike are equal only when S equals the present value of K."
+    },
+    "verify": "return 1.8+32*Math.exp(-0.04*0.5)-30;",
+    "numericAnswer": 3.17,
+    "tolerance": 0.005,
+    "tags": ["put-call-parity"]
+  },
+  {
+    "id": "q-frm1-properties-of-options-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "properties-of-options",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "For European options on a non-dividend-paying stock, a trader observes that c + Ke^(−rT) is greater than p + S, where c and p have the same strike K and expiry T. Which set of trades locks in an arbitrage profit?",
+    "options": ["Buy the call, sell the put, short the stock and lend Ke^(−rT)", "Buy the call and the put, and borrow Ke^(−rT)", "Sell the call, buy the put, buy the stock and borrow Ke^(−rT)", "Sell the call and the put, and buy the stock"],
+    "answer": "C",
+    "explanation": "The fiduciary call (call plus cash) is expensive relative to the protective put (put plus stock). Sell the expensive side (write the call, borrow the cash amount) and buy the cheap side (buy the put and the stock). The difference is collected today and the positions offset at expiry.",
+    "rationale": {
+      "A": "Incorrect. This buys the expensive portfolio and sells the cheap one, locking in a loss.",
+      "B": "Incorrect. A long straddle financed by borrowing is a volatility bet, not an arbitrage.",
+      "C": "Correct. Selling the overpriced fiduciary call and buying the underpriced protective put captures the gap riskless.",
+      "D": "Incorrect. A short straddle plus long stock leaves exposure to large stock moves."
+    },
+    "tags": ["put-call-parity", "arbitrage"]
+  },
+  {
+    "id": "q-frm1-properties-of-options-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "properties-of-options",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement about early exercise of American options is most accurate?",
+    "options": ["An American call on a non-dividend-paying stock should be exercised early when it is deep in the money", "An American put on a non-dividend-paying stock is never exercised early, so it is worth the same as a European put", "Early exercise of an American call is never optimal for any stock, whether or not it pays dividends", "An American call on a non-dividend-paying stock should never be exercised early, but early exercise of a deep in-the-money American put can be optimal"],
+    "answer": "D",
+    "explanation": "Without dividends, a call is always worth at least S − Ke^(−rT), which exceeds the exercise value S − K, so the call is worth more alive than dead. A deep in-the-money put may be exercised early because receiving K now earns interest and the stock cannot fall below zero.",
+    "rationale": {
+      "A": "Incorrect. Even deep in the money, selling the call beats exercising it when there are no dividends.",
+      "B": "Incorrect. American puts can be optimally exercised early, so they are generally worth more than European puts.",
+      "C": "Incorrect. With dividends, exercising just before an ex-dividend date can be optimal.",
+      "D": "Correct. This states both results correctly."
+    },
+    "tags": ["early-exercise"]
+  }
+]

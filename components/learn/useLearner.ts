@@ -1,0 +1,20 @@
+"use client";
+import { KEYS } from "@/lib/storage";
+import { useStored } from "@/lib/storage/useStored";
+import type { Attempt } from "@/lib/learning/analytics";
+import type { Bookmark, MockResult, PlannerSettings, ProgressMap, QuizResult, Profile } from "@/lib/learning/state";
+import { DEFAULT_PROFILE } from "@/lib/learning/state";
+import type { SrsState } from "@/lib/learning/sm2";
+
+export const useProgress = () => useStored<ProgressMap>(KEYS.progress, {});
+export const useAttempts = () => useStored<Attempt[]>(KEYS.attempts, []);
+export const useFlags = () => useStored<string[]>(KEYS.flags, []);
+export const useBookmarks = () => useStored<Bookmark[]>(KEYS.bookmarks, []);
+export const useNotesMap = () => useStored<Record<string, string>>(KEYS.notes, {});
+export const useQuizResults = () => useStored<Record<string, QuizResult>>(KEYS.quizResults, {});
+export const useMockResults = () => useStored<MockResult[]>(KEYS.mockResults, []);
+export const useSrs = () => useStored<Record<string, SrsState>>(KEYS.srs, {});
+export const useActivity = () => useStored<string[]>(KEYS.activity, []);
+export const usePlanner = () => useStored<PlannerSettings | null>(KEYS.planner, null);
+export const useProfile = () => useStored<Profile>(KEYS.profile, DEFAULT_PROFILE);
+export const useLastLesson = () => useStored<{ course: string; lesson: string; title: string; at: string } | null>(KEYS.lastLesson, null);

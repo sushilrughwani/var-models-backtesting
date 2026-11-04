@@ -1,0 +1,162 @@
+[
+  {
+    "id": "fc-cfa1-eq-001",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "At what price does a margin call occur on a long purchase?",
+    "back": "$P = P_0 \\times \\frac{1 - IM}{1 - MM}$. Example: bought at 50, initial margin 50%, maintenance margin 25%: call below 50 × 0.5 / 0.75 = 33.33.",
+    "tags": [
+      "market-organization"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-002",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "What is the leverage ratio of a margin purchase?",
+    "back": "$\\text{Leverage ratio} = \\frac{1}{IM}$. With 40% initial margin, leverage is 2.5, so a 10% price move gives roughly a 25% return on equity (before costs).",
+    "tags": [
+      "market-organization"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-003",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "Common trap: where do you place a stop order to limit losses on a short position?",
+    "back": "A buy stop above the current market price. A sell stop is placed below the market to protect a long position.",
+    "tags": [
+      "market-organization"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-004",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "How are constituents weighted in a price-weighted index, and what does a split do?",
+    "back": "Weights are proportional to share price, so high-priced stocks dominate. After a split the divisor is reduced so the index level is unchanged, and the split stock's weight falls.",
+    "tags": [
+      "indexes"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-005",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "What are the drawbacks of an equal-weighted index?",
+    "back": "It overweights small caps relative to their market value and must be rebalanced frequently because price changes alter the equal weights.",
+    "tags": [
+      "indexes"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-006",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "Define the three forms of market efficiency.",
+    "back": "Weak form: prices reflect all past market data. Semi-strong: all publicly available information. Strong: all public and private information.",
+    "tags": [
+      "market-efficiency"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-007",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "If markets are weak-form efficient, which analysis cannot earn abnormal returns?",
+    "back": "Technical analysis based on past prices and volume. Fundamental analysis may still add value unless markets are semi-strong efficient.",
+    "tags": [
+      "market-efficiency"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-008",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "Common trap: why might a documented market anomaly not offer a real opportunity?",
+    "back": "It may result from data mining, ignore transaction costs or risk, or disappear once published and traded on.",
+    "tags": [
+      "market-efficiency"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-009",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "How does cumulative voting help minority shareholders?",
+    "back": "Shareholders get votes equal to shares × number of board seats and may concentrate all votes on one candidate, making it easier for a minority to elect a director.",
+    "tags": [
+      "equity-securities"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-010",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "Name Porter's five forces.",
+    "back": "Threat of new entrants, threat of substitutes, bargaining power of buyers, bargaining power of suppliers, and rivalry among existing competitors.",
+    "tags": [
+      "industry-analysis"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-011",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "List the stages of the industry life cycle.",
+    "back": "Embryonic, growth, shakeout, mature and decline. Competition on price usually intensifies in shakeout as growth slows.",
+    "tags": [
+      "industry-analysis"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-012",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "State the Gordon (constant) growth model.",
+    "back": "$V_0 = \\frac{D_1}{r - g} = \\frac{D_0(1 + g)}{r - g}$, valid only if r > g. A common trap is using D₀ in the numerator instead of D₁.",
+    "tags": [
+      "dcf"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-013",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "What is the sustainable growth rate?",
+    "back": "$g = b \\times ROE$, where b is the earnings retention rate (1 − payout ratio).",
+    "tags": [
+      "dcf"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-014",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "How is non-callable, non-convertible perpetual preferred stock valued?",
+    "back": "$V_0 = \\frac{D_p}{r_p}$, a perpetuity of the fixed preferred dividend.",
+    "tags": [
+      "dcf"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-015",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "What is the justified leading P/E from the Gordon growth model?",
+    "back": "$\\frac{P_0}{E_1} = \\frac{1 - b}{r - g}$. It rises with the payout ratio and growth and falls as the required return rises.",
+    "tags": [
+      "multiples"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eq-016",
+    "course": "cfa-level-1",
+    "topic": "equity-investments",
+    "front": "What is enterprise value and why use EV/EBITDA?",
+    "back": "EV = market value of equity + debt + preferred stock + noncontrolling interest − cash and short-term investments. EV/EBITDA compares firms with different capital structures because EBITDA is a pre-interest measure.",
+    "tags": [
+      "multiples"
+    ]
+  }
+]

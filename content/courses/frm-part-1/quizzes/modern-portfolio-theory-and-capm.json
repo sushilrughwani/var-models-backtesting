@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-modern-portfolio-theory-and-capm-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "modern-portfolio-theory-and-capm",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio is invested 50% in Fund X (standard deviation 20%) and 50% in Fund Y (standard deviation 30%). The correlation between the funds is −0.2. The portfolio standard deviation is closest to:",
+    "options": ["25.00%", "16.28%", "18.03%", "19.62%"],
+    "answer": "B",
+    "explanation": "Variance = 0.25(0.04) + 0.25(0.09) + 2(0.5)(0.5)(−0.2)(0.20)(0.30) = 0.01 + 0.0225 − 0.006 = 0.0265. Standard deviation = √0.0265 = 16.28%.",
+    "rationale": {
+      "A": "Incorrect. 25.00% is the weighted average of the standard deviations, which holds only when correlation is +1.",
+      "B": "Correct. √0.0265 = 16.28%.",
+      "C": "Incorrect. 18.03% drops the covariance term, as if correlation were zero.",
+      "D": "Incorrect. 19.62% uses a correlation of +0.2, getting the sign of the covariance term wrong."
+    },
+    "verify": "const w1=0.5,w2=0.5,s1=0.2,s2=0.3,r=-0.2; return Math.sqrt(w1*w1*s1*s1+w2*w2*s2*s2+2*w1*w2*r*s1*s2)*100;",
+    "numericAnswer": 16.28,
+    "tolerance": 0.005,
+    "tags": ["portfolio-risk", "diversification"]
+  },
+  {
+    "id": "q-frm1-modern-portfolio-theory-and-capm-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "modern-portfolio-theory-and-capm",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A stock has a standard deviation of 32% and a correlation with the market of 0.5. The market's standard deviation is 20%. The stock's beta is closest to:",
+    "options": ["0.16", "0.31", "0.80", "0.50"],
+    "answer": "C",
+    "explanation": "β = ρ × σ_i / σ_M = 0.5 × 0.32 / 0.20 = 0.80.",
+    "rationale": {
+      "A": "Incorrect. 0.16 is ρ × σ_i (0.5 × 0.32); it forgets to divide by the market standard deviation.",
+      "B": "Incorrect. 0.31 inverts the volatility ratio (ρ × σ_M / σ_i).",
+      "C": "Correct. 0.5 × 0.32 / 0.20 = 0.80.",
+      "D": "Incorrect. 0.50 is the correlation itself; beta also scales by the ratio of volatilities."
+    },
+    "verify": "return 0.5*0.32/0.20;",
+    "numericAnswer": 0.8,
+    "tolerance": 0.005,
+    "tags": ["beta"]
+  },
+  {
+    "id": "q-frm1-modern-portfolio-theory-and-capm-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "modern-portfolio-theory-and-capm",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The risk-free rate is 2.5% and the expected market return is 8.5%. Using the CAPM, the required return on a stock with a beta of 0.8 is closest to:",
+    "options": ["7.30%", "9.30%", "6.80%", "8.50%"],
+    "answer": "A",
+    "explanation": "E(R) = 2.5% + 0.8 × (8.5% − 2.5%) = 2.5% + 4.8% = 7.30%.",
+    "rationale": {
+      "A": "Correct. 2.5% + 0.8 × 6.0% = 7.30%.",
+      "B": "Incorrect. 9.30% multiplies beta by the market return (0.8 × 8.5%) instead of by the market risk premium, then adds the risk-free rate.",
+      "C": "Incorrect. 6.80% is just beta times the market return, omitting the risk-free rate and the premium structure.",
+      "D": "Incorrect. 8.50% is the market return, which applies only to a beta of 1."
+    },
+    "verify": "return 2.5+0.8*(8.5-2.5);",
+    "numericAnswer": 7.3,
+    "tolerance": 0.005,
+    "tags": ["capm"]
+  },
+  {
+    "id": "q-frm1-modern-portfolio-theory-and-capm-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "modern-portfolio-theory-and-capm",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which statement correctly contrasts the capital market line (CML) and the security market line (SML)?",
+    "options": [
+      "Both lines measure risk with beta, but the CML applies only to individual stocks",
+      "The CML measures risk with beta and applies to all assets; the SML measures risk with standard deviation and applies only to efficient portfolios",
+      "The SML applies only to the market portfolio, while the CML applies to all securities",
+      "The CML measures risk with standard deviation and applies to efficient portfolios; the SML measures risk with beta and applies to all assets and portfolios"
+    ],
+    "answer": "D",
+    "explanation": "The CML plots expected return against total risk and describes efficient combinations of the market portfolio and the risk-free asset. The SML plots required return against beta and holds for every asset, including inefficient ones.",
+    "rationale": {
+      "A": "Incorrect. The CML uses standard deviation, and it applies to efficient portfolios, not individual stocks.",
+      "B": "Incorrect. This reverses the two lines.",
+      "C": "Incorrect. The SML applies to all assets; the CML applies to efficient portfolios only.",
+      "D": "Correct. CML: total risk, efficient portfolios. SML: beta, every asset."
+    },
+    "tags": ["cml", "sml", "capm"]
+  }
+]

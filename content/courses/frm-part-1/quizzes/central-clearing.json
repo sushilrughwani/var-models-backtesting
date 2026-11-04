@@ -1,0 +1,89 @@
+[
+  {
+    "id": "q-frm1-central-clearing-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "central-clearing",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A clearing member defaults and the CCP incurs a close-out loss of USD 250m. The defaulter had posted initial margin of USD 150m and contributed USD 30m to the default fund. The CCP's skin in the game is USD 15m, and surviving members' default fund contributions total USD 400m. The loss absorbed by the surviving members' default fund (USD millions) is closest to:",
+    "options": ["70", "55", "100", "0"],
+    "answer": "B",
+    "explanation": "250 − 150 (defaulter IM) − 30 (defaulter default fund) − 15 (CCP skin in the game) = 55m, which falls on the surviving members' fund (13.75% of it).",
+    "rationale": {
+      "A": "Incorrect. 70 forgets that the CCP's own skin in the game ranks before the survivors' contributions.",
+      "B": "Correct. After the defaulter's resources and the CCP's capital tranche, 55m remains for the survivors' fund.",
+      "C": "Incorrect. 100 deducts only the defaulter's initial margin and ignores its default fund contribution and the CCP's tranche.",
+      "D": "Incorrect. The defaulter's resources and CCP capital total 195m, which is less than the 250m loss."
+    },
+    "verify": "return Math.max(250-150-30-15,0);",
+    "numericAnswer": 55,
+    "tolerance": 0.5,
+    "tags": ["default-waterfall"]
+  },
+  {
+    "id": "q-frm1-central-clearing-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "central-clearing",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Dealer X has trades with Dealer Y worth +20m to X and trades with Dealer Z worth −15m to X. All trades are moved to the same CCP, which nets multilaterally. X's net mark-to-market position with the CCP (USD millions) is closest to:",
+    "options": ["35", "20", "0", "5"],
+    "answer": "D",
+    "explanation": "Facing a single CCP, X's positions net across counterparties: 20 − 15 = +5m.",
+    "rationale": {
+      "A": "Incorrect. 35 adds absolute values; offsetting positions reduce the net amount.",
+      "B": "Incorrect. 20 is X's bilateral exposure to Y, which is what X faces without central clearing.",
+      "C": "Incorrect. Netting would give zero only if the two positions were equal and opposite.",
+      "D": "Correct. Multilateral netting combines +20 and −15 into a single +5 position with the CCP."
+    },
+    "verify": "return 20-15;",
+    "numericAnswer": 5,
+    "tolerance": 0.01,
+    "tags": ["multilateral-netting"]
+  },
+  {
+    "id": "q-frm1-central-clearing-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "central-clearing",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "During a sudden market sell-off, a CCP's margin model raises initial margin requirements for all members, who must deliver additional collateral within hours. This illustrates which risk associated with central clearing?",
+    "options": ["Procyclicality", "Adverse selection", "Cherry-picking", "Basis risk"],
+    "answer": "A",
+    "explanation": "Risk-sensitive margin models demand more collateral when volatility spikes, which is exactly when liquidity is scarce. This can amplify stress across the system.",
+    "rationale": {
+      "A": "Correct. Margin rising in a downturn and draining liquidity is the definition of procyclicality.",
+      "B": "Incorrect. Adverse selection refers to members clearing trades whose risks they understand better than the CCP.",
+      "C": "Incorrect. Cherry-picking is a liquidator selectively enforcing contracts in bilateral default; CCP netting prevents it.",
+      "D": "Incorrect. Basis risk is a hedging mismatch, unrelated to margin calls."
+    },
+    "tags": ["procyclicality", "ccp-risks"]
+  },
+  {
+    "id": "q-frm1-central-clearing-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "central-clearing",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which statement about central clearing is most accurate?",
+    "options": [
+      "Because a CCP runs a matched book, it bears market risk on every trade it clears",
+      "Clearing a single product through a CCP while keeping other products bilateral always reduces a firm's total counterparty exposure",
+      "Through novation the CCP becomes the counterparty to both sides of each trade, and it faces market risk only if a member defaults",
+      "Surviving members' default fund contributions are used before the defaulting member's initial margin"
+    ],
+    "answer": "C",
+    "explanation": "Novation replaces one bilateral trade with two trades against the CCP. Its book is matched, so it has no net market risk unless a member fails and leaves the CCP with an unhedged position.",
+    "rationale": {
+      "A": "Incorrect. A matched book means offsetting long and short positions, so no net market risk.",
+      "B": "Incorrect. Splitting netting sets between a CCP and bilateral counterparties can increase exposures.",
+      "C": "Correct. This describes novation and the conditional nature of the CCP's market risk.",
+      "D": "Incorrect. The defaulter's own resources are always used first in the waterfall."
+    },
+    "tags": ["novation"]
+  }
+]

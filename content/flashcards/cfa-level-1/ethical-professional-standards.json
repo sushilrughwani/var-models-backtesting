@@ -1,0 +1,182 @@
+[
+  {
+    "id": "fc-cfa1-eth-001",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "Name the seven Standards of Professional Conduct in order.",
+    "back": "I Professionalism; II Integrity of Capital Markets; III Duties to Clients; IV Duties to Employers; V Investment Analysis, Recommendations, and Actions; VI Conflicts of Interest; VII Responsibilities as a CFA Institute Member or Candidate.",
+    "tags": [
+      "code-and-standards"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-002",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "Local law and the Code and Standards impose different requirements. Which do you follow?",
+    "back": "Follow the stricter of the two. If local law is stricter, obey the law; if the Code and Standards are stricter, comply with them (unless that would break the law).",
+    "tags": [
+      "professionalism"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-003",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "A member learns that colleagues are breaking the law. What does the Standard on knowledge of the law require?",
+    "back": "Do not participate or assist, and dissociate from the activity (e.g., report to supervisors or compliance, and resign if needed). Reporting to regulators is encouraged but not strictly required.",
+    "tags": [
+      "professionalism"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-004",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "When may a member accept a gift from a client versus from an issuer or broker?",
+    "back": "Client gifts (which reward past performance) are generally acceptable if disclosed to the employer. Gifts from parties who could influence independence, such as issuers or brokers, should be limited to items of modest value.",
+    "tags": [
+      "professionalism"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-005",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "What is the mosaic theory?",
+    "back": "An analyst may combine material public information with nonmaterial nonpublic information to form a conclusion, and may act on it even if the conclusion itself would have been material had it been disclosed by the company.",
+    "tags": [
+      "mnpi"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-006",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "Common trap: an issuer briefs a small group of analysts on unannounced earnings. Is the information now public?",
+    "back": "No. Information is public only once it has been disseminated to the marketplace broadly. Selective disclosure to a few analysts leaves it material nonpublic, so they may not trade or cause others to trade on it.",
+    "tags": [
+      "mnpi"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-007",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "What are the two broad types of market manipulation?",
+    "back": "Information-based manipulation (spreading false or misleading information, e.g., pump-and-dump rumors) and transaction-based manipulation (trades that distort prices or create artificial volume).",
+    "tags": [
+      "integrity-of-markets"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-008",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "Does fair dealing require that all clients be treated equally?",
+    "back": "No. It requires fair treatment: recommendations and trades must not disadvantage any client. Different service levels are allowed if they are disclosed and available to everyone who pays for them.",
+    "tags": [
+      "duties-to-clients"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-009",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "In a pension plan, to whom does a manager owe the duty of loyalty?",
+    "back": "To the plan participants and beneficiaries, not to the plan sponsor or the company's management.",
+    "tags": [
+      "duties-to-clients"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-010",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "What does suitability require for an advisory relationship?",
+    "back": "Make reasonable inquiry into the client's objectives, constraints and experience before acting, document them (normally in an investment policy statement), judge suitability in a total-portfolio context, and update the information at least annually.",
+    "tags": [
+      "duties-to-clients"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-011",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "When may a member disclose confidential client information?",
+    "back": "When the information concerns illegal activity by the client, when disclosure is required by law, or when the client permits it. Cooperating with a CFA Institute Professional Conduct inquiry is also permitted.",
+    "tags": [
+      "duties-to-clients"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-012",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "A client offers a portfolio manager a bonus if the account beats its benchmark. What must the manager do?",
+    "back": "Obtain written consent from the employer before accepting. Additional compensation that could create a conflict with the employer's interest requires written consent from all parties involved.",
+    "tags": [
+      "duties-to-employers"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-013",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "A supervisor finds the firm's compliance procedures inadequate. What should she do?",
+    "back": "Make reasonable efforts to detect and prevent violations, recommend adequate procedures in writing, and decline supervisory responsibility (in writing) until a reasonable compliance system exists.",
+    "tags": [
+      "duties-to-employers"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-014",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "How long should research records be kept when no regulation specifies a period?",
+    "back": "CFA Institute recommends at least seven years. Records supporting recommendations belong to the employer, not the analyst.",
+    "tags": [
+      "investment-analysis"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-015",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "In what order should transactions be prioritized under the Standard on priority of transactions?",
+    "back": "Clients and employer first, personal accounts last. A family member's fee-paying account is treated like any other client account, neither favored nor disadvantaged.",
+    "tags": [
+      "conflicts"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-016",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "When must referral fees be disclosed, and to whom?",
+    "back": "Before entering into any agreement for services, to the employer, clients and prospective clients, including the nature and estimated value of the consideration.",
+    "tags": [
+      "conflicts"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-017",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "Common trap: is 'Jane Lee, a CFA' or 'CFA Level II candidate' acceptable wording?",
+    "back": "No. CFA must be used as an adjective (Jane Lee, CFA, or a CFA charterholder) and there is no partial designation. A candidate may say they are a Level II candidate in the CFA Program, and may state factually that they passed each level on the first attempt.",
+    "tags": [
+      "designation"
+    ]
+  },
+  {
+    "id": "fc-cfa1-eth-018",
+    "course": "cfa-level-1",
+    "topic": "ethical-professional-standards",
+    "front": "Under GIPS, what is a composite and which portfolios must be included?",
+    "back": "A composite aggregates portfolios managed to a similar mandate or strategy. All actual fee-paying discretionary portfolios must be included in at least one composite. Compliance is firm-wide and voluntary; partial compliance cannot be claimed.",
+    "tags": [
+      "gips"
+    ]
+  }
+]

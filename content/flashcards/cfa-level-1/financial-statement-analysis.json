@@ -1,0 +1,222 @@
+[
+  {
+    "id": "fc-cfa1-fsa-001",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "List the five steps of revenue recognition under the converged IFRS/US GAAP standard.",
+    "back": "1 Identify the contract; 2 identify performance obligations; 3 determine the transaction price; 4 allocate the price to the obligations; 5 recognize revenue when (or as) each obligation is satisfied.",
+    "tags": [
+      "income-statement"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-002",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "How is basic EPS calculated?",
+    "back": "$\\text{Basic EPS} = \\frac{\\text{Net income} - \\text{Preferred dividends}}{\\text{Weighted average common shares outstanding}}$.",
+    "tags": [
+      "income-statement"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-003",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "Common trap: can a convertible security that raises EPS be included in diluted EPS?",
+    "back": "No. Antidilutive securities are excluded, so diluted EPS can never be higher than basic EPS.",
+    "tags": [
+      "income-statement"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-004",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "How does the treasury stock method work, and when are options dilutive?",
+    "back": "Assume options are exercised and the proceeds buy back shares at the average market price; net new shares = shares issued − proceeds / average price. Options are dilutive only when the average price exceeds the exercise price.",
+    "tags": [
+      "income-statement"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-005",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "How is interest and dividends paid classified under IFRS versus US GAAP?",
+    "back": "US GAAP: interest paid is operating, dividends paid are financing. IFRS: interest paid may be operating or financing, and dividends paid may be operating or financing.",
+    "tags": [
+      "cash-flow"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-006",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "How is interest and dividends received classified under IFRS versus US GAAP?",
+    "back": "US GAAP: both are operating. IFRS: either operating or investing.",
+    "tags": [
+      "cash-flow"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-007",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "Indirect method: how does an increase in accounts receivable affect CFO?",
+    "back": "It is subtracted from net income, because revenue was recognized but cash was not yet collected. Increases in operating current liabilities are added.",
+    "tags": [
+      "cash-flow"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-008",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "Write FCFF and FCFE starting from CFO.",
+    "back": "$FCFF = CFO + Int(1 - t) - FCInv$; $FCFE = CFO - FCInv + \\text{Net borrowing}$.",
+    "tags": [
+      "cash-flow"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-009",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "With rising prices and stable inventory, how does LIFO compare with FIFO?",
+    "back": "LIFO gives higher COGS, lower gross profit and net income, lower ending inventory, lower taxes and therefore higher CFO. LIFO is not permitted under IFRS.",
+    "tags": [
+      "inventories"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-010",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "How do you convert LIFO figures to FIFO?",
+    "back": "FIFO inventory = LIFO inventory + LIFO reserve; FIFO COGS = LIFO COGS − increase in LIFO reserve.",
+    "tags": [
+      "inventories"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-011",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "Can an inventory write-down be reversed?",
+    "back": "IFRS: yes, up to the original write-down (inventory is measured at the lower of cost and net realisable value). US GAAP: no reversals are allowed.",
+    "tags": [
+      "inventories"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-012",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "What happens to financial statements when a cost is capitalized rather than expensed?",
+    "back": "Initially higher net income and assets/equity, smoother earnings, higher CFO and lower CFI (the outflow becomes investing). Later periods carry depreciation or amortization.",
+    "tags": [
+      "long-lived-assets"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-013",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "How do impairment tests for long-lived assets differ between IFRS and US GAAP?",
+    "back": "IFRS: impaired if carrying amount > recoverable amount (higher of fair value less costs to sell and value in use); reversals allowed. US GAAP: impaired if carrying amount > undiscounted future cash flows, loss measured to fair value; no reversals for assets held for use.",
+    "tags": [
+      "long-lived-assets"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-014",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "Under IFRS revaluation of PP&E, where does an upward revaluation go?",
+    "back": "To other comprehensive income (revaluation surplus in equity), except to the extent it reverses a revaluation loss previously recognized in profit or loss.",
+    "tags": [
+      "long-lived-assets"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-015",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "What creates a deferred tax liability?",
+    "back": "A temporary difference that makes taxable income lower than pretax accounting income now and higher later, e.g., accelerated depreciation for tax with straight-line for reporting.",
+    "tags": [
+      "income-taxes"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-016",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "What is a valuation allowance under US GAAP?",
+    "back": "A contra account reducing a deferred tax asset when it is more likely than not that some of it will not be realized. Increasing it reduces net income.",
+    "tags": [
+      "income-taxes"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-017",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "How does a lessee account for leases under IFRS 16 versus US GAAP?",
+    "back": "Both recognize a right-of-use asset and lease liability. IFRS uses a single model (depreciation + interest expense). US GAAP finance leases match IFRS, but operating leases report a single straight-line lease cost.",
+    "tags": [
+      "leases"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-018",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "A bond is issued at a discount. How does its interest expense compare with the coupon?",
+    "back": "Interest expense = market rate at issue × carrying amount, which exceeds the coupon. The difference amortizes the discount, so the carrying amount rises toward par.",
+    "tags": [
+      "long-term-liabilities"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-019",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "Write the three-step DuPont decomposition of ROE.",
+    "back": "$ROE = \\frac{NI}{Sales} \\times \\frac{Sales}{Assets} \\times \\frac{Assets}{Equity}$: net margin × asset turnover × financial leverage.",
+    "tags": [
+      "ratios"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-020",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "What happens to a current ratio of 2.0 when the firm uses cash to pay off some accounts payable?",
+    "back": "It rises. Equal reductions to the numerator and denominator raise a ratio above 1: e.g., 200/100 = 2.0 becomes 150/50 = 3.0 after paying 50.",
+    "tags": [
+      "ratios"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-021",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "Common trap: why is the quick ratio more conservative than the current ratio?",
+    "back": "It excludes inventory (and prepaid items), counting only cash, marketable securities and receivables against current liabilities.",
+    "tags": [
+      "ratios"
+    ]
+  },
+  {
+    "id": "fc-cfa1-fsa-022",
+    "course": "cfa-level-1",
+    "topic": "financial-statement-analysis",
+    "front": "Name a classic warning sign of low earnings quality.",
+    "back": "Net income persistently exceeding cash from operations (large or rising accruals), often alongside receivables or inventory growing faster than sales.",
+    "tags": [
+      "reporting-quality"
+    ]
+  }
+]

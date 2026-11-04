@@ -1,0 +1,746 @@
+[
+  {
+    "id": "cfa1-fi-0001",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which of the following provisions in the indenture of a bond issued by Halvorsen Shipping is best described as a negative covenant?",
+    "options": [
+      "Halvorsen may not pledge assets as security for new debt unless these bondholders are secured equally.",
+      "Halvorsen must maintain insurance on its vessels at all times.",
+      "Halvorsen must deliver audited financial statements to the trustee each year."
+    ],
+    "answer": "A",
+    "explanation": "Affirmative covenants state what the issuer must do (insure assets, report, pay taxes); negative covenants state what it must not do (pledge assets to others, sell key assets, exceed leverage limits). A negative pledge clause is a classic negative covenant.",
+    "rationale": {
+      "A": "Correct. A negative pledge restricts what the issuer may do, which is the defining feature of a negative (restrictive) covenant.",
+      "B": "Incorrect. This requires the issuer to do something; it is an affirmative covenant.",
+      "C": "Incorrect. A reporting requirement is an action the issuer must take, so it is an affirmative covenant."
+    },
+    "tags": [
+      "covenants"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0002",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with an otherwise identical option-free bond, a bond that is putable by the investor will most likely offer:",
+    "options": [
+      "a higher yield, because the issuer can redeem the bond early when rates fall.",
+      "a lower yield, because the put option has value to the bondholder.",
+      "the same yield, because a put is exercised only if the issuer defaults."
+    ],
+    "answer": "B",
+    "explanation": "Option value accrues to whoever holds the option. With a putable bond the investor holds it, so value(putable) = value(straight) + value(put), giving a higher price and a lower yield than the straight bond.",
+    "rationale": {
+      "A": "Incorrect. This describes a callable bond, where the issuer holds the option and investors demand a higher yield.",
+      "B": "Correct. The investor owns the put, so they pay for it by accepting a higher price and a lower yield.",
+      "C": "Incorrect. A put can be exercised whenever the bond's value falls below the put price, typically when rates rise or credit weakens; it has value and affects the yield."
+    },
+    "tags": [
+      "contingency-provisions"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0003",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A floating-rate note with a par value of EUR 5,000,000 pays coupons quarterly at the market reference rate plus a quoted margin of 120 bp. At the most recent reset date the reference rate was 3.40% (annualised). Using a simple quarterly fraction of 1/4, the next coupon payment is closest to:",
+    "options": [
+      "EUR 42,500",
+      "EUR 230,000",
+      "EUR 57,500"
+    ],
+    "answer": "C",
+    "explanation": "FRN coupon rate = reference rate + quoted margin = 3.40% + 1.20% = 4.60% per year. Quarterly payment = 5,000,000 x 4.60% / 4 = EUR 57,500.",
+    "rationale": {
+      "A": "Incorrect. This omits the quoted margin and uses only the reference rate.",
+      "B": "Incorrect. This is the annual coupon; it was not divided by 4 for a quarterly payment.",
+      "C": "Correct. Coupon = 5,000,000 x (3.40% + 1.20%) / 4 = EUR 57,500."
+    },
+    "verify": "const par=5000000, mrr=0.034, qm=0.012; return par*(mrr+qm)/4;",
+    "numericAnswer": 57500,
+    "tolerance": 0.5,
+    "tags": [
+      "floating-rate-notes"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0004",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Brightwater Utilities issues a fully amortising 5-year bond with a principal of USD 200,000 and an annual interest rate of 6%. Payments are made annually and are level. The annual payment is closest to:",
+    "options": [
+      "USD 52,000.00",
+      "USD 47,479.28",
+      "USD 40,000.00"
+    ],
+    "answer": "B",
+    "explanation": "A fully amortising level-payment bond is an annuity: PMT = P x r / (1 - (1 + r)^-n) = 200,000 x 0.06 / (1 - 1.06^-5) = USD 47,479.28.",
+    "rationale": {
+      "A": "Incorrect. This is the first-year payment of a bond with equal principal repayments (40,000 principal + 12,000 interest), not a level payment.",
+      "B": "Correct. Level annuity payment = 200,000 x 0.06 / (1 - 1.06^-5) = USD 47,479.28.",
+      "C": "Incorrect. This is just principal divided by five years and ignores interest."
+    },
+    "verify": "const P=200000, r=0.06, n=5; return P*r/(1-Math.pow(1+r,-n));",
+    "numericAnswer": 47479.28,
+    "tolerance": 0.01,
+    "tags": [
+      "amortising-bonds"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0005",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Tamsin Okafor holds an inverse floater whose coupon resets as 9.0% minus the market reference rate (with a floor of zero). If the reference rate rises, the coupon on her note will:",
+    "options": [
+      "increase, because all floating-rate instruments benefit from higher reference rates.",
+      "stay unchanged until the reference rate exceeds 9.0%.",
+      "decrease, because the coupon moves opposite to the reference rate."
+    ],
+    "answer": "C",
+    "explanation": "An inverse floater's coupon formula has the reference rate entering with a negative sign, so coupons fall as rates rise. This makes its price highly sensitive to rate increases.",
+    "rationale": {
+      "A": "Incorrect. That is true of a conventional FRN, not an inverse floater.",
+      "B": "Incorrect. The coupon changes with every reset; the zero floor only binds once the reference rate exceeds 9.0%.",
+      "C": "Correct. Coupon = 9.0% - MRR, so a higher MRR lowers the coupon."
+    },
+    "tags": [
+      "inverse-floaters"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0006",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Kestrel Logistics files one registration with its securities regulator covering a large amount of bonds, then sells portions of the approved amount over the next two years whenever funding is needed. This method of issuance is best described as:",
+    "options": [
+      "a shelf registration.",
+      "a best-efforts offering.",
+      "a private placement."
+    ],
+    "answer": "A",
+    "explanation": "Issuing off a single filing in tranches over time is a shelf registration. Underwritten vs best-efforts describes the bank's commitment; public vs private describes the investor base and registration.",
+    "rationale": {
+      "A": "Correct. A shelf registration lets an issuer register once and issue tranches over time without a new full filing each time.",
+      "B": "Incorrect. A best-efforts offering describes an arrangement in which the investment bank only acts as agent and does not guarantee the sale; it says nothing about issuing over time.",
+      "C": "Incorrect. A private placement is sold directly to a small group of qualified investors and is not registered for public sale."
+    },
+    "tags": [
+      "primary-market"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0007",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A dealer finances bonds with a market value of USD 10,000,000 through a 30-day repurchase agreement. The haircut is 2% and the repo rate is 4.0% (actual/360). The repurchase price the dealer must pay at maturity is closest to:",
+    "options": [
+      "USD 10,033,333",
+      "USD 10,192,000",
+      "USD 9,832,667"
+    ],
+    "answer": "C",
+    "explanation": "Amount borrowed = market value x (1 - haircut) = 9,800,000. Interest = 9,800,000 x 4.0% x 30/360 = 32,667. Repurchase price = USD 9,832,667.",
+    "rationale": {
+      "A": "Incorrect. This ignores the haircut and treats the full market value as the amount borrowed.",
+      "B": "Incorrect. This applies the full annual repo rate instead of prorating it for 30 days.",
+      "C": "Correct. Cash lent = 10,000,000 x 0.98 = 9,800,000; repurchase price = 9,800,000 x (1 + 0.04 x 30/360) = USD 9,832,667."
+    },
+    "verify": "const MV=10000000, h=0.02, r=0.04, t=30; const cash=MV*(1-h); return cash*(1+r*t/360);",
+    "numericAnswer": 9832667,
+    "tolerance": 0.5,
+    "tags": [
+      "repurchase-agreements"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0008",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A 3-year bond with par value 100 pays a 4% annual coupon. The annual-compounding government spot rates are 2.5% (1-year), 3.2% (2-year) and 3.9% (3-year). Using spot rates, the bond's price is closest to:",
+    "options": [
+      "100.38",
+      "100.28",
+      "102.25"
+    ],
+    "answer": "A",
+    "explanation": "Each cash flow is discounted at the spot rate for its own date: 3.902 + 3.756 + 92.723 = 100.38.",
+    "rationale": {
+      "A": "Correct. 4/1.025 + 4/1.032^2 + 104/1.039^3 = 100.38.",
+      "B": "Incorrect. This discounts every cash flow at the 3-year spot rate, as if it were the yield to maturity.",
+      "C": "Incorrect. This discounts every cash flow at the 2-year spot rate (the middle rate) instead of matching each cash flow to its own spot rate."
+    },
+    "verify": "return 4/1.025 + 4/Math.pow(1.032,2) + 104/Math.pow(1.039,3);",
+    "numericAnswer": 100.38,
+    "tolerance": 0.01,
+    "tags": [
+      "spot-rates",
+      "bond-pricing"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0009",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A corporate bond with par value 100 pays a 6% coupon semi-annually. On the settlement date there are 8 semi-annual coupons remaining, and 60 days have passed in the current 182-day coupon period (actual/actual). The yield to maturity is 5.2% quoted on a semi-annual bond basis. The bond's flat price is closest to:",
+    "options": [
+      "103.73",
+      "102.74",
+      "102.86"
+    ],
+    "answer": "B",
+    "explanation": "Value at the last coupon date: PV of 3 per period for 8 periods plus 100, at 2.6% per period = 102.86. Full price = 102.86 x 1.026^(60/182) = 103.73. Accrued interest = 3 x 60/182 = 0.99. Flat price = 103.73 - 0.99 = 102.74.",
+    "rationale": {
+      "A": "Incorrect. This is the full (dirty) price; accrued interest was not subtracted.",
+      "B": "Correct. PV at the last coupon date = 102.86; full price = 102.86 x 1.026^(60/182) = 103.73; AI = 3 x 60/182 = 0.99; flat = 102.74.",
+      "C": "Incorrect. This is the value as of the last coupon date; it was not rolled forward 60 days, nor adjusted for accrued interest."
+    },
+    "verify": "const c=3, r=0.026, n=8, t=60, T=182; let pv=0; for(let k=1;k<=n;k++) pv+=c/Math.pow(1+r,k); pv+=100/Math.pow(1+r,n); const full=pv*Math.pow(1+r,t/T); const ai=c*t/T; return full-ai;",
+    "numericAnswer": 102.74,
+    "tolerance": 0.01,
+    "tags": [
+      "accrued-interest",
+      "flat-price"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0010",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A bond currently trades at a discount to par. If its yield to maturity stays unchanged, as the bond approaches maturity its price will most likely:",
+    "options": [
+      "rise toward par.",
+      "fall further below par.",
+      "remain unchanged until maturity."
+    ],
+    "answer": "A",
+    "explanation": "At maturity every non-defaulted bond is worth par. Holding yield constant, a discount bond's price rises toward 100 and a premium bond's price falls toward 100 (pull to par).",
+    "rationale": {
+      "A": "Correct. With a constant yield, a discount bond's price accretes up to par at maturity.",
+      "B": "Incorrect. This reverses the pull to par; a premium bond's price falls toward par, but a discount bond's rises.",
+      "C": "Incorrect. Even with an unchanged yield, the price moves along a constant-yield trajectory toward par."
+    },
+    "tags": [
+      "constant-yield-price-trajectory"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0011",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bond's yield to maturity is 5.60% stated on a semi-annual bond basis. The equivalent yield with annual compounding is closest to:",
+    "options": [
+      "5.60%",
+      "5.52%",
+      "5.68%"
+    ],
+    "answer": "C",
+    "explanation": "Equate the effective annual returns: (1 + 0.056/2)^2 = 1 + y_annual, so y_annual = 1.028^2 - 1 = 5.68%. More frequent compounding means a lower stated rate for the same effective return.",
+    "rationale": {
+      "A": "Incorrect. This ignores the difference in compounding periodicity; an annual-pay equivalent must be higher than a semi-annual rate.",
+      "B": "Incorrect. This converts in the wrong direction, treating 5.60% as an annual rate and finding its semi-annual equivalent.",
+      "C": "Correct. (1 + 0.056/2)^2 - 1 = 5.68%."
+    },
+    "verify": "const y=0.056; return (Math.pow(1+y/2,2)-1)*100;",
+    "numericAnswer": 5.68,
+    "tolerance": 0.005,
+    "tags": [
+      "periodicity"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0012",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A 180-day Treasury bill is quoted at a discount rate of 4.80% based on a 360-day year. Its add-on yield based on a 365-day year is closest to:",
+    "options": [
+      "4.80%",
+      "4.99%",
+      "4.92%"
+    ],
+    "answer": "B",
+    "explanation": "Price = 100 x (1 - 4.80% x 180/360) = 97.60. Interest = 2.40. Add-on yield (365-day basis) = (2.40/97.60) x (365/180) = 4.99%.",
+    "rationale": {
+      "A": "Incorrect. This is the discount rate itself, which is based on face value rather than price and on a 360-day year.",
+      "B": "Correct. Price = 100 x (1 - 0.048 x 180/360) = 97.60; AOR = (2.40/97.60) x 365/180 = 4.99%.",
+      "C": "Incorrect. This correctly uses the price as the base but keeps a 360-day year instead of converting to 365 days."
+    },
+    "verify": "const DR=0.048, d=180; const pv=100*(1-DR*d/360); return (100-pv)/pv*365/d*100;",
+    "numericAnswer": 4.99,
+    "tolerance": 0.005,
+    "tags": [
+      "money-market-yields"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0013",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "For a callable corporate bond, how does the option-adjusted spread (OAS) most likely compare with its Z-spread over the government spot curve?",
+    "options": [
+      "The OAS is greater than the Z-spread.",
+      "The OAS is less than the Z-spread.",
+      "The OAS equals the Z-spread because both are measured against the spot curve."
+    ],
+    "answer": "B",
+    "explanation": "The Z-spread is the constant spread over each spot rate that prices the bond. For a callable bond it reflects both credit/liquidity risk and the value of the embedded call. OAS strips out the option: OAS = Z-spread - option value in bp, so OAS < Z-spread.",
+    "rationale": {
+      "A": "Incorrect. That relationship holds for a putable bond, where the investor owns the option; for a callable bond the option cost is subtracted.",
+      "B": "Correct. The Z-spread includes compensation for the call option the investor has sold; removing the option's cost leaves a smaller OAS.",
+      "C": "Incorrect. Sharing the same benchmark does not make them equal; OAS = Z-spread - option cost (in spread terms), and the call has positive value."
+    },
+    "tags": [
+      "option-adjusted-spread",
+      "z-spread"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0014",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The 2-year spot rate is 3.0% and the 5-year spot rate is 3.8%, both with annual compounding. The implied annual forward rate for a 3-year loan starting in two years (2y3y) is closest to:",
+    "options": [
+      "13.58%",
+      "2.58%",
+      "4.34%"
+    ],
+    "answer": "C",
+    "explanation": "No-arbitrage: (1.038)^5 = (1.03)^2 x (1 + f)^3. So f = (1.038^5 / 1.03^2)^(1/3) - 1 = 4.34%.",
+    "rationale": {
+      "A": "Incorrect. This is the cumulative 3-year forward return; it was not annualised.",
+      "B": "Incorrect. This annualises over 5 years instead of the 3-year length of the forward period.",
+      "C": "Correct. (1.038^5 / 1.03^2)^(1/3) - 1 = 4.34%."
+    },
+    "verify": "return (Math.pow(Math.pow(1.038,5)/Math.pow(1.03,2),1/3)-1)*100;",
+    "numericAnswer": 4.34,
+    "tolerance": 0.005,
+    "tags": [
+      "forward-rates"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0015",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Annual-compounding spot rates are 2.0% (1-year), 2.8% (2-year) and 3.5% (3-year). The 3-year par rate (annual coupon) is closest to:",
+    "options": [
+      "3.47%",
+      "3.50%",
+      "2.77%"
+    ],
+    "answer": "A",
+    "explanation": "Set the price of a 3-year bond equal to 1: c x (DF1 + DF2 + DF3) + DF3 = 1. DF1 = 0.98039, DF2 = 0.94627, DF3 = 0.90194, so c = 0.09806 / 2.82860 = 3.47%.",
+    "rationale": {
+      "A": "Correct. Par rate = (1 - DF3) / (DF1 + DF2 + DF3) = 3.47%.",
+      "B": "Incorrect. This is the 3-year spot rate; with an upward-sloping spot curve, the par rate is slightly below the longest spot rate because coupons are discounted at lower rates.",
+      "C": "Incorrect. A simple average of the spot rates is not a par rate; the final cash flow dominates, so the par rate is close to the 3-year spot rate."
+    },
+    "verify": "const d1=1/1.02, d2=1/Math.pow(1.028,2), d3=1/Math.pow(1.035,3); return (1-d3)/(d1+d2+d3)*100;",
+    "numericAnswer": 3.47,
+    "tolerance": 0.005,
+    "tags": [
+      "par-curve"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0016",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which theory of the term structure holds that forward rates are upward-biased estimates of expected future spot rates because investors demand a premium for holding longer-term bonds?",
+    "options": [
+      "Pure expectations theory",
+      "Segmented markets theory",
+      "Liquidity preference theory"
+    ],
+    "answer": "C",
+    "explanation": "Liquidity preference = expectations + a term (liquidity) premium that rises with maturity, so forward rates exceed expected future spot rates.",
+    "rationale": {
+      "A": "Incorrect. Under pure expectations, forward rates are unbiased estimates of future spot rates, with no premium.",
+      "B": "Incorrect. This theory says each maturity segment is priced by its own supply and demand; it does not frame forwards as biased estimates of future spot rates.",
+      "C": "Correct. It adds a positive, maturity-increasing liquidity premium to expected future spot rates."
+    },
+    "tags": [
+      "term-structure-theories"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0017",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A 3-year bond with par value 100 pays a 5% annual coupon and is priced at a yield to maturity of 4%. Its Macaulay duration is closest to:",
+    "options": [
+      "2.86 years",
+      "2.75 years",
+      "3.00 years"
+    ],
+    "answer": "A",
+    "explanation": "PVs: 5/1.04 = 4.808, 5/1.04^2 = 4.623, 105/1.04^3 = 93.344; price = 102.775. Time-weighted sum = 1(4.808) + 2(4.623) + 3(93.345) = 294.09; Macaulay duration = 294.09 / 102.775 = 2.86 years.",
+    "rationale": {
+      "A": "Correct. Weighted average time of PV(cash flows): 294.09 / 102.78 = 2.86 years.",
+      "B": "Incorrect. This is the modified duration (Macaulay duration divided by 1 + yield).",
+      "C": "Incorrect. This is the maturity; only a zero-coupon bond has a Macaulay duration equal to its maturity."
+    },
+    "verify": "const c=5, y=0.04; const cf=[5,5,105]; let p=0, w=0; cf.forEach((x,i)=>{const pv=x/Math.pow(1+y,i+1); p+=pv; w+=(i+1)*pv;}); return w/p;",
+    "numericAnswer": 2.86,
+    "tolerance": 0.01,
+    "tags": [
+      "macaulay-duration"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0018",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bond has a full price of 102.50 and a modified duration of 6.4. If its yield rises by 25 bp, its new full price, estimated using duration only, is closest to:",
+    "options": [
+      "100.90",
+      "100.86",
+      "104.14"
+    ],
+    "answer": "B",
+    "explanation": "Approximate %change in price = -ModDur x change in yield = -6.4 x 0.0025 = -1.60%. New price = 102.50 x 0.984 = 100.86.",
+    "rationale": {
+      "A": "Incorrect. This subtracts 1.60 price points instead of 1.60% of the price.",
+      "B": "Correct. %change = -6.4 x 0.0025 = -1.60%; new price = 102.50 x (1 - 0.016) = 100.86.",
+      "C": "Incorrect. This gets the sign wrong: bond prices fall when yields rise."
+    },
+    "verify": "const P=102.5, MD=6.4, dy=0.0025; return P*(1-MD*dy);",
+    "numericAnswer": 100.86,
+    "tolerance": 0.01,
+    "tags": [
+      "modified-duration"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0019",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Jonas Varga buys a fixed-rate bond and plans to sell it after 2 years. The bond's Macaulay duration is 6.5 years. If interest rates change shortly after purchase, Varga's realised return is mainly exposed to:",
+    "options": [
+      "coupon reinvestment risk, because his horizon is shorter than the Macaulay duration.",
+      "market price risk, because his horizon is shorter than the Macaulay duration.",
+      "neither risk, because the two risks offset for any holding period."
+    ],
+    "answer": "B",
+    "explanation": "Duration gap = Macaulay duration - horizon = 6.5 - 2 = +4.5 years. A positive gap means price risk dominates: higher rates lower the realised return, lower rates raise it.",
+    "rationale": {
+      "A": "Incorrect. Reinvestment risk dominates when the horizon is longer than the Macaulay duration.",
+      "B": "Correct. With a short horizon the price change on sale dominates the change in reinvestment income, so rising rates hurt.",
+      "C": "Incorrect. They approximately offset only when the horizon equals the Macaulay duration."
+    },
+    "tags": [
+      "investment-horizon"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0020",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bond has an annual modified duration of 7.2 and an annual convexity of 64.0. If its yield falls by 80 bp, the estimated percentage change in its full price, including the convexity adjustment, is closest to:",
+    "options": [
+      "5.96%",
+      "6.17%",
+      "5.76%"
+    ],
+    "answer": "A",
+    "explanation": "%change = -ModDur x dy + 1/2 x Convexity x dy^2 = 5.760% + 0.205% = 5.96%.",
+    "rationale": {
+      "A": "Correct. -7.2 x (-0.008) + 0.5 x 64 x 0.008^2 = 5.76% + 0.20% = 5.96%.",
+      "B": "Incorrect. This omits the 1/2 in the convexity term, doubling the adjustment.",
+      "C": "Incorrect. This is the duration-only estimate and ignores convexity."
+    },
+    "verify": "const MD=7.2, CX=64, dy=-0.008; return (-MD*dy + 0.5*CX*dy*dy)*100;",
+    "numericAnswer": 5.96,
+    "tolerance": 0.005,
+    "tags": [
+      "convexity-adjustment"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0021",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A portfolio holds three bonds with market values of USD 4 million, USD 6 million and USD 10 million and modified durations of 2.5, 5.0 and 9.0, respectively. The portfolio's modified duration is closest to:",
+    "options": [
+      "5.50",
+      "16.50",
+      "6.50"
+    ],
+    "answer": "C",
+    "explanation": "Portfolio duration is the market-value-weighted average: weights 0.2, 0.3, 0.5 give 0.5 + 1.5 + 4.5 = 6.50.",
+    "rationale": {
+      "A": "Incorrect. This is an equal-weighted average; durations must be weighted by market value.",
+      "B": "Incorrect. Durations are not additive; summing them overstates the portfolio's sensitivity.",
+      "C": "Correct. (4 x 2.5 + 6 x 5.0 + 10 x 9.0) / 20 = 6.50."
+    },
+    "verify": "const mv=[4,6,10], d=[2.5,5,9]; const t=mv.reduce((a,b)=>a+b,0); return mv.reduce((s,v,i)=>s+v/t*d[i],0);",
+    "numericAnswer": 6.5,
+    "tolerance": 0.01,
+    "tags": [
+      "portfolio-duration"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0022",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Yields fall well below the coupon rate of a callable bond issued by Orrin Foods. Compared with an otherwise identical option-free bond, the callable bond most likely has:",
+    "options": [
+      "a higher effective duration and positive effective convexity.",
+      "the same effective duration, because the call only affects cash flows after it is exercised.",
+      "a lower effective duration and negative effective convexity."
+    ],
+    "answer": "C",
+    "explanation": "A callable bond = straight bond - call. When yields are low, the call is deep in the money, so the price rises less for a given yield decline than it falls for an equal rise: negative convexity and shorter effective duration.",
+    "rationale": {
+      "A": "Incorrect. The call option limits price gains when yields fall, so duration shortens rather than lengthens.",
+      "B": "Incorrect. Effective duration uses option-adjusted pricing, which reflects the likelihood of exercise before it happens.",
+      "C": "Correct. As the call becomes likely to be exercised, price appreciation is capped near the call price, shortening effective duration and making convexity negative."
+    },
+    "tags": [
+      "negative-convexity",
+      "effective-duration"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0023",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An analyst estimates that a bond position with exposure of USD 8,000,000 has a 2.5% annual probability of default and a recovery rate of 40%. The expected loss over one year is closest to:",
+    "options": [
+      "USD 120,000",
+      "USD 80,000",
+      "USD 200,000"
+    ],
+    "answer": "A",
+    "explanation": "Expected loss = exposure x LGD x PD, where LGD = 1 - recovery rate = 60%. 8,000,000 x 0.60 x 0.025 = USD 120,000.",
+    "rationale": {
+      "A": "Correct. EL = 8,000,000 x (1 - 0.40) x 0.025 = USD 120,000.",
+      "B": "Incorrect. This uses the recovery rate as if it were the loss given default.",
+      "C": "Incorrect. This assumes zero recovery (LGD of 100%)."
+    },
+    "verify": "const E=8000000, pd=0.025, rr=0.40; return E*(1-rr)*pd;",
+    "numericAnswer": 120000,
+    "tolerance": 0.5,
+    "tags": [
+      "expected-loss"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0024",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which development would most likely cause the yield spread on a high-yield corporate bond to narrow?",
+    "options": [
+      "A drop in dealer inventories that reduces secondary market liquidity",
+      "A strengthening economic expansion that lowers expected default rates",
+      "A downgrade of the issuer by a credit rating agency"
+    ],
+    "answer": "B",
+    "explanation": "Credit spreads compensate for expected loss and liquidity risk. Economic expansion lowers PD and tends to compress spreads, especially for lower-rated issuers; reduced liquidity and downgrades widen them.",
+    "rationale": {
+      "A": "Incorrect. Lower liquidity raises the liquidity premium, widening spreads.",
+      "B": "Correct. Better economic conditions reduce expected credit losses, so investors accept a smaller credit spread.",
+      "C": "Incorrect. A downgrade signals higher default risk and typically widens the spread."
+    },
+    "tags": [
+      "credit-spreads"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0025",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Ferrovia Industrial has EBITDA of EUR 450 million, total debt of EUR 1,620 million, cash of EUR 270 million and interest expense of EUR 90 million. Its net debt-to-EBITDA ratio is closest to:",
+    "options": [
+      "3.60x",
+      "5.00x",
+      "3.00x"
+    ],
+    "answer": "C",
+    "explanation": "Net debt = 1,620 - 270 = 1,350. Net debt / EBITDA = 1,350 / 450 = 3.00x.",
+    "rationale": {
+      "A": "Incorrect. This is gross debt to EBITDA; cash was not deducted.",
+      "B": "Incorrect. This is EBITDA-to-interest coverage, a coverage ratio rather than a leverage ratio.",
+      "C": "Correct. (1,620 - 270) / 450 = 3.00x."
+    },
+    "verify": "return (1620-270)/450;",
+    "numericAnswer": 3,
+    "tolerance": 0.005,
+    "tags": [
+      "leverage-ratios"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0026",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "For a sovereign that issues debt in its own currency and in a foreign currency, credit rating agencies most likely rate:",
+    "options": [
+      "local-currency debt higher than foreign-currency debt.",
+      "foreign-currency debt higher than local-currency debt, because foreign investors require stronger protections.",
+      "both types of debt identically, because the same government is the issuer."
+    ],
+    "answer": "A",
+    "explanation": "Ratings agencies often notch local-currency sovereign ratings above foreign-currency ratings because of the government's monetary and taxing powers over its own currency.",
+    "rationale": {
+      "A": "Correct. A sovereign can tax and, ultimately, create its own currency to service local-currency debt, but must earn or borrow foreign exchange for foreign-currency debt.",
+      "B": "Incorrect. Investor nationality does not raise the rating; foreign-currency debt usually carries more risk for the sovereign.",
+      "C": "Incorrect. Agencies commonly assign separate ratings, reflecting the different abilities to service each currency."
+    },
+    "tags": [
+      "sovereign-credit"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0027",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In a securitisation, the main reason the originator sells the loan pool to a bankruptcy-remote special purpose entity (SPE) is so that:",
+    "options": [
+      "the originator keeps the loans on its balance sheet and retains all of their credit risk.",
+      "the loans are protected from the originator's creditors if the originator becomes insolvent.",
+      "the securities issued are guaranteed by the government."
+    ],
+    "answer": "B",
+    "explanation": "Bankruptcy remoteness separates the asset pool from the originator so the ABS can be rated on the collateral's quality, often achieving a higher rating and lower funding cost than the originator alone.",
+    "rationale": {
+      "A": "Incorrect. The purpose of the true sale is to remove the assets from the originator's estate, not keep the risk.",
+      "B": "Correct. A true sale to a bankruptcy-remote SPE means investors rely on the collateral's cash flows, not the originator's solvency.",
+      "C": "Incorrect. Using an SPE does not create any government guarantee."
+    },
+    "tags": [
+      "special-purpose-entity"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0028",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following is most likely a benefit of securitisation to the economy and financial markets?",
+    "options": [
+      "It eliminates the credit risk of the underlying loans.",
+      "It guarantees investors a higher yield than comparable corporate bonds with no additional risks.",
+      "It converts illiquid loans into tradable securities, letting banks free up capital to make new loans."
+    ],
+    "answer": "C",
+    "explanation": "Securitisation reduces intermediation frictions: investors gain direct, tailored exposure to loan pools, markets gain liquid instruments, and banks can originate more loans with the same capital. Risk is transferred, not removed.",
+    "rationale": {
+      "A": "Incorrect. Credit risk is redistributed among tranches and investors, not eliminated.",
+      "B": "Incorrect. ABS carry their own risks (prepayment, credit, structural), and no yield advantage is guaranteed.",
+      "C": "Correct. Securitisation improves liquidity and lets originators recycle capital, increasing credit availability."
+    },
+    "tags": [
+      "benefits-of-securitization"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0029",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A mortgage pool has a conditional prepayment rate (CPR) of 7.2%. In a given month, the pool balance after scheduled principal is USD 150,000,000. The prepayment for that month is closest to:",
+    "options": [
+      "USD 931,142",
+      "USD 900,000",
+      "USD 10,800,000"
+    ],
+    "answer": "A",
+    "explanation": "Convert the annual CPR to a single monthly mortality rate: SMM = 1 - (1 - CPR)^(1/12) = 0.6207%. Prepayment = SMM x balance after scheduled principal = USD 931,142.",
+    "rationale": {
+      "A": "Correct. SMM = 1 - (1 - 0.072)^(1/12) = 0.6207%; prepayment = 0.0062076 x 150,000,000 = USD 931,142.",
+      "B": "Incorrect. This divides the CPR by 12 (0.60% per month) instead of converting it with compounding, so it understates the monthly prepayment rate.",
+      "C": "Incorrect. This applies the annual CPR to a single month."
+    },
+    "verify": "const cpr=0.072, bal=150000000; const smm=1-Math.pow(1-cpr,1/12); return smm*bal;",
+    "numericAnswer": 931142,
+    "tolerance": 0.5,
+    "tags": [
+      "prepayment",
+      "smm"
+    ]
+  },
+  {
+    "id": "cfa1-fi-0030",
+    "course": "cfa-level-1",
+    "topic": "fixed-income",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "In a CMO with a planned amortisation class (PAC) tranche and a support tranche, prepayments run far above the upper PAC collar for long enough that the support tranche is fully paid off. From that point, the PAC tranche is most likely:",
+    "options": [
+      "exposed mainly to extension risk, because fast prepayments lengthen its average life.",
+      "exposed to contraction risk, because there is no longer a support tranche to absorb excess prepayments.",
+      "still certain to receive principal exactly on its original schedule."
+    ],
+    "answer": "B",
+    "explanation": "The PAC schedule holds only within the collar and while support tranches remain. A busted PAC (support retired) receives all prepayments, so faster prepayments shorten its life: contraction risk.",
+    "rationale": {
+      "A": "Incorrect. Fast prepayments shorten average life (contraction); extension risk arises when prepayments slow.",
+      "B": "Correct. Once the support tranche is retired, all additional prepayments flow to the PAC, which then behaves like a sequential tranche and repays faster than scheduled.",
+      "C": "Incorrect. The schedule is protected only while support tranches exist to absorb deviations; the protection is gone once they are retired."
+    },
+    "tags": [
+      "cmo",
+      "pac-tranche"
+    ]
+  }
+]

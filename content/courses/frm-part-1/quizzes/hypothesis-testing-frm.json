@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm1-hypothesis-testing-frm-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "hypothesis-testing-frm",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A portfolio manager's mean monthly alpha over 49 months is 0.8%, with a sample standard deviation of 2.4%. The test statistic for H0: alpha = 0 is closest to:",
+    "options": ["0.33", "16.33", "2.31", "2.33"],
+    "answer": "D",
+    "explanation": "SE = 2.4/√49 = 2.4/7 = 0.343. t = 0.8/0.343 = 2.33.",
+    "rationale": {
+      "A": "Incorrect. 0.33 divides by the standard deviation rather than the standard error.",
+      "B": "Incorrect. 16.33 divides the standard deviation by n = 49 instead of √49 when forming the standard error.",
+      "C": "Incorrect. 2.31 uses √48 (n − 1) in the standard error; the standard error uses √n.",
+      "D": "Correct. t = 0.8 / (2.4/7) = 2.33."
+    },
+    "verify": "return 0.8/(2.4/Math.sqrt(49));",
+    "numericAnswer": 2.33,
+    "tolerance": 0.005,
+    "tags": ["t-statistic"]
+  },
+  {
+    "id": "q-frm1-hypothesis-testing-frm-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "hypothesis-testing-frm",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A sample of 100 monthly returns has a mean of 1.2% and a standard deviation of 3%. Using a critical value of 1.96, the lower bound of the 95% confidence interval for the true mean is closest to:",
+    "options": ["0.612%", "0.707%", "−4.680%", "1.141%"],
+    "answer": "A",
+    "explanation": "SE = 3/√100 = 0.30. Lower bound = 1.2 − 1.96 × 0.30 = 1.2 − 0.588 = 0.612%.",
+    "rationale": {
+      "A": "Correct. 1.2 − 1.96 × 0.30 = 0.612%.",
+      "B": "Incorrect. 0.707% (0.7065) uses 1.645, the critical value for a 90% interval.",
+      "C": "Incorrect. −4.68% uses the standard deviation of 3% instead of the standard error of 0.30%.",
+      "D": "Incorrect. 1.141% divides 3% by n = 100 (0.03) instead of √100 when computing the standard error."
+    },
+    "verify": "return 1.2 - 1.96*3/Math.sqrt(100);",
+    "numericAnswer": 0.612,
+    "tolerance": 0.0005,
+    "tags": ["confidence-interval"]
+  },
+  {
+    "id": "q-frm1-hypothesis-testing-frm-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "hypothesis-testing-frm",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A validation team lowers the significance level of its test for model bias from 5% to 1%, keeping the sample size unchanged. Which outcome is most likely?",
+    "options": [
+      "Both the Type I and Type II error probabilities fall.",
+      "The Type I error probability falls and the power of the test falls.",
+      "The Type I error probability rises and the power of the test rises.",
+      "The power of the test is unchanged because power depends only on sample size."
+    ],
+    "answer": "B",
+    "explanation": "A lower α widens the non-rejection region, so true nulls are rejected less often (less Type I error) but false nulls are also missed more often (more Type II error, lower power).",
+    "rationale": {
+      "A": "Incorrect. For a fixed sample size, reducing Type I error increases Type II error.",
+      "B": "Correct. Fewer false rejections come at the cost of more missed rejections, so power declines.",
+      "C": "Incorrect. Lowering α reduces, not raises, the Type I error probability.",
+      "D": "Incorrect. Power depends on α, the effect size and volatility as well as the sample size."
+    },
+    "tags": ["type-i-error", "power"]
+  },
+  {
+    "id": "q-frm1-hypothesis-testing-frm-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "hypothesis-testing-frm",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A two-tailed test of whether a credit strategy's mean return equals zero produces a p-value of 0.03. Which interpretation is correct?",
+    "options": [
+      "There is a 3% probability that the strategy's true mean return is zero.",
+      "The null is rejected at the 1% level but not at the 5% level.",
+      "If the true mean were zero, a result at least as extreme as the one observed would occur about 3% of the time.",
+      "There is a 97% probability that the strategy has a positive mean return."
+    ],
+    "answer": "C",
+    "explanation": "A p-value is computed assuming the null is true: it is the probability of a statistic at least as extreme as the one observed. It is not a probability that a hypothesis is true.",
+    "rationale": {
+      "A": "Incorrect. The p-value is a probability about the data given the null, not about the null given the data.",
+      "B": "Incorrect. It is the reverse: 0.03 < 0.05 rejects at 5%, while 0.03 > 0.01 does not reject at 1%.",
+      "C": "Correct. This is the definition of the p-value.",
+      "D": "Incorrect. Classical tests do not assign probabilities to hypotheses, and a two-tailed test does not establish the sign."
+    },
+    "tags": ["p-value"]
+  }
+]

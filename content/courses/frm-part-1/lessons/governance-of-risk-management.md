@@ -12,17 +12,17 @@ title: "The Governance of Risk Management"
 ## Explanation
 
 ### Why governance matters
-Measurement tools (EL, UL, VaR) are only as good as the people and structures that act on them. Many famous losses happened at firms that had decent risk models but where nobody with authority listened. **Risk governance** is the set of structures, roles and incentives that ensure risk is taken deliberately, within the appetite set by the board, and that problems are escalated before they become disasters.
+Risk models are only as good as the people who act on them; many famous losses happened at firms with decent models where nobody with authority listened. **Risk governance** is the set of structures, roles and incentives that ensure risk is taken deliberately, within the appetite set by the board, and that problems are escalated before they become disasters.
 
 ### The board of directors
-The board represents shareholders and, increasingly in regulated firms, the interests of depositors and the wider financial system. Its risk duties include:
+The board represents shareholders and, in regulated firms, also depositors and the wider system. Its risk duties include:
 
 - approving the **risk appetite statement** and checking that strategy fits within it;
 - ensuring management has competent, independent risk and control functions;
 - understanding the firm's major risks well enough to challenge management;
 - overseeing compensation so it does not reward excessive risk.
 
-Good practice calls for a majority of **independent** non-executive directors, some with genuine risk and financial expertise, and for separating the roles of chair and chief executive so that one person does not both run the firm and supervise it.
+Good practice calls for a majority of **independent** directors, some with real risk expertise, and a separate chair and CEO so that one person does not both run and supervise the firm.
 
 ### Board committees
 - **Risk committee**: oversees the risk appetite, risk limits, major exposures and the work of the risk function. It should be chaired by an independent director and meet the chief risk officer regularly, including without executives present.
@@ -30,7 +30,7 @@ Good practice calls for a majority of **independent** non-executive directors, s
 - **Compensation (remuneration) committee**: designs pay so that it rewards long-term, risk-adjusted performance rather than short-term revenue.
 
 ### The chief risk officer
-The **CRO** leads the independent risk function. To be effective, the CRO should have direct access to the board risk committee, a reporting line that does not depend solely on the CEO, enough seniority to veto or escalate, and protection against dismissal for raising unwelcome issues. A CRO who reports only to the head of trading is not independent.
+The **CRO** leads the independent risk function. To be effective, the CRO should have direct access to the board risk committee, a reporting line that does not depend solely on the CEO, enough seniority to veto or escalate, and protection against dismissal for raising unwelcome issues.
 
 ### Three lines of defence
 1. **First line - business units**: they take and own the risk, operate controls day to day and must stay within limits.
@@ -48,20 +48,20 @@ Pay that rewards annual revenue encourages traders to take hidden tail risks: th
 - adjusting bonuses for risk and capital used, not just profit.
 
 ### Risk culture
-Culture is how people behave when no rule tells them what to do. Signs of a strong risk culture include leaders who model prudent behaviour, staff who feel safe escalating concerns, consistent consequences for limit breaches regardless of profitability, and risk considerations built into strategy and new product approval.
+Culture is how people behave when no rule tells them what to do. A strong risk culture has leaders who model prudence, staff who feel safe escalating concerns, and consistent consequences for limit breaches regardless of profitability.
 
 ## Worked example
-**Scenario.** Harbourline Bank's proprietary trading desk earned record profits two years running. The desk head also approves the desk's own limit increases. The CRO reports to the CFO and attends board risk committee meetings only when invited. Bonuses are paid fully in cash at year-end based on desk revenue. Internal audit reports to the head of trading. Last quarter a junior risk analyst flagged unusually large positions but was told to "not slow the business down".
+**Scenario.** Harbourline Bank's proprietary trading desk earned record profits two years running. The desk head also approves the desk's own limit increases. The CRO reports to the CFO and attends board risk committee meetings only when invited. Bonuses are paid fully in cash at year-end based on desk revenue. Internal audit reports to the head of trading. A junior risk analyst who flagged unusually large positions was told to "not slow the business down".
 
-**Step 1 - First line.** The desk approving its own limit increases means the risk-taker sets its own constraints. Limits should be set and approved by the second line within board-approved appetite.
+**Step 1 - First line.** The risk-taker sets its own limits. Limits should be set by the second line within board-approved appetite.
 
 **Step 2 - Second line.** The CRO lacks independence: the reporting line runs through the CFO and board access is by invitation only. Fix: give the CRO a direct, standing line to the board risk committee.
 
 **Step 3 - Third line.** Internal audit reporting to trading destroys its independence. It should report to the audit committee.
 
-**Step 4 - Incentives.** All-cash, revenue-based bonuses reward risk without accountability. Introduce deferral, equity components, risk adjustment, and malus and clawback provisions.
+**Step 4 - Incentives.** All-cash revenue bonuses reward risk without accountability. Add deferral, equity, risk adjustment, malus and clawback.
 
-**Step 5 - Culture.** Silencing the analyst shows weak escalation culture. Record profits from a desk should prompt more scrutiny, not less.
+**Step 5 - Culture.** Silencing the analyst shows weak escalation culture; record profits should prompt more scrutiny, not less.
 
 **Conclusion: Harbourline's governance fails at all three lines of defence and in incentives and culture; the most urgent fix is restoring the independence of the CRO and internal audit.**
 
@@ -69,7 +69,6 @@ Culture is how people behave when no rule tells them what to do. Signs of a stro
 - Saying the risk function owns risk. The business (first line) owns it; risk management oversees and challenges.
 - Placing internal audit in the second line. It is the third line and reports to the audit committee.
 - Confusing the audit committee (financial reporting, controls, auditors) with the risk committee (risk appetite, exposures).
-- Assuming high profits mean good risk management. Unusually high profits often signal hidden risk.
 - Mixing up malus (cut unvested pay) and clawback (recover pay already received).
 
 ## Key takeaways

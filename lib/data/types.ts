@@ -184,3 +184,14 @@ export interface DiscussionThread {
   replies: { id: string; author: string; role: "student" | "instructor"; body: string; createdAt: string }[];
   sample: true;
 }
+
+/** Compact course structure passed to client components (no notes). */
+export interface CourseOutline {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  accent: string;
+  category: CourseCategory;
+  status: CourseStatus;
+  modules: { slug: string; title: string; lessons: { slug: string; title: string; duration: number; freePreview?: boolean }[] }[];
+}

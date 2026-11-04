@@ -1,0 +1,1243 @@
+[
+  {
+    "id": "frm1-fmp-0001",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Under the originate-to-distribute model, a bank makes loans and then sells them, often to be packaged into securities. Which consequence of this model was most widely cited after the 2007-2008 crisis?",
+    "options": [
+      "Banks became less liquid because loans stayed on their balance sheets until maturity",
+      "Originators had weaker incentives to screen and monitor borrowers because they did not retain the credit risk",
+      "Banks' required regulatory capital rose sharply because securitized loans carry higher risk weights",
+      "Borrowers faced higher interest rates because fewer investors were willing to fund mortgages"
+    ],
+    "answer": "B",
+    "explanation": "The model separates the lender's origination decision from the bearer of credit risk, reducing the incentive to underwrite carefully.",
+    "rationale": {
+      "A": "Incorrect. The model does the opposite: selling loans frees up balance-sheet capacity and improves liquidity.",
+      "B": "Correct. Once the loans are sold, the originator bears little of the default risk, so lending standards can deteriorate.",
+      "C": "Incorrect. Moving loans off balance sheet generally reduced, not increased, capital requirements; that was part of the appeal.",
+      "D": "Incorrect. Securitization widened the investor base and generally made credit cheaper and more available."
+    },
+    "tags": [
+      "banks",
+      "originate-to-distribute"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0002",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Harbor Lane Bank has USD 1,000 million of loans yielding 7%, funded by USD 900 million of deposits costing 3% and USD 100 million of equity. Annual loan losses are 1% of loans, non-interest expenses are USD 20 million, non-interest income is USD 5 million and the tax rate is 25%. The bank's return on equity is closest to:",
+    "options": [
+      "18.0%",
+      "21.0%",
+      "13.5%",
+      "1.35%"
+    ],
+    "answer": "C",
+    "explanation": "Interest income 70, interest expense 27, loan losses 10, non-interest expense 20, non-interest income 5: pre-tax 18, after-tax 13.5, ROE = 13.5/100 = 13.5%.",
+    "rationale": {
+      "A": "Incorrect. This is the pre-tax return on equity; the 25% tax was not deducted.",
+      "B": "Incorrect. This omits the USD 10 million of loan losses before taxing profit.",
+      "C": "Correct. NII = 70 - 27 = 43; pre-tax profit = 43 - 10 - 20 + 5 = 18; after tax 13.5; ROE = 13.5/100.",
+      "D": "Incorrect. This divides net income by total assets (ROA) rather than by equity."
+    },
+    "verify": "const ni=(1000*0.07-900*0.03-1000*0.01-20+5)*(1-0.25); return ni/100*100;",
+    "numericAnswer": 13.5,
+    "tolerance": 0.05,
+    "tags": [
+      "banks",
+      "profitability"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0003",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Why is deposit insurance often said to create moral hazard in the banking system?",
+    "options": [
+      "Insured depositors have little reason to monitor the bank, so the bank can take more risk without paying a higher cost of funds",
+      "It encourages depositors to run on banks at the first sign of trouble",
+      "It forces banks to hold all deposits in cash reserves, reducing lending",
+      "It means banks with poor risk management pay higher premiums than safe banks"
+    ],
+    "answer": "A",
+    "explanation": "Moral hazard arises because protected depositors stop policing risk, so the bank's funding cost no longer reflects its risk taking.",
+    "rationale": {
+      "A": "Correct. Because depositors are protected, they do not demand higher rates from riskier banks, weakening market discipline.",
+      "B": "Incorrect. Deposit insurance is designed to reduce bank runs, not encourage them.",
+      "C": "Incorrect. Deposit insurance does not impose 100% reserve requirements.",
+      "D": "Incorrect. Risk-based premiums are a remedy for moral hazard, not its cause; flat premiums worsen the problem."
+    },
+    "tags": [
+      "banks",
+      "deposit-insurance"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0004",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A property-casualty insurer reports a loss ratio of 72%, an expense ratio of 31% and dividends to policyholders of 1% of premiums. Investment income equals 5% of earned premiums. The insurer's operating ratio is closest to:",
+    "options": [
+      "104%",
+      "99%",
+      "103%",
+      "98%"
+    ],
+    "answer": "B",
+    "explanation": "Operating ratio = loss ratio + expense ratio + dividends - investment income ratio = 72 + 31 + 1 - 5 = 99%.",
+    "rationale": {
+      "A": "Incorrect. This is the combined ratio after dividends; investment income was not subtracted.",
+      "B": "Correct. Combined ratio after dividends = 72 + 31 + 1 = 104%; operating ratio = 104 - 5 = 99%.",
+      "C": "Incorrect. This is the combined ratio before dividends, with no investment income deduction.",
+      "D": "Incorrect. This omits policyholder dividends: 72 + 31 - 5 = 98%."
+    },
+    "verify": "return 72+31+1-5;",
+    "numericAnswer": 99,
+    "tolerance": 0.5,
+    "tags": [
+      "insurance",
+      "combined-ratio"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0005",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A mortality table gives a one-year death probability of 1.0% for a person aged 60 and 1.1% for a person aged 61. For a 60-year-old today, the probability of dying during the second year (between ages 61 and 62) is closest to:",
+    "options": [
+      "1.089%",
+      "1.100%",
+      "2.100%",
+      "2.089%"
+    ],
+    "answer": "A",
+    "explanation": "Unconditional probability of death in year 2 = P(survive year 1) x q61 = 0.99 x 0.011 = 0.01089.",
+    "rationale": {
+      "A": "Correct. The person must survive year one (0.99) and then die in year two (0.011): 0.99 x 0.011 = 1.089%.",
+      "B": "Incorrect. This is the conditional probability given survival to 61, not the unconditional probability seen from age 60.",
+      "C": "Incorrect. This simply adds the two one-year probabilities, which mixes different events.",
+      "D": "Incorrect. This is the probability of dying at any time within two years, 1 - 0.99 x 0.989."
+    },
+    "verify": "return (1-0.010)*0.011*100;",
+    "numericAnswer": 1.089,
+    "tolerance": 0.0005,
+    "tags": [
+      "insurance",
+      "mortality-tables"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0006",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Compared with a defined contribution pension plan, a key feature of a defined benefit plan is that:",
+    "options": [
+      "The employee's pension depends entirely on the performance of their individual account",
+      "Contributions are fixed and the employee bears all investment risk",
+      "The employer bears the investment and longevity risk because the pension is set by a formula",
+      "No actuarial assumptions are needed to value the plan's obligations"
+    ],
+    "answer": "C",
+    "explanation": "In a defined benefit plan the benefit is fixed and the sponsor absorbs funding risk; in a defined contribution plan the contribution is fixed and the member bears the risk.",
+    "rationale": {
+      "A": "Incorrect. That describes a defined contribution plan.",
+      "B": "Incorrect. That is again the defined contribution arrangement.",
+      "C": "Correct. The benefit is promised by formula (e.g. salary and years of service), so shortfalls must be funded by the sponsor.",
+      "D": "Incorrect. Valuing defined benefit liabilities requires assumptions on mortality, salary growth and discount rates."
+    },
+    "tags": [
+      "pensions"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0007",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The Ridgeway Balanced Fund holds securities worth USD 250 million and has liabilities of USD 10 million. It has 12 million shares outstanding. Its net asset value per share is closest to:",
+    "options": [
+      "USD 20.83",
+      "USD 21.67",
+      "USD 20.00",
+      "USD 19.17"
+    ],
+    "answer": "C",
+    "explanation": "NAV per share = (assets - liabilities)/shares = (250 - 10)/12 = 20.00.",
+    "rationale": {
+      "A": "Incorrect. This ignores the fund's liabilities: 250/12.",
+      "B": "Incorrect. This adds the liabilities instead of subtracting them: 260/12.",
+      "C": "Correct. NAV = (250 - 10)/12 = USD 20.00.",
+      "D": "Incorrect. This subtracts the liabilities twice: 230/12."
+    },
+    "verify": "return (250-10)/12;",
+    "numericAnswer": 20.0,
+    "tolerance": 0.005,
+    "tags": [
+      "fund-management",
+      "nav"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0008",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A hedge fund charges a 2% management fee on beginning-of-year assets and a 20% incentive fee on the gross gain net of the management fee. The fund starts the year at USD 100 million and its gross value before fees at year-end is USD 130 million. The investors' net return is closest to:",
+    "options": [
+      "22.00%",
+      "22.40%",
+      "24.00%",
+      "28.00%"
+    ],
+    "answer": "B",
+    "explanation": "Gross gain 30. Management fee = 2. Incentive fee = 20% x 28 = 5.6. Net gain = 22.4 on 100 = 22.40%.",
+    "rationale": {
+      "A": "Incorrect. This computes the incentive fee on the full gross gain (0.2 x 30 = 6) instead of the gain net of the management fee.",
+      "B": "Correct. Management fee 2; incentive fee 0.2 x (30 - 2) = 5.6; net gain 30 - 2 - 5.6 = 22.4, or 22.40%.",
+      "C": "Incorrect. This deducts only the incentive fee on the gross gain and forgets the management fee.",
+      "D": "Incorrect. This deducts only the management fee and omits the incentive fee."
+    },
+    "verify": "const g=30, m=0.02*100, inc=0.2*(g-m); return (g-m-inc)/100*100;",
+    "numericAnswer": 22.4,
+    "tolerance": 0.005,
+    "tags": [
+      "fund-management",
+      "hedge-fund-fees"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0009",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which feature best explains why an ETF's market price usually stays close to its net asset value?",
+    "options": [
+      "ETF shares can only be bought from the fund sponsor at the end-of-day NAV",
+      "ETFs have a fixed number of shares, like a closed-end fund",
+      "Regulators require ETFs to suspend trading whenever price deviates from NAV",
+      "Authorized participants can create or redeem ETF shares in exchange for the underlying basket, arbitraging away price gaps"
+    ],
+    "answer": "D",
+    "explanation": "Creation and redemption by authorized participants is the arbitrage link between ETF price and the value of its holdings.",
+    "rationale": {
+      "A": "Incorrect. That describes an open-end mutual fund; ETFs trade throughout the day on an exchange.",
+      "B": "Incorrect. Closed-end funds have a fixed share count and often trade at persistent discounts; ETF share counts change.",
+      "C": "Incorrect. There is no such rule; arbitrage, not regulation, keeps the price aligned.",
+      "D": "Correct. The in-kind creation/redemption mechanism lets large dealers profit from any premium or discount, pushing price back toward NAV."
+    },
+    "tags": [
+      "fund-management",
+      "etf"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0010",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A US importer enters a long forward contract to buy EUR 1,000,000 in six months at USD 1.2500 per EUR. At maturity the spot rate is USD 1.2100 per EUR. The importer's payoff on the forward is:",
+    "options": [
+      "Loss of USD 40,000",
+      "Gain of USD 40,000",
+      "Loss of USD 1,210,000",
+      "Loss of USD 32,000"
+    ],
+    "answer": "A",
+    "explanation": "Long forward payoff = (S_T - K) x notional = (1.21 - 1.25) x 1,000,000 = -40,000.",
+    "rationale": {
+      "A": "Correct. Payoff = (1.2100 - 1.2500) x 1,000,000 = -USD 40,000.",
+      "B": "Incorrect. This is the short forward's payoff; the long position loses when spot ends below the forward price.",
+      "C": "Incorrect. This is the value of the euros at spot, not the forward payoff.",
+      "D": "Incorrect. This divides the price change by the spot rate of 1.25, an unnecessary conversion."
+    },
+    "verify": "return -(1.21-1.25)*1000000;",
+    "numericAnswer": 40000,
+    "tolerance": 0.5,
+    "tags": [
+      "derivatives",
+      "forward-payoff"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0011",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A trader simultaneously buys gold in London and sells it at a higher price in New York, locking in a riskless profit after costs. This trader is acting as a(n):",
+    "options": [
+      "Arbitrageur",
+      "Hedger",
+      "Speculator",
+      "Market maker"
+    ],
+    "answer": "A",
+    "explanation": "Riskless profit from simultaneous transactions in different markets defines arbitrage.",
+    "rationale": {
+      "A": "Correct. Arbitrage is locking in a riskless profit from simultaneous trades in two markets.",
+      "B": "Incorrect. A hedger uses derivatives to reduce an existing exposure, not to capture price differences.",
+      "C": "Incorrect. A speculator takes on risk to bet on the direction of a market.",
+      "D": "Incorrect. A market maker quotes bid and ask prices and earns the spread while carrying inventory risk."
+    },
+    "tags": [
+      "derivatives",
+      "market-participants"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0012",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In bilaterally cleared OTC derivatives, what is the main purpose of initial margin, as distinct from variation margin?",
+    "options": [
+      "To settle the current mark-to-market change in the value of the trades each day",
+      "To pay the dealer's fee for arranging the transaction",
+      "To eliminate the need for netting agreements between the parties",
+      "To cover the potential future loss that could build up while a defaulting counterparty's positions are being closed out"
+    ],
+    "answer": "D",
+    "explanation": "Variation margin covers current exposure; initial margin covers potential future exposure over the margin period of risk.",
+    "rationale": {
+      "A": "Incorrect. That is the role of variation margin.",
+      "B": "Incorrect. Margin is collateral that is returned if no default occurs, not a fee.",
+      "C": "Incorrect. Margin and netting are complementary credit risk mitigants; margin does not replace netting.",
+      "D": "Correct. Initial margin is a buffer against adverse price moves during the close-out period after a default."
+    },
+    "tags": [
+      "otc-markets",
+      "collateral"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0013",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A clearing member defaults and its losses exceed the initial margin it posted. In a typical CCP default waterfall, which resource is used NEXT?",
+    "options": [
+      "The default fund contributions of the surviving members",
+      "The CCP's own equity (skin in the game)",
+      "The defaulting member's own contribution to the default fund",
+      "Additional assessments called from the surviving members"
+    ],
+    "answer": "C",
+    "explanation": "Typical order: defaulter's initial margin, defaulter's default fund contribution, CCP skin in the game, survivors' default fund, then assessments and CCP remaining capital.",
+    "rationale": {
+      "A": "Incorrect. Survivors' contributions come only after the defaulter's resources and the CCP's own capital tranche.",
+      "B": "Incorrect. The CCP's capital tranche sits after the defaulter's default fund contribution.",
+      "C": "Correct. The defaulter's resources (initial margin, then its default fund contribution) are used before anyone else's.",
+      "D": "Incorrect. Assessment rights are near the bottom of the waterfall, used only after funded resources are exhausted."
+    },
+    "tags": [
+      "central-clearing",
+      "default-waterfall"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0014",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which of the following is LEAST likely to be a risk created or concentrated by central clearing?",
+    "options": [
+      "Liquidity strain on members from large, sudden variation margin calls in volatile markets",
+      "Procyclicality, as initial margin requirements rise when volatility rises",
+      "Increased bilateral counterparty exposure between clearing members",
+      "Concentration of systemic risk in a single institution that may itself fail"
+    ],
+    "answer": "C",
+    "explanation": "CCPs reduce bilateral counterparty risk but introduce liquidity, procyclicality, concentration and model risk.",
+    "rationale": {
+      "A": "Incorrect. Daily and intraday margin calls can drain liquidity in stress; this is a recognized CCP-related risk.",
+      "B": "Incorrect. Risk-based margin models tend to raise margins in stress, amplifying deleveraging.",
+      "C": "Correct. Central clearing replaces bilateral exposures with exposures to the CCP, so this is reduced rather than created.",
+      "D": "Incorrect. A CCP is a single point of failure whose distress could be systemic."
+    },
+    "tags": [
+      "central-clearing",
+      "ccp-risks"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0015",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A trader buys 2 wheat futures contracts (5,000 bushels each) at USD 5.00 per bushel. Initial margin is USD 6,000 per contract and maintenance margin is USD 4,500 per contract. Ignoring interest, the futures price below which the trader first receives a margin call is closest to:",
+    "options": [
+      "USD 4.70 per bushel",
+      "USD 4.85 per bushel",
+      "USD 4.10 per bushel",
+      "USD 3.80 per bushel"
+    ],
+    "answer": "A",
+    "explanation": "Allowed loss before a call = initial - maintenance = 1,500 per contract = 0.30 per bushel. Trigger price = 5.00 - 0.30 = 4.70.",
+    "rationale": {
+      "A": "Correct. A margin call occurs after a loss of 6,000 - 4,500 = 1,500 per contract, i.e. 1,500/5,000 = 0.30 per bushel: 5.00 - 0.30 = 4.70.",
+      "B": "Incorrect. This spreads the per-contract cushion of 1,500 over both contracts' 10,000 bushels.",
+      "C": "Incorrect. This uses the full maintenance margin (4,500/5,000 = 0.90) as the allowed loss.",
+      "D": "Incorrect. This uses the full initial margin (6,000/5,000 = 1.20) as the allowed loss."
+    },
+    "verify": "return 5.00-(6000-4500)/5000;",
+    "numericAnswer": 4.7,
+    "tolerance": 0.005,
+    "tags": [
+      "futures",
+      "margin"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0016",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A trader shorts 3 crude oil futures contracts (1,000 barrels each) at USD 80.00 per barrel. Initial margin is USD 8,000 per contract and maintenance margin is USD 6,000 per contract. At the end of the first day the settlement price is USD 83.50. The variation margin the trader must deposit is closest to:",
+    "options": [
+      "USD 4,500",
+      "USD 3,500",
+      "USD 10,500",
+      "USD 13,500"
+    ],
+    "answer": "C",
+    "explanation": "Loss on a short when price rises: (83.50 - 80.00) x 3 x 1,000 = 10,500. Balance 13,500 < 18,000, so deposit 24,000 - 13,500 = 10,500.",
+    "rationale": {
+      "A": "Incorrect. This only tops the account up to the maintenance level (18,000) rather than back to initial margin.",
+      "B": "Incorrect. This is the loss on a single contract, ignoring that 3 contracts are held.",
+      "C": "Correct. Loss = 3.50 x 3,000 = 10,500; balance falls from 24,000 to 13,500, below 18,000 maintenance, so the trader must restore it to 24,000 by depositing 10,500.",
+      "D": "Incorrect. This is the remaining margin balance, not the amount to be deposited."
+    },
+    "verify": "const im=3*8000, mm=3*6000, loss=(83.5-80)*3000, bal=im-loss; return bal<mm? im-bal : 0;",
+    "numericAnswer": 10500,
+    "tolerance": 0.5,
+    "tags": [
+      "futures",
+      "margin-call"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0017",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "In most physically delivered futures contracts, which party chooses the exact delivery date within the delivery month and, where allowed, the grade and location of the asset delivered?",
+    "options": [
+      "The party with the long position",
+      "The exchange's clearing house, by random allocation",
+      "The party with the short position",
+      "Whichever party has held its position for longer"
+    ],
+    "answer": "C",
+    "explanation": "Futures delivery options belong to the short, which is why the short tends to deliver the cheapest-to-deliver asset.",
+    "rationale": {
+      "A": "Incorrect. The long must accept delivery on the terms the short chooses within the contract rules.",
+      "B": "Incorrect. The clearing house assigns a long to receive delivery but does not choose the delivery terms.",
+      "C": "Correct. Delivery options (timing, grade, location) are generally given to the short.",
+      "D": "Incorrect. Holding period does not determine delivery choices; the long is usually the party assigned on that basis."
+    },
+    "tags": [
+      "futures",
+      "delivery"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0018",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An airline will buy 2,000,000 gallons of jet fuel in three months and hedges with heating oil futures (42,000 gallons per contract). The standard deviation of jet fuel price changes is 2.4%, that of heating oil futures price changes is 3.0%, and their correlation is 0.9. Using the minimum-variance hedge ratio, the number of contracts to buy is closest to:",
+    "options": [
+      "38",
+      "48",
+      "34",
+      "54"
+    ],
+    "answer": "C",
+    "explanation": "h* = rho x sigma_S/sigma_F = 0.72. N* = h* x Q_A/Q_F = 0.72 x 2,000,000/42,000 = 34.3, so about 34 contracts.",
+    "rationale": {
+      "A": "Incorrect. This ignores the correlation and uses the volatility ratio 2.4/3.0 = 0.80 as the hedge ratio.",
+      "B": "Incorrect. This uses a hedge ratio of 1 (a naive one-for-one hedge).",
+      "C": "Correct. h* = 0.9 x 2.4/3.0 = 0.72; N = 0.72 x 2,000,000/42,000 = 34.3, or about 34 contracts.",
+      "D": "Incorrect. This inverts the volatility ratio: 0.9 x 3.0/2.4 = 1.125."
+    },
+    "verify": "const h=0.9*2.4/3.0; return h*2000000/42000;",
+    "numericAnswer": 34,
+    "tolerance": 0.5,
+    "tags": [
+      "hedging",
+      "minimum-variance-hedge"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0019",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A manager holds a USD 50 million equity portfolio with a beta of 1.3 and wants to lower the beta to 0.8 using index futures. The futures price is 4,000 index points and the multiplier is USD 250 per point. How many contracts should the manager trade?",
+    "options": [
+      "Short 65 contracts",
+      "Short 40 contracts",
+      "Long 25 contracts",
+      "Short 25 contracts"
+    ],
+    "answer": "D",
+    "explanation": "N = (beta* - beta) x P/F = (0.8 - 1.3) x 50,000,000/1,000,000 = -25: short 25 contracts.",
+    "rationale": {
+      "A": "Incorrect. This hedges the full beta of 1.3 (reducing beta to zero), not just the move to 0.8.",
+      "B": "Incorrect. This uses the target beta of 0.8 instead of the change in beta.",
+      "C": "Incorrect. The size is right but the direction is wrong; buying futures would raise beta to 1.8.",
+      "D": "Correct. N = (0.8 - 1.3) x 50,000,000/(4,000 x 250) = -25, so sell 25 contracts."
+    },
+    "verify": "return -(0.8-1.3)*50000000/(4000*250);",
+    "numericAnswer": 25,
+    "tolerance": 0.5,
+    "tags": [
+      "hedging",
+      "beta-adjustment"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0020",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A grain producer hedges a future sale by shorting futures at USD 3.40 per bushel. When the hedge is closed, the futures price is USD 3.10 and the spot price is USD 3.02. The effective price the producer receives, including the futures gain, is closest to:",
+    "options": [
+      "USD 3.40 per bushel",
+      "USD 3.32 per bushel",
+      "USD 3.02 per bushel",
+      "USD 2.72 per bushel"
+    ],
+    "answer": "B",
+    "explanation": "Short hedge: effective price = F1 + b2, where b2 = S2 - F2 = -0.08. So 3.40 - 0.08 = 3.32.",
+    "rationale": {
+      "A": "Incorrect. This assumes a perfect hedge with zero final basis; basis risk makes the result differ from F1.",
+      "B": "Correct. Effective price = S2 + (F1 - F2) = 3.02 + 0.30 = 3.32, equivalently F1 + final basis = 3.40 - 0.08.",
+      "C": "Incorrect. This is the spot price alone, ignoring the gain on the short futures.",
+      "D": "Incorrect. This treats the futures gain as a loss: 3.02 - 0.30."
+    },
+    "verify": "const F1=3.40,F2=3.10,S2=3.02; return S2+(F1-F2);",
+    "numericAnswer": 3.32,
+    "tolerance": 0.005,
+    "tags": [
+      "hedging",
+      "basis-risk"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0021",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An interest rate of 6% per annum with semiannual compounding is equivalent to a continuously compounded rate closest to:",
+    "options": [
+      "6.09%",
+      "5.83%",
+      "6.00%",
+      "5.91%"
+    ],
+    "answer": "D",
+    "explanation": "Rc = m ln(1 + Rm/m) = 2 ln(1.03) = 0.05912.",
+    "rationale": {
+      "A": "Incorrect. This applies the reverse conversion (treating 6% as continuous and converting to semiannual).",
+      "B": "Incorrect. This is ln(1.06), which treats 6% as annually compounded.",
+      "C": "Incorrect. Rates with different compounding frequencies are not equal; the continuous rate is lower.",
+      "D": "Correct. Rc = 2 x ln(1 + 0.06/2) = 5.91%."
+    },
+    "verify": "return 2*Math.log(1+0.06/2)*100;",
+    "numericAnswer": 5.91,
+    "tolerance": 0.005,
+    "tags": [
+      "interest-rates",
+      "compounding"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0022",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A company enters an FRA in which it will pay a fixed rate of 4% and receive the floating reference rate on a notional principal for a 3-month period starting in 6 months. Which statement is correct?",
+    "options": [
+      "The company gains if the reference rate set for that period is below 4%",
+      "The notional principal is exchanged at the start of the 3-month period",
+      "The FRA is worth zero throughout its life if the forward rate equals 4% at inception",
+      "The company gains if the reference rate set for that period is above 4%"
+    ],
+    "answer": "D",
+    "explanation": "An FRA locks in a borrowing rate: the fixed payer receives (R_floating - R_fixed) x notional x accrual, so it gains when rates rise.",
+    "rationale": {
+      "A": "Incorrect. That is the position of the party receiving fixed and paying floating.",
+      "B": "Incorrect. FRAs never exchange principal; only the interest difference is settled.",
+      "C": "Incorrect. It is worth zero at inception, but its value changes as forward rates move afterward.",
+      "D": "Correct. As the fixed-rate payer, the company receives floating; a floating rate above 4% gives it a positive settlement."
+    },
+    "tags": [
+      "interest-rates",
+      "fra"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0023",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A 2-year bond with a face value of 100 pays a 5% annual coupon. The continuously compounded zero rates are 4.0% for 1 year and 4.5% for 2 years. The bond's price is closest to:",
+    "options": [
+      "100.96",
+      "101.73",
+      "100.77",
+      "99.76"
+    ],
+    "answer": "C",
+    "explanation": "Discount each cash flow at its own zero rate: 5e^(-0.04) = 4.804; 105e^(-0.09) = 95.963; total 100.77.",
+    "rationale": {
+      "A": "Incorrect. This treats the zero rates as annually compounded: 5/1.04 + 105/1.045^2.",
+      "B": "Incorrect. This discounts both cash flows at the 1-year rate of 4.0%.",
+      "C": "Correct. Price = 5e^(-0.04) + 105e^(-0.045 x 2) = 4.80 + 95.96 = 100.77.",
+      "D": "Incorrect. This discounts at the 5% coupon rate rather than the zero rates."
+    },
+    "verify": "return 5*Math.exp(-0.04)+105*Math.exp(-0.045*2);",
+    "numericAnswer": 100.77,
+    "tolerance": 0.005,
+    "tags": [
+      "interest-rates",
+      "bond-pricing"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0024",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A non-dividend-paying stock trades at USD 50. The continuously compounded risk-free rate is 4% per annum. The theoretical 9-month forward price is closest to:",
+    "options": [
+      "USD 51.50",
+      "USD 52.04",
+      "USD 48.52",
+      "USD 51.52"
+    ],
+    "answer": "D",
+    "explanation": "F0 = S0 e^(rT) = 50e^(0.03) = 51.52.",
+    "rationale": {
+      "A": "Incorrect. This uses simple interest: 50 x (1 + 0.04 x 0.75).",
+      "B": "Incorrect. This uses a full year instead of 0.75 years.",
+      "C": "Incorrect. This discounts the spot price instead of compounding it.",
+      "D": "Correct. F = 50e^(0.04 x 0.75) = 51.52."
+    },
+    "verify": "return 50*Math.exp(0.04*0.75);",
+    "numericAnswer": 51.52,
+    "tolerance": 0.005,
+    "tags": [
+      "forwards",
+      "forward-pricing"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0025",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A stock trades at USD 80 and will pay a dividend of USD 2.50 in 4 months. The continuously compounded risk-free rate is 6% for all maturities. The theoretical 1-year forward price is closest to:",
+    "options": [
+      "USD 84.95",
+      "USD 82.34",
+      "USD 87.55",
+      "USD 73.03"
+    ],
+    "answer": "B",
+    "explanation": "F0 = (S0 - I)e^(rT), where I = 2.50e^(-0.02) = 2.4505. F0 = 77.5495 x e^(0.06) = 82.34.",
+    "rationale": {
+      "A": "Incorrect. This ignores the dividend: 80e^(0.06).",
+      "B": "Correct. I = 2.50e^(-0.06 x 4/12) = 2.45; F = (80 - 2.45)e^(0.06) = 82.34.",
+      "C": "Incorrect. This adds the PV of the dividend to the spot price instead of subtracting it.",
+      "D": "Incorrect. This discounts (S - I) at the risk-free rate instead of compounding it."
+    },
+    "verify": "const I=2.5*Math.exp(-0.06*4/12); return (80-I)*Math.exp(0.06);",
+    "numericAnswer": 82.34,
+    "tolerance": 0.005,
+    "tags": [
+      "forwards",
+      "known-income"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0026",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "The spot exchange rate is USD 1.1000 per EUR. The continuously compounded USD interest rate is 4.5% and the EUR rate is 2.5%. The 2-year forward rate (USD per EUR) is closest to:",
+    "options": [
+      "1.0569",
+      "1.1449",
+      "1.1222",
+      "1.1000"
+    ],
+    "answer": "B",
+    "explanation": "Interest rate parity with USD as the domestic currency: F = S e^((r_USD - r_EUR)T) = 1.1 e^(0.04) = 1.1449.",
+    "rationale": {
+      "A": "Incorrect. This reverses the rate differential, subtracting the USD rate from the EUR rate.",
+      "B": "Correct. F = 1.1000e^((0.045 - 0.025) x 2) = 1.1449.",
+      "C": "Incorrect. This uses a 1-year horizon instead of 2 years.",
+      "D": "Incorrect. This assumes the forward equals spot, ignoring the interest rate differential."
+    },
+    "verify": "return 1.1*Math.exp((0.045-0.025)*2);",
+    "numericAnswer": 1.1449,
+    "tolerance": 5e-05,
+    "tags": [
+      "forwards",
+      "interest-rate-parity"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0027",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Gold trades at USD 2,000 per ounce. Storage costs are 0.5% per annum of the gold's value (continuously compounded) and the continuously compounded risk-free rate is 4%. Ignoring any lease income, the theoretical 1-year forward price is closest to:",
+    "options": [
+      "USD 2,081.62",
+      "USD 2,092.06",
+      "USD 2,071.24",
+      "USD 2,090.00"
+    ],
+    "answer": "B",
+    "explanation": "With proportional storage cost u: F0 = S0 e^((r + u)T) = 2,000e^(0.045) = 2,092.06.",
+    "rationale": {
+      "A": "Incorrect. This ignores the storage cost: 2,000e^(0.04).",
+      "B": "Correct. F = 2,000e^((0.04 + 0.005) x 1) = 2,092.06.",
+      "C": "Incorrect. This subtracts storage cost from the rate, treating it like a yield.",
+      "D": "Incorrect. This uses simple interest: 2,000 x 1.045."
+    },
+    "verify": "return 2000*Math.exp((0.04+0.005)*1);",
+    "numericAnswer": 2092.06,
+    "tolerance": 0.005,
+    "tags": [
+      "commodities",
+      "storage-costs"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0028",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A commodity's futures prices decline with maturity (the market is in backwardation). Which explanation is most consistent with this pattern?",
+    "options": [
+      "Storage costs for the commodity are unusually high",
+      "Interest rates have risen sharply",
+      "Inventories of the commodity are very large",
+      "Holders of the physical commodity enjoy a high convenience yield, for example because inventories are scarce"
+    ],
+    "answer": "D",
+    "explanation": "F0 = S0 e^((r + u - y)T). Backwardation requires y > r + u, typically when inventories are tight.",
+    "rationale": {
+      "A": "Incorrect. High storage costs push forward prices up relative to spot, toward contango.",
+      "B": "Incorrect. Higher financing costs raise the cost of carry and therefore forward prices.",
+      "C": "Incorrect. Abundant inventories mean a low convenience yield, which is associated with contango.",
+      "D": "Correct. A high convenience yield lowers forward prices relative to spot and can produce backwardation."
+    },
+    "tags": [
+      "commodities",
+      "convenience-yield"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0029",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A stock trades at USD 72. Which of the following options is in the money?",
+    "options": [
+      "A call with a strike price of USD 75",
+      "A put with a strike price of USD 70",
+      "A call with a strike price of USD 72",
+      "A put with a strike price of USD 75"
+    ],
+    "answer": "D",
+    "explanation": "Calls are in the money when S > K; puts when K > S. Here only the 75 put has positive intrinsic value (USD 3).",
+    "rationale": {
+      "A": "Incorrect. A call is in the money only when the stock price exceeds the strike; 72 < 75.",
+      "B": "Incorrect. Exercising a 70 put when the stock is at 72 would mean selling below market; it is out of the money.",
+      "C": "Incorrect. With strike equal to the stock price, the call is at the money, not in the money.",
+      "D": "Correct. A put is in the money when the strike exceeds the stock price: 75 > 72."
+    },
+    "tags": [
+      "options",
+      "moneyness"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0030",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "How do warrants issued by a company differ from exchange-traded call options on the same company's stock?",
+    "options": [
+      "Exchange-traded calls are written by the company and cause dilution when exercised",
+      "Warrants can never be traded after issue",
+      "Warrants are always European-style while exchange-traded options are always American-style",
+      "Exercising warrants leads the company to issue new shares, which dilutes existing shareholders"
+    ],
+    "answer": "D",
+    "explanation": "Warrants and employee stock options are company-issued, so exercise increases the share count and dilutes.",
+    "rationale": {
+      "A": "Incorrect. Exchange-traded options are written by other investors; exercise transfers existing shares.",
+      "B": "Incorrect. Many warrants trade separately on exchanges after they are detached from the bonds they were issued with.",
+      "C": "Incorrect. Exercise style is not the distinguishing feature; both can be American or European.",
+      "D": "Correct. Warrants are written by the company itself, so exercise creates new shares; exchange-traded calls involve existing shares."
+    },
+    "tags": [
+      "options",
+      "warrants"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0031",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An investor has written (sold) an American put option on a stock. If the holder exercises the option, the investor is obligated to:",
+    "options": [
+      "Buy the shares at the strike price",
+      "Sell the shares at the strike price",
+      "Buy the shares at the current market price",
+      "Refund the option premium"
+    ],
+    "answer": "A",
+    "explanation": "Put holder: right to sell at K. Put writer: obligation to buy at K if exercised.",
+    "rationale": {
+      "A": "Correct. The put holder has the right to sell; the writer must buy at the strike.",
+      "B": "Incorrect. That is the obligation of a call writer.",
+      "C": "Incorrect. The transaction takes place at the strike price, not the market price.",
+      "D": "Incorrect. The writer keeps the premium regardless of whether the option is exercised."
+    },
+    "tags": [
+      "options",
+      "option-basics"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0032",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A European call on a non-dividend-paying stock costs USD 6.20. The stock trades at USD 48, the strike is USD 50, time to expiry is 6 months and the continuously compounded risk-free rate is 3%. By put-call parity, the price of the European put with the same strike and expiry is closest to:",
+    "options": [
+      "USD 7.46",
+      "USD 8.20",
+      "USD 4.94",
+      "USD 6.20"
+    ],
+    "answer": "A",
+    "explanation": "Put-call parity: c + Ke^(-rT) = p + S, so p = 6.20 + 49.256 - 48 = 7.46.",
+    "rationale": {
+      "A": "Correct. p = c + Ke^(-rT) - S = 6.20 + 50e^(-0.015) - 48 = 7.46.",
+      "B": "Incorrect. This forgets to discount the strike price: 6.20 + 50 - 48.",
+      "C": "Incorrect. This reverses the signs on the strike and stock: c - Ke^(-rT) + S.",
+      "D": "Incorrect. Calls and puts are equal only when S = Ke^(-rT); here the put is worth more."
+    },
+    "verify": "return 6.20+50*Math.exp(-0.03*0.5)-48;",
+    "numericAnswer": 7.46,
+    "tolerance": 0.005,
+    "tags": [
+      "options",
+      "put-call-parity"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0033",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A stock trades at USD 60 and will pay a USD 2 dividend in 6 months. A 1-year European call has a strike of USD 55. The continuously compounded risk-free rate is 5%. The lower bound for the call price is closest to:",
+    "options": [
+      "USD 7.68",
+      "USD 5.73",
+      "USD 3.05",
+      "USD 5.00"
+    ],
+    "answer": "B",
+    "explanation": "c >= S0 - D - Ke^(-rT), where D = 2e^(-0.025) = 1.951 and Ke^(-rT) = 52.318: 60 - 1.951 - 52.318 = 5.73.",
+    "rationale": {
+      "A": "Incorrect. This ignores the dividend: 60 - 55e^(-0.05).",
+      "B": "Correct. Lower bound = S - D - Ke^(-rT) = 60 - 2e^(-0.025) - 55e^(-0.05) = 5.73.",
+      "C": "Incorrect. This forgets to discount the strike: 60 - 1.95 - 55.",
+      "D": "Incorrect. This is intrinsic value S - K, which ignores both the dividend and discounting."
+    },
+    "verify": "return 60-2*Math.exp(-0.05*0.5)-55*Math.exp(-0.05);",
+    "numericAnswer": 5.73,
+    "tolerance": 0.005,
+    "tags": [
+      "options",
+      "option-bounds"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0034",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Why is it never optimal to exercise an American call option on a non-dividend-paying stock before expiration?",
+    "options": [
+      "The call is always worth at least S - Ke^(-rT), which exceeds the S - K received on early exercise when rates are positive",
+      "Early exercise would require the holder to pay the dividend to the writer",
+      "American calls cannot legally be exercised before expiration",
+      "Deep in-the-money calls lose all time value, so exercise and holding are always equivalent"
+    ],
+    "answer": "A",
+    "explanation": "Since c >= S - Ke^(-rT) > S - K, an American call on a non-dividend stock is worth the same as the European call.",
+    "rationale": {
+      "A": "Correct. Keeping the option preserves insurance value and delays paying the strike, so selling beats exercising.",
+      "B": "Incorrect. The stock pays no dividends, and dividends would in fact be a reason to exercise early.",
+      "C": "Incorrect. American options can be exercised at any time; the point is that doing so is not optimal here.",
+      "D": "Incorrect. Even deep in the money, the lower bound S - Ke^(-rT) exceeds S - K because of interest on the strike."
+    },
+    "tags": [
+      "options",
+      "early-exercise"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0035",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An investor buys a call with a strike of USD 40 for USD 4.50 and sells a call on the same stock and expiry with a strike of USD 45 for USD 2.00. The maximum profit of this bull spread is closest to:",
+    "options": [
+      "USD 5.00",
+      "USD 7.50",
+      "USD 2.50",
+      "USD 2.00"
+    ],
+    "answer": "C",
+    "explanation": "Bull call spread: max profit = (K2 - K1) - (c1 - c2) = 5.00 - 2.50 = 2.50, reached when S_T >= 45.",
+    "rationale": {
+      "A": "Incorrect. This is the maximum payoff, before subtracting the net premium paid.",
+      "B": "Incorrect. This adds the net premium to the payoff instead of subtracting it.",
+      "C": "Correct. Maximum payoff = 45 - 40 = 5.00; net cost = 4.50 - 2.00 = 2.50; maximum profit = 5.00 - 2.50 = 2.50.",
+      "D": "Incorrect. This is only the premium received on the short call."
+    },
+    "verify": "return (45-40)-(4.50-2.00);",
+    "numericAnswer": 2.5,
+    "tolerance": 0.005,
+    "tags": [
+      "trading-strategies",
+      "bull-spread"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0036",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An investor expects a stock to stay close to its current price of USD 50 but wants the maximum possible loss to be limited. Which strategy best fits this view?",
+    "options": [
+      "A long butterfly spread using calls struck at USD 45, 50 and 55",
+      "A short straddle struck at USD 50",
+      "A long strangle with strikes of USD 45 and USD 55",
+      "A bull call spread with strikes of USD 50 and USD 55"
+    ],
+    "answer": "A",
+    "explanation": "Long butterfly: buy K1 and K3 calls, sell two K2 calls. Payoff peaks at K2 and loss is limited to the net debit.",
+    "rationale": {
+      "A": "Correct. A long butterfly profits most if the stock ends near 50 and its loss is capped at the small net premium paid.",
+      "B": "Incorrect. It profits from low volatility but has unlimited loss potential if the stock moves sharply up.",
+      "C": "Incorrect. A long strangle profits from large moves, the opposite of the investor's view.",
+      "D": "Incorrect. A bull spread is a directional bet on a rise, not on the price staying put."
+    },
+    "tags": [
+      "trading-strategies",
+      "butterfly"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0037",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A 1-year European vanilla call on an index is worth USD 4.25. A down-and-out call with the same strike, expiry and a barrier below the current index level is worth USD 3.10. The value of the matching down-and-in call is closest to:",
+    "options": [
+      "USD 1.15",
+      "USD 7.35",
+      "USD 3.10",
+      "USD 4.25"
+    ],
+    "answer": "A",
+    "explanation": "In-out parity: c_di + c_do = c, so c_di = 4.25 - 3.10 = 1.15.",
+    "rationale": {
+      "A": "Correct. Knock-in + knock-out = vanilla, so down-and-in = 4.25 - 3.10 = 1.15.",
+      "B": "Incorrect. This adds the vanilla and knock-out values instead of taking the difference.",
+      "C": "Incorrect. Knock-in and knock-out options with the same terms are not generally worth the same.",
+      "D": "Incorrect. This is the vanilla value; it would apply only if the down-and-out call were worthless, but it is worth 3.10."
+    },
+    "verify": "return 4.25-3.10;",
+    "numericAnswer": 1.15,
+    "tolerance": 0.005,
+    "tags": [
+      "exotic-options",
+      "barrier-options"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0038",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "All else equal, why is an Asian (average-price) call usually cheaper than a vanilla European call with the same strike and maturity?",
+    "options": [
+      "Asian options can only be exercised on the averaging dates",
+      "The payoff of an Asian call is capped at the average price",
+      "The average of prices over the life of the option is less volatile than the price at expiry",
+      "Asian options are only traded OTC and so carry a liquidity discount"
+    ],
+    "answer": "C",
+    "explanation": "Lower volatility of the averaged underlying reduces the option's time value.",
+    "rationale": {
+      "A": "Incorrect. The exercise feature is not the reason; the payoff depends on an average, which reduces volatility.",
+      "B": "Incorrect. There is no cap; the payoff is max(average - K, 0).",
+      "C": "Correct. Averaging dampens volatility, and lower effective volatility means a lower option value.",
+      "D": "Incorrect. Being OTC does not explain the systematic price difference; the volatility effect does."
+    },
+    "tags": [
+      "exotic-options",
+      "asian-options"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0039",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Company Alder can borrow at 5.0% fixed or SOFR + 0.3% floating. Company Birch can borrow at 6.4% fixed or SOFR + 1.0% floating. If they use an interest rate swap to exploit comparative advantage, the total potential gain to be shared (including any intermediary) is closest to:",
+    "options": [
+      "140 basis points",
+      "70 basis points",
+      "210 basis points",
+      "35 basis points"
+    ],
+    "answer": "B",
+    "explanation": "Total gain = (6.4 - 5.0) - (1.0 - 0.3) = 1.4 - 0.7 = 0.7% = 70 bp. Alder borrows fixed, Birch floating, and they swap.",
+    "rationale": {
+      "A": "Incorrect. This is the fixed-rate difference alone, ignoring the floating-rate difference.",
+      "B": "Correct. Fixed-rate difference 140 bp less floating-rate difference 70 bp = 70 bp.",
+      "C": "Incorrect. This adds the two differences instead of subtracting them.",
+      "D": "Incorrect. This is each party's share if the gain is split equally, not the total gain."
+    },
+    "verify": "return ((6.4-5.0)-(1.0-0.3))*100;",
+    "numericAnswer": 70,
+    "tolerance": 0.5,
+    "tags": [
+      "swaps",
+      "comparative-advantage"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0040",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A bank receives 4% fixed (annual payments) and pays floating on a USD 10 million interest rate swap with exactly 2 years remaining; a payment has just been made and the floating rate has just been reset. The continuously compounded zero rates are 3.0% for 1 year and 3.5% for 2 years. The value of the swap to the bank is closest to:",
+    "options": [
+      "USD -85.07 thousand",
+      "USD 85.07 thousand",
+      "USD 96.86 thousand",
+      "USD 0.00 thousand"
+    ],
+    "answer": "B",
+    "explanation": "Value to fixed receiver = B_fix - B_fl. B_fix = 0.38818 + 9.69690 = 10.08507 million; B_fl = 10 million just after reset; value = USD 85.07 thousand.",
+    "rationale": {
+      "A": "Incorrect. This is the value to the fixed-rate payer; the bank receives fixed.",
+      "B": "Correct. B_fix = 0.4e^(-0.03) + 10.4e^(-0.07) = 10.0851 million; B_fl = 10 million at reset; value = 85.07 thousand.",
+      "C": "Incorrect. This discounts the fixed leg treating the zero rates as annually compounded.",
+      "D": "Incorrect. A swap is worth zero only at initiation; rates have changed since then."
+    },
+    "verify": "const Bfix=0.4*Math.exp(-0.03)+10.4*Math.exp(-0.035*2); return (Bfix-10)*1000;",
+    "numericAnswer": 85.07,
+    "tolerance": 0.005,
+    "tags": [
+      "swaps",
+      "swap-valuation"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0041",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement correctly contrasts a fixed-for-fixed currency swap with a plain vanilla interest rate swap?",
+    "options": [
+      "Interest rate swaps exchange principal at maturity, whereas currency swaps never do",
+      "Currency swaps carry no credit risk because principal is exchanged",
+      "Both swaps can only be valued as a portfolio of forward rate agreements, never as bonds",
+      "Principal amounts are usually exchanged at the start and end of a currency swap but are not exchanged in an interest rate swap"
+    ],
+    "answer": "D",
+    "explanation": "Currency swaps exchange principal (usually at both ends) in two currencies; interest rate swaps use notional only to compute payments.",
+    "rationale": {
+      "A": "Incorrect. This reverses the conventions.",
+      "B": "Incorrect. Exchanging principal at maturity actually increases credit exposure in a currency swap.",
+      "C": "Incorrect. Both can be valued either as a pair of bonds or as a portfolio of forward contracts.",
+      "D": "Correct. In a currency swap the principals are in different currencies and are exchanged; in an interest rate swap the notional is never exchanged."
+    },
+    "tags": [
+      "swaps",
+      "currency-swaps"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0042",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A US bank holds euro-denominated loans funded entirely by US dollar deposits. Which action would most directly reduce its exposure to a fall in the euro?",
+    "options": [
+      "Buying euros forward to lock in the current rate",
+      "Lending more in euros, funded by US dollar deposits",
+      "Replacing euro deposits with US dollar deposits",
+      "Selling euros forward in an amount matching the euro loans"
+    ],
+    "answer": "D",
+    "explanation": "Net FX exposure = (FX assets - FX liabilities) + (FX bought - FX sold). A long on-balance-sheet euro position is hedged by selling euros forward or raising euro liabilities.",
+    "rationale": {
+      "A": "Incorrect. This adds to the existing long euro exposure rather than offsetting it.",
+      "B": "Incorrect. This increases the mismatch between euro assets and euro liabilities.",
+      "C": "Incorrect. The bank has no euro deposits; adding dollar funding does not change the euro asset exposure.",
+      "D": "Correct. A short euro forward offsets the long euro position on the balance sheet, reducing the net open position."
+    },
+    "tags": [
+      "fx-risk",
+      "net-exposure"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0043",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Holding all else equal, a callable corporate bond will typically offer a higher yield than an otherwise identical non-callable bond because:",
+    "options": [
+      "The investor has effectively sold the issuer an option to redeem the bond early, typically when rates have fallen",
+      "The issuer of a callable bond always has a lower credit rating",
+      "Callable bonds are always secured by collateral",
+      "The investor can force the issuer to repay at par whenever rates rise"
+    ],
+    "answer": "A",
+    "explanation": "Callable bond = straight bond minus a call option held by the issuer, so its price is lower and its yield higher.",
+    "rationale": {
+      "A": "Correct. The higher yield compensates the investor for the call option given to the issuer and for reinvestment risk.",
+      "B": "Incorrect. Callability is a structural feature and is not tied to credit quality.",
+      "C": "Incorrect. Security is unrelated to callability, and collateral would lower, not raise, the yield.",
+      "D": "Incorrect. That describes a putable bond, which would carry a lower yield."
+    },
+    "tags": [
+      "corporate-bonds",
+      "callable-bonds"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0044",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A homeowner takes a USD 300,000, 30-year fixed-rate mortgage at 6% per annum with monthly payments and monthly compounding. The monthly payment is closest to:",
+    "options": [
+      "USD 1,816.22",
+      "USD 1,798.65",
+      "USD 1,500.00",
+      "USD 833.33"
+    ],
+    "answer": "B",
+    "explanation": "Annuity payment = P r/(1 - (1 + r)^(-n)) with r = 0.06/12 and n = 360, giving 1,798.65.",
+    "rationale": {
+      "A": "Incorrect. This computes an annual payment at 6% over 30 years and divides by 12.",
+      "B": "Correct. With r = 0.5% per month and n = 360, payment = 300,000 x 0.005/(1 - 1.005^(-360)) = 1,798.65.",
+      "C": "Incorrect. This is interest only (300,000 x 0.5%), with no principal amortization.",
+      "D": "Incorrect. This repays principal with no interest: 300,000/360."
+    },
+    "verify": "const r=0.06/12,n=360; return 300000*r/(1-Math.pow(1+r,-n));",
+    "numericAnswer": 1798.65,
+    "tolerance": 0.005,
+    "tags": [
+      "mortgages",
+      "amortization"
+    ]
+  },
+  {
+    "id": "frm1-fmp-0045",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Why does a pass-through mortgage-backed security typically exhibit negative convexity when interest rates fall?",
+    "options": [
+      "Falling rates trigger faster prepayments, so investors receive principal back early and the price gain is capped",
+      "Falling rates slow prepayments, so the MBS's duration falls sharply",
+      "Mortgage borrowers default more often when rates fall",
+      "The coupon on a pass-through resets downward when market rates fall"
+    ],
+    "answer": "A",
+    "explanation": "Borrowers hold a prepayment (call) option. When rates fall, they refinance, contraction risk caps the price rise and convexity turns negative.",
+    "rationale": {
+      "A": "Correct. Homeowners refinance when rates drop, shortening the MBS's life and limiting price appreciation, much like a callable bond.",
+      "B": "Incorrect. Prepayments speed up, not slow down, when rates fall; slower prepayments (extension) occur when rates rise.",
+      "C": "Incorrect. Lower rates generally reduce payment burdens; convexity here is driven by prepayment, not default.",
+      "D": "Incorrect. Fixed-rate pass-throughs have fixed coupons; the effect comes from prepayment of principal."
+    },
+    "tags": [
+      "mortgages",
+      "prepayment-risk"
+    ]
+  }
+]

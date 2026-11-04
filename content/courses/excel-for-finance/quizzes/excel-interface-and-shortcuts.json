@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-xl-excel-interface-and-shortcuts-1",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "excel-interface-and-shortcuts",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A colleague's model shows 6.2% in a cell and you want to know whether that number was typed in or calculated, and you want to check every other cell on the sheet the same way at once. Which action does this fastest?",
+    "options": [
+      "Press Ctrl+1 to open the Format Cells dialog",
+      "Press Ctrl+` (Ctrl plus the backtick key) to show formulas instead of values",
+      "Press Ctrl+End to jump to the last used cell",
+      "Select the cell and read the Sum on the status bar"
+    ],
+    "answer": "B",
+    "explanation": "Ctrl+` toggles the whole sheet between displaying values and displaying the underlying formulas, so typed constants and formulas can be told apart everywhere at once.",
+    "rationale": {
+      "A": "Incorrect. Format Cells controls how the value is displayed, not whether it is a formula.",
+      "B": "Correct. Show Formulas reveals every formula on the sheet; cells still showing plain numbers are hard-coded.",
+      "C": "Incorrect. Ctrl+End only moves to the last used cell; it reveals nothing about cell contents.",
+      "D": "Incorrect. The status bar summarises values of a selection; a typed 6.2% and a formula returning 6.2% give the same sum."
+    }
+  },
+  {
+    "id": "q-xl-excel-interface-and-shortcuts-2",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "excel-interface-and-shortcuts",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A sheet has a header in A1 and daily closing prices in A2:A1261. You put the first daily return in B3 as =A3/A2-1 and fill it down to the last price row. When you select all the return cells, how many does the status bar Count show?",
+    "options": ["1,261", "1,260", "1,259", "1,258"],
+    "answer": "C",
+    "explanation": "There are 1261 − 2 + 1 = 1,260 prices. Returns run from B3 to B1261, which is 1261 − 3 + 1 = 1,259 cells: one fewer than the number of prices.",
+    "rationale": {
+      "A": "Incorrect. 1,261 is the last row number, which includes the header row.",
+      "B": "Incorrect. 1,260 is the number of prices; the first price has no prior price, so it has no return.",
+      "C": "Correct. n prices produce n − 1 returns: 1,260 − 1 = 1,259.",
+      "D": "Incorrect. This subtracts one row too many, as if both the header and the first two prices had no return."
+    },
+    "verify": "const firstPrice=2, lastPrice=1261; const firstReturn=firstPrice+1; return lastPrice-firstReturn+1;",
+    "numericAnswer": 1259,
+    "tolerance": 0.5
+  },
+  {
+    "id": "q-xl-excel-interface-and-shortcuts-3",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "excel-interface-and-shortcuts",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Column A contains values in A2:A50, cell A51 is blank, and A52:A90 contain values. With A2 selected, you press Ctrl+Down Arrow once. Where does the cursor land?",
+    "options": ["A90", "A51", "A52", "A50"],
+    "answer": "D",
+    "explanation": "Starting on a filled cell, Ctrl+Down moves to the last filled cell before the first blank, which is A50. A second press would go to A52, and a third to A90.",
+    "rationale": {
+      "A": "Incorrect. A90 is the end of all the data, but the blank in A51 stops the first jump earlier.",
+      "B": "Incorrect. Ctrl+Arrow never stops on the blank itself when starting from a filled cell; it stops on the last filled cell.",
+      "C": "Incorrect. A52 is where a second press lands, jumping from A50 over the blank to the next filled cell.",
+      "D": "Correct. The jump stops at the edge of the contiguous block, A50, which also flags the gap in the data."
+    }
+  },
+  {
+    "id": "q-xl-excel-interface-and-shortcuts-4",
+    "course": "excel-for-finance",
+    "topic": "excel-foundations",
+    "lesson": "excel-interface-and-shortcuts",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "You select C2:C500, type =A2*B2 while the selection is still highlighted, and want every selected cell to receive the formula with its own row references (C500 should hold =A500*B500). Which keystroke completes this?",
+    "options": [
+      "Ctrl+Enter",
+      "Enter",
+      "Ctrl+Shift+Enter",
+      "Alt+Enter"
+    ],
+    "answer": "A",
+    "explanation": "Ctrl+Enter enters the typed formula into every cell of the selection, adjusting relative references for each row.",
+    "rationale": {
+      "A": "Correct. Ctrl+Enter fills the whole selection at once with relative references adjusted row by row.",
+      "B": "Incorrect. Enter commits the formula to the active cell C2 only and moves to the next cell in the selection.",
+      "C": "Incorrect. Ctrl+Shift+Enter is the legacy way to enter an array formula, not a way to fill a selection with ordinary formulas.",
+      "D": "Incorrect. Alt+Enter inserts a line break inside the cell's text."
+    }
+  }
+]

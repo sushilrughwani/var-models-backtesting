@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-frm1-exotic-options-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "exotic-options",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A European put costs USD 4.80. An up-and-out put with the same strike and expiry and a barrier of USD 60 costs USD 3.15. The value of an up-and-in put with the same strike, barrier and expiry is closest to:",
+    "options": ["USD 7.95", "USD 3.15", "USD 1.65", "USD 4.80"],
+    "answer": "C",
+    "explanation": "In-out parity: knock-in + knock-out = vanilla, so up-and-in = 4.80 − 3.15 = 1.65.",
+    "rationale": {
+      "A": "Incorrect. 7.95 adds the knock-out to the vanilla instead of subtracting it.",
+      "B": "Incorrect. 3.15 is the knock-out price; the knock-in is generally different.",
+      "C": "Correct. The knock-in and knock-out together replicate the vanilla put.",
+      "D": "Incorrect. A knock-in can be worth no more than the vanilla, and less whenever the knock-out has value."
+    },
+    "verify": "return 4.80-3.15;",
+    "numericAnswer": 1.65,
+    "tolerance": 0.005,
+    "tags": ["barrier-options", "in-out-parity"]
+  },
+  {
+    "id": "q-frm1-exotic-options-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "exotic-options",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An average-price Asian call has a strike of USD 50. The underlying is observed four times during the option's life at USD 48, 53, 55 and 50 (the last observation is the expiry price). The payoff of the Asian call is closest to:",
+    "options": ["USD 0.00", "USD 5.00", "USD 2.00", "USD 1.50"],
+    "answer": "D",
+    "explanation": "Average = (48 + 53 + 55 + 50)/4 = 51.50. Payoff = max(51.50 − 50, 0) = 1.50.",
+    "rationale": {
+      "A": "Incorrect. 0.00 is the vanilla call payoff using the final price of 50.",
+      "B": "Incorrect. 5.00 is the fixed-strike lookback payoff using the maximum price of 55.",
+      "C": "Incorrect. 2.00 averages only the first three observations and omits the expiry price.",
+      "D": "Correct. The average of all four observations is 51.50, giving a payoff of 1.50."
+    },
+    "verify": "const a=(48+53+55+50)/4; return Math.max(a-50,0);",
+    "numericAnswer": 1.5,
+    "tolerance": 0.005,
+    "tags": ["asian-options"]
+  },
+  {
+    "id": "q-frm1-exotic-options-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "exotic-options",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A cash-or-nothing call pays USD 100 if the stock finishes above the strike in 1 year. The risk-free rate is 5% (continuously compounded) and N(d2) = 0.4207. The value of the option is closest to:",
+    "options": ["USD 40.02", "USD 42.07", "USD 55.10", "USD 44.23"],
+    "answer": "A",
+    "explanation": "Value = Q e^(−rT) N(d2) = 100 × e^(−0.05) × 0.4207 = 40.02.",
+    "rationale": {
+      "A": "Correct. The fixed payment times the risk-neutral probability of exercise, discounted for one year.",
+      "B": "Incorrect. 42.07 forgets to discount the expected payoff.",
+      "C": "Incorrect. 55.10 uses 1 − N(d2), which values the cash-or-nothing put.",
+      "D": "Incorrect. 44.23 compounds rather than discounts the expected payoff."
+    },
+    "verify": "return 100*Math.exp(-0.05)*0.4207;",
+    "numericAnswer": 40.02,
+    "tolerance": 0.005,
+    "tags": ["binary-options"]
+  },
+  {
+    "id": "q-frm1-exotic-options-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "exotic-options",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Compared with a vanilla European call with the same strike and maturity, which option is most likely to be more expensive?",
+    "options": ["An up-and-out call", "An average-price Asian call", "A down-and-in call", "A fixed-strike lookback call"],
+    "answer": "D",
+    "explanation": "A fixed-strike lookback call pays based on the maximum price reached, which is at least the final price, so its payoff is always at least the vanilla payoff. Barrier and Asian calls are cheaper.",
+    "rationale": {
+      "A": "Incorrect. Knock-out options can disappear, so they cost less than the vanilla.",
+      "B": "Incorrect. Averaging reduces volatility, so Asian calls are cheaper than vanilla calls.",
+      "C": "Incorrect. A knock-in option only comes alive if the barrier is hit, so it costs no more than the vanilla.",
+      "D": "Correct. Paying on the maximum price guarantees a payoff at least as large as the vanilla's."
+    },
+    "tags": ["lookback-options", "relative-value"]
+  }
+]

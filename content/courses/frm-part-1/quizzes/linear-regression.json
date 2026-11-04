@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-linear-regression-1",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "linear-regression",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The covariance between a fund's monthly return and the market's monthly return is 0.0012. The market's monthly volatility is 4% and the fund's is 5%. The OLS slope from regressing the fund's return on the market return is closest to:",
+    "options": ["1.33", "0.75", "0.60", "0.03"],
+    "answer": "B",
+    "explanation": "β̂ = Cov / Var(market) = 0.0012 / 0.04² = 0.0012 / 0.0016 = 0.75.",
+    "rationale": {
+      "A": "Incorrect. 1.33 inverts the ratio, dividing the market variance by the covariance.",
+      "B": "Correct. Divide the covariance by the variance of the explanatory variable: 0.0012/0.0016 = 0.75.",
+      "C": "Incorrect. 0.60 is the correlation, 0.0012/(0.04 × 0.05), not the slope.",
+      "D": "Incorrect. 0.03 divides the covariance by the market volatility rather than its variance."
+    },
+    "verify": "return 0.0012/(0.04*0.04);",
+    "numericAnswer": 0.75,
+    "tolerance": 0.005,
+    "tags": ["ols-slope", "beta"]
+  },
+  {
+    "id": "q-frm1-linear-regression-2",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "linear-regression",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In a regression of a portfolio's return on a factor return, the sample mean portfolio return is 1.0%, the sample mean factor return is 0.8% and the estimated slope is 1.2. The OLS intercept (in %) is closest to:",
+    "options": ["0.04", "1.96", "1.00", "−0.20"],
+    "answer": "A",
+    "explanation": "α̂ = Ȳ − β̂X̄ = 1.0 − 1.2 × 0.8 = 1.0 − 0.96 = 0.04%.",
+    "rationale": {
+      "A": "Correct. The line passes through the means, so α̂ = 1.0 − 0.96 = 0.04.",
+      "B": "Incorrect. 1.96 adds β̂X̄ to Ȳ instead of subtracting it.",
+      "C": "Incorrect. 1.00 is the mean portfolio return, ignoring the factor's contribution.",
+      "D": "Incorrect. −0.20 is 0.8 − 1.0, which subtracts the means directly and ignores the slope."
+    },
+    "verify": "return 1.0 - 1.2*0.8;",
+    "numericAnswer": 0.04,
+    "tolerance": 0.005,
+    "tags": ["ols-intercept"]
+  },
+  {
+    "id": "q-frm1-linear-regression-3",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "linear-regression",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A regression of a stock's excess return on the market excess return over a large sample gives a slope estimate of 1.2 with a standard error of 0.4. The t-statistic for testing whether the stock's beta equals 1 is closest to:",
+    "options": ["3.00", "0.33", "0.50", "1.25"],
+    "answer": "C",
+    "explanation": "t = (β̂ − β0)/SE = (1.2 − 1)/0.4 = 0.5. Beta is significantly different from 0 but not from 1.",
+    "rationale": {
+      "A": "Incorrect. 3.00 tests the null that beta equals 0, not 1.",
+      "B": "Incorrect. 0.33 divides the standard error by the estimate, inverting the ratio.",
+      "C": "Correct. Subtract the hypothesised value: (1.2 − 1)/0.4 = 0.5.",
+      "D": "Incorrect. 1.25 divides by the squared standard error (0.16) instead of the standard error."
+    },
+    "verify": "return (1.2-1)/0.4;",
+    "numericAnswer": 0.5,
+    "tolerance": 0.005,
+    "tags": ["t-test", "beta"]
+  },
+  {
+    "id": "q-frm1-linear-regression-4",
+    "course": "frm-part-1",
+    "topic": "quantitative-analysis",
+    "lesson": "linear-regression",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A simple regression of a bank's equity return on changes in credit spreads has an R² of 0.25. Which statement is most accurate?",
+    "options": [
+      "A one-unit change in spreads changes the equity return by 0.25 units.",
+      "Spread changes cause 25% of the bank's equity return.",
+      "The slope coefficient must be statistically significant at the 5% level.",
+      "Spread changes explain 25% of the sample variation in the equity return, and the absolute correlation between the two is 0.50."
+    ],
+    "answer": "D",
+    "explanation": "R² is the share of total variation in Y explained by the regression. With one regressor R² = ρ², so |ρ| = √0.25 = 0.50.",
+    "rationale": {
+      "A": "Incorrect. That describes the slope coefficient, not R².",
+      "B": "Incorrect. R² measures explained variation, not causation.",
+      "C": "Incorrect. Significance depends on the slope's t-statistic and sample size; R² alone does not determine it.",
+      "D": "Correct. R² is the explained share of variation, and in a simple regression it equals the squared correlation."
+    },
+    "tags": ["r-squared"]
+  }
+]

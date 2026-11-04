@@ -1,0 +1,98 @@
+[
+  {
+    "id": "q-frm1-garp-code-of-conduct-1",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "garp-code-of-conduct",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Elena, an FRM holder, is asked to review the liquidity risk model of a hedge fund in which her spouse is a partner. Under the GARP Code of Conduct, the most appropriate action is to:",
+    "options": [
+      "fully disclose the relationship to all affected parties and proceed only if the work can remain fair and independent",
+      "accept the assignment without comment because she will be objective",
+      "accept the assignment but keep the relationship confidential to protect her spouse's privacy",
+      "refuse all future work for any hedge fund"
+    ],
+    "answer": "A",
+    "explanation": "The conflicts principle requires fair dealing and full disclosure of actual or potential conflicts. The relationship itself is not a breach; failing to disclose it would be.",
+    "rationale": {
+      "A": "Correct. Full and fair disclosure, plus ensuring independence, satisfies the conflicts principle.",
+      "B": "Incorrect. Personal belief in one's objectivity does not replace the duty to disclose.",
+      "C": "Incorrect. Concealing a conflict from affected parties is exactly what the Code prohibits; confidentiality does not cover this.",
+      "D": "Incorrect. The Code does not require blanket refusal; disclosure and independence address the conflict."
+    },
+    "tags": ["conflicts-of-interest"]
+  },
+  {
+    "id": "q-frm1-garp-code-of-conduct-2",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "garp-code-of-conduct",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Tomasz, a risk manager at Varenne Bank, learns from a confidential credit committee memo that a large corporate client is about to be downgraded internally. Before the information becomes public, he sells bonds of that company from his personal account. Which part of the Code is most directly violated?",
+    "options": [
+      "Adherence to generally accepted practices",
+      "Fundamental responsibilities regarding understanding of applicable laws",
+      "Confidentiality, by using confidential information for personal benefit",
+      "Conflicts of interest, because he failed to disclose his bond holdings to the committee"
+    ],
+    "answer": "C",
+    "explanation": "Using confidential information obtained at work for personal gain is the central breach of the confidentiality principle (and may also break securities laws).",
+    "rationale": {
+      "A": "Incorrect. Accepted practices concern methodology and diligence, not personal trading on confidential information.",
+      "B": "Incorrect. Legal knowledge may be relevant, but the most direct breach is misuse of confidential information.",
+      "C": "Correct. He used confidential information to benefit himself.",
+      "D": "Incorrect. Non-disclosure of holdings could be an issue, but the trade on confidential information is the more direct violation."
+    },
+    "tags": ["confidentiality"]
+  },
+  {
+    "id": "q-frm1-garp-code-of-conduct-3",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "garp-code-of-conduct",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Aisha, an FRM holder, uses an expected shortfall method at a confidence level that differs from her firm's and the industry's usual practice, because she believes it suits the portfolio better. Her report presents the results without mentioning the change. Which statement best describes her position under the Code?",
+    "options": [
+      "She has complied, because members may use any method they believe is superior.",
+      "She has violated the Code because any departure from generally accepted practice is prohibited.",
+      "She has complied, because confidentiality allows her to keep methodology choices private.",
+      "She has violated the Code by not clearly indicating her departure from generally accepted practice."
+    ],
+    "answer": "D",
+    "explanation": "The Code allows departures from generally accepted risk management practices, but members must clearly disclose them so users can interpret the results.",
+    "rationale": {
+      "A": "Incorrect. Using a different method is allowed only with clear disclosure; silence makes the report misleading.",
+      "B": "Incorrect. Departures are not banned; the failure is the lack of disclosure.",
+      "C": "Incorrect. Confidentiality protects client and employer information, not undisclosed changes in methodology that affect report users.",
+      "D": "Correct. The breach is failing to flag the departure from accepted practice."
+    },
+    "tags": ["professional-standards", "disclosure"]
+  },
+  {
+    "id": "q-frm1-garp-code-of-conduct-4",
+    "course": "frm-part-1",
+    "topic": "foundations-of-risk-management",
+    "lesson": "garp-code-of-conduct",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Ravi's supervisor at Halden Securities tells him that the compliance team has approved a stress test report that Ravi knows omits a material scenario. The supervisor says Ravi's ethical obligations are covered because compliance signed off. Under the Code, which statement is most accurate?",
+    "options": [
+      "Ravi has no further obligation because compliance has taken responsibility.",
+      "Ravi's ethical responsibilities are his own and cannot be delegated, so he should raise the omission.",
+      "Ravi may only act if the omission also breaks a specific law.",
+      "The Code applies only to the firm, not to Ravi personally, so he is not affected."
+    ],
+    "answer": "B",
+    "explanation": "Under the fundamental responsibilities standard, ethical obligations are personal and cannot be outsourced or delegated to supervisors or compliance staff.",
+    "rationale": {
+      "A": "Incorrect. Compliance approval does not transfer a member's personal ethical responsibility.",
+      "B": "Correct. Ravi must act on his own ethical obligations, for example by escalating the omission.",
+      "C": "Incorrect. The Code's duties of honesty and accurate representation go beyond strict legal requirements.",
+      "D": "Incorrect. The Code applies to individual members, FRM holders and candidates."
+    },
+    "tags": ["fundamental-responsibilities"]
+  }
+]

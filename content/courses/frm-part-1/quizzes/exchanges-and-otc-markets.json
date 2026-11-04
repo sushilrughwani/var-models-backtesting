@@ -1,0 +1,89 @@
+[
+  {
+    "id": "q-frm1-exchanges-and-otc-markets-1",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "exchanges-and-otc-markets",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A dealer has four OTC trades with a hedge fund, all under one enforceable ISDA Master Agreement. The values to the dealer are +8m, +5m, −4m and −3m (USD). If the hedge fund defaults, the dealer's credit exposure (USD millions) is closest to:",
+    "options": ["13", "20", "0", "6"],
+    "answer": "D",
+    "explanation": "With netting, exposure = max(8 + 5 − 4 − 3, 0) = 6m.",
+    "rationale": {
+      "A": "Incorrect. 13 is the sum of positive values, which is the exposure without netting.",
+      "B": "Incorrect. 20 adds the absolute values of all trades; negative values reduce, not increase, exposure.",
+      "C": "Incorrect. Exposure would be zero only if the net value were zero or negative.",
+      "D": "Correct. The net portfolio value of 6m is the amount the dealer could lose."
+    },
+    "verify": "return Math.max(8+5-4-3,0);",
+    "numericAnswer": 6,
+    "tolerance": 0.01,
+    "tags": ["netting"]
+  },
+  {
+    "id": "q-frm1-exchanges-and-otc-markets-2",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "exchanges-and-otc-markets",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Under a credit support annex, a counterparty must deliver collateral worth USD 3.0 million after haircuts. It chooses to post corporate bonds that carry a 10% haircut. The market value of bonds it must deliver (USD millions) is closest to:",
+    "options": ["3.33", "3.30", "3.00", "2.73"],
+    "answer": "A",
+    "explanation": "Collateral value = market value × (1 − haircut). Market value = 3.0 / 0.90 = 3.33m.",
+    "rationale": {
+      "A": "Correct. Bonds worth 3.33m are credited at 90%, giving 3.0m of collateral.",
+      "B": "Incorrect. 3.30 multiplies by 1.10; this slightly undershoots, giving only 2.97m of credit after the haircut.",
+      "C": "Incorrect. 3.00 ignores the haircut entirely.",
+      "D": "Incorrect. 2.73 divides by 1.10, which reduces rather than increases the amount delivered."
+    },
+    "verify": "return 3/(1-0.10);",
+    "numericAnswer": 3.33,
+    "tolerance": 0.005,
+    "tags": ["collateral", "haircut"]
+  },
+  {
+    "id": "q-frm1-exchanges-and-otc-markets-3",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "exchanges-and-otc-markets",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which statement correctly distinguishes initial margin from variation margin in a bilateral OTC derivatives relationship?",
+    "options": [
+      "Initial margin is paid only once at inception, while variation margin is paid only at maturity",
+      "Variation margin covers the current mark-to-market value, while initial margin covers potential value changes during the close-out period after a default",
+      "Initial margin covers current exposure, while variation margin covers future exposure",
+      "Variation margin is required only for exchange-traded contracts"
+    ],
+    "answer": "B",
+    "explanation": "VM moves with the portfolio's current value; IM is an extra buffer sized to the possible loss while a defaulted portfolio is replaced or closed out.",
+    "rationale": {
+      "A": "Incorrect. IM is recalculated as the portfolio changes, and VM is exchanged frequently (often daily), not at maturity.",
+      "B": "Correct. VM addresses current exposure; IM addresses potential future exposure over the margin period of risk.",
+      "C": "Incorrect. This reverses the roles of the two margins.",
+      "D": "Incorrect. Collateral agreements and regulation require VM for many OTC trades as well."
+    },
+    "tags": ["initial-margin", "variation-margin"]
+  },
+  {
+    "id": "q-frm1-exchanges-and-otc-markets-4",
+    "course": "frm-part-1",
+    "topic": "financial-markets-and-products",
+    "lesson": "exchanges-and-otc-markets",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A large insurer sold protection through OTC credit default swaps under CSAs that required more collateral if its own credit rating fell. When it was downgraded during a crisis, it faced severe difficulties. Which risk did the collateral arrangements primarily transform counterparty credit risk into?",
+    "options": ["Operational risk", "Basis risk", "Liquidity (funding) risk", "Model risk"],
+    "answer": "C",
+    "explanation": "Collateral protects the receiving party but forces the posting party to raise cash or securities quickly. A downgrade trigger combined with adverse market moves created large, sudden collateral calls the insurer could not fund.",
+    "rationale": {
+      "A": "Incorrect. The problem was not failed processes or systems but the need to find cash quickly.",
+      "B": "Incorrect. Basis risk concerns a mismatch between a hedge and the exposure, not collateral calls.",
+      "C": "Correct. Collateral reduces credit risk for counterparties but creates funding liquidity risk for the poster.",
+      "D": "Incorrect. Model risk may have contributed to valuations, but the collateral mechanism itself created liquidity pressure."
+    },
+    "tags": ["collateral", "liquidity-risk"]
+  }
+]

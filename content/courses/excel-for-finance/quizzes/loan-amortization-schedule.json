@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-xl-loan-amortization-schedule-1",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "loan-amortization-schedule",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A 30-year mortgage of USD 300,000 at 6% a year is repaid monthly. How much of the first payment is interest?",
+    "options": ["1,500.00", "18,000.00", "1,798.65", "298.65"],
+    "answer": "A",
+    "explanation": "Interest in period 1 = opening balance × monthly rate = 300,000 × 0.06/12 = 1,500.00. The full payment is 1,798.65, so 298.65 goes to principal.",
+    "rationale": {
+      "A": "Correct. 300,000 × 0.005 = 1,500.00.",
+      "B": "Incorrect. 18,000 applies the full annual rate to one month.",
+      "C": "Incorrect. 1,798.65 is the whole monthly payment, interest plus principal.",
+      "D": "Incorrect. 298.65 is the principal portion of the first payment."
+    },
+    "verify": "return 300000*0.06/12;",
+    "numericAnswer": 1500,
+    "tolerance": 0.01,
+    "tags": ["interest-split"]
+  },
+  {
+    "id": "q-xl-loan-amortization-schedule-2",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "loan-amortization-schedule",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "For the same USD 300,000, 6%, 30-year monthly mortgage, what does `=PPMT(6%/12, 2, 360, -300000)` return?",
+    "options": ["298.65", "1,498.51", "300.14", "1,798.65"],
+    "answer": "C",
+    "explanation": "Payment = 1,798.65. After month 1 the balance is 300,000 − 298.65 = 299,701.35. Month 2 interest = 299,701.35 × 0.005 = 1,498.51, so principal = 1,798.65 − 1,498.51 = 300.14.",
+    "rationale": {
+      "A": "Incorrect. 298.65 is the principal in period 1, not period 2.",
+      "B": "Incorrect. 1,498.51 is the interest in period 2, which is what `IPMT` would return.",
+      "C": "Correct. Principal in period 2 is 300.14, slightly higher than in period 1 because the balance has fallen.",
+      "D": "Incorrect. 1,798.65 is the total payment from `PMT`."
+    },
+    "verify": "const r=0.005,n=360,P=300000; const A=P*r/(1-Math.pow(1+r,-n)); const b1=P*(1+r)-A; return A-b1*r;",
+    "numericAnswer": 300.14,
+    "tolerance": 0.01,
+    "tags": ["ppmt"]
+  },
+  {
+    "id": "q-xl-loan-amortization-schedule-3",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "loan-amortization-schedule",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "In a schedule, the interest cell for period 1 is `=B9*B2/12`, where B9 is the opening balance and B2 the annual rate. After filling the formula down, interest from period 2 onward shows zero. What is the fix?",
+    "options": ["Replace the formula with `IPMT`, because manual interest formulas cannot be filled down", "Divide by 365 instead of 12", "Change the opening balance link to `=$B$9`", "Lock the rate cell with an absolute reference: `=B9*$B$2/12`"],
+    "answer": "D",
+    "explanation": "When the formula is filled down, the relative reference B2 becomes B3, B4 and so on, which are blank or hold other inputs. Locking it as `$B$2` keeps every row pointing at the rate, while B9 should stay relative so each row uses its own opening balance.",
+    "rationale": {
+      "A": "Incorrect. Manual formulas fill down perfectly once the references are correct; IPMT is a cross-check, not a requirement.",
+      "B": "Incorrect. The day-count is not the issue; the reference to the rate drifts when copied.",
+      "C": "Incorrect. Locking the opening balance would make every row use period 1's balance, which is a different error.",
+      "D": "Correct. The rate must be an absolute reference so it does not shift when the formula is copied."
+    },
+    "tags": ["absolute-references", "schedule-build"]
+  },
+  {
+    "id": "q-xl-loan-amortization-schedule-4",
+    "course": "excel-for-finance",
+    "topic": "excel-financial-functions",
+    "lesson": "loan-amortization-schedule",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A USD 20,000 loan at 6% a year has a scheduled monthly payment of USD 608.44 over 36 months. The borrower pays an extra USD 100 every month. How many payments are needed to repay the loan, counting a smaller final payment as one?",
+    "options": ["36", "31", "30", "29"],
+    "answer": "B",
+    "explanation": "With a payment of 708.44, `=NPER(0.5%, -708.44, 20000)` = 30.51 periods. Thirty full payments leave a small balance that is cleared by a 31st, partial payment of about 361.",
+    "rationale": {
+      "A": "Incorrect. 36 is the original term; extra payments shorten the loan.",
+      "B": "Correct. NPER is 30.51, so 31 payments are needed, the last one partial.",
+      "C": "Incorrect. 30 rounds NPER down and leaves an unpaid balance.",
+      "D": "Incorrect. 29 comes from 20,000 / 708.44 = 28.2 rounded up, which ignores interest."
+    },
+    "verify": "const r=0.005,P=20000; const A=P*r/(1-Math.pow(1+r,-36)); const p=A+100; return Math.ceil(Math.log(p/(p-P*r))/Math.log(1+r));",
+    "numericAnswer": 31,
+    "tolerance": 0.5,
+    "tags": ["extra-payments", "nper"]
+  }
+]

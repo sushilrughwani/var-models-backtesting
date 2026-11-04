@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-spot-forward-and-par-rates-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "spot-forward-and-par-rates",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "The 1-year spot rate is 3% and the 2-year spot rate is 4%, both with annual compounding. The 1-year forward rate starting in one year is closest to:",
+    "options": ["3.50%", "5.00%", "5.01%", "1.00%"],
+    "answer": "C",
+    "explanation": "(1.04)^2 = (1.03)(1 + f), so f = 1.0816 / 1.03 − 1 = 5.01%.",
+    "rationale": {
+      "A": "Incorrect. 3.50% is the simple average of the two spot rates; the forward must exceed the 2-year spot rate when the curve rises.",
+      "B": "Incorrect. 5.00% uses the arithmetic shortcut 2 × 4% − 3%, which ignores compounding.",
+      "C": "Correct. Compounding at 4% for two years must equal 3% for year one and the forward for year two: f = 5.01%.",
+      "D": "Incorrect. 1.00% is the difference between the spot rates, not a forward rate."
+    },
+    "verify": "return (Math.pow(1.04,2)/1.03-1)*100;",
+    "numericAnswer": 5.01,
+    "tolerance": 0.005,
+    "tags": ["forward-rates"]
+  },
+  {
+    "id": "q-frm1-spot-forward-and-par-rates-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "spot-forward-and-par-rates",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The 1-year spot rate is 2% (annual compounding). A 2-year bond paying a 5% annual coupon on face value 100 trades at 101.50. The bootstrapped 2-year spot rate (annual compounding) is closest to:",
+    "options": ["4.26%", "4.20%", "8.70%", "5.00%"],
+    "answer": "A",
+    "explanation": "PV of the year-1 coupon = 5 / 1.02 = 4.9020. Remaining value 101.50 − 4.9020 = 96.5980 is the price of 105 at year 2, so d(2) = 0.919981 and r(2) = 0.919981^(−1/2) − 1 = 4.26%.",
+    "rationale": {
+      "A": "Correct. Strip out the first coupon at the 1-year rate, then solve 105 / (1 + r)^2 = 96.5980, giving 4.26%.",
+      "B": "Incorrect. 4.20% is the bond's yield to maturity, a single blended rate, not the 2-year spot rate.",
+      "C": "Incorrect. 8.70% is 105 / 96.5980 − 1, which forgets to take the square root for the two-year horizon.",
+      "D": "Incorrect. 5.00% is the coupon rate; the bond trades above par so the rates must be below the coupon."
+    },
+    "verify": "const d1=1/1.02; const d2=(101.5-5*d1)/105; return (Math.pow(d2,-0.5)-1)*100;",
+    "numericAnswer": 4.26,
+    "tolerance": 0.005,
+    "tags": ["bootstrapping", "spot-rates"]
+  },
+  {
+    "id": "q-frm1-spot-forward-and-par-rates-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "spot-forward-and-par-rates",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Annual-pay discount factors are d(1) = 0.970, d(2) = 0.940 and d(3) = 0.905. The 3-year par rate (annual coupon) is closest to:",
+    "options": ["3.17%", "9.50%", "4.97%", "3.37%"],
+    "answer": "D",
+    "explanation": "Par rate = (1 − d(3)) / (d(1) + d(2) + d(3)) = 0.095 / 2.815 = 3.37%.",
+    "rationale": {
+      "A": "Incorrect. 3.17% divides 0.095 by 3 years, ignoring that later coupons are worth less than earlier ones.",
+      "B": "Incorrect. 9.50% is 1 − d(3), the total discount over three years, not an annual coupon.",
+      "C": "Incorrect. 4.97% leaves d(3) out of the annuity factor, omitting the final coupon.",
+      "D": "Correct. The par coupon equals (1 − d(3)) divided by the annuity factor 2.815: 3.37%."
+    },
+    "verify": "return (1-0.905)/(0.970+0.940+0.905)*100;",
+    "numericAnswer": 3.37,
+    "tolerance": 0.005,
+    "tags": ["par-rates"]
+  },
+  {
+    "id": "q-frm1-spot-forward-and-par-rates-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "spot-forward-and-par-rates",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "The term structure of interest rates slopes steeply downward. For the 5-year maturity, which ordering of rates is correct?",
+    "options": [
+      "Forward rate > spot rate > par rate",
+      "Par rate > spot rate > forward rate",
+      "Spot rate > par rate > forward rate",
+      "All three rates are equal because they come from the same discount factors"
+    ],
+    "answer": "B",
+    "explanation": "When spot rates fall with maturity, the marginal (forward) rate must be below the average (spot) rate, and the par rate, weighted toward earlier higher rates, sits above the spot rate.",
+    "rationale": {
+      "A": "Incorrect. This is the ordering for an upward-sloping curve.",
+      "B": "Correct. In a falling curve the forward is lowest, and the par yield is pulled up by early coupons discounted at the higher short rates.",
+      "C": "Incorrect. The par rate lies above, not below, the spot rate when the curve slopes downward.",
+      "D": "Incorrect. Sharing the same discount factors does not make the rates equal; they coincide only for a flat curve."
+    },
+    "tags": ["term-structure"]
+  }
+]
