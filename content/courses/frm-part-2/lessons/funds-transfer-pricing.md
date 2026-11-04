@@ -50,7 +50,7 @@ where $\text{FTP}_L$ is the transfer rate charged to the loan and $\text{FTP}_D$
 Good FTP is governed by ALCO, transparent, consistent across business lines and aligned with the bank's LCR and NSFR costs.
 
 ## Worked example
-A bank makes a USD 100 million 5-year fixed-rate loan at 6.5%, funded by a USD 100 million 1-year retail term deposit at 2.0%. Curves: 5-year swap 3.8%, 1-year swap 3.2%; term liquidity premium 0.6% for 5 years and 0.2% for 1 years.
+A bank makes a USD 100 million 5-year fixed-rate loan at 6.5%, funded by a USD 100 million 1-year retail term deposit at 2.0%. Curves: 5-year swap 3.8%, 1-year swap 3.2%; term liquidity premium 0.6% for 5 years and 0.2% for 1 year.
 
 1. Loan FTP: $3.8\% + 0.6\% = 4.4\%$.
 2. Deposit FTP credit: $3.2\% + 0.2\% = 3.4\%$.
