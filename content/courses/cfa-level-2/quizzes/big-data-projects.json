@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa2-big-data-projects-1",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "big-data-projects",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A sentiment classifier tested on 500 news items produces 90 true positives, 10 false positives, 60 false negatives and 340 true negatives. The model's F1 score is closest to:",
+    "options": ["0.86", "0.75", "0.72"],
+    "answer": "C",
+    "explanation": "Precision = 90/(90 + 10) = 0.90. Recall = 90/(90 + 60) = 0.60. F1 = 2(0.90)(0.60)/(0.90 + 0.60) = 1.08/1.50 = 0.72.",
+    "rationale": {
+      "A": "Incorrect. 0.86 is accuracy, (90 + 340)/500, which flatters a model on unbalanced data.",
+      "B": "Incorrect. 0.75 is the simple average of precision and recall, not the harmonic mean.",
+      "C": "Correct. The harmonic mean of precision (0.90) and recall (0.60) is 0.72."
+    },
+    "verify": "const TP=90,FP=10,FN=60; const P=TP/(TP+FP), R=TP/(TP+FN); return 2*P*R/(P+R);",
+    "numericAnswer": 0.72,
+    "tolerance": 0.005,
+    "tags": ["model-evaluation", "f1-score"]
+  },
+  {
+    "id": "q-cfa2-big-data-projects-2",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "big-data-projects",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A feature ranges from a minimum of 20 to a maximum of 120, with a mean of 50 and a standard deviation of 20. Using normalisation (min-max scaling), an observation of 45 is rescaled to a value closest to:",
+    "options": ["−0.25", "0.25", "0.375"],
+    "answer": "B",
+    "explanation": "Normalised value = (45 − 20)/(120 − 20) = 25/100 = 0.25.",
+    "rationale": {
+      "A": "Incorrect. −0.25 is the standardised value, (45 − 50)/20, not the normalised value.",
+      "B": "Correct. Min-max scaling subtracts the minimum and divides by the range: 25/100 = 0.25.",
+      "C": "Incorrect. 0.375 divides by the maximum (45/120) instead of using the minimum and range."
+    },
+    "verify": "return (45-20)/(120-20);",
+    "numericAnswer": 0.25,
+    "tolerance": 0.005,
+    "tags": ["data-preparation", "normalisation"]
+  },
+  {
+    "id": "q-cfa2-big-data-projects-3",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "big-data-projects",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "While preparing analyst reports for text analysis, a data scientist converts \"better\" to \"good\" and \"companies\" to \"company\" so that each word is reduced to its dictionary form. This step is best described as:",
+    "options": ["lemmatisation", "stemming", "tokenisation"],
+    "answer": "A",
+    "explanation": "Lemmatisation maps words to their dictionary base form (lemma) using vocabulary and grammar, which is why \"better\" can become \"good\". Stemming simply chops endings and cannot do this.",
+    "rationale": {
+      "A": "Correct. Reducing words to real dictionary forms, including irregular ones, is lemmatisation.",
+      "B": "Incorrect. Stemming truncates words mechanically (e.g. \"companies\" to \"compani\") and cannot map \"better\" to \"good\".",
+      "C": "Incorrect. Tokenisation splits text into individual tokens; it does not change word forms."
+    },
+    "tags": ["text-processing"]
+  },
+  {
+    "id": "q-cfa2-big-data-projects-4",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "big-data-projects",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A compliance team builds a model to flag trades for manual review. Each flag triggers an expensive investigation, and the team has limited staff, so wrongly flagged trades are the main concern. When comparing candidate models, the team should place the most weight on:",
+    "options": ["recall", "precision", "accuracy"],
+    "answer": "B",
+    "explanation": "Precision, TP/(TP + FP), measures how many flags are genuine. When false positives are costly, maximising precision keeps wasted investigations to a minimum.",
+    "rationale": {
+      "A": "Incorrect. Recall focuses on not missing true cases (false negatives), which is not the stated main concern.",
+      "B": "Correct. Precision directly penalises false positives, the costly error here.",
+      "C": "Incorrect. Accuracy mixes both error types and can look high when flagged trades are rare, hiding many false positives relative to true ones."
+    },
+    "tags": ["model-evaluation", "precision-recall"]
+  }
+]
