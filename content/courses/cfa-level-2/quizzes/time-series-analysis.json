@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa2-time-series-analysis-1",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "time-series-analysis",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An AR(1) model of a capacity utilisation series is estimated as x(t) = 1.5 + 0.4 x(t−1). The mean-reverting level of the series is closest to:",
+    "options": ["2.50", "1.07", "3.75"],
+    "answer": "A",
+    "explanation": "MRL = b0/(1 − b1) = 1.5/(1 − 0.4) = 1.5/0.6 = 2.50.",
+    "rationale": {
+      "A": "Correct. The intercept divided by one minus the slope gives 2.50.",
+      "B": "Incorrect. 1.07 divides by (1 + b1) instead of (1 − b1).",
+      "C": "Incorrect. 3.75 divides the intercept by b1 instead of by (1 − b1)."
+    },
+    "verify": "return 1.5/(1-0.4);",
+    "numericAnswer": 2.5,
+    "tolerance": 0.005,
+    "tags": ["autoregressive", "mean-reversion"]
+  },
+  {
+    "id": "q-cfa2-time-series-analysis-2",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "time-series-analysis",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A covariance-stationary series follows x(t) = 0.8 + 0.75 x(t−1). The current value is 8.0. The two-period-ahead forecast is closest to:",
+    "options": ["6.80", "5.90", "5.30"],
+    "answer": "B",
+    "explanation": "One step: 0.8 + 0.75(8.0) = 6.80. Two steps (chain): 0.8 + 0.75(6.80) = 5.90.",
+    "rationale": {
+      "A": "Incorrect. 6.80 is only the one-period-ahead forecast.",
+      "B": "Correct. Feeding the one-step forecast of 6.80 back into the model gives 5.90.",
+      "C": "Incorrect. 5.30 applies b0 + b1² × x(t), ignoring that the intercept enters the chain twice."
+    },
+    "verify": "const x1=0.8+0.75*8.0; return 0.8+0.75*x1;",
+    "numericAnswer": 5.9,
+    "tolerance": 0.005,
+    "tags": ["forecasting", "autoregressive"]
+  },
+  {
+    "id": "q-cfa2-time-series-analysis-3",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "time-series-analysis",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst fits an AR(1) model to 64 quarterly observations of retail sales growth. The residual autocorrelations at lags 1 to 4 are 0.04, −0.06, 0.09 and 0.30. The 5% critical t-value is about 2.0. The analyst should most likely:",
+    "options": ["conclude the model is correctly specified because the lag-1 autocorrelation is insignificant", "first-difference the series because it has a unit root", "add the value lagged four quarters as an additional regressor"],
+    "answer": "C",
+    "explanation": "The standard error of each residual autocorrelation is 1/√64 = 0.125. The lag-4 t-statistic is 0.30/0.125 = 2.4 > 2.0, indicating quarterly seasonality, so a seasonal lag x(t−4) should be added.",
+    "rationale": {
+      "A": "Incorrect. All lags must be checked; the significant lag-4 autocorrelation shows the model is misspecified.",
+      "B": "Incorrect. A significant seasonal residual autocorrelation indicates seasonality, not a unit root, which would be tested with Dickey-Fuller.",
+      "C": "Correct. A significant lag-4 residual autocorrelation in quarterly data calls for a seasonal lag."
+    },
+    "tags": ["seasonality", "residual-autocorrelation"]
+  },
+  {
+    "id": "q-cfa2-time-series-analysis-4",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "time-series-analysis",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Dickey-Fuller tests fail to reject a unit root for both a country's long-term bond yield and its short-term policy rate. An Engle-Granger test rejects the null of no cointegration between them. A regression of the bond yield on the policy rate is:",
+    "options": ["valid, because the two series are cointegrated", "invalid, because both series have unit roots", "valid only after both series are first-differenced, because cointegration does not matter"],
+    "answer": "A",
+    "explanation": "When both series have unit roots but share a long-run equilibrium (cointegration), the regression residuals are stationary and the estimated relationship is meaningful.",
+    "rationale": {
+      "A": "Correct. Cointegration means the series move together in the long run, so the regression in levels is valid.",
+      "B": "Incorrect. Two unit-root series produce a spurious regression only if they are not cointegrated.",
+      "C": "Incorrect. Cointegration is precisely what decides validity in levels; differencing is not required here."
+    },
+    "tags": ["unit-root", "cointegration"]
+  }
+]

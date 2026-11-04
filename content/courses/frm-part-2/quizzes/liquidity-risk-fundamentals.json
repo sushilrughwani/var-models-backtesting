@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-liquidity-risk-fundamentals-1",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "liquidity-risk-fundamentals",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A position worth USD 20 million has a 1-day 99% VaR of USD 0.9 million. The relative bid-ask spread has a mean of 1.0% and a standard deviation of 0.5%. Using a 99% confidence multiplier of 2.33 for the spread, the liquidity-adjusted VaR is closest to:",
+    "options": ["USD 1.00 million", "USD 1.33 million", "USD 1.12 million", "USD 0.90 million"],
+    "answer": "C",
+    "explanation": "Stressed spread = 1.0% + 2.33 × 0.5% = 2.165%. Liquidity cost = 0.5 × 0.02165 × 20 = 0.2165. LVaR = 0.9 + 0.2165 = USD 1.12 million.",
+    "rationale": {
+      "A": "Incorrect. 1.00 uses only the average spread (0.5 × 1.0% × 20 = 0.10), ignoring spread volatility.",
+      "B": "Incorrect. 1.33 applies the full stressed spread rather than half of it.",
+      "C": "Correct. VaR plus half the stressed spread times position value gives 1.12.",
+      "D": "Incorrect. 0.90 is the unadjusted VaR, ignoring liquidation costs altogether."
+    },
+    "verify": "const P=20,v=0.9,mu=0.01,sd=0.005,z=2.33; return v+0.5*(mu+z*sd)*P;",
+    "numericAnswer": 1.12,
+    "tolerance": 0.005,
+    "tags": ["lvar"]
+  },
+  {
+    "id": "q-frm2-liquidity-risk-fundamentals-2",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "liquidity-risk-fundamentals",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A stock is quoted at a bid of 49.80 and an ask of 50.20. A fund holds USD 40 million of the stock, valued at mid. Assuming a constant spread and no price impact, the cost of liquidating the position immediately is closest to:",
+    "options": ["USD 0.16 million", "USD 0.32 million", "USD 0.40 million", "USD 0.08 million"],
+    "answer": "A",
+    "explanation": "Relative spread = (50.20 − 49.80) / 50.00 = 0.8%. Selling at the bid costs half the spread relative to mid: 0.5 × 0.008 × 40 = USD 0.16 million.",
+    "rationale": {
+      "A": "Correct. Half of the 0.8% relative spread on USD 40 million is 0.16.",
+      "B": "Incorrect. 0.32 uses the full spread, which is the cost of a round trip, not a one-way sale from mid.",
+      "C": "Incorrect. 0.40 treats the absolute spread of 0.40 as if it were USD millions.",
+      "D": "Incorrect. 0.08 takes a quarter of the spread, halving twice."
+    },
+    "verify": "const bid=49.8, ask=50.2, mid=(bid+ask)/2, s=(ask-bid)/mid; return 0.5*s*40;",
+    "numericAnswer": 0.16,
+    "tolerance": 0.005,
+    "tags": ["bid-ask-spread"]
+  },
+  {
+    "id": "q-frm2-liquidity-risk-fundamentals-3",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "liquidity-risk-fundamentals",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "During a market sell-off, repo lenders increase haircuts on corporate bond collateral. Leveraged funds sell bonds to meet the higher haircuts, prices fall further and volatility rises, prompting lenders to increase haircuts again. This dynamic is best described as:",
+    "options": [
+      "a loss spiral driven purely by credit downgrades",
+      "a margin spiral linking funding liquidity and market liquidity",
+      "an improvement in market resiliency",
+      "endogenous liquidity risk confined to a single trader's position"
+    ],
+    "answer": "B",
+    "explanation": "Rising haircuts (a funding liquidity shock) force asset sales that reduce market liquidity and raise volatility, which feeds back into higher haircuts: a margin spiral.",
+    "rationale": {
+      "A": "Incorrect. The mechanism here is haircuts and margins, not credit downgrades; a loss spiral is driven by losses eroding equity.",
+      "B": "Correct. The haircut feedback loop is the margin spiral connecting funding and market liquidity.",
+      "C": "Incorrect. Resiliency would mean prices recover quickly; here they keep falling.",
+      "D": "Incorrect. The dynamic is market-wide, involving many leveraged funds, not one position."
+    },
+    "tags": ["liquidity-spirals"]
+  },
+  {
+    "id": "q-frm2-liquidity-risk-fundamentals-4",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "liquidity-risk-fundamentals",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A trader holds a position equal to four times the average daily trading volume of a small-cap stock. Which statement about using the exogenous-spread LVaR formula for this position is most accurate?",
+    "options": [
+      "It overstates liquidity risk because spreads always narrow for large trades",
+      "It is fully adequate because the bid-ask spread captures all liquidation costs",
+      "It is only inaccurate if the spread is stochastic",
+      "It likely understates liquidity risk because it ignores the price impact of selling a position large relative to market depth"
+    ],
+    "answer": "D",
+    "explanation": "Exogenous spread measures assume the position can be sold at the quoted bid. A position several times daily volume will move the price and take days to unwind, so endogenous price impact and a longer horizon must be added.",
+    "rationale": {
+      "A": "Incorrect. Large trades usually face worse, not better, execution.",
+      "B": "Incorrect. Quoted spreads apply to normal trade sizes, not blocks many times daily volume.",
+      "C": "Incorrect. Even with a stochastic spread, the endogenous price impact is still missing.",
+      "D": "Correct. Position size relative to depth creates endogenous costs the formula omits."
+    },
+    "tags": ["endogenous-liquidity", "lvar"]
+  }
+]

@@ -1,0 +1,118 @@
+[
+  {
+    "id": "q-py-numpy-arrays-1",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "numpy-arrays",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "What is the result of `np.array([100, 200]) * 1.05` compared with `[100, 200] * 2` (a plain list)?",
+    "options": [
+      "Both raise a TypeError",
+      "The array gives [105. 210.]; the list gives [100, 200, 100, 200]",
+      "The array gives [100, 200, 100, 200]; the list gives [200, 400]",
+      "Both give element-wise results: [105. 210.] and [200, 400]"
+    ],
+    "answer": "B",
+    "explanation": "NumPy arithmetic is element-wise, so every element is multiplied by 1.05. Multiplying a list by an integer repeats the list.",
+    "rationale": {
+      "A": "Incorrect. Both expressions are valid Python; they just mean different things.",
+      "B": "Correct. Arrays vectorise the multiplication; lists treat * as repetition.",
+      "C": "Incorrect. This reverses the behaviours of arrays and lists.",
+      "D": "Incorrect. Lists do not do element-wise arithmetic; that is the main reason to use NumPy."
+    },
+    "tags": [
+      "numpy",
+      "vectorisation"
+    ]
+  },
+  {
+    "id": "q-py-numpy-arrays-2",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "numpy-arrays",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "With `p = np.array([50.0, 52.0, 49.4, 51.87])` and `r = p[1:] / p[:-1] - 1`, what is `r.std(ddof=1)` expressed as a percentage (2 decimals)?",
+    "options": [
+      "4.50%",
+      "1.33%",
+      "5.51%",
+      "0.30%"
+    ],
+    "answer": "C",
+    "explanation": "The returns are 4%, -5% and 5% (mean 1.333%). Squared deviations sum to 0.006067; dividing by n − 1 = 2 and taking the square root gives 5.51%.",
+    "rationale": {
+      "A": "Incorrect. This is the population standard deviation (ddof=0, dividing by 3), NumPy's default.",
+      "B": "Incorrect. This is the mean return, not the standard deviation.",
+      "C": "Correct. Sample standard deviation with n − 1 = 2 in the denominator is 5.51%.",
+      "D": "Incorrect. This is the sample variance (about 0.003033) written as a percentage; the square root was not taken."
+    },
+    "verify": "const p=[50,52,49.4,51.87]; const r=[]; for(let i=1;i<p.length;i++) r.push(p[i]/p[i-1]-1); const m=r.reduce((a,b)=>a+b,0)/r.length; const v=r.reduce((a,b)=>a+(b-m)**2,0)/(r.length-1); return Math.sqrt(v)*100;",
+    "numericAnswer": 5.51,
+    "tolerance": 0.005,
+    "tags": [
+      "numpy",
+      "standard-deviation",
+      "ddof"
+    ]
+  },
+  {
+    "id": "q-py-numpy-arrays-3",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "numpy-arrays",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "With `cf = np.array([-200, 80, 80, 80])` and `t = np.arange(4)`, what is `cf @ (1.06 ** -t)` rounded to 2 decimals?",
+    "options": [
+      "13.84",
+      "13.06",
+      "40.00",
+      "213.84"
+    ],
+    "answer": "A",
+    "explanation": "np.arange(4) is [0, 1, 2, 3], so the discount factors are 1, 0.9434, 0.8900, 0.8396. The dot product is -200 + 75.47 + 71.20 + 67.17 = 13.84.",
+    "rationale": {
+      "A": "Correct. The time-0 outlay is undiscounted and each inflow is discounted by its period.",
+      "B": "Incorrect. This uses t = 1, 2, 3, 4 (np.arange(1, 5)), discounting the initial outlay by mistake.",
+      "C": "Incorrect. This is the undiscounted sum of the cash flows.",
+      "D": "Incorrect. This is the present value of the inflows only, ignoring the -200 outlay."
+    },
+    "verify": "const cf=[-200,80,80,80]; let s=0; cf.forEach((c,t)=>{s+=c*Math.pow(1.06,-t);}); return s;",
+    "numericAnswer": 13.84,
+    "tolerance": 0.005,
+    "tags": [
+      "numpy",
+      "npv",
+      "dot-product"
+    ]
+  },
+  {
+    "id": "q-py-numpy-arrays-4",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "numpy-arrays",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "`R` is a NumPy array of daily returns with shape (250, 4): 250 days in rows and 4 assets in columns. What is the shape of `R.std(axis=0, ddof=1)`?",
+    "options": [
+      "(250,)",
+      "(250, 4)",
+      "A single number (shape ())",
+      "(4,)"
+    ],
+    "answer": "D",
+    "explanation": "axis=0 aggregates down the rows, collapsing the 250 days and leaving one standard deviation per asset: shape (4,).",
+    "rationale": {
+      "A": "Incorrect. This would be the result of axis=1, one value per day across the 4 assets.",
+      "B": "Incorrect. A reduction such as std removes the aggregated axis; the shape cannot stay (250, 4).",
+      "C": "Incorrect. A single number results only when no axis is given (all 1,000 values pooled).",
+      "D": "Correct. Collapsing axis 0 (days) leaves the 4 asset columns."
+    },
+    "tags": [
+      "numpy",
+      "axis"
+    ]
+  }
+]

@@ -1,0 +1,96 @@
+[
+  {
+    "id": "q-frm2-climate-risk-1",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "climate-risk",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A bank identifies two developments affecting its loan book: (1) a coastal city's residential property values decline steadily as sea levels rise, and (2) a government introduces a tax on emissions from steel production. How should these be classified?",
+    "options": [
+      "(1) acute physical risk; (2) chronic physical risk",
+      "(1) transition risk; (2) physical risk",
+      "(1) chronic physical risk; (2) transition risk",
+      "(1) liability risk; (2) acute physical risk"
+    ],
+    "answer": "C",
+    "explanation": "Gradual sea-level rise is a slow, long-term climate shift, which is chronic physical risk. An emissions tax arises from the move to a low-carbon economy, which is transition (policy) risk.",
+    "rationale": {
+      "A": "Incorrect. Sea-level rise is gradual, not event-driven, and a tax is not physical risk at all.",
+      "B": "Incorrect. The two labels are reversed.",
+      "C": "Correct. Sea-level rise is chronic physical risk; a carbon tax is transition risk.",
+      "D": "Incorrect. Neither development is litigation-based, and a tax is not an acute physical event."
+    },
+    "tags": ["physical-risk", "transition-risk"]
+  },
+  {
+    "id": "q-frm2-climate-risk-2",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "climate-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A borrower has EBITDA of USD 400 million, net debt of USD 1,240 million and annual emissions of 1.5 million tonnes of CO₂. In a transition scenario it faces a carbon price of USD 80 per tonne and can pass 25% of the cost on to customers. Its stressed net debt/EBITDA ratio is closest to:",
+    "options": ["4.43x", "4.00x", "3.35x", "3.10x"],
+    "answer": "B",
+    "explanation": "Gross cost = 1.5m × 80 = USD 120m. Absorbed = 120 × 0.75 = USD 90m. Stressed EBITDA = 400 − 90 = 310. Leverage = 1,240 / 310 = 4.00x.",
+    "rationale": {
+      "A": "Incorrect. 4.43x assumes the firm absorbs the full USD 120m and ignores the 25% pass-through.",
+      "B": "Correct. 1,240 / (400 − 90) = 4.00x.",
+      "C": "Incorrect. 3.35x assumes the firm absorbs only 25% of the cost, reversing the pass-through.",
+      "D": "Incorrect. 3.10x is the pre-stress leverage, 1,240 / 400."
+    },
+    "verify": "const absorbed=1.5e6*80*(1-0.25); return 1240e6/(400e6-absorbed);",
+    "numericAnswer": 4.0,
+    "tolerance": 0.005,
+    "tags": ["carbon-price", "scenario-analysis"]
+  },
+  {
+    "id": "q-frm2-climate-risk-3",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "climate-risk",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A risk team runs three climate scenarios: orderly, disorderly and hot house world. Which pairing of scenario and dominant risk is most accurate?",
+    "options": [
+      "Orderly: highest physical risk",
+      "Hot house world: highest transition risk",
+      "Disorderly: highest transition risk",
+      "All three scenarios carry equal physical risk because the climate responds slowly"
+    ],
+    "answer": "C",
+    "explanation": "In a disorderly scenario policy action is delayed and then abrupt, causing the sharpest repricing of carbon-intensive assets. The hot house world has limited policy action and therefore the most physical damage.",
+    "rationale": {
+      "A": "Incorrect. Early, gradual action limits warming, so orderly scenarios have relatively low physical risk.",
+      "B": "Incorrect. With only current policies, transition risk is low; physical risk dominates.",
+      "C": "Correct. Late and abrupt policy makes transition risk greatest in the disorderly scenario.",
+      "D": "Incorrect. Physical risk diverges across scenarios, especially over longer horizons."
+    },
+    "tags": ["scenario-analysis"]
+  },
+  {
+    "id": "q-frm2-climate-risk-4",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "climate-risk",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A credit model validator argues that the bank should estimate climate-adjusted default probabilities by regressing past defaults on past temperature and carbon-price data. What is the strongest objection?",
+    "options": [
+      "Temperature data are unavailable at a regional level.",
+      "Historical data do not reflect future climate conditions, policy paths or technology, and damage may be non-linear, so forward-looking scenario analysis is more appropriate.",
+      "Climate risk only affects market risk, so default probabilities are irrelevant.",
+      "Regulators prohibit the use of any historical data in climate risk analysis."
+    ],
+    "answer": "B",
+    "explanation": "Climate risk is forward-looking, long-horizon and subject to tipping points and policy uncertainty. Backward-looking regressions cannot capture conditions that have never occurred, so scenario analysis is the core tool.",
+    "rationale": {
+      "A": "Incorrect. Regional temperature data are widely available; the problem is that the past is not representative.",
+      "B": "Correct. The lack of relevant history and non-linear dynamics undermine purely historical estimation.",
+      "C": "Incorrect. Climate drivers clearly affect credit risk through earnings and collateral.",
+      "D": "Incorrect. There is no such prohibition; historical data can inform parts of the analysis."
+    },
+    "tags": ["measurement-challenges"]
+  }
+]
