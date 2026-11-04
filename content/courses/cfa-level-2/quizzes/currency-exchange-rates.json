@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa2-currency-exchange-rates-1",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "currency-exchange-rates",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Spot USD/GBP is 1.2600 (US dollars per pound). The 90-day USD interest rate is 5.0% and the 90-day GBP interest rate is 4.0%, both quoted on a 360-day basis. The 90-day forward USD/GBP rate implied by covered interest rate parity is closest to:",
+    "options": ["1.2569", "1.2631", "1.2721"],
+    "answer": "B",
+    "explanation": "F = 1.2600 × (1 + 0.05 × 90/360) / (1 + 0.04 × 90/360) = 1.2600 × 1.0125 / 1.0100 = 1.2631. The pound has the lower rate, so it trades at a forward premium.",
+    "rationale": {
+      "A": "Incorrect. 1.2569 puts the GBP rate in the numerator and the USD rate in the denominator; the price-currency (USD) rate belongs on top.",
+      "B": "Correct. 1.2600 × 1.0125 / 1.0100 = 1.2631.",
+      "C": "Incorrect. 1.2721 uses the full annual rates (1.05/1.04) without scaling by 90/360."
+    },
+    "verify": "return 1.26*(1+0.05*90/360)/(1+0.04*90/360);",
+    "numericAnswer": 1.2631,
+    "tolerance": 0.0001,
+    "tags": ["covered-interest-parity"]
+  },
+  {
+    "id": "q-cfa2-currency-exchange-rates-2",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "currency-exchange-rates",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A hedge fund borrows Swiss francs for one year at 1.0% and invests the proceeds in Mexican peso deposits yielding 10.0%. Over the year the peso depreciates 6% against the franc. The fund's carry trade return, measured in francs on the borrowed amount, is closest to:",
+    "options": ["3.00%", "9.00%", "2.40%"],
+    "answer": "C",
+    "explanation": "Return = (1.10)(0.94) − 1.01 = 1.034 − 1.01 = 0.024 = 2.40%.",
+    "rationale": {
+      "A": "Incorrect. 3.00% is the linear approximation 10 − 1 − 6, which ignores the cross term (the 6% loss also applies to the interest earned).",
+      "B": "Incorrect. 9.00% is the interest differential only and ignores the peso's depreciation.",
+      "C": "Correct. 1.10 × 0.94 − 1.01 = 2.40%."
+    },
+    "verify": "return (1.10*0.94-1.01)*100;",
+    "numericAnswer": 2.4,
+    "tolerance": 0.005,
+    "tags": ["carry-trade"]
+  },
+  {
+    "id": "q-cfa2-currency-exchange-rates-3",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "currency-exchange-rates",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A country with highly mobile capital announces a large fiscal stimulus while its central bank simultaneously raises policy rates to fight inflation. According to the Mundell-Fleming model, the short-run effect on its currency is most likely:",
+    "options": ["strong appreciation", "strong depreciation", "an ambiguous effect"],
+    "answer": "A",
+    "explanation": "Both policies push domestic interest rates up. With high capital mobility, capital flows in strongly, so the currency appreciates sharply.",
+    "rationale": {
+      "A": "Correct. Expansionary fiscal plus restrictive monetary policy raises interest rates, attracting capital inflows under high mobility.",
+      "B": "Incorrect. Strong depreciation follows the opposite mix: expansionary monetary with restrictive fiscal policy.",
+      "C": "Incorrect. The effect is ambiguous only when fiscal and monetary policy push in the same direction on demand (both expansionary or both restrictive); here both raise rates."
+    },
+    "tags": ["mundell-fleming"]
+  },
+  {
+    "id": "q-cfa2-currency-exchange-rates-4",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "currency-exchange-rates",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A dealer quotes USD/EUR at 1.0800 - 1.0802 and JPY/USD at 150.20 - 150.25. The offer side of the JPY/EUR cross rate is closest to:",
+    "options": ["162.25", "162.27", "162.30"],
+    "answer": "C",
+    "explanation": "JPY/EUR = USD/EUR × JPY/USD. Offer = 1.0802 × 150.25 = 162.30.",
+    "rationale": {
+      "A": "Incorrect. 162.25 multiplies the USD/EUR offer by the JPY/USD bid, mixing sides.",
+      "B": "Incorrect. 162.27 multiplies the USD/EUR bid by the JPY/USD offer, mixing sides.",
+      "C": "Correct. Offer × offer = 1.0802 × 150.25 = 162.30."
+    },
+    "verify": "return 1.0802*150.25;",
+    "numericAnswer": 162.3,
+    "tolerance": 0.005,
+    "tags": ["cross-rates"]
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm2-estimating-market-risk-measures-1",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "estimating-market-risk-measures",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A USD 50 million portfolio has normally distributed daily returns with a mean of 0.04% and a standard deviation of 1.5%. Using z = 1.645, the one-day 95% VaR is closest to:",
+    "options": ["USD 1,233,750", "USD 1,213,750", "USD 1,724,500", "USD 1,253,750"],
+    "answer": "B",
+    "explanation": "VaR = (−μ + σz) × P = (−0.0004 + 0.015 × 1.645) × 50,000,000 = 0.024275 × 50,000,000 = USD 1,213,750.",
+    "rationale": {
+      "A": "Incorrect. 1,233,750 ignores the mean return and uses σz alone.",
+      "B": "Correct. Subtracting the positive mean from σz gives 0.024275 × 50m = 1,213,750.",
+      "C": "Incorrect. 1,724,500 uses the 99% z-value of 2.326 instead of 1.645.",
+      "D": "Incorrect. 1,253,750 adds the mean instead of subtracting it; a positive expected return reduces VaR."
+    },
+    "verify": "return (-0.0004+0.015*1.645)*50000000;",
+    "numericAnswer": 1213750,
+    "tolerance": 0.5,
+    "tags": ["normal-var", "parametric"]
+  },
+  {
+    "id": "q-frm2-estimating-market-risk-measures-2",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "estimating-market-risk-measures",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A USD 20 million position has normally distributed daily returns with zero mean and a standard deviation of 1%. The 97.5% standard normal quantile is 1.96. The one-day 97.5% expected shortfall is closest to:",
+    "options": ["USD 392,000", "USD 233,764", "USD 533,474", "USD 467,528"],
+    "answer": "D",
+    "explanation": "ES = σ × φ(z)/(1 − α) × P. φ(1.96) = 0.058441, so the multiplier is 0.058441/0.025 = 2.3376. ES = 0.01 × 2.3376 × 20,000,000 = USD 467,528.",
+    "rationale": {
+      "A": "Incorrect. 392,000 is the 97.5% VaR (σ × 1.96 × P), not the expected shortfall.",
+      "B": "Incorrect. 233,764 divides φ(1.96) by 0.05 instead of 0.025, treating the tail as if it were two-sided.",
+      "C": "Incorrect. 533,474 is the 99% ES, using φ(2.326)/0.01 instead of the 97.5% multiplier.",
+      "D": "Correct. The 97.5% ES multiplier is φ(1.96)/0.025 = 2.3376, giving 467,528."
+    },
+    "verify": "const z=1.96; const phi=Math.exp(-z*z/2)/Math.sqrt(2*Math.PI); return 0.01*phi/0.025*20000000;",
+    "numericAnswer": 467528,
+    "tolerance": 1,
+    "tags": ["expected-shortfall", "parametric"]
+  },
+  {
+    "id": "q-frm2-estimating-market-risk-measures-3",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "estimating-market-risk-measures",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Two independent bonds each have a 4% probability of default and no other risk. Measured separately, each has a 95% VaR of zero, but the 95% VaR of a portfolio holding both is positive. What does this illustrate?",
+    "options": ["VaR is not subadditive, so it is not a coherent risk measure", "VaR is not translation invariant when positions are combined", "Expected shortfall would also be zero for each bond, so ES fails coherence too", "Diversification always increases risk for credit portfolios"],
+    "answer": "A",
+    "explanation": "The chance that at least one bond defaults is 1 − 0.96² = 7.84%, above the 5% tail, so the combined VaR is positive while the sum of the stand-alone VaRs is zero. That violates subadditivity, the property ES always satisfies.",
+    "rationale": {
+      "A": "Correct. Portfolio VaR exceeds the sum of stand-alone VaRs, a breach of subadditivity.",
+      "B": "Incorrect. Translation invariance concerns adding cash, which shifts risk one-for-one; it is not what the example shows.",
+      "C": "Incorrect. Each bond's 95% ES is positive because the 5% tail includes the 4% default state; ES is coherent.",
+      "D": "Incorrect. The example is an artefact of VaR ignoring tail severity, not proof that diversification raises risk."
+    },
+    "tags": ["coherence", "subadditivity"]
+  },
+  {
+    "id": "q-frm2-estimating-market-risk-measures-4",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "estimating-market-risk-measures",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A risk analyst has 1,000 daily P&L observations and uses historical simulation. Which is the best estimate of the 99% expected shortfall?",
+    "options": ["The 10th-largest loss", "The 11th-largest loss", "The average of the 10 largest losses", "The average of all losses larger than the median"],
+    "answer": "C",
+    "explanation": "The 1% tail of 1,000 observations contains 10 losses. ES is the average of the losses in that tail, while VaR is a single order statistic at the tail boundary.",
+    "rationale": {
+      "A": "Incorrect. The 10th-largest loss is one convention for the 99% VaR, not ES.",
+      "B": "Incorrect. The 11th-largest loss is the other common VaR convention (first observation outside the tail).",
+      "C": "Correct. ES averages the 10 losses in the 1% tail.",
+      "D": "Incorrect. Averaging half the distribution would dilute the tail and badly understate ES."
+    },
+    "tags": ["historical-simulation", "expected-shortfall"]
+  }
+]

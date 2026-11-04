@@ -28,13 +28,13 @@
     "difficulty": "medium",
     "kind": "numeric",
     "stem": "In a regression of a fund's excess returns on three factors using 60 monthly observations, the market coefficient is 0.85 with a standard error of 0.12. The two-tailed 5% critical t-value for 56 degrees of freedom is 2.003. The t-statistic for testing whether the market coefficient differs from 1.0 is closest to:",
-    "options": ["−1.25", "7.08", "−8.33"],
+    "options": ["−1.25", "7.08", "−0.15"],
     "answer": "A",
     "explanation": "t = (0.85 − 1.0)/0.12 = −1.25. Since |−1.25| < 2.003, the analyst cannot reject a market coefficient of 1.0.",
     "rationale": {
       "A": "Correct. The numerator subtracts the hypothesised value of 1.0: (0.85 − 1)/0.12 = −1.25.",
       "B": "Incorrect. 7.08 tests the coefficient against zero, not against 1.0.",
-      "C": "Incorrect. −8.33 divides the hypothesised value by the standard error and subtracts, (0.85 − 1/0.12), mixing up the order of operations."
+      "C": "Incorrect. −0.15 is only the numerator (0.85 − 1.0); it forgets to divide by the standard error of 0.12."
     },
     "verify": "return (0.85-1.0)/0.12;",
     "numericAnswer": -1.25,
