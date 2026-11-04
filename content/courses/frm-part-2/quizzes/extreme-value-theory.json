@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm2-extreme-value-theory-1",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "extreme-value-theory",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A risk manager applies the peaks-over-threshold method to 1,500 daily losses. 60 losses exceed the threshold u = 2.5%, and the fitted generalised Pareto parameters are β = 0.7 and ξ = 0.15. The one-day 99% VaR is closest to:",
+    "options": ["1.08%", "3.58%", "1.62%", "2.35%"],
+    "answer": "B",
+    "explanation": "(n/N_u)(1 − α) = (1500/60) × 0.01 = 0.25. 0.25^(−0.15) = 1.23110, minus 1 = 0.23110. Multiply by β/ξ = 4.6667 to get 1.07867. Add the threshold: VaR = 2.5 + 1.07867 = 3.58%.",
+    "rationale": {
+      "A": "Incorrect. 1.08% is only the excess over the threshold; the threshold u = 2.5% must be added back.",
+      "B": "Correct. u + (β/ξ)[0.25^(−0.15) − 1] = 3.58%.",
+      "C": "Incorrect. 1.62% inverts the ratio, using (N_u/n)/(1 − α) instead of (n/N_u)(1 − α).",
+      "D": "Incorrect. 2.35% uses a 95% confidence level instead of 99%; a value below the threshold is a warning sign."
+    },
+    "verify": "const u=2.5,b=0.7,x=0.15,n=1500,N=60,a=0.99; return u+b/x*(Math.pow(n/N*(1-a),-x)-1);",
+    "numericAnswer": 3.58,
+    "tolerance": 0.005,
+    "tags": ["peaks-over-threshold", "gpd"]
+  },
+  {
+    "id": "q-frm2-extreme-value-theory-2",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "extreme-value-theory",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A generalised extreme value distribution fitted to monthly maximum equity losses produces a shape parameter ξ = 0.35. Which interpretation is correct?",
+    "options": ["The distribution is Weibull, with a finite maximum possible loss", "The distribution is Gumbel, with a thin exponential tail similar to the normal", "The fit is invalid because ξ must be negative for financial losses", "The distribution is Fréchet, with a heavy power-law tail typical of financial returns"],
+    "answer": "D",
+    "explanation": "A positive shape parameter gives the Fréchet family, whose tail decays like a power function. This is the usual finding for financial losses and implies extreme losses far larger than the normal predicts.",
+    "rationale": {
+      "A": "Incorrect. The Weibull case has ξ < 0 and a finite upper end point.",
+      "B": "Incorrect. The Gumbel case corresponds to ξ = 0.",
+      "C": "Incorrect. Financial losses typically produce positive ξ; a negative value would imply bounded losses.",
+      "D": "Correct. ξ > 0 means Fréchet and fat tails."
+    },
+    "tags": ["gev", "shape-parameter"]
+  },
+  {
+    "id": "q-frm2-extreme-value-theory-3",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "extreme-value-theory",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Under a peaks-over-threshold model with threshold u = 2.5%, scale β = 0.7 and shape ξ = 0.15, the 99% VaR is 4.20%. The 99% expected shortfall is closest to:",
+    "options": ["5.32%", "4.94%", "4.90%", "5.76%"],
+    "answer": "A",
+    "explanation": "ES = VaR/(1 − ξ) + (β − ξu)/(1 − ξ) = (4.20 + 0.7 − 0.15 × 2.5)/0.85 = 4.525/0.85 = 5.32%.",
+    "rationale": {
+      "A": "Correct. (4.20 + 0.7 − 0.375)/0.85 = 5.32%.",
+      "B": "Incorrect. 4.94% keeps only VaR/(1 − ξ) and omits the (β − ξu)/(1 − ξ) term.",
+      "C": "Incorrect. 4.90% simply adds β to VaR without the 1/(1 − ξ) scaling.",
+      "D": "Incorrect. 5.76% drops the −ξu term, using (VaR + β)/(1 − ξ)."
+    },
+    "verify": "const V=4.2,u=2.5,b=0.7,x=0.15; return (V+b-x*u)/(1-x);",
+    "numericAnswer": 5.32,
+    "tolerance": 0.005,
+    "tags": ["peaks-over-threshold", "expected-shortfall"]
+  },
+  {
+    "id": "q-frm2-extreme-value-theory-4",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "extreme-value-theory",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "When choosing the threshold for a peaks-over-threshold model, what is the main consequence of setting the threshold too high?",
+    "options": ["The GPD approximation becomes biased because ordinary, non-tail losses are included", "The shape parameter is forced to zero", "Too few exceedances remain, so parameter estimates have high variance", "The method reverts to the block maxima approach"],
+    "answer": "C",
+    "explanation": "Threshold choice trades bias against variance. A low threshold admits non-tail data and biases the fit; a high threshold leaves few exceedances, making β and ξ estimates noisy.",
+    "rationale": {
+      "A": "Incorrect. Bias from including non-tail observations is the problem with a threshold set too low.",
+      "B": "Incorrect. The threshold does not constrain ξ; the shape is estimated from the exceedances.",
+      "C": "Correct. A very high threshold leaves a small sample of exceedances and high estimation variance.",
+      "D": "Incorrect. Block maxima is a different sampling scheme; raising the threshold does not convert POT into it."
+    },
+    "tags": ["threshold-choice"]
+  }
+]
