@@ -1,0 +1,107 @@
+[
+  {
+    "id": "q-py-pandas-series-and-dataframes-1",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "pandas-series-and-dataframes",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "You want all rows of DataFrame `df` where sector is \"Tech\" and P/E is below 30. Which expression works?",
+    "options": [
+      "df[df[\"sector\"] == \"Tech\" and df[\"pe\"] < 30]",
+      "df[df[\"sector\"] == \"Tech\" & df[\"pe\"] < 30]",
+      "df[(df[\"sector\"] == \"Tech\") & (df[\"pe\"] < 30)]",
+      "df.loc[\"Tech\", \"pe\" < 30]"
+    ],
+    "answer": "C",
+    "explanation": "Element-wise conditions are combined with &, and each comparison must be wrapped in parentheses because & binds more tightly than == and <.",
+    "rationale": {
+      "A": "Incorrect. Python's `and` needs a single True/False and raises a ValueError on a boolean Series.",
+      "B": "Incorrect. Without parentheses, & is evaluated before the comparisons, producing an error or a wrong filter.",
+      "C": "Correct. Each condition is a boolean Series in parentheses, combined element-wise with &.",
+      "D": "Incorrect. .loc looks up the label \"Tech\" in the index (tickers here), and \"pe\" < 30 compares a string to a number."
+    },
+    "tags": ["pandas", "boolean-filtering"]
+  },
+  {
+    "id": "q-py-pandas-series-and-dataframes-2",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "pandas-series-and-dataframes",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A DataFrame is indexed by ticker in the order ACME, BETA, GAMMA, DELTA, EPSI. How many rows does `df.loc[\"BETA\":\"DELTA\"]` return?",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "1"
+    ],
+    "answer": "A",
+    "explanation": "Label-based slices with .loc include both endpoints, so BETA, GAMMA and DELTA are returned.",
+    "rationale": {
+      "A": "Correct. .loc slices are inclusive of the stop label: BETA, GAMMA, DELTA.",
+      "B": "Incorrect. This applies the position-based (.iloc) rule that excludes the stop.",
+      "C": "Incorrect. This adds an extra row, as if the slice started at ACME or ran to EPSI.",
+      "D": "Incorrect. A slice between two different labels returns every row between them, not just one."
+    },
+    "verify": "const idx=['ACME','BETA','GAMMA','DELTA','EPSI']; return idx.indexOf('DELTA')-idx.indexOf('BETA')+1;",
+    "numericAnswer": 3,
+    "tolerance": 0.001,
+    "tags": ["pandas", "loc", "slicing"]
+  },
+  {
+    "id": "q-py-pandas-series-and-dataframes-3",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "pandas-series-and-dataframes",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A universe has prices ACME 52.10 (Industrials), BETA 18.45 (Tech), GAMMA 101.30 (Health), DELTA 64.00 (Tech) and EPSI 33.20 (Energy). What is `df.groupby(\"sector\")[\"price\"].mean()[\"Tech\"]`?",
+    "options": [
+      "82.45",
+      "53.81",
+      "64.00",
+      "41.225"
+    ],
+    "answer": "D",
+    "explanation": "groupby splits the rows by sector; the Tech group holds BETA and DELTA, whose mean price is (18.45 + 64.00) / 2 = 41.225.",
+    "rationale": {
+      "A": "Incorrect. This is the sum of the Tech prices, i.e. .sum() instead of .mean().",
+      "B": "Incorrect. This is the mean price of all five stocks, ignoring the grouping.",
+      "C": "Incorrect. This is the maximum Tech price (DELTA), not the mean.",
+      "D": "Correct. (18.45 + 64.00) / 2 = 41.225."
+    },
+    "verify": "return (18.45+64.00)/2;",
+    "numericAnswer": 41.225,
+    "tolerance": 0.0005,
+    "tags": ["pandas", "groupby"]
+  },
+  {
+    "id": "q-py-pandas-series-and-dataframes-4",
+    "course": "python-for-finance",
+    "topic": "numpy-and-pandas",
+    "lesson": "pandas-series-and-dataframes",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "What does `pd.Series([2.0, 4.0, 6.0]).std()` return?",
+    "options": [
+      "1.633",
+      "2.0",
+      "4.0",
+      "2.667"
+    ],
+    "answer": "B",
+    "explanation": "pandas uses the sample standard deviation (ddof=1) by default. Deviations from the mean of 4 are -2, 0, 2; squared they sum to 8; 8 / (3 − 1) = 4; √4 = 2.0.",
+    "rationale": {
+      "A": "Incorrect. This is the population standard deviation (ddof=0), which is NumPy's default, not pandas'.",
+      "B": "Correct. Sample variance is 8 / 2 = 4, so the standard deviation is 2.0.",
+      "C": "Incorrect. This is the sample variance; the square root was not taken.",
+      "D": "Incorrect. This is the population variance (8 / 3)."
+    },
+    "verify": "const x=[2,4,6]; const m=4; const v=x.reduce((a,b)=>a+(b-m)**2,0)/(x.length-1); return Math.sqrt(v);",
+    "numericAnswer": 2.0,
+    "tolerance": 0.001,
+    "tags": ["pandas", "standard-deviation", "ddof"]
+  }
+]

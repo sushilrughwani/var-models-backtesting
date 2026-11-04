@@ -48,6 +48,9 @@ With FY2026E in column E, revenue on row 8, COGS on row 9 and the day inputs on 
 
 Some modellers use 360 days; whichever you choose, use it consistently for history and forecast.
 
+### Setting the day assumptions
+Start from the latest historical days and the trend over three to five years. Move away from history only with a reason: new customer payment terms, a supplier renegotiation, an inventory reduction programme or a change in product mix. Seasonal businesses should be careful that a year-end balance sheet may not represent the average level of working capital through the year.
+
 ## Worked example
 Northwind (USD m). FY2025A balances: AR 68.5, inventory 63.6, payables 39.7, so NWC = 68.5 + 63.6 − 39.7 = 92.4. FY2026E revenue is 545.9 and COGS is 312.91 (from the previous two lessons). Management targets faster collection, so the inputs are DSO 48, DIO 80 and DPO 52.
 

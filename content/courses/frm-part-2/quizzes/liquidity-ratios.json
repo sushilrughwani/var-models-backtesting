@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-liquidity-ratios-1",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "liquidity-ratios",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A bank holds Level 1 assets of USD 350 million, Level 2A assets with market value USD 200 million (15% haircut) and Level 2B assets with market value USD 60 million (50% haircut). Stressed 30-day outflows are USD 900 million and stressed inflows are USD 720 million. Assuming no HQLA cap binds, the LCR is closest to:",
+    "options": ["305.6%", "271.1%", "61.1%", "244.4%"],
+    "answer": "D",
+    "explanation": "HQLA = 350 + 200 × 0.85 + 60 × 0.50 = 550. Inflows are capped at 0.75 × 900 = 675, so net outflows = 900 − 675 = 225. LCR = 550 / 225 = 244.4%.",
+    "rationale": {
+      "A": "Incorrect. 305.6% ignores the 75% inflow cap and divides by 900 − 720 = 180.",
+      "B": "Incorrect. 271.1% forgets the haircuts on Level 2 assets (HQLA of 610).",
+      "C": "Incorrect. 61.1% divides HQLA by gross outflows, ignoring inflows entirely.",
+      "D": "Correct. Haircut HQLA of 550 over capped net outflows of 225 gives 244.4%."
+    },
+    "verify": "const h=350+200*0.85+60*0.5, o=900, i=720; return h/(o-Math.min(i,0.75*o))*100;",
+    "numericAnswer": 244.4,
+    "tolerance": 0.05,
+    "tags": ["lcr", "inflow-cap"]
+  },
+  {
+    "id": "q-frm2-liquidity-ratios-2",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "liquidity-ratios",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank's liabilities are: capital USD 50 million (ASF 100%), stable retail deposits USD 400 million (95%), deposits from non-financial corporates under one year USD 200 million (50%) and funding from financial institutions under one year USD 100 million (0%). Its assets are: Level 1 securities USD 150 million (RSF 5%), residential mortgages USD 300 million (65%), corporate loans over one year USD 250 million (85%) and fixed assets USD 50 million (100%). The NSFR is closest to:",
+    "options": ["113.98%", "135.48%", "100.00%", "87.74%"],
+    "answer": "A",
+    "explanation": "ASF = 50 + 380 + 100 + 0 = 530. RSF = 7.5 + 195 + 212.5 + 50 = 465. NSFR = 530 / 465 = 113.98%.",
+    "rationale": {
+      "A": "Correct. 530 / 465 = 113.98%.",
+      "B": "Incorrect. 135.48% gives the short-term financial funding a 100% ASF factor instead of 0%.",
+      "C": "Incorrect. 100.00% compares unweighted totals (750 / 750), ignoring the ASF and RSF factors.",
+      "D": "Incorrect. 87.74% inverts the ratio (RSF / ASF)."
+    },
+    "verify": "const asf=50*1+400*0.95+200*0.5+100*0; const rsf=150*0.05+300*0.65+250*0.85+50*1; return asf/rsf*100;",
+    "numericAnswer": 113.98,
+    "tolerance": 0.005,
+    "tags": ["nsfr"]
+  },
+  {
+    "id": "q-frm2-liquidity-ratios-3",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "liquidity-ratios",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which statement correctly contrasts the LCR and the NSFR?",
+    "options": [
+      "The LCR measures funding stability over one year; the NSFR measures survival over 30 days",
+      "The LCR tests survival through a 30-day stress using HQLA; the NSFR tests the stability of funding over a one-year horizon",
+      "Both ratios measure the same thing but the NSFR uses market values",
+      "The LCR applies only to investment banks and the NSFR only to retail banks"
+    ],
+    "answer": "B",
+    "explanation": "The LCR is a short-term stress survival ratio based on HQLA and 30-day net outflows; the NSFR is a structural ratio comparing available and required stable funding over one year.",
+    "rationale": {
+      "A": "Incorrect. The horizons are reversed.",
+      "B": "Correct. LCR: 30-day survival; NSFR: one-year structural funding.",
+      "C": "Incorrect. They measure different dimensions of liquidity risk with different inputs.",
+      "D": "Incorrect. Both apply to internationally active banks regardless of business model."
+    },
+    "tags": ["lcr", "nsfr"]
+  },
+  {
+    "id": "q-frm2-liquidity-ratios-4",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "liquidity-ratios",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A bank replaces USD 500 million of stable insured retail deposits with USD 500 million of overnight unsecured borrowing from other banks, investing the same assets. What is the most likely effect on its liquidity ratios?",
+    "options": [
+      "Both the LCR and the NSFR fall",
+      "The LCR rises and the NSFR falls",
+      "Both ratios are unchanged because total funding is the same",
+      "The LCR falls and the NSFR rises"
+    ],
+    "answer": "A",
+    "explanation": "Stable retail deposits have a low LCR run-off (about 5%) and a 95% ASF factor. Overnight funding from banks has a 100% run-off and a 0% ASF factor, so LCR outflows rise and ASF falls: both ratios deteriorate.",
+    "rationale": {
+      "A": "Correct. Higher outflows reduce the LCR and lower ASF reduces the NSFR.",
+      "B": "Incorrect. The LCR denominator increases, so the LCR falls.",
+      "C": "Incorrect. The ratios depend on the stability of funding, not just its amount.",
+      "D": "Incorrect. The NSFR falls because short-term financial funding carries a 0% ASF factor."
+    },
+    "tags": ["lcr", "nsfr", "funding-mix"]
+  }
+]
