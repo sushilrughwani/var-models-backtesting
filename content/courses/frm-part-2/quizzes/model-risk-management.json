@@ -1,0 +1,96 @@
+[
+  {
+    "id": "q-frm2-model-risk-management-1",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "model-risk-management",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A validator backtests a PD model that predicted a 5% one-year default rate for 1,000 independent obligors. Observed defaults were 68. Using the normal approximation to the binomial, the z-statistic for the calibration test is closest to:",
+    "options": ["2.26", "2.61", "0.38", "2.55"],
+    "answer": "B",
+    "explanation": "Expected defaults = 1,000 × 0.05 = 50. Standard deviation = √(1,000 × 0.05 × 0.95) = √47.5 = 6.892. z = (68 − 50) / 6.892 = 2.61, which exceeds 1.96, so calibration is rejected at the 5% level.",
+    "rationale": {
+      "A": "Incorrect. 2.26 uses the observed default rate of 6.8% in the variance instead of the predicted 5% under the null hypothesis.",
+      "B": "Correct. (68 − 50) / √47.5 = 2.61.",
+      "C": "Incorrect. 0.38 divides by the variance 47.5 instead of its square root.",
+      "D": "Incorrect. 2.55 uses √(nP) as the standard deviation (a Poisson approximation), omitting the (1 − P) term."
+    },
+    "verify": "const n=1000,p=0.05,d=68; return (d-n*p)/Math.sqrt(n*p*(1-p));",
+    "numericAnswer": 2.61,
+    "tolerance": 0.005,
+    "tags": ["validation", "backtesting"]
+  },
+  {
+    "id": "q-frm2-model-risk-management-2",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "model-risk-management",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A bank applies a well-validated residential mortgage PD model to price loans to commercial real estate developers. The resulting model risk is best described as arising from:",
+    "options": [
+      "a coding error in the model implementation",
+      "inadequate data quality in the development sample",
+      "misuse of the model outside its intended scope",
+      "an incorrect theoretical foundation for mortgage default"
+    ],
+    "answer": "C",
+    "explanation": "The model may be sound for residential mortgages; the risk comes from using it on a population it was not built for, which is misuse.",
+    "rationale": {
+      "A": "Incorrect. Nothing suggests the code is wrong.",
+      "B": "Incorrect. The data may be fine for the intended population; the problem is the application.",
+      "C": "Correct. Applying a model outside its intended scope is misuse.",
+      "D": "Incorrect. The theory may be appropriate for residential mortgages."
+    },
+    "tags": ["model-misuse"]
+  },
+  {
+    "id": "q-frm2-model-risk-management-3",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "model-risk-management",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which arrangement best satisfies the principle of effective challenge in model validation?",
+    "options": [
+      "The developers who built the model perform the validation because they understand it best",
+      "A separate team with relevant quantitative skills and authority to restrict model use performs the validation",
+      "The model's business users sign off on the model after confirming its outputs look reasonable",
+      "The vendor's own validation report is accepted without further review"
+    ],
+    "answer": "B",
+    "explanation": "Effective challenge requires competence, independence and influence. A separate, skilled team with authority to restrict use meets all three; developers, users and vendors lack independence.",
+    "rationale": {
+      "A": "Incorrect. Developers are not independent of their own work.",
+      "B": "Correct. Competence, independence and authority together constitute effective challenge.",
+      "C": "Incorrect. Users have an interest in the model and a reasonableness check is not a validation.",
+      "D": "Incorrect. Vendor models still require the bank's own validation, such as benchmarking and outcomes analysis."
+    },
+    "tags": ["governance", "effective-challenge"]
+  },
+  {
+    "id": "q-frm2-model-risk-management-4",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "model-risk-management",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A bank has 600 models and a small validation team. Which approach is most consistent with sound model risk management?",
+    "options": [
+      "Validate all 600 models with identical depth every year",
+      "Validate only models used for regulatory capital and exclude all others from the inventory",
+      "Rely on internal audit to perform model validations in place of a validation function",
+      "Maintain a complete inventory, tier models by materiality and complexity, and set validation depth and frequency by tier"
+    ],
+    "answer": "D",
+    "explanation": "A complete inventory with risk-based tiering lets a bank focus scarce validation resources on the most material and complex models while still covering every model at an appropriate depth.",
+    "rationale": {
+      "A": "Incorrect. Uniform depth wastes resources on immaterial models and starves high-risk ones.",
+      "B": "Incorrect. Non-regulatory models such as pricing or provisioning tools can also cause large losses and must be inventoried.",
+      "C": "Incorrect. Internal audit reviews the framework; it does not replace independent validation.",
+      "D": "Correct. Inventory plus risk-based tiering is the standard approach."
+    },
+    "tags": ["inventory", "tiering"]
+  }
+]

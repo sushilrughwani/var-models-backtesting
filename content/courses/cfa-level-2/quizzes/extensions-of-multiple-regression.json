@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa2-extensions-of-multiple-regression-1",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "extensions-of-multiple-regression",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A logistic regression for the probability that a firm becomes a takeover target is: log-odds = −1.8 + 0.9 X1 − 0.5 X2. For a firm with X1 = 1.5 and X2 = 2.0, the estimated probability of being a target is closest to:",
+    "options": ["23.5%", "19.0%", "81.0%"],
+    "answer": "B",
+    "explanation": "z = −1.8 + 0.9(1.5) − 0.5(2.0) = −1.45. P = 1/(1 + e^1.45) = 1/(1 + 4.263) = 0.190, or 19.0%.",
+    "rationale": {
+      "A": "Incorrect. 23.5% is the odds, e^−1.45 = 0.235, not the probability; odds must be converted with P = odds/(1 + odds).",
+      "B": "Correct. Converting the log-odds of −1.45 with P = 1/(1 + e^−z) gives 19.0%.",
+      "C": "Incorrect. 81.0% uses the wrong sign in the exponent, 1/(1 + e^−1.45), giving the probability of not being a target."
+    },
+    "verify": "const z=-1.8+0.9*1.5-0.5*2.0; return 100/(1+Math.exp(-z));",
+    "numericAnswer": 19.0,
+    "tolerance": 0.05,
+    "tags": ["logistic-regression"]
+  },
+  {
+    "id": "q-cfa2-extensions-of-multiple-regression-2",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "extensions-of-multiple-regression",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "In a regression with 3 independent variables and 50 observations, observation 17 has a leverage of 0.30, a studentized residual of 0.4 and a Cook's distance of 0.08. Observation 17 is best described as:",
+    "options": ["a high-leverage point that is not an outlier and is unlikely to be influential", "an outlier that is highly influential", "an influential observation that should be removed from the sample"],
+    "answer": "A",
+    "explanation": "The leverage threshold is 3(k + 1)/n = 3(4)/50 = 0.24, so 0.30 is high leverage. The small studentized residual means it is not an outlier, and a Cook's distance of 0.08 is far below 0.5, so it does not materially move the estimates.",
+    "rationale": {
+      "A": "Correct. Its X values are extreme (0.30 > 0.24), but its residual and Cook's distance are small.",
+      "B": "Incorrect. A studentized residual of 0.4 is far below any t critical value, so it is not an outlier, and its Cook's distance indicates low influence.",
+      "C": "Incorrect. Nothing suggests influence, and even influential observations should be investigated rather than removed automatically."
+    },
+    "tags": ["influential-observations", "leverage"]
+  },
+  {
+    "id": "q-cfa2-extensions-of-multiple-regression-3",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "extensions-of-multiple-regression",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An analyst estimates Y = 2.0 + 1.5 D + 0.6 X + 0.4 (D × X), where D = 1 for technology firms and 0 otherwise. For a technology firm with X = 5, the predicted value of Y is closest to:",
+    "options": ["6.5", "5.0", "8.5"],
+    "answer": "C",
+    "explanation": "With D = 1: 2.0 + 1.5 + 0.6(5) + 0.4(5) = 2.0 + 1.5 + 3.0 + 2.0 = 8.5.",
+    "rationale": {
+      "A": "Incorrect. 6.5 includes the intercept dummy but ignores the slope dummy term 0.4 × 5.",
+      "B": "Incorrect. 5.0 is the prediction for a non-technology firm (D = 0).",
+      "C": "Correct. Both the intercept shift (1.5) and the slope shift (0.4 per unit of X) apply when D = 1."
+    },
+    "verify": "const D=1,X=5; return 2.0+1.5*D+0.6*X+0.4*D*X;",
+    "numericAnswer": 8.5,
+    "tolerance": 0.05,
+    "tags": ["dummy-variables"]
+  },
+  {
+    "id": "q-cfa2-extensions-of-multiple-regression-4",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "extensions-of-multiple-regression",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An analyst wants to capture quarterly seasonality in a regression that includes an intercept. The analyst should include:",
+    "options": ["four dummy variables, one for each quarter", "three dummy variables, with the omitted quarter as the base", "one dummy variable coded 1 to 4 for the quarter"],
+    "answer": "B",
+    "explanation": "With n categories and an intercept, n − 1 dummies are used. The omitted quarter is the base, and each dummy coefficient measures the difference from it.",
+    "rationale": {
+      "A": "Incorrect. Four dummies plus an intercept are perfectly collinear (the dummy variable trap).",
+      "B": "Correct. Three dummies capture four quarters; the intercept represents the base quarter.",
+      "C": "Incorrect. A single variable coded 1 to 4 forces equal step changes between quarters, which is not how dummy variables work."
+    },
+    "tags": ["dummy-variables"]
+  }
+]

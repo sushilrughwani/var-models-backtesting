@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-fm-precedent-transactions-1",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "precedent-transactions",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Orrin Gearworks' undisturbed share price four weeks before announcement was USD 20.00. Rumours lifted it to USD 23.00 the day before the deal was announced at USD 26.00 per share. The control premium is closest to:",
+    "options": ["13.0%", "23.1%", "30.0%", "130.0%"],
+    "answer": "C",
+    "explanation": "Premium = 26.00 / 20.00 − 1 = 30.0%, measured from the undisturbed price.",
+    "rationale": {
+      "A": "Incorrect. 13.0% uses the rumour-inflated price of 23.00 as the base.",
+      "B": "Incorrect. 23.1% divides the 6.00 increase by the offer price instead of the undisturbed price.",
+      "C": "Correct. The undisturbed price is the right reference point.",
+      "D": "Incorrect. 130.0% is the ratio of offer to undisturbed price, not the premium."
+    },
+    "verify": "return (26/20-1)*100;",
+    "numericAnswer": 30,
+    "tolerance": 0.05,
+    "tags": ["control-premium"]
+  },
+  {
+    "id": "q-fm-precedent-transactions-2",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "precedent-transactions",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An acquirer offers USD 26.00 per share for a target with 40.0 million basic shares and 2.6 million options struck at USD 16.00. The target has net debt of USD 182 million and LTM EBITDA of 120 million. The transaction EV/LTM EBITDA multiple is closest to:",
+    "options": ["10.18x", "10.75x", "8.88x", "10.40x"],
+    "answer": "D",
+    "explanation": "Option shares = 2.6 × (1 − 16/26) = 1.0. Equity = 26 × 41.0 = 1,066. EV = 1,066 + 182 = 1,248. Multiple = 1,248 / 120 = 10.40x.",
+    "rationale": {
+      "A": "Incorrect. 10.18x uses basic shares only and ignores option dilution.",
+      "B": "Incorrect. 10.75x counts every option as a full share without crediting the exercise proceeds.",
+      "C": "Incorrect. 8.88x divides equity value, not EV, by EBITDA.",
+      "D": "Correct. Treasury stock method at the offer price, plus net debt, over LTM EBITDA."
+    },
+    "verify": "const sh=40+2.6*(1-16/26); return (26*sh+182)/120;",
+    "numericAnswer": 10.4,
+    "tolerance": 0.005,
+    "tags": ["deal-multiple", "treasury-stock-method"]
+  },
+  {
+    "id": "q-fm-precedent-transactions-3",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "precedent-transactions",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Precedent EV/LTM EBITDA multiples are 9.5x, 10.4x, 11.0x, 9.8x and 10.9x (first quartile 9.8x). Northwind's LTM EBITDA is USD 200 million and forward EBITDA is 219 million. Bridge adjustments total −313 million. Northwind has 50.0 million basic shares, 0.6 million RSUs and 4.0 million options struck at USD 20.00 (all in the money). Using the first-quartile multiple and solving dilution at the implied price, value per share is closest to:",
+    "options": ["USD 31.63", "USD 35.04", "USD 33.83", "USD 32.94"],
+    "answer": "A",
+    "explanation": "EV = 9.8 × 200 = 1,960. Equity = 1,960 − 313 = 1,647. Price = (1,647 + 4.0 × 20) / (50.0 + 0.6 + 4.0) = 1,727 / 54.6 = 31.63.",
+    "rationale": {
+      "A": "Correct. LTM multiple on LTM EBITDA, then the bridge and closed-form dilution.",
+      "B": "Incorrect. 35.04 applies an LTM deal multiple to forward EBITDA of 219.",
+      "C": "Incorrect. 33.83 uses the median (10.4x) rather than the first quartile.",
+      "D": "Incorrect. 32.94 divides equity value by basic shares only."
+    },
+    "verify": "const eq=9.8*200-313; return (eq+4*20)/(50+0.6+4);",
+    "numericAnswer": 31.63,
+    "tolerance": 0.005,
+    "tags": ["precedents", "equity-bridge"]
+  },
+  {
+    "id": "q-fm-precedent-transactions-4",
+    "course": "financial-modeling",
+    "topic": "valuation",
+    "lesson": "precedent-transactions",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Why do precedent transaction multiples typically exceed trading comparables multiples for the same sector?",
+    "options": [
+      "Precedent multiples use forward EBITDA while trading multiples use LTM EBITDA",
+      "Acquirers pay a control premium, reflecting control over cash flows and expected synergies",
+      "Trading multiples exclude debt from enterprise value",
+      "Precedent transactions are always more recent than trading data"
+    ],
+    "answer": "B",
+    "explanation": "A takeover buys control, which lets the acquirer change strategy and capture synergies; sellers capture part of that value through the premium.",
+    "rationale": {
+      "A": "Incorrect. Precedents are normally quoted on LTM EBITDA, not forward EBITDA, so this premise is wrong.",
+      "B": "Correct. Control and synergies drive the premium.",
+      "C": "Incorrect. Both methods use enterprise value including debt.",
+      "D": "Incorrect. Trading data is current; precedents are historical."
+    },
+    "tags": ["control-premium", "precedents"]
+  }
+]

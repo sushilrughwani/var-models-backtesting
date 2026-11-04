@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm2-cva-and-xva-1",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "cva-and-xva",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A one-year uncollateralised trade has an expected exposure of USD 10 million at year-end. The counterparty's risk-neutral probability of default over the year is 3%, its LGD is 60% and the one-year discount factor is 0.97. Using a single period, CVA (USD millions) is closest to:",
+    "options": ["0.291", "0.116", "0.180", "0.175"],
+    "answer": "D",
+    "explanation": "CVA = LGD × EE × PD × DF = 0.60 × 10 × 0.03 × 0.97 = 0.1746.",
+    "rationale": {
+      "A": "Incorrect. 0.291 omits LGD, implicitly assuming zero recovery.",
+      "B": "Incorrect. 0.116 uses the recovery rate (40%) instead of LGD.",
+      "C": "Incorrect. 0.180 forgets to discount the expected loss.",
+      "D": "Correct. 0.60 × 10 × 0.03 × 0.97 = USD 0.175 million."
+    },
+    "verify": "return 0.6*10*0.03*0.97;",
+    "numericAnswer": 0.175,
+    "tolerance": 0.0005,
+    "tags": ["cva"]
+  },
+  {
+    "id": "q-frm2-cva-and-xva-2",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "cva-and-xva",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A counterparty's CDS spread is 240 bp and its LGD is 60%. Assuming a constant hazard rate, the risk-neutral probability that it defaults during the second year (between t = 1 and t = 2) is closest to:",
+    "options": ["7.69%", "3.77%", "2.32%", "4.00%"],
+    "answer": "B",
+    "explanation": "λ = 0.024 / 0.60 = 0.04. Marginal PD = e^(−0.04) − e^(−0.08) = 0.9608 − 0.9231 = 3.77%.",
+    "rationale": {
+      "A": "Incorrect. 7.69% is the cumulative two-year PD, not the marginal PD for year 2.",
+      "B": "Correct. The difference in survival probabilities between years 1 and 2 is 3.77%.",
+      "C": "Incorrect. 2.32% uses the spread itself as the hazard rate, forgetting to divide by LGD.",
+      "D": "Incorrect. 4.00% is the hazard rate, which ignores the survival through year 1."
+    },
+    "verify": "const l=0.024/0.6; return 100*(Math.exp(-l)-Math.exp(-2*l));",
+    "numericAnswer": 3.77,
+    "tolerance": 0.005,
+    "tags": ["hazard-rate", "marginal-pd"]
+  },
+  {
+    "id": "q-frm2-cva-and-xva-3",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "cva-and-xva",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A netting set has an expected positive exposure (EPE) of USD 6 million over its life. The counterparty's credit spread is 150 bp and the risk-free annuity factor for the trade's life is 4.5. Using the approximation CVA ≈ EPE × spread × annuity, CVA (USD millions) is closest to:",
+    "options": ["0.405", "0.090", "0.675", "2.700"],
+    "answer": "A",
+    "explanation": "CVA ≈ 6 × 0.015 × 4.5 = 0.405.",
+    "rationale": {
+      "A": "Correct. EPE × spread × annuity = 6 × 0.015 × 4.5 = USD 0.405 million.",
+      "B": "Incorrect. 0.090 is the annual cost (EPE × spread) without multiplying by the annuity factor.",
+      "C": "Incorrect. 0.675 divides by LGD of 60%, but the spread already embeds LGD.",
+      "D": "Incorrect. 2.700 multiplies EPE by the annuity factor and 10% rather than 1.5%, a units error."
+    },
+    "verify": "return 6*0.015*4.5;",
+    "numericAnswer": 0.405,
+    "tolerance": 0.0005,
+    "tags": ["cva-approximation"]
+  },
+  {
+    "id": "q-frm2-cva-and-xva-4",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "cva-and-xva",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which position is the clearest example of wrong-way risk for the bank?",
+    "options": [
+      "The bank receives fixed on an interest rate swap with a highly rated supranational institution.",
+      "The bank sells CDS protection on a European bank to a hedge fund that posts daily collateral.",
+      "The bank buys CDS protection on a large European bank from another bank whose credit quality is strongly correlated with the reference entity.",
+      "The bank has an oil swap with an airline that pays the bank when oil prices fall, which also tends to improve the airline's finances."
+    ],
+    "answer": "C",
+    "explanation": "If the reference bank deteriorates, the protection becomes valuable (exposure rises) exactly when the correlated protection seller is also likely to default.",
+    "rationale": {
+      "A": "Incorrect. There is no meaningful link between swap exposure and a highly rated supranational's default risk.",
+      "B": "Incorrect. As protection seller, the bank's exposure to the hedge fund is small and collateralised; this is not wrong-way risk.",
+      "C": "Correct. Exposure and counterparty default probability rise together, the definition of wrong-way risk.",
+      "D": "Incorrect. Lower oil prices strengthen the airline just as exposure arises, which is right-way risk."
+    },
+    "tags": ["wrong-way-risk"]
+  }
+]

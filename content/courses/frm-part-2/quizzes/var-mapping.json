@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-frm2-var-mapping-1",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "var-mapping",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bond portfolio is cash-flow mapped with a present value of USD 40 million at the 1-year vertex and USD 60 million at the 3-year vertex. The 95% VaR per dollar is 0.4% at the 1-year vertex and 1.0% at the 3-year vertex, and the correlation between the vertices is 0.85. The diversified VaR is closest to:",
+    "options": ["USD 0.741 million", "USD 0.760 million", "USD 0.621 million", "USD 0.440 million"],
+    "answer": "A",
+    "explanation": "Individual VaRs: 40 × 0.004 = 0.16 and 60 × 0.010 = 0.60. Diversified VaR = √(0.16² + 0.60² + 2 × 0.85 × 0.16 × 0.60) = √0.5488 = USD 0.741 million.",
+    "rationale": {
+      "A": "Correct. Combining the individual VaRs with a correlation of 0.85 gives 0.741.",
+      "B": "Incorrect. 0.760 is the undiversified VaR, which assumes perfect correlation.",
+      "C": "Incorrect. 0.621 assumes zero correlation and drops the cross term.",
+      "D": "Incorrect. 0.440 is the difference of the individual VaRs, which would apply only with correlation of −1."
+    },
+    "verify": "const a=40*0.004,b=60*0.01,r=0.85; return Math.sqrt(a*a+b*b+2*r*a*b);",
+    "numericAnswer": 0.741,
+    "tolerance": 0.0005,
+    "tags": ["cash-flow-mapping", "diversified-var"]
+  },
+  {
+    "id": "q-frm2-var-mapping-2",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "var-mapping",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A trader holds 2,000 call options on a stock priced at USD 40. Each call has a delta of 0.55 and the stock's daily volatility is 2%. Mapping the options to their delta-equivalent stock position and using z = 1.645, the one-day 95% VaR is closest to:",
+    "options": ["USD 2,632.00", "USD 2,046.88", "USD 1,447.60", "USD 796.18"],
+    "answer": "C",
+    "explanation": "Delta-equivalent position = 2,000 × 0.55 × 40 = USD 44,000. VaR = 44,000 × 0.02 × 1.645 = USD 1,447.60.",
+    "rationale": {
+      "A": "Incorrect. 2,632.00 maps the options as if they were 2,000 shares, ignoring delta.",
+      "B": "Incorrect. 2,046.88 uses the 99% z-value of 2.326.",
+      "C": "Correct. 44,000 × 0.02 × 1.645 = 1,447.60.",
+      "D": "Incorrect. 796.18 multiplies by delta squared (0.3025) instead of delta."
+    },
+    "verify": "return 2000*0.55*40*0.02*1.645;",
+    "numericAnswer": 1447.6,
+    "tolerance": 0.01,
+    "tags": ["delta-mapping", "options"]
+  },
+  {
+    "id": "q-frm2-var-mapping-3",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "var-mapping",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A US-based bank enters a one-year forward contract to buy EUR 10 million against USD. For VaR mapping, the position is best represented as:",
+    "options": ["A single long exposure to the one-year EUR/USD forward rate with no interest-rate risk", "A long one-year EUR zero-coupon bond, a short one-year USD zero-coupon bond and a long EUR/USD spot exposure", "A short one-year EUR zero-coupon bond, a long one-year USD zero-coupon bond and a short EUR/USD spot exposure", "A long one-year USD zero-coupon bond only, since settlement is in dollars"],
+    "answer": "B",
+    "explanation": "Buying EUR forward is equivalent to borrowing USD for a year, converting at spot and investing the EUR for a year. It therefore maps onto the EUR one-year rate, the USD one-year rate and the spot exchange rate.",
+    "rationale": {
+      "A": "Incorrect. The forward's value is sensitive to both interest rates as well as spot, so ignoring rate risk is a mapping error.",
+      "B": "Correct. Long foreign zero, short domestic zero, long spot FX replicates a long foreign-currency forward.",
+      "C": "Incorrect. This is the mapping of a forward sale of EUR, the opposite direction.",
+      "D": "Incorrect. Settlement currency does not remove the euro rate and spot exposures."
+    },
+    "tags": ["currency-forward", "building-blocks"]
+  },
+  {
+    "id": "q-frm2-var-mapping-4",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "var-mapping",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A risk manager compares principal, duration and cash-flow mapping for a portfolio of coupon bonds on an upward-sloping volatility term structure. Which statement is most accurate?",
+    "options": ["Principal mapping is the most accurate because it uses the actual repayment dates of principal", "Duration mapping captures non-parallel shifts in the yield curve better than cash-flow mapping", "All three methods give identical diversified VaR whenever vertex correlations are below one", "Principal mapping tends to overstate VaR because it assigns the coupons the volatility of the principal maturity, while cash-flow mapping is the most accurate"],
+    "answer": "D",
+    "explanation": "Principal mapping ignores coupons and places all value at the principal maturity, where volatility is higher, so it tends to overstate risk. Duration mapping uses one vertex and assumes parallel shifts. Cash-flow mapping places each present value at its own vertex and uses the full correlation structure.",
+    "rationale": {
+      "A": "Incorrect. Principal mapping ignores coupon cash flows and is the crudest method.",
+      "B": "Incorrect. Duration mapping collapses the portfolio to one vertex, implicitly assuming parallel shifts.",
+      "C": "Incorrect. The methods place value at different vertices, so their VaRs differ.",
+      "D": "Correct. Ignoring earlier, less volatile coupons inflates principal-mapped VaR; cash-flow mapping is most precise."
+    },
+    "tags": ["principal-mapping", "duration-mapping"]
+  }
+]

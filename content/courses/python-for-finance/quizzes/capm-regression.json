@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-py-capm-regression-1",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "capm-regression",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A stock's excess returns have a volatility of 30%, the market's excess returns have a volatility of 15%, and their correlation is 0.6. The beta an OLS regression of stock on market excess returns would report is closest to:",
+    "options": ["1.20", "0.30", "2.00", "0.60"],
+    "answer": "A",
+    "explanation": "Beta = Cov / Var(m) = ρ × σs × σm / σm² = ρ × σs / σm = 0.6 × 0.30 / 0.15 = 1.20.",
+    "rationale": {
+      "A": "Correct. 0.6 × 0.30 / 0.15 = 1.20.",
+      "B": "Incorrect. 0.30 inverts the volatility ratio (0.6 × 0.15 / 0.30), which is the slope of the market regressed on the stock.",
+      "C": "Incorrect. 2.00 is σs / σm without multiplying by the correlation.",
+      "D": "Incorrect. 0.60 is the correlation itself; beta also scales by the ratio of volatilities."
+    },
+    "verify": "return 0.6*0.30/0.15;",
+    "numericAnswer": 1.2,
+    "tolerance": 0.005,
+    "tags": ["beta"]
+  },
+  {
+    "id": "q-py-capm-regression-2",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "capm-regression",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A fitted statsmodels CAPM regression shows params['mkt_ex'] = 1.25 and bse['mkt_ex'] = 0.10. The t-statistic for the null hypothesis that beta equals 1 is closest to:",
+    "options": ["12.50", "0.25", "2.50", "1.25"],
+    "answer": "C",
+    "explanation": "t = (estimate − hypothesised value) / standard error = (1.25 − 1) / 0.10 = 2.50.",
+    "rationale": {
+      "A": "Incorrect. 12.50 is the default t-statistic in tvalues, which tests beta = 0, not beta = 1.",
+      "B": "Incorrect. 0.25 is the difference from 1 without dividing by the standard error.",
+      "C": "Correct. (1.25 − 1) / 0.10 = 2.50, significant at roughly the 5% level.",
+      "D": "Incorrect. 1.25 is the beta estimate itself, not a test statistic."
+    },
+    "verify": "return (1.25-1)/0.10;",
+    "numericAnswer": 2.5,
+    "tolerance": 0.005,
+    "tags": ["t-statistic", "hypothesis-testing"]
+  },
+  {
+    "id": "q-py-capm-regression-3",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "capm-regression",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A stock has a beta of 0.9 and a volatility of 24%; the market volatility is 16%. In a single-factor regression, the R-squared is closest to:",
+    "options": ["60.00%", "36.00%", "64.00%", "54.00%"],
+    "answer": "B",
+    "explanation": "Systematic volatility = β × σm = 0.9 × 16% = 14.4%. R² = (14.4% / 24%)² = 0.6² = 36.00%.",
+    "rationale": {
+      "A": "Incorrect. 60.00% is the correlation (β σm / σs); R² is the correlation squared.",
+      "B": "Correct. R² = (0.9 × 0.16 / 0.24)² = 0.36.",
+      "C": "Incorrect. 64.00% is 1 − R², the idiosyncratic share of variance.",
+      "D": "Incorrect. 54.00% multiplies beta by the correlation instead of squaring the correlation."
+    },
+    "verify": "const rho=0.9*0.16/0.24; return rho*rho*100;",
+    "numericAnswer": 36.0,
+    "tolerance": 0.005,
+    "tags": ["r-squared"]
+  },
+  {
+    "id": "q-py-capm-regression-4",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "capm-regression",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst runs sm.OLS(stock_excess, market_excess).fit() without sm.add_constant. What is the main consequence?",
+    "options": ["statsmodels adds the intercept automatically, so nothing changes", "The output reports alpha but not beta", "R-squared becomes exactly zero", "The regression is forced through the origin, so no alpha is estimated and beta can be biased"],
+    "answer": "D",
+    "explanation": "statsmodels' OLS uses exactly the columns you give it. Without a constant column there is no intercept, so the slope absorbs any average excess return and alpha cannot be measured.",
+    "rationale": {
+      "A": "Incorrect. Unlike the formula interface, sm.OLS does not add an intercept on its own.",
+      "B": "Incorrect. The only coefficient estimated is the slope; alpha is the one that is missing.",
+      "C": "Incorrect. R-squared is still reported (computed uncentred), and it is usually not zero.",
+      "D": "Correct. Omitting the constant forces a zero intercept, removing alpha and potentially biasing beta."
+    },
+    "tags": ["statsmodels", "alpha"]
+  }
+]

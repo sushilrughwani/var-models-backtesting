@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-xl-model-auditing-and-best-practice-1",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "model-auditing-and-best-practice",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "An analyst wants to see which cells feed into the formula in the selected cell. Which tool should she use?",
+    "options": ["Trace Dependents", "Trace Precedents", "Watch Window", "Remove Arrows"],
+    "answer": "B",
+    "explanation": "Trace Precedents (Alt, M, P) draws arrows from the cells that the selected formula uses. Trace Dependents goes the other way, showing which cells use the selected cell.",
+    "rationale": {
+      "A": "Incorrect. Trace Dependents shows the cells that use the selected cell, not the ones it uses.",
+      "B": "Correct. Precedents are the inputs to the selected formula.",
+      "C": "Incorrect. The Watch Window monitors chosen cells' values; it does not show links.",
+      "D": "Incorrect. Remove Arrows clears trace arrows from the sheet."
+    },
+    "tags": ["trace-precedents"]
+  },
+  {
+    "id": "q-xl-model-auditing-and-best-practice-2",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "model-auditing-and-best-practice",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A forecast has base revenue of 1,000 and a growth input of 8% in B2, but every year's formula is of the form `=B5*1.05`. By how much is year 3 revenue understated compared with a correct formula that uses B2?",
+    "options": ["90.00", "534.02", "193.05", "102.09"],
+    "answer": "D",
+    "explanation": "Correct year 3 = 1,000 × 1.08³ = 1,259.71. Model year 3 = 1,000 × 1.05³ = 1,157.63. Understatement = 102.09.",
+    "rationale": {
+      "A": "Incorrect. 90.00 uses simple growth: 3 years × 3% × 1,000, ignoring compounding.",
+      "B": "Incorrect. 534.02 is the cumulative understatement over all five years.",
+      "C": "Incorrect. 193.05 is the understatement in year 5, not year 3.",
+      "D": "Correct. 1,259.71 − 1,157.63 = 102.09."
+    },
+    "verify": "return 1000*Math.pow(1.08,3)-1000*Math.pow(1.05,3);",
+    "numericAnswer": 102.09,
+    "tolerance": 0.01,
+    "tags": ["hard-codes"]
+  },
+  {
+    "id": "q-xl-model-auditing-and-best-practice-3",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "model-auditing-and-best-practice",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "To make a model 'look clean', a colleague wraps every calculation in `=IFERROR(calculation,0)`. What is the main risk?",
+    "options": ["IFERROR slows the workbook so much that it becomes unusable", "IFERROR converts all numbers to text", "Genuine errors, such as a broken lookup, are replaced by zeros and flow silently into totals", "IFERROR cannot be used inside SUM formulas"],
+    "answer": "C",
+    "explanation": "An error value is a useful alarm. Replacing it with 0 hides the problem: a lookup that fails because a code was misspelled now contributes zero revenue and nobody notices. IFERROR should be reserved for cases where an error is expected and a substitute is genuinely correct.",
+    "rationale": {
+      "A": "Incorrect. IFERROR has a small calculation cost; the real problem is hidden errors, not speed.",
+      "B": "Incorrect. IFERROR returns the calculation's result or the substitute value unchanged in type.",
+      "C": "Correct. Masking errors with zeros lets mistakes pass silently into outputs.",
+      "D": "Incorrect. IFERROR can be nested inside or around SUM without any problem."
+    },
+    "tags": ["iferror", "error-checks"]
+  },
+  {
+    "id": "q-xl-model-auditing-and-best-practice-4",
+    "course": "excel-for-finance",
+    "topic": "excel-data-analysis",
+    "lesson": "model-auditing-and-best-practice",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A revenue forecast starts at 1,000 and grows at the rate in an input cell. Years 1, 2 and 4 use formulas linked to the input, but someone pasted the value 1,150 into year 3, so year 4 = year 3 × (1 + growth). The growth input, originally 6%, is changed to 10%. By how much is year 4 revenue now understated?",
+    "options": ["199.10", "115.00", "43.48", "314.10"],
+    "answer": "A",
+    "explanation": "Correct year 4 = 1,000 × 1.10⁴ = 1,464.10. The model's year 4 = 1,150 × 1.10 = 1,265.00. Understatement = 199.10. The pasted value does not respond to the new input, so the error grows as assumptions move.",
+    "rationale": {
+      "A": "Correct. 1,464.10 − 1,265.00 = 199.10.",
+      "B": "Incorrect. 115.00 is the difference between the model's year 4 and the pasted year 3 (1,265 − 1,150), not an error measure.",
+      "C": "Incorrect. 43.48 is the understatement at the original 6% growth; at 10% the gap is wider.",
+      "D": "Incorrect. 314.10 compares the correct year 4 with the pasted year 3, mixing two different years."
+    },
+    "verify": "return 1000*Math.pow(1.1,4)-1150*1.1;",
+    "numericAnswer": 199.1,
+    "tolerance": 0.01,
+    "tags": ["hard-codes", "inconsistent-formulas"]
+  }
+]

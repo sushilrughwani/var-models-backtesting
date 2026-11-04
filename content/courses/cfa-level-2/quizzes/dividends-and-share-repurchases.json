@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa2-dividends-and-share-repurchases-1",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "dividends-and-share-repurchases",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "Varga Industries has net income of USD 120 million and 40 million shares trading at USD 60. It plans to use USD 240 million of cash, currently earning 3% pre-tax, to repurchase shares at the market price. The tax rate is 30%. EPS after the repurchase is closest to:",
+    "options": ["USD 3.33", "USD 3.13", "USD 3.19"],
+    "answer": "C",
+    "explanation": "Shares repurchased = 240 / 60 = 4 million; remaining 36 million. Lost after-tax interest = 240 × 0.03 × 0.70 = 5.04 million. EPS = (120 − 5.04) / 36 = 3.19.",
+    "rationale": {
+      "A": "Incorrect. 3.33 = 120 / 36 ignores the interest income forgone on the cash used.",
+      "B": "Incorrect. 3.13 deducts the pre-tax interest of 7.2 million instead of the after-tax 5.04 million.",
+      "C": "Correct. (120 − 5.04) / 36 = 3.19, higher than 3.00 because the 5% earnings yield exceeds the 2.1% after-tax yield on cash."
+    },
+    "verify": "const sh=40-240/60; return (120-240*0.03*0.7)/sh;",
+    "numericAnswer": 3.19,
+    "tolerance": 0.005,
+    "tags": ["share-repurchase", "eps"]
+  },
+  {
+    "id": "q-cfa2-dividends-and-share-repurchases-2",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "dividends-and-share-repurchases",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A company operates under a double taxation system with a corporate tax rate of 30%. Its shareholders pay a 20% tax on dividends. The effective tax rate on a unit of pre-tax corporate earnings distributed as dividends is closest to:",
+    "options": ["44.0%", "50.0%", "30.0%"],
+    "answer": "A",
+    "explanation": "Effective rate = 0.30 + (1 − 0.30) × 0.20 = 1 − 0.70 × 0.80 = 44.0%.",
+    "rationale": {
+      "A": "Correct. The dividend tax applies to after-corporate-tax earnings: 1 − 0.70 × 0.80 = 44.0%.",
+      "B": "Incorrect. 50.0% simply adds the two rates, taxing the same unit of earnings twice in full.",
+      "C": "Incorrect. 30.0% is the corporate rate only and ignores the shareholder-level dividend tax that double taxation adds."
+    },
+    "verify": "return (1-(1-0.30)*(1-0.20))*100;",
+    "numericAnswer": 44.0,
+    "tolerance": 0.05,
+    "tags": ["dividend-taxation"]
+  },
+  {
+    "id": "q-cfa2-dividends-and-share-repurchases-3",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "dividends-and-share-repurchases",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Last year a firm paid a dividend of USD 0.80 per share. Next year's EPS is expected to be USD 2.50. The firm targets a 45% payout ratio and closes 25% of the gap between its target and its previous dividend each year. The expected dividend next year is closest to:",
+    "options": ["USD 1.13", "USD 0.88", "USD 0.28"],
+    "answer": "B",
+    "explanation": "Target dividend = 0.45 × 2.50 = 1.125. D1 = 0.80 + 0.25 × (1.125 − 0.80) = 0.88.",
+    "rationale": {
+      "A": "Incorrect. 1.13 is the full target dividend, which assumes immediate (100%) adjustment.",
+      "B": "Correct. Partial adjustment: 0.80 + 0.25 × 0.325 = 0.88.",
+      "C": "Incorrect. 0.28 = 0.25 × 1.125 applies the adjustment speed to the target and ignores the previous dividend."
+    },
+    "verify": "return 0.80+0.25*(0.45*2.50-0.80);",
+    "numericAnswer": 0.88,
+    "tolerance": 0.005,
+    "tags": ["target-payout"]
+  },
+  {
+    "id": "q-cfa2-dividends-and-share-repurchases-4",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "dividends-and-share-repurchases",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A bank's shares trade at USD 18 while its book value per share is USD 24. It repurchases 10% of its shares in the open market using excess cash. The repurchase will most likely cause book value per share to:",
+    "options": ["decrease", "remain unchanged", "increase"],
+    "answer": "C",
+    "explanation": "Buying back shares below book value removes less equity per share than each share's book value, so remaining shareholders' BVPS rises.",
+    "rationale": {
+      "A": "Incorrect. BVPS falls only when shares are repurchased above book value.",
+      "B": "Incorrect. BVPS is unchanged only if the repurchase price equals BVPS.",
+      "C": "Correct. Price (18) below BVPS (24) means BVPS increases after the buyback."
+    },
+    "tags": ["share-repurchase", "book-value"]
+  }
+]

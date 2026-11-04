@@ -1,0 +1,104 @@
+[
+  {
+    "id": "q-py-data-structures-1",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "data-structures",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Given `cf = [-800, 150, 200, 250, 300, 350]`, what does `print(sum(cf[2:5]))` output?",
+    "options": [
+      "900",
+      "1100",
+      "750",
+      "450"
+    ],
+    "answer": "C",
+    "explanation": "Indexing starts at 0 and the slice excludes the stop index, so cf[2:5] is [200, 250, 300], which sums to 750.",
+    "rationale": {
+      "A": "Incorrect. This treats indexes as starting at 1, taking 150, 200, 250 and 300.",
+      "B": "Incorrect. This includes the stop index 5 (adding 350); slices exclude the stop.",
+      "C": "Correct. Positions 2, 3 and 4 hold 200, 250 and 300; their sum is 750.",
+      "D": "Incorrect. This takes only two items (200 + 250); a 2:5 slice has 5 − 2 = 3 items."
+    },
+    "verify": "const cf=[-800,150,200,250,300,350]; return cf.slice(2,5).reduce((a,b)=>a+b,0);",
+    "numericAnswer": 750,
+    "tolerance": 0.001,
+    "tags": ["lists", "slicing"]
+  },
+  {
+    "id": "q-py-data-structures-2",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "data-structures",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst runs `base = [0.6, 0.4]`, then `scenario = base`, then `scenario[0] = 0.7`. What does `print(base)` show?",
+    "options": [
+      "[0.7, 0.4]",
+      "[0.6, 0.4]",
+      "[0.7, 0.3]",
+      "An error, because base and scenario are now linked"
+    ],
+    "answer": "A",
+    "explanation": "Assignment does not copy the list; scenario and base are two names for the same list, so the change is visible through both. Use base.copy() to get an independent list.",
+    "rationale": {
+      "A": "Correct. Both names refer to one list object, which now holds 0.7 in position 0.",
+      "B": "Incorrect. This would be true only if scenario were a copy, e.g. scenario = base.copy().",
+      "C": "Incorrect. Python does not rebalance the other weight automatically.",
+      "D": "Incorrect. Aliasing is legal and raises no error; it just shares the object."
+    },
+    "tags": ["lists", "aliasing"]
+  },
+  {
+    "id": "q-py-data-structures-3",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "data-structures",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "With `value = 100_000`, `w = {\"A\": 0.5, \"B\": 0.3, \"C\": 0.2}` and `px = {\"A\": 40.0, \"B\": 25.0, \"C\": 80.0}`, the code `shares = {k: value * w[k] / px[k] for k in w}` is run. What is `shares[\"B\"]`?",
+    "options": [
+      "1250.0",
+      "30000.0",
+      "750.0",
+      "1200.0"
+    ],
+    "answer": "D",
+    "explanation": "B receives 0.3 × 100,000 = 30,000 dollars; at a price of 25 that buys 30,000 / 25 = 1,200 shares.",
+    "rationale": {
+      "A": "Incorrect. This is the share count for A (50,000 / 40).",
+      "B": "Incorrect. This is B's dollar allocation, before dividing by the price.",
+      "C": "Incorrect. This divides B's allocation by A's price (30,000 / 40), a key mix-up.",
+      "D": "Correct. 100,000 × 0.3 / 25 = 1,200."
+    },
+    "verify": "return 100000*0.3/25;",
+    "numericAnswer": 1200,
+    "tolerance": 0.001,
+    "tags": ["dictionaries", "comprehensions", "portfolio"]
+  },
+  {
+    "id": "q-py-data-structures-4",
+    "course": "python-for-finance",
+    "topic": "python-basics",
+    "lesson": "data-structures",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Given `spreads = {\"AAA\": 0.0045, \"A\": 0.0085}` and `trade = (\"ACME\", \"BUY\", 200)`, which statement raises an error?",
+    "options": [
+      "spreads.get(\"BB\", 0.02)",
+      "trade[2] = 300",
+      "spreads[\"BBB\"] = 0.013",
+      "name, side, qty = trade"
+    ],
+    "answer": "B",
+    "explanation": "Tuples are immutable, so assigning to trade[2] raises a TypeError. The other statements are all valid.",
+    "rationale": {
+      "A": "Incorrect. .get returns the default 0.02 when the key is missing, without raising KeyError.",
+      "B": "Correct. Tuples do not support item assignment; this raises TypeError.",
+      "C": "Incorrect. Assigning to a new key simply adds it to the dictionary.",
+      "D": "Incorrect. Unpacking a 3-element tuple into three names is valid."
+    },
+    "tags": ["tuples", "dictionaries"]
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-frtb-1",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "frtb",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A trading desk's 10-day 97.5% expected shortfall is USD 15 million with all risk factors shocked, USD 9 million when only factors with a liquidity horizon of at least 20 days are shocked, and USD 6 million when only factors with a liquidity horizon of at least 40 days are shocked. No factors have longer horizons. The liquidity-horizon-adjusted ES (USD millions) is closest to:",
+    "options": ["18.49", "30.00", "19.44", "23.04"],
+    "answer": "C",
+    "explanation": "ES = √[15² + (9 × √((20 − 10)/10))² + (6 × √((40 − 20)/10))²] = √(225 + 81 + 72) = √378 = 19.44.",
+    "rationale": {
+      "A": "Incorrect. 18.49 ignores the horizon scaling factors and simply takes √(15² + 9² + 6²).",
+      "B": "Incorrect. 30.00 adds the three ES figures, ignoring the square-root aggregation.",
+      "C": "Correct. Incremental horizon factors of 1 and √2 give √378 = 19.44.",
+      "D": "Incorrect. 23.04 scales each band by √(LH/10) (√2 and 2) instead of the incremental horizon √((LH_j − LH_{j−1})/10)."
+    },
+    "verify": "return Math.sqrt(15**2 + (9*Math.sqrt((20-10)/10))**2 + (6*Math.sqrt((40-20)/10))**2);",
+    "numericAnswer": 19.44,
+    "tolerance": 0.005,
+    "tags": ["liquidity-horizon", "expected-shortfall"]
+  },
+  {
+    "id": "q-frm2-frtb-2",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "frtb",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Which statement best explains why FRTB measures internal-model market risk with 97.5% expected shortfall rather than 99% VaR?",
+    "options": [
+      "ES at 97.5% is always much larger than 99% VaR, so it raises capital for every bank.",
+      "ES captures the size of losses beyond the quantile, and for a normal distribution 97.5% ES is close to 99% VaR, so capital rises mainly for fat-tailed portfolios.",
+      "ES is easier to backtest than VaR, so supervisors replaced VaR in all backtesting.",
+      "ES at 97.5% ignores tail events, which makes capital more stable."
+    ],
+    "answer": "B",
+    "explanation": "ES averages losses in the tail and is subadditive. Under normality 97.5% ES is about 2.338σ versus 2.326σ for 99% VaR, so the change mainly penalises fat tails.",
+    "rationale": {
+      "A": "Incorrect. Under normality the two are within about 0.5% of each other.",
+      "B": "Correct. ES sees tail severity while keeping capital broadly comparable for thin-tailed books.",
+      "C": "Incorrect. ES is harder to backtest; FRTB desk backtesting still uses VaR at 99% and 97.5%.",
+      "D": "Incorrect. ES focuses on tail events rather than ignoring them."
+    },
+    "tags": ["expected-shortfall"]
+  },
+  {
+    "id": "q-frm2-frtb-3",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "frtb",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A bank's exotic derivatives desk fails the P&L attribution test. Under FRTB, which combination of components will make up the desk's market risk capital?",
+    "options": [
+      "Sensitivities-based charges (delta, vega, curvature), a default risk charge and a residual risk add-on",
+      "Stressed VaR plus incremental risk charge",
+      "Expected shortfall with a 10-day horizon only, since failing desks lose liquidity horizon adjustments",
+      "The non-modellable risk factor charge alone"
+    ],
+    "answer": "A",
+    "explanation": "A desk that fails the approval tests is capitalised under the standardised approach, which combines the sensitivities-based method, the default risk charge and the residual risk add-on for exotic payoffs.",
+    "rationale": {
+      "A": "Correct. These are the three building blocks of the FRTB standardised approach.",
+      "B": "Incorrect. Stressed VaR and the incremental risk charge belong to the earlier framework.",
+      "C": "Incorrect. Failing desks leave the internal models approach altogether.",
+      "D": "Incorrect. The NMRF charge is part of the internal models approach for factors lacking price observations."
+    },
+    "tags": ["standardised-approach", "desk-approval"]
+  },
+  {
+    "id": "q-frm2-frtb-4",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "frtb",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A bank's liquidity-adjusted ES for its whole modellable trading book is USD 40 million. Computed separately, the ES figures for interest rates, credit spreads and equity are USD 25 million, USD 18 million and USD 12 million. Using a 50% weight on the diversified figure, the internal models capital charge for modellable risk (IMCC) is closest to:",
+    "options": ["USD 40.0 million", "USD 55.0 million", "USD 29.2 million", "USD 47.5 million"],
+    "answer": "D",
+    "explanation": "IMCC = 0.5 × 40 + 0.5 × (25 + 18 + 12) = 20 + 27.5 = USD 47.5 million.",
+    "rationale": {
+      "A": "Incorrect. 40.0 uses only the diversified ES and gives full credit for cross-class diversification.",
+      "B": "Incorrect. 55.0 is the sum of the stand-alone ES figures, giving no diversification credit at all.",
+      "C": "Incorrect. 29.2 averages the stand-alone figures (55/3) before applying the weight instead of summing them.",
+      "D": "Correct. Half of 40 plus half of 55 equals 47.5."
+    },
+    "verify": "return 0.5*40 + 0.5*(25+18+12);",
+    "numericAnswer": 47.5,
+    "tolerance": 0.05,
+    "tags": ["imcc", "diversification"]
+  }
+]

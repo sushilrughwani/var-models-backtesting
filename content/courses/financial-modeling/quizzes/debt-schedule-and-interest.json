@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-fm-debt-schedule-and-interest-1",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "debt-schedule-and-interest",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Northwind's term loan opens FY2026 at USD 100.0 million, carries a 6% interest rate and has a mandatory repayment of USD 12.0 million during the year. Interest calculated on the average balance (USD million) is closest to:",
+    "options": ["6.00", "5.28", "5.64", "6.72"],
+    "answer": "C",
+    "explanation": "Closing balance = 100.0 - 12.0 = 88.0; average = 94.0; interest = 6% x 94.0 = 5.64.",
+    "rationale": {
+      "A": "Incorrect. 6.00 uses the opening balance only.",
+      "B": "Incorrect. 5.28 uses the closing balance only.",
+      "C": "Correct. 6% x (100.0 + 88.0) / 2 = 5.64.",
+      "D": "Incorrect. 6.72 adds the repayment to the balance (112.0) instead of deducting it."
+    },
+    "verify": "return 0.06*(100+88)/2;",
+    "numericAnswer": 5.64,
+    "tolerance": 0.005,
+    "tags": ["term-loan", "interest"]
+  },
+  {
+    "id": "q-fm-debt-schedule-and-interest-2",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "debt-schedule-and-interest",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Northwind opens the year with cash of USD 30.0 million and a revolver balance of USD 35.0 million. During the year CFO is USD 85.4 million, capex USD 44.0 million, mandatory term loan repayment USD 12.0 million and dividends USD 20.0 million. Minimum cash is USD 20.0 million and surplus cash repays the revolver. The closing revolver balance (USD million) is closest to:",
+    "options": ["15.6", "19.4", "35.0", "54.4"],
+    "answer": "A",
+    "explanation": "Cash available = 30.0 + 85.4 - 44.0 - 12.0 - 20.0 - 20.0 = 19.4. Repay 19.4 of the 35.0 revolver, leaving 15.6.",
+    "rationale": {
+      "A": "Correct. 35.0 - 19.4 = 15.6.",
+      "B": "Incorrect. 19.4 is the repayment amount, not the closing balance.",
+      "C": "Incorrect. 35.0 assumes no repayment, ignoring the cash surplus.",
+      "D": "Incorrect. 54.4 treats the surplus as a drawing, getting the sign backwards."
+    },
+    "verify": "const avail = 30.0 + 85.4 - 44.0 - 12.0 - 20.0 - 20.0; return 35.0 - Math.min(35.0, Math.max(avail,0));",
+    "numericAnswer": 15.6,
+    "tolerance": 0.05,
+    "tags": ["revolver", "cash-available"]
+  },
+  {
+    "id": "q-fm-debt-schedule-and-interest-3",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "debt-schedule-and-interest",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Why does calculating interest on average debt balances create a circular reference in a three-statement model?",
+    "options": ["Because interest rates depend on the company's share price", "Because interest affects net income and cash, which determine the closing debt balance used to compute interest", "Because the balance sheet uses opening balances and the income statement uses closing balances", "Because Excel cannot average two cells on different rows"],
+    "answer": "B",
+    "explanation": "Interest reduces net income, which reduces cash available to repay the revolver; the closing revolver then feeds back into the average balance and hence interest.",
+    "rationale": {
+      "A": "Incorrect. The share price is not part of the interest calculation loop.",
+      "B": "Correct. The loop runs interest to net income to cash to closing debt and back to interest.",
+      "C": "Incorrect. This misdescribes the statements and is not the source of circularity.",
+      "D": "Incorrect. Excel averages any cells; the issue is logical dependency, not a technical limitation."
+    },
+    "tags": ["circularity"]
+  },
+  {
+    "id": "q-fm-debt-schedule-and-interest-4",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "debt-schedule-and-interest",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A company opens the year with a revolver balance of USD 10.0 million (limit USD 50.0 million) and cash at its minimum level. After all other cash flows and the minimum cash requirement, cash available is -USD 6.0 million. The closing revolver balance (USD million) is closest to:",
+    "options": ["4.0", "10.0", "6.0", "16.0"],
+    "answer": "D",
+    "explanation": "A shortfall of 6.0 is funded by drawing on the revolver: 10.0 + 6.0 = 16.0, well within the 50.0 limit.",
+    "rationale": {
+      "A": "Incorrect. 4.0 treats the shortfall as a repayment.",
+      "B": "Incorrect. 10.0 ignores the shortfall, which would push cash below the minimum.",
+      "C": "Incorrect. 6.0 is the drawing, not the closing balance.",
+      "D": "Correct. Draw 6.0, so the revolver closes at 16.0."
+    },
+    "verify": "const avail=-6, open=10, limit=50; const chg=Math.min(Math.max(-avail,-open),limit-open); return open+chg;",
+    "numericAnswer": 16.0,
+    "tolerance": 0.05,
+    "tags": ["revolver"]
+  }
+]

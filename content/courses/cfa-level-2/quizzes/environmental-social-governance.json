@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa2-environmental-social-governance-1",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "environmental-social-governance",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A chemicals company emits 500,000 tonnes of CO₂ per year. A permanent carbon tax of USD 40 per tonne is introduced, and the analyst assumes none of the cost can be passed on to customers. The tax rate is 20% and the WACC is 10%. Assuming no growth, the reduction in firm value (in USD millions) is closest to:",
+    "options": ["160", "200", "16"],
+    "answer": "A",
+    "explanation": "Annual cost = 500,000 × 40 = 20m. After tax = 20 × 0.8 = 16m. Value reduction = 16 / 0.10 = 160m.",
+    "rationale": {
+      "A": "Correct. Capitalise the after-tax annual cost: 16 / 0.10 = 160.",
+      "B": "Incorrect. 200 capitalises the pre-tax cost and ignores the tax deductibility of the carbon expense.",
+      "C": "Incorrect. 16 is the annual after-tax cost, not the present value of a permanent cost."
+    },
+    "verify": "return 500000*40*(1-0.2)/1e6/0.10;",
+    "numericAnswer": 160,
+    "tolerance": 0.5,
+    "tags": ["esg-valuation", "carbon"]
+  },
+  {
+    "id": "q-cfa2-environmental-social-governance-2",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "environmental-social-governance",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An analyst values a firm with a constant-growth FCFE model. Next year's FCFE is USD 10 million, the growth rate is 3% and the cost of equity is 9%. Concerned about weak board oversight, the analyst adds a 0.5% governance premium to the cost of equity. The resulting decrease in equity value (in USD millions) is closest to:",
+    "options": ["5.85", "12.82", "13.21"],
+    "answer": "B",
+    "explanation": "Before: 10 / (0.09 − 0.03) = 166.67. After: 10 / (0.095 − 0.03) = 153.85. Decrease = 12.82.",
+    "rationale": {
+      "A": "Incorrect. 5.85 = 10/0.09 − 10/0.095 ignores growth in the denominator.",
+      "B": "Correct. 166.67 − 153.85 = 12.82.",
+      "C": "Incorrect. 13.21 grows the FCFE by another 3% (10.3) even though 10 million is already next year's figure."
+    },
+    "verify": "return 10/(0.09-0.03)-10/(0.095-0.03);",
+    "numericAnswer": 12.82,
+    "tolerance": 0.01,
+    "tags": ["esg-valuation", "cost-of-equity"]
+  },
+  {
+    "id": "q-cfa2-environmental-social-governance-3",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "environmental-social-governance",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A portfolio manager wants to keep sector weights close to the benchmark while tilting toward companies with strong ESG practices. The approach that best fits this goal is:",
+    "options": ["exclusionary screening", "thematic investing", "best-in-class screening"],
+    "answer": "C",
+    "explanation": "Best-in-class screening selects the top ESG performers within each sector, which preserves sector exposure.",
+    "rationale": {
+      "A": "Incorrect. Exclusionary screening removes whole sectors or companies, which can shift sector weights away from the benchmark.",
+      "B": "Incorrect. Thematic investing concentrates on specific themes such as clean energy, producing large sector deviations.",
+      "C": "Correct. Selecting leaders within each sector keeps sector balance."
+    },
+    "tags": ["esg-approaches"]
+  },
+  {
+    "id": "q-cfa2-environmental-social-governance-4",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "environmental-social-governance",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst has already reduced a utility's forecast cash flows to reflect expected costs of complying with new emissions limits. A colleague suggests also raising the cost of equity by 1% for the same emissions risk. The best response is that this adjustment would most likely:",
+    "options": ["double count the risk and understate value", "be required to capture the full risk", "have no effect on value because the risk is diversifiable"],
+    "answer": "A",
+    "explanation": "If the risk is already reflected in cash flows, also raising the discount rate penalises the firm twice for the same risk and understates value.",
+    "rationale": {
+      "A": "Correct. Using both levers for the same risk is double counting.",
+      "B": "Incorrect. Once expected compliance costs are in the cash flows, a further discount rate premium is not needed for the same risk.",
+      "C": "Incorrect. Raising the discount rate always changes value in the model, regardless of whether the risk is diversifiable."
+    },
+    "tags": ["esg-valuation"]
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-performance-attribution-1",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "performance-attribution",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A fund returned 13% with a volatility of 20%. The market returned 10% with a volatility of 16%, and the risk-free rate was 2%. The fund's M-squared measure (risk-adjusted return relative to the market) is closest to:",
+    "options": ["3.00%", "0.80%", "10.80%", "0.05%"],
+    "answer": "B",
+    "explanation": "Fund Sharpe = (13 - 2)/20 = 0.55. Scaled to market volatility: 2% + 0.55 × 16% = 10.8%. M² = 10.8% - 10% = 0.80%.",
+    "rationale": {
+      "A": "Incorrect. 3.00% is the raw return difference (13% - 10%), which ignores that the fund took more risk.",
+      "B": "Correct. Levering the fund down to 16% volatility gives 10.8%, which beats the market by 0.80%.",
+      "C": "Incorrect. 10.80% is the risk-adjusted portfolio return before subtracting the market return.",
+      "D": "Incorrect. 0.05 is the difference in Sharpe ratios (0.55 - 0.50), which is not expressed in return units."
+    },
+    "verify": "const S=(13-2)/20; return 2 + S*16 - 10;",
+    "numericAnswer": 0.8,
+    "tolerance": 0.005,
+    "tags": ["m-squared", "sharpe-ratio"]
+  },
+  {
+    "id": "q-frm2-performance-attribution-2",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "performance-attribution",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A benchmark is 50% equities (return 8%) and 50% bonds (return 2%). A portfolio holds 65% equities (return 7%) and 35% bonds (return 2.5%). Using Brinson attribution with benchmark weights for the selection effect, the total selection effect is closest to:",
+    "options": ["0.90%", "-0.48%", "0.43%", "-0.25%"],
+    "answer": "D",
+    "explanation": "Selection = Σ w_B(R_P,i - R_B,i) = 0.5 × (7 - 8) + 0.5 × (2.5 - 2) = -0.50 + 0.25 = -0.25%. For reference: allocation = 0.90%, interaction = -0.225%, total active return = 0.425%.",
+    "rationale": {
+      "A": "Incorrect. 0.90% is the allocation effect from overweighting equities, which beat the 5% benchmark.",
+      "B": "Incorrect. -0.48% (-0.475%) uses portfolio weights, which combines selection with the interaction effect.",
+      "C": "Incorrect. 0.43% (0.425%) is the total active return, the sum of all three effects.",
+      "D": "Correct. Benchmark-weighted selection is -0.50% in equities plus 0.25% in bonds = -0.25%."
+    },
+    "verify": "return 0.5*(7-8) + 0.5*(2.5-2);",
+    "numericAnswer": -0.25,
+    "tolerance": 0.005,
+    "tags": ["brinson-attribution", "selection-effect"]
+  },
+  {
+    "id": "q-frm2-performance-attribution-3",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "performance-attribution",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A consultant has only the monthly return history of a fund that does not disclose its holdings. She regresses the fund's returns on several style index returns, constraining the coefficients to be non-negative and to sum to one. What is this analysis best used for?",
+    "options": [
+      "Inferring the fund's effective style exposures and detecting style drift over rolling windows",
+      "Measuring the fund's market-timing ability through a squared market term",
+      "Computing the exact current holdings of the fund",
+      "Separating allocation, selection and interaction effects by sector"
+    ],
+    "answer": "A",
+    "explanation": "This is returns-based style analysis. The constrained coefficients describe the effective mix of styles; rolling estimates reveal drift; the unexplained variance reflects selection.",
+    "rationale": {
+      "A": "Correct. Returns-based style analysis infers effective exposures from returns alone and can reveal style drift.",
+      "B": "Incorrect. Timing tests add a squared or up-market dummy term; they do not impose sum-to-one weights on style indices.",
+      "C": "Incorrect. The method estimates average past style exposure, not exact current holdings.",
+      "D": "Incorrect. Brinson attribution requires holdings and sector returns, which the consultant does not have."
+    },
+    "tags": ["style-analysis"]
+  },
+  {
+    "id": "q-frm2-performance-attribution-4",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "performance-attribution",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst estimates R_P - R_f = a + b(R_M - R_f) + c(R_M - R_f)² + e for a tactical allocation fund. Which result provides evidence of successful market timing?",
+    "options": [
+      "A statistically significant positive intercept a",
+      "A slope b greater than 1",
+      "A statistically significant positive coefficient c",
+      "A high R-squared for the regression"
+    ],
+    "answer": "C",
+    "explanation": "In the Treynor-Mazuy model, a successful timer has higher beta in up markets and lower beta in down markets, making the characteristic line convex. That shows up as a positive coefficient on the squared market excess return.",
+    "rationale": {
+      "A": "Incorrect. The intercept measures selectivity (stock-picking alpha), not timing.",
+      "B": "Incorrect. A beta above 1 simply means an aggressive average market exposure.",
+      "C": "Correct. A positive c means the fund's exposure rises when the market rises: convexity from timing.",
+      "D": "Incorrect. R-squared measures how much variation is explained, not whether the manager times the market."
+    },
+    "tags": ["market-timing", "treynor-mazuy"]
+  }
+]

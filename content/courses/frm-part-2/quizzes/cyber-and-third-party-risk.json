@@ -1,0 +1,96 @@
+[
+  {
+    "id": "q-frm2-cyber-and-third-party-risk-1",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "cyber-and-third-party-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank estimates that a data-breach scenario occurs with frequency 0.25 per year and causes a loss of USD 12 million per event. Its cyber policy pays losses above a USD 2 million deductible up to a limit of USD 8 million. The expected annual loss retained by the bank is closest to:",
+    "options": ["USD 3.0 million", "USD 0.5 million", "USD 2.0 million", "USD 1.0 million"],
+    "answer": "D",
+    "explanation": "Insurer pays min(12 − 2, 8) = 8. Retained per event = 2 (deductible) + (12 − 2 − 8) = 2 + 2 = 4. Expected retained loss = 0.25 × 4 = USD 1.0 million.",
+    "rationale": {
+      "A": "Incorrect. 3.0 is the gross expected loss (0.25 × 12), ignoring insurance.",
+      "B": "Incorrect. 0.5 counts only the deductible (0.25 × 2) and forgets the uninsured excess above the limit.",
+      "C": "Incorrect. 2.0 is the expected insurance recovery (0.25 × 8), not the retained loss.",
+      "D": "Correct. Retained 4 per event times frequency 0.25 = 1.0."
+    },
+    "verify": "const f=0.25,S=12,D=2,L=8; const ret=Math.min(S,D)+Math.max(0,S-D-L); return f*ret;",
+    "numericAnswer": 1.0,
+    "tolerance": 0.05,
+    "tags": ["cyber-insurance", "quantification"]
+  },
+  {
+    "id": "q-frm2-cyber-and-third-party-risk-2",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "cyber-and-third-party-risk",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A bank outsources its card-processing platform to a specialist vendor. Which statement is correct?",
+    "options": [
+      "Responsibility for operational risk in card processing passes to the vendor under the contract",
+      "The bank remains accountable and should secure audit rights, incident notification and an exit plan",
+      "Third-party risk can be ignored if the vendor is larger and better capitalised than the bank",
+      "Supervisors have no interest in the arrangement because the vendor is not a regulated bank"
+    ],
+    "answer": "B",
+    "explanation": "Outsourcing transfers the activity, not the accountability. The bank must manage the vendor through due diligence, contractual protections (audit and access rights, notification, exit) and ongoing monitoring; supervisors expect this.",
+    "rationale": {
+      "A": "Incorrect. Accountability cannot be contracted away.",
+      "B": "Correct. The bank keeps accountability and needs contractual and monitoring safeguards.",
+      "C": "Incorrect. Vendor size does not remove operational, concentration or resilience risks.",
+      "D": "Incorrect. Supervisors focus closely on critical outsourcing and often require access to the vendor."
+    },
+    "tags": ["third-party-risk", "outsourcing"]
+  },
+  {
+    "id": "q-frm2-cyber-and-third-party-risk-3",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "cyber-and-third-party-risk",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A bank sets a 4-hour maximum tolerable disruption for its retail payments service. This is best described as:",
+    "options": [
+      "an impact tolerance for an important business service",
+      "a risk appetite limit on the probability of a payments outage",
+      "a recovery point objective for payments data",
+      "a key risk indicator threshold for system downtime"
+    ],
+    "answer": "A",
+    "explanation": "An impact tolerance states the maximum disruption an important business service can suffer, assuming disruption occurs. It is not a probability limit, a data-loss measure, or a monitoring indicator.",
+    "rationale": {
+      "A": "Correct. A maximum tolerable duration of disruption for a critical service is an impact tolerance.",
+      "B": "Incorrect. Risk appetite concerns likelihood and size of losses; impact tolerance assumes the outage has happened.",
+      "C": "Incorrect. A recovery point objective measures acceptable data loss, not service downtime.",
+      "D": "Incorrect. A KRI threshold triggers escalation on a monitored metric; it is not the end-to-end tolerance for a service."
+    },
+    "tags": ["operational-resilience"]
+  },
+  {
+    "id": "q-frm2-cyber-and-third-party-risk-4",
+    "course": "frm-part-2",
+    "topic": "operational-risk-and-resilience",
+    "lesson": "cyber-and-third-party-risk",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A regulator observes that most banks in its jurisdiction host core systems with the same two cloud providers, which in turn rely on a common subcontractor for data-centre power management. Which risk is most directly highlighted?",
+    "options": [
+      "Model risk from inconsistent cloud pricing models",
+      "Confidentiality risk limited to each individual bank's customer data",
+      "Concentration and fourth-party risk that could make a single failure systemic",
+      "Market liquidity risk in the banks' securities portfolios"
+    ],
+    "answer": "C",
+    "explanation": "Shared dependence on a few providers, plus a common subcontractor (a fourth party), means one failure could disrupt many banks simultaneously - concentration risk with systemic consequences.",
+    "rationale": {
+      "A": "Incorrect. The issue is shared operational dependence, not modelling.",
+      "B": "Incorrect. The scenario is about sector-wide availability, not one bank's data confidentiality.",
+      "C": "Correct. Common providers and a shared subcontractor create concentration and fourth-party risk.",
+      "D": "Incorrect. Nothing in the scenario concerns the ability to sell securities."
+    },
+    "tags": ["concentration-risk", "third-party-risk"]
+  }
+]

@@ -12,7 +12,7 @@ title: "Fundamental Review of the Trading Book"
 ## Explanation
 
 ### Why the rules changed
-The 2008 crisis exposed four problems in the old market risk capital regime. First, **99% VaR** says nothing about losses beyond the quantile. Second, every position was treated as if it could be exited in **10 days**, even illiquid credit. Third, banks could move positions between the banking book and the trading book to pick the lower capital charge. Fourth, the standardised approach was too crude to serve as a credible fallback for internal models. FRTB responds on all four fronts.
+The 2008 crisis exposed four problems in the old regime. First, **99% VaR** says nothing about losses beyond the quantile. Second, every position was treated as if it could be exited in **10 days**, even illiquid credit. Third, banks could move positions between the banking book and the trading book to pick the lower capital charge. Fourth, the standardised approach was too crude to serve as a credible fallback for internal models. FRTB responds on all four fronts.
 
 ### From VaR to expected shortfall
 Under the internal models approach (IMA), capital rests on **expected shortfall at 97.5%**, the average loss in the worst 2.5% of outcomes. ES is subadditive and sees the shape of the tail. For a normal distribution the two measures are almost identical:
@@ -31,6 +31,8 @@ $$
 $$
 
 where $T = 10$ days, $\text{ES}_T(P)$ is the 10-day ES with all factors shocked, $\text{ES}_T(P,j)$ is the 10-day ES shocking only factors with liquidity horizon at least $LH_j$, and $LH_j$ is the $j$-th horizon in the list. Each band adds only the *extra* time over the previous horizon, so illiquid factors are charged for longer without double counting.
+
+Diversification across risk classes is only partly recognised. The capital for modellable factors blends the ES of the whole book with the sum of stand-alone ES figures by risk class (rates, credit, equity, FX, commodities): $\text{IMCC} = 0.5\,\text{ES}_{\text{all}} + 0.5\sum_i \text{ES}_i$.
 
 ### Model approval at desk level
 Approval is granted desk by desk, not for the whole bank. Each desk must pass:
@@ -71,7 +73,7 @@ A desk reports 10-day ES at 97.5% (USD millions) for nested subsets of risk fact
 
 **Step 5 - 120-day band.** Factor $\sqrt{6}$; term $= 2^2 \times 6 = 24$.
 
-**Step 6 - combine.** $\sqrt{400 + 144 + 128 + 32 + 24} = \sqrt{728} =$ **USD 26.98 million**. Scaling the entire 20 by $\sqrt{120/10}$ would give 69.28 million, far too punitive because most risk is liquid.
+**Step 6 - combine.** $\sqrt{400 + 144 + 128 + 32 + 24} = \sqrt{728} =$ **USD 26.98 million**. Scaling all of it to 120 days ($20\sqrt{12} = 69.28$) would be far too punitive.
 
 ## Common exam traps
 - Thinking ES at 97.5% is far more conservative than VaR at 99% under normality; they differ by about 0.5%.
@@ -86,4 +88,3 @@ A desk reports 10-day ES at 97.5% (USD millions) for nested subsets of risk fact
 - Desks must pass backtesting and P&L attribution to use internal models; failures fall back to the standardised approach.
 - Non-modellable factors and default risk receive separate capital charges.
 - The standardised approach combines sensitivities-based charges, a default risk charge and a residual risk add-on.
-- Tighter boundary rules stop regulatory arbitrage between the trading and banking books.

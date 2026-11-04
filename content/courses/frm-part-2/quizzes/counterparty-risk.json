@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm2-counterparty-risk-1",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "counterparty-risk",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bank has four derivatives with one counterparty with current values (USD millions) of +8, −5, +3 and −2, all covered by an enforceable netting agreement. The bank's current exposure with netting (USD millions) is closest to:",
+    "options": ["11", "4", "18", "0"],
+    "answer": "B",
+    "explanation": "Net exposure = max(8 − 5 + 3 − 2, 0) = max(4, 0) = 4.",
+    "rationale": {
+      "A": "Incorrect. 11 is the gross exposure (8 + 3), which ignores netting.",
+      "B": "Correct. Netting combines all values: the positive net sum is USD 4 million.",
+      "C": "Incorrect. 18 adds the absolute values of all trades, which has no exposure meaning.",
+      "D": "Incorrect. Exposure is zero only if the net value is negative or zero; here it is +4."
+    },
+    "verify": "const v=[8,-5,3,-2]; return Math.max(v.reduce((a,b)=>a+b,0),0);",
+    "numericAnswer": 4,
+    "tolerance": 0.05,
+    "tags": ["netting", "current-exposure"]
+  },
+  {
+    "id": "q-frm2-counterparty-risk-2",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "counterparty-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank's net exposure to a counterparty is USD 12 million. The CSA has a threshold of USD 3 million and a minimum transfer amount of USD 1 million, and the bank already holds USD 7 million of collateral. The collateral the bank should call (USD millions) is closest to:",
+    "options": ["5", "9", "2", "0"],
+    "answer": "C",
+    "explanation": "Required collateral = 12 − 3 = 9. Call = 9 − 7 = 2, which is at least the MTA of 1, so the bank calls USD 2 million.",
+    "rationale": {
+      "A": "Incorrect. 5 subtracts the collateral held from exposure but ignores the threshold.",
+      "B": "Incorrect. 9 is the total collateral required, not the incremental call after collateral already held.",
+      "C": "Correct. 9 required minus 7 held = 2, which passes the MTA test.",
+      "D": "Incorrect. A call of zero would apply only if the shortfall were below the MTA."
+    },
+    "verify": "const E=12,T=3,MTA=1,H=7; const c=Math.max(E-T,0)-H; return c>=MTA?c:0;",
+    "numericAnswer": 2,
+    "tolerance": 0.05,
+    "tags": ["collateral", "threshold", "mta"]
+  },
+  {
+    "id": "q-frm2-counterparty-risk-3",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "counterparty-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "The value of an uncollateralised netting set has zero expected change and an annual volatility of USD 2 million, and changes are normally distributed. Using z = 1.96, the 97.5% potential future exposure in six months (USD millions) is closest to:",
+    "options": ["2.77", "0.56", "3.92", "1.96"],
+    "answer": "A",
+    "explanation": "PFE = z × σ × √t = 1.96 × 2 × √0.5 = 2.77.",
+    "rationale": {
+      "A": "Correct. Scaling volatility by √0.5 and multiplying by 1.96 gives USD 2.77 million.",
+      "B": "Incorrect. 0.56 is the expected exposure (0.3989 × 2 × √0.5), an average rather than a quantile.",
+      "C": "Incorrect. 3.92 uses the full one-year volatility without scaling to six months.",
+      "D": "Incorrect. 1.96 scales volatility by t = 0.5 instead of √t."
+    },
+    "verify": "return 1.96*2*Math.sqrt(0.5);",
+    "numericAnswer": 2.77,
+    "tolerance": 0.005,
+    "tags": ["pfe", "exposure"]
+  },
+  {
+    "id": "q-frm2-counterparty-risk-4",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "counterparty-risk",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "Which description best explains the typical expected exposure profile of a plain-vanilla interest rate swap over its life?",
+    "options": [
+      "It rises steadily to a maximum at maturity because of the final exchange of notional principal.",
+      "It is flat over the life of the swap because the fixed rate is set at inception.",
+      "It is highest at inception and declines linearly as payments are made.",
+      "It is hump-shaped, because rate uncertainty grows over time while the number of remaining payments shrinks."
+    ],
+    "answer": "D",
+    "explanation": "Two opposing effects shape the profile: diffusion increases possible value changes over time, while amortisation reduces the remaining cash flows, so exposure peaks part-way through the life.",
+    "rationale": {
+      "A": "Incorrect. This describes a cross-currency swap or FX forward; vanilla interest rate swaps do not exchange notional.",
+      "B": "Incorrect. Market rates move after inception, so the swap's value and exposure change over time.",
+      "C": "Incorrect. An at-market swap starts with zero value and near-zero exposure.",
+      "D": "Correct. Diffusion and amortisation combine to give a hump-shaped profile."
+    },
+    "tags": ["exposure-profile", "interest-rate-swap"]
+  }
+]
