@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm2-credit-derivatives-and-structured-products-1",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-derivatives-and-structured-products",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A 5-year CDS on a reference entity trades at a spread of 150 bp, and the expected recovery rate is 25%. Using the credit triangle, the implied annual hazard rate is closest to:",
+    "options": ["1.50%", "6.00%", "2.00%", "1.13%"],
+    "answer": "C",
+    "explanation": "λ ≈ s / (1 − R) = 0.015 / 0.75 = 2.00%.",
+    "rationale": {
+      "A": "Incorrect. 1.50% treats the spread itself as the hazard rate, ignoring recovery.",
+      "B": "Incorrect. 6.00% divides by the recovery rate (0.25) instead of by LGD (0.75).",
+      "C": "Correct. Spread divided by LGD gives a hazard rate of 2.00%.",
+      "D": "Incorrect. 1.13% multiplies the spread by LGD instead of dividing."
+    },
+    "verify": "return 100*0.015/(1-0.25);",
+    "numericAnswer": 2.0,
+    "tolerance": 0.005,
+    "tags": ["cds", "hazard-rate"]
+  },
+  {
+    "id": "q-frm2-credit-derivatives-and-structured-products-2",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-derivatives-and-structured-products",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An investor buys protection on USD 20 million notional through a CDS with a standard coupon of 500 bp. The par spread for the reference entity is 300 bp and the risky duration (RPV01) is 3.8. The upfront amount the protection buyer receives at inception (USD millions) is closest to:",
+    "options": ["1.52", "3.80", "6.08", "0.40"],
+    "answer": "A",
+    "explanation": "Upfront = (s − c) × RPV01 × notional = (0.03 − 0.05) × 3.8 × 20 = −1.52. The negative sign means the seller pays the buyer USD 1.52 million because the buyer will pay an above-market coupon.",
+    "rationale": {
+      "A": "Correct. The coupon exceeds the par spread by 200 bp, so the buyer receives 0.02 × 3.8 × 20 = USD 1.52 million.",
+      "B": "Incorrect. 3.80 applies the full 500 bp coupon (0.05 × 3.8 × 20) instead of the spread difference.",
+      "C": "Incorrect. 6.08 adds the spread and coupon (0.08 × 3.8 × 20) rather than taking their difference.",
+      "D": "Incorrect. 0.40 is the annual premium difference (0.02 × 20) without multiplying by the risky duration."
+    },
+    "verify": "return Math.abs((0.03-0.05)*3.8*20);",
+    "numericAnswer": 1.52,
+    "tolerance": 0.005,
+    "tags": ["cds", "upfront"]
+  },
+  {
+    "id": "q-frm2-credit-derivatives-and-structured-products-3",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-derivatives-and-structured-products",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A USD 200 million securitised pool has an equity tranche (0-4%), a mezzanine tranche (4-12%) and a senior tranche (12-100%). If cumulative pool losses reach 7%, the loss on the mezzanine tranche as a percentage of its own principal is closest to:",
+    "options": ["25.0%", "87.5%", "7.0%", "37.5%"],
+    "answer": "D",
+    "explanation": "Pool loss = 14 m. Equity absorbs 8 m. Mezzanine (size 16 m) absorbs the remaining 6 m: 6 / 16 = 37.5%.",
+    "rationale": {
+      "A": "Incorrect. 25.0% divides the excess loss (7% − 4%) by the senior attachment point (12%) instead of the tranche width (8%).",
+      "B": "Incorrect. 87.5% divides the full pool loss (14 m) by the mezzanine size, ignoring the equity tranche's first-loss absorption.",
+      "C": "Incorrect. 7.0% is the pool loss rate, not the tranche's loss rate.",
+      "D": "Correct. The mezzanine loses 6 m of its 16 m principal, or 37.5%."
+    },
+    "verify": "const P=200,L=0.07*P,A=0.04*P,D=0.12*P; return 100*Math.min(Math.max(L-A,0),D-A)/(D-A);",
+    "numericAnswer": 37.5,
+    "tolerance": 0.05,
+    "tags": ["tranches", "securitisation"]
+  },
+  {
+    "id": "q-frm2-credit-derivatives-and-structured-products-4",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "credit-derivatives-and-structured-products",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Holding the pool's expected loss constant, how does an increase in default correlation among the underlying loans typically affect the risk of the equity and senior tranches of a securitisation?",
+    "options": [
+      "Both tranches become riskier because defaults cluster.",
+      "The equity tranche becomes less risky and the senior tranche becomes more risky.",
+      "The equity tranche becomes more risky and the senior tranche becomes less risky.",
+      "Neither tranche is affected because expected pool loss is unchanged."
+    ],
+    "answer": "B",
+    "explanation": "Higher correlation makes outcomes more all-or-nothing: more scenarios with very few defaults (good for equity) and more scenarios with very many defaults (bad for senior).",
+    "rationale": {
+      "A": "Incorrect. Clustering raises the chance of zero-loss scenarios too, which benefits the first-loss tranche.",
+      "B": "Correct. Equity is long correlation and senior is short correlation.",
+      "C": "Incorrect. This reverses the effect; it describes a fall in correlation.",
+      "D": "Incorrect. Tranche risk depends on the shape of the loss distribution, not only its mean."
+    },
+    "tags": ["correlation", "tranches"]
+  }
+]

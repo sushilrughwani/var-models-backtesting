@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa2-cost-of-capital-advanced-1",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "cost-of-capital-advanced",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A country's USD-denominated 10-year government bonds yield 2.5% more than US Treasuries of the same maturity. The annualised volatility of the country's equity market is 27%, and that of its sovereign bond market is 18%. The country risk premium is closest to:",
+    "options": ["1.67%", "2.50%", "3.75%"],
+    "answer": "C",
+    "explanation": "CRP = 2.5% × 27% / 18% = 2.5% × 1.5 = 3.75%.",
+    "rationale": {
+      "A": "Incorrect. 1.67% inverts the volatility ratio (18/27); equity volatility belongs in the numerator.",
+      "B": "Incorrect. 2.50% is the raw sovereign spread, not scaled for the higher volatility of equities.",
+      "C": "Correct. 2.5% × 1.5 = 3.75%."
+    },
+    "verify": "return 2.5*27/18;",
+    "numericAnswer": 3.75,
+    "tolerance": 0.005,
+    "tags": ["country-risk-premium"]
+  },
+  {
+    "id": "q-cfa2-cost-of-capital-advanced-2",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "cost-of-capital-advanced",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An analyst estimates the beta of a private company using a listed comparable. The comparable has an equity beta of 1.40, a market D/E ratio of 0.60 and a 30% tax rate. The private company has a target D/E ratio of 0.30 and a 25% tax rate. The private company's estimated equity beta is closest to:",
+    "options": ["1.21", "1.14", "0.99"],
+    "answer": "A",
+    "explanation": "Asset beta = 1.40 / (1 + 0.70 × 0.60) = 0.9859. Relevered beta = 0.9859 × (1 + 0.75 × 0.30) = 1.21.",
+    "rationale": {
+      "A": "Correct. Unlever with the comparable's inputs, relever with the target's: 0.9859 × 1.225 = 1.21.",
+      "B": "Incorrect. 1.14 ignores taxes in both steps: 1.40 / 1.60 × 1.30.",
+      "C": "Incorrect. 0.99 is the asset beta; it has not been relevered for the target's debt."
+    },
+    "verify": "const ba=1.40/(1+0.70*0.60); return ba*(1+0.75*0.30);",
+    "numericAnswer": 1.21,
+    "tolerance": 0.005,
+    "tags": ["pure-play-beta"]
+  },
+  {
+    "id": "q-cfa2-cost-of-capital-advanced-3",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "cost-of-capital-advanced",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A broad equity index has a forward dividend yield of 1.8%. Consensus long-term earnings growth is 5.5%, and the 20-year government bond yields 3.9%. Using the Gordon growth approach, the equity risk premium is closest to:",
+    "options": ["7.30%", "3.40%", "5.70%"],
+    "answer": "B",
+    "explanation": "ERP = 1.8% + 5.5% − 3.9% = 3.40%.",
+    "rationale": {
+      "A": "Incorrect. 7.30% is the expected equity return (1.8% + 5.5%) and forgets to subtract the government bond yield.",
+      "B": "Correct. Dividend yield plus growth minus the long-term government yield.",
+      "C": "Incorrect. 5.70% adds the bond yield to the dividend yield instead of using growth and subtracting the bond yield."
+    },
+    "verify": "return 1.8+5.5-3.9;",
+    "numericAnswer": 3.4,
+    "tolerance": 0.005,
+    "tags": ["equity-risk-premium"]
+  },
+  {
+    "id": "q-cfa2-cost-of-capital-advanced-4",
+    "course": "cfa-level-2",
+    "topic": "corporate-issuers",
+    "lesson": "cost-of-capital-advanced",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A valuer estimates the cost of equity of a small private firm as the risk-free rate plus the equity risk premium plus a size premium plus a company-specific premium. Which criticism of this approach is most valid?",
+    "options": ["It implicitly assumes the firm's systematic risk equals that of the market before adjustments", "It cannot be applied when no comparable listed firm exists", "It ignores the risk-free rate"],
+    "answer": "A",
+    "explanation": "The build-up approach adds premiums to a market-level base (rf + ERP), which is equivalent to assuming a beta of 1 before the size and specific adjustments.",
+    "rationale": {
+      "A": "Correct. The base rf + ERP implies a beta of 1, which may not fit the firm's actual systematic risk.",
+      "B": "Incorrect. The build-up approach is used precisely because it does not need a comparable's beta.",
+      "C": "Incorrect. The risk-free rate is the first building block."
+    },
+    "tags": ["build-up-approach"]
+  }
+]

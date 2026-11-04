@@ -49,7 +49,7 @@ A colleague's first draft of the Northwind FY2026E model (USD m) shows total ass
 
 **Step 3: compare with line items.** No line equals 6.79. Half of it is 3.39, which matches the change in net working capital.
 
-**Step 4: inspect.** In the cash flow statement the formula for CFO is `=E30+E31+E32` where E32 already contains the cash flow line −3.39 entered as +3.39. CFO shows 92.41 instead of the correct 85.44 (the slightly different net income comes from lower interest in the flawed draft). The excess cash repaid extra revolver, which closed at 8.64 instead of 15.55, so liabilities are understated.
+**Step 4: inspect.** In the cash flow statement the working capital line was linked as `=E47-D47`, which shows the increase in NWC (+3.39) as a cash inflow. CFO shows 92.41 instead of the correct 85.44 (the slightly different net income comes from lower interest in the flawed draft). The excess cash repaid extra revolver, which closed at 8.64 instead of 15.55, so liabilities are understated.
 
 **Step 5: fix and confirm.** Correct the sign so the line is `=-(E47-D47)`. Net income returns to 66.63, CFO to 85.44, the revolver to 15.55 and both sides to **382.17**. The master check reads OK.
 

@@ -1,0 +1,117 @@
+[
+  {
+    "id": "q-py-value-at-risk-in-python-1",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "value-at-risk-in-python",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A portfolio worth USD 2,000,000 has a daily return volatility of 2% and an assumed mean of zero. norm.ppf(0.99) = 2.3263 and norm.ppf(0.95) = 1.6449. The one-day 99% parametric VaR is closest to:",
+    "options": [
+      "USD 65,796",
+      "USD 93,052",
+      "USD 40,000",
+      "USD 294,256"
+    ],
+    "answer": "B",
+    "explanation": "VaR = z × σ × V = 2.3263 × 0.02 × 2,000,000 = 93,052.",
+    "rationale": {
+      "A": "Incorrect. 65,796 uses the 95% quantile (1.6449) instead of the 99% quantile.",
+      "B": "Correct. 2.3263 × 0.02 × 2,000,000 = 93,052.",
+      "C": "Incorrect. 40,000 is one standard deviation of value (σ × V) with no quantile multiplier.",
+      "D": "Incorrect. 294,256 scales the one-day VaR by √10, giving a 10-day figure."
+    },
+    "verify": "return 2.3263*0.02*2000000;",
+    "numericAnswer": 93052,
+    "tolerance": 1,
+    "tags": [
+      "parametric-var"
+    ]
+  },
+  {
+    "id": "q-py-value-at-risk-in-python-2",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "value-at-risk-in-python",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A desk's one-day 99% VaR is USD 250,000. Assuming independent daily returns with zero mean, the 25-day 99% VaR is closest to:",
+    "options": [
+      "USD 6,250,000",
+      "USD 50,000",
+      "USD 10,000",
+      "USD 1,250,000"
+    ],
+    "answer": "D",
+    "explanation": "VaR scales with the square root of time: 250,000 × √25 = 250,000 × 5 = 1,250,000.",
+    "rationale": {
+      "A": "Incorrect. 6,250,000 multiplies by 25; VaR scales with √T, not T.",
+      "B": "Incorrect. 50,000 divides by √25 instead of multiplying.",
+      "C": "Incorrect. 10,000 divides by 25, shrinking risk over a longer horizon.",
+      "D": "Correct. 250,000 × 5 = 1,250,000."
+    },
+    "verify": "return 250000*Math.sqrt(25);",
+    "numericAnswer": 1250000,
+    "tolerance": 1,
+    "tags": [
+      "horizon-scaling"
+    ]
+  },
+  {
+    "id": "q-py-value-at-risk-in-python-3",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "value-at-risk-in-python",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "r = np.array([1.2, -3.0, 0.5, -4.0, 2.1, -0.7, 0.9, -1.5, 1.8, 0.3]) holds daily returns in percent. What does -np.quantile(r, 0.05) return (the 95% historical VaR in percent, using NumPy's default linear interpolation)?",
+    "options": [
+      "3.55",
+      "4.00",
+      "3.00",
+      "3.50"
+    ],
+    "answer": "A",
+    "explanation": "Sorted, the two worst returns are −4.0 and −3.0. With 10 points, the 5% quantile sits at position 0.05 × 9 = 0.45, so it is −4.0 + 0.45 × (−3.0 − (−4.0)) = −3.55. VaR = 3.55.",
+    "rationale": {
+      "A": "Correct. Linear interpolation 45% of the way from −4.0 to −3.0 gives −3.55.",
+      "B": "Incorrect. 4.00 is the single worst observation; np.quantile interpolates rather than returning the minimum.",
+      "C": "Incorrect. 3.00 is the second-worst observation, which a 'nearest' or 'higher' method might return, not the default.",
+      "D": "Incorrect. 3.50 is the simple midpoint of the two worst values, not the 0.45 interpolation weight."
+    },
+    "verify": "const s=[1.2,-3.0,0.5,-4.0,2.1,-0.7,0.9,-1.5,1.8,0.3].sort((a,b)=>a-b); const pos=0.05*(s.length-1); const i=Math.floor(pos); return -(s[i]+(pos-i)*(s[i+1]-s[i]));",
+    "numericAnswer": 3.55,
+    "tolerance": 0.005,
+    "tags": [
+      "historical-var",
+      "numpy"
+    ]
+  },
+  {
+    "id": "q-py-value-at-risk-in-python-4",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "value-at-risk-in-python",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "On the same 1,000 days of returns, an analyst finds 99% historical VaR well above 99% parametric (normal) VaR. The most likely explanation is that the returns:",
+    "options": [
+      "have a mean of exactly zero",
+      "are perfectly normally distributed",
+      "are fat-tailed, so extreme losses occur more often than the normal distribution predicts",
+      "were annualised before computing VaR"
+    ],
+    "answer": "C",
+    "explanation": "Historical VaR uses the actual tail of the data. If losses beyond 2.33 standard deviations happen more often than a normal distribution implies, the empirical 1% quantile is further out than the parametric one.",
+    "rationale": {
+      "A": "Incorrect. A zero mean would affect both methods similarly and would not create a large gap.",
+      "B": "Incorrect. With truly normal data the two methods would agree apart from sampling noise.",
+      "C": "Correct. Fat tails (excess kurtosis) make normal VaR understate tail losses.",
+      "D": "Incorrect. Annualising would affect both methods equally if applied consistently."
+    },
+    "tags": [
+      "fat-tails",
+      "model-risk"
+    ]
+  }
+]
