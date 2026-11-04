@@ -1,0 +1,84 @@
+[
+  {
+    "id": "q-fm-balancing-and-error-checks-1",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "balancing-and-error-checks",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Northwind's FY2026E balance sheet is out by USD 9.97 million; FY2025A balances. The forecast changes are: receivables +3.29, inventory +4.98, payables +4.88 and dividends 19.99 (all USD million). Which error is most likely?",
+    "options": ["The receivables change was entered with the wrong sign", "The inventory change was entered with the wrong sign", "The payables change was entered with the wrong sign", "Dividends were omitted from the cash flow statement"],
+    "answer": "B",
+    "explanation": "A sign error creates a difference of twice the item. Half of 9.97 is 4.98, which matches the change in inventory.",
+    "rationale": {
+      "A": "Incorrect. A receivables sign error would produce a difference of 2 x 3.29 = 6.58.",
+      "B": "Correct. 2 x 4.98 = 9.97 (9.968 unrounded), matching the imbalance.",
+      "C": "Incorrect. A payables sign error would produce 2 x 4.88 = 9.76, close but not equal.",
+      "D": "Incorrect. Omitting dividends would produce a difference equal to the item, 19.99."
+    },
+    "tags": ["diagnosis", "halving-rule"]
+  },
+  {
+    "id": "q-fm-balancing-and-error-checks-2",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "balancing-and-error-checks",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A modeller rolls Northwind's PP&E forward as opening PP&E plus capex, forgetting to deduct FY2026E depreciation of USD 22.20 million. Depreciation is correctly included in the income statement and added back in CFO. By how much (USD million) will total assets exceed total liabilities and equity?",
+    "options": ["22.20", "44.40", "16.65", "0.00"],
+    "answer": "A",
+    "explanation": "PP&E is overstated by exactly the omitted depreciation, 22.20, while everything else is correct, so assets exceed liabilities and equity by 22.20.",
+    "rationale": {
+      "A": "Correct. An omission produces a difference equal to the omitted item.",
+      "B": "Incorrect. 44.40 (twice the item) is the pattern of a sign error, not an omission.",
+      "C": "Incorrect. 16.65 is the after-tax amount; the PP&E overstatement is the full pre-tax depreciation.",
+      "D": "Incorrect. The roll-forward error breaks the link between the cash flow and PP&E, so the model cannot balance."
+    },
+    "verify": "const ppeWrong = 200 + 44; const ppeRight = 200 + 44 - 22.20; return ppeWrong - ppeRight;",
+    "numericAnswer": 22.2,
+    "tolerance": 0.005,
+    "tags": ["omission", "ppe-roll-forward"]
+  },
+  {
+    "id": "q-fm-balancing-and-error-checks-3",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "balancing-and-error-checks",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Total assets are in row 20 and total liabilities and equity in row 40. Which balance check formula is best practice?",
+    "options": ["`=E20=E40`", "Set cash equal to row 40 minus all non-cash assets", "`=E20+E40`", "`=IF(ABS(E20-E40)>0.005,1,0)`"],
+    "answer": "D",
+    "explanation": "Using the absolute difference against a small tolerance avoids false alarms from floating-point rounding and returns a 0/1 flag that can be summed into a master check.",
+    "rationale": {
+      "A": "Incorrect. Exact equality can return FALSE because of tiny rounding differences.",
+      "B": "Incorrect. That is a plug which forces a balance and hides errors.",
+      "C": "Incorrect. Adding the two totals has no diagnostic meaning.",
+      "D": "Correct. A tolerance-based 0/1 flag is robust and easy to aggregate."
+    },
+    "tags": ["checks"]
+  },
+  {
+    "id": "q-fm-balancing-and-error-checks-4",
+    "course": "financial-modeling",
+    "topic": "three-statement-model",
+    "lesson": "balancing-and-error-checks",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "In a model with no revolver sweep, FY2026E dividends of USD 19.99 million are correctly deducted from retained earnings but are left out of financing cash flow. By how much (USD million) will total assets exceed total liabilities and equity?",
+    "options": ["39.98", "0.00", "19.99", "5.00"],
+    "answer": "C",
+    "explanation": "Cash is overstated by 19.99 because the outflow is missing, while retained earnings is correct. The difference equals the omitted item.",
+    "rationale": {
+      "A": "Incorrect. 39.98 is twice the item, the signature of a sign error rather than an omission.",
+      "B": "Incorrect. The missing outflow overstates cash, so the balance sheet cannot balance.",
+      "C": "Correct. Assets exceed liabilities and equity by the omitted 19.99.",
+      "D": "Incorrect. 5.00 applies the 25% tax rate to the dividends; dividends are not tax-deductible and the full amount is missing."
+    },
+    "verify": "return 19.99;",
+    "numericAnswer": 19.99,
+    "tolerance": 0.005,
+    "tags": ["omission", "dividends"]
+  }
+]

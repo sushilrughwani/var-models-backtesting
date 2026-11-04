@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-ai-and-ml-in-risk-1",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "ai-and-ml-in-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A fraud-detection model is tested on 50,000 card transactions, of which 250 are fraudulent. The model flags 600 transactions, 200 of which are genuine frauds. The model's precision is closest to:",
+    "options": ["80.0%", "99.1%", "0.8%", "33.3%"],
+    "answer": "D",
+    "explanation": "Precision = TP / (TP + FP) = 200 / 600 = 33.3%. One in three alerts is a real fraud.",
+    "rationale": {
+      "A": "Incorrect. 80.0% is recall: 200 of the 250 actual frauds are caught.",
+      "B": "Incorrect. 99.1% is accuracy, which is inflated because fraud is rare.",
+      "C": "Incorrect. 0.8% is the false positive rate, 400 / 49,750.",
+      "D": "Correct. 200 true positives out of 600 flags gives 33.3%."
+    },
+    "verify": "return 200/600*100;",
+    "numericAnswer": 33.3,
+    "tolerance": 0.05,
+    "tags": ["confusion-matrix", "precision"]
+  },
+  {
+    "id": "q-frm2-ai-and-ml-in-risk-2",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "ai-and-ml-in-risk",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "A machine learning credit model performed well at launch, but two years later its default predictions are noticeably less accurate, even though the code has not changed. Customer behaviour has shifted since a recession. What is the most likely issue, and the appropriate control?",
+    "options": [
+      "Data or concept drift; ongoing performance monitoring with thresholds that trigger recalibration or redevelopment",
+      "Overfitting at launch; nothing can be done after deployment",
+      "Hallucination; replace the model with a generative AI tool",
+      "Explainability failure; add SHAP values to each decision"
+    ],
+    "answer": "A",
+    "explanation": "When the population or the relationship between inputs and defaults changes, performance decays even if the model is unchanged. Ongoing monitoring against defined thresholds is the control.",
+    "rationale": {
+      "A": "Correct. A shift in behaviour after a recession is classic drift, which monitoring should detect.",
+      "B": "Incorrect. Overfitting would show up as poor out-of-sample performance from the start, and models can be retrained.",
+      "C": "Incorrect. Hallucination refers to generative models producing false content, not predictive decay.",
+      "D": "Incorrect. Explainability tools describe predictions; they do not restore accuracy."
+    },
+    "tags": ["model-drift", "monitoring"]
+  },
+  {
+    "id": "q-frm2-ai-and-ml-in-risk-3",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "ai-and-ml-in-risk",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank's ML lending model approves 72% of applicants from a reference group and 45% of applicants from a protected group. The disparate impact ratio is closest to:",
+    "options": ["0.27", "0.63", "1.60", "0.45"],
+    "answer": "B",
+    "explanation": "Disparate impact ratio = protected-group approval rate / reference-group approval rate = 0.45 / 0.72 = 0.625, which rounds to 0.63. This is below the 0.8 rule of thumb and warrants investigation.",
+    "rationale": {
+      "A": "Incorrect. 0.27 is the difference in approval rates (72% − 45%), not the ratio.",
+      "B": "Correct. 0.45 / 0.72 = 0.625.",
+      "C": "Incorrect. 1.60 inverts the ratio (reference over protected).",
+      "D": "Incorrect. 0.45 is simply the protected group's approval rate."
+    },
+    "verify": "return 0.45/0.72;",
+    "numericAnswer": 0.625,
+    "tolerance": 0.006,
+    "tags": ["fairness", "bias"]
+  },
+  {
+    "id": "q-frm2-ai-and-ml-in-risk-4",
+    "course": "frm-part-2",
+    "topic": "current-issues",
+    "lesson": "ai-and-ml-in-risk",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A bank buys a vendor's gradient-boosted credit scoring model. The vendor will not share source code but supplies SHAP-based explanations for each decision. The business argues that, because the model is external and explanations are provided, it need not go through the bank's model risk framework. Which response is most appropriate?",
+    "options": [
+      "Agree, because vendor models are the vendor's responsibility.",
+      "Agree, because SHAP values fully reveal how the model works.",
+      "Reject the model outright, because complex models can never be used for credit decisions.",
+      "Disagree: the bank remains accountable, so the model must be inventoried, validated (including outcome analysis, fairness and benchmarking) and monitored; SHAP values are useful but only approximate the model."
+    ],
+    "answer": "D",
+    "explanation": "Model risk management covers vendor models. Where code is unavailable, validators rely on documentation, outcome testing, benchmarking, sensitivity and fairness analysis, and ongoing monitoring. Post-hoc explanation tools help but do not substitute for validation.",
+    "rationale": {
+      "A": "Incorrect. Outsourcing a model does not outsource accountability for its use.",
+      "B": "Incorrect. SHAP gives local, approximate attributions; it is not a complete description of the model.",
+      "C": "Incorrect. Complex models can be used if they are properly validated, explained and governed.",
+      "D": "Correct. The model is in scope for inventory, validation and monitoring, with explanations as one input."
+    },
+    "tags": ["governance", "explainability", "vendor-models"]
+  }
+]
