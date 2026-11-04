@@ -1,0 +1,83 @@
+[
+  {
+    "id": "q-cfa2-economic-growth-1",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "economic-growth",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "An analyst studies an economy in which real output grew 3.2%, the capital stock grew 3.5% and labour input grew 0.8% last year. Capital's share of income is 0.4. Total factor productivity growth is closest to:",
+    "options": ["1.32%", "0.78%", "1.80%"],
+    "answer": "A",
+    "explanation": "TFP growth = 3.2% − 0.4 × 3.5% − 0.6 × 0.8% = 3.2% − 1.40% − 0.48% = 1.32%.",
+    "rationale": {
+      "A": "Correct. Subtract the weighted capital (1.40%) and labour (0.48%) contributions from output growth.",
+      "B": "Incorrect. 0.78% swaps the weights, applying 0.6 to capital and 0.4 to labour.",
+      "C": "Incorrect. 1.80% subtracts only the capital contribution and forgets labour."
+    },
+    "verify": "return (0.032-0.4*0.035-0.6*0.008)*100;",
+    "numericAnswer": 1.32,
+    "tolerance": 0.005,
+    "tags": ["growth-accounting"]
+  },
+  {
+    "id": "q-cfa2-economic-growth-2",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "economic-growth",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "In a neoclassical growth model, total factor productivity grows at 1.5% per year, capital's share of income is 0.4, and the labour force grows at 0.5% per year. The steady-state growth rate of real output is closest to:",
+    "options": ["2.50%", "4.25%", "3.00%"],
+    "answer": "C",
+    "explanation": "Steady-state productivity growth = θ / (1 − α) = 1.5% / 0.6 = 2.5%. Output growth = 2.5% + 0.5% = 3.0%.",
+    "rationale": {
+      "A": "Incorrect. 2.50% is steady-state labour productivity growth; it omits labour force growth.",
+      "B": "Incorrect. 4.25% divides θ by α instead of (1 − α): 1.5% / 0.4 + 0.5%.",
+      "C": "Correct. 1.5% / 0.6 + 0.5% = 3.00%."
+    },
+    "verify": "return (0.015/0.6+0.005)*100;",
+    "numericAnswer": 3.0,
+    "tolerance": 0.005,
+    "tags": ["steady-state"]
+  },
+  {
+    "id": "q-cfa2-economic-growth-3",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "economic-growth",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A strategist argues that low-income countries will grow faster than rich ones and catch up only if they first adopt sound property rights and stable legal systems; countries that fail to do so may fall further behind. This view is most consistent with:",
+    "options": ["absolute convergence", "club convergence", "endogenous growth with no convergence"],
+    "answer": "B",
+    "explanation": "Club convergence holds that only countries meeting institutional thresholds join the group of converging economies; others can diverge.",
+    "rationale": {
+      "A": "Incorrect. Absolute convergence predicts all countries converge regardless of institutions.",
+      "B": "Correct. Convergence depends on meeting institutional thresholds to join the club.",
+      "C": "Incorrect. The strategist expects catch-up for qualifying countries, which is a convergence view, not a blanket no-convergence prediction."
+    },
+    "tags": ["convergence"]
+  },
+  {
+    "id": "q-cfa2-economic-growth-4",
+    "course": "cfa-level-2",
+    "topic": "economics",
+    "lesson": "economic-growth",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An economy is expected to have TFP growth of 1.0%, capital stock growth of 5.0% and labour force growth of 1.0%. Capital's share of income is 0.3. Potential GDP growth is closest to:",
+    "options": ["2.20%", "3.20%", "3.50%"],
+    "answer": "B",
+    "explanation": "Labour productivity growth = 1.0% + 0.3 × (5.0% − 1.0%) = 2.2%. Potential GDP growth = 2.2% + 1.0% = 3.2%.",
+    "rationale": {
+      "A": "Incorrect. 2.20% is labour productivity growth only; it omits labour force growth.",
+      "B": "Correct. Productivity growth of 2.2% plus labour force growth of 1.0% = 3.20%.",
+      "C": "Incorrect. 3.50% uses 0.3 × 5.0% for capital deepening without subtracting labour growth, then adds labour growth."
+    },
+    "verify": "return (0.01+0.3*(0.05-0.01)+0.01)*100;",
+    "numericAnswer": 3.2,
+    "tolerance": 0.005,
+    "tags": ["potential-gdp"]
+  }
+]

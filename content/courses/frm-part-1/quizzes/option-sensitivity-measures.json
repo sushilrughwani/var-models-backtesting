@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm1-option-sensitivity-measures-1",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "option-sensitivity-measures",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A European call on a non-dividend-paying stock has a BSM delta of 0.62. The delta of a European put with the same strike and expiry is closest to:",
+    "options": ["0.38", "-0.62", "-0.38", "0.62"],
+    "answer": "C",
+    "explanation": "Put delta = N(d1) − 1 = 0.62 − 1 = −0.38. Equivalently, put-call parity implies call delta minus put delta equals 1.",
+    "rationale": {
+      "A": "Incorrect. 0.38 has the right size but the wrong sign; a long put loses value when the stock rises.",
+      "B": "Incorrect. −0.62 simply flips the sign of the call delta instead of subtracting 1.",
+      "C": "Correct. Put delta = N(d1) − 1 = −0.38.",
+      "D": "Incorrect. 0.62 is the call delta; puts have negative deltas."
+    },
+    "verify": "return 0.62-1;",
+    "numericAnswer": -0.38,
+    "tolerance": 0.005,
+    "tags": ["delta"]
+  },
+  {
+    "id": "q-frm1-option-sensitivity-measures-2",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "option-sensitivity-measures",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A call option has a delta of 0.55 and a gamma of 0.04. Using the delta-gamma approximation, the change in the option's value if the stock price rises by 2.00 is closest to:",
+    "options": ["1.18", "1.10", "1.26", "1.02"],
+    "answer": "A",
+    "explanation": "ΔV ≈ 0.55 × 2 + 0.5 × 0.04 × 2^2 = 1.10 + 0.08 = 1.18.",
+    "rationale": {
+      "A": "Correct. Delta contributes 1.10 and the gamma term adds 0.5 × 0.04 × 4 = 0.08.",
+      "B": "Incorrect. 1.10 uses delta only and ignores the curvature captured by gamma.",
+      "C": "Incorrect. 1.26 omits the ½ in the gamma term.",
+      "D": "Incorrect. 1.02 subtracts the gamma term; for a long option, positive gamma adds value whichever way the stock moves."
+    },
+    "verify": "return 0.55*2+0.5*0.04*4;",
+    "numericAnswer": 1.18,
+    "tolerance": 0.005,
+    "tags": ["delta-gamma-approximation"]
+  },
+  {
+    "id": "q-frm1-option-sensitivity-measures-3",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "option-sensitivity-measures",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An options book has a delta of −800 and a gamma of −1,500. A traded option has a delta of 0.45 and a gamma of 0.05. To make the book both gamma-neutral and delta-neutral, the trader first trades the option and then trades the stock. The stock trade required is closest to:",
+    "options": ["Buy 800 shares", "Sell 13,500 shares", "Buy 12,700 shares", "Sell 12,700 shares"],
+    "answer": "D",
+    "explanation": "Buy 1,500 / 0.05 = 30,000 options to cancel gamma. This adds 30,000 × 0.45 = 13,500 of delta, so the book delta becomes −800 + 13,500 = 12,700. Sell 12,700 shares to return delta to zero.",
+    "rationale": {
+      "A": "Incorrect. Buying 800 shares fixes the original delta but ignores the delta added by the gamma-hedging option trade.",
+      "B": "Incorrect. Selling 13,500 shares offsets only the option trade's delta and forgets the book's original delta of −800.",
+      "C": "Incorrect. The book is long 12,700 delta after the option trade, so shares must be sold, not bought.",
+      "D": "Correct. After buying 30,000 options the book delta is +12,700, which is removed by selling 12,700 shares."
+    },
+    "verify": "const n=1500/0.05; const newDelta=-800+n*0.45; return newDelta;",
+    "numericAnswer": 12700,
+    "tolerance": 0.5,
+    "tags": ["delta-gamma-hedging"]
+  },
+  {
+    "id": "q-frm1-option-sensitivity-measures-4",
+    "course": "frm-part-1",
+    "topic": "valuation-and-risk-models",
+    "lesson": "option-sensitivity-measures",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A trader holds a delta-neutral portfolio of long at-the-money options with one week to expiry. Which description of the position's Greeks is most accurate?",
+    "options": [
+      "Low gamma and positive theta, so the position gains from the passage of time",
+      "High positive gamma and strongly negative theta, so it profits from large moves but loses value on quiet days",
+      "Zero gamma because the portfolio is delta-neutral",
+      "High vega and zero theta, because short-dated options are mainly volatility instruments"
+    ],
+    "answer": "B",
+    "explanation": "Gamma is highest for at-the-money options close to expiry, and for a delta-neutral book large positive gamma is paid for with large negative theta (time decay).",
+    "rationale": {
+      "A": "Incorrect. Short-dated at-the-money options have high gamma, and long options usually have negative theta.",
+      "B": "Correct. Near-expiry at-the-money options have the highest gamma, and the gamma-theta trade-off means rapid time decay.",
+      "C": "Incorrect. Delta-neutral does not mean gamma-neutral; gamma measures how delta changes and is still large here.",
+      "D": "Incorrect. Vega is small for short-dated options because little time remains for volatility to matter, and theta is far from zero."
+    },
+    "tags": ["gamma", "theta"]
+  }
+]

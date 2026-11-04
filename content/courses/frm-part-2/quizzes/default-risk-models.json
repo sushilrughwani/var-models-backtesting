@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q-frm2-default-risk-models-1",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "default-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "In a Merton model, a firm's assets are worth USD 120 million and the face value of its debt due in one year is USD 90 million. The expected asset return is 10% and asset volatility is 30%. The one-year distance to default is closest to:",
+    "options": ["1.29", "0.83", "1.14", "1.44"],
+    "answer": "C",
+    "explanation": "DD = [ln(120/90) + (0.10 − 0.5 × 0.09)] / 0.30 = (0.2877 + 0.055) / 0.30 = 1.14.",
+    "rationale": {
+      "A": "Incorrect. 1.29 omits the −σ²/2 convexity adjustment, using a drift of 10%.",
+      "B": "Incorrect. 0.83 uses the linear shortcut (120 − 90)/(0.30 × 120), which is not the Merton lognormal formula and ignores drift.",
+      "C": "Correct. Leverage term 0.2877 plus drift 0.055, divided by 0.30, gives 1.14.",
+      "D": "Incorrect. 1.44 adds σ²/2 instead of subtracting it, which is the d1-style term."
+    },
+    "verify": "const V=120,D=90,mu=0.10,s=0.30,T=1; return (Math.log(V/D)+(mu-0.5*s*s)*T)/(s*Math.sqrt(T));",
+    "numericAnswer": 1.14,
+    "tolerance": 0.005,
+    "tags": ["merton-model", "distance-to-default"]
+  },
+  {
+    "id": "q-frm2-default-risk-models-2",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "default-risk-models",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Using the practitioner (KMV-style) approach, a firm has asset value of USD 500 million, short-term debt of USD 150 million, long-term debt of USD 200 million and asset volatility of 20%. Its distance to default is closest to:",
+    "options": ["2.50", "1.50", "3.25", "1250"],
+    "answer": "A",
+    "explanation": "Default point = 150 + 0.5 × 200 = 250. DD = (500 − 250) / (0.20 × 500) = 250 / 100 = 2.50.",
+    "rationale": {
+      "A": "Correct. The default point is STD plus half of LTD, giving DD = 2.50.",
+      "B": "Incorrect. 1.50 sets the default point at total debt of 350.",
+      "C": "Incorrect. 3.25 halves both debt categories (default point 175).",
+      "D": "Incorrect. 1250 divides the cushion by the volatility rate alone, forgetting to multiply σ by the asset value."
+    },
+    "verify": "const V=500, STD=150, LTD=200, s=0.20; return (V-(STD+0.5*LTD))/(s*V);",
+    "numericAnswer": 2.5,
+    "tolerance": 0.005,
+    "tags": ["kmv", "distance-to-default"]
+  },
+  {
+    "id": "q-frm2-default-risk-models-3",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "default-risk-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A public manufacturer has working capital/total assets of 0.05, retained earnings/total assets of 0.20, EBIT/total assets of 0.12, market value of equity/book liabilities of 1.5 and sales/total assets of 0.9. Using Z = 1.2X1 + 1.4X2 + 3.3X3 + 0.6X4 + 1.0X5, its Altman Z-score is closest to:",
+    "options": ["2.77", "3.44", "1.64", "2.54"],
+    "answer": "D",
+    "explanation": "Z = 1.2(0.05) + 1.4(0.20) + 3.3(0.12) + 0.6(1.5) + 1.0(0.9) = 0.06 + 0.28 + 0.396 + 0.90 + 0.90 = 2.536, in the grey zone.",
+    "rationale": {
+      "A": "Incorrect. 2.77 is the unweighted sum of the five ratios.",
+      "B": "Incorrect. 3.44 double-counts the X4 contribution (adds 0.90 twice).",
+      "C": "Incorrect. 1.64 omits the sales/total assets term (2.536 − 0.90).",
+      "D": "Correct. The weighted sum is 2.536, between 1.81 and 2.99 (grey zone)."
+    },
+    "verify": "const X=[0.05,0.20,0.12,1.5,0.9], w=[1.2,1.4,3.3,0.6,1.0]; return X.reduce((s,x,i)=>s+x*w[i],0);",
+    "numericAnswer": 2.54,
+    "tolerance": 0.005,
+    "tags": ["credit-scoring", "z-score"]
+  },
+  {
+    "id": "q-frm2-default-risk-models-4",
+    "course": "frm-part-2",
+    "topic": "credit-risk-measurement",
+    "lesson": "default-risk-models",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst computes two Merton-model default probabilities for the same firm: one using the expected asset return and one using the risk-free rate. Which statement is correct?",
+    "options": [
+      "The two PDs are identical because the default point and volatility are unchanged.",
+      "The PD using the risk-free rate is higher because investors require a risk premium, so the expected asset return exceeds the risk-free rate.",
+      "The PD using the expected asset return is higher because higher drift increases the chance of crossing the default point.",
+      "The PD using the risk-free rate is the better estimate of real-world default frequency for backtesting."
+    ],
+    "answer": "B",
+    "explanation": "Lower drift (r < μ) shrinks distance to default, so the risk-neutral PD exceeds the physical PD. Physical PDs are the ones to compare with realised defaults.",
+    "rationale": {
+      "A": "Incorrect. The drift enters DD, so changing it changes PD.",
+      "B": "Correct. Risk-neutral PD = N(−d2) with r < μ, giving a smaller DD and a higher PD.",
+      "C": "Incorrect. Higher drift moves expected assets further above the default point, lowering PD.",
+      "D": "Incorrect. Risk-neutral PDs embed a risk premium; real-world default frequencies correspond to physical PDs."
+    },
+    "tags": ["risk-neutral-pd", "merton-model"]
+  }
+]

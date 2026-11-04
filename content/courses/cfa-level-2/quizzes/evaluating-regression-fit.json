@@ -1,0 +1,80 @@
+[
+  {
+    "id": "q-cfa2-evaluating-regression-fit-1",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "evaluating-regression-fit",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A regression with 4 independent variables estimated on 40 observations has an R-squared of 0.64. The adjusted R-squared is closest to:",
+    "options": ["0.640", "0.610", "0.599"],
+    "answer": "C",
+    "explanation": "Adjusted R² = 1 − [(n − 1)/(n − k − 1)](1 − R²) = 1 − (39/35)(0.36) = 0.599.",
+    "rationale": {
+      "A": "Incorrect. 0.640 is the unadjusted R-squared; it ignores the penalty for the number of variables.",
+      "B": "Incorrect. 0.610 uses n − k = 36 in the denominator instead of n − k − 1 = 35.",
+      "C": "Correct. Applying (n − 1)/(n − k − 1) = 39/35 to the unexplained share of 0.36 gives 0.599."
+    },
+    "verify": "const n=40,k=4,r2=0.64; return 1-(n-1)/(n-k-1)*(1-r2);",
+    "numericAnswer": 0.599,
+    "tolerance": 0.0005,
+    "tags": ["adjusted-r-squared"]
+  },
+  {
+    "id": "q-cfa2-evaluating-regression-fit-2",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "evaluating-regression-fit",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "An unrestricted model with 4 independent variables estimated on 40 observations has SSE = 180. A restricted model that excludes 2 of the variables has SSE = 210. The F-statistic for testing whether the two excluded coefficients are jointly zero is closest to:",
+    "options": ["2.92", "5.83", "2.50"],
+    "answer": "A",
+    "explanation": "F = [(210 − 180)/2] / [180/(40 − 4 − 1)] = 15/5.143 = 2.92. With a 5% critical F(2, 35) of about 3.27, the two variables are not jointly significant.",
+    "rationale": {
+      "A": "Correct. The increase in SSE per restriction (15) divided by the unrestricted MSE (5.143) equals 2.92.",
+      "B": "Incorrect. 5.83 forgets to divide the increase in SSE by the number of restrictions, q = 2.",
+      "C": "Incorrect. 2.50 uses the restricted model's SSE (210/35) in the denominator instead of the unrestricted SSE."
+    },
+    "verify": "const sseU=180,sseR=210,q=2,n=40,k=4; return ((sseR-sseU)/q)/(sseU/(n-k-1));",
+    "numericAnswer": 2.92,
+    "tolerance": 0.005,
+    "tags": ["joint-f-test"]
+  },
+  {
+    "id": "q-cfa2-evaluating-regression-fit-3",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "evaluating-regression-fit",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Model X has AIC = 70.2 and BIC = 78.6. Model Y has AIC = 72.3 and BIC = 77.4. An analyst whose main objective is forecasting should most likely prefer:",
+    "options": ["Model Y, because it has the lower BIC", "Model X, because it has the lower AIC", "Model Y, because it has the higher AIC"],
+    "answer": "B",
+    "explanation": "Lower values are better for both criteria. AIC is the preferred criterion when the goal is prediction, so Model X (AIC 70.2) is chosen.",
+    "rationale": {
+      "A": "Incorrect. BIC is better suited to choosing the most parsimonious, best-fitting model, not to a forecasting objective.",
+      "B": "Correct. For prediction, AIC is the preferred criterion and the lower value wins.",
+      "C": "Incorrect. A higher AIC indicates a worse trade-off between fit and complexity."
+    },
+    "tags": ["aic", "bic", "model-selection"]
+  },
+  {
+    "id": "q-cfa2-evaluating-regression-fit-4",
+    "course": "cfa-level-2",
+    "topic": "quantitative-methods",
+    "lesson": "evaluating-regression-fit",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst adds a fifth independent variable to a regression. R-squared rises from 0.640 to 0.645, and the new variable's t-statistic is 0.7. Compared with the four-variable model, the adjusted R-squared of the five-variable model will most likely be:",
+    "options": ["lower", "higher", "unchanged"],
+    "answer": "A",
+    "explanation": "Adjusted R-squared increases only when the added variable's t-statistic exceeds 1 in absolute value. With |t| = 0.7, the penalty for the extra parameter outweighs the small gain in fit.",
+    "rationale": {
+      "A": "Correct. Because |t| = 0.7 < 1, adjusted R-squared falls even though R-squared rose.",
+      "B": "Incorrect. A higher R-squared does not guarantee a higher adjusted R-squared; the degrees-of-freedom penalty dominates here.",
+      "C": "Incorrect. Adjusted R-squared stays unchanged only in the knife-edge case of |t| exactly equal to 1."
+    },
+    "tags": ["adjusted-r-squared"]
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-py-tvm-and-bond-pricing-1",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "tvm-and-bond-pricing",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "Using npv(rate, cfs), which discounts cash flow i by (1 + rate)**i starting at i = 0, what is npv(0.10, [-500, 200, 200, 200])?",
+    "options": ["-2.63", "100.00", "-2.39", "497.37"],
+    "answer": "A",
+    "explanation": "The investment of −500 is at t = 0 and is not discounted. The three 200 inflows are worth 181.82 + 165.29 + 150.26 = 497.37, so NPV = −2.63.",
+    "rationale": {
+      "A": "Correct. 497.37 − 500 = −2.63.",
+      "B": "Incorrect. 100.00 simply adds the cash flows without discounting.",
+      "C": "Incorrect. −2.39 discounts every cash flow one period too many (exponents starting at 1), which also discounts the initial outlay.",
+      "D": "Incorrect. 497.37 is the PV of the inflows only; the initial investment of 500 was left out."
+    },
+    "verify": "const cf=[-500,200,200,200]; let s=0; for(let t=0;t<cf.length;t++){s+=cf[t]/Math.pow(1.1,t);} return s;",
+    "numericAnswer": -2.63,
+    "tolerance": 0.005,
+    "tags": ["npv"]
+  },
+  {
+    "id": "q-py-tvm-and-bond-pricing-2",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "tvm-and-bond-pricing",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "bond_price(100, 0.04, 0.06, 2, freq=2) prices a 2-year bond with a 4% annual coupon paid semiannually at a 6% annual yield. The result is closest to:",
+    "options": ["96.33", "86.14", "96.28", "103.81"],
+    "answer": "C",
+    "explanation": "Per half-year: coupon 2, yield 3%, 4 periods. Price = 2/1.03 + 2/1.03² + 2/1.03³ + 102/1.03⁴ = 96.28.",
+    "rationale": {
+      "A": "Incorrect. 96.33 is the annual-pay price (coupon 4, yield 6%, 2 periods); the frequency was ignored.",
+      "B": "Incorrect. 86.14 halves the coupon and doubles the periods but discounts at the full 6% per half-year instead of 3%.",
+      "C": "Correct. Divide coupon and yield by 2 and use 4 periods: 96.28.",
+      "D": "Incorrect. 103.81 swaps the coupon and yield (a 6% coupon priced at a 4% yield); with a coupon below the yield the bond must trade below par."
+    },
+    "verify": "let p=0; for(let k=1;k<=4;k++){p+=2/Math.pow(1.03,k);} p+=100/Math.pow(1.03,4); return p;",
+    "numericAnswer": 96.28,
+    "tolerance": 0.005,
+    "tags": ["bond-pricing", "semiannual"]
+  },
+  {
+    "id": "q-py-tvm-and-bond-pricing-3",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "tvm-and-bond-pricing",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "An analyst calls brentq(lambda r: npv(r, cfs), 0.20, 0.50) to find an IRR and gets a ValueError. The most likely cause is:",
+    "options": ["brentq only accepts integer bounds", "NPV has the same sign at 20% and 50%, so the interval does not bracket a root", "npv must be vectorised with np.vectorize before brentq can use it", "brentq cannot solve for rates above 10%"],
+    "answer": "B",
+    "explanation": "Brent's method needs f(lo) and f(hi) to have opposite signs. If the IRR is below 20%, NPV is negative at both 20% and 50%, and brentq refuses to start.",
+    "rationale": {
+      "A": "Incorrect. brentq works with any real-valued bounds.",
+      "B": "Correct. Without a sign change in the bracket there is no guaranteed root, so brentq raises a ValueError.",
+      "C": "Incorrect. brentq calls the function with one scalar at a time; no vectorisation is needed.",
+      "D": "Incorrect. There is no such limit; the bracket simply has to contain the root."
+    },
+    "tags": ["irr", "scipy"]
+  },
+  {
+    "id": "q-py-tvm-and-bond-pricing-4",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "tvm-and-bond-pricing",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A bond priced at 95 has a modified duration of 7.2. Using the duration approximation, the price change for a 0.5 percentage-point rise in yield is closest to:",
+    "options": ["-0.34", "-34.20", "-3.60", "-3.42"],
+    "answer": "D",
+    "explanation": "ΔP ≈ −D_mod × Δy × P = −7.2 × 0.005 × 95 = −3.42.",
+    "rationale": {
+      "A": "Incorrect. −0.34 uses Δy = 0.0005 (5 basis points) instead of 0.005.",
+      "B": "Incorrect. −34.20 uses Δy = 0.05, i.e. 5 percentage points.",
+      "C": "Incorrect. −3.60 is the percentage change (7.2 × 0.5%) read as a price change without multiplying by the price of 95.",
+      "D": "Correct. −7.2 × 0.005 × 95 = −3.42."
+    },
+    "verify": "return -7.2*0.005*95;",
+    "numericAnswer": -3.42,
+    "tolerance": 0.005,
+    "tags": ["duration"]
+  }
+]

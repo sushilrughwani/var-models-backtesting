@@ -11,7 +11,7 @@ title: "Pricing Conventions, Discounting and Arbitrage"
 ## Explanation
 
 ### The discount factor: the price of one unit of future money
-Everything in fixed income rests on one simple object. The **discount factor** $d(t)$ is today's price of receiving 1 unit of currency for certain at time $t$. If $d(1) = 0.96$, you would pay 0.96 today to receive 1.00 in one year. Discount factors are below 1 when rates are positive and they fall as maturity lengthens.
+The **discount factor** $d(t)$ is today's price of receiving 1 unit of currency for certain at time $t$. If $d(1) = 0.96$, you would pay 0.96 today to receive 1.00 in one year. Discount factors are below 1 when rates are positive.
 
 Once you know the discount factors, pricing a bond needs no yield, no compounding convention and no guesswork. A bond is a bundle of fixed payments, and each payment is worth its amount times the discount factor for its date:
 
@@ -22,7 +22,7 @@ $$
 where $P$ is the bond's full price, $CF_i$ is the cash flow paid at time $t_i$ and $d(t_i)$ is the discount factor for that date. In the earlier lesson on interest rates we priced bonds with zero rates; discount factors are simply those zero rates expressed as prices.
 
 ### Extracting discount factors from traded bonds
-In practice we observe bond prices, not discount factors, so we work backwards. Start with the shortest bond: it has only one cash flow, so $d(t_1) = P_1 / CF_1$. The next bond has a cash flow at $t_1$, which we can now value, and one new cash flow at $t_2$, which gives us $d(t_2)$. Repeating this step by step recovers the whole set of discount factors. US Treasury coupons are paid semiannually, so the natural grid is every six months.
+We observe bond prices, not discount factors, so we work backwards. Start with the shortest bond: it has only one cash flow, so $d(t_1) = P_1 / CF_1$. The next bond has a cash flow at $t_1$, which we can now value, and one new cash flow at $t_2$, which gives us $d(t_2)$. Repeating this step by step recovers the whole set of discount factors. US Treasury coupons are paid semiannually, so the natural grid is every six months.
 
 ### The law of one price and replication
 The **law of one price** says that two securities (or portfolios) delivering exactly the same cash flows in every state must sell for the same price. If they did not, you could buy the cheap one, sell the expensive one, owe nothing in the future and pocket the difference today. That riskless profit is **arbitrage**.
@@ -73,7 +73,6 @@ $$
 - Using the clean price in the discount-factor equation; discounted cash flows equal the dirty price.
 - Getting the arbitrage direction backwards: always buy the cheap side and sell the rich side.
 - Applying annual coupons to a semiannual bond; a 4% Treasury pays 2 per 100 face every six months.
-- Mixing day counts: actual/actual for Treasuries, 30/360 for many corporates.
 
 ## Key takeaways
 - A discount factor is the price today of 1 unit paid for certain at a future date.

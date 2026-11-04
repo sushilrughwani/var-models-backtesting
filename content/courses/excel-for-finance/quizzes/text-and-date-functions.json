@@ -1,0 +1,90 @@
+[
+  {
+    "id": "q-xl-text-and-date-functions-1",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "text-and-date-functions",
+    "difficulty": "easy",
+    "kind": "conceptual",
+    "stem": "Cell A2 contains \"GLOBEX-2031-EUR\". Which formula returns the issuer ticker \"GLOBEX\" and would still work for codes whose ticker has a different length?",
+    "options": [
+      "=LEFT(A2, FIND(\"-\", A2)-1)",
+      "=LEFT(A2, 6)",
+      "=MID(A2, FIND(\"-\", A2), 6)",
+      "=RIGHT(A2, FIND(\"-\", A2)-1)"
+    ],
+    "answer": "A",
+    "explanation": "FIND locates the first dash at position 7, so LEFT takes 7 − 1 = 6 characters. Because the length comes from FIND, the formula adapts to tickers of any length.",
+    "rationale": {
+      "A": "Correct. LEFT with a length based on the dash position returns the ticker for any length of code.",
+      "B": "Incorrect. It works for GLOBEX but breaks for any ticker that is not exactly 6 characters long.",
+      "C": "Incorrect. MID starting at the dash position returns text beginning with the dash, \"-2031-\".",
+      "D": "Incorrect. RIGHT takes characters from the end of the string, returning \"31-EUR\"."
+    }
+  },
+  {
+    "id": "q-xl-text-and-date-functions-2",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "text-and-date-functions",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "What date does =EOMONTH(DATE(2024,1,15), 1) return?",
+    "options": ["15 Feb 2024", "29 Feb 2024", "28 Feb 2024", "31 Jan 2024"],
+    "answer": "B",
+    "explanation": "EOMONTH moves one month forward from January to February and returns the last day of that month. 2024 is a leap year, so February ends on the 29th.",
+    "rationale": {
+      "A": "Incorrect. 15 Feb 2024 is what EDATE(DATE(2024,1,15),1) returns; EOMONTH returns a month-end.",
+      "B": "Correct. The last day of February 2024, a leap year, is the 29th.",
+      "C": "Incorrect. February has 28 days only in non-leap years; 2024 is divisible by 4 and is a leap year.",
+      "D": "Incorrect. 31 Jan 2024 is EOMONTH with a months argument of 0."
+    },
+    "verify": "return new Date(2024, 2, 0).getDate();",
+    "numericAnswer": 29,
+    "tolerance": 0.01
+  },
+  {
+    "id": "q-xl-text-and-date-functions-3",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "text-and-date-functions",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A1 contains the date 15 March 2025 and B1 contains 31 December 2025. What does =B1-A1 return when the result cell is formatted as General?",
+    "options": ["290", "292", "286", "291"],
+    "answer": "D",
+    "explanation": "Dates are serial numbers: 31-Dec-2025 is 46022 and 15-Mar-2025 is 45731, so the difference is 291 days (16 left in March plus 30+31+30+31+31+30+31+30+31 = 275 for April to December).",
+    "rationale": {
+      "A": "Incorrect. 290 undercounts by one, as if the remaining days in March were 15 rather than 16.",
+      "B": "Incorrect. 292 counts both the start and end days; simple subtraction excludes the start day.",
+      "C": "Incorrect. 286 treats every month after March as 30 days (16 + 9 × 30) instead of using actual month lengths.",
+      "D": "Correct. 46022 − 45731 = 291 days."
+    },
+    "verify": "return (Date.UTC(2025,11,31)-Date.UTC(2025,2,15))/86400000;",
+    "numericAnswer": 291,
+    "tolerance": 0.01
+  },
+  {
+    "id": "q-xl-text-and-date-functions-4",
+    "course": "excel-for-finance",
+    "topic": "excel-functions",
+    "lesson": "text-and-date-functions",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "D1 holds the date 30 June 2025, displayed as 30-Jun-2025. The title cell contains =\"Report as of \"&D1 but shows \"Report as of 45838\". Which formula fixes the title?",
+    "options": [
+      "=\"Report as of \"&VALUE(D1)",
+      "=\"Report as of \"&DATE(D1)",
+      "=\"Report as of \"&TEXT(D1, \"dd-mmm-yyyy\")",
+      "=CONCAT(\"Report as of \", D1)"
+    ],
+    "answer": "C",
+    "explanation": "Joining a date to text uses its stored serial number and drops the cell's display format. TEXT converts the date into a formatted string first, giving \"Report as of 30-Jun-2025\".",
+    "rationale": {
+      "A": "Incorrect. VALUE returns the same serial number, 45838, so the title is unchanged.",
+      "B": "Incorrect. DATE needs year, month and day arguments; DATE(D1) is invalid.",
+      "C": "Correct. TEXT applies a date format inside the formula, so the label reads 30-Jun-2025.",
+      "D": "Incorrect. CONCAT joins the same way as the ampersand and still shows 45838."
+    }
+  }
+]

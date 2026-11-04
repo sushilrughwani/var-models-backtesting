@@ -132,7 +132,7 @@ Step by step:
 2. $t=1$: $300 / 1.08 = 277.78$.
 3. $t=2$: $400 / 1.1664 = 342.94$.
 4. $t=3$: $500 / 1.259712 = 396.92$.
-5. Sum: $-1000 + 277.78 + 342.94 + 396.92 =$ **17.63**, positive, so the project adds value at 8%.
+5. Sum: $-1000 + 277.78 + 342.94 + 396.92 \approx$ **17.63** (the rounded PVs add to 17.64; Python sums the unrounded values), positive, so the project adds value at 8%.
 
 Notice that `npv = 0.0` is set *before* the loop. Putting it inside the loop would reset the running total on every pass.
 

@@ -7,13 +7,13 @@
     "difficulty": "medium",
     "kind": "numeric",
     "stem": "A scenario workshop produces three scenarios: a processing failure expected once every 5 years with severity USD 10 million, a cyber outage expected once every 25 years with severity USD 50 million, and a conduct case expected once every 40 years with severity USD 120 million. The combined expected annual loss is closest to:",
-    "options": ["USD 7.0 million", "USD 60.0 million", "USD 9,300 million", "USD 4.0 million"],
+    "options": ["USD 7.0 million", "USD 60.0 million", "USD 6,100 million", "USD 4.0 million"],
     "answer": "A",
     "explanation": "Frequencies are 1/5 = 0.2, 1/25 = 0.04 and 1/40 = 0.025. Expected annual loss = 0.2 × 10 + 0.04 × 50 + 0.025 × 120 = 2 + 2 + 3 = USD 7.0 million.",
     "rationale": {
       "A": "Correct. Summing frequency × severity gives 2.0 + 2.0 + 3.0 = 7.0.",
       "B": "Incorrect. 60.0 is the simple average of the three severities, ignoring frequency entirely.",
-      "C": "Incorrect. 9,300 multiplies severity by the return period (5 × 10 + 25 × 50 + 40 × 120) instead of by the frequency 1/N.",
+      "C": "Incorrect. 6,100 multiplies severity by the return period (5 × 10 + 25 × 50 + 40 × 120) instead of by the frequency 1/N.",
       "D": "Incorrect. 4.0 omits the conduct scenario, which contributes 3.0 on its own."
     },
     "verify": "return (1/5)*10 + (1/25)*50 + (1/40)*120;",
@@ -29,12 +29,12 @@
     "difficulty": "easy",
     "kind": "numeric",
     "stem": "In an RCSA using 1-5 scales, a risk is rated inherent likelihood 5 and inherent impact 4. A new automated control reduces likelihood to 2 but leaves impact unchanged. The residual risk score is closest to:",
-    "options": ["20", "12", "10", "8"],
+    "options": ["20", "17", "10", "8"],
     "answer": "D",
     "explanation": "Residual score = residual likelihood × residual impact = 2 × 4 = 8, down from an inherent score of 5 × 4 = 20.",
     "rationale": {
       "A": "Incorrect. 20 is the inherent score before the control.",
-      "B": "Incorrect. 12 subtracts the likelihood reduction from the inherent score (20 − 3 − 5) or otherwise mixes additive and multiplicative scoring.",
+      "B": "Incorrect. 17 subtracts the 3-point likelihood reduction directly from the inherent score (20 − 3), mixing additive and multiplicative scoring.",
       "C": "Incorrect. 10 multiplies the new likelihood of 2 by the inherent likelihood of 5 instead of by the impact of 4.",
       "D": "Correct. 2 × 4 = 8."
     },

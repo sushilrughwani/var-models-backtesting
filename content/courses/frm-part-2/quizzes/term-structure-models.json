@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-term-structure-models-1",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "term-structure-models",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "In a driftless short-rate model (dr = σ dw), the current short rate is 3.00% and the annual basis-point volatility is 1.50%. Using a binomial tree with monthly steps, the short rate at the up node after one month is closest to:",
+    "options": ["3.125%", "4.500%", "3.433%", "3.250%"],
+    "answer": "C",
+    "explanation": "The up move is σ√dt = 1.50% × √(1/12) = 0.433%, so the up node is 3.00% + 0.433% = 3.433%.",
+    "rationale": {
+      "A": "Incorrect. 3.125% scales the volatility by dt (1.5%/12) instead of by the square root of dt.",
+      "B": "Incorrect. 4.500% applies the full annual volatility to a one-month step.",
+      "C": "Correct. 3% + 1.5% × √(1/12) = 3.433%.",
+      "D": "Incorrect. 3.250% would require a step of 0.25%, which does not follow from σ√dt."
+    },
+    "verify": "return (0.03+0.015*Math.sqrt(1/12))*100;",
+    "numericAnswer": 3.433,
+    "tolerance": 0.0005,
+    "tags": ["binomial-tree", "model-1"]
+  },
+  {
+    "id": "q-frm2-term-structure-models-2",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "term-structure-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "Under a Vasicek model the short rate is currently 3%, the long-run mean is 5% and the speed of mean reversion is 0.20 per year. The expected short rate in three years is closest to:",
+    "options": ["4.20%", "3.90%", "6.10%", "3.36%"],
+    "answer": "B",
+    "explanation": "E[r_T] = θ + (r₀ − θ)e^(−kT) = 5% + (3% − 5%) × e^(−0.6) = 5% − 1.098% = 3.90%.",
+    "rationale": {
+      "A": "Incorrect. 4.20% assumes the drift stays at its initial value of 0.2 × 2% = 0.4% per year for three years, ignoring that the gap shrinks.",
+      "B": "Correct. 5% − 2% × e^(−0.6) = 3.90%.",
+      "C": "Incorrect. 6.10% adds the decayed gap to θ instead of subtracting it, placing the rate on the wrong side of the mean.",
+      "D": "Incorrect. 3.36% uses kT = 0.2 (one year's decay) instead of 0.6 for three years."
+    },
+    "verify": "return (0.05+(0.03-0.05)*Math.exp(-0.2*3))*100;",
+    "numericAnswer": 3.9,
+    "tolerance": 0.005,
+    "tags": ["vasicek", "mean-reversion"]
+  },
+  {
+    "id": "q-frm2-term-structure-models-3",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "term-structure-models",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A modeller working in a very low-rate environment wants a short-rate model in which rates cannot become negative and basis-point volatility falls as rates fall. Which specification best meets both requirements?",
+    "options": [
+      "Model 2 with a constant drift: dr = λ dt + σ dw",
+      "Vasicek: dr = k(θ − r) dt + σ dw",
+      "Ho-Lee with a time-dependent drift λ(t)",
+      "Cox-Ingersoll-Ross: dr = k(θ − r) dt + σ√r dw"
+    ],
+    "answer": "D",
+    "explanation": "In CIR the volatility term σ√r shrinks to zero as the rate approaches zero, so basis-point volatility falls with the rate level and rates stay non-negative.",
+    "rationale": {
+      "A": "Incorrect. A constant basis-point volatility with normal shocks allows negative rates.",
+      "B": "Incorrect. Vasicek mean reverts but its volatility is constant in basis points, so rates can still go negative.",
+      "C": "Incorrect. A time-dependent drift fits today's curve but leaves normal volatility and possible negative rates.",
+      "D": "Correct. Square-root volatility ties uncertainty to the level of rates and prevents negative values."
+    },
+    "tags": ["cir", "volatility-specification"]
+  },
+  {
+    "id": "q-frm2-term-structure-models-4",
+    "course": "frm-part-2",
+    "topic": "market-risk-measurement",
+    "lesson": "term-structure-models",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "An analyst notes that 30-year zero-coupon yields sit below the average short rate she expects over the next 30 years, even after allowing for a positive risk premium. Which explanation is most consistent with term structure theory?",
+    "options": [
+      "Convexity: because bond prices are convex in rates, rate uncertainty lowers long yields, and the effect grows roughly with volatility squared times maturity squared.",
+      "Mean reversion raises long-term yields above expected short rates, so the observation must be a data error.",
+      "The risk premium in the drift always lowers long yields, so a positive premium explains the gap.",
+      "Convexity raises long yields, so the gap must come from negative expected rate changes."
+    ],
+    "answer": "A",
+    "explanation": "Convexity makes the expected discounted value of a bond higher than the value at the expected rate, which pushes yields down. In the simplest model the reduction is σ²T²/6, so it matters most for long maturities.",
+    "rationale": {
+      "A": "Correct. Convexity lowers yields and grows rapidly with maturity, so it can outweigh the risk premium at the long end.",
+      "B": "Incorrect. Mean reversion reduces long-horizon volatility; it does not by itself push long yields above expected short rates.",
+      "C": "Incorrect. A positive risk premium raises the drift and therefore raises long yields.",
+      "D": "Incorrect. The sign is wrong: convexity lowers yields rather than raising them."
+    },
+    "tags": ["convexity"]
+  }
+]

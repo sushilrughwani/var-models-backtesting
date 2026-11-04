@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-portfolio-risk-analytics-1",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "portfolio-risk-analytics",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A USD 100 million portfolio has a 99% VaR of USD 10 million. One position of USD 25 million has a beta of 1.4 relative to the portfolio. The component VaR of this position (USD millions) is closest to:",
+    "options": ["0.14", "3.50", "2.50", "14.00"],
+    "answer": "B",
+    "explanation": "Component VaR = weight × beta × portfolio VaR = 0.25 × 1.4 × 10 = USD 3.5 million. Equivalently, marginal VaR = 1.4 × 10/100 = 0.14 per dollar, times USD 25 million.",
+    "rationale": {
+      "A": "Incorrect. 0.14 is the marginal VaR per dollar invested, not the component VaR of the whole position.",
+      "B": "Correct. 0.25 × 1.4 × 10 = 3.5: the position contributes 35% of portfolio VaR.",
+      "C": "Incorrect. 2.50 allocates VaR by capital weight alone and ignores the position's beta to the portfolio.",
+      "D": "Incorrect. 14.00 multiplies beta by portfolio VaR but omits the position's weight."
+    },
+    "verify": "const w=25/100, b=1.4, V=10; return w*b*V;",
+    "numericAnswer": 3.5,
+    "tolerance": 0.005,
+    "tags": ["component-var"]
+  },
+  {
+    "id": "q-frm2-portfolio-risk-analytics-2",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "portfolio-risk-analytics",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A portfolio holds USD 120 million in asset A (annual volatility 25%) and USD 80 million in asset B (annual volatility 15%). The returns are uncorrelated. Using the delta-normal method with z = 2.326, the diversified annual VaR (USD millions) is closest to:",
+    "options": ["97.69", "32.31", "53.15", "75.16"],
+    "answer": "D",
+    "explanation": "Dollar volatilities: 120 × 0.25 = 30 and 80 × 0.15 = 12. With zero correlation, σp = √(30² + 12²) = 32.31. VaR = 2.326 × 32.31 = 75.16.",
+    "rationale": {
+      "A": "Incorrect. 97.69 is undiversified VaR (2.326 × (30 + 12)), which assumes perfect correlation.",
+      "B": "Incorrect. 32.31 is the dollar standard deviation; it has not been scaled by z.",
+      "C": "Incorrect. 53.15 uses the 95% quantile 1.645 instead of the given 2.326.",
+      "D": "Correct. 2.326 × √(30² + 12²) = 75.16."
+    },
+    "verify": "const a=120*0.25, b=80*0.15; return 2.326*Math.sqrt(a*a+b*b);",
+    "numericAnswer": 75.16,
+    "tolerance": 0.01,
+    "tags": ["diversified-var", "delta-normal"]
+  },
+  {
+    "id": "q-frm2-portfolio-risk-analytics-3",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "portfolio-risk-analytics",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "A trader proposes adding a USD 50 million block of bonds to a USD 400 million portfolio. Which measure answers most directly how much portfolio VaR will change as a result of this specific trade?",
+    "options": [
+      "Incremental VaR, ideally computed by revaluing the portfolio with and without the trade",
+      "Marginal VaR of the bonds, reported per dollar without scaling",
+      "Component VaR of the bonds currently held",
+      "Undiversified VaR of the new portfolio"
+    ],
+    "answer": "A",
+    "explanation": "Incremental VaR is defined as the change in portfolio VaR from a whole proposed position. Because the trade is large (12.5% of the portfolio), a full revaluation is safer than the linear marginal-VaR approximation.",
+    "rationale": {
+      "A": "Correct. Incremental VaR measures the VaR change from the entire trade; full revaluation avoids approximation error for large trades.",
+      "B": "Incorrect. Marginal VaR is the sensitivity to one extra dollar; on its own it does not give the effect of a USD 50 million trade.",
+      "C": "Incorrect. Component VaR allocates today's VaR among existing positions; it says nothing directly about a new trade.",
+      "D": "Incorrect. Undiversified VaR ignores correlations and does not measure the change caused by the trade."
+    },
+    "tags": ["incremental-var", "marginal-var"]
+  },
+  {
+    "id": "q-frm2-portfolio-risk-analytics-4",
+    "course": "frm-part-2",
+    "topic": "risk-management-of-investments",
+    "lesson": "portfolio-risk-analytics",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A risk report shows that one position has a negative component VaR. The portfolio manager, wanting to cut risk, proposes reducing that position because it has the largest stand-alone volatility in the portfolio. What is the most likely effect of a small reduction in the position?",
+    "options": [
+      "Portfolio VaR falls, because the position has the largest stand-alone volatility",
+      "Portfolio VaR is unchanged, because component VaRs always sum to zero",
+      "Portfolio VaR rises, because the position has a negative beta to the portfolio and is acting as a hedge",
+      "Undiversified VaR rises while diversified VaR falls by the same amount"
+    ],
+    "answer": "C",
+    "explanation": "A negative component VaR means the position's marginal VaR (and beta to the portfolio) is negative. Selling some of it removes part of a hedge, so portfolio VaR increases. Stand-alone volatility is irrelevant to the marginal effect.",
+    "rationale": {
+      "A": "Incorrect. Stand-alone volatility does not determine the marginal effect; correlation with the rest of the portfolio does.",
+      "B": "Incorrect. Component VaRs sum to total diversified VaR, not to zero.",
+      "C": "Correct. Negative marginal VaR means reducing the position increases portfolio VaR.",
+      "D": "Incorrect. Reducing a position lowers its individual VaR, so undiversified VaR falls, and diversified VaR rises; the two do not move by equal and opposite amounts."
+    },
+    "tags": ["component-var", "hedging"]
+  }
+]
