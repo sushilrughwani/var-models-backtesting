@@ -1,0 +1,94 @@
+[
+  {
+    "id": "q-frm2-contingency-funding-1",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "contingency-funding",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A bank has counterbalancing capacity of USD 900 million after stressed haircuts. In its stress scenario, net cash outflows are USD 60 million per day for the first 10 days and USD 30 million per day thereafter. The bank's survival horizon is closest to:",
+    "options": ["15 days", "30 days", "10 days", "20 days"],
+    "answer": "D",
+    "explanation": "The first 10 days use 10 × 60 = 600, leaving 300. At 30 per day, the remaining 300 lasts 10 more days. Survival horizon = 20 days.",
+    "rationale": {
+      "A": "Incorrect. 15 days assumes outflows of 60 per day throughout (900 / 60).",
+      "B": "Incorrect. 30 days assumes outflows of 30 per day throughout (900 / 30).",
+      "C": "Incorrect. 10 days counts only the high-outflow first phase and forgets that 300 of capacity remains after it.",
+      "D": "Correct. 600 used in 10 days, then 300 / 30 = 10 days, total 20."
+    },
+    "verify": "let c=900,t=0; while(c>1e-9){ t++; c-= (t<=10?60:30); } return t;",
+    "numericAnswer": 20,
+    "tolerance": 0.5,
+    "tags": ["survival-horizon"]
+  },
+  {
+    "id": "q-frm2-contingency-funding-2",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "contingency-funding",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "A bank's unencumbered liquidity sources are cash of USD 100 million, government bonds with market value USD 500 million (stressed haircut 2%) and corporate bonds with market value USD 300 million (stressed haircut 20%). Its counterbalancing capacity (USD million) is closest to:",
+    "options": ["830", "900", "730", "740"],
+    "answer": "A",
+    "explanation": "CBC = 100 + 500 × 0.98 + 300 × 0.80 = 100 + 490 + 240 = 830.",
+    "rationale": {
+      "A": "Correct. Cash plus haircut-adjusted bond values gives 830.",
+      "B": "Incorrect. 900 ignores stressed haircuts.",
+      "C": "Incorrect. 730 omits the cash, which is the most reliable source of all.",
+      "D": "Incorrect. 740 applies the 20% corporate haircut to the government bonds as well."
+    },
+    "verify": "return 100+500*(1-0.02)+300*(1-0.2);",
+    "numericAnswer": 830,
+    "tolerance": 0.5,
+    "tags": ["counterbalancing-capacity"]
+  },
+  {
+    "id": "q-frm2-contingency-funding-3",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "contingency-funding",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Which of the following is most appropriate as an external early warning indicator in a bank's contingency funding plan?",
+    "options": [
+      "A rise in the bank's own deposit outflows over the past week",
+      "A sharp widening of the bank's credit default swap spread relative to peers",
+      "An increase in drawdowns on committed credit lines by customers",
+      "Growth in the concentration of the bank's top ten depositors"
+    ],
+    "answer": "B",
+    "explanation": "External EWIs come from market signals about the bank, such as CDS spreads, share price moves and rating outlooks. Deposit outflows, line drawdowns and depositor concentration are internal indicators.",
+    "rationale": {
+      "A": "Incorrect. Deposit outflows are an internal indicator from the bank's own data.",
+      "B": "Correct. A widening CDS spread is a market-based, external warning signal.",
+      "C": "Incorrect. Credit line drawdowns are observed internally.",
+      "D": "Incorrect. Depositor concentration is an internal balance-sheet metric."
+    },
+    "tags": ["cfp", "early-warning-indicators"]
+  },
+  {
+    "id": "q-frm2-contingency-funding-4",
+    "course": "frm-part-2",
+    "topic": "liquidity-and-treasury-risk",
+    "lesson": "contingency-funding",
+    "difficulty": "hard",
+    "kind": "conceptual",
+    "stem": "A bank's contingency funding plan lists repo of its corporate bond portfolio with a central counterparty as a key funding action, but the bank has never executed such a trade and the bonds are partly pledged elsewhere. What is the most important weakness?",
+    "options": [
+      "The plan should rely on central bank facilities first instead of market funding",
+      "The plan lacks an idiosyncratic scenario",
+      "The funding action is untested and may overstate available capacity because encumbered assets cannot be reused",
+      "Corporate bonds can never be used as collateral in stress"
+    ],
+    "answer": "C",
+    "explanation": "Funding actions must be operationally tested and based on unencumbered assets. An untested repo route using partly pledged bonds risks failing exactly when needed and overstates the counterbalancing capacity.",
+    "rationale": {
+      "A": "Incorrect. Central bank facilities are generally a last line of defence, not the first action.",
+      "B": "Incorrect. Nothing in the description concerns scenario design.",
+      "C": "Correct. Untested actions and encumbered collateral are classic CFP weaknesses.",
+      "D": "Incorrect. Corporate bonds can be repoed, though with larger haircuts in stress."
+    },
+    "tags": ["cfp", "testing"]
+  }
+]

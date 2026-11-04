@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q-py-volatility-models-1",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "volatility-models",
+    "difficulty": "easy",
+    "kind": "numeric",
+    "stem": "An EWMA model with λ = 0.94 had yesterday's volatility estimate at 2.0% and yesterday's return was −1.0%. Today's EWMA volatility, the square root of λσ² + (1 − λ)r², is closest to:",
+    "options": ["1.09%", "1.95%", "1.94%", "3.12%"],
+    "answer": "B",
+    "explanation": "Variance = 0.94 × 0.0004 + 0.06 × 0.0001 = 0.000382. Volatility = √0.000382 = 1.95%.",
+    "rationale": {
+      "A": "Incorrect. 1.09% swaps the weights, putting 0.94 on the squared return and 0.06 on the old variance.",
+      "B": "Correct. √(0.000376 + 0.000006) = 1.95%.",
+      "C": "Incorrect. 1.94% averages the volatilities (0.94 × 2% + 0.06 × 1%) instead of the variances.",
+      "D": "Incorrect. 3.12% forgets to square the return, adding 0.06 × 0.01 to a variance."
+    },
+    "verify": "return Math.sqrt(0.94*0.02*0.02+0.06*0.01*0.01)*100;",
+    "numericAnswer": 1.95,
+    "tolerance": 0.005,
+    "tags": ["ewma"]
+  },
+  {
+    "id": "q-py-volatility-models-2",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "volatility-models",
+    "difficulty": "medium",
+    "kind": "numeric",
+    "stem": "A GARCH(1,1) model fitted to daily returns has ω = 0.000003, α = 0.10 and β = 0.85. Assuming 252 trading days, the long-run annualised volatility is closest to:",
+    "options": ["0.77%", "1.51%", "7.10%", "12.30%"],
+    "answer": "D",
+    "explanation": "VL = ω / (1 − α − β) = 0.000003 / 0.05 = 0.00006 per day. Annual volatility = √(0.00006 × 252) = 12.30%.",
+    "rationale": {
+      "A": "Incorrect. 0.77% is the daily long-run volatility, not annualised.",
+      "B": "Incorrect. 1.51% is the annual variance (0.00006 × 252) read as a volatility without taking the square root.",
+      "C": "Incorrect. 7.10% divides ω by 1 − β only, ignoring α in the persistence.",
+      "D": "Correct. √(0.00006 × 252) = 12.30%."
+    },
+    "verify": "const VL=0.000003/(1-0.10-0.85); return Math.sqrt(VL*252)*100;",
+    "numericAnswer": 12.3,
+    "tolerance": 0.005,
+    "tags": ["garch", "long-run-variance"]
+  },
+  {
+    "id": "q-py-volatility-models-3",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "volatility-models",
+    "difficulty": "hard",
+    "kind": "numeric",
+    "stem": "A GARCH(1,1) model has long-run daily variance 0.0001, persistence α + β = 0.95, and a one-day-ahead variance of 0.0004. Using E[σ²(t+h)] = VL + (α+β)^(h−1)(σ²(t+1) − VL), the expected daily volatility 20 days ahead is closest to:",
+    "options": ["1.46%", "1.44%", "2.00%", "1.00%"],
+    "answer": "A",
+    "explanation": "Variance = 0.0001 + 0.95^19 × 0.0003 = 0.0001 + 0.3774 × 0.0003 = 0.0002132. Volatility = √0.0002132 = 1.46%.",
+    "rationale": {
+      "A": "Correct. The gap to the long-run level decays by 0.95^19, leaving daily volatility of 1.46%.",
+      "B": "Incorrect. 1.44% uses an exponent of h = 20 instead of h − 1 = 19.",
+      "C": "Incorrect. 2.00% assumes no mean reversion, which is the EWMA-style flat forecast.",
+      "D": "Incorrect. 1.00% assumes volatility has fully reverted to the long-run level already."
+    },
+    "verify": "return Math.sqrt(0.0001+Math.pow(0.95,19)*(0.0004-0.0001))*100;",
+    "numericAnswer": 1.46,
+    "tolerance": 0.005,
+    "tags": ["garch", "forecasting"]
+  },
+  {
+    "id": "q-py-volatility-models-4",
+    "course": "python-for-finance",
+    "topic": "quant-finance-applications",
+    "lesson": "volatility-models",
+    "difficulty": "medium",
+    "kind": "conceptual",
+    "stem": "Today's EWMA (λ = 0.94) and GARCH(1,1) estimates of daily volatility are both above the series' long-run average. How do their forecasts for 100 days ahead differ?",
+    "options": ["Both forecasts fall to zero", "Both forecasts stay at today's level", "The EWMA forecast stays flat at today's level, while the GARCH forecast reverts toward its long-run variance", "The EWMA forecast reverts to the long-run level while GARCH stays flat"],
+    "answer": "C",
+    "explanation": "EWMA has no constant term, so its expected future variance equals today's estimate at every horizon. GARCH's ω term creates a long-run level that forecasts approach at speed α + β.",
+    "rationale": {
+      "A": "Incorrect. Neither model forecasts zero volatility.",
+      "B": "Incorrect. This is true for EWMA only; GARCH mean-reverts.",
+      "C": "Correct. EWMA forecasts are flat; GARCH forecasts decay toward ω/(1 − α − β).",
+      "D": "Incorrect. This reverses the two models' behaviour."
+    },
+    "tags": ["ewma", "garch", "forecasting"]
+  }
+]

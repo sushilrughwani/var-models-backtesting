@@ -11,9 +11,9 @@ title: "Operational Risk Governance and Framework"
 ## Explanation
 
 ### What operational risk is (and is not)
-Market and credit risk are taken on deliberately because they earn a return. Operational risk is different: it is the by-product of simply running a business. A bank faces it whenever a process breaks, a person errs or acts dishonestly, a system fails, or something external (a flood, a cyberattack, a fraudster) hits it. The regulatory definition includes **legal risk** but leaves out **strategic risk** and **reputational risk**, even though operational failures often damage reputation.
+Market and credit risk are taken on deliberately for a return. Operational risk is the by-product of running a business: it arises whenever a process breaks, a person errs or acts dishonestly, a system fails, or something external (a flood, a cyberattack, a fraudster) hits it. The regulatory definition includes **legal risk** but leaves out **strategic risk** and **reputational risk**, even though operational failures often damage reputation.
 
-Losses are grouped into seven event types so that firms can compare data internally and across the industry:
+Losses are grouped into seven standard event types:
 
 1. Internal fraud
 2. External fraud
@@ -34,7 +34,7 @@ Day-to-day responsibility is split across the **three lines of defence**:
 - **Second line - independent risk management.** The operational risk function designs the framework and tools (RCSA, KRIs, scenarios), challenges the first line's assessments, aggregates the risk profile and reports to the board risk committee.
 - **Third line - internal audit.** Audit gives independent assurance to the board that the first two lines are working as designed.
 
-The key word for the second line is **challenge**: a second line that only collects first-line self-assessments without questioning them is a post office, not a control.
+The key word for the second line is **challenge**: merely collecting first-line self-assessments is not oversight.
 
 ### Risk appetite and tolerance
 A risk appetite statement says how much operational risk the firm is willing to accept in pursuit of its goals. Because nobody wants operational losses, appetite is usually framed as **tolerance**: zero appetite for certain behaviours (internal fraud, sanctions breaches) and quantitative limits elsewhere, such as:
@@ -55,7 +55,7 @@ A complete framework links together:
 - **Resilience and continuity** - the ability to keep critical operations running through disruption.
 - **Disclosure** - public reporting that lets outsiders judge the approach.
 
-A strong **risk culture** ties these together: staff speak up about near misses, incentives do not reward hidden risk taking, and lessons from incidents feed back into controls.
+A strong **risk culture** ties these together: staff report near misses, incentives do not reward hidden risk taking, and incidents feed back into controls.
 
 ## Worked example
 A bank has annual gross income of USD 2,000 million. The board sets an operational loss tolerance of 2% of gross income, with an amber trigger at 80% of the limit. By the end of September, booked operational losses total USD 28 million.
@@ -66,7 +66,7 @@ A bank has annual gross income of USD 2,000 million. The board sets an operation
 
 Status: **green, 70% of the limit used, USD 4 million of headroom before the amber trigger**. If a single USD 6 million mis-selling settlement were then booked, losses would reach USD 34 million (85%), crossing the amber trigger and requiring escalation to the risk committee with a remediation plan.
 
-Qualitatively, suppose the same bank discovers a trader concealing losses. Because appetite for internal fraud is zero, the event is escalated immediately regardless of its size: the first line suspends the trader and fixes the control gap, the second line assesses whether similar gaps exist elsewhere, and internal audit later tests the fix.
+Now suppose the bank discovers a trader concealing losses. Appetite for internal fraud is zero, so the event is escalated immediately whatever its size: the first line fixes the control gap, the second line checks for similar gaps elsewhere, and internal audit later tests the fix.
 
 ## Common exam traps
 - Including reputational or strategic risk in the definition of operational risk; legal risk is in, the other two are out.
